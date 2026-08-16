@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Trading</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: Inter, system-ui, sans-serif;
+        background: #0b1220;
+        color: #e8eefc;
+      }
+      body {
+        margin: 0;
+        padding: 2rem;
+        max-width: 960px;
+        margin-inline: auto;
+      }
+      h1 {
+        margin-top: 0;
+      }
+      section {
+        background: #121a2b;
+        border: 1px solid #24304a;
+        border-radius: 12px;
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.35rem;
+        font-size: 0.9rem;
+        color: #9fb0d3;
+      }
+      input,
+      select,
+      button {
+        font: inherit;
+        padding: 0.55rem 0.75rem;
+        border-radius: 8px;
+        border: 1px solid #33415f;
+        background: #0f1728;
+        color: inherit;
+      }
+      button {
+        cursor: pointer;
+        background: #3b82f6;
+        border-color: #3b82f6;
+        color: white;
+        font-weight: 600;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+      .result {
+        margin-top: 0.75rem;
+        padding: 0.75rem;
+        border-radius: 8px;
+        background: #0f1728;
+        border: 1px solid #24304a;
+        white-space: pre-wrap;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 0.5rem 0.25rem;
+        border-bottom: 1px solid #24304a;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AI Trading Dashboard</h1>
+    <p>Analyze symbols and place paper trades against the local API.</p>
+
+    <section>
+      <h2>AI Analysis</h2>
+      <div class="row">
+        <div>
+          <label for="symbol">Symbol</label>
+          <input id="symbol" value="AAPL" />
+        </div>
+      </div>
+      <button id="analyze-btn">Analyze</button>
+      <div id="analysis-result" class="result">Run an analysis to see recommendations.</div>
+    </section>
+
+    <section>
+      <h2>Place Trade</h2>
+      <div class="row">
+        <div>
+          <label for="trade-symbol">Symbol</label>
+          <input id="trade-symbol" value="AAPL" />
+        </div>
+        <div>
+          <label for="trade-action">Action</label>
+          <select id="trade-action">
+            <option value="buy">Buy</option>
+            <option value="sell">Sell</option>
+          </select>
+        </div>
+        <div>
+          <label for="trade-qty">Quantity</label>
+          <input id="trade-qty" type="number" value="10" min="1" />
+        </div>
+        <div>
+          <label for="trade-price">Price</label>
+          <input id="trade-price" type="number" value="190.25" step="0.01" min="0.01" />
+        </div>
+      </div>
+      <button id="trade-btn">Submit Trade</button>
+      <div id="trade-result" class="result">Submit a trade to update the ledger.</div>
+    </section>
+
+    <section>
+      <h2>Recent Trades</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Symbol</th>
+            <th>Action</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="trades-body"></tbody>
+      </table>
+    </section>
+
+    <script>
+      async function refreshTrades() {
+        const response = await fetch("/api/trades");
+        const trades = await response.json();
+        const body = document.getElementById("trades-body");
+        body.innerHTML = trades
+          .map(
+            (trade) => `
+              <tr>
+                <td>${trade.id}</td>
+                <td>${trade.symbol}</td>
+                <td>${trade.action}</td>
+                <td>${trade.quantity}</td>
+                <td>$${trade.price.toFixed(2)}</td>
+                <td>$${trade.total.toFixed(2)}</td>
+              </tr>`
+          )
+          .join("");
+      }
+
+      document.getElementById("analyze-btn").addEventListener("click", async () => {
+        const symbol = document.getElementById("symbol").value.trim();
+        const response = await fetch("/api/analyze", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ symbol }),
+        });
+        const data = await response.json();
+        document.getElementById("analysis-result").textContent =
+          `${data.symbol}: ${data.recommendation.toUpperCase()} (${Math.round(data.confidence * 100)}% confidence)\n${data.summary}`;
+      });
+
+      document.getElementById("trade-btn").addEventListener("click", async () => {
+        const payload = {
+          symbol: document.getElementById("trade-symbol").value.trim(),
+          action: document.getElementById("trade-action").value,
+          quantity: Number(document.getElementById("trade-qty").value),
+          price: Number(document.getElementById("trade-price").value),
+        };
+        const response = await fetch("/api/trades", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        const data = await response.json();
+        if (!response.ok) {
+          document.getElementById("trade-result").textContent = data.detail || "Trade failed.";
+          return;
+        }
+        document.getElementById("trade-result").textContent =
+          `Trade #${data.id} recorded: ${data.action.toUpperCase()} ${data.quantity} ${data.symbol} @ $${data.price}`;
+        await refreshTrades();
+      });
+
+      refreshTrades();
+    </script>
+  </body>
+</html>
