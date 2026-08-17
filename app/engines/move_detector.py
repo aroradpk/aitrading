@@ -233,22 +233,26 @@ def scan_today_setup(
     tag_set = set(current.get("tags", []))
     formation_state = _formation_alignment(current.get("formations", []), side)
     elliott_state = _elliott_alignment(tag_set, side)
-    if formation_state == "conflict" or elliott_state == "conflict":
+    families = scored.get("pattern_families") or []
+    # Do not cap continuation patterns (e.g. rising wedge into an up-move).
+    if families:
+        technical_score = round(min(7.0, max(technical_score, 7.0 if families else technical_score)), 1)
+    elif formation_state == "conflict" or elliott_state == "conflict":
         technical_score = round(min(technical_score, 3.0), 1)
     elif formation_state == "support" or elliott_state == "support":
-        technical_score = round(min(10.0, technical_score + 0.5), 1)
+        technical_score = round(min(7.0, technical_score + 0.5), 1)
 
     bias = position_bias(current, focus=side)
-    if settings.technical.require_trend_for_setup:
+    if settings.technical.require_trend_for_setup and not families:
         if side == "long" and bias != "long" and not scored.get("breakout_base"):
             technical_score = round(min(technical_score, 3.0), 1)
         elif side == "short" and bias != "short":
             technical_score = round(min(technical_score, 3.0), 1)
 
-    if not scored.get("breakout_base"):
-        technical_score = _apply_side_context_caps(technical_score, current, side)
-    else:
+    if families or scored.get("breakout_base"):
         technical_score = round(min(7.0, max(0.0, technical_score)), 1)
+    else:
+        technical_score = _apply_side_context_caps(technical_score, current, side)
 
     intraday_threshold = settings.technical.intraday.stock_target_1d_pct
     thresholds = settings.thresholds
@@ -271,6 +275,7 @@ def scan_today_setup(
         "pattern_confirmations": confirmations,
         "confirmation_labels": scored.get("confirmation_labels", []),
         "breakout_base": scored.get("breakout_base", False),
+        "pattern_families": families,
         "position_bias": bias,
         "position_side": side,
         "horizon": horizon,

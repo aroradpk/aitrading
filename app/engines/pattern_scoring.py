@@ -1,47 +1,50 @@
 from __future__ import annotations
 
-from app.engines.pattern_confirmations import (
-    confirmation_labels,
-    detect_daily_confirmations,
-    is_breakout_base,
-)
+from app.engines.pattern_confirmations import confirmation_labels, is_breakout_base
 from app.engines.technical import snapshot_similarity
-
-
-LONG_WEIGHTS: dict[str, float] = {
-    "ema20_support": 1.2,
-    "consolidation_anchor": 1.0,
-    "ema_momentum_expanding": 1.0,
-    "ema_bull_stack": 0.6,
-    "rsi_60_reclaim": 0.8,
-    "uptrend": 0.5,
-    "bullish_formation": 0.8,
-    "compressing_wedge": 0.9,
-    "rounding_bottom": 0.7,
-    "mtf_15m_wedge": 1.0,
-    "mtf_1h_rounding_ema20": 1.0,
-}
-
-SHORT_WEIGHTS: dict[str, float] = {
-    "ema20_resistance": 1.2,
-    "consolidation_anchor": 0.8,
-    "ema_momentum_expanding_down": 1.0,
-    "ema_bear_stack": 0.6,
-    "rsi_60_reject": 0.8,
-    "downtrend": 0.5,
-    "bearish_formation": 0.8,
-    "compressing_wedge": 0.9,
-}
 
 TECHNICAL_MAX = 7.0
 
+LONG_FAMILIES: dict[str, tuple[str, ...]] = {
+    "ema_pullback": ("ema20_support", "uptrend", "ema_bull_stack", "close_above_ema20"),
+    "coil_breakout": ("tight_range", "consolidation_anchor", "compressing_wedge", "bullish_formation", "higher_lows"),
+    "momentum_stack": ("ema_bull_stack", "ema_momentum_expanding", "close_above_ema20", "uptrend"),
+    "formation_base": ("bullish_formation", "ema20_support", "consolidation_anchor", "rounding_bottom", "uptrend"),
+    "rsi_reclaim": ("rsi_60_reclaim", "rsi_trend_long", "ema20_support", "uptrend"),
+    "rising_structure": ("higher_lows", "close_above_ema20", "tight_range", "uptrend"),
+}
+
+SHORT_FAMILIES: dict[str, tuple[str, ...]] = {
+    "ema_reject": ("ema20_resistance", "downtrend", "ema_bear_stack", "close_below_ema20"),
+    "coil_breakdown": ("tight_range", "consolidation_anchor", "compressing_wedge", "bearish_formation", "lower_highs"),
+    "momentum_down": ("ema_bear_stack", "ema_momentum_expanding_down", "close_below_ema20", "downtrend"),
+    "formation_top": ("bearish_formation", "ema20_resistance", "consolidation_anchor", "downtrend"),
+    "rsi_reject": ("rsi_60_reject", "rsi_trend_short", "ema20_resistance", "downtrend"),
+    "falling_structure": ("lower_highs", "close_below_ema20", "tight_range", "downtrend"),
+}
+
+# A family fires when at least 2 of its members are true (any 2-piece pattern, not MOTHERSON-only).
+FAMILY_MIN_HITS = 2
+
+
+def _active(confirmations: dict[str, bool]) -> set[str]:
+    return {key for key, value in confirmations.items() if value}
+
+
+def matched_families(confirmations: dict[str, bool], *, side: str) -> list[str]:
+    catalog = LONG_FAMILIES if side == "long" else SHORT_FAMILIES
+    active = _active(confirmations)
+    names: list[str] = []
+    for name, members in catalog.items():
+        hits = sum(1 for member in members if member in active)
+        if hits >= FAMILY_MIN_HITS:
+            names.append(name)
+    return names
+
 
 def _pattern_overlap(current: dict[str, bool], historical: dict[str, bool]) -> float:
-    keys = set(current) | set(historical)
-    if not keys:
-        return 0.0
-    active_current = {k for k, v in current.items() if v}
-    active_hist = {k for k, v in historical.items() if v}
+    active_current = _active(current)
+    active_hist = _active(historical)
     if not active_current or not active_hist:
         return 0.0
     union = active_current | active_hist
@@ -93,42 +96,47 @@ def score_technical_confirmations(
     historical_moves: list[dict] | None = None,
     snapshot: dict | None = None,
 ) -> dict:
-    weights = LONG_WEIGHTS if side == "long" else SHORT_WEIGHTS
-    score = 0.0
-    for key, weight in weights.items():
-        if confirmations.get(key):
-            score += weight
+    families = matched_families(confirmations, side=side)
+    active_count = len(_active(confirmations))
 
-    # Legacy tag similarity (small additive)
+    if families or active_count >= 2:
+        score = TECHNICAL_MAX
+    elif active_count == 1:
+        score = 4.5
+    else:
+        score = 1.5
+
     if snapshot and historical_moves:
         tag_sim = 0.0
         for move in historical_moves[:50]:
             tag_sim = max(tag_sim, snapshot_similarity(snapshot, move.get("technical_snapshot", {})))
-        score += min(0.5, tag_sim * 0.5)
+        if score < TECHNICAL_MAX:
+            score += min(0.5, tag_sim * 0.5)
 
     bonus, top_matches = historical_pattern_bonus(
         confirmations, historical_moves or [], side=side
     )
-    score += bonus
+    if score < TECHNICAL_MAX:
+        score += bonus
 
-    # Headwinds for long chase without base
-    if side == "long" and snapshot and not is_breakout_base(confirmations):
+    # Only fade a long chase when there is no pattern family at all.
+    if side == "long" and snapshot and not families:
         tags = set(snapshot.get("tags", []))
         if "ema20_extended_long" in tags and "near_resistance" in tags:
-            score -= 1.5
-        if "rsi_overbought" in tags and "near_resistance" in tags and not confirmations.get("ema20_support"):
-            score -= 1.0
-    elif is_breakout_base(confirmations):
-        score += 0.5
+            score = min(score, 3.0)
 
     score = round(min(TECHNICAL_MAX, max(0.0, score)), 1)
     match_count = sum(1 for m in top_matches if m["similarity"] >= 0.35)
+    labels = confirmation_labels(confirmations)
+    for family in families:
+        labels.insert(0, f"Pattern family: {family.replace('_', ' ')}")
 
     return {
         "technical_score": score,
         "pattern_confirmations": confirmations,
-        "confirmation_labels": confirmation_labels(confirmations),
+        "confirmation_labels": labels,
+        "pattern_families": families,
         "top_matches": top_matches,
         "match_count": match_count,
-        "breakout_base": is_breakout_base(confirmations),
+        "breakout_base": is_breakout_base(confirmations) or bool(families),
     }

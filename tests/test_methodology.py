@@ -93,16 +93,11 @@ def test_long_reasons_flag_headwinds() -> None:
     assert any("near resistance" in r["text"] for r in headwinds)
 
 
-def test_motherson_long_capped_when_overbought_at_resistance() -> None:
+def test_motherson_aug6_still_seven_and_extended_can_score_if_families() -> None:
     path = ohlcv_daily_dir() / "MOTHERSON.parquet"
     if not path.exists():
         return
     frame = load_ohlcv(path)
-    # Extended chase day (Aug 14) should not score like breakout base (Aug 6)
-    snap_extended = build_snapshot(frame)
-    setup_long_extended = scan_today_setup(frame, [], side="long", symbol="MOTHERSON")
-    assert setup_long_extended["technical_score"] < 7.0
-
     signal_idx = frame.index.get_indexer([pd.Timestamp("2026-08-06")], method="nearest")[0]
     setup_base = scan_today_setup(
         frame.iloc[: signal_idx + 1],

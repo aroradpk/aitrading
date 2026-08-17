@@ -24,13 +24,29 @@ def test_motherson_aug6_breakout_base_scores_seven() -> None:
     setup = scan_today_setup(slice, hist, side="long", symbol="MOTHERSON")
     assert setup["technical_score"] >= 7.0
     assert setup.get("breakout_base") is True
+    assert setup.get("pattern_families")
 
     scores = conviction_from_scores(setup["technical_score"])
     assert scores["technical"] >= 7.0
     assert scores["final"] >= 7.0
 
 
-def test_conviction_model_caps_technical_at_seven() -> None:
+def test_two_piece_family_scores_seven() -> None:
+    from app.engines.pattern_scoring import score_technical_confirmations
+
+    scored = score_technical_confirmations(
+        {"ema20_support": True, "uptrend": True, "ema_momentum_expanding": False},
+        side="long",
+    )
+    assert scored["technical_score"] == 7.0
+    assert "ema_pullback" in scored["pattern_families"]
+
+
+def test_empty_confirmations_not_seven() -> None:
+    from app.engines.pattern_scoring import score_technical_confirmations
+
+    scored = score_technical_confirmations({}, side="long")
+    assert scored["technical_score"] < 7.0
     scores = conviction_from_scores(technical=9.5, fundamental=10, events=10, theme=8)
     assert scores["technical"] == 7.0
     assert scores["research"] <= 3.0

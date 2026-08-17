@@ -86,6 +86,49 @@ def detect_rsi_60_reclaim(frame: pd.DataFrame, lookback: int = 8) -> bool:
     return touched_support and reclaimed and current > prior[-2]
 
 
+def detect_tight_range(frame: pd.DataFrame, lookback: int = 5) -> bool:
+    """Recent range is compressed vs 20-bar ATR (coil)."""
+    if len(frame) < lookback + 20:
+        return False
+    recent = frame.tail(lookback)
+    span = float(recent["high"].max() - recent["low"].min())
+    atr = float((frame["high"] - frame["low"]).tail(20).mean())
+    return atr > 0 and span / atr <= 2.8
+
+
+def detect_higher_lows(frame: pd.DataFrame, bars: int = 3) -> bool:
+    if len(frame) < bars:
+        return False
+    lows = frame["low"].tail(bars).tolist()
+    return all(lows[i] >= lows[i - 1] * 0.998 for i in range(1, bars))
+
+
+def detect_lower_highs(frame: pd.DataFrame, bars: int = 3) -> bool:
+    if len(frame) < bars:
+        return False
+    highs = frame["high"].tail(bars).tolist()
+    return all(highs[i] <= highs[i - 1] * 1.002 for i in range(1, bars))
+
+
+def detect_close_above_ema20(frame: pd.DataFrame) -> bool:
+    if len(frame) < 20:
+        return False
+    ema20 = _ema(frame["close"], 20)
+    if ema20 is None:
+        return False
+    return float(frame["close"].iloc[-1]) > ema20
+
+
+def detect_rsi_trend_long(frame: pd.DataFrame) -> bool:
+    rsi = _rsi(frame["close"])
+    return rsi is not None and rsi >= 50
+
+
+def detect_rsi_trend_short(frame: pd.DataFrame) -> bool:
+    rsi = _rsi(frame["close"])
+    return rsi is not None and rsi <= 50
+
+
 def detect_daily_confirmations(frame: pd.DataFrame, side: str) -> dict[str, bool]:
     if len(frame) < 30:
         return {}
@@ -120,20 +163,28 @@ def detect_daily_confirmations(frame: pd.DataFrame, side: str) -> dict[str, bool
     long_map = {
         "ema20_support": detect_ema20_support(frame),
         "consolidation_anchor": detect_reference_candle_consolidation(frame),
+        "tight_range": detect_tight_range(frame),
+        "higher_lows": detect_higher_lows(frame),
+        "close_above_ema20": detect_close_above_ema20(frame),
         "ema_momentum_expanding": "ema_momentum_expanding" in ema_tags,
         "ema_bull_stack": "ema_bull_stack" in ema_tags,
         "rsi_60_reclaim": detect_rsi_60_reclaim(frame),
+        "rsi_trend_long": detect_rsi_trend_long(frame),
         "uptrend": bool(trend_tags & {"short_term_uptrend", "long_term_uptrend"}),
         "bullish_formation": bool(formations & bullish_formations),
         "compressing_wedge": detect_compressing_wedge(frame, side="long"),
         "rounding_bottom": detect_rounding_bottom(frame),
     }
     short_map = {
-        "ema20_resistance": ema20 is not None and close < ema20 and abs(close - ema20) / ema20 <= 0.025,
+        "ema20_resistance": ema20 is not None and close < ema20 and abs(close - ema20) / ema20 <= 0.03,
+        "close_below_ema20": ema20 is not None and close < ema20,
         "consolidation_anchor": detect_reference_candle_consolidation(frame),
+        "tight_range": detect_tight_range(frame),
+        "lower_highs": detect_lower_highs(frame),
         "ema_momentum_expanding_down": "ema_momentum_expanding_down" in ema_tags,
         "ema_bear_stack": "ema_bear_stack" in ema_tags,
         "rsi_60_reject": detect_rsi_60_reclaim(frame) is False and (_rsi(frame["close"]) or 0) >= 65,
+        "rsi_trend_short": detect_rsi_trend_short(frame),
         "downtrend": bool(trend_tags & {"short_term_downtrend", "long_term_downtrend"}),
         "bearish_formation": bool(formations & bearish_formations),
         "compressing_wedge": detect_compressing_wedge(frame, side="short"),
@@ -158,6 +209,13 @@ def confirmation_labels(confirmations: dict[str, bool]) -> list[str]:
         "bearish_formation": "Bearish chart formation",
         "compressing_wedge": "Compressing wedge",
         "rounding_bottom": "Rounding bottom",
+        "tight_range": "Tight coil vs ATR",
+        "higher_lows": "Rising lows",
+        "lower_highs": "Falling highs",
+        "close_above_ema20": "Close above EMA20",
+        "close_below_ema20": "Close below EMA20",
+        "rsi_trend_long": "RSI holding above 50",
+        "rsi_trend_short": "RSI holding below 50",
         "mtf_15m_wedge": "15m compressing wedge",
         "mtf_1h_rounding_ema20": "1h rounding bottom at EMA20",
     }
