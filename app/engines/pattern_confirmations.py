@@ -2,7 +2,13 @@ from __future__ import annotations
 
 import pandas as pd
 
-from app.engines.chart_patterns import detect_compressing_wedge, detect_formations, detect_rounding_bottom, fibonacci_tags
+from app.engines.chart_patterns import (
+    detect_compressing_wedge,
+    detect_formations,
+    detect_rounding_bottom,
+    detect_sr_fib_confluence,
+    fibonacci_tags,
+)
 from app.engines.elliott import elliott_tags
 from app.engines.technical import (
     _ema,
@@ -196,6 +202,13 @@ def detect_daily_confirmations(frame: pd.DataFrame, side: str) -> dict[str, bool
     ema20_resistance = ema20 is not None and close < ema20 and abs(close - ema20) / ema20 <= 0.03
     long_sr = "near_support" in sr_tags or ema20_support or "ema20_support_touch" in ema_tags
     short_sr = "near_resistance" in sr_tags or ema20_resistance
+    recent = frame.tail(25)
+    support = float(recent["low"].min())
+    resistance = float(recent["high"].max())
+    long_sr_prices = [p for p in (ema20, support if long_sr else None) if p]
+    short_sr_prices = [p for p in (ema20, resistance if short_sr else None) if p]
+    long_sr_fib = long_sr and detect_sr_fib_confluence(frame, side="long", sr_prices=long_sr_prices)
+    short_sr_fib = short_sr and detect_sr_fib_confluence(frame, side="short", sr_prices=short_sr_prices)
     long_elliott = "elliott_impulse_up" in ell or "elliott_abc_corrective_down" in ell
     short_elliott = "elliott_impulse_down" in ell or "elliott_abc_corrective_up" in ell
     long_elliott_conflict = "elliott_impulse_down" in ell and "elliott_impulse_up" not in ell
@@ -217,7 +230,7 @@ def detect_daily_confirmations(frame: pd.DataFrame, side: str) -> dict[str, bool
         "rounding_bottom": detect_rounding_bottom(frame),
         "sr_level": long_sr,
         "fib_level": bool(fibs),
-        "sr_fib_confluence": long_sr and bool(fibs),
+        "sr_fib_confluence": long_sr_fib,
         "elliott_aligned": long_elliott,
         "elliott_conflict": long_elliott_conflict,
         **energy,
@@ -237,7 +250,7 @@ def detect_daily_confirmations(frame: pd.DataFrame, side: str) -> dict[str, bool
         "compressing_wedge": detect_compressing_wedge(frame, side="short"),
         "sr_level": short_sr,
         "fib_level": bool(fibs),
-        "sr_fib_confluence": short_sr and bool(fibs),
+        "sr_fib_confluence": short_sr_fib,
         "elliott_aligned": short_elliott,
         "elliott_conflict": short_elliott_conflict,
         **energy,

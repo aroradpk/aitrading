@@ -19,6 +19,7 @@ def test_motherson_aug6_breakout_base_scores_seven() -> None:
     assert conf["ema20_support"]
     assert conf["consolidation_anchor"]
     assert conf["ema_momentum_expanding"]
+    assert conf["sr_fib_confluence"]
 
     hist = [m for m in load_moves("MOTHERSON") if m["date"] < signal_date]
     setup = scan_today_setup(slice, hist, side="long", symbol="MOTHERSON")
@@ -45,11 +46,12 @@ def test_two_piece_family_with_energy_is_not_seven() -> None:
     )
     assert scored["technical_score"] < 7.0
     assert "ema_pullback" in scored["pattern_families"]
-    assert scored["score_layers"]["ema_structure"] == 1.5
-    assert scored["score_layers"]["energy"] == 1.0
+    assert scored["score_layers"]["ema_structure"] == 2.5
+    assert scored["score_layers"]["energy"] == 2.0
+    assert scored["score_layers"]["sr_fib"] == 0.0
 
 
-def test_weighted_layers_reach_seven() -> None:
+def test_core_ema_sr_fib_energy_reaches_seven() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
@@ -57,7 +59,26 @@ def test_weighted_layers_reach_seven() -> None:
             "ema20_support": True,
             "uptrend": True,
             "sr_level": True,
-            "fib_level": True,
+            "sr_fib_confluence": True,
+            "vol_expansion": True,
+            "range_expansion": True,
+        },
+        side="long",
+    )
+    assert scored["technical_score"] == 7.0
+    assert scored["score_layers"]["sr_fib"] == 2.5
+    assert scored["score_layers"]["elliott"] == 0.0
+    assert scored["score_layers"]["formation"] == 0.0
+    assert any("S/R with Fibonacci" in label for label in scored["confirmation_labels"])
+
+
+def test_elliott_formation_candle_are_cherries() -> None:
+    from app.engines.pattern_scoring import score_technical_confirmations
+
+    scored = score_technical_confirmations(
+        {
+            "ema20_support": True,
+            "uptrend": True,
             "sr_fib_confluence": True,
             "elliott_aligned": True,
             "bullish_formation": True,
@@ -71,22 +92,39 @@ def test_weighted_layers_reach_seven() -> None:
         },
     )
     assert scored["technical_score"] == 7.0
-    assert scored["score_layers"]["sr_fib"] == 1.5
-    assert scored["score_layers"]["elliott"] == 1.5
-    assert scored["score_layers"]["formation"] == 1.5
+    assert scored["score_layers"]["elliott"] == 0.5
+    assert scored["score_layers"]["formation"] == 0.5
     assert scored["score_layers"]["candle"] == 0.5
-    assert any("S/R with Fibonacci" in label for label in scored["confirmation_labels"])
-    assert any("Elliott wave" in label for label in scored["confirmation_labels"])
+    assert any("cherry" in label.lower() for label in scored["confirmation_labels"])
 
 
-def test_elliott_conflict_zeros_layer_not_whole_score() -> None:
+def test_no_sr_fib_cannot_be_seven_even_with_cherries() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
         {
             "ema20_support": True,
             "uptrend": True,
-            "sr_level": True,
+            "elliott_aligned": True,
+            "bullish_formation": True,
+            "vol_expansion": True,
+            "range_expansion": True,
+        },
+        side="long",
+        snapshot={"tags": ["elliott_impulse_up", "candle_hammer"], "formations": [{"id": "falling_wedge"}]},
+    )
+    assert scored["score_layers"]["sr_fib"] == 0.0
+    assert scored["technical_score"] <= 4.0
+
+
+def test_elliott_conflict_zeros_cherry_not_whole_score() -> None:
+    from app.engines.pattern_scoring import score_technical_confirmations
+
+    scored = score_technical_confirmations(
+        {
+            "ema20_support": True,
+            "uptrend": True,
+            "sr_fib_confluence": True,
             "bullish_formation": True,
             "elliott_conflict": True,
             "vol_expansion": True,
@@ -96,8 +134,7 @@ def test_elliott_conflict_zeros_layer_not_whole_score() -> None:
         snapshot={"tags": ["elliott_impulse_down"], "formations": [{"id": "falling_wedge"}]},
     )
     assert scored["score_layers"]["elliott"] == 0.0
-    assert scored["technical_score"] >= 4.0
-    assert scored["technical_score"] < 7.0
+    assert scored["technical_score"] == 7.0
 
 
 def test_candle_cherry_requires_context() -> None:

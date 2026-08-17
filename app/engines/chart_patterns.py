@@ -162,3 +162,43 @@ def fibonacci_tags(frame: pd.DataFrame, lookback: int = 60) -> list[str]:
                 tags.append(label)
     return tags
 
+
+SR_FIB_LEVELS = (0.382, 0.5, 0.618)
+SR_FIB_LOOKBACKS = (20, 40, 60)
+
+
+def _price_near(level_price: float, reference: float, atr: float) -> bool:
+    if reference <= 0 or level_price <= 0:
+        return False
+    tol = max(0.01 * reference, 0.35 * atr if atr > 0 else 0.0)
+    return abs(reference - level_price) <= tol
+
+
+def detect_sr_fib_confluence(frame: pd.DataFrame, *, side: str, sr_prices: list[float]) -> bool:
+    """True when an S/R price (EMA20 or swing level) sits on a 38.2/50/61.8 retrace."""
+    if len(frame) < 25 or not sr_prices:
+        return False
+    atr = float((frame["high"] - frame["low"]).tail(20).mean())
+    refs = [p for p in sr_prices if p and p > 0]
+    close = float(frame["close"].iloc[-1])
+    for lookback in SR_FIB_LOOKBACKS:
+        if len(frame) < lookback:
+            continue
+        window = frame.tail(lookback)
+        swing_high = float(window["high"].max())
+        swing_low = float(window["low"].min())
+        span = swing_high - swing_low
+        if span <= 0:
+            continue
+        if side == "long":
+            targets = [swing_high - span * level for level in SR_FIB_LEVELS]
+        else:
+            targets = [swing_low + span * level for level in SR_FIB_LEVELS]
+        for ref in refs:
+            if any(_price_near(target, ref, atr) for target in targets):
+                return True
+        if any(_price_near(target, close, atr) for target in targets):
+            return True
+    return False
+
+
