@@ -37,6 +37,16 @@
       pre { white-space: pre-wrap; background: #0f1728; padding: 0.75rem; border-radius: 8px; overflow: auto; }
       .muted { color: #9fb0d3; font-size: 0.9rem; }
       .conviction { font-weight: 700; font-size: 1.1rem; }
+      input, select, textarea {
+        background: #0f1728; border: 1px solid #33415f; color: inherit;
+        border-radius: 6px; padding: 0.4rem 0.55rem; margin: 0.25rem 0.5rem 0.25rem 0;
+      }
+      textarea { width: 100%; min-height: 3rem; }
+      label.block { display: block; margin-bottom: 0.5rem; }
+      .editor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+      @media (max-width: 800px) { .editor-grid { grid-template-columns: 1fr; } }
+      tr.clickable { cursor: pointer; }
+      tr.clickable:hover { background: #1a2438; }
     </style>
   </head>
   <body>
@@ -127,6 +137,39 @@
         <label>Symbol <input id="theme-symbol" placeholder="e.g. HAL" /></label>
         <button class="action" id="load-theme">Load theme detail</button>
         <p class="muted" id="themes-meta"></p>
+      </div>
+      <div class="editor-grid">
+        <div class="card">
+          <h2>Theme graph editor</h2>
+          <p class="muted">Edit macro themes and symbol assignments. Saves to <code>config/themes/graph.json</code>.</p>
+          <label class="block">Theme
+            <select id="theme-edit-select"></select>
+          </label>
+          <label class="block">Name <input id="theme-edit-name" style="width:90%" /></label>
+          <label class="block">Macro <textarea id="theme-edit-macro"></textarea></label>
+          <label class="block">Industry <input id="theme-edit-industry" style="width:90%" /></label>
+          <label class="block">Symbols (comma-separated)
+            <input id="theme-edit-symbols" style="width:90%" placeholder="HAL, SOLARINDS" />
+          </label>
+          <label class="block">
+            <input type="checkbox" id="theme-edit-enabler" /> Horizontal enabler
+          </label>
+          <button class="action" id="save-theme-graph">Save theme</button>
+          <span class="muted" id="theme-edit-status"></span>
+        </div>
+        <div class="card">
+          <h2>Rubric override editor</h2>
+          <p class="muted">Manual conviction boosts per symbol → <code>data/themes/overrides/</code></p>
+          <label class="block">Symbol
+            <input id="rubric-symbol" placeholder="e.g. HAL" />
+            <button class="action" type="button" id="load-rubric">Load</button>
+          </label>
+          <div id="rubric-fields"></div>
+          <label class="block">Notes <textarea id="rubric-notes" placeholder="Optional thesis notes"></textarea></label>
+          <button class="action" id="save-rubric">Save override</button>
+          <button class="action" id="clear-rubric" style="background:#64748b">Clear</button>
+          <span class="muted" id="rubric-status"></span>
+        </div>
       </div>
       <div class="card">
         <h2>Macro theme graph</h2>
@@ -243,15 +286,128 @@
       async function loadThemeGraph() {
         const res = await fetch("/api/analysis/themes/graph");
         const graph = await res.json();
-        document.getElementById("themes-graph-body").innerHTML = (graph.themes || []).map((t) => `
-          <tr>
+        window._themeGraph = graph;
+        document.getElementById("themes-graph-body").innerHTML = (graph.themes || []).map((t, idx) => `
+          <tr class="clickable" data-theme-idx="${idx}">
             <td>${t.name}</td>
             <td>${t.macro}</td>
             <td>${(t.symbols || []).join(", ")}</td>
           </tr>`).join("");
+        document.getElementById("themes-graph-body").querySelectorAll("tr").forEach((row) => {
+          row.addEventListener("click", () => selectThemeEditor(Number(row.dataset.themeIdx)));
+        });
+        const select = document.getElementById("theme-edit-select");
+        select.innerHTML = (graph.themes || []).map((t, idx) =>
+          `<option value="${idx}">${t.name}</option>`).join("");
+        if (graph.themes?.length) selectThemeEditor(0);
         document.getElementById("themes-meta").textContent =
           `Theme graph v${graph.version || 1} · ${(graph.themes || []).length} themes`;
       }
+
+      function selectThemeEditor(idx) {
+        const theme = (window._themeGraph?.themes || [])[idx];
+        if (!theme) return;
+        document.getElementById("theme-edit-select").value = String(idx);
+        document.getElementById("theme-edit-name").value = theme.name || "";
+        document.getElementById("theme-edit-macro").value = theme.macro || "";
+        document.getElementById("theme-edit-industry").value = theme.industry || "";
+        document.getElementById("theme-edit-symbols").value = (theme.symbols || []).join(", ");
+        document.getElementById("theme-edit-enabler").checked = Boolean(theme.horizontal_enabler);
+      }
+
+      document.getElementById("theme-edit-select").addEventListener("change", (e) => {
+        selectThemeEditor(Number(e.target.value));
+      });
+
+      document.getElementById("save-theme-graph").addEventListener("click", async () => {
+        const idx = Number(document.getElementById("theme-edit-select").value);
+        const graph = window._themeGraph;
+        if (!graph?.themes?.[idx]) return;
+        const theme = graph.themes[idx];
+        theme.name = document.getElementById("theme-edit-name").value.trim();
+        theme.macro = document.getElementById("theme-edit-macro").value.trim();
+        theme.industry = document.getElementById("theme-edit-industry").value.trim();
+        theme.horizontal_enabler = document.getElementById("theme-edit-enabler").checked;
+        theme.symbols = document.getElementById("theme-edit-symbols").value
+          .split(",").map((s) => s.trim().toUpperCase()).filter(Boolean);
+        const res = await fetch("/api/analysis/themes/graph", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ version: graph.version || 1, themes: graph.themes }),
+        });
+        const status = document.getElementById("theme-edit-status");
+        if (!res.ok) {
+          status.textContent = `Error: ${(await res.json()).detail || res.status}`;
+          return;
+        }
+        status.textContent = `Saved ${theme.name}`;
+        await loadThemeGraph();
+      });
+
+      async function loadRubricFields() {
+        const res = await fetch("/api/analysis/themes/rubric-guide");
+        const guide = await res.json();
+        const container = document.getElementById("rubric-fields");
+        container.innerHTML = (guide.rubric_keys || []).map((item) => `
+          <label class="block">${item.label}
+            <input type="number" min="0" max="10" step="0.5" data-rubric-key="${item.key}" placeholder="0" />
+            <span class="muted">${item.description || ""}</span>
+          </label>`).join("");
+      }
+
+      async function loadRubricOverride(symbol) {
+        if (!symbol) return;
+        document.getElementById("rubric-symbol").value = symbol;
+        const res = await fetch(`/api/analysis/themes/overrides/${encodeURIComponent(symbol)}`);
+        const data = await res.json();
+        const rubric = data.override?.rubric || {};
+        document.querySelectorAll("[data-rubric-key]").forEach((input) => {
+          input.value = rubric[input.dataset.rubricKey] ?? "";
+        });
+        document.getElementById("rubric-notes").value = data.override?.notes || "";
+        document.getElementById("rubric-status").textContent = `Loaded override for ${symbol}`;
+      }
+
+      document.getElementById("load-rubric").addEventListener("click", async () => {
+        await loadRubricOverride(document.getElementById("rubric-symbol").value.trim().toUpperCase());
+      });
+
+      document.getElementById("save-rubric").addEventListener("click", async () => {
+        const symbol = document.getElementById("rubric-symbol").value.trim().toUpperCase();
+        if (!symbol) return;
+        const rubric = {};
+        document.querySelectorAll("[data-rubric-key]").forEach((input) => {
+          const val = parseFloat(input.value);
+          if (!Number.isNaN(val) && val > 0) rubric[input.dataset.rubricKey] = val;
+        });
+        const res = await fetch(`/api/analysis/themes/overrides/${encodeURIComponent(symbol)}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            rubric,
+            notes: document.getElementById("rubric-notes").value.trim() || null,
+          }),
+        });
+        const status = document.getElementById("rubric-status");
+        if (!res.ok) {
+          status.textContent = `Error: ${res.status}`;
+          return;
+        }
+        const data = await res.json();
+        status.textContent = `Saved — theme score ${data.score?.score ?? "updated"}`;
+        await loadThemeDetail(symbol);
+        await loadWatchlist();
+      });
+
+      document.getElementById("clear-rubric").addEventListener("click", async () => {
+        const symbol = document.getElementById("rubric-symbol").value.trim().toUpperCase();
+        if (!symbol) return;
+        await fetch(`/api/analysis/themes/overrides/${encodeURIComponent(symbol)}`, { method: "DELETE" });
+        document.querySelectorAll("[data-rubric-key]").forEach((input) => { input.value = ""; });
+        document.getElementById("rubric-notes").value = "";
+        document.getElementById("rubric-status").textContent = `Cleared override for ${symbol}`;
+        await loadThemeDetail(symbol);
+      });
 
       async function loadThemeDetail(symbol) {
         if (!symbol) return;
@@ -418,6 +574,7 @@
       loadWatchlist();
       loadUniverse();
       loadThemeGraph();
+      loadRubricFields();
       loadBacktest();
       loadTuning();
       document.getElementById("load-status").click();

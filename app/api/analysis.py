@@ -37,9 +37,16 @@ from app.engines.fundamental import import_screener_csv, load_fundamentals, scor
 from app.engines.move_detector import load_moves
 from app.engines.themes import (
     build_all_theme_scores,
+    delete_theme_override,
+    list_active_stock_symbols,
+    load_rubric_guide,
     load_theme_graph,
+    load_theme_override,
     load_theme_score,
+    save_theme_graph,
+    save_theme_override,
     score_themes,
+    update_theme_symbols,
 )
 from app.engines.universe import build_active_universe, load_active_universe
 from app.schemas.analysis import (
@@ -47,6 +54,9 @@ from app.schemas.analysis import (
     BacktestTuningReport,
     DataStatus,
     MoveEvent,
+    ThemeGraphUpdate,
+    ThemeOverrideUpdate,
+    ThemeSymbolAssignment,
     UniverseResponse,
     WatchlistReport,
 )
@@ -186,6 +196,54 @@ def get_symbol_fundamentals(symbol: str) -> dict:
 @router.get("/themes/graph")
 def get_theme_graph() -> dict:
     return load_theme_graph()
+
+
+@router.put("/themes/graph")
+def put_theme_graph(payload: ThemeGraphUpdate) -> dict:
+    try:
+        return save_theme_graph(payload.model_dump())
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@router.get("/themes/rubric-guide")
+def get_rubric_guide() -> dict:
+    return load_rubric_guide()
+
+
+@router.get("/themes/symbols")
+def get_theme_symbols() -> dict:
+    return {"symbols": list_active_stock_symbols()}
+
+
+@router.get("/themes/overrides/{symbol}")
+def get_theme_override(symbol: str) -> dict:
+    override = load_theme_override(symbol.upper())
+    return {"symbol": symbol.upper(), "override": override or {"rubric": {}}}
+
+
+@router.put("/themes/overrides/{symbol}")
+def put_theme_override(symbol: str, payload: ThemeOverrideUpdate) -> dict:
+    saved = save_theme_override(symbol.upper(), payload.rubric, notes=payload.notes)
+    score_themes(symbol.upper())
+    return {"symbol": symbol.upper(), "override": saved, "score": load_theme_score(symbol.upper())}
+
+
+@router.delete("/themes/overrides/{symbol}")
+def remove_theme_override(symbol: str) -> dict:
+    deleted = delete_theme_override(symbol.upper())
+    if deleted:
+        score_themes(symbol.upper())
+    return {"symbol": symbol.upper(), "deleted": deleted}
+
+
+@router.patch("/themes/{theme_id}/symbols")
+def patch_theme_symbols(theme_id: str, payload: ThemeSymbolAssignment) -> dict:
+    try:
+        graph = update_theme_symbols(theme_id, payload.symbol, assign=payload.assign)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    return graph
 
 
 @router.get("/themes/{symbol}")

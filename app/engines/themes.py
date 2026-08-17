@@ -16,6 +16,95 @@ def load_theme_graph() -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_rubric_guide() -> dict:
+    path = CONFIG_DIR / "themes" / "rubric_guide.json"
+    if not path.exists():
+        return {"rubric_keys": []}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def save_theme_graph(graph: dict) -> dict:
+    themes = graph.get("themes")
+    if not isinstance(themes, list) or not themes:
+        raise ValueError("graph.themes must be a non-empty list")
+    for theme in themes:
+        if not theme.get("id") or not theme.get("name"):
+            raise ValueError("Each theme requires id and name")
+        symbols = theme.get("symbols", [])
+        if not isinstance(symbols, list):
+            raise ValueError(f"Theme {theme.get('id')} symbols must be a list")
+        theme["symbols"] = sorted({symbol.upper() for symbol in symbols if symbol})
+
+    graph = dict(graph)
+    graph["updated"] = datetime.now(timezone.utc).date().isoformat()
+    path = CONFIG_DIR / "themes" / "graph.json"
+    path.write_text(json.dumps(graph, indent=2) + "\n", encoding="utf-8")
+    load_theme_graph.cache_clear()
+    return graph
+
+
+def load_theme_override(symbol: str) -> dict:
+    return _load_override(symbol)
+
+
+def save_theme_override(symbol: str, rubric: dict[str, float], notes: str | None = None) -> dict:
+    symbol = symbol.upper()
+    cleaned: dict[str, float] = {}
+    for key, value in rubric.items():
+        if not isinstance(key, str) or not key.strip():
+            continue
+        if not isinstance(value, (int, float)):
+            continue
+        numeric = float(value)
+        if numeric <= 0:
+            continue
+        cleaned[key.strip()] = min(10.0, numeric)
+
+    payload: dict = {"symbol": symbol, "rubric": cleaned}
+    if notes:
+        payload["notes"] = notes.strip()
+    payload["updated_at"] = datetime.now(timezone.utc).isoformat()
+
+    path = theme_overrides_dir() / f"{symbol}.json"
+    path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    return payload
+
+
+def delete_theme_override(symbol: str) -> bool:
+    path = theme_overrides_dir() / f"{symbol}.json"
+    if not path.exists():
+        return False
+    path.unlink()
+    return True
+
+
+def update_theme_symbols(theme_id: str, symbol: str, *, assign: bool) -> dict:
+    graph = load_theme_graph()
+    symbol = symbol.upper()
+    updated_theme: dict | None = None
+    for theme in graph.get("themes", []):
+        if theme.get("id") != theme_id:
+            continue
+        symbols = set(theme.get("symbols", []))
+        if assign:
+            symbols.add(symbol)
+        else:
+            symbols.discard(symbol)
+        theme["symbols"] = sorted(symbols)
+        updated_theme = theme
+        break
+    if updated_theme is None:
+        raise ValueError(f"Unknown theme id: {theme_id}")
+    return save_theme_graph(graph)
+
+
+def list_active_stock_symbols() -> list[str]:
+    from app.engines.universe import load_active_universe
+
+    payload = load_active_universe()
+    return [item["symbol"] for item in payload.get("stocks", [])]
+
+
 def themes_for_symbol(symbol: str) -> list[dict]:
     graph = load_theme_graph()
     symbol = symbol.upper()

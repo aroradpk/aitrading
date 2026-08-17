@@ -95,3 +95,18 @@ class BacktestTuningReport(BaseModel):
     config: dict[str, Any]
     grid: list[BacktestTuningRow]
     recommended: dict[str, Any] | None = None
+
+
+class ThemeOverrideUpdate(BaseModel):
+    rubric: dict[str, float] = Field(default_factory=dict)
+    notes: str | None = None
+
+
+class ThemeGraphUpdate(BaseModel):
+    version: int = 1
+    themes: list[dict[str, Any]]
+
+
+class ThemeSymbolAssignment(BaseModel):
+    symbol: str
+    assign: bool = True

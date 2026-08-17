@@ -201,7 +201,21 @@ Template columns: see `config/samples/screener_template.csv`
 
 Theme graph: `config/themes/graph.json` maps macro themes to active-universe symbols.
 
-Manual overrides: `data/themes/overrides/{SYMBOL}.json` with a `rubric` object (e.g. `{"order_book_visibility": 5}`).
+Manual overrides: `data/themes/overrides/{SYMBOL}.json` with a `rubric` object (e.g. `{"order_book_visibility": 5}`). Rubric keys: `config/themes/rubric_guide.json`.
+
+### Phase 8 — Theme editor UI
+
+Dashboard **Themes** tab includes:
+
+- **Theme graph editor** — edit theme name, macro, symbol list; saves to `config/themes/graph.json`
+- **Rubric override editor** — per-symbol manual scores → `data/themes/overrides/{SYMBOL}.json`
+
+| Endpoint | Description |
+| --- | --- |
+| `PUT /api/analysis/themes/graph` | Save theme graph |
+| `GET /api/analysis/themes/rubric-guide` | Rubric field definitions |
+| `GET/PUT/DELETE /api/analysis/themes/overrides/{symbol}` | Read/write/clear overrides |
+| `PATCH /api/analysis/themes/{theme_id}/symbols` | Assign/remove symbol on a theme |
 
 ### Theme API
 
