@@ -34,12 +34,24 @@ SKIP_TITLE_KEYWORDS = (
 )
 
 
+SKIP_URL_KEYWORDS = (
+    "investorpresentation",
+    "investor_presentation",
+    "audiolink",
+    "earningscallinvite",
+    "invite",
+    "corporate_presentation",
+)
+
+
 def is_transcript_attachment(item: dict) -> bool:
     title = (item.get("title") or "").lower()
     url = (item.get("attachment_url") or "").lower()
     if not url.endswith(".pdf"):
         return False
     if any(skip in title for skip in SKIP_TITLE_KEYWORDS):
+        return "transcript" in title or "transcript" in url
+    if any(skip in url for skip in SKIP_URL_KEYWORDS):
         return "transcript" in title or "transcript" in url
     if any(key in title or key in url for key in TRANSCRIPT_KEYWORDS):
         return True
