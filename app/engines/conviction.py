@@ -9,6 +9,7 @@ from app.engines.events import score_events
 from app.engines.fundamental import score_fundamentals
 from app.engines.themes import score_themes
 from app.engines.move_detector import load_moves, scan_setups_for_symbol
+from app.engines.technical import technical_reasons_for_side
 from app.engines.universe import all_instruments
 from app.ingest.yfinance_client import load_ohlcv
 
@@ -76,14 +77,7 @@ def build_daily_watchlist() -> dict:
                 theme=theme_score,
             )
 
-            reasons = [
-                {
-                    "layer": "technical",
-                    "text": tag.replace("_", " "),
-                    "weight": "medium",
-                }
-                for tag in setup["current_snapshot"].get("tags", [])
-            ]
+            reasons = technical_reasons_for_side(setup["current_snapshot"], setup["position_side"])
             for match in setup.get("top_matches", [])[:3]:
                 reasons.append(
                     {
