@@ -71,3 +71,20 @@ def sources_cache_dir() -> Path:
     path.mkdir(parents=True, exist_ok=True)
     return path
 
+
+def themes_dir() -> Path:
+    path = data_dir() / "themes"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def theme_scores_dir() -> Path:
+    path = themes_dir() / "scores"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def theme_overrides_dir() -> Path:
+    path = themes_dir() / "overrides"
+    path.mkdir(parents=True, exist_ok=True)
+    return path

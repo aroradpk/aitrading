@@ -18,6 +18,12 @@ from app.engines.conviction import build_daily_watchlist, load_latest_watchlist
 from app.engines.events import refresh_events_for_universe, score_events
 from app.engines.fundamental import import_screener_csv, load_fundamentals, score_fundamentals
 from app.engines.move_detector import load_moves
+from app.engines.themes import (
+    build_all_theme_scores,
+    load_theme_graph,
+    load_theme_score,
+    score_themes,
+)
 from app.engines.universe import build_active_universe, load_active_universe
 from app.schemas.analysis import DataStatus, MoveEvent, UniverseResponse, WatchlistReport
 
@@ -105,6 +111,30 @@ def get_symbol_fundamentals(symbol: str) -> dict:
         raise HTTPException(status_code=404, detail=f"No fundamentals for {symbol}")
     score, reasons = score_fundamentals(symbol.upper())
     return {"symbol": symbol.upper(), "data": payload, "score": score, "reasons": reasons}
+
+
+@router.get("/themes/graph")
+def get_theme_graph() -> dict:
+    return load_theme_graph()
+
+
+@router.get("/themes/{symbol}")
+def get_symbol_themes(symbol: str) -> dict:
+    symbol = symbol.upper()
+    cached = load_theme_score(symbol)
+    if cached is not None:
+        return cached
+    score_themes(symbol)
+    payload = load_theme_score(symbol)
+    if payload is None:
+        raise HTTPException(status_code=404, detail=f"No theme data for {symbol}")
+    return payload
+
+
+@router.post("/themes/build")
+def build_themes() -> dict:
+    scores = build_all_theme_scores()
+    return {"count": len(scores), "scores": scores}
 
 
 @router.post("/fundamentals/import")

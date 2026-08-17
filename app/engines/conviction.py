@@ -7,6 +7,7 @@ from app.core.paths import reports_dir
 from app.core.paths import ohlcv_daily_dir
 from app.engines.events import score_events
 from app.engines.fundamental import score_fundamentals
+from app.engines.themes import score_themes
 from app.engines.move_detector import load_moves, scan_today_setup
 from app.engines.universe import all_instruments
 from app.ingest.yfinance_client import load_ohlcv
@@ -58,14 +59,17 @@ def build_daily_watchlist() -> dict:
 
         fundamental_score, fundamental_reasons = (0.0, [])
         event_score, event_reasons = (0.0, [])
+        theme_score, theme_reasons = (0.0, [])
         if instrument_type == "stock":
             fundamental_score, fundamental_reasons = score_fundamentals(symbol)
             event_score, event_reasons = score_events(symbol)
+            theme_score, theme_reasons, _ = score_themes(symbol)
 
         scores = conviction_from_scores(
             technical=setup["technical_score"],
             fundamental=fundamental_score,
             events=event_score,
+            theme=theme_score,
         )
 
         reasons = [
@@ -91,6 +95,7 @@ def build_daily_watchlist() -> dict:
             )
         reasons.extend(fundamental_reasons)
         reasons.extend(event_reasons)
+        reasons.extend(theme_reasons)
 
         horizon = "1d" if instrument_type == "index" else "1d/1w"
         target = 2.0 if instrument_type == "index" else 5.0

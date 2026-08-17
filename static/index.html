@@ -50,6 +50,7 @@
       <button class="active" data-tab="watchlist">Watchlist</button>
       <button data-tab="moves">Move Library</button>
       <button data-tab="universe">Universe</button>
+      <button data-tab="themes">Themes</button>
       <button data-tab="status">Data Status</button>
     </div>
 
@@ -67,6 +68,7 @@
               <th>Tech</th>
               <th>Fund</th>
               <th>Events</th>
+              <th>Theme</th>
               <th>Matches</th>
               <th>Top reason</th>
             </tr>
@@ -113,6 +115,28 @@
       </div>
     </section>
 
+    <section id="themes">
+      <div class="card">
+        <button class="action" id="build-themes">Build theme scores</button>
+        <label>Symbol <input id="theme-symbol" placeholder="e.g. HAL" /></label>
+        <button class="action" id="load-theme">Load theme detail</button>
+        <p class="muted" id="themes-meta"></p>
+      </div>
+      <div class="card">
+        <h2>Macro theme graph</h2>
+        <table>
+          <thead>
+            <tr><th>Theme</th><th>Macro</th><th>Symbols</th></tr>
+          </thead>
+          <tbody id="themes-graph-body"></tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h2>Symbol theme detail</h2>
+        <pre id="theme-detail">Select a symbol or click a watchlist row with Themes tab open.</pre>
+      </div>
+    </section>
+
     <section id="status">
       <div class="card">
         <button class="action" id="load-status">Refresh status</button>
@@ -153,6 +177,7 @@
             <td>${e.scores.technical}</td>
             <td>${e.scores.fundamental}</td>
             <td>${e.scores.events}</td>
+            <td>${e.scores.theme}</td>
             <td>${e.match_count}</td>
             <td>${(e.reasons[0] || {}).text || "-"}</td>
           </tr>`).join("");
@@ -162,6 +187,43 @@
         }));
         window._watchlist = data.entries;
       }
+
+      async function loadThemeGraph() {
+        const res = await fetch("/api/analysis/themes/graph");
+        const graph = await res.json();
+        document.getElementById("themes-graph-body").innerHTML = (graph.themes || []).map((t) => `
+          <tr>
+            <td>${t.name}</td>
+            <td>${t.macro}</td>
+            <td>${(t.symbols || []).join(", ")}</td>
+          </tr>`).join("");
+        document.getElementById("themes-meta").textContent =
+          `Theme graph v${graph.version || 1} · ${(graph.themes || []).length} themes`;
+      }
+
+      async function loadThemeDetail(symbol) {
+        if (!symbol) return;
+        const res = await fetch(`/api/analysis/themes/${encodeURIComponent(symbol)}`);
+        if (!res.ok) {
+          document.getElementById("theme-detail").textContent = `No theme data for ${symbol}`;
+          return;
+        }
+        document.getElementById("theme-detail").textContent = JSON.stringify(await res.json(), null, 2);
+        document.getElementById("theme-symbol").value = symbol;
+      }
+
+      document.getElementById("build-themes").addEventListener("click", async () => {
+        const res = await fetch("/api/analysis/themes/build", { method: "POST" });
+        const data = await res.json();
+        document.getElementById("themes-meta").textContent =
+          `Built scores for ${data.count} symbols`;
+        await loadWatchlist();
+      });
+
+      document.getElementById("load-theme").addEventListener("click", async () => {
+        const symbol = document.getElementById("theme-symbol").value.trim();
+        await loadThemeDetail(symbol);
+      });
 
       document.getElementById("refresh-watchlist").addEventListener("click", async () => {
         await fetch("/api/analysis/watchlist/build", { method: "POST" });
@@ -224,6 +286,7 @@
 
       loadWatchlist();
       loadUniverse();
+      loadThemeGraph();
       document.getElementById("load-status").click();
     </script>
   </body>

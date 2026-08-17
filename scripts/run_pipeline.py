@@ -22,6 +22,7 @@ def main() -> None:
     run("fetch_events.py")
     run("import_fundamentals.py")
     run("scan_historical_moves.py")
+    run("build_theme_scores.py")
     run("build_watchlist.py")
     print("\nPipeline complete. Open data/ in VS Code or visit http://localhost:8000")
 

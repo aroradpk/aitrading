@@ -51,6 +51,7 @@ The FastAPI app reads from the same `data/` folder — VS Code and the UI always
 | `scripts/fetch_ohlcv.py` | Download price history → `data/ohlcv/daily/` |
 | `scripts/scan_historical_moves.py` | Find big moves + snapshots → `data/moves/` |
 | `scripts/build_watchlist.py` | Today's conviction list → `data/reports/daily/` |
+| `scripts/build_theme_scores.py` | Theme exposure scores → `data/themes/scores/` |
 | `scripts/run_pipeline.py` | Runs all of the above |
 
 ## API endpoints
@@ -62,6 +63,9 @@ The FastAPI app reads from the same `data/` folder — VS Code and the UI always
 | `GET /api/analysis/moves` | Historical big moves |
 | `GET /api/analysis/watchlist/latest` | Latest conviction report |
 | `POST /api/analysis/watchlist/build` | Rebuild watchlist |
+| `GET /api/analysis/themes/graph` | Macro theme graph |
+| `GET /api/analysis/themes/{symbol}` | Per-symbol theme score |
+| `POST /api/analysis/themes/build` | Rebuild theme scores |
 
 ## Data sources
 
@@ -82,7 +86,7 @@ Nifty Next 50 full list: `config/nifty_next_50.json` (update quarterly after ind
 | `scripts/fetch_events.py` | NSE corporate announcements + PIB RSS cache |
 | `scripts/import_fundamentals.py` | Import Screener CSV from `data/fundamentals/import/` |
 
-Conviction now blends **technical (50%) + fundamental (25%) + events (15%)**.
+Conviction now blends **technical (50%) + fundamental (25%) + events (15%) + theme (10%)**.
 
 ### Screener CSV import
 
@@ -92,6 +96,24 @@ Conviction now blends **technical (50%) + fundamental (25%) + events (15%)**.
 4. Or upload via dashboard **Data Status** tab
 
 Template columns: see `config/samples/screener_template.csv`
+
+## Phase 3 — Themes
+
+| Script | Purpose |
+| --- | --- |
+| `scripts/build_theme_scores.py` | Score macro theme exposure → `data/themes/scores/` |
+
+Theme graph: `config/themes/graph.json` maps macro themes to active-universe symbols.
+
+Manual overrides: `data/themes/overrides/{SYMBOL}.json` with a `rubric` object (e.g. `{"order_book_visibility": 5}`).
+
+### Theme API
+
+| Endpoint | Description |
+| --- | --- |
+| `GET /api/analysis/themes/graph` | Macro theme graph |
+| `GET /api/analysis/themes/{symbol}` | Theme score, scenarios, reasons |
+| `POST /api/analysis/themes/build` | Rebuild all theme scores |
 
 ## Tests
 
