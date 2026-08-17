@@ -60,6 +60,12 @@ def events_pib_dir() -> Path:
     return path
 
 
+def events_transcripts_dir() -> Path:
+    path = data_dir() / "events" / "transcripts"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
 def fundamentals_dir() -> Path:
     path = data_dir() / "fundamentals"
     path.mkdir(parents=True, exist_ok=True)

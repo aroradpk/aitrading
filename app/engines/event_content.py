@@ -76,9 +76,12 @@ def is_interactive_event(event_type: str, title: str) -> bool:
     return any(word in lowered for word in keywords)
 
 
-def analyze_event_content(item: dict) -> dict:
+def analyze_event_content(item: dict, body_text: str | None = None) -> dict:
     title = item.get("title", "")
-    text = _normalize(title)
+    parts = [title]
+    if body_text:
+        parts.append(body_text)
+    text = _normalize(" ".join(parts))
     event_type = item.get("type", "announcement")
 
     themes = [name for name, keys in THEME_KEYWORDS.items() if any(k in text for k in keys)]
@@ -97,6 +100,18 @@ def analyze_event_content(item: dict) -> dict:
     analyzed = interactive or bool(pos_hits or neg_hits or themes)
 
     if interactive and alignment == "neutral" and not themes:
+        if body_text:
+            return {
+                "analyzed": True,
+                "alignment": "neutral",
+                "sentiment_score": 0,
+                "themes": themes,
+                "positive_hits": pos_hits,
+                "negative_hits": neg_hits,
+                "summary": "Transcript reviewed — no strong positive/negative phrase matches",
+                "requires_transcript": False,
+                "transcript_analyzed": True,
+            }
         return {
             "analyzed": False,
             "alignment": "unknown",
@@ -124,7 +139,8 @@ def analyze_event_content(item: dict) -> dict:
         "positive_hits": pos_hits,
         "negative_hits": neg_hits,
         "summary": "; ".join(summary_parts) if summary_parts else title[:160],
-        "requires_transcript": interactive and alignment == "neutral",
+        "requires_transcript": interactive and alignment == "neutral" and not body_text,
+        "transcript_analyzed": bool(body_text),
     }
 
 

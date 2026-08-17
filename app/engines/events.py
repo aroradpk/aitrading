@@ -4,6 +4,7 @@ from datetime import date, datetime, timedelta, timezone
 
 from app.core.config import get_settings
 from app.engines.event_content import analyze_event_content, score_analyzed_event
+from app.engines.event_transcripts import body_text_for_event
 from app.engines.universe import all_instruments
 from app.ingest.nse_client import fetch_nse_announcements, load_nse_announcements
 from app.ingest.pib_client import fetch_pib_feed, load_pib_feed, match_pib_for_symbol
@@ -31,7 +32,8 @@ def score_events(symbol: str, as_of: date | None = None) -> tuple[float, list[di
         if event_date is None or event_date < lookback_start:
             continue
 
-        analysis = analyze_event_content(item)
+        transcript_text = body_text_for_event(symbol, item)
+        analysis = analyze_event_content(item, body_text=transcript_text)
         points = score_analyzed_event(item, analysis)
 
         if analysis.get("requires_transcript"):
@@ -121,7 +123,8 @@ def enrich_moves_with_events(symbol: str, moves: list[dict]) -> list[dict]:
         move["aligned_events"] = aligned
         move["event_reasons"] = []
         for item in aligned[:5]:
-            analysis = analyze_event_content(item)
+            transcript_text = body_text_for_event(symbol, item)
+            analysis = analyze_event_content(item, body_text=transcript_text)
             move["event_reasons"].append(
                 {
                     "type": item.get("type"),
