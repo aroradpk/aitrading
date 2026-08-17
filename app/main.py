@@ -4,12 +4,14 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
+from app.api.analysis import router as analysis_router
 from app.models import AnalysisRequest, AnalysisResponse, Trade, TradeRequest
 from app.trading import analyze_symbol, create_trade, list_positions, list_trades
 
 STATIC_DIR = Path(__file__).resolve().parent.parent / "static"
 
-app = FastAPI(title="AI Trading", version="0.1.0")
+app = FastAPI(title="AI Trading", version="0.2.0")
+app.include_router(analysis_router)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 

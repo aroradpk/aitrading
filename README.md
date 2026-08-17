@@ -1,16 +1,79 @@
 # aitrading
 
-Local AI trading sandbox with a FastAPI backend and a simple dashboard for analysis and paper trades.
+Personal stock analysis workstation focused on **technical pattern memory** with optional fundamental/event overlays later.
 
-## Development
+## What it does (Phase 0–1)
+
+- Selects **top 20 rising Nifty Next 50 stocks** (positive 1-year trend) plus indices
+- Downloads **daily OHLCV** into `data/ohlcv/daily/` (free via Yahoo Finance / NSE `.NS` symbols)
+- Detects historical moves: **≥5% (1D)** / **≥10% (1W)** for stocks, **≥2% (1D)** for indices
+- Saves **technical snapshots** before each move (RSI, SMA, candlestick tags, S/R, weekly context)
+- Builds a **daily conviction watchlist** by matching today's chart to past big-move setups
+
+## Quick start
 
 ```bash
 ./scripts/cloud-agent-install.sh
 source .venv/bin/activate
+pip install -r requirements.txt   # if not already installed
+python scripts/run_pipeline.py      # builds data/ folder (~2-5 min first run)
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-Open `http://localhost:8000` for the dashboard.
+Open **http://localhost:8000** for the dashboard.
+
+## Connect to the local `data/` folder in VS Code
+
+1. **File → Open Folder…** and select your cloned repo (e.g. `~/projects/aitrading`).
+2. Run `python scripts/run_pipeline.py` once.
+3. In the Explorer sidebar you'll see:
+
+```
+aitrading/
+  data/                  ← all analysis output (gitignored)
+    universe/active.json
+    ohlcv/daily/*.parquet
+    moves/{SYMBOL}/
+    technical/snapshots/
+    reports/daily/
+```
+
+4. Click any `.json` file to inspect moves, snapshots, or watchlist reports.
+5. Optional: install the **Parquet Viewer** or **Rainbow CSV** extension for `.parquet` files.
+
+The FastAPI app reads from the same `data/` folder — VS Code and the UI always show the same files.
+
+## Pipeline scripts
+
+| Script | Purpose |
+| --- | --- |
+| `scripts/build_universe.py` | Top 20 rising Nifty Next 50 + indices → `data/universe/active.json` |
+| `scripts/fetch_ohlcv.py` | Download price history → `data/ohlcv/daily/` |
+| `scripts/scan_historical_moves.py` | Find big moves + snapshots → `data/moves/` |
+| `scripts/build_watchlist.py` | Today's conviction list → `data/reports/daily/` |
+| `scripts/run_pipeline.py` | Runs all of the above |
+
+## API endpoints
+
+| Endpoint | Description |
+| --- | --- |
+| `GET /api/analysis/status` | Data folder health |
+| `GET /api/analysis/universe` | Active stock/index universe |
+| `GET /api/analysis/moves` | Historical big moves |
+| `GET /api/analysis/watchlist/latest` | Latest conviction report |
+| `POST /api/analysis/watchlist/build` | Rebuild watchlist |
+
+## Data sources
+
+- **Primary:** Yahoo Finance (`yfinance`) for EOD OHLCV — good for personal research, not official NSE feed.
+- **TradingView:** No free API; use it to visually verify symbols, or export CSV and we can add an import path later.
+- **Fundamentals / PIB / board meetings:** Phase 2 (not automated yet).
+
+## Configuration
+
+Edit `config/settings.yaml` for thresholds, universe size, and conviction weights.
+
+Nifty Next 50 full list: `config/nifty_next_50.json` (update quarterly after index reconstitution).
 
 ## Tests
 
@@ -18,3 +81,7 @@ Open `http://localhost:8000` for the dashboard.
 source .venv/bin/activate
 pytest
 ```
+
+## Disclaimer
+
+Personal research tool only. Not investment advice.

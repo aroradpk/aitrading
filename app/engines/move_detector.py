@@ -1,0 +1,143 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+import pandas as pd
+
+from app.core.config import get_settings
+from app.core.paths import moves_dir, technical_snapshots_dir
+from app.engines.technical import build_snapshot, snapshot_similarity
+from app.ingest.yfinance_client import load_ohlcv
+
+
+def _pct_change(series: pd.Series, periods: int) -> pd.Series:
+    return series.pct_change(periods=periods) * 100
+
+
+def detect_moves(frame: pd.DataFrame, *, instrument_type: str) -> list[dict]:
+    settings = get_settings()
+    thresholds = settings.thresholds
+    one_day = _pct_change(frame["close"], 1)
+    one_week = _pct_change(frame["close"], 5)
+    volume_ratio = frame["volume"] / frame["volume"].rolling(20).mean()
+
+    moves: list[dict] = []
+    symbol = str(frame["symbol"].iloc[-1])
+
+    for idx in frame.index[30:]:
+        move_1d = one_day.loc[idx]
+        move_1w = one_week.loc[idx]
+        if pd.isna(move_1d):
+            continue
+
+        if instrument_type == "index":
+            triggered = abs(move_1d) >= thresholds.index_1d_pct
+            trigger_type = "index_1d"
+            threshold = thresholds.index_1d_pct
+        else:
+            triggered = abs(move_1d) >= thresholds.stock_1d_pct or (
+                not pd.isna(move_1w) and abs(move_1w) >= thresholds.stock_1w_pct
+            )
+            trigger_type = "stock_1d" if abs(move_1d) >= thresholds.stock_1d_pct else "stock_1w"
+            threshold = (
+                thresholds.stock_1d_pct
+                if trigger_type == "stock_1d"
+                else thresholds.stock_1w_pct
+            )
+
+        if not triggered:
+            continue
+
+        direction = "up" if (move_1d if trigger_type != "stock_1w" else move_1w) > 0 else "down"
+        snapshot = build_snapshot(frame.loc[:idx])
+
+        move = {
+            "symbol": symbol,
+            "date": idx.date().isoformat(),
+            "instrument_type": instrument_type,
+            "trigger_type": trigger_type,
+            "threshold_pct": threshold,
+            "move_1d_pct": round(float(move_1d), 2),
+            "move_1w_pct": round(float(move_1w), 2) if not pd.isna(move_1w) else None,
+            "direction": direction,
+            "close": round(float(frame.loc[idx, "close"]), 2),
+            "volume_ratio_vs_20d": round(float(volume_ratio.loc[idx]), 2)
+            if not pd.isna(volume_ratio.loc[idx])
+            else None,
+            "technical_snapshot": snapshot,
+        }
+        moves.append(move)
+
+    return moves
+
+
+def save_moves(symbol: str, moves: list[dict]) -> Path:
+    symbol_dir = moves_dir() / symbol
+    symbol_dir.mkdir(parents=True, exist_ok=True)
+    for move in moves:
+        path = symbol_dir / f"{move['date']}.json"
+        path.write_text(json.dumps(move, indent=2), encoding="utf-8")
+        snapshot_path = technical_snapshots_dir() / symbol / f"{move['date']}.json"
+        snapshot_path.parent.mkdir(parents=True, exist_ok=True)
+        snapshot_path.write_text(json.dumps(move["technical_snapshot"], indent=2), encoding="utf-8")
+    summary_path = symbol_dir / "_summary.json"
+    summary_path.write_text(
+        json.dumps({"symbol": symbol, "count": len(moves), "moves": moves}, indent=2),
+        encoding="utf-8",
+    )
+    return symbol_dir
+
+
+def load_moves(symbol: str | None = None) -> list[dict]:
+    root = moves_dir()
+    if symbol:
+        summary = root / symbol / "_summary.json"
+        if summary.exists():
+            return json.loads(summary.read_text(encoding="utf-8")).get("moves", [])
+        return []
+
+    all_moves: list[dict] = []
+    for summary in root.glob("*/_summary.json"):
+        all_moves.extend(json.loads(summary.read_text(encoding="utf-8")).get("moves", []))
+    all_moves.sort(key=lambda item: item["date"], reverse=True)
+    return all_moves
+
+
+def scan_today_setup(frame: pd.DataFrame, historical_moves: list[dict]) -> dict:
+    current = build_snapshot(frame)
+    comparisons: list[dict] = []
+    for move in historical_moves:
+        if move.get("direction") != "up":
+            continue
+        score = snapshot_similarity(current, move.get("technical_snapshot", {}))
+        if score <= 0:
+            continue
+        comparisons.append(
+            {
+                "date": move["date"],
+                "move_1d_pct": move.get("move_1d_pct"),
+                "move_1w_pct": move.get("move_1w_pct"),
+                "similarity": round(score, 3),
+                "tags": move.get("technical_snapshot", {}).get("tags", []),
+            }
+        )
+
+    comparisons.sort(key=lambda item: item["similarity"], reverse=True)
+    settings = get_settings()
+    min_score = settings.technical.pattern_match_min_score
+    strong = [item for item in comparisons if item["similarity"] >= min_score]
+
+    technical_score = 0.0
+    if strong:
+        technical_score = min(10.0, 4.0 + (strong[0]["similarity"] * 6.0))
+    technical_score += min(3.0, len(current.get("tags", [])) * 0.75)
+    technical_score = round(min(10.0, technical_score), 1)
+
+    return {
+        "as_of": frame.index[-1].date().isoformat(),
+        "current_snapshot": current,
+        "top_matches": comparisons[:5],
+        "match_count": len(strong),
+        "technical_score": technical_score,
+    }

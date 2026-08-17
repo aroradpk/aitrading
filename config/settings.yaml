@@ -1,0 +1,47 @@
+data_dir: data
+
+thresholds:
+  stock_1d_pct: 5.0
+  stock_1w_pct: 10.0
+  index_1d_pct: 2.0
+
+universe:
+  nifty_next_50_config: config/nifty_next_50.json
+  active_count: 20
+  yearly_trend_min_return_pct: 0.0
+
+indices:
+  - symbol: NIFTY_50
+    yahoo: ^NSEI
+    type: index
+  - symbol: NIFTY_NEXT_50
+    yahoo: SETFNN50.NS
+    type: index
+  - symbol: NIFTY_BANK
+    yahoo: ^NSEBANK
+    type: index
+
+ohlcv:
+  history_years: 5
+  interval: 1d
+
+conviction_weights:
+  technical: 0.50
+  fundamental: 0.25
+  events: 0.15
+  theme: 0.10
+
+technical:
+  timeframes:
+    daily: 1d
+    weekly: 1wk
+  pattern_match_min_score: 0.45
+  rsi_oversold: 35
+  rsi_overbought: 65
+
+trusted_source_domains:
+  - nseindia.com
+  - bseindia.com
+  - pib.gov.in
+  - rbi.org.in
+  - sebi.gov.in
