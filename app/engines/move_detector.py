@@ -7,10 +7,13 @@ import pandas as pd
 
 from app.core.config import get_settings
 from app.core.paths import moves_dir, technical_snapshots_dir
-from app.engines.chart_patterns import load_formation_catalog
 from app.engines.pattern_confirmations import detect_daily_confirmations
 from app.engines.mtf_analysis import analyze_intraday_confirmations
-from app.engines.pattern_scoring import score_technical_confirmations
+from app.engines.pattern_scoring import (
+    elliott_alignment,
+    formation_alignment,
+    score_technical_confirmations,
+)
 from app.engines.technical import (
     LONG_HEADWIND_TAGS,
     LONG_TAILWIND_TAGS,
@@ -19,40 +22,15 @@ from app.engines.technical import (
     build_snapshot,
     exhaustion_fade_side,
     position_bias,
-    snapshot_similarity,
 )
 
 
 def _formation_alignment(formations: list[dict], side: str) -> str:
-    bias = load_formation_catalog().get("formation_bias", {})
-    ids = {formation.get("id") for formation in formations}
-    bullish = set(bias.get("bullish", []))
-    bearish = set(bias.get("bearish", []))
-    if side == "long":
-        if ids & bearish:
-            return "conflict"
-        if ids & bullish:
-            return "support"
-    elif side == "short":
-        if ids & bullish:
-            return "conflict"
-        if ids & bearish:
-            return "support"
-    return "neutral"
+    return formation_alignment(formations, side)
 
 
 def _elliott_alignment(tags: set[str], side: str) -> str:
-    if side == "long":
-        if "elliott_impulse_down" in tags and "elliott_impulse_up" not in tags:
-            return "conflict"
-        if "elliott_impulse_up" in tags or "elliott_abc_corrective_down" in tags:
-            return "support"
-    elif side == "short":
-        if "elliott_impulse_up" in tags and "elliott_impulse_down" not in tags:
-            return "conflict"
-        if "elliott_impulse_down" in tags or "elliott_abc_corrective_up" in tags:
-            return "support"
-    return "neutral"
+    return elliott_alignment(tags, side)
 
 
 def _side_context_adjustment(snapshot: dict, side: str) -> float:
@@ -230,30 +208,22 @@ def scan_today_setup(
     comparisons = scored["top_matches"]
     strong_count = scored["match_count"]
 
-    tag_set = set(current.get("tags", []))
-    formation_state = _formation_alignment(current.get("formations", []), side)
-    elliott_state = _elliott_alignment(tag_set, side)
+    formation_state = scored.get("formation_alignment") or _formation_alignment(
+        current.get("formations", []), side
+    )
+    elliott_state = scored.get("elliott_alignment") or _elliott_alignment(
+        set(current.get("tags", [])), side
+    )
     families = scored.get("pattern_families") or []
-    energy = bool(scored.get("precision_energy"))
-    if families and energy:
-        technical_score = 7.0
-    elif formation_state == "conflict" or elliott_state == "conflict":
-        technical_score = round(min(technical_score, 3.0), 1)
-    elif formation_state == "support" or elliott_state == "support":
-        technical_score = round(min(7.0, technical_score + 0.5), 1)
 
     bias = position_bias(current, focus=side)
-    if settings.technical.require_trend_for_setup and not (families and energy):
-        if side == "long" and bias != "long" and not scored.get("breakout_base"):
+    if settings.technical.require_trend_for_setup and technical_score < 7.0 and not scored.get("breakout_base"):
+        if side == "long" and bias != "long":
             technical_score = round(min(technical_score, 3.0), 1)
         elif side == "short" and bias != "short":
             technical_score = round(min(technical_score, 3.0), 1)
 
-    if families and energy:
-        technical_score = 7.0
-    elif not energy:
-        technical_score = round(min(technical_score, 4.0), 1)
-    else:
+    if scored.get("precision_energy") and not scored.get("breakout_base"):
         technical_score = _apply_side_context_caps(technical_score, current, side)
 
     intraday_threshold = settings.technical.intraday.stock_target_1d_pct
@@ -285,6 +255,7 @@ def scan_today_setup(
         "intraday": intraday,
         "formation_alignment": formation_state,
         "elliott_alignment": elliott_state,
+        "score_layers": scored.get("score_layers", {}),
     }
 
 

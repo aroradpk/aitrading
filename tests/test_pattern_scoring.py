@@ -31,7 +31,7 @@ def test_motherson_aug6_breakout_base_scores_seven() -> None:
     assert scores["final"] >= 7.0
 
 
-def test_two_piece_family_scores_seven() -> None:
+def test_two_piece_family_with_energy_is_not_seven() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
@@ -43,8 +43,73 @@ def test_two_piece_family_scores_seven() -> None:
         },
         side="long",
     )
-    assert scored["technical_score"] == 7.0
+    assert scored["technical_score"] < 7.0
     assert "ema_pullback" in scored["pattern_families"]
+    assert scored["score_layers"]["ema_structure"] == 1.5
+    assert scored["score_layers"]["energy"] == 1.0
+
+
+def test_weighted_layers_reach_seven() -> None:
+    from app.engines.pattern_scoring import score_technical_confirmations
+
+    scored = score_technical_confirmations(
+        {
+            "ema20_support": True,
+            "uptrend": True,
+            "sr_level": True,
+            "fib_level": True,
+            "sr_fib_confluence": True,
+            "elliott_aligned": True,
+            "bullish_formation": True,
+            "vol_expansion": True,
+            "range_expansion": True,
+        },
+        side="long",
+        snapshot={
+            "tags": ["elliott_impulse_up", "fib_0.618_retrace", "near_support", "candle_hammer"],
+            "formations": [{"id": "falling_wedge"}],
+        },
+    )
+    assert scored["technical_score"] == 7.0
+    assert scored["score_layers"]["sr_fib"] == 1.5
+    assert scored["score_layers"]["elliott"] == 1.5
+    assert scored["score_layers"]["formation"] == 1.5
+    assert scored["score_layers"]["candle"] == 0.5
+    assert any("S/R with Fibonacci" in label for label in scored["confirmation_labels"])
+    assert any("Elliott wave" in label for label in scored["confirmation_labels"])
+
+
+def test_elliott_conflict_zeros_layer_not_whole_score() -> None:
+    from app.engines.pattern_scoring import score_technical_confirmations
+
+    scored = score_technical_confirmations(
+        {
+            "ema20_support": True,
+            "uptrend": True,
+            "sr_level": True,
+            "bullish_formation": True,
+            "elliott_conflict": True,
+            "vol_expansion": True,
+            "range_expansion": True,
+        },
+        side="long",
+        snapshot={"tags": ["elliott_impulse_down"], "formations": [{"id": "falling_wedge"}]},
+    )
+    assert scored["score_layers"]["elliott"] == 0.0
+    assert scored["technical_score"] >= 4.0
+    assert scored["technical_score"] < 7.0
+
+
+def test_candle_cherry_requires_context() -> None:
+    from app.engines.pattern_scoring import score_technical_confirmations
+
+    scored = score_technical_confirmations(
+        {"vol_expansion": True, "range_expansion": True},
+        side="long",
+        snapshot={"tags": ["candle_morning_star"], "formations": []},
+    )
+    assert scored["score_layers"]["candle"] == 0.0
+    assert scored["technical_score"] < 7.0
 
 
 def test_family_without_energy_is_not_high_conviction() -> None:

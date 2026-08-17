@@ -27,7 +27,7 @@ def _ema(series: pd.Series, period: int) -> float | None:
     return round(float(series.ewm(span=period, adjust=False).mean().iloc[-1]), 2)
 
 
-def _raw_candle_tags(row: pd.Series, prev: pd.Series | None) -> list[str]:
+def _raw_candle_tags(row: pd.Series, prev: pd.Series | None, prev2: pd.Series | None = None) -> list[str]:
     tags: list[str] = []
     body = abs(row["close"] - row["open"])
     upper_wick = row["high"] - max(row["close"], row["open"])
@@ -38,6 +38,9 @@ def _raw_candle_tags(row: pd.Series, prev: pd.Series | None) -> list[str]:
 
     if lower_wick >= body * 2 and upper_wick <= body * 0.5:
         tags.append("hammer")
+    if upper_wick >= body * 2 and lower_wick <= body * 0.5:
+        tags.append("inverted_hammer")
+        tags.append("shooting_star")
     if body >= total_range * 0.6:
         tags.append("marubozu")
     if prev is not None:
@@ -46,6 +49,16 @@ def _raw_candle_tags(row: pd.Series, prev: pd.Series | None) -> list[str]:
             tags.append("bullish_engulfing")
         if prev_body > 0 > (row["close"] - row["open"]) and row["close"] < prev["open"] and row["open"] > prev["close"]:
             tags.append("bearish_engulfing")
+        if prev2 is not None:
+            prev2_bear = prev2["close"] < prev2["open"]
+            prev_small = abs(prev["close"] - prev["open"]) <= abs(prev2["close"] - prev2["open"]) * 0.5
+            row_bull = row["close"] > row["open"]
+            if prev2_bear and prev_small and row_bull and row["close"] >= (prev2["open"] + prev2["close"]) / 2:
+                tags.append("morning_star")
+            prev2_bull = prev2["close"] > prev2["open"]
+            row_bear = row["close"] < row["open"]
+            if prev2_bull and prev_small and row_bear and row["close"] <= (prev2["open"] + prev2["close"]) / 2:
+                tags.append("evening_star")
     return tags
 
 
@@ -216,9 +229,18 @@ def technical_reasons_for_side(snapshot: dict, side: str) -> list[dict]:
             seen.add(tag)
 
     for tag in sorted(tags):
-        if tag in seen or tag.startswith(("formation_", "candle_", "elliott_", "fib_")):
+        if tag in seen:
+            continue
+        if tag.startswith(("elliott_", "fib_", "formation_")):
+            add(tag, weight="high")
+            seen.add(tag)
+            continue
+        if tag.startswith("candle_"):
+            add(tag, weight="medium")
+            seen.add(tag)
             continue
         add(tag, weight="low", headwind=tag in (LONG_HEADWIND_TAGS if side == "long" else SHORT_HEADWIND_TAGS))
+        seen.add(tag)
 
     return reasons
 
@@ -260,7 +282,7 @@ def position_bias(snapshot: dict, *, focus: str = "long") -> str:
 def _confirm_candles(raw_candles: list[str], context_tags: list[str], formations: list[dict]) -> list[str]:
     """Candlesticks only count when combined with formation, S/R, or Fib context."""
     has_context = bool(formations) or any(
-        tag.startswith(("near_", "fib_")) or tag.startswith("elliott_") for tag in context_tags
+        tag.startswith(("near_", "fib_", "elliott_", "ema20_support", "formation_")) for tag in context_tags
     )
     if not has_context:
         return []
@@ -279,6 +301,7 @@ def build_snapshot(frame: pd.DataFrame, *, focus: str | None = None) -> dict:
 
     last = daily.iloc[-1]
     prev = daily.iloc[-2] if len(daily) > 1 else None
+    prev2 = daily.iloc[-3] if len(daily) > 2 else None
     rsi = _rsi(daily["close"])
     ema20 = _ema(daily["close"], 20)
     ema50 = _ema(daily["close"], 50)
@@ -292,7 +315,7 @@ def build_snapshot(frame: pd.DataFrame, *, focus: str | None = None) -> dict:
     ema_tags = _ema_structure_tags(daily, float(last["close"]), ema20, ema50, ema200)
 
     context_tags = sr_tags + fib_tags + elliott + ema_tags + [f"formation_{f['id']}" for f in formations]
-    raw_candles = _raw_candle_tags(last, prev)
+    raw_candles = _raw_candle_tags(last, prev, prev2)
     candle_tags = _confirm_candles(raw_candles, context_tags, formations)
 
     tags: list[str] = []

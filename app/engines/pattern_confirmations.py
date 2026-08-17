@@ -2,8 +2,15 @@ from __future__ import annotations
 
 import pandas as pd
 
-from app.engines.chart_patterns import detect_compressing_wedge, detect_formations, detect_rounding_bottom
-from app.engines.technical import _ema, _ema_structure_tags, _rsi, _trend_tags
+from app.engines.chart_patterns import detect_compressing_wedge, detect_formations, detect_rounding_bottom, fibonacci_tags
+from app.engines.elliott import elliott_tags
+from app.engines.technical import (
+    _ema,
+    _ema_structure_tags,
+    _rsi,
+    _support_resistance_tags,
+    _trend_tags,
+)
 
 
 def _body_overlap_with_range(row: pd.Series, low: float, high: float, buffer_pct: float = 0.015) -> bool:
@@ -182,8 +189,20 @@ def detect_daily_confirmations(frame: pd.DataFrame, side: str) -> dict[str, bool
     }
 
     energy = detect_energy_triggers(frame)
+    sr_tags = set(_support_resistance_tags(frame))
+    fibs = fibonacci_tags(frame)
+    ell = set(elliott_tags(frame))
+    ema20_support = detect_ema20_support(frame)
+    ema20_resistance = ema20 is not None and close < ema20 and abs(close - ema20) / ema20 <= 0.03
+    long_sr = "near_support" in sr_tags or ema20_support or "ema20_support_touch" in ema_tags
+    short_sr = "near_resistance" in sr_tags or ema20_resistance
+    long_elliott = "elliott_impulse_up" in ell or "elliott_abc_corrective_down" in ell
+    short_elliott = "elliott_impulse_down" in ell or "elliott_abc_corrective_up" in ell
+    long_elliott_conflict = "elliott_impulse_down" in ell and "elliott_impulse_up" not in ell
+    short_elliott_conflict = "elliott_impulse_up" in ell and "elliott_impulse_down" not in ell
+
     long_map = {
-        "ema20_support": detect_ema20_support(frame),
+        "ema20_support": ema20_support,
         "consolidation_anchor": detect_reference_candle_consolidation(frame),
         "tight_range": detect_tight_range(frame),
         "higher_lows": detect_higher_lows(frame),
@@ -196,10 +215,15 @@ def detect_daily_confirmations(frame: pd.DataFrame, side: str) -> dict[str, bool
         "bullish_formation": bool(formations & bullish_formations),
         "compressing_wedge": detect_compressing_wedge(frame, side="long"),
         "rounding_bottom": detect_rounding_bottom(frame),
+        "sr_level": long_sr,
+        "fib_level": bool(fibs),
+        "sr_fib_confluence": long_sr and bool(fibs),
+        "elliott_aligned": long_elliott,
+        "elliott_conflict": long_elliott_conflict,
         **energy,
     }
     short_map = {
-        "ema20_resistance": ema20 is not None and close < ema20 and abs(close - ema20) / ema20 <= 0.03,
+        "ema20_resistance": ema20_resistance,
         "close_below_ema20": ema20 is not None and close < ema20,
         "consolidation_anchor": detect_reference_candle_consolidation(frame),
         "tight_range": detect_tight_range(frame),
@@ -211,6 +235,11 @@ def detect_daily_confirmations(frame: pd.DataFrame, side: str) -> dict[str, bool
         "downtrend": bool(trend_tags & {"short_term_downtrend", "long_term_downtrend"}),
         "bearish_formation": bool(formations & bearish_formations),
         "compressing_wedge": detect_compressing_wedge(frame, side="short"),
+        "sr_level": short_sr,
+        "fib_level": bool(fibs),
+        "sr_fib_confluence": short_sr and bool(fibs),
+        "elliott_aligned": short_elliott,
+        "elliott_conflict": short_elliott_conflict,
         **energy,
     }
     return long_map if side == "long" else short_map
@@ -245,6 +274,11 @@ def confirmation_labels(confirmations: dict[str, bool]) -> list[str]:
         "strong_close": "Close in top 30% of day range",
         "mtf_15m_wedge": "15m compressing wedge",
         "mtf_1h_rounding_ema20": "1h rounding bottom at EMA20",
+        "sr_level": "Support/resistance level",
+        "fib_level": "Fibonacci retrace/extension",
+        "sr_fib_confluence": "S/R with Fibonacci confluence",
+        "elliott_aligned": "Elliott wave aligned",
+        "elliott_conflict": "Elliott wave against this side",
     }
     return [labels[key] for key, active in confirmations.items() if active and key in labels]
 
