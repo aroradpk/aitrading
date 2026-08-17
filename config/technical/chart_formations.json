@@ -71,7 +71,32 @@
   ],
   "fibonacci_levels": [0.236, 0.382, 0.5, 0.618, 0.786],
   "elliott": {
-    "impulse_min_swings": 5,
-    "corrective_label": "abc_corrective"
+    "swing_order": 2,
+    "lookback": 50,
+    "impulse_points": 6,
+    "wave2_min_retrace": 0.236,
+    "wave2_max_retrace": 0.786,
+    "wave4_overlap_tolerance_pct": 0.01,
+    "abc_min_retrace": 0.382,
+    "abc_max_retrace": 0.786,
+    "abc_min_c_to_a": 0.618,
+    "require_trend_alignment": true,
+    "min_leg_pct": 0.015
+  },
+  "formation_bias": {
+    "bullish": [
+      "falling_wedge",
+      "ascending_triangle",
+      "bull_flag",
+      "double_bottom",
+      "inverse_head_shoulders"
+    ],
+    "bearish": [
+      "rising_wedge",
+      "descending_triangle",
+      "bear_flag",
+      "double_top",
+      "head_shoulders"
+    ]
   }
 }

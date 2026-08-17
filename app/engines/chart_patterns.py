@@ -123,28 +123,3 @@ def fibonacci_tags(frame: pd.DataFrame, lookback: int = 60) -> list[str]:
                 tags.append(label)
     return tags
 
-
-def elliott_tags(frame: pd.DataFrame, lookback: int = 50) -> list[str]:
-    if len(frame) < lookback:
-        return []
-    closes = frame.tail(lookback)["close"]
-    swings = _swing_points(closes, order=2)
-    if len(swings) < 5:
-        return []
-
-    tags: list[str] = []
-    directions = []
-    for i in range(1, len(swings)):
-        directions.append(1 if swings[i][1] > swings[i - 1][1] else -1)
-
-    up_legs = sum(1 for d in directions if d > 0)
-    down_legs = sum(1 for d in directions if d < 0)
-
-    if len(swings) >= 5 and up_legs >= 3 and closes.iloc[-1] > closes.iloc[0]:
-        tags.append("elliott_impulse_up")
-    if len(swings) >= 5 and down_legs >= 3 and closes.iloc[-1] < closes.iloc[0]:
-        tags.append("elliott_impulse_down")
-    if 2 <= len(swings) <= 4 and abs(closes.iloc[-1] - closes.iloc[0]) / closes.iloc[0] < 0.05:
-        tags.append("elliott_abc_corrective")
-
-    return tags

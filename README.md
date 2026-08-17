@@ -155,7 +155,8 @@ The FastAPI app reads from the same `data/` folder — VS Code and the UI always
 
 - **Indicators allowed:** EMA(20, 50, 200) and RSI only — no SMA/MACD/etc.
 - **Trend first:** `long_term_uptrend` / `short_term_uptrend` (EMA stack) required for long conviction (`position_focus: long`). Short setups require `*_downtrend` tags when `position_focus` is `short` or `both`.
-- **Price action:** Support/resistance, Fibonacci retracements, Elliott impulse/corrective tags, chart formations (wedge, triangle, flag, H&S — see `config/technical/chart_formations.json`).
+- **Price action:** Support/resistance, Fibonacci retracements, **strict Elliott** impulse (5-wave rules) and ABC corrective tags, chart formations (wedge, triangle, flag, H&S — see `config/technical/chart_formations.json`). Elliott tags require trend alignment and valid wave ratios (wave 2 retrace, wave 3 not shortest, wave 4 non-overlap).
+- **Formation bias:** Long setups cap technical score when bearish formations conflict (and vice versa for shorts).
 - **Candlesticks** (hammer, engulfing, etc.) count **only** when paired with a formation, S/R, or Fib level.
 - Formations detected in `app/engines/chart_patterns.py`.
 
@@ -231,6 +232,23 @@ technical:
 ```
 
 Watchlist UI filters: All / Long / Short / Intraday.
+
+## Phase 10 — Elliott wave tightening
+
+Strict Elliott detection in `app/engines/elliott.py` (rules in `config/technical/chart_formations.json` → `elliott`):
+
+| Rule | Impulse up/down |
+| --- | --- |
+| Structure | 6 alternating swings (5 waves) |
+| Wave 2 | 23.6%–78.6% retrace of wave 1 |
+| Wave 3 | Not the shortest among waves 1, 3, 5 |
+| Wave 4 | Does not overlap wave 1 territory |
+| Trend | Tags only when EMA trend aligns (`require_trend_alignment`) |
+| Min leg | Each impulse leg ≥ 1.5% of price (`min_leg_pct`) |
+
+Tags: `elliott_impulse_up`, `elliott_impulse_down`, `elliott_abc_corrective_down`, `elliott_abc_corrective_up`.
+
+Setup scoring also checks **formation bias** and **Elliott alignment** with long/short side (conflict caps technical at 3.0).
 
 ### OHLCV: NSE bhavcopy fallback (deferred)
 

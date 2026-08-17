@@ -7,8 +7,40 @@ import pandas as pd
 
 from app.core.config import get_settings
 from app.core.paths import moves_dir, technical_snapshots_dir
+from app.engines.chart_patterns import load_formation_catalog
 from app.engines.technical import build_snapshot, position_bias, snapshot_similarity
-from app.ingest.yfinance_client import load_ohlcv
+
+
+def _formation_alignment(formations: list[dict], side: str) -> str:
+    bias = load_formation_catalog().get("formation_bias", {})
+    ids = {formation.get("id") for formation in formations}
+    bullish = set(bias.get("bullish", []))
+    bearish = set(bias.get("bearish", []))
+    if side == "long":
+        if ids & bearish:
+            return "conflict"
+        if ids & bullish:
+            return "support"
+    elif side == "short":
+        if ids & bullish:
+            return "conflict"
+        if ids & bearish:
+            return "support"
+    return "neutral"
+
+
+def _elliott_alignment(tags: set[str], side: str) -> str:
+    if side == "long":
+        if "elliott_impulse_down" in tags and "elliott_impulse_up" not in tags:
+            return "conflict"
+        if "elliott_impulse_up" in tags or "elliott_abc_corrective_down" in tags:
+            return "support"
+    elif side == "short":
+        if "elliott_impulse_up" in tags and "elliott_impulse_down" not in tags:
+            return "conflict"
+        if "elliott_impulse_down" in tags or "elliott_abc_corrective_up" in tags:
+            return "support"
+    return "neutral"
 
 
 def _pct_change(series: pd.Series, periods: int) -> pd.Series:
@@ -156,6 +188,14 @@ def scan_today_setup(
     technical_score += min(2.0, len(current.get("tags", [])) * 0.5)
     technical_score = round(min(10.0, technical_score), 1)
 
+    tag_set = set(current.get("tags", []))
+    formation_state = _formation_alignment(current.get("formations", []), side)
+    elliott_state = _elliott_alignment(tag_set, side)
+    if formation_state == "conflict" or elliott_state == "conflict":
+        technical_score = round(min(technical_score, 3.0), 1)
+    elif formation_state == "support" or elliott_state == "support":
+        technical_score = round(min(10.0, technical_score + 0.5), 1)
+
     bias = position_bias(current, focus=side)
     if settings.technical.require_trend_for_setup:
         if side == "long" and bias != "long":
@@ -185,6 +225,8 @@ def scan_today_setup(
         "horizon": horizon,
         "target_move_pct": target,
         "intraday": intraday,
+        "formation_alignment": formation_state,
+        "elliott_alignment": elliott_state,
     }
 
 

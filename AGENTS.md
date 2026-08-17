@@ -14,6 +14,7 @@
 - **Tests:** `pytest` (30+ tests).
 - **Backtest:** `python scripts/run_backtest.py` (~1–2 min). Tuning reuses one signal pass: `python scripts/tune_backtest.py`.
 - **Position focus:** `technical.position_focus` in settings (`long` | `short` | `both`); intraday block for tighter short proxy on daily bars.
+- **Elliott rules:** `config/technical/chart_formations.json` → `elliott` section; logic in `app/engines/elliott.py`.
 - **Charts:** `python scripts/build_charts.py` (~7 min, not committed).
 - **Transcripts:** `python scripts/fetch_transcripts.py` (download only when `offline_mode: false`).
 

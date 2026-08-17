@@ -3,7 +3,8 @@ from __future__ import annotations
 import pandas as pd
 
 from app.core.config import get_settings
-from app.engines.chart_patterns import detect_formations, elliott_tags, fibonacci_tags
+from app.engines.chart_patterns import detect_formations, fibonacci_tags
+from app.engines.elliott import elliott_tags
 
 
 def _rsi(series: pd.Series, period: int = 14) -> float | None:
