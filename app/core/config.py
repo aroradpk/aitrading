@@ -52,6 +52,16 @@ class FundamentalsConfig(BaseModel):
     min_score_metrics: int = 2
 
 
+class BacktestConfig(BaseModel):
+    conviction_min: float = 7.0
+    signal_cooldown_days: int = 5
+    forward_days_1d: int = 1
+    forward_days_1w: int = 5
+    stock_target_1d_pct: float = 5.0
+    stock_target_1w_pct: float = 10.0
+    index_target_1d_pct: float = 2.0
+
+
 class Settings(BaseModel):
     data_dir: str = "data"
     thresholds: Thresholds = Field(default_factory=Thresholds)
@@ -62,6 +72,7 @@ class Settings(BaseModel):
     technical: TechnicalConfig = Field(default_factory=TechnicalConfig)
     events: EventsConfig = Field(default_factory=EventsConfig)
     fundamentals: FundamentalsConfig = Field(default_factory=FundamentalsConfig)
+    backtest: BacktestConfig = Field(default_factory=BacktestConfig)
     trusted_source_domains: list[str] = Field(default_factory=list)
 
 

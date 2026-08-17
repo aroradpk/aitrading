@@ -132,6 +132,23 @@ Manual overrides: `data/themes/overrides/{SYMBOL}.json` with a `rubric` object (
 | `GET /api/analysis/themes/{symbol}` | Theme score, scenarios, reasons |
 | `POST /api/analysis/themes/build` | Rebuild all theme scores |
 
+## Phase 4 — Backtest
+
+Walk-forward backtest: when conviction was ≥7 historically, how often did price hit **5% (next day)** or **10% (5 sessions)**?
+
+| Script | Purpose |
+| --- | --- |
+| `scripts/run_backtest.py` | Run backtest → `data/reports/backtest/latest.json` |
+
+Configure in `config/settings.yaml` under `backtest:` (`conviction_min`, `signal_cooldown_days`, targets).
+
+| Endpoint | Description |
+| --- | --- |
+| `GET /api/analysis/backtest/latest` | Latest backtest report |
+| `POST /api/analysis/backtest/run` | Run walk-forward backtest |
+
+Technical + events are walk-forward; fundamental/theme use current imported data (static overlay).
+
 ## Tests
 
 ```bash

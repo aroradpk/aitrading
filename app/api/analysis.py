@@ -5,6 +5,7 @@ from pathlib import Path
 from fastapi import APIRouter, File, HTTPException, Query, UploadFile
 
 from app.core.paths import (
+    backtest_reports_dir,
     data_dir,
     events_nse_dir,
     fundamentals_dir,
@@ -14,6 +15,7 @@ from app.core.paths import (
     reports_dir,
     universe_dir,
 )
+from app.engines.backtest import load_latest_backtest, run_backtest
 from app.engines.conviction import build_daily_watchlist, load_latest_watchlist
 from app.engines.events import refresh_events_for_universe, score_events
 from app.engines.fundamental import import_screener_csv, load_fundamentals, score_fundamentals
@@ -25,7 +27,13 @@ from app.engines.themes import (
     score_themes,
 )
 from app.engines.universe import build_active_universe, load_active_universe
-from app.schemas.analysis import DataStatus, MoveEvent, UniverseResponse, WatchlistReport
+from app.schemas.analysis import (
+    BacktestReport,
+    DataStatus,
+    MoveEvent,
+    UniverseResponse,
+    WatchlistReport,
+)
 
 router = APIRouter(prefix="/api/analysis", tags=["analysis"])
 
@@ -35,12 +43,17 @@ def analysis_status() -> DataStatus:
     ohlcv_count = len(list(ohlcv_daily_dir().glob("*.parquet")))
     move_symbols = len([p for p in moves_dir().glob("*") if p.is_dir()])
     reports = sorted(reports_dir().glob("*.json"), reverse=True)
+    backtests = sorted(backtest_reports_dir().glob("*.json"), reverse=True)
+    latest_backtest = next((p.name for p in backtests if p.name == "latest.json"), None)
+    if latest_backtest is None and backtests:
+        latest_backtest = backtests[0].name
     return DataStatus(
         data_dir=str(data_dir()),
         universe_exists=(universe_dir() / "active.json").exists(),
         ohlcv_files=ohlcv_count,
         move_symbols=move_symbols,
         latest_report=reports[0].name if reports else None,
+        latest_backtest=latest_backtest,
     )
 
 
@@ -129,6 +142,23 @@ def get_symbol_themes(symbol: str) -> dict:
     if payload is None:
         raise HTTPException(status_code=404, detail=f"No theme data for {symbol}")
     return payload
+
+
+@router.post("/backtest/run", response_model=BacktestReport)
+def build_backtest() -> BacktestReport:
+    payload = run_backtest()
+    return BacktestReport.model_validate(payload)
+
+
+@router.get("/backtest/latest", response_model=BacktestReport)
+def latest_backtest() -> BacktestReport:
+    payload = load_latest_backtest()
+    if payload is None:
+        raise HTTPException(
+            status_code=404,
+            detail="No backtest report found. Run scripts/run_backtest.py",
+        )
+    return BacktestReport.model_validate(payload)
 
 
 @router.post("/themes/build")

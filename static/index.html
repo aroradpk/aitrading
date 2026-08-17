@@ -51,6 +51,7 @@
       <button data-tab="moves">Move Library</button>
       <button data-tab="universe">Universe</button>
       <button data-tab="themes">Themes</button>
+      <button data-tab="backtest">Backtest</button>
       <button data-tab="status">Data Status</button>
     </div>
 
@@ -134,6 +135,34 @@
       <div class="card">
         <h2>Symbol theme detail</h2>
         <pre id="theme-detail">Select a symbol or click a watchlist row with Themes tab open.</pre>
+      </div>
+    </section>
+
+    <section id="backtest">
+      <div class="card">
+        <button class="action" id="run-backtest">Run backtest</button>
+        <span class="muted" id="backtest-meta"></span>
+      </div>
+      <div class="card">
+        <h2>Summary</h2>
+        <pre id="backtest-summary">Run backtest to see hit rates for conviction ≥7 setups.</pre>
+      </div>
+      <div class="card">
+        <h2>Recent signals</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Symbol</th>
+              <th>Conviction</th>
+              <th>1D fwd %</th>
+              <th>1W fwd %</th>
+              <th>Hit 5% 1D</th>
+              <th>Hit 10% 1W</th>
+            </tr>
+          </thead>
+          <tbody id="backtest-body"></tbody>
+        </table>
       </div>
     </section>
 
@@ -225,6 +254,40 @@
         await loadThemeDetail(symbol);
       });
 
+      async function loadBacktest() {
+        const res = await fetch("/api/analysis/backtest/latest");
+        if (!res.ok) {
+          document.getElementById("backtest-meta").textContent =
+            "No backtest yet — click Run backtest (~1-2 min).";
+          return;
+        }
+        const data = await res.json();
+        const s = data.summary;
+        document.getElementById("backtest-meta").textContent =
+          `Run ${data.run_id} · ${s.signals} signals`;
+        document.getElementById("backtest-summary").textContent = JSON.stringify(
+          { config: data.config, summary: s },
+          null,
+          2,
+        );
+        document.getElementById("backtest-body").innerHTML = data.signals.slice(0, 50).map((sig) => `
+          <tr>
+            <td>${sig.date}</td>
+            <td>${sig.symbol}</td>
+            <td class="conviction">${sig.conviction}</td>
+            <td>${sig.fwd_1d_pct ?? "-"}</td>
+            <td>${sig.fwd_1w_pct ?? "-"}</td>
+            <td>${sig.hit_1d === true ? "✓" : sig.hit_1d === false ? "✗" : "-"}</td>
+            <td>${sig.hit_1w === true ? "✓" : sig.hit_1w === false ? "✗" : "-"}</td>
+          </tr>`).join("");
+      }
+
+      document.getElementById("run-backtest").addEventListener("click", async () => {
+        document.getElementById("backtest-meta").textContent = "Running backtest…";
+        await fetch("/api/analysis/backtest/run", { method: "POST" });
+        await loadBacktest();
+      });
+
       document.getElementById("refresh-watchlist").addEventListener("click", async () => {
         await fetch("/api/analysis/watchlist/build", { method: "POST" });
         await loadWatchlist();
@@ -287,6 +350,7 @@
       loadWatchlist();
       loadUniverse();
       loadThemeGraph();
+      loadBacktest();
       document.getElementById("load-status").click();
     </script>
   </body>

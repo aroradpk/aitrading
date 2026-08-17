@@ -54,3 +54,28 @@ class DataStatus(BaseModel):
     ohlcv_files: int
     move_symbols: int
     latest_report: str | None
+    latest_backtest: str | None = None
+
+
+class BacktestSignal(BaseModel):
+    symbol: str
+    date: str
+    instrument_type: str
+    conviction: float
+    scores: dict[str, float]
+    match_count: int
+    entry_close: float
+    fwd_1d_pct: float | None = None
+    fwd_1w_pct: float | None = None
+    target_1d_pct: float | None = None
+    target_1w_pct: float | None = None
+    hit_1d: bool | None = None
+    hit_1w: bool | None = None
+
+
+class BacktestReport(BaseModel):
+    run_id: str
+    generated_at: str
+    config: dict[str, Any]
+    summary: dict[str, Any]
+    signals: list[BacktestSignal]

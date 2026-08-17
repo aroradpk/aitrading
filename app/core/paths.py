@@ -88,3 +88,9 @@ def theme_overrides_dir() -> Path:
     path = themes_dir() / "overrides"
     path.mkdir(parents=True, exist_ok=True)
     return path
+
+
+def backtest_reports_dir() -> Path:
+    path = data_dir() / "reports" / "backtest"
+    path.mkdir(parents=True, exist_ok=True)
+    return path

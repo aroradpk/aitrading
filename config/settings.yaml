@@ -49,6 +49,15 @@ fundamentals:
   screener_import_dir: data/fundamentals/import
   min_score_metrics: 2
 
+backtest:
+  conviction_min: 7.0
+  signal_cooldown_days: 5
+  forward_days_1d: 1
+  forward_days_1w: 5
+  stock_target_1d_pct: 5.0
+  stock_target_1w_pct: 10.0
+  index_target_1d_pct: 2.0
+
 trusted_source_domains:
   - nseindia.com
   - bseindia.com
