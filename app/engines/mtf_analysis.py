@@ -69,7 +69,10 @@ def analyze_intraday_confirmations(
         try:
             frame = load_intraday(symbol, interval)
             if frame is None and not get_settings().offline_mode:
-                frame = fetch_intraday(symbol, interval)
+                try:
+                    frame = fetch_intraday(symbol, interval)
+                except Exception:
+                    continue
             if frame is None:
                 continue
         except Exception:
