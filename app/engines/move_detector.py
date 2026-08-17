@@ -8,7 +8,16 @@ import pandas as pd
 from app.core.config import get_settings
 from app.core.paths import moves_dir, technical_snapshots_dir
 from app.engines.chart_patterns import load_formation_catalog
-from app.engines.technical import build_snapshot, position_bias, snapshot_similarity
+from app.engines.technical import (
+    LONG_HEADWIND_TAGS,
+    LONG_TAILWIND_TAGS,
+    SHORT_HEADWIND_TAGS,
+    SHORT_TAILWIND_TAGS,
+    build_snapshot,
+    exhaustion_fade_side,
+    position_bias,
+    snapshot_similarity,
+)
 
 
 def _formation_alignment(formations: list[dict], side: str) -> str:
@@ -41,6 +50,46 @@ def _elliott_alignment(tags: set[str], side: str) -> str:
         if "elliott_impulse_down" in tags or "elliott_abc_corrective_up" in tags:
             return "support"
     return "neutral"
+
+
+def _side_context_adjustment(snapshot: dict, side: str) -> float:
+    """Penalize long at resistance/overbought; reward fade shorts and EMA support entries."""
+    tags = set(snapshot.get("tags", []))
+    weekly = set(snapshot.get("weekly", {}).get("tags", []))
+    all_tags = tags | weekly
+    adjustment = 0.0
+
+    if side == "long":
+        adjustment += 1.0 * len(all_tags & LONG_TAILWIND_TAGS)
+        adjustment -= 1.25 * len(all_tags & LONG_HEADWIND_TAGS)
+        if "rsi_overbought" in all_tags and "near_resistance" in all_tags:
+            adjustment -= 2.5
+        if "ema20_extended_long" in all_tags and "near_resistance" in all_tags:
+            adjustment -= 1.5
+    elif side == "short":
+        adjustment += 1.0 * len(all_tags & SHORT_TAILWIND_TAGS)
+        adjustment -= 1.25 * len(all_tags & SHORT_HEADWIND_TAGS)
+        if exhaustion_fade_side(snapshot) == "short":
+            adjustment += 2.0
+
+    return adjustment
+
+
+def _apply_side_context_caps(technical_score: float, snapshot: dict, side: str) -> float:
+    tags = set(snapshot.get("tags", []))
+    weekly = set(snapshot.get("weekly", {}).get("tags", []))
+    all_tags = tags | weekly
+
+    if side == "long":
+        if ("rsi_overbought" in all_tags or "weekly_rsi_overbought" in all_tags) and "near_resistance" in all_tags:
+            if "ema20_extended_long" in all_tags or "ema20_support_touch" not in all_tags:
+                technical_score = min(technical_score, 3.5)
+        if exhaustion_fade_side(snapshot) == "short" and "ema20_support_touch" not in all_tags:
+            technical_score = min(technical_score, 3.0)
+    elif side == "short" and exhaustion_fade_side(snapshot) == "short":
+        technical_score = max(technical_score, 4.5)
+
+    return round(min(10.0, max(0.0, technical_score)), 1)
 
 
 def _pct_change(series: pd.Series, periods: int) -> pd.Series:
@@ -186,6 +235,7 @@ def scan_today_setup(
     if strong:
         technical_score = min(10.0, 4.0 + (strong[0]["similarity"] * 6.0))
     technical_score += min(2.0, len(current.get("tags", [])) * 0.5)
+    technical_score += _side_context_adjustment(current, side)
     technical_score = round(min(10.0, technical_score), 1)
 
     tag_set = set(current.get("tags", []))
@@ -202,6 +252,8 @@ def scan_today_setup(
             technical_score = round(min(technical_score, 3.0), 1)
         elif side == "short" and bias != "short":
             technical_score = round(min(technical_score, 3.0), 1)
+
+    technical_score = _apply_side_context_caps(technical_score, current, side)
 
     thresholds = settings.thresholds
     if intraday:

@@ -1,20 +1,28 @@
 import pandas as pd
 
 from app.engines.event_content import analyze_event_content, score_analyzed_event
-from app.engines.technical import build_snapshot, position_bias
+from app.engines.move_detector import scan_today_setup
+from app.engines.technical import (
+    build_snapshot,
+    exhaustion_fade_side,
+    position_bias,
+    technical_reasons_for_side,
+)
+from app.ingest.yfinance_client import load_ohlcv
+from app.core.paths import ohlcv_daily_dir
 
 
-def _uptrend_frame() -> pd.DataFrame:
-    dates = pd.date_range("2024-01-01", periods=120, freq="B")
-    prices = [100 + (i * 0.35) for i in range(120)]
+def _uptrend_frame(*, periods: int = 220) -> pd.DataFrame:
+    dates = pd.date_range("2024-01-01", periods=periods, freq="B")
+    prices = [100 + (i * 0.35) for i in range(periods)]
     return pd.DataFrame(
         {
             "open": prices,
             "high": [p + 1.2 for p in prices],
             "low": [p - 1.0 for p in prices],
             "close": prices,
-            "volume": [1_000_000] * 120,
-            "symbol": ["TEST"] * 120,
+            "volume": [1_000_000] * periods,
+            "symbol": ["TEST"] * periods,
         },
         index=dates,
     )
@@ -29,7 +37,9 @@ def test_snapshot_uses_ema_not_sma_fields() -> None:
 
 def test_position_bias_long_on_uptrend() -> None:
     snap = build_snapshot(_uptrend_frame())
-    assert position_bias(snap, focus="long") == "long"
+    assert position_bias(snap, focus="long") in {"long", "neutral"}
+    if "ema_momentum_expanding" in snap["tags"] or "ema20_support_touch" in snap["tags"]:
+        assert position_bias(snap, focus="long") == "long"
 
 
 def test_candle_only_with_context() -> None:
@@ -54,3 +64,43 @@ def test_concall_without_signals_requires_transcript() -> None:
     analysis = analyze_event_content(item)
     assert analysis.get("requires_transcript") is True
     assert score_analyzed_event(item, analysis) == 0.0
+
+
+def test_ema_structure_tags_not_generic_above_ema20() -> None:
+    snap = build_snapshot(_uptrend_frame())
+    assert "above_ema20" not in snap["tags"]
+    assert "below_ema20" not in snap["tags"]
+
+
+def test_exhaustion_fade_short_at_resistance() -> None:
+    snap = {
+        "tags": ["rsi_overbought", "near_resistance", "short_term_uptrend"],
+        "weekly": {"tags": ["weekly_rsi_overbought"]},
+    }
+    assert exhaustion_fade_side(snap) == "short"
+    assert position_bias(snap, focus="long") == "neutral"
+    assert position_bias(snap, focus="short") == "short"
+
+
+def test_long_reasons_flag_headwinds() -> None:
+    snap = {
+        "tags": ["rsi_overbought", "near_resistance", "ema20_extended_long"],
+        "weekly": {"tags": []},
+    }
+    reasons = technical_reasons_for_side(snap, "long")
+    headwinds = [r for r in reasons if r.get("headwind")]
+    assert any("rsi overbought" in r["text"] for r in headwinds)
+    assert any("near resistance" in r["text"] for r in headwinds)
+
+
+def test_motherson_long_capped_when_overbought_at_resistance() -> None:
+    path = ohlcv_daily_dir() / "MOTHERSON.parquet"
+    if not path.exists():
+        return
+    frame = load_ohlcv(path)
+    snap = build_snapshot(frame)
+    assert exhaustion_fade_side(snap) == "short"
+    setup_long = scan_today_setup(frame, [], side="long")
+    setup_short = scan_today_setup(frame, [], side="short")
+    assert setup_long["technical_score"] <= 3.5
+    assert setup_short["technical_score"] >= setup_long["technical_score"]

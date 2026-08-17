@@ -77,11 +77,150 @@ def _trend_tags(close: float, ema20: float | None, ema50: float | None, ema200: 
         tags.append("long_term_uptrend")
     elif ema50 and ema200 and ema50 < ema200:
         tags.append("long_term_downtrend")
-    if ema20 and close > ema20:
-        tags.append("above_ema20")
-    elif ema20 and close < ema20:
-        tags.append("below_ema20")
     return tags
+
+
+def _ema_structure_tags(daily: pd.DataFrame, close: float, ema20: float | None, ema50: float | None, ema200: float | None) -> list[str]:
+    """EMA context: support touch, momentum stack/spread, or extended (late entry)."""
+    tags: list[str] = []
+    if not ema20:
+        return tags
+
+    dist_pct = abs(close - ema20) / ema20
+    if dist_pct <= 0.02:
+        tags.append("ema20_support_touch")
+    elif close > ema20 and dist_pct >= 0.05:
+        tags.append("ema20_extended_long")
+    elif close < ema20 and dist_pct >= 0.05:
+        tags.append("ema20_extended_short")
+
+    if ema20 and ema50 and ema200:
+        if ema20 > ema50 > ema200:
+            tags.append("ema_bull_stack")
+        elif ema20 < ema50 < ema200:
+            tags.append("ema_bear_stack")
+
+        if len(daily) >= 30:
+            e20 = daily["close"].ewm(span=20, adjust=False).mean()
+            e50 = daily["close"].ewm(span=50, adjust=False).mean()
+            e200 = daily["close"].ewm(span=200, adjust=False).mean()
+            spread_20_50_now = (e20.iloc[-1] - e50.iloc[-1]) / e50.iloc[-1]
+            spread_20_50_prev = (e20.iloc[-6] - e50.iloc[-6]) / e50.iloc[-6]
+            spread_50_200_now = (e50.iloc[-1] - e200.iloc[-1]) / e200.iloc[-1]
+            spread_50_200_prev = (e50.iloc[-6] - e200.iloc[-6]) / e200.iloc[-6]
+            if ema20 > ema50 > ema200 and spread_20_50_now > spread_20_50_prev and spread_50_200_now > spread_50_200_prev:
+                tags.append("ema_momentum_expanding")
+            if ema20 < ema50 < ema200 and spread_20_50_now < spread_20_50_prev and spread_50_200_now < spread_50_200_prev:
+                tags.append("ema_momentum_expanding_down")
+
+    return tags
+
+
+LEGACY_TAG_ALIASES = {
+    "above_sma20": "ema_bull_stack",
+    "below_sma20": "ema_bear_stack",
+    "above_ema20": "ema_bull_stack",
+    "below_ema20": "ema_bear_stack",
+}
+
+
+def normalize_tags(tags: set[str] | list[str]) -> set[str]:
+    normalized: set[str] = set()
+    for tag in tags:
+        normalized.add(tag)
+        if tag in LEGACY_TAG_ALIASES:
+            normalized.add(LEGACY_TAG_ALIASES[tag])
+    return normalized
+
+
+LONG_HEADWIND_TAGS = {
+    "rsi_overbought",
+    "weekly_rsi_overbought",
+    "near_resistance",
+    "ema20_extended_long",
+}
+LONG_TAILWIND_TAGS = {
+    "ema20_support_touch",
+    "ema_momentum_expanding",
+    "ema_bull_stack",
+    "near_support",
+    "rsi_oversold",
+}
+SHORT_HEADWIND_TAGS = {
+    "rsi_oversold",
+    "weekly_rsi_oversold",
+    "near_support",
+    "ema20_extended_short",
+    "ema_bull_stack",
+}
+SHORT_TAILWIND_TAGS = {
+    "rsi_overbought",
+    "weekly_rsi_overbought",
+    "near_resistance",
+    "ema_momentum_expanding_down",
+    "ema_bear_stack",
+    "ema20_extended_long",
+}
+
+
+def _all_snapshot_tags(snapshot: dict) -> set[str]:
+    tags = set(snapshot.get("tags", []))
+    tags.update(snapshot.get("weekly", {}).get("tags", []))
+    return tags
+
+
+def exhaustion_fade_side(snapshot: dict) -> str | None:
+    """Counter-trend fade when stretched at S/R."""
+    tags = _all_snapshot_tags(snapshot)
+    if ("rsi_overbought" in tags or "weekly_rsi_overbought" in tags) and "near_resistance" in tags:
+        return "short"
+    if ("rsi_oversold" in tags or "weekly_rsi_oversold" in tags) and "near_support" in tags:
+        return "long"
+    return None
+
+
+def technical_reasons_for_side(snapshot: dict, side: str) -> list[dict]:
+    """Ordered, side-aware reasons — headwinds flagged for the active position side."""
+    tags = _all_snapshot_tags(snapshot)
+    reasons: list[dict] = []
+
+    def add(tag: str, *, weight: str, headwind: bool = False) -> None:
+        label = tag.replace("_", " ")
+        if headwind:
+            label = f"{label} (headwind for {side})"
+        reasons.append({"layer": "technical", "text": label, "weight": weight, "headwind": headwind})
+
+    priority = [
+        ("ema20_support_touch", "high", False),
+        ("ema_momentum_expanding", "high", False),
+        ("ema_momentum_expanding_down", "high", False),
+        ("ema_bull_stack", "medium", False),
+        ("ema_bear_stack", "medium", False),
+        ("ema20_extended_long", "high", side == "long"),
+        ("ema20_extended_short", "high", side == "short"),
+        ("near_support", "high", side == "short"),
+        ("near_resistance", "high", side == "long"),
+        ("rsi_overbought", "high", side == "long"),
+        ("rsi_oversold", "high", side == "short"),
+        ("weekly_rsi_overbought", "high", side == "long"),
+        ("weekly_rsi_oversold", "high", side == "short"),
+        ("short_term_uptrend", "medium", False),
+        ("short_term_downtrend", "medium", False),
+        ("long_term_uptrend", "medium", False),
+        ("long_term_downtrend", "medium", False),
+    ]
+    seen: set[str] = set()
+    for tag, weight, headwind in priority:
+        if tag in tags and tag not in seen:
+            add(tag, weight=weight, headwind=headwind)
+            seen.add(tag)
+
+    for tag in sorted(tags):
+        if tag in seen or tag.startswith(("formation_", "candle_", "elliott_", "fib_")):
+            continue
+        add(tag, weight="low", headwind=tag in (LONG_HEADWIND_TAGS if side == "long" else SHORT_HEADWIND_TAGS))
+
+    return reasons
 
 
 def position_bias(snapshot: dict, *, focus: str = "long") -> str:
@@ -90,12 +229,26 @@ def position_bias(snapshot: dict, *, focus: str = "long") -> str:
     weekly_tags = set(snapshot.get("weekly", {}).get("tags", []))
     all_tags = tags | weekly_tags
 
+    fade = exhaustion_fade_side(snapshot)
+    at_ema_support = "ema20_support_touch" in all_tags
+    in_momentum = "ema_momentum_expanding" in all_tags or "ema_momentum_expanding_down" in all_tags
+
+    if focus == "short" and fade == "short":
+        return "short"
+    if focus == "long" and fade == "long":
+        return "long"
+
     long_ok = "long_term_uptrend" in all_tags or "short_term_uptrend" in all_tags
     short_ok = "long_term_downtrend" in all_tags or "short_term_downtrend" in all_tags
 
     if focus == "short":
-        return "short" if short_ok else "neutral"
+        return "short" if short_ok or fade == "short" else "neutral"
     if focus == "long":
+        extended_exhaustion = (
+            fade == "short" and "ema20_extended_long" in all_tags and not at_ema_support
+        )
+        if extended_exhaustion or (fade == "short" and not at_ema_support and not in_momentum):
+            return "neutral"
         return "long" if long_ok else "neutral"
     if long_ok and not short_ok:
         return "long"
@@ -136,13 +289,15 @@ def build_snapshot(frame: pd.DataFrame, *, focus: str | None = None) -> dict:
     fib_tags = fibonacci_tags(daily)
     elliott = elliott_tags(daily)
     trend_tags = _trend_tags(float(last["close"]), ema20, ema50, ema200)
+    ema_tags = _ema_structure_tags(daily, float(last["close"]), ema20, ema50, ema200)
 
-    context_tags = sr_tags + fib_tags + elliott + [f"formation_{f['id']}" for f in formations]
+    context_tags = sr_tags + fib_tags + elliott + ema_tags + [f"formation_{f['id']}" for f in formations]
     raw_candles = _raw_candle_tags(last, prev)
     candle_tags = _confirm_candles(raw_candles, context_tags, formations)
 
     tags: list[str] = []
     tags.extend(trend_tags)
+    tags.extend(ema_tags)
     tags.extend(sr_tags)
     tags.extend(fib_tags)
     tags.extend(elliott)
@@ -202,8 +357,8 @@ def snapshot_similarity(current: dict, historical: dict) -> float:
         return 0.0
 
     score = 0.0
-    current_tags = set(current.get("tags", []))
-    historical_tags = set(historical.get("tags", []))
+    current_tags = normalize_tags(current.get("tags", []))
+    historical_tags = normalize_tags(historical.get("tags", []))
     if current_tags or historical_tags:
         union = current_tags | historical_tags
         overlap = current_tags & historical_tags
