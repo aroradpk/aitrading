@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "description": "Price-action formations (candlesticks valid only when paired with these or S/R / Fib)",
+  "formations": [
+    {
+      "id": "rising_wedge",
+      "name": "Rising wedge",
+      "bias": "bearish_reversal",
+      "notes": "Converging higher highs and higher lows into apex — often breaks down"
+    },
+    {
+      "id": "falling_wedge",
+      "name": "Falling wedge",
+      "bias": "bullish_reversal",
+      "notes": "Converging lower highs and lower lows — often breaks up"
+    },
+    {
+      "id": "ascending_triangle",
+      "name": "Ascending triangle",
+      "bias": "bullish_continuation",
+      "notes": "Flat resistance + rising support"
+    },
+    {
+      "id": "descending_triangle",
+      "name": "Descending triangle",
+      "bias": "bearish_continuation",
+      "notes": "Flat support + falling resistance"
+    },
+    {
+      "id": "symmetrical_triangle",
+      "name": "Symmetrical triangle",
+      "bias": "neutral_breakout",
+      "notes": "Converging highs and lows — direction from prior trend"
+    },
+    {
+      "id": "bull_flag",
+      "name": "Bull flag",
+      "bias": "bullish_continuation",
+      "notes": "Sharp rally then tight downward channel"
+    },
+    {
+      "id": "bear_flag",
+      "name": "Bear flag",
+      "bias": "bearish_continuation",
+      "notes": "Sharp drop then tight upward channel"
+    },
+    {
+      "id": "double_bottom",
+      "name": "Double bottom",
+      "bias": "bullish_reversal",
+      "notes": "Two similar lows with neckline break potential"
+    },
+    {
+      "id": "double_top",
+      "name": "Double top",
+      "bias": "bearish_reversal",
+      "notes": "Two similar highs with neckline break potential"
+    },
+    {
+      "id": "head_shoulders",
+      "name": "Head and shoulders",
+      "bias": "bearish_reversal",
+      "notes": "Three peaks, middle highest"
+    },
+    {
+      "id": "inverse_head_shoulders",
+      "name": "Inverse head and shoulders",
+      "bias": "bullish_reversal",
+      "notes": "Three troughs, middle lowest"
+    }
+  ],
+  "fibonacci_levels": [0.236, 0.382, 0.5, 0.618, 0.786],
+  "elliott": {
+    "impulse_min_swings": 5,
+    "corrective_label": "abc_corrective"
+  }
+}

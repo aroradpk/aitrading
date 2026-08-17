@@ -36,9 +36,11 @@ technical:
   timeframes:
     daily: 1d
     weekly: 1wk
+  position_focus: long
   pattern_match_min_score: 0.45
   rsi_oversold: 35
   rsi_overbought: 65
+  require_trend_for_setup: true
 
 events:
   lookback_days: 30

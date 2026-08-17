@@ -35,9 +35,11 @@ class ConvictionWeights(BaseModel):
 
 class TechnicalConfig(BaseModel):
     timeframes: dict[str, str] = Field(default_factory=lambda: {"daily": "1d", "weekly": "1wk"})
+    position_focus: str = "long"
     pattern_match_min_score: float = 0.45
     rsi_oversold: int = 35
     rsi_overbought: int = 65
+    require_trend_for_setup: bool = True
 
 
 class EventsConfig(BaseModel):

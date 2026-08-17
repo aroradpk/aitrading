@@ -3,6 +3,7 @@ from __future__ import annotations
 import pandas as pd
 
 from app.core.config import get_settings
+from app.engines.chart_patterns import detect_formations, elliott_tags, fibonacci_tags
 
 
 def _rsi(series: pd.Series, period: int = 14) -> float | None:
@@ -19,13 +20,13 @@ def _rsi(series: pd.Series, period: int = 14) -> float | None:
     return round(float(100 - (100 / (1 + rs))), 2)
 
 
-def _sma(series: pd.Series, period: int) -> float | None:
+def _ema(series: pd.Series, period: int) -> float | None:
     if len(series) < period:
         return None
-    return round(float(series.rolling(period).mean().iloc[-1]), 2)
+    return round(float(series.ewm(span=period, adjust=False).mean().iloc[-1]), 2)
 
 
-def _candle_tags(row: pd.Series, prev: pd.Series | None) -> list[str]:
+def _raw_candle_tags(row: pd.Series, prev: pd.Series | None) -> list[str]:
     tags: list[str] = []
     body = abs(row["close"] - row["open"])
     upper_wick = row["high"] - max(row["close"], row["open"])
@@ -40,10 +41,9 @@ def _candle_tags(row: pd.Series, prev: pd.Series | None) -> list[str]:
         tags.append("marubozu")
     if prev is not None:
         prev_body = prev["close"] - prev["open"]
-        curr_body = row["close"] - row["open"]
-        if prev_body < 0 < curr_body and row["close"] > prev["open"] and row["open"] < prev["close"]:
+        if prev_body < 0 < (row["close"] - row["open"]) and row["close"] > prev["open"] and row["open"] < prev["close"]:
             tags.append("bullish_engulfing")
-        if prev_body > 0 > curr_body and row["close"] < prev["open"] and row["open"] > prev["close"]:
+        if prev_body > 0 > (row["close"] - row["open"]) and row["close"] < prev["open"] and row["open"] > prev["close"]:
             tags.append("bearish_engulfing")
     return tags
 
@@ -66,6 +66,53 @@ def _support_resistance_tags(frame: pd.DataFrame) -> list[str]:
     return tags
 
 
+def _trend_tags(close: float, ema20: float | None, ema50: float | None, ema200: float | None) -> list[str]:
+    tags: list[str] = []
+    if ema20 and ema50 and ema20 > ema50:
+        tags.append("short_term_uptrend")
+    elif ema20 and ema50 and ema20 < ema50:
+        tags.append("short_term_downtrend")
+    if ema50 and ema200 and ema50 > ema200:
+        tags.append("long_term_uptrend")
+    elif ema50 and ema200 and ema50 < ema200:
+        tags.append("long_term_downtrend")
+    if ema20 and close > ema20:
+        tags.append("above_ema20")
+    elif ema20 and close < ema20:
+        tags.append("below_ema20")
+    return tags
+
+
+def position_bias(snapshot: dict, *, focus: str = "long") -> str:
+    """Primary trend gate for buy (long) vs sell (short) setups."""
+    tags = set(snapshot.get("tags", []))
+    weekly_tags = set(snapshot.get("weekly", {}).get("tags", []))
+    all_tags = tags | weekly_tags
+
+    long_ok = "long_term_uptrend" in all_tags or "short_term_uptrend" in all_tags
+    short_ok = "long_term_downtrend" in all_tags or "short_term_downtrend" in all_tags
+
+    if focus == "short":
+        return "short" if short_ok else "neutral"
+    if focus == "long":
+        return "long" if long_ok else "neutral"
+    if long_ok and not short_ok:
+        return "long"
+    if short_ok and not long_ok:
+        return "short"
+    return "neutral"
+
+
+def _confirm_candles(raw_candles: list[str], context_tags: list[str], formations: list[dict]) -> list[str]:
+    """Candlesticks only count when combined with formation, S/R, or Fib context."""
+    has_context = bool(formations) or any(
+        tag.startswith(("near_", "fib_")) or tag.startswith("elliott_") for tag in context_tags
+    )
+    if not has_context:
+        return []
+    return [f"candle_{tag}" for tag in raw_candles]
+
+
 def build_snapshot(frame: pd.DataFrame) -> dict:
     settings = get_settings()
     daily = frame.copy()
@@ -76,53 +123,72 @@ def build_snapshot(frame: pd.DataFrame) -> dict:
     last = daily.iloc[-1]
     prev = daily.iloc[-2] if len(daily) > 1 else None
     rsi = _rsi(daily["close"])
-    sma20 = _sma(daily["close"], 20)
-    sma50 = _sma(daily["close"], 50)
-    sma200 = _sma(daily["close"], 200)
+    ema20 = _ema(daily["close"], 20)
+    ema50 = _ema(daily["close"], 50)
+    ema200 = _ema(daily["close"], 200)
 
-    tags = _candle_tags(last, prev)
-    tags.extend(_support_resistance_tags(daily))
+    formations = detect_formations(daily)
+    sr_tags = _support_resistance_tags(daily)
+    fib_tags = fibonacci_tags(daily)
+    elliott = elliott_tags(daily)
+    trend_tags = _trend_tags(float(last["close"]), ema20, ema50, ema200)
+
+    context_tags = sr_tags + fib_tags + elliott + [f"formation_{f['id']}" for f in formations]
+    raw_candles = _raw_candle_tags(last, prev)
+    candle_tags = _confirm_candles(raw_candles, context_tags, formations)
+
+    tags: list[str] = []
+    tags.extend(trend_tags)
+    tags.extend(sr_tags)
+    tags.extend(fib_tags)
+    tags.extend(elliott)
+    tags.extend(candle_tags)
+    tags.extend(f"formation_{f['id']}" for f in formations)
 
     if rsi is not None and rsi <= settings.technical.rsi_oversold:
         tags.append("rsi_oversold")
     if rsi is not None and rsi >= settings.technical.rsi_overbought:
         tags.append("rsi_overbought")
-    if sma20 and sma50 and sma20 > sma50:
-        tags.append("short_term_uptrend")
-    if sma50 and sma200 and sma50 > sma200:
-        tags.append("long_term_uptrend")
-    if sma20 and last["close"] > sma20:
-        tags.append("above_sma20")
 
     weekly_rsi = _rsi(weekly["close"]) if len(weekly) >= 15 else None
+    weekly_ema20 = _ema(weekly["close"], 20) if len(weekly) >= 20 else None
     weekly_tags: list[str] = []
     if weekly_rsi is not None and weekly_rsi <= settings.technical.rsi_oversold:
         weekly_tags.append("weekly_rsi_oversold")
-    if len(weekly) >= 10 and weekly["close"].iloc[-1] > weekly["close"].rolling(10).mean().iloc[-1]:
-        weekly_tags.append("weekly_uptrend")
+    if weekly_rsi is not None and weekly_rsi >= settings.technical.rsi_overbought:
+        weekly_tags.append("weekly_rsi_overbought")
+    if weekly_ema20 and len(weekly) >= 10:
+        if weekly["close"].iloc[-1] > weekly_ema20:
+            weekly_tags.append("weekly_uptrend")
+        elif weekly["close"].iloc[-1] < weekly_ema20:
+            weekly_tags.append("weekly_downtrend")
 
-    volume_ratio = None
-    if len(daily) >= 20:
-        avg_vol = daily["volume"].rolling(20).mean().iloc[-1]
-        if avg_vol > 0:
-            volume_ratio = round(float(daily["volume"].iloc[-1] / avg_vol), 2)
-            if volume_ratio >= 1.5:
-                tags.append("volume_spike")
-
-    return {
+    snapshot = {
         "date": daily.index[-1].date().isoformat(),
         "close": round(float(last["close"]), 2),
         "rsi_14": rsi,
-        "sma_20": sma20,
-        "sma_50": sma50,
-        "sma_200": sma200,
-        "volume_ratio_vs_20d": volume_ratio,
+        "ema_20": ema20,
+        "ema_50": ema50,
+        "ema_200": ema200,
         "tags": sorted(set(tags)),
+        "formations": formations,
+        "raw_candle_patterns": raw_candles,
         "weekly": {
             "rsi_14": weekly_rsi,
+            "ema_20": weekly_ema20,
             "tags": weekly_tags,
         },
     }
+    snapshot["position_bias"] = position_bias(snapshot, focus=settings.technical.position_focus)
+    return snapshot
+
+
+def _field(snapshot: dict, *keys: str) -> float | None:
+    for key in keys:
+        value = snapshot.get(key)
+        if value is not None:
+            return value
+    return None
 
 
 def snapshot_similarity(current: dict, historical: dict) -> float:
@@ -135,18 +201,31 @@ def snapshot_similarity(current: dict, historical: dict) -> float:
     if current_tags or historical_tags:
         union = current_tags | historical_tags
         overlap = current_tags & historical_tags
-        score += (len(overlap) / len(union)) * 0.55 if union else 0.0
+        score += (len(overlap) / len(union)) * 0.50 if union else 0.0
+
+    current_formations = {f.get("id") for f in current.get("formations", [])}
+    historical_formations = {f.get("id") for f in historical.get("formations", [])}
+    if current_formations or historical_formations:
+        union = current_formations | historical_formations
+        overlap = current_formations & historical_formations
+        score += (len(overlap) / len(union)) * 0.15 if union else 0.0
 
     current_weekly = set(current.get("weekly", {}).get("tags", []))
     historical_weekly = set(historical.get("weekly", {}).get("tags", []))
     if current_weekly or historical_weekly:
         union = current_weekly | historical_weekly
         overlap = current_weekly & historical_weekly
-        score += (len(overlap) / len(union)) * 0.15 if union else 0.0
+        score += (len(overlap) / len(union)) * 0.10 if union else 0.0
 
-    for field, weight in (("rsi_14", 0.15), ("sma_20", 0.05), ("sma_50", 0.05)):
-        a = current.get(field)
-        b = historical.get(field)
+    if current.get("position_bias") == historical.get("position_bias") and current.get("position_bias") in {
+        "long",
+        "short",
+    }:
+        score += 0.10
+
+    for field, weight in (("rsi_14", 0.10), ("ema_20", 0.05), ("ema_50", 0.05), ("sma_20", 0.05), ("sma_50", 0.05)):
+        a = _field(current, field)
+        b = _field(historical, field)
         if a is None or b is None or b == 0:
             continue
         diff = abs(a - b)

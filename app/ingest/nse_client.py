@@ -91,6 +91,29 @@ def fetch_nse_announcements(symbol: str, lookback_days: int | None = None) -> li
 
 def _classify_announcement(text: str) -> str:
     lowered = text.lower()
+    if any(
+        phrase in lowered
+        for phrase in (
+            "conference call",
+            "con call",
+            "concall",
+            "earnings call",
+            "post earnings",
+            "post-earnings",
+        )
+    ):
+        return "concall"
+    if any(
+        phrase in lowered
+        for phrase in (
+            "analyst meet",
+            "analysts meet",
+            "analysts/investor",
+            "investor meet",
+            "institutional investor",
+        )
+    ):
+        return "analyst_meet"
     if any(word in lowered for word in ("result", "financial", "quarter", "earnings")):
         return "results"
     if any(word in lowered for word in ("board meeting", "outcome of board")):

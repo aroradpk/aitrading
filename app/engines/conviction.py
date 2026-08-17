@@ -108,6 +108,8 @@ def build_daily_watchlist() -> dict:
                 "as_of": setup["as_of"],
                 "horizon": horizon,
                 "target_move_pct": target,
+                "position_bias": setup.get("position_bias", "neutral"),
+                "position_side": setup.get("position_bias", "neutral"),
                 "conviction": scores["final"],
                 "scores": scores,
                 "match_count": setup["match_count"],

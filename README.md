@@ -124,6 +124,26 @@ The FastAPI app reads from the same `data/` folder — VS Code and the UI always
 - **TradingView:** No free API; use it to visually verify symbols, or export CSV and we can add an import path later.
 - **Fundamentals / PIB / board meetings:** Phase 2 (not automated yet).
 
+## Analysis methodology
+
+### Technical (primary gate for long setups)
+
+- **Indicators allowed:** EMA(20, 50, 200) and RSI only — no SMA/MACD/etc.
+- **Trend first:** `long_term_uptrend` / `short_term_uptrend` (EMA stack) required for long conviction (`position_focus: long` in settings). Short/intraday shorts will use downtrend tags later.
+- **Price action:** Support/resistance, Fibonacci retracements, Elliott impulse/corrective tags, chart formations (wedge, triangle, flag, H&S — see `config/technical/chart_formations.json`).
+- **Candlesticks** (hammer, engulfing, etc.) count **only** when paired with a formation, S/R, or Fib level.
+- Formations detected in `app/engines/chart_patterns.py`.
+
+### Fundamentals
+
+- Prefer **QoQ and YoY** profit/sales growth vs prior quarter and same quarter last year (Screener CSV columns).
+- **Vs expectations:** EPS actual vs estimate, or profit growth vs `data/fundamentals/expectations/{SYMBOL}.json`. See `config/fundamentals/expectations_guide.md` for where to find consensus (Tickertape/Trendlyne manual for now).
+
+### Events
+
+- Classifies concalls, analyst/investor meets separately from generic announcements.
+- **Content analysis** on title text before scoring (`app/engines/event_content.py`). Interactive events without positive/negative signals are flagged `requires_transcript` and scored **0** until transcript/PDF text is available.
+
 ## Configuration
 
 Edit `config/settings.yaml` for thresholds, universe size, conviction weights, and **`offline_mode`** (default `true` = no Yahoo/NSE/PIB calls).

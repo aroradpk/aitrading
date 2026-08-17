@@ -131,8 +131,16 @@ def scan_today_setup(frame: pd.DataFrame, historical_moves: list[dict]) -> dict:
     technical_score = 0.0
     if strong:
         technical_score = min(10.0, 4.0 + (strong[0]["similarity"] * 6.0))
-    technical_score += min(3.0, len(current.get("tags", [])) * 0.75)
+    technical_score += min(2.0, len(current.get("tags", [])) * 0.5)
     technical_score = round(min(10.0, technical_score), 1)
+
+    position_bias = current.get("position_bias", "neutral")
+    if settings.technical.require_trend_for_setup:
+        focus = settings.technical.position_focus
+        if focus == "long" and position_bias != "long":
+            technical_score = round(min(technical_score, 3.0), 1)
+        elif focus == "short" and position_bias != "short":
+            technical_score = round(min(technical_score, 3.0), 1)
 
     return {
         "as_of": frame.index[-1].date().isoformat(),
@@ -140,4 +148,5 @@ def scan_today_setup(frame: pd.DataFrame, historical_moves: list[dict]) -> dict:
         "top_matches": comparisons[:5],
         "match_count": len(strong),
         "technical_score": technical_score,
+        "position_bias": position_bias,
     }
