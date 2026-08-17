@@ -8,7 +8,7 @@ from app.core.paths import ohlcv_daily_dir
 from app.engines.events import score_events
 from app.engines.fundamental import score_fundamentals
 from app.engines.themes import score_themes
-from app.engines.move_detector import load_moves, scan_today_setup
+from app.engines.move_detector import load_moves, scan_setups_for_symbol
 from app.engines.universe import all_instruments
 from app.ingest.yfinance_client import load_ohlcv
 
@@ -55,7 +55,7 @@ def build_daily_watchlist() -> dict:
 
         frame = load_ohlcv(path)
         historical_moves = load_moves(symbol)
-        setup = scan_today_setup(frame, historical_moves)
+        setups = scan_setups_for_symbol(frame, historical_moves)
 
         fundamental_score, fundamental_reasons = (0.0, [])
         event_score, event_reasons = (0.0, [])
@@ -65,65 +65,81 @@ def build_daily_watchlist() -> dict:
             event_score, event_reasons = score_events(symbol)
             theme_score, theme_reasons, _ = score_themes(symbol)
 
-        scores = conviction_from_scores(
-            technical=setup["technical_score"],
-            fundamental=fundamental_score,
-            events=event_score,
-            theme=theme_score,
-        )
+        for setup in setups:
+            if setup["technical_score"] <= 0:
+                continue
 
-        reasons = [
-            {
-                "layer": "technical",
-                "text": tag.replace("_", " "),
-                "weight": "medium",
-            }
-            for tag in setup["current_snapshot"].get("tags", [])
-        ]
-        for match in setup.get("top_matches", [])[:3]:
-            reasons.append(
+            scores = conviction_from_scores(
+                technical=setup["technical_score"],
+                fundamental=fundamental_score,
+                events=event_score,
+                theme=theme_score,
+            )
+
+            reasons = [
                 {
                     "layer": "technical",
-                    "text": (
-                        f"Similar to {match['date']} move "
-                        f"({match.get('move_1d_pct')}% 1D) — "
-                        f"{int(match['similarity'] * 100)}% match"
-                    ),
-                    "weight": "high" if match["similarity"] >= 0.6 else "medium",
-                    "date": match["date"],
+                    "text": tag.replace("_", " "),
+                    "weight": "medium",
+                }
+                for tag in setup["current_snapshot"].get("tags", [])
+            ]
+            for match in setup.get("top_matches", [])[:3]:
+                reasons.append(
+                    {
+                        "layer": "technical",
+                        "text": (
+                            f"Similar to {match['date']} {setup['position_side']} move "
+                            f"({match.get('move_1d_pct')}% 1D) — "
+                            f"{int(match['similarity'] * 100)}% match"
+                        ),
+                        "weight": "high" if match["similarity"] >= 0.6 else "medium",
+                        "date": match["date"],
+                    }
+                )
+            reasons.extend(fundamental_reasons)
+            reasons.extend(event_reasons)
+            reasons.extend(theme_reasons)
+
+            if instrument_type == "index":
+                horizon = "1d"
+                target = 2.0
+            else:
+                horizon = setup.get("horizon", "1d/1w")
+                target = setup.get("target_move_pct", 5.0)
+
+            entries.append(
+                {
+                    "symbol": symbol,
+                    "name": instrument.get("name", symbol),
+                    "type": instrument_type,
+                    "as_of": setup["as_of"],
+                    "horizon": horizon,
+                    "target_move_pct": target,
+                    "position_bias": setup.get("position_bias", "neutral"),
+                    "position_side": setup.get("position_side", "long"),
+                    "intraday": setup.get("intraday", False),
+                    "conviction": scores["final"],
+                    "scores": scores,
+                    "match_count": setup["match_count"],
+                    "top_matches": setup["top_matches"],
+                    "current_snapshot": setup["current_snapshot"],
+                    "reasons": reasons,
                 }
             )
-        reasons.extend(fundamental_reasons)
-        reasons.extend(event_reasons)
-        reasons.extend(theme_reasons)
-
-        horizon = "1d" if instrument_type == "index" else "1d/1w"
-        target = 2.0 if instrument_type == "index" else 5.0
-
-        entries.append(
-            {
-                "symbol": symbol,
-                "name": instrument.get("name", symbol),
-                "type": instrument_type,
-                "as_of": setup["as_of"],
-                "horizon": horizon,
-                "target_move_pct": target,
-                "position_bias": setup.get("position_bias", "neutral"),
-                "position_side": setup.get("position_bias", "neutral"),
-                "conviction": scores["final"],
-                "scores": scores,
-                "match_count": setup["match_count"],
-                "top_matches": setup["top_matches"],
-                "current_snapshot": setup["current_snapshot"],
-                "reasons": reasons,
-            }
-        )
 
     entries.sort(key=lambda item: item["conviction"], reverse=True)
+    from app.core.config import get_settings
+
+    tech = get_settings().technical
     payload = {
         "report_date": report_date,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "count": len(entries),
+        "config": {
+            "position_focus": tech.position_focus,
+            "intraday_enabled": tech.intraday.enabled,
+        },
         "entries": entries,
     }
     output = reports_dir() / f"{report_date}.json"

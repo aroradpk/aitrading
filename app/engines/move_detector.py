@@ -7,7 +7,7 @@ import pandas as pd
 
 from app.core.config import get_settings
 from app.core.paths import moves_dir, technical_snapshots_dir
-from app.engines.technical import build_snapshot, snapshot_similarity
+from app.engines.technical import build_snapshot, position_bias, snapshot_similarity
 from app.ingest.yfinance_client import load_ohlcv
 
 
@@ -111,11 +111,27 @@ def load_moves(symbol: str | None = None) -> list[dict]:
     return all_moves
 
 
-def scan_today_setup(frame: pd.DataFrame, historical_moves: list[dict]) -> dict:
-    current = build_snapshot(frame)
+def scan_today_setup(
+    frame: pd.DataFrame,
+    historical_moves: list[dict],
+    *,
+    side: str | None = None,
+    intraday: bool = False,
+) -> dict:
+    settings = get_settings()
+    side = side or settings.technical.position_focus
+    if side == "both":
+        side = "long"
+
+    match_direction = "up" if side == "long" else "down"
+    current = build_snapshot(frame, focus=side)
     comparisons: list[dict] = []
+    intraday_threshold = settings.technical.intraday.stock_target_1d_pct
+
     for move in historical_moves:
-        if move.get("direction") != "up":
+        if move.get("direction") != match_direction:
+            continue
+        if intraday and abs(move.get("move_1d_pct", 0)) < intraday_threshold:
             continue
         score = snapshot_similarity(current, move.get("technical_snapshot", {}))
         if score <= 0:
@@ -131,7 +147,6 @@ def scan_today_setup(frame: pd.DataFrame, historical_moves: list[dict]) -> dict:
         )
 
     comparisons.sort(key=lambda item: item["similarity"], reverse=True)
-    settings = get_settings()
     min_score = settings.technical.pattern_match_min_score
     strong = [item for item in comparisons if item["similarity"] >= min_score]
 
@@ -141,13 +156,23 @@ def scan_today_setup(frame: pd.DataFrame, historical_moves: list[dict]) -> dict:
     technical_score += min(2.0, len(current.get("tags", [])) * 0.5)
     technical_score = round(min(10.0, technical_score), 1)
 
-    position_bias = current.get("position_bias", "neutral")
+    bias = position_bias(current, focus=side)
     if settings.technical.require_trend_for_setup:
-        focus = settings.technical.position_focus
-        if focus == "long" and position_bias != "long":
+        if side == "long" and bias != "long":
             technical_score = round(min(technical_score, 3.0), 1)
-        elif focus == "short" and position_bias != "short":
+        elif side == "short" and bias != "short":
             technical_score = round(min(technical_score, 3.0), 1)
+
+    thresholds = settings.thresholds
+    if intraday:
+        horizon = "intraday"
+        target = intraday_threshold
+    elif side == "short":
+        horizon = "short_1d/1w"
+        target = thresholds.stock_short_1d_pct
+    else:
+        horizon = "1d/1w"
+        target = thresholds.stock_1d_pct
 
     return {
         "as_of": frame.index[-1].date().isoformat(),
@@ -155,5 +180,31 @@ def scan_today_setup(frame: pd.DataFrame, historical_moves: list[dict]) -> dict:
         "top_matches": comparisons[:5],
         "match_count": len(strong),
         "technical_score": technical_score,
-        "position_bias": position_bias,
+        "position_bias": bias,
+        "position_side": side,
+        "horizon": horizon,
+        "target_move_pct": target,
+        "intraday": intraday,
     }
+
+
+def scan_setups_for_symbol(frame: pd.DataFrame, historical_moves: list[dict]) -> list[dict]:
+    settings = get_settings()
+    focus = settings.technical.position_focus
+    sides = ["long", "short"] if focus == "both" else [focus]
+
+    setups: list[dict] = []
+    for side in sides:
+        if side not in {"long", "short"}:
+            continue
+        setups.append(scan_today_setup(frame, historical_moves, side=side, intraday=False))
+
+    if settings.technical.intraday.enabled:
+        intraday_side = settings.technical.intraday.position_side
+        if intraday_side in {"long", "short"} and (focus == "both" or focus == intraday_side):
+            setups.append(
+                scan_today_setup(frame, historical_moves, side=intraday_side, intraday=True)
+            )
+
+    return setups
+

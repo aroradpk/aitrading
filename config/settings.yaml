@@ -5,6 +5,8 @@ thresholds:
   stock_1d_pct: 5.0
   stock_1w_pct: 10.0
   index_1d_pct: 2.0
+  stock_short_1d_pct: 3.0
+  stock_short_1w_pct: 5.0
 
 universe:
   nifty_next_50_config: config/nifty_next_50.json
@@ -36,11 +38,15 @@ technical:
   timeframes:
     daily: 1d
     weekly: 1wk
-  position_focus: long
+  position_focus: both
   pattern_match_min_score: 0.45
   rsi_oversold: 35
   rsi_overbought: 65
   require_trend_for_setup: true
+  intraday:
+    enabled: true
+    stock_target_1d_pct: 2.5
+    position_side: short
 
 events:
   lookback_days: 30

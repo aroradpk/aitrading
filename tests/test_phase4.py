@@ -48,7 +48,7 @@ def test_evaluate_signal_respects_conviction_min(monkeypatch) -> None:
     monkeypatch.setattr(
         backtest_module,
         "scan_today_setup",
-        lambda f, moves: {
+        lambda f, moves, **kwargs: {
             "technical_score": 3.0,
             "match_count": 0,
             "top_matches": [],

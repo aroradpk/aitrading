@@ -113,8 +113,11 @@ def _confirm_candles(raw_candles: list[str], context_tags: list[str], formations
     return [f"candle_{tag}" for tag in raw_candles]
 
 
-def build_snapshot(frame: pd.DataFrame) -> dict:
+def build_snapshot(frame: pd.DataFrame, *, focus: str | None = None) -> dict:
     settings = get_settings()
+    focus = focus or settings.technical.position_focus
+    if focus == "both":
+        focus = "long"
     daily = frame.copy()
     weekly = frame.resample("W").agg(
         {"open": "first", "high": "max", "low": "min", "close": "last", "volume": "sum"}
@@ -179,7 +182,9 @@ def build_snapshot(frame: pd.DataFrame) -> dict:
             "tags": weekly_tags,
         },
     }
-    snapshot["position_bias"] = position_bias(snapshot, focus=settings.technical.position_focus)
+    snapshot["position_bias"] = position_bias(snapshot, focus=focus)
+    snapshot["position_bias_long"] = position_bias(snapshot, focus="long")
+    snapshot["position_bias_short"] = position_bias(snapshot, focus="short")
     return snapshot
 
 

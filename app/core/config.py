@@ -12,6 +12,24 @@ class Thresholds(BaseModel):
     stock_1d_pct: float = 5.0
     stock_1w_pct: float = 10.0
     index_1d_pct: float = 2.0
+    stock_short_1d_pct: float = 3.0
+    stock_short_1w_pct: float = 5.0
+
+
+class IntradayConfig(BaseModel):
+    enabled: bool = False
+    stock_target_1d_pct: float = 2.5
+    position_side: str = "short"
+
+
+class TechnicalConfig(BaseModel):
+    timeframes: dict[str, str] = Field(default_factory=lambda: {"daily": "1d", "weekly": "1wk"})
+    position_focus: str = "long"
+    pattern_match_min_score: float = 0.45
+    rsi_oversold: int = 35
+    rsi_overbought: int = 65
+    require_trend_for_setup: bool = True
+    intraday: IntradayConfig = Field(default_factory=IntradayConfig)
 
 
 class UniverseConfig(BaseModel):
@@ -31,15 +49,6 @@ class ConvictionWeights(BaseModel):
     fundamental: float = 0.25
     events: float = 0.15
     theme: float = 0.10
-
-
-class TechnicalConfig(BaseModel):
-    timeframes: dict[str, str] = Field(default_factory=lambda: {"daily": "1d", "weekly": "1wk"})
-    position_focus: str = "long"
-    pattern_match_min_score: float = 0.45
-    rsi_oversold: int = 35
-    rsi_overbought: int = 65
-    require_trend_for_setup: bool = True
 
 
 class EventsConfig(BaseModel):

@@ -46,7 +46,9 @@
       .editor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
       @media (max-width: 800px) { .editor-grid { grid-template-columns: 1fr; } }
       tr.clickable { cursor: pointer; }
-      tr.clickable:hover { background: #1a2438; }
+      .watchlist-filter.active { background: #1d4ed8; }
+      .side-long { color: #86efac; }
+      .side-short { color: #fca5a5; }
     </style>
   </head>
   <body>
@@ -68,6 +70,11 @@
     <section id="watchlist" class="active">
       <div class="card">
         <button class="action" id="refresh-watchlist">Rebuild watchlist</button>
+        <span class="muted">Filter:</span>
+        <button class="action watchlist-filter active" data-side="all">All</button>
+        <button class="action watchlist-filter" data-side="long">Long</button>
+        <button class="action watchlist-filter" data-side="short">Short</button>
+        <button class="action watchlist-filter" data-side="intraday">Intraday</button>
         <span class="muted" id="watchlist-meta"></span>
       </div>
       <div class="card">
@@ -75,6 +82,8 @@
           <thead>
             <tr>
               <th>Symbol</th>
+              <th>Side</th>
+              <th>Horizon</th>
               <th>Conviction</th>
               <th>Tech</th>
               <th>Fund</th>
@@ -255,19 +264,20 @@
         document.getElementById(btn.dataset.tab).classList.add("active");
       }));
 
-      async function loadWatchlist() {
-        const res = await fetch("/api/analysis/watchlist/latest");
-        if (!res.ok) {
-          document.getElementById("watchlist-meta").textContent = "No report yet — click Rebuild watchlist.";
-          return;
-        }
-        const data = await res.json();
-        document.getElementById("watchlist-meta").textContent =
-          `Report ${data.report_date} · ${data.count} symbols`;
+      let watchlistFilter = "all";
+
+      function renderWatchlistRows(entries) {
+        const filtered = entries.filter((e) => {
+          if (watchlistFilter === "all") return true;
+          if (watchlistFilter === "intraday") return e.intraday;
+          return e.position_side === watchlistFilter && !e.intraday;
+        });
         const body = document.getElementById("watchlist-body");
-        body.innerHTML = data.entries.map((e, i) => `
+        body.innerHTML = filtered.map((e, i) => `
           <tr data-idx="${i}" style="cursor:pointer">
             <td>${e.symbol}</td>
+            <td class="side-${e.position_side}">${e.intraday ? e.position_side + " (ID)" : e.position_side}</td>
+            <td>${e.horizon}</td>
             <td class="conviction">${e.conviction}</td>
             <td>${e.scores.technical}</td>
             <td>${e.scores.fundamental}</td>
@@ -277,11 +287,31 @@
             <td>${(e.reasons[0] || {}).text || "-"}</td>
           </tr>`).join("");
         body.querySelectorAll("tr").forEach((row) => row.addEventListener("click", () => {
-          const entry = data.entries[Number(row.dataset.idx)];
+          const entry = filtered[Number(row.dataset.idx)];
           document.getElementById("watchlist-detail").textContent = JSON.stringify(entry, null, 2);
         }));
-        window._watchlist = data.entries;
       }
+
+      async function loadWatchlist() {
+        const res = await fetch("/api/analysis/watchlist/latest");
+        if (!res.ok) {
+          document.getElementById("watchlist-meta").textContent = "No report yet — click Rebuild watchlist.";
+          return;
+        }
+        const data = await res.json();
+        const cfg = data.config || {};
+        document.getElementById("watchlist-meta").textContent =
+          `Report ${data.report_date} · ${data.count} setups · focus=${cfg.position_focus || "long"}`;
+        window._watchlist = data.entries;
+        renderWatchlistRows(data.entries);
+      }
+
+      document.querySelectorAll(".watchlist-filter").forEach((btn) => btn.addEventListener("click", () => {
+        document.querySelectorAll(".watchlist-filter").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        watchlistFilter = btn.dataset.side;
+        if (window._watchlist) renderWatchlistRows(window._watchlist);
+      }));
 
       async function loadThemeGraph() {
         const res = await fetch("/api/analysis/themes/graph");

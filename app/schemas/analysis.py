@@ -12,6 +12,9 @@ class WatchlistEntry(BaseModel):
     as_of: str
     horizon: str
     target_move_pct: float
+    position_bias: str = "neutral"
+    position_side: str = "long"
+    intraday: bool = False
     conviction: float
     scores: dict[str, float]
     match_count: int
@@ -24,6 +27,7 @@ class WatchlistReport(BaseModel):
     report_date: str
     generated_at: str
     count: int
+    config: dict[str, Any] = Field(default_factory=dict)
     entries: list[WatchlistEntry]
 
 

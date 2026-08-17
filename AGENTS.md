@@ -13,6 +13,7 @@
 - **Start API:** `./scripts/cloud-agent-start.sh` or `uvicorn app.main:app --host 0.0.0.0 --port 8000`.
 - **Tests:** `pytest` (30+ tests).
 - **Backtest:** `python scripts/run_backtest.py` (~1–2 min). Tuning reuses one signal pass: `python scripts/tune_backtest.py`.
+- **Position focus:** `technical.position_focus` in settings (`long` | `short` | `both`); intraday block for tighter short proxy on daily bars.
 - **Charts:** `python scripts/build_charts.py` (~7 min, not committed).
 - **Transcripts:** `python scripts/fetch_transcripts.py` (download only when `offline_mode: false`).
 

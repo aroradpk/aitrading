@@ -154,7 +154,7 @@ The FastAPI app reads from the same `data/` folder — VS Code and the UI always
 ### Technical (primary gate for long setups)
 
 - **Indicators allowed:** EMA(20, 50, 200) and RSI only — no SMA/MACD/etc.
-- **Trend first:** `long_term_uptrend` / `short_term_uptrend` (EMA stack) required for long conviction (`position_focus: long` in settings). Short/intraday shorts will use downtrend tags later.
+- **Trend first:** `long_term_uptrend` / `short_term_uptrend` (EMA stack) required for long conviction (`position_focus: long`). Short setups require `*_downtrend` tags when `position_focus` is `short` or `both`.
 - **Price action:** Support/resistance, Fibonacci retracements, Elliott impulse/corrective tags, chart formations (wedge, triangle, flag, H&S — see `config/technical/chart_formations.json`).
 - **Candlesticks** (hammer, engulfing, etc.) count **only** when paired with a formation, S/R, or Fib level.
 - Formations detected in `app/engines/chart_patterns.py`.
@@ -216,6 +216,25 @@ Dashboard **Themes** tab includes:
 | `GET /api/analysis/themes/rubric-guide` | Rubric field definitions |
 | `GET/PUT/DELETE /api/analysis/themes/overrides/{symbol}` | Read/write/clear overrides |
 | `PATCH /api/analysis/themes/{theme_id}/symbols` | Assign/remove symbol on a theme |
+
+## Phase 9 — Short & intraday setups
+
+Swing **short** and **intraday** (daily-bar proxy) setups alongside long watchlist entries.
+
+```yaml
+technical:
+  position_focus: both   # long | short | both
+  intraday:
+    enabled: true
+    stock_target_1d_pct: 2.5
+    position_side: short
+```
+
+Watchlist UI filters: All / Long / Short / Intraday.
+
+### OHLCV: NSE bhavcopy fallback (deferred)
+
+Not implemented. When added later: keep `data/ohlcv/daily/*.parquet` as source of truth; use Yahoo for refresh; bhavcopy only for reconciliation (adj vs raw differences).
 
 ### Theme API
 
