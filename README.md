@@ -167,7 +167,7 @@ The FastAPI app reads from the same `data/` folder — VS Code and the UI always
 ### Events
 
 - Classifies concalls, analyst/investor meets separately from generic announcements.
-- **Content analysis** on title text before scoring (`app/engines/event_content.py`). Interactive events without positive/negative signals are flagged `requires_transcript` and scored **0** until transcript/PDF text is available.
+- **Content analysis** on title text before scoring (`app/engines/event_content.py`). Interactive events without positive/negative signals are flagged `requires_transcript` and scored **0** until transcript/PDF text is available (Phase 6 caches NSE PDF text under `data/events/transcripts/`).
 
 ## Configuration
 
@@ -240,6 +240,21 @@ Pre-move charts saved to `data/technical/charts/{SYMBOL}/{date}.png` (EMA 20/50/
 | Endpoint | Description |
 | --- | --- |
 | `GET /api/analysis/charts/{symbol}/{date}` | PNG for a historical move |
+
+## Phase 6 — NSE transcript PDF analysis
+
+Concall / earnings-call PDFs linked from NSE announcements are downloaded (when online), text-extracted, and cached for content scoring.
+
+| Script | Purpose |
+| --- | --- |
+| `scripts/fetch_transcripts.py` | Download transcript PDFs → `data/events/transcripts/{SYMBOL}/` |
+
+| Endpoint | Description |
+| --- | --- |
+| `GET /api/analysis/events/{symbol}/transcripts` | List transcript PDF candidates + cache status |
+| `POST /api/analysis/events/transcripts/fetch` | Fetch missing PDFs (409 when `offline_mode: true`) |
+
+Offline: use cached `*.txt` + `*.json` under `data/events/transcripts/`. Re-run fetch with `offline_mode: false` to refresh.
 
 ## Tests
 

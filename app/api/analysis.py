@@ -23,6 +23,11 @@ from app.engines.backtest import load_latest_backtest, run_backtest
 from app.engines.chart_render import chart_path_for_move
 from app.engines.conviction import build_daily_watchlist, load_latest_watchlist
 from app.engines.events import refresh_events_for_universe, score_events
+from app.engines.event_transcripts import (
+    fetch_transcripts_for_symbol,
+    fetch_transcripts_for_universe,
+    list_transcript_candidates,
+)
 from app.engines.fundamental import import_screener_csv, load_fundamentals, score_fundamentals
 from app.engines.move_detector import load_moves
 from app.engines.themes import (
@@ -125,6 +130,25 @@ def build_watchlist() -> WatchlistReport:
 def refresh_events() -> dict:
     _reject_if_offline("Events refresh")
     return refresh_events_for_universe()
+
+
+@router.post("/events/transcripts/fetch")
+def fetch_event_transcripts(
+    symbol: str | None = Query(default=None),
+    limit_per_symbol: int | None = Query(default=None, ge=1, le=50),
+) -> dict:
+    _reject_if_offline("Transcript fetch")
+    if symbol:
+        return fetch_transcripts_for_symbol(symbol.upper(), limit=limit_per_symbol)
+    return fetch_transcripts_for_universe(limit_per_symbol=limit_per_symbol)
+
+
+@router.get("/events/{symbol}/transcripts")
+def get_symbol_transcript_candidates(symbol: str) -> dict:
+    return {
+        "symbol": symbol.upper(),
+        "candidates": list_transcript_candidates(symbol.upper()),
+    }
 
 
 @router.get("/events/{symbol}")
