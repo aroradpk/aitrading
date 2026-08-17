@@ -55,7 +55,32 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
 Open **http://localhost:8000** — watchlist, moves, themes, and backtest load from `data/` on disk.
 
-**Optional** — rebuild watchlist/themes from saved parquet/moves (still no API calls):
+### Windows Git Bash (MINGW64) — `python: No such file or directory`
+
+If `python` points to a missing path (e.g. `AppData/Local/Python/bin/python`), **do not use bare `python`**. The repo is on `main`; fix your local venv:
+
+```powershell
+# PowerShell once — creates .venv
+cd D:\aitrading
+git pull origin main
+powershell -ExecutionPolicy Bypass -File .\scripts\windows-install.ps1
+```
+
+```bash
+# Git Bash — always use venv
+cd /d/aitrading
+source .venv/Scripts/activate
+./scripts/venv-python.sh scripts/scan_historical_moves.py
+./scripts/venv-python.sh scripts/build_watchlist.py
+```
+
+Or without activate:
+
+```bash
+.venv/Scripts/python.exe scripts/scan_historical_moves.py
+```
+
+**Optional** — rebuild watchlist from disk only (still no network):
 
 ```bash
 python scripts/run_pipeline.py
