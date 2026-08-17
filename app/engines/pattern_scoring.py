@@ -6,17 +6,20 @@ from app.engines.technical import snapshot_similarity
 
 TECHNICAL_MAX = 7.0
 
-# Weighted layers toward 7. Candles/MTF are extras, not the core stack.
-LAYER_WEIGHTS = {
-    "ema_structure": 1.5,
-    "sr_fib": 1.5,
-    "elliott": 1.5,
-    "formation": 1.5,
-    "energy": 1.0,
-    "breakout_base": 1.5,
-    "mtf": 0.5,
-    "candle": 0.5,
+# Core stack can reach 7 without Elliott/formations/candles.
+# Those three are cherries only. S/R without Fibonacci cannot make a 7.
+CORE_WEIGHTS = {
+    "ema_structure": 2.5,
+    "sr_fib": 2.5,
+    "energy": 2.0,
 }
+CHERRY_WEIGHTS = {
+    "elliott": 0.5,
+    "formation": 0.5,
+    "candle": 0.5,
+    "mtf": 0.5,
+}
+LAYER_WEIGHTS = {**CORE_WEIGHTS, **CHERRY_WEIGHTS}
 
 LONG_FAMILIES: dict[str, tuple[str, ...]] = {
     "ema_pullback": ("ema20_support", "uptrend", "ema_bull_stack", "close_above_ema20"),
@@ -157,46 +160,40 @@ def _layer_scores(
         or confirmations.get("ema_bear_stack")
     )
     if ema_piece:
-        layers["ema_structure"] = LAYER_WEIGHTS["ema_structure"]
+        layers["ema_structure"] = CORE_WEIGHTS["ema_structure"]
 
     sr_ok = bool(confirmations.get("sr_level") or confirmations.get("ema20_support") or confirmations.get("ema20_resistance"))
     if side == "long":
         sr_ok = sr_ok or "near_support" in tags or "ema20_support_touch" in tags
     else:
         sr_ok = sr_ok or "near_resistance" in tags
-    fib_ok = bool(confirmations.get("fib_level") or confirmations.get("sr_fib_confluence")) or any(
-        tag.startswith("fib_") for tag in tags
-    )
-    if sr_ok:
-        layers["sr_fib"] = LAYER_WEIGHTS["sr_fib"]
-    elif fib_ok:
-        layers["sr_fib"] = 0.75
+    fib_ok = bool(confirmations.get("fib_level")) or any(tag.startswith("fib_") for tag in tags)
+    sr_fib = bool(confirmations.get("sr_fib_confluence")) or (sr_ok and fib_ok)
+    if sr_fib:
+        layers["sr_fib"] = CORE_WEIGHTS["sr_fib"]
 
     ell_state = elliott_alignment(tags, side)
     if confirmations.get("elliott_conflict") or ell_state == "conflict":
         layers["elliott"] = 0.0
     elif confirmations.get("elliott_aligned") or ell_state == "support":
-        layers["elliott"] = LAYER_WEIGHTS["elliott"]
+        layers["elliott"] = CHERRY_WEIGHTS["elliott"]
 
     form_state = formation_alignment((snapshot or {}).get("formations") or [], side)
     formation_ok = bool(confirmations.get("bullish_formation") if side == "long" else confirmations.get("bearish_formation"))
     if form_state == "conflict":
         layers["formation"] = 0.0
     elif formation_ok or form_state == "support":
-        layers["formation"] = LAYER_WEIGHTS["formation"]
+        layers["formation"] = CHERRY_WEIGHTS["formation"]
 
     if has_precision_energy(confirmations):
-        layers["energy"] = LAYER_WEIGHTS["energy"]
-
-    if is_breakout_base(confirmations):
-        layers["breakout_base"] = LAYER_WEIGHTS["breakout_base"]
+        layers["energy"] = CORE_WEIGHTS["energy"]
 
     if confirmations.get("mtf_15m_wedge") or confirmations.get("mtf_1h_rounding_ema20"):
-        layers["mtf"] = LAYER_WEIGHTS["mtf"]
+        layers["mtf"] = CHERRY_WEIGHTS["mtf"]
 
     candle_ok = any(tag.startswith("candle_") for tag in tags)
-    if candle_ok and (sr_ok or fib_ok or layers["formation"] > 0 or layers["elliott"] > 0):
-        layers["candle"] = LAYER_WEIGHTS["candle"]
+    if candle_ok and (sr_ok or fib_ok or sr_fib or layers["formation"] > 0 or layers["elliott"] > 0):
+        layers["candle"] = CHERRY_WEIGHTS["candle"]
 
     return layers
 
@@ -225,6 +222,9 @@ def score_technical_confirmations(
     # Quiet days cannot reach 7 even if many structure labels fire.
     if not energy:
         score = min(score, 4.0)
+    # S/R with Fibonacci is required for a 7; cherries cannot substitute.
+    if not layers.get("sr_fib") or not layers.get("ema_structure"):
+        score = min(score, 4.0)
 
     # Only fade a long chase when there is no pattern family at all.
     if side == "long" and snapshot and not families:
@@ -241,21 +241,13 @@ def score_technical_confirmations(
     layer_labels = []
     pretty = {
         "ema_structure": "EMA / trend structure",
-        "elliott": "Elliott wave",
-        "formation": "Chart formation",
+        "sr_fib": "S/R with Fibonacci",
         "energy": "Volume + range energy",
-        "breakout_base": "Breakout base",
-        "mtf": "Intraday MTF overlay",
+        "elliott": "Elliott wave cherry",
+        "formation": "Chart formation cherry",
+        "mtf": "Intraday MTF cherry",
         "candle": "Candlestick cherry (hammer / star)",
     }
-    if layers.get("sr_fib"):
-        if confirmations.get("sr_fib_confluence") or (
-            (confirmations.get("sr_level") or confirmations.get("ema20_support"))
-            and (confirmations.get("fib_level") or any(str(t).startswith("fib_") for t in (snapshot or {}).get("tags", [])))
-        ):
-            pretty["sr_fib"] = "S/R with Fibonacci"
-        else:
-            pretty["sr_fib"] = "S/R (EMA20 / price level)"
     for key, value in layers.items():
         if value > 0:
             layer_labels.append(f"{pretty[key]} +{value:.1f}")
