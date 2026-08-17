@@ -103,6 +103,11 @@
           <tbody id="moves-body"></tbody>
         </table>
       </div>
+      <div class="card">
+        <h2>Move chart</h2>
+        <p class="muted" id="move-chart-meta">Click a move row to load pre-move chart (EMA + RSI).</p>
+        <img id="move-chart-img" alt="Move chart" style="max-width:100%; display:none; border-radius:8px; border:1px solid #24304a;" />
+      </div>
     </section>
 
     <section id="universe">
@@ -298,15 +303,32 @@
         const url = symbol ? `/api/analysis/moves?symbol=${encodeURIComponent(symbol)}&limit=200` : "/api/analysis/moves?limit=200";
         const res = await fetch(url);
         const moves = await res.json();
-        document.getElementById("moves-body").innerHTML = moves.map((m) => `
-          <tr>
+        const body = document.getElementById("moves-body");
+        body.innerHTML = moves.map((m, i) => `
+          <tr data-idx="${i}" style="cursor:pointer">
             <td>${m.date}</td>
             <td>${m.symbol}</td>
             <td>${m.trigger_type}</td>
             <td>${m.move_1d_pct}</td>
             <td>${m.move_1w_pct ?? "-"}</td>
-            <td>${(m.technical_snapshot.tags || []).join(", ")}</td>
+            <td>${(m.technical_snapshot.tags || []).slice(0, 4).join(", ")}</td>
           </tr>`).join("");
+        window._moves = moves;
+        body.querySelectorAll("tr").forEach((row) => row.addEventListener("click", () => {
+          const move = moves[Number(row.dataset.idx)];
+          const img = document.getElementById("move-chart-img");
+          const meta = document.getElementById("move-chart-meta");
+          const chartUrl = `/api/analysis/charts/${encodeURIComponent(move.symbol)}/${encodeURIComponent(move.date)}`;
+          img.src = chartUrl + "?t=" + Date.now();
+          img.style.display = "block";
+          img.onerror = () => {
+            meta.textContent = `No chart yet for ${move.symbol} ${move.date}. Run: python scripts/build_charts.py`;
+            img.style.display = "none";
+          };
+          img.onload = () => {
+            meta.textContent = `${move.symbol} ${move.date} — ${move.direction} ${move.move_1d_pct}% (1D)`;
+          };
+        }));
       });
 
       async function loadUniverse() {

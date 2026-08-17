@@ -72,7 +72,14 @@ def detect_moves(frame: pd.DataFrame, *, instrument_type: str) -> list[dict]:
     return moves
 
 
-def save_moves(symbol: str, moves: list[dict]) -> Path:
+def save_moves(symbol: str, moves: list[dict], *, frame: pd.DataFrame | None = None) -> Path:
+    from app.core.config import get_settings
+    from app.engines.chart_render import render_charts_for_moves
+
+    settings = get_settings()
+    if frame is not None and settings.charts.enabled:
+        render_charts_for_moves(symbol, frame, moves)
+
     symbol_dir = moves_dir() / symbol
     symbol_dir.mkdir(parents=True, exist_ok=True)
     for move in moves:

@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from fastapi import APIRouter, File, HTTPException, Query, UploadFile
+from fastapi.responses import FileResponse
 
 from app.core.config import get_settings
 
@@ -15,9 +16,11 @@ from app.core.paths import (
     moves_dir,
     ohlcv_daily_dir,
     reports_dir,
+    technical_charts_dir,
     universe_dir,
 )
 from app.engines.backtest import load_latest_backtest, run_backtest
+from app.engines.chart_render import chart_path_for_move
 from app.engines.conviction import build_daily_watchlist, load_latest_watchlist
 from app.engines.events import refresh_events_for_universe, score_events
 from app.engines.fundamental import import_screener_csv, load_fundamentals, score_fundamentals
@@ -82,6 +85,14 @@ def refresh_universe() -> UniverseResponse:
     _reject_if_offline("Universe refresh")
     payload = build_active_universe()
     return UniverseResponse.model_validate(payload)
+
+
+@router.get("/charts/{symbol}/{move_date}")
+def get_move_chart(symbol: str, move_date: str) -> FileResponse:
+    path = chart_path_for_move(symbol.upper(), move_date)
+    if not path.exists():
+        raise HTTPException(status_code=404, detail=f"No chart for {symbol} on {move_date}")
+    return FileResponse(path, media_type="image/png", filename=path.name)
 
 
 @router.get("/moves", response_model=list[MoveEvent])

@@ -61,6 +61,10 @@ backtest:
   stock_target_1w_pct: 10.0
   index_target_1d_pct: 2.0
 
+charts:
+  enabled: true
+  lookback_bars: 60
+
 trusted_source_domains:
   - nseindia.com
   - bseindia.com

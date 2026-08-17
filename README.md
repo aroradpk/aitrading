@@ -228,6 +228,19 @@ Configure in `config/settings.yaml` under `backtest:` (`conviction_min`, `signal
 
 Technical + events are walk-forward; fundamental/theme use current imported data (static overlay).
 
+## Phase 5 — Chart PNG snapshots
+
+Pre-move charts saved to `data/technical/charts/{SYMBOL}/{date}.png` (EMA 20/50/200, RSI, S/R, tags).
+
+| Script | Purpose |
+| --- | --- |
+| `scripts/build_charts.py` | Regenerate PNGs from existing moves (offline) |
+| `scripts/scan_historical_moves.py` | Also builds charts when `charts.enabled: true` |
+
+| Endpoint | Description |
+| --- | --- |
+| `GET /api/analysis/charts/{symbol}/{date}` | PNG for a historical move |
+
 ## Tests
 
 ```bash

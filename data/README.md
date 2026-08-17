@@ -16,6 +16,7 @@ Set `offline_mode: true` in `config/settings.yaml` (default) to guarantee the ap
 | `themes/scores/{SYMBOL}.json` | Per-symbol theme scores |
 | `reports/daily/` | Daily conviction watchlist JSON |
 | `reports/backtest/` | Walk-forward backtest results |
+| `technical/charts/` | Pre-move PNG charts (EMA + RSI) |
 | `sources/` | Misc API response caches |
 
 ## Commands (no network)

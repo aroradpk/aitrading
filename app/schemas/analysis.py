@@ -39,6 +39,7 @@ class MoveEvent(BaseModel):
     close: float
     volume_ratio_vs_20d: float | None = None
     technical_snapshot: dict[str, Any] = Field(default_factory=dict)
+    chart_file: str | None = None
 
 
 class UniverseResponse(BaseModel):

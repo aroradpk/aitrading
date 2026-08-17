@@ -30,7 +30,7 @@ def main() -> None:
             from app.engines.events import enrich_moves_with_events
 
             moves = enrich_moves_with_events(symbol, moves)
-        save_moves(symbol, moves)
+        save_moves(symbol, moves, frame=frame)
         print(f"  OK {symbol}: {len(moves)} moves")
 
 

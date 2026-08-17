@@ -64,6 +64,11 @@ class BacktestConfig(BaseModel):
     index_target_1d_pct: float = 2.0
 
 
+class ChartsConfig(BaseModel):
+    enabled: bool = True
+    lookback_bars: int = 60
+
+
 class Settings(BaseModel):
     data_dir: str = "data"
     offline_mode: bool = False
@@ -76,6 +81,7 @@ class Settings(BaseModel):
     events: EventsConfig = Field(default_factory=EventsConfig)
     fundamentals: FundamentalsConfig = Field(default_factory=FundamentalsConfig)
     backtest: BacktestConfig = Field(default_factory=BacktestConfig)
+    charts: ChartsConfig = Field(default_factory=ChartsConfig)
     trusted_source_domains: list[str] = Field(default_factory=list)
 
 

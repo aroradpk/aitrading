@@ -42,6 +42,12 @@ def technical_snapshots_dir() -> Path:
     return path
 
 
+def technical_charts_dir() -> Path:
+    path = data_dir() / "technical" / "charts"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
 def events_nse_dir() -> Path:
     path = data_dir() / "events" / "nse"
     path.mkdir(parents=True, exist_ok=True)
