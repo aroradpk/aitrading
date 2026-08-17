@@ -75,6 +75,24 @@ Edit `config/settings.yaml` for thresholds, universe size, and conviction weight
 
 Nifty Next 50 full list: `config/nifty_next_50.json` (update quarterly after index reconstitution).
 
+## Phase 2 — Events & fundamentals
+
+| Script | Purpose |
+| --- | --- |
+| `scripts/fetch_events.py` | NSE corporate announcements + PIB RSS cache |
+| `scripts/import_fundamentals.py` | Import Screener CSV from `data/fundamentals/import/` |
+
+Conviction now blends **technical (50%) + fundamental (25%) + events (15%)**.
+
+### Screener CSV import
+
+1. Export CSV from [Screener.in](https://www.screener.in) for your stocks
+2. Save to `data/fundamentals/import/my_export.csv`
+3. Run `python scripts/import_fundamentals.py`
+4. Or upload via dashboard **Data Status** tab
+
+Template columns: see `config/samples/screener_template.csv`
+
 ## Tests
 
 ```bash

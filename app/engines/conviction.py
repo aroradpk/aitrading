@@ -3,12 +3,13 @@ from __future__ import annotations
 import json
 from datetime import datetime, timezone
 
-from app.core.config import get_settings
 from app.core.paths import reports_dir
+from app.core.paths import ohlcv_daily_dir
+from app.engines.events import score_events
+from app.engines.fundamental import score_fundamentals
 from app.engines.move_detector import load_moves, scan_today_setup
 from app.engines.universe import all_instruments
 from app.ingest.yfinance_client import load_ohlcv
-from app.core.paths import ohlcv_daily_dir
 
 
 def conviction_from_scores(
@@ -17,20 +18,26 @@ def conviction_from_scores(
     events: float = 0.0,
     theme: float = 0.0,
 ) -> dict:
+    from app.core.config import get_settings
+
     settings = get_settings()
     weights = settings.conviction_weights
-    final = (
+    weighted = (
         technical * weights.technical
         + fundamental * weights.fundamental
         + events * weights.events
         + theme * weights.theme
     )
+    if weighted <= 0:
+        final = 0.0
+    else:
+        final = min(10.0, max(1.0, weighted))
     return {
         "technical": round(technical, 1),
         "fundamental": round(fundamental, 1),
         "events": round(events, 1),
         "theme": round(theme, 1),
-        "final": round(min(10.0, max(1.0, final if final > 0 else 0)), 1),
+        "final": round(final, 1),
     }
 
 
@@ -48,7 +55,18 @@ def build_daily_watchlist() -> dict:
         frame = load_ohlcv(path)
         historical_moves = load_moves(symbol)
         setup = scan_today_setup(frame, historical_moves)
-        scores = conviction_from_scores(technical=setup["technical_score"])
+
+        fundamental_score, fundamental_reasons = (0.0, [])
+        event_score, event_reasons = (0.0, [])
+        if instrument_type == "stock":
+            fundamental_score, fundamental_reasons = score_fundamentals(symbol)
+            event_score, event_reasons = score_events(symbol)
+
+        scores = conviction_from_scores(
+            technical=setup["technical_score"],
+            fundamental=fundamental_score,
+            events=event_score,
+        )
 
         reasons = [
             {
@@ -71,6 +89,8 @@ def build_daily_watchlist() -> dict:
                     "date": match["date"],
                 }
             )
+        reasons.extend(fundamental_reasons)
+        reasons.extend(event_reasons)
 
         horizon = "1d" if instrument_type == "index" else "1d/1w"
         target = 2.0 if instrument_type == "index" else 5.0

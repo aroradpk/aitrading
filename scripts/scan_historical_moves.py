@@ -26,6 +26,10 @@ def main() -> None:
             continue
         frame = load_ohlcv(path)
         moves = detect_moves(frame, instrument_type=instrument_type)
+        if instrument_type == "stock":
+            from app.engines.events import enrich_moves_with_events
+
+            moves = enrich_moves_with_events(symbol, moves)
         save_moves(symbol, moves)
         print(f"  OK {symbol}: {len(moves)} moves")
 

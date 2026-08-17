@@ -40,6 +40,18 @@ class TechnicalConfig(BaseModel):
     rsi_overbought: int = 65
 
 
+class EventsConfig(BaseModel):
+    lookback_days: int = 30
+    move_alignment_days: int = 3
+    pib_feed_url: str = "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=2"
+    pib_cache_count: int = 100
+
+
+class FundamentalsConfig(BaseModel):
+    screener_import_dir: str = "data/fundamentals/import"
+    min_score_metrics: int = 2
+
+
 class Settings(BaseModel):
     data_dir: str = "data"
     thresholds: Thresholds = Field(default_factory=Thresholds)
@@ -48,6 +60,8 @@ class Settings(BaseModel):
     ohlcv: dict[str, Any] = Field(default_factory=dict)
     conviction_weights: ConvictionWeights = Field(default_factory=ConvictionWeights)
     technical: TechnicalConfig = Field(default_factory=TechnicalConfig)
+    events: EventsConfig = Field(default_factory=EventsConfig)
+    fundamentals: FundamentalsConfig = Field(default_factory=FundamentalsConfig)
     trusted_source_domains: list[str] = Field(default_factory=list)
 
 

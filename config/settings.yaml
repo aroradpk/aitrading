@@ -39,6 +39,16 @@ technical:
   rsi_oversold: 35
   rsi_overbought: 65
 
+events:
+  lookback_days: 30
+  move_alignment_days: 3
+  pib_feed_url: https://pib.gov.in/RssMain.aspx?ModId=6&Lang=2
+  pib_cache_count: 100
+
+fundamentals:
+  screener_import_dir: data/fundamentals/import
+  min_score_metrics: 2
+
 trusted_source_domains:
   - nseindia.com
   - bseindia.com

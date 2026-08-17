@@ -40,3 +40,34 @@ def technical_snapshots_dir() -> Path:
     path = data_dir() / "technical" / "snapshots"
     path.mkdir(parents=True, exist_ok=True)
     return path
+
+
+def events_nse_dir() -> Path:
+    path = data_dir() / "events" / "nse"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def events_pib_dir() -> Path:
+    path = data_dir() / "events" / "pib"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def fundamentals_dir() -> Path:
+    path = data_dir() / "fundamentals"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def fundamentals_import_dir() -> Path:
+    path = fundamentals_dir() / "import"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def sources_cache_dir() -> Path:
+    path = data_dir() / "sources"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+

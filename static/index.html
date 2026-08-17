@@ -63,10 +63,11 @@
           <thead>
             <tr>
               <th>Symbol</th>
-              <th>Type</th>
               <th>Conviction</th>
+              <th>Tech</th>
+              <th>Fund</th>
+              <th>Events</th>
               <th>Matches</th>
-              <th>Technical tags</th>
               <th>Top reason</th>
             </tr>
           </thead>
@@ -115,10 +116,13 @@
     <section id="status">
       <div class="card">
         <button class="action" id="load-status">Refresh status</button>
+        <button class="action" id="refresh-events">Fetch NSE + PIB events</button>
         <pre id="status-body">Loading...</pre>
-        <p class="muted">
-          Run locally: <code>python scripts/run_pipeline.py</code> then refresh this page.
-        </p>
+        <h2>Import Screener CSV</h2>
+        <p class="muted">Export from Screener.in → save to <code>data/fundamentals/import/</code> or upload here.</p>
+        <input type="file" id="csv-upload" accept=".csv" />
+        <button class="action" id="upload-csv">Upload CSV</button>
+        <pre id="upload-result"></pre>
       </div>
     </section>
 
@@ -145,10 +149,11 @@
         body.innerHTML = data.entries.map((e, i) => `
           <tr data-idx="${i}" style="cursor:pointer">
             <td>${e.symbol}</td>
-            <td>${e.type}</td>
             <td class="conviction">${e.conviction}</td>
+            <td>${e.scores.technical}</td>
+            <td>${e.scores.fundamental}</td>
+            <td>${e.scores.events}</td>
             <td>${e.match_count}</td>
-            <td>${(e.current_snapshot.tags || []).slice(0,4).join(", ")}</td>
             <td>${(e.reasons[0] || {}).text || "-"}</td>
           </tr>`).join("");
         body.querySelectorAll("tr").forEach((row) => row.addEventListener("click", () => {
@@ -200,6 +205,21 @@
       document.getElementById("load-status").addEventListener("click", async () => {
         const res = await fetch("/api/analysis/status");
         document.getElementById("status-body").textContent = JSON.stringify(await res.json(), null, 2);
+      });
+
+      document.getElementById("refresh-events").addEventListener("click", async () => {
+        const res = await fetch("/api/analysis/events/refresh", { method: "POST" });
+        document.getElementById("status-body").textContent = JSON.stringify(await res.json(), null, 2);
+      });
+
+      document.getElementById("upload-csv").addEventListener("click", async () => {
+        const input = document.getElementById("csv-upload");
+        if (!input.files.length) return;
+        const form = new FormData();
+        form.append("file", input.files[0]);
+        const res = await fetch("/api/analysis/fundamentals/import", { method: "POST", body: form });
+        document.getElementById("upload-result").textContent = JSON.stringify(await res.json(), null, 2);
+        await loadWatchlist();
       });
 
       loadWatchlist();

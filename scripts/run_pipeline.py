@@ -19,6 +19,8 @@ def run(script: str) -> None:
 def main() -> None:
     run("build_universe.py")
     run("fetch_ohlcv.py")
+    run("fetch_events.py")
+    run("import_fundamentals.py")
     run("scan_historical_moves.py")
     run("build_watchlist.py")
     print("\nPipeline complete. Open data/ in VS Code or visit http://localhost:8000")

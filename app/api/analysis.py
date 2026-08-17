@@ -2,10 +2,21 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, File, HTTPException, Query, UploadFile
 
-from app.core.paths import data_dir, moves_dir, ohlcv_daily_dir, reports_dir, universe_dir
+from app.core.paths import (
+    data_dir,
+    events_nse_dir,
+    fundamentals_dir,
+    fundamentals_import_dir,
+    moves_dir,
+    ohlcv_daily_dir,
+    reports_dir,
+    universe_dir,
+)
 from app.engines.conviction import build_daily_watchlist, load_latest_watchlist
+from app.engines.events import refresh_events_for_universe, score_events
+from app.engines.fundamental import import_screener_csv, load_fundamentals, score_fundamentals
 from app.engines.move_detector import load_moves
 from app.engines.universe import build_active_universe, load_active_universe
 from app.schemas.analysis import DataStatus, MoveEvent, UniverseResponse, WatchlistReport
@@ -63,3 +74,48 @@ def latest_watchlist() -> WatchlistReport:
 def build_watchlist() -> WatchlistReport:
     payload = build_daily_watchlist()
     return WatchlistReport.model_validate(payload)
+
+
+@router.post("/events/refresh")
+def refresh_events() -> dict:
+    return refresh_events_for_universe()
+
+
+@router.get("/events/{symbol}")
+def get_symbol_events(symbol: str) -> dict:
+    event_score, reasons = score_events(symbol.upper())
+    nse_path = events_nse_dir() / f"{symbol.upper()}.json"
+    announcements = []
+    if nse_path.exists():
+        import json
+
+        announcements = json.loads(nse_path.read_text(encoding="utf-8"))
+    return {
+        "symbol": symbol.upper(),
+        "event_score": event_score,
+        "reasons": reasons,
+        "announcements": announcements[:20],
+    }
+
+
+@router.get("/fundamentals/{symbol}")
+def get_symbol_fundamentals(symbol: str) -> dict:
+    payload = load_fundamentals(symbol.upper())
+    if payload is None:
+        raise HTTPException(status_code=404, detail=f"No fundamentals for {symbol}")
+    score, reasons = score_fundamentals(symbol.upper())
+    return {"symbol": symbol.upper(), "data": payload, "score": score, "reasons": reasons}
+
+
+@router.post("/fundamentals/import")
+async def upload_screener_csv(file: UploadFile = File(...)) -> dict:
+    if not file.filename or not file.filename.lower().endswith(".csv"):
+        raise HTTPException(status_code=400, detail="Upload a .csv file exported from Screener")
+    import_dir = fundamentals_import_dir()
+    import_dir.mkdir(parents=True, exist_ok=True)
+    dest = import_dir / file.filename
+    content = await file.read()
+    dest.write_bytes(content)
+    imported = import_screener_csv(dest)
+    return {"filename": file.filename, "imported_symbols": list(imported.keys())}
+
