@@ -42,6 +42,31 @@ def test_position_bias_long_on_uptrend() -> None:
         assert position_bias(snap, focus="long") == "long"
 
 
+def test_morning_star_and_hammer_raw_tags() -> None:
+    from app.engines.technical import _raw_candle_tags
+
+    prev2 = pd.Series({"open": 110.0, "high": 111.0, "low": 100.0, "close": 101.0})
+    prev = pd.Series({"open": 102.0, "high": 103.0, "low": 100.5, "close": 101.5})
+    row = pd.Series({"open": 102.0, "high": 108.0, "low": 101.8, "close": 107.0})
+    tags = _raw_candle_tags(row, prev, prev2)
+    assert "morning_star" in tags
+
+    hammer = pd.Series({"open": 10.2, "high": 10.21, "low": 9.0, "close": 10.15})
+    assert "hammer" in _raw_candle_tags(hammer, None, None)
+
+
+def test_reasons_include_elliott_fib_formation() -> None:
+    snap = {
+        "tags": ["elliott_impulse_up", "fib_0.618_retrace", "formation_falling_wedge", "candle_hammer"],
+        "weekly": {"tags": []},
+    }
+    texts = [r["text"] for r in technical_reasons_for_side(snap, "long")]
+    assert any("elliott" in t for t in texts)
+    assert any("fib" in t for t in texts)
+    assert any("formation" in t for t in texts)
+    assert any("candle" in t for t in texts)
+
+
 def test_candle_only_with_context() -> None:
     snap = build_snapshot(_uptrend_frame())
     if snap.get("raw_candle_patterns"):

@@ -1,9 +1,22 @@
 from __future__ import annotations
 
+from app.engines.chart_patterns import load_formation_catalog
 from app.engines.pattern_confirmations import confirmation_labels, is_breakout_base
 from app.engines.technical import snapshot_similarity
 
 TECHNICAL_MAX = 7.0
+
+# Weighted layers toward 7. Candles/MTF are extras, not the core stack.
+LAYER_WEIGHTS = {
+    "ema_structure": 1.5,
+    "sr_fib": 1.5,
+    "elliott": 1.5,
+    "formation": 1.5,
+    "energy": 1.0,
+    "breakout_base": 1.5,
+    "mtf": 0.5,
+    "candle": 0.5,
+}
 
 LONG_FAMILIES: dict[str, tuple[str, ...]] = {
     "ema_pullback": ("ema20_support", "uptrend", "ema_bull_stack", "close_above_ema20"),
@@ -40,6 +53,38 @@ def matched_families(confirmations: dict[str, bool], *, side: str) -> list[str]:
         if hits >= FAMILY_MIN_HITS:
             names.append(name)
     return names
+
+
+def formation_alignment(formations: list[dict], side: str) -> str:
+    bias = load_formation_catalog().get("formation_bias", {})
+    ids = {formation.get("id") for formation in formations}
+    bullish = set(bias.get("bullish", []))
+    bearish = set(bias.get("bearish", []))
+    if side == "long":
+        if ids & bearish:
+            return "conflict"
+        if ids & bullish:
+            return "support"
+    elif side == "short":
+        if ids & bullish:
+            return "conflict"
+        if ids & bearish:
+            return "support"
+    return "neutral"
+
+
+def elliott_alignment(tags: set[str], side: str) -> str:
+    if side == "long":
+        if "elliott_impulse_down" in tags and "elliott_impulse_up" not in tags:
+            return "conflict"
+        if "elliott_impulse_up" in tags or "elliott_abc_corrective_down" in tags:
+            return "support"
+    elif side == "short":
+        if "elliott_impulse_up" in tags and "elliott_impulse_down" not in tags:
+            return "conflict"
+        if "elliott_impulse_down" in tags or "elliott_abc_corrective_up" in tags:
+            return "support"
+    return "neutral"
 
 
 def _pattern_overlap(current: dict[str, bool], historical: dict[str, bool]) -> float:
@@ -85,13 +130,75 @@ def historical_pattern_bonus(
     strong = [m for m in matches if m["similarity"] >= 0.35]
     bonus = 0.0
     if strong:
-        bonus = min(1.4, 0.6 + strong[0]["similarity"] * 2.0)
+        bonus = min(0.4, 0.15 + strong[0]["similarity"] * 0.4)
     return bonus, matches[:5]
 
 
 def has_precision_energy(confirmations: dict[str, bool]) -> bool:
     """High conviction requires expansion energy (keeps quiet-day FPR near 5%)."""
     return bool(confirmations.get("vol_expansion") and confirmations.get("range_expansion"))
+
+
+def _layer_scores(
+    confirmations: dict[str, bool],
+    *,
+    side: str,
+    snapshot: dict | None,
+    families: list[str],
+) -> dict[str, float]:
+    tags = set((snapshot or {}).get("tags", []))
+    layers = {name: 0.0 for name in LAYER_WEIGHTS}
+
+    ema_piece = bool(
+        families
+        or confirmations.get("ema20_support")
+        or confirmations.get("ema20_resistance")
+        or confirmations.get("ema_bull_stack")
+        or confirmations.get("ema_bear_stack")
+    )
+    if ema_piece:
+        layers["ema_structure"] = LAYER_WEIGHTS["ema_structure"]
+
+    sr_ok = bool(confirmations.get("sr_level") or confirmations.get("ema20_support") or confirmations.get("ema20_resistance"))
+    if side == "long":
+        sr_ok = sr_ok or "near_support" in tags or "ema20_support_touch" in tags
+    else:
+        sr_ok = sr_ok or "near_resistance" in tags
+    fib_ok = bool(confirmations.get("fib_level") or confirmations.get("sr_fib_confluence")) or any(
+        tag.startswith("fib_") for tag in tags
+    )
+    if sr_ok:
+        layers["sr_fib"] = LAYER_WEIGHTS["sr_fib"]
+    elif fib_ok:
+        layers["sr_fib"] = 0.75
+
+    ell_state = elliott_alignment(tags, side)
+    if confirmations.get("elliott_conflict") or ell_state == "conflict":
+        layers["elliott"] = 0.0
+    elif confirmations.get("elliott_aligned") or ell_state == "support":
+        layers["elliott"] = LAYER_WEIGHTS["elliott"]
+
+    form_state = formation_alignment((snapshot or {}).get("formations") or [], side)
+    formation_ok = bool(confirmations.get("bullish_formation") if side == "long" else confirmations.get("bearish_formation"))
+    if form_state == "conflict":
+        layers["formation"] = 0.0
+    elif formation_ok or form_state == "support":
+        layers["formation"] = LAYER_WEIGHTS["formation"]
+
+    if has_precision_energy(confirmations):
+        layers["energy"] = LAYER_WEIGHTS["energy"]
+
+    if is_breakout_base(confirmations):
+        layers["breakout_base"] = LAYER_WEIGHTS["breakout_base"]
+
+    if confirmations.get("mtf_15m_wedge") or confirmations.get("mtf_1h_rounding_ema20"):
+        layers["mtf"] = LAYER_WEIGHTS["mtf"]
+
+    candle_ok = any(tag.startswith("candle_") for tag in tags)
+    if candle_ok and (sr_ok or fib_ok or layers["formation"] > 0 or layers["elliott"] > 0):
+        layers["candle"] = LAYER_WEIGHTS["candle"]
+
+    return layers
 
 
 def score_technical_confirmations(
@@ -102,30 +209,22 @@ def score_technical_confirmations(
     snapshot: dict | None = None,
 ) -> dict:
     families = matched_families(confirmations, side=side)
-    active_count = len(_active(confirmations))
     energy = has_precision_energy(confirmations)
-
-    if families and energy:
-        score = TECHNICAL_MAX
-    elif families or active_count >= 2:
-        score = 4.0
-    elif active_count == 1:
-        score = 2.5
-    else:
-        score = 1.0
+    layers = _layer_scores(confirmations, side=side, snapshot=snapshot, families=families)
+    score = sum(layers.values())
 
     if snapshot and historical_moves:
         tag_sim = 0.0
         for move in historical_moves[:50]:
             tag_sim = max(tag_sim, snapshot_similarity(snapshot, move.get("technical_snapshot", {})))
-        if score < TECHNICAL_MAX:
-            score += min(0.5, tag_sim * 0.5)
+        score += min(0.3, tag_sim * 0.3)
 
-    bonus, top_matches = historical_pattern_bonus(
-        confirmations, historical_moves or [], side=side
-    )
-    if score < TECHNICAL_MAX:
-        score += bonus
+    bonus, top_matches = historical_pattern_bonus(confirmations, historical_moves or [], side=side)
+    score += bonus
+
+    # Quiet days cannot reach 7 even if many structure labels fire.
+    if not energy:
+        score = min(score, 4.0)
 
     # Only fade a long chase when there is no pattern family at all.
     if side == "long" and snapshot and not families:
@@ -139,13 +238,41 @@ def score_technical_confirmations(
     for family in families:
         labels.insert(0, f"Pattern family: {family.replace('_', ' ')}")
 
+    layer_labels = []
+    pretty = {
+        "ema_structure": "EMA / trend structure",
+        "elliott": "Elliott wave",
+        "formation": "Chart formation",
+        "energy": "Volume + range energy",
+        "breakout_base": "Breakout base",
+        "mtf": "Intraday MTF overlay",
+        "candle": "Candlestick cherry (hammer / star)",
+    }
+    if layers.get("sr_fib"):
+        if confirmations.get("sr_fib_confluence") or (
+            (confirmations.get("sr_level") or confirmations.get("ema20_support"))
+            and (confirmations.get("fib_level") or any(str(t).startswith("fib_") for t in (snapshot or {}).get("tags", [])))
+        ):
+            pretty["sr_fib"] = "S/R with Fibonacci"
+        else:
+            pretty["sr_fib"] = "S/R (EMA20 / price level)"
+    for key, value in layers.items():
+        if value > 0:
+            layer_labels.append(f"{pretty[key]} +{value:.1f}")
+    for text in reversed(layer_labels):
+        labels.insert(0, text)
+
+    tags = set((snapshot or {}).get("tags", []))
     return {
         "technical_score": score,
         "pattern_confirmations": confirmations,
         "confirmation_labels": labels,
         "pattern_families": families,
+        "score_layers": layers,
         "top_matches": top_matches,
         "match_count": match_count,
-        "breakout_base": is_breakout_base(confirmations) or (bool(families) and energy),
+        "breakout_base": is_breakout_base(confirmations),
         "precision_energy": energy,
+        "formation_alignment": formation_alignment((snapshot or {}).get("formations") or [], side),
+        "elliott_alignment": elliott_alignment(tags, side),
     }
