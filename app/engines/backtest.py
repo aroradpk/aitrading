@@ -70,7 +70,6 @@ def _evaluate_signal(
     as_of = frame.index[idx].date().isoformat()
     frame_slice = frame.iloc[: idx + 1]
     moves_before = _moves_before(historical_moves, as_of)
-    setup = scan_today_setup(frame_slice, moves_before)
 
     as_of_date = frame.index[idx].date()
     fundamental = events = theme = 0.0
@@ -79,6 +78,7 @@ def _evaluate_signal(
             symbol, instrument_type, as_of_date, layer_cache
         )
 
+    setup = scan_today_setup(frame_slice, moves_before)
     scores = conviction_from_scores(
         technical=setup["technical_score"],
         fundamental=fundamental,
@@ -109,6 +109,7 @@ def _evaluate_signal(
     return {
         "symbol": symbol,
         "date": as_of,
+        "bar_idx": idx,
         "instrument_type": instrument_type,
         "conviction": conviction,
         "scores": scores,
@@ -121,6 +122,68 @@ def _evaluate_signal(
         "hit_1d": hit_1d,
         "hit_1w": hit_1w,
     }
+
+
+def collect_backtest_signals(conviction_floor: float | None = None) -> list[dict]:
+    settings = get_settings()
+    bt = settings.backtest
+    conviction_floor = conviction_floor if conviction_floor is not None else bt.tuning_conviction_floor
+    all_signals: list[dict] = []
+    layer_cache: dict[str, tuple[float, float, float]] = {}
+
+    for instrument in all_instruments():
+        symbol = instrument["symbol"]
+        instrument_type = instrument.get("type", "stock")
+        path = ohlcv_daily_dir() / f"{symbol}.parquet"
+        if not path.exists():
+            continue
+
+        frame = load_ohlcv(path)
+        if len(frame) < 40:
+            continue
+
+        historical_moves = load_moves(symbol)
+        max_idx = len(frame) - bt.forward_days_1w - 1
+        for idx in range(30, max_idx):
+            signal = _evaluate_signal(
+                frame,
+                idx,
+                symbol=symbol,
+                instrument_type=instrument_type,
+                historical_moves=historical_moves,
+                conviction_min=conviction_floor,
+                layer_cache=layer_cache,
+            )
+            if signal is not None:
+                all_signals.append(signal)
+
+    all_signals.sort(key=lambda item: (item["symbol"], item["bar_idx"]))
+    return all_signals
+
+
+def filter_backtest_signals(
+    signals: list[dict],
+    *,
+    conviction_min: float,
+    signal_cooldown_days: int,
+) -> list[dict]:
+    by_symbol: dict[str, list[dict]] = {}
+    for signal in signals:
+        by_symbol.setdefault(signal["symbol"], []).append(signal)
+
+    filtered: list[dict] = []
+    for symbol_signals in by_symbol.values():
+        last_idx = -signal_cooldown_days - 1
+        for signal in symbol_signals:
+            if signal["conviction"] < conviction_min:
+                continue
+            if signal["bar_idx"] - last_idx < signal_cooldown_days:
+                continue
+            filtered.append(signal)
+            last_idx = signal["bar_idx"]
+
+    filtered.sort(key=lambda item: (item["date"], item["symbol"]), reverse=True)
+    return filtered
 
 
 def _aggregate_summary(signals: list[dict]) -> dict:
@@ -186,46 +249,20 @@ def _aggregate_summary(signals: list[dict]) -> dict:
     }
 
 
+def _public_signals(signals: list[dict]) -> list[dict]:
+    return [{key: value for key, value in signal.items() if key != "bar_idx"} for signal in signals]
+
+
 def run_backtest() -> dict:
     settings = get_settings()
     bt = settings.backtest
     generated_at = datetime.now(timezone.utc).isoformat()
-    all_signals: list[dict] = []
-    layer_cache: dict[str, tuple[float, float, float]] = {}
-
-    for instrument in all_instruments():
-        symbol = instrument["symbol"]
-        instrument_type = instrument.get("type", "stock")
-        path = ohlcv_daily_dir() / f"{symbol}.parquet"
-        if not path.exists():
-            continue
-
-        frame = load_ohlcv(path)
-        if len(frame) < 40:
-            continue
-
-        historical_moves = load_moves(symbol)
-        last_signal_idx = -bt.signal_cooldown_days - 1
-
-        max_idx = len(frame) - bt.forward_days_1w - 1
-        for idx in range(30, max_idx):
-            signal = _evaluate_signal(
-                frame,
-                idx,
-                symbol=symbol,
-                instrument_type=instrument_type,
-                historical_moves=historical_moves,
-                conviction_min=bt.conviction_min,
-                layer_cache=layer_cache,
-            )
-            if signal is None:
-                continue
-            if idx - last_signal_idx < bt.signal_cooldown_days:
-                continue
-            all_signals.append(signal)
-            last_signal_idx = idx
-
-    all_signals.sort(key=lambda item: (item["date"], item["symbol"]), reverse=True)
+    raw_signals = collect_backtest_signals(conviction_floor=bt.tuning_conviction_floor)
+    all_signals = filter_backtest_signals(
+        raw_signals,
+        conviction_min=bt.conviction_min,
+        signal_cooldown_days=bt.signal_cooldown_days,
+    )
     summary = _aggregate_summary(all_signals)
 
     payload = {
@@ -243,7 +280,7 @@ def run_backtest() -> dict:
             ),
         },
         "summary": summary,
-        "signals": all_signals,
+        "signals": _public_signals(all_signals),
     }
 
     root = backtest_reports_dir()
@@ -254,8 +291,77 @@ def run_backtest() -> dict:
     return payload
 
 
+def _pick_recommended_combo(rows: list[dict], min_signals: int) -> dict | None:
+    eligible = [row for row in rows if row["summary"]["signals"] >= min_signals]
+    if not eligible:
+        return None
+
+    def sort_key(row: dict) -> tuple:
+        hit_1w = row["summary"].get("hit_1w_rate")
+        hit_1d = row["summary"].get("hit_1d_rate")
+        return (
+            hit_1w if hit_1w is not None else -1.0,
+            hit_1d if hit_1d is not None else -1.0,
+            row["summary"]["signals"],
+        )
+
+    return max(eligible, key=sort_key)
+
+
+def tune_backtest() -> dict:
+    settings = get_settings()
+    bt = settings.backtest
+    generated_at = datetime.now(timezone.utc).isoformat()
+    raw_signals = collect_backtest_signals(conviction_floor=bt.tuning_conviction_floor)
+
+    rows: list[dict] = []
+    for conviction_min in bt.tuning_conviction_min_grid:
+        for cooldown_days in bt.tuning_cooldown_days_grid:
+            filtered = filter_backtest_signals(
+                raw_signals,
+                conviction_min=conviction_min,
+                signal_cooldown_days=cooldown_days,
+            )
+            summary = _aggregate_summary(filtered)
+            rows.append(
+                {
+                    "conviction_min": conviction_min,
+                    "signal_cooldown_days": cooldown_days,
+                    "summary": summary,
+                }
+            )
+
+    recommended = _pick_recommended_combo(rows, bt.tuning_min_signals)
+    payload = {
+        "run_id": generated_at,
+        "generated_at": generated_at,
+        "config": {
+            "conviction_floor": bt.tuning_conviction_floor,
+            "conviction_min_grid": bt.tuning_conviction_min_grid,
+            "cooldown_days_grid": bt.tuning_cooldown_days_grid,
+            "min_signals": bt.tuning_min_signals,
+            "current_conviction_min": bt.conviction_min,
+            "current_signal_cooldown_days": bt.signal_cooldown_days,
+        },
+        "grid": rows,
+        "recommended": recommended,
+    }
+
+    root = backtest_reports_dir()
+    tuning_path = root / "tuning_latest.json"
+    tuning_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    return payload
+
+
 def load_latest_backtest() -> dict | None:
     path = backtest_reports_dir() / "latest.json"
+    if not path.exists():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_latest_tuning() -> dict | None:
+    path = backtest_reports_dir() / "tuning_latest.json"
     if not path.exists():
         return None
     return json.loads(path.read_text(encoding="utf-8"))

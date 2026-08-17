@@ -19,7 +19,12 @@ from app.core.paths import (
     technical_charts_dir,
     universe_dir,
 )
-from app.engines.backtest import load_latest_backtest, run_backtest
+from app.engines.backtest import (
+    load_latest_backtest,
+    load_latest_tuning,
+    run_backtest,
+    tune_backtest,
+)
 from app.engines.chart_render import chart_path_for_move
 from app.engines.conviction import build_daily_watchlist, load_latest_watchlist
 from app.engines.events import refresh_events_for_universe, score_events
@@ -39,6 +44,7 @@ from app.engines.themes import (
 from app.engines.universe import build_active_universe, load_active_universe
 from app.schemas.analysis import (
     BacktestReport,
+    BacktestTuningReport,
     DataStatus,
     MoveEvent,
     UniverseResponse,
@@ -210,6 +216,23 @@ def latest_backtest() -> BacktestReport:
             detail="No backtest report found. Run scripts/run_backtest.py",
         )
     return BacktestReport.model_validate(payload)
+
+
+@router.post("/backtest/tune", response_model=BacktestTuningReport)
+def build_backtest_tuning() -> BacktestTuningReport:
+    payload = tune_backtest()
+    return BacktestTuningReport.model_validate(payload)
+
+
+@router.get("/backtest/tuning/latest", response_model=BacktestTuningReport)
+def latest_backtest_tuning() -> BacktestTuningReport:
+    payload = load_latest_tuning()
+    if payload is None:
+        raise HTTPException(
+            status_code=404,
+            detail="No tuning report found. Run scripts/tune_backtest.py",
+        )
+    return BacktestTuningReport.model_validate(payload)
 
 
 @router.post("/themes/build")

@@ -96,6 +96,7 @@ def test_run_backtest_writes_report(monkeypatch, tmp_path: Path) -> None:
             return {
                 "symbol": "TEST",
                 "date": "2024-02-15",
+                "bar_idx": 40,
                 "instrument_type": "stock",
                 "conviction": 8.0,
                 "scores": {"technical": 8.0, "fundamental": 0, "events": 0, "theme": 0, "final": 8.0},

@@ -62,6 +62,12 @@ class BacktestConfig(BaseModel):
     stock_target_1d_pct: float = 5.0
     stock_target_1w_pct: float = 10.0
     index_target_1d_pct: float = 2.0
+    tuning_conviction_min_grid: list[float] = Field(
+        default_factory=lambda: [6.0, 6.5, 7.0, 7.5, 8.0]
+    )
+    tuning_cooldown_days_grid: list[int] = Field(default_factory=lambda: [3, 5, 7, 10])
+    tuning_conviction_floor: float = 6.0
+    tuning_min_signals: int = 1
 
 
 class ChartsConfig(BaseModel):

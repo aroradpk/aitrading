@@ -81,3 +81,17 @@ class BacktestReport(BaseModel):
     config: dict[str, Any]
     summary: dict[str, Any]
     signals: list[BacktestSignal]
+
+
+class BacktestTuningRow(BaseModel):
+    conviction_min: float
+    signal_cooldown_days: int
+    summary: dict[str, Any]
+
+
+class BacktestTuningReport(BaseModel):
+    run_id: str
+    generated_at: str
+    config: dict[str, Any]
+    grid: list[BacktestTuningRow]
+    recommended: dict[str, Any] | None = None

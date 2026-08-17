@@ -60,6 +60,10 @@ backtest:
   stock_target_1d_pct: 5.0
   stock_target_1w_pct: 10.0
   index_target_1d_pct: 2.0
+  tuning_conviction_min_grid: [6.0, 6.5, 7.0, 7.5, 8.0]
+  tuning_cooldown_days_grid: [3, 5, 7, 10]
+  tuning_conviction_floor: 6.0
+  tuning_min_signals: 1
 
 charts:
   enabled: true

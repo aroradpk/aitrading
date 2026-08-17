@@ -228,6 +228,21 @@ Configure in `config/settings.yaml` under `backtest:` (`conviction_min`, `signal
 
 Technical + events are walk-forward; fundamental/theme use current imported data (static overlay).
 
+### Phase 7 — Backtest tuning
+
+Grid-search `conviction_min` and `signal_cooldown_days` without re-running the full walk-forward for each combo (signals collected once at `tuning_conviction_floor`, then filtered).
+
+| Script | Purpose |
+| --- | --- |
+| `scripts/tune_backtest.py` | Grid search → `data/reports/backtest/tuning_latest.json` |
+
+Configure grids in `config/settings.yaml` under `backtest:` (`tuning_conviction_min_grid`, `tuning_cooldown_days_grid`, `tuning_min_signals`).
+
+| Endpoint | Description |
+| --- | --- |
+| `POST /api/analysis/backtest/tune` | Run parameter grid |
+| `GET /api/analysis/backtest/tuning/latest` | Latest tuning report |
+
 ## Phase 5 — Chart PNG snapshots
 
 Pre-move charts saved to `data/technical/charts/{SYMBOL}/{date}.png` (EMA 20/50/200, RSI, S/R, tags).

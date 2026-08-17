@@ -146,11 +146,29 @@
     <section id="backtest">
       <div class="card">
         <button class="action" id="run-backtest">Run backtest</button>
+        <button class="action" id="run-tuning">Tune parameters</button>
         <span class="muted" id="backtest-meta"></span>
       </div>
       <div class="card">
         <h2>Summary</h2>
         <pre id="backtest-summary">Run backtest to see hit rates for conviction ≥7 setups.</pre>
+      </div>
+      <div class="card">
+        <h2>Parameter tuning</h2>
+        <p class="muted" id="tuning-recommended">Run tuning to compare conviction_min × cooldown grid.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Conviction min</th>
+              <th>Cooldown days</th>
+              <th>Signals</th>
+              <th>Hit 5% 1D</th>
+              <th>Hit 10% 1W</th>
+              <th>Avg 1W %</th>
+            </tr>
+          </thead>
+          <tbody id="tuning-body"></tbody>
+        </table>
       </div>
       <div class="card">
         <h2>Recent signals</h2>
@@ -259,6 +277,28 @@
         await loadThemeDetail(symbol);
       });
 
+      async function loadTuning() {
+        const res = await fetch("/api/analysis/backtest/tuning/latest");
+        if (!res.ok) return;
+        const data = await res.json();
+        const rec = data.recommended;
+        document.getElementById("tuning-recommended").textContent = rec
+          ? `Recommended: conviction_min=${rec.conviction_min}, cooldown=${rec.signal_cooldown_days} · hit_1w=${rec.summary.hit_1w_rate} · ${rec.summary.signals} signals`
+          : "No combo met min_signals threshold.";
+        document.getElementById("tuning-body").innerHTML = data.grid.map((row) => {
+          const s = row.summary;
+          const highlight = rec && row.conviction_min === rec.conviction_min && row.signal_cooldown_days === rec.signal_cooldown_days;
+          return `<tr${highlight ? ' style="background:#1a3d2e"' : ""}>
+            <td>${row.conviction_min}</td>
+            <td>${row.signal_cooldown_days}</td>
+            <td>${s.signals}</td>
+            <td>${s.hit_1d_rate ?? "-"}</td>
+            <td>${s.hit_1w_rate ?? "-"}</td>
+            <td>${s.avg_fwd_1w_pct ?? "-"}</td>
+          </tr>`;
+        }).join("");
+      }
+
       async function loadBacktest() {
         const res = await fetch("/api/analysis/backtest/latest");
         if (!res.ok) {
@@ -291,6 +331,12 @@
         document.getElementById("backtest-meta").textContent = "Running backtest…";
         await fetch("/api/analysis/backtest/run", { method: "POST" });
         await loadBacktest();
+      });
+
+      document.getElementById("run-tuning").addEventListener("click", async () => {
+        document.getElementById("tuning-recommended").textContent = "Running parameter grid…";
+        await fetch("/api/analysis/backtest/tune", { method: "POST" });
+        await loadTuning();
       });
 
       document.getElementById("refresh-watchlist").addEventListener("click", async () => {
@@ -373,6 +419,7 @@
       loadUniverse();
       loadThemeGraph();
       loadBacktest();
+      loadTuning();
       document.getElementById("load-status").click();
     </script>
   </body>
