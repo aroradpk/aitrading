@@ -19,3 +19,21 @@
 - **Transcripts:** `python scripts/fetch_transcripts.py` (download only when `offline_mode: false`).
 
 If the API serves stale routes after code changes, restart the `aitrading-api` tmux session (port 8000).
+
+### Viewing the dashboard (Cloud Agent VM)
+
+The API listens on **port 8000 inside the VM** (`uvicorn` on `0.0.0.0:8000`). `http://localhost:8000` on your **laptop** is not the VM unless port forwarding is active — that mismatch usually shows as an endlessly loading preview.
+
+**Option A — Desktop pane (most reliable):**
+
+1. Open the **Desktop** pane for this agent run.
+2. Launch **Chrome** or **Firefox** in the VM.
+3. Go to `http://127.0.0.1:8000` (or `http://localhost:8000` inside that VM browser).
+
+**Option B — Port forward from Cursor:**
+
+1. In the agent run UI, open **Ports** (plug icon).
+2. Forward **8000**.
+3. Click **Open in Browser** (or use the forwarded URL Cursor shows).
+
+**Sanity check (inside VM):** `curl http://127.0.0.1:8000/health` should return `{"status":"ok"}`.
