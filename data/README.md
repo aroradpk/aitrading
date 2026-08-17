@@ -1,6 +1,6 @@
 # Local analysis data (committed to git)
 
-This folder is **versioned** so you can clone the repo and run the dashboard without downloading anything.
+See **Run & start scripts** in the repo root `README.md` for how to start the app without pulling from APIs.
 
 Set `offline_mode: true` in `config/settings.yaml` (default) to guarantee the app only reads from here — no Yahoo/NSE/PIB calls.
 
@@ -18,8 +18,21 @@ Set `offline_mode: true` in `config/settings.yaml` (default) to guarantee the ap
 | `reports/backtest/` | Walk-forward backtest results |
 | `sources/` | Misc API response caches |
 
-**Refresh from the web:** set `offline_mode: false`, then run `python scripts/run_pipeline.py`.
+## Commands (no network)
 
-**Offline rebuild** (watchlist/themes only): `python scripts/run_pipeline.py` with `offline_mode: true`.
+```bash
+./scripts/cloud-agent-start.sh          # Linux / Cloud Agent
+# or
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
-Start server: `uvicorn app.main:app --host 0.0.0.0 --port 8000`
+python scripts/run_pipeline.py          # rebuild watchlist/themes from disk only
+python scripts/run_backtest.py          # backtest from local OHLCV
+```
+
+## Refresh from the web
+
+Set `offline_mode: false` in `config/settings.yaml`, then:
+
+```bash
+python scripts/run_pipeline.py
+```

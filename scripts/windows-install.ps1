@@ -31,7 +31,11 @@ if (-not (Test-Path .venv)) {
 & .\.venv\Scripts\pip.exe install -r requirements.txt
 
 Write-Host ""
-Write-Host "Done. Next commands:" -ForegroundColor Green
+Write-Host "Done. Offline start (no API pulls — uses committed data\):" -ForegroundColor Green
 Write-Host "  .\.venv\Scripts\Activate.ps1"
-Write-Host "  python scripts\run_pipeline.py"
 Write-Host "  uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+Write-Host ""
+Write-Host "Optional rebuild watchlist from disk only (offline_mode: true in config/settings.yaml):"
+Write-Host "  python scripts\run_pipeline.py"
+Write-Host ""
+Write-Host "To refresh from the web: set offline_mode: false, then run_pipeline.py"

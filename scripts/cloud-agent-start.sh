@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+# Start the dashboard using committed data/ only (no API fetches).
+# Requires: ./scripts/cloud-agent-install.sh once
+# Config:   offline_mode: true in config/settings.yaml (default)
+# Open:      http://localhost:8000
+
 set -euo pipefail
 
 cd /workspace

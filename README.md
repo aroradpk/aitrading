@@ -10,6 +10,21 @@ Personal stock analysis workstation focused on **technical pattern memory** with
 - Saves **technical snapshots** before each move (RSI, SMA, candlestick tags, S/R, weekly context)
 - Builds a **daily conviction watchlist** by matching today's chart to past big-move setups
 
+## Run & start scripts
+
+| What | Script / command | Network? |
+| --- | --- | --- |
+| **Install deps** (Linux/Cloud) | `./scripts/cloud-agent-install.sh` | pip only |
+| **Install deps** (Windows) | `.\scripts\windows-install.ps1` | pip only |
+| **Start dashboard** (Linux/Cloud) | `./scripts/cloud-agent-start.sh` | **No** — reads `data/` only |
+| **Start dashboard** (manual) | `uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload` | **No** |
+| **Rebuild watchlist offline** | `python scripts/run_pipeline.py` | **No** when `offline_mode: true` |
+| **Full refresh from web** | `offline_mode: false` then `python scripts/run_pipeline.py` | Yes (Yahoo, NSE, PIB) |
+
+Cloud Agent VM uses `.cursor/environment.json` → `install` + `start` point at the scripts above.
+
+**Offline is the default:** `config/settings.yaml` has `offline_mode: true`. The committed `data/` folder is enough to open http://localhost:8000 with no API pulls.
+
 ## Quick start (offline — default)
 
 The repo includes a **committed `data/`** snapshot. With `offline_mode: true` in `config/settings.yaml`, nothing is fetched from the web.
@@ -28,26 +43,39 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
 ```bash
 ./scripts/cloud-agent-install.sh
+./scripts/cloud-agent-start.sh
+```
+
+Or manually:
+
+```bash
 source .venv/bin/activate
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 Open **http://localhost:8000** — watchlist, moves, themes, and backtest load from `data/` on disk.
 
-Optional local rebuild (still no network): `python scripts/run_pipeline.py`
+**Optional** — rebuild watchlist/themes from saved parquet/moves (still no API calls):
+
+```bash
+python scripts/run_pipeline.py
+```
 
 ### Refresh data from the web
 
-Set `offline_mode: false` in `config/settings.yaml`, then:
+1. Set `offline_mode: false` in `config/settings.yaml`
+2. Run:
 
 ```bash
 python scripts/run_pipeline.py   # ~2-5 min; hits Yahoo, NSE, PIB
 ```
 
+3. Set `offline_mode: true` again if you want to lock to disk-only.
+
 ## Connect to the local `data/` folder in VS Code
 
 1. **File → Open Folder…** and select your cloned repo (e.g. `~/projects/aitrading`).
-2. Run `python scripts/run_pipeline.py` once.
+2. Start the server (see **Run & start scripts** above) — no pipeline required if `data/` is present.
 3. In the Explorer sidebar you'll see:
 
 ```
@@ -74,7 +102,8 @@ The FastAPI app reads from the same `data/` folder — VS Code and the UI always
 | `scripts/scan_historical_moves.py` | Find big moves + snapshots → `data/moves/` |
 | `scripts/build_watchlist.py` | Today's conviction list → `data/reports/daily/` |
 | `scripts/build_theme_scores.py` | Theme exposure scores → `data/themes/scores/` |
-| `scripts/run_pipeline.py` | Runs all of the above |
+| `scripts/run_pipeline.py` | **Offline** (`offline_mode: true`): rebuild watchlist + themes only. **Online**: full fetch pipeline |
+| `scripts/run_backtest.py` | Walk-forward backtest → `data/reports/backtest/` (uses local OHLCV only) |
 
 ## API endpoints
 
@@ -97,7 +126,7 @@ The FastAPI app reads from the same `data/` folder — VS Code and the UI always
 
 ## Configuration
 
-Edit `config/settings.yaml` for thresholds, universe size, and conviction weights.
+Edit `config/settings.yaml` for thresholds, universe size, conviction weights, and **`offline_mode`** (default `true` = no Yahoo/NSE/PIB calls).
 
 Nifty Next 50 full list: `config/nifty_next_50.json` (update quarterly after index reconstitution).
 
