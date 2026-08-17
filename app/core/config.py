@@ -45,10 +45,13 @@ class IndexConfig(BaseModel):
 
 
 class ConvictionWeights(BaseModel):
-    technical: float = 0.50
-    fundamental: float = 0.25
-    events: float = 0.15
-    theme: float = 0.10
+    technical_max: float = 7.0
+    research_max: float = 3.0
+    # Legacy weights kept for backward compatibility in tests
+    technical: float = 0.70
+    fundamental: float = 0.21
+    events: float = 0.09
+    theme: float = 0.0
 
 
 class EventsConfig(BaseModel):

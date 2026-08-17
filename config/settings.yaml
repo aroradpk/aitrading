@@ -1,5 +1,5 @@
 data_dir: data
-offline_mode: true
+offline_mode: false
 
 thresholds:
   stock_1d_pct: 5.0
@@ -29,10 +29,8 @@ ohlcv:
   interval: 1d
 
 conviction_weights:
-  technical: 0.50
-  fundamental: 0.25
-  events: 0.15
-  theme: 0.10
+  technical_max: 7.0
+  research_max: 3.0
 
 technical:
   timeframes:

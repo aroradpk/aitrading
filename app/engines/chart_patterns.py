@@ -99,6 +99,45 @@ def detect_formations(frame: pd.DataFrame, lookback: int = 40) -> list[dict]:
     return formations
 
 
+def detect_compressing_wedge(frame: pd.DataFrame, *, side: str = "long", lookback: int = 25) -> bool:
+    """Range narrows with converging trendlines (apex forming)."""
+    if len(frame) < lookback:
+        return False
+    window = frame.tail(lookback).reset_index(drop=True)
+    highs = window["high"]
+    lows = window["low"]
+    peaks = [p for p in _swing_points(highs, order=2) if p[2] == "peak"][-3:]
+    troughs = [p for p in _swing_points(lows, order=2) if p[2] == "trough"][-3:]
+    if len(peaks) < 2 or len(troughs) < 2:
+        return False
+
+    peak_slope = _linreg_slope([p[0] for p in peaks], [p[1] for p in peaks])
+    trough_slope = _linreg_slope([t[0] for t in troughs], [t[1] for t in troughs])
+    early_span = float(window["high"].iloc[:8].max() - window["low"].iloc[:8].min())
+    late_span = float(window["high"].iloc[-8:].max() - window["low"].iloc[-8:].min())
+    if early_span <= 0:
+        return False
+    narrowing = late_span / early_span <= 0.65
+    converging = abs(peak_slope - trough_slope) > 0.005
+
+    if side == "long":
+        return narrowing and converging and trough_slope >= 0
+    return narrowing and converging and peak_slope <= 0
+
+
+def detect_rounding_bottom(frame: pd.DataFrame, lookback: int = 30) -> bool:
+    """Curved bottom: lower lows then higher lows with mid-window trough."""
+    if len(frame) < lookback:
+        return False
+    lows = frame.tail(lookback)["low"].reset_index(drop=True)
+    third = lookback // 3
+    left_min = float(lows.iloc[:third].min())
+    mid_min = float(lows.iloc[third : 2 * third].min())
+    right_min = float(lows.iloc[2 * third :].min())
+    # trough in middle third, right side lifting
+    return mid_min <= left_min * 1.01 and right_min > mid_min * 1.01 and right_min > left_min * 0.985
+
+
 def fibonacci_tags(frame: pd.DataFrame, lookback: int = 60) -> list[str]:
     if len(frame) < lookback:
         return []

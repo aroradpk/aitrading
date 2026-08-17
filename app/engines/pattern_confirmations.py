@@ -1,0 +1,173 @@
+from __future__ import annotations
+
+import pandas as pd
+
+from app.engines.chart_patterns import detect_compressing_wedge, detect_formations, detect_rounding_bottom
+from app.engines.technical import _ema, _ema_structure_tags, _rsi, _trend_tags
+
+
+def _body_overlap_with_range(row: pd.Series, low: float, high: float, buffer_pct: float = 0.015) -> bool:
+    span = high - low
+    if span <= 0:
+        return False
+    buf = span * buffer_pct
+    body_low = min(row["open"], row["close"])
+    body_high = max(row["open"], row["close"])
+    return body_low >= (low - buf) and body_high <= (high + buf)
+
+
+def detect_ema20_support(frame: pd.DataFrame, lookback: int = 5, tolerance_pct: float = 0.025) -> bool:
+    """Low wick touched EMA20 within recent bars (pullback support)."""
+    if len(frame) < 25:
+        return False
+    daily = frame.tail(lookback + 20)
+    for offset in range(lookback):
+        sub = daily.iloc[: len(daily) - offset]
+        if len(sub) < 20:
+            continue
+        row = sub.iloc[-1]
+        ema20 = _ema(sub["close"], 20)
+        if ema20 is None:
+            continue
+        if abs(row["low"] - ema20) / ema20 <= tolerance_pct:
+            return True
+        if row["low"] <= ema20 <= row["high"]:
+            return True
+    return False
+
+
+def detect_reference_candle_consolidation(
+    frame: pd.DataFrame,
+    *,
+    anchor_offset: int = 3,
+    min_days: int = 3,
+    min_overlap: float = 0.55,
+    buffer_pct: float = 0.02,
+) -> bool:
+    """Sessions overlap an anchor candle range (e.g. 4-Aug base for 4/5/6-Aug)."""
+    if len(frame) < anchor_offset + 1:
+        return False
+    anchor = frame.iloc[-anchor_offset]
+    ref_low = float(anchor["low"])
+    ref_high = float(anchor["high"])
+
+    def overlap_fraction(row: pd.Series) -> float:
+        span = float(row["high"] - row["low"])
+        if span <= 0:
+            return 0.0
+        buf_low = ref_low * (1 - buffer_pct)
+        buf_high = ref_high * (1 + buffer_pct)
+        overlap = max(0.0, min(row["high"], buf_high) - max(row["low"], buf_low))
+        return overlap / span
+
+    recent = frame.iloc[-min_days:]
+    if len(recent) < min_days:
+        return False
+    return all(overlap_fraction(row) >= min_overlap for _, row in recent.iterrows())
+
+
+def detect_rsi_60_reclaim(frame: pd.DataFrame, lookback: int = 8) -> bool:
+    """RSI held near 60 support zone then reclaimed / held above 60."""
+    if len(frame) < lookback + 15:
+        return False
+    series = frame["close"]
+    values: list[float] = []
+    for i in range(lookback):
+        sub = series.iloc[: len(series) - (lookback - 1 - i)]
+        val = _rsi(sub)
+        if val is not None:
+            values.append(val)
+    if len(values) < 3:
+        return False
+    current = values[-1]
+    prior = values[:-1]
+    touched_support = any(58 <= v <= 66 for v in prior)
+    reclaimed = current >= 60 and current >= min(prior[-3:]) 
+    return touched_support and reclaimed and current > prior[-2]
+
+
+def detect_daily_confirmations(frame: pd.DataFrame, side: str) -> dict[str, bool]:
+    if len(frame) < 30:
+        return {}
+
+    close = float(frame["close"].iloc[-1])
+    ema20 = _ema(frame["close"], 20)
+    ema50 = _ema(frame["close"], 50)
+    ema200 = _ema(frame["close"], 200)
+    ema_tags = set(_ema_structure_tags(frame, close, ema20, ema50, ema200))
+    trend_tags = set(_trend_tags(close, ema20, ema50, ema200))
+    formations = {f["id"] for f in detect_formations(frame)}
+
+    bullish_formations = {
+        "falling_wedge",
+        "ascending_triangle",
+        "symmetrical_triangle",
+        "double_bottom",
+        "inverse_head_shoulders",
+        "bull_flag",
+        "compressing_wedge_bull",
+        "rounding_bottom",
+    }
+    bearish_formations = {
+        "rising_wedge",
+        "descending_triangle",
+        "double_top",
+        "head_shoulders",
+        "bear_flag",
+        "compressing_wedge_bear",
+    }
+
+    long_map = {
+        "ema20_support": detect_ema20_support(frame),
+        "consolidation_anchor": detect_reference_candle_consolidation(frame),
+        "ema_momentum_expanding": "ema_momentum_expanding" in ema_tags,
+        "ema_bull_stack": "ema_bull_stack" in ema_tags,
+        "rsi_60_reclaim": detect_rsi_60_reclaim(frame),
+        "uptrend": bool(trend_tags & {"short_term_uptrend", "long_term_uptrend"}),
+        "bullish_formation": bool(formations & bullish_formations),
+        "compressing_wedge": detect_compressing_wedge(frame, side="long"),
+        "rounding_bottom": detect_rounding_bottom(frame),
+    }
+    short_map = {
+        "ema20_resistance": ema20 is not None and close < ema20 and abs(close - ema20) / ema20 <= 0.025,
+        "consolidation_anchor": detect_reference_candle_consolidation(frame),
+        "ema_momentum_expanding_down": "ema_momentum_expanding_down" in ema_tags,
+        "ema_bear_stack": "ema_bear_stack" in ema_tags,
+        "rsi_60_reject": detect_rsi_60_reclaim(frame) is False and (_rsi(frame["close"]) or 0) >= 65,
+        "downtrend": bool(trend_tags & {"short_term_downtrend", "long_term_downtrend"}),
+        "bearish_formation": bool(formations & bearish_formations),
+        "compressing_wedge": detect_compressing_wedge(frame, side="short"),
+    }
+    return long_map if side == "long" else short_map
+
+
+def confirmation_labels(confirmations: dict[str, bool]) -> list[str]:
+    labels = {
+        "ema20_support": "EMA20 support (low touch)",
+        "ema20_resistance": "EMA20 resistance rejection",
+        "consolidation_anchor": "Consolidation in anchor candle range",
+        "ema_momentum_expanding": "EMA gaps expanding (momentum)",
+        "ema_momentum_expanding_down": "EMA gaps expanding down",
+        "ema_bull_stack": "EMA bull stack (20>50>200)",
+        "ema_bear_stack": "EMA bear stack",
+        "rsi_60_reclaim": "RSI reclaimed above 60 from ~60 zone",
+        "rsi_60_reject": "RSI rejected from overbought",
+        "uptrend": "Trend alignment up",
+        "downtrend": "Trend alignment down",
+        "bullish_formation": "Bullish chart formation",
+        "bearish_formation": "Bearish chart formation",
+        "compressing_wedge": "Compressing wedge",
+        "rounding_bottom": "Rounding bottom",
+        "mtf_15m_wedge": "15m compressing wedge",
+        "mtf_1h_rounding_ema20": "1h rounding bottom at EMA20",
+    }
+    return [labels[key] for key, active in confirmations.items() if active and key in labels]
+
+
+def is_breakout_base(confirmations: dict[str, bool]) -> bool:
+    """Pullback + base before expansion — do not fade as exhaustion."""
+    return bool(
+        confirmations.get("ema20_support")
+        and confirmations.get("consolidation_anchor")
+        and confirmations.get("ema_momentum_expanding")
+    )

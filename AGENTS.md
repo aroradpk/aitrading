@@ -14,7 +14,9 @@
 - **Tests:** `pytest` (30+ tests).
 - **Backtest:** `python scripts/run_backtest.py` (~1–2 min). Tuning reuses one signal pass: `python scripts/tune_backtest.py`.
 - **Position focus:** `technical.position_focus` in settings (`long` | `short` | `both`); intraday block for tighter short proxy on daily bars.
-- **Elliott rules:** `config/technical/chart_formations.json` → `elliott` section; logic in `app/engines/elliott.py`.
+- **Conviction model:** Technical **0–7** + research (fundamentals + events/meetings) **0–3** = conviction **0–10**. Theme is a separate **1–5 bonus** column (`theme_bonus`), not in conviction.
+- **Pattern scoring:** `app/engines/pattern_confirmations.py` + `pattern_scoring.py` — EMA support, anchor consolidation, RSI 60 reclaim, MTF wedge/rounding when intraday data exists.
+- **Validate big moves:** `python scripts/validate_prior_day_moves.py --symbols ABB,MOTHERSON,ADANIPOWER`
 - **Charts:** `python scripts/build_charts.py` (~7 min, not committed).
 - **Transcripts:** `python scripts/fetch_transcripts.py` (download only when `offline_mode: false`).
 

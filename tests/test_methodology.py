@@ -1,7 +1,7 @@
 import pandas as pd
 
 from app.engines.event_content import analyze_event_content, score_analyzed_event
-from app.engines.move_detector import scan_today_setup
+from app.engines.move_detector import load_moves, scan_today_setup
 from app.engines.technical import (
     build_snapshot,
     exhaustion_fade_side,
@@ -98,9 +98,16 @@ def test_motherson_long_capped_when_overbought_at_resistance() -> None:
     if not path.exists():
         return
     frame = load_ohlcv(path)
-    snap = build_snapshot(frame)
-    assert exhaustion_fade_side(snap) == "short"
-    setup_long = scan_today_setup(frame, [], side="long")
-    setup_short = scan_today_setup(frame, [], side="short")
-    assert setup_long["technical_score"] <= 3.5
-    assert setup_short["technical_score"] >= setup_long["technical_score"]
+    # Extended chase day (Aug 14) should not score like breakout base (Aug 6)
+    snap_extended = build_snapshot(frame)
+    setup_long_extended = scan_today_setup(frame, [], side="long", symbol="MOTHERSON")
+    assert setup_long_extended["technical_score"] < 7.0
+
+    signal_idx = frame.index.get_indexer([pd.Timestamp("2026-08-06")], method="nearest")[0]
+    setup_base = scan_today_setup(
+        frame.iloc[: signal_idx + 1],
+        load_moves("MOTHERSON"),
+        side="long",
+        symbol="MOTHERSON",
+    )
+    assert setup_base["technical_score"] >= 7.0

@@ -78,7 +78,7 @@ def _evaluate_signal(
             symbol, instrument_type, as_of_date, layer_cache
         )
 
-    setup = scan_today_setup(frame_slice, moves_before, side="long")
+    setup = scan_today_setup(frame_slice, moves_before, side="long", symbol=symbol)
     scores = conviction_from_scores(
         technical=setup["technical_score"],
         fundamental=fundamental,

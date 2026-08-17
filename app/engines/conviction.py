@@ -14,6 +14,13 @@ from app.engines.universe import all_instruments
 from app.ingest.yfinance_client import load_ohlcv
 
 
+def theme_bonus_score(theme_raw: float) -> float:
+    """Separate theme column on 1–5 scale (not part of conviction)."""
+    if theme_raw <= 0:
+        return 1.0
+    return round(min(5.0, max(1.0, 1.0 + theme_raw / 2.5)), 1)
+
+
 def conviction_from_scores(
     technical: float,
     fundamental: float = 0.0,
@@ -23,23 +30,26 @@ def conviction_from_scores(
     from app.core.config import get_settings
 
     settings = get_settings()
-    weights = settings.conviction_weights
-    weighted = (
-        technical * weights.technical
-        + fundamental * weights.fundamental
-        + events * weights.events
-        + theme * weights.theme
-    )
-    if weighted <= 0:
-        final = 0.0
-    else:
-        final = min(10.0, max(1.0, weighted))
+    tech_max = settings.conviction_weights.technical_max
+    research_max = settings.conviction_weights.research_max
+
+    technical_clamped = round(min(tech_max, max(0.0, technical)), 1)
+    # Fundamental + events (meetings) share research bucket (0–3)
+    fund_scaled = min(1.5, max(0.0, fundamental) * 0.15)
+    event_scaled = min(1.5, max(0.0, events) * 0.15)
+    research = round(min(research_max, fund_scaled + event_scaled), 1)
+
+    final = round(min(10.0, technical_clamped + research), 1) if (technical_clamped + research) > 0 else 0.0
+    if final > 0:
+        final = max(1.0, final)
+
     return {
-        "technical": round(technical, 1),
+        "technical": technical_clamped,
+        "research": research,
         "fundamental": round(fundamental, 1),
         "events": round(events, 1),
-        "theme": round(theme, 1),
-        "final": round(final, 1),
+        "theme_bonus": theme_bonus_score(theme),
+        "final": final,
     }
 
 
@@ -78,16 +88,23 @@ def build_daily_watchlist() -> dict:
             )
 
             reasons = technical_reasons_for_side(setup["current_snapshot"], setup["position_side"])
+            for label in setup.get("confirmation_labels", []):
+                reasons.insert(
+                    0,
+                    {"layer": "technical", "text": label, "weight": "high"},
+                )
             for match in setup.get("top_matches", [])[:3]:
+                confs = match.get("confirmations") or []
+                conf_txt = f" [{', '.join(confs[:3])}]" if confs else ""
                 reasons.append(
                     {
                         "layer": "technical",
                         "text": (
-                            f"Similar to {match['date']} {setup['position_side']} move "
+                            f"Similar pattern to {match['date']} {setup['position_side']} move "
                             f"({match.get('move_1d_pct')}% 1D) — "
-                            f"{int(match['similarity'] * 100)}% match"
+                            f"{int(match['similarity'] * 100)}% overlap{conf_txt}"
                         ),
-                        "weight": "high" if match["similarity"] >= 0.6 else "medium",
+                        "weight": "high" if match["similarity"] >= 0.5 else "medium",
                         "date": match["date"],
                     }
                 )
@@ -117,6 +134,7 @@ def build_daily_watchlist() -> dict:
                     "scores": scores,
                     "match_count": setup["match_count"],
                     "top_matches": setup["top_matches"],
+                    "pattern_confirmations": setup.get("pattern_confirmations", {}),
                     "current_snapshot": setup["current_snapshot"],
                     "reasons": reasons,
                 }
@@ -133,6 +151,7 @@ def build_daily_watchlist() -> dict:
         "config": {
             "position_focus": tech.position_focus,
             "intraday_enabled": tech.intraday.enabled,
+            "conviction_model": "technical_7_plus_research_3",
         },
         "entries": entries,
     }

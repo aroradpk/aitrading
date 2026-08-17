@@ -85,10 +85,9 @@
               <th>Side</th>
               <th>Horizon</th>
               <th>Conviction</th>
-              <th>Tech</th>
-              <th>Fund</th>
-              <th>Events</th>
-              <th>Theme</th>
+              <th>Tech (0-7)</th>
+              <th>Research (0-3)</th>
+              <th>Theme (1-5)</th>
               <th>Matches</th>
               <th>Top reason</th>
             </tr>
@@ -280,9 +279,8 @@
             <td>${e.horizon}</td>
             <td class="conviction">${e.conviction}</td>
             <td>${e.scores.technical}</td>
-            <td>${e.scores.fundamental}</td>
-            <td>${e.scores.events}</td>
-            <td>${e.scores.theme}</td>
+            <td>${e.scores.research ?? ((e.scores.fundamental || 0) + (e.scores.events || 0)).toFixed?.(1) ?? "-"}</td>
+            <td>${e.scores.theme_bonus ?? e.scores.theme ?? "-"}</td>
             <td>${e.match_count}</td>
             <td>${(e.reasons[0] || {}).text || "-"}</td>
           </tr>`).join("");

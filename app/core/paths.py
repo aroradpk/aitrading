@@ -12,6 +12,12 @@ def data_dir() -> Path:
     return path
 
 
+def ohlcv_intraday_dir(interval: str) -> Path:
+    path = data_dir() / "ohlcv" / interval
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
 def ohlcv_daily_dir() -> Path:
     path = data_dir() / "ohlcv" / "daily"
     path.mkdir(parents=True, exist_ok=True)

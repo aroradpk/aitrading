@@ -8,6 +8,9 @@ import pandas as pd
 from app.core.config import get_settings
 from app.core.paths import moves_dir, technical_snapshots_dir
 from app.engines.chart_patterns import load_formation_catalog
+from app.engines.pattern_confirmations import detect_daily_confirmations
+from app.engines.mtf_analysis import analyze_intraday_confirmations
+from app.engines.pattern_scoring import score_technical_confirmations
 from app.engines.technical import (
     LONG_HEADWIND_TAGS,
     LONG_TAILWIND_TAGS,
@@ -132,6 +135,7 @@ def detect_moves(frame: pd.DataFrame, *, instrument_type: str) -> list[dict]:
 
         direction = "up" if (move_1d if trigger_type != "stock_1w" else move_1w) > 0 else "down"
         snapshot = build_snapshot(frame.loc[:idx])
+        snapshot["pattern_confirmations"] = detect_daily_confirmations(frame.loc[:idx], "long")
 
         move = {
             "symbol": symbol,
@@ -198,45 +202,33 @@ def scan_today_setup(
     *,
     side: str | None = None,
     intraday: bool = False,
+    symbol: str | None = None,
 ) -> dict:
     settings = get_settings()
     side = side or settings.technical.position_focus
     if side == "both":
         side = "long"
 
-    match_direction = "up" if side == "long" else "down"
+    symbol = symbol or str(frame["symbol"].iloc[-1])
     current = build_snapshot(frame, focus=side)
-    comparisons: list[dict] = []
-    intraday_threshold = settings.technical.intraday.stock_target_1d_pct
+    confirmations = detect_daily_confirmations(frame, side)
+    if not intraday:
+        try:
+            mtf = analyze_intraday_confirmations(symbol, current["date"], side=side)
+            confirmations.update(mtf)
+        except Exception:
+            pass
 
-    for move in historical_moves:
-        if move.get("direction") != match_direction:
-            continue
-        if intraday and abs(move.get("move_1d_pct", 0)) < intraday_threshold:
-            continue
-        score = snapshot_similarity(current, move.get("technical_snapshot", {}))
-        if score <= 0:
-            continue
-        comparisons.append(
-            {
-                "date": move["date"],
-                "move_1d_pct": move.get("move_1d_pct"),
-                "move_1w_pct": move.get("move_1w_pct"),
-                "similarity": round(score, 3),
-                "tags": move.get("technical_snapshot", {}).get("tags", []),
-            }
-        )
-
-    comparisons.sort(key=lambda item: item["similarity"], reverse=True)
-    min_score = settings.technical.pattern_match_min_score
-    strong = [item for item in comparisons if item["similarity"] >= min_score]
-
-    technical_score = 0.0
-    if strong:
-        technical_score = min(10.0, 4.0 + (strong[0]["similarity"] * 6.0))
-    technical_score += min(2.0, len(current.get("tags", [])) * 0.5)
-    technical_score += _side_context_adjustment(current, side)
-    technical_score = round(min(10.0, technical_score), 1)
+    current["pattern_confirmations"] = confirmations
+    scored = score_technical_confirmations(
+        confirmations,
+        side=side,
+        historical_moves=historical_moves,
+        snapshot=current,
+    )
+    technical_score = scored["technical_score"]
+    comparisons = scored["top_matches"]
+    strong_count = scored["match_count"]
 
     tag_set = set(current.get("tags", []))
     formation_state = _formation_alignment(current.get("formations", []), side)
@@ -248,13 +240,17 @@ def scan_today_setup(
 
     bias = position_bias(current, focus=side)
     if settings.technical.require_trend_for_setup:
-        if side == "long" and bias != "long":
+        if side == "long" and bias != "long" and not scored.get("breakout_base"):
             technical_score = round(min(technical_score, 3.0), 1)
         elif side == "short" and bias != "short":
             technical_score = round(min(technical_score, 3.0), 1)
 
-    technical_score = _apply_side_context_caps(technical_score, current, side)
+    if not scored.get("breakout_base"):
+        technical_score = _apply_side_context_caps(technical_score, current, side)
+    else:
+        technical_score = round(min(7.0, max(0.0, technical_score)), 1)
 
+    intraday_threshold = settings.technical.intraday.stock_target_1d_pct
     thresholds = settings.thresholds
     if intraday:
         horizon = "intraday"
@@ -270,8 +266,11 @@ def scan_today_setup(
         "as_of": frame.index[-1].date().isoformat(),
         "current_snapshot": current,
         "top_matches": comparisons[:5],
-        "match_count": len(strong),
+        "match_count": strong_count,
         "technical_score": technical_score,
+        "pattern_confirmations": confirmations,
+        "confirmation_labels": scored.get("confirmation_labels", []),
+        "breakout_base": scored.get("breakout_base", False),
         "position_bias": bias,
         "position_side": side,
         "horizon": horizon,
@@ -286,18 +285,19 @@ def scan_setups_for_symbol(frame: pd.DataFrame, historical_moves: list[dict]) ->
     settings = get_settings()
     focus = settings.technical.position_focus
     sides = ["long", "short"] if focus == "both" else [focus]
+    symbol = str(frame["symbol"].iloc[-1])
 
     setups: list[dict] = []
     for side in sides:
         if side not in {"long", "short"}:
             continue
-        setups.append(scan_today_setup(frame, historical_moves, side=side, intraday=False))
+        setups.append(scan_today_setup(frame, historical_moves, side=side, intraday=False, symbol=symbol))
 
     if settings.technical.intraday.enabled:
         intraday_side = settings.technical.intraday.position_side
         if intraday_side in {"long", "short"} and (focus == "both" or focus == intraday_side):
             setups.append(
-                scan_today_setup(frame, historical_moves, side=intraday_side, intraday=True)
+                scan_today_setup(frame, historical_moves, side=intraday_side, intraday=True, symbol=symbol)
             )
 
     return setups
