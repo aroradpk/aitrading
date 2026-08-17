@@ -12,6 +12,23 @@ Personal stock analysis workstation focused on **technical pattern memory** with
 
 ## Quick start
 
+### Windows (PowerShell)
+
+```powershell
+cd D:\aitrading
+git pull origin main
+powershell -ExecutionPolicy Bypass -File .\scripts\windows-install.ps1
+.\.venv\Scripts\Activate.ps1
+python scripts\run_pipeline.py
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+Use **Python 3.12** (recommended). If you only have 3.14, install 3.12 from [python.org](https://www.python.org/downloads/) — `pandas` may not install on 3.14 yet.
+
+If `Activate.ps1` is blocked: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
+
+### Linux / macOS / Cloud Agent
+
 ```bash
 ./scripts/cloud-agent-install.sh
 source .venv/bin/activate
