@@ -89,6 +89,11 @@ def historical_pattern_bonus(
     return bonus, matches[:5]
 
 
+def has_precision_energy(confirmations: dict[str, bool]) -> bool:
+    """High conviction requires expansion energy (keeps quiet-day FPR near 5%)."""
+    return bool(confirmations.get("vol_expansion") and confirmations.get("range_expansion"))
+
+
 def score_technical_confirmations(
     confirmations: dict[str, bool],
     *,
@@ -98,13 +103,16 @@ def score_technical_confirmations(
 ) -> dict:
     families = matched_families(confirmations, side=side)
     active_count = len(_active(confirmations))
+    energy = has_precision_energy(confirmations)
 
-    if families or active_count >= 2:
+    if families and energy:
         score = TECHNICAL_MAX
+    elif families or active_count >= 2:
+        score = 4.0
     elif active_count == 1:
-        score = 4.5
+        score = 2.5
     else:
-        score = 1.5
+        score = 1.0
 
     if snapshot and historical_moves:
         tag_sim = 0.0
@@ -138,5 +146,6 @@ def score_technical_confirmations(
         "pattern_families": families,
         "top_matches": top_matches,
         "match_count": match_count,
-        "breakout_base": is_breakout_base(confirmations) or bool(families),
+        "breakout_base": is_breakout_base(confirmations) or (bool(families) and energy),
+        "precision_energy": energy,
     }

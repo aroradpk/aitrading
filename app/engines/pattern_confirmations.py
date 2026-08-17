@@ -86,6 +86,27 @@ def detect_rsi_60_reclaim(frame: pd.DataFrame, lookback: int = 8) -> bool:
     return touched_support and reclaimed and current > prior[-2]
 
 
+def detect_energy_triggers(frame: pd.DataFrame) -> dict[str, bool]:
+    """Volume/range expansion — the only features with lift vs quiet days."""
+    empty = {"vol_expansion": False, "range_expansion": False, "strong_close": False}
+    if len(frame) < 25:
+        return empty
+    close = float(frame["close"].iloc[-1])
+    low = float(frame["low"].iloc[-1])
+    high = float(frame["high"].iloc[-1])
+    span = high - low
+    loc = (close - low) / span if span > 0 else 0.5
+    vol = frame["volume"]
+    vol_mean = float(vol.tail(20).mean())
+    vr = float(vol.iloc[-1] / vol_mean) if vol_mean else 1.0
+    atr = float((frame["high"] - frame["low"]).tail(20).mean())
+    return {
+        "vol_expansion": vr >= 2.0,
+        "range_expansion": atr > 0 and span >= 1.6 * atr,
+        "strong_close": loc >= 0.7,
+    }
+
+
 def detect_tight_range(frame: pd.DataFrame, lookback: int = 5) -> bool:
     """Recent range is compressed vs 20-bar ATR (coil)."""
     if len(frame) < lookback + 20:
@@ -160,6 +181,7 @@ def detect_daily_confirmations(frame: pd.DataFrame, side: str) -> dict[str, bool
         "compressing_wedge_bear",
     }
 
+    energy = detect_energy_triggers(frame)
     long_map = {
         "ema20_support": detect_ema20_support(frame),
         "consolidation_anchor": detect_reference_candle_consolidation(frame),
@@ -174,6 +196,7 @@ def detect_daily_confirmations(frame: pd.DataFrame, side: str) -> dict[str, bool
         "bullish_formation": bool(formations & bullish_formations),
         "compressing_wedge": detect_compressing_wedge(frame, side="long"),
         "rounding_bottom": detect_rounding_bottom(frame),
+        **energy,
     }
     short_map = {
         "ema20_resistance": ema20 is not None and close < ema20 and abs(close - ema20) / ema20 <= 0.03,
@@ -188,6 +211,7 @@ def detect_daily_confirmations(frame: pd.DataFrame, side: str) -> dict[str, bool
         "downtrend": bool(trend_tags & {"short_term_downtrend", "long_term_downtrend"}),
         "bearish_formation": bool(formations & bearish_formations),
         "compressing_wedge": detect_compressing_wedge(frame, side="short"),
+        **energy,
     }
     return long_map if side == "long" else short_map
 
@@ -216,6 +240,9 @@ def confirmation_labels(confirmations: dict[str, bool]) -> list[str]:
         "close_below_ema20": "Close below EMA20",
         "rsi_trend_long": "RSI holding above 50",
         "rsi_trend_short": "RSI holding below 50",
+        "vol_expansion": "Volume >= 2.0x 20d avg",
+        "range_expansion": "Day range >= 1.6x ATR",
+        "strong_close": "Close in top 30% of day range",
         "mtf_15m_wedge": "15m compressing wedge",
         "mtf_1h_rounding_ema20": "1h rounding bottom at EMA20",
     }

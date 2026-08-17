@@ -35,11 +35,26 @@ def test_two_piece_family_scores_seven() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
-        {"ema20_support": True, "uptrend": True, "ema_momentum_expanding": False},
+        {
+            "ema20_support": True,
+            "uptrend": True,
+            "vol_expansion": True,
+            "range_expansion": True,
+        },
         side="long",
     )
     assert scored["technical_score"] == 7.0
     assert "ema_pullback" in scored["pattern_families"]
+
+
+def test_family_without_energy_is_not_high_conviction() -> None:
+    from app.engines.pattern_scoring import score_technical_confirmations
+
+    scored = score_technical_confirmations(
+        {"ema20_support": True, "uptrend": True, "vol_expansion": False, "range_expansion": False},
+        side="long",
+    )
+    assert scored["technical_score"] < 7.0
 
 
 def test_empty_confirmations_not_seven() -> None:

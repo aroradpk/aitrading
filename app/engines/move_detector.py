@@ -234,23 +234,25 @@ def scan_today_setup(
     formation_state = _formation_alignment(current.get("formations", []), side)
     elliott_state = _elliott_alignment(tag_set, side)
     families = scored.get("pattern_families") or []
-    # Do not cap continuation patterns (e.g. rising wedge into an up-move).
-    if families:
-        technical_score = round(min(7.0, max(technical_score, 7.0 if families else technical_score)), 1)
+    energy = bool(scored.get("precision_energy"))
+    if families and energy:
+        technical_score = 7.0
     elif formation_state == "conflict" or elliott_state == "conflict":
         technical_score = round(min(technical_score, 3.0), 1)
     elif formation_state == "support" or elliott_state == "support":
         technical_score = round(min(7.0, technical_score + 0.5), 1)
 
     bias = position_bias(current, focus=side)
-    if settings.technical.require_trend_for_setup and not families:
+    if settings.technical.require_trend_for_setup and not (families and energy):
         if side == "long" and bias != "long" and not scored.get("breakout_base"):
             technical_score = round(min(technical_score, 3.0), 1)
         elif side == "short" and bias != "short":
             technical_score = round(min(technical_score, 3.0), 1)
 
-    if families or scored.get("breakout_base"):
-        technical_score = round(min(7.0, max(0.0, technical_score)), 1)
+    if families and energy:
+        technical_score = 7.0
+    elif not energy:
+        technical_score = round(min(technical_score, 4.0), 1)
     else:
         technical_score = _apply_side_context_caps(technical_score, current, side)
 
