@@ -1,0 +1,18 @@
+{
+  "date": "2022-02-24",
+  "close": 22.23,
+  "rsi_14": 51.5,
+  "sma_20": 23.19,
+  "sma_50": 21.86,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 1.47,
+  "tags": [
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 54.74,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "date": "2024-07-08",
+  "close": 12203.13,
+  "rsi_14": 84.88,
+  "sma_20": 10309.0,
+  "sma_50": 9562.25,
+  "sma_200": 7362.37,
+  "volume_ratio_vs_20d": 0.57,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 82.07,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

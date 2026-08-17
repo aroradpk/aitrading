@@ -1,0 +1,17 @@
+{
+  "date": "2025-02-06",
+  "close": 9104.17,
+  "rsi_14": 40.99,
+  "sma_20": 9547.09,
+  "sma_50": 9930.91,
+  "sma_200": 10232.28,
+  "volume_ratio_vs_20d": 3.86,
+  "tags": [
+    "marubozu",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 37.75,
+    "tags": []
+  }
+}

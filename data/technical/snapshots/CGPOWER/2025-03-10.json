@@ -1,0 +1,20 @@
+{
+  "date": "2025-03-10",
+  "close": 594.3,
+  "rsi_14": 54.3,
+  "sma_20": 589.13,
+  "sma_50": 623.88,
+  "sma_200": 697.32,
+  "volume_ratio_vs_20d": 1.02,
+  "tags": [
+    "above_sma20",
+    "bearish_engulfing",
+    "marubozu"
+  ],
+  "weekly": {
+    "rsi_14": 28.05,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

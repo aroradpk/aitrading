@@ -1,0 +1,29 @@
+{
+  "symbol": "NIFTY_BANK",
+  "date": "2022-02-14",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": -4.18,
+  "move_1w_pct": -2.86,
+  "direction": "down",
+  "close": 36908.12,
+  "volume_ratio_vs_20d": 1.05,
+  "technical_snapshot": {
+    "date": "2022-02-14",
+    "close": 36908.12,
+    "rsi_14": 49.74,
+    "sma_20": 38144.57,
+    "sma_50": 37159.71,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.05,
+    "tags": [
+      "marubozu",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 43.21,
+      "tags": []
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "symbol": "ABB",
+  "date": "2026-04-08",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 4.72,
+  "move_1w_pct": 10.49,
+  "direction": "up",
+  "close": 6462.18,
+  "volume_ratio_vs_20d": 1.62,
+  "technical_snapshot": {
+    "date": "2026-04-08",
+    "close": 6462.18,
+    "rsi_14": 60.53,
+    "sma_20": 6120.64,
+    "sma_50": 5820.1,
+    "sma_200": 5353.31,
+    "volume_ratio_vs_20d": 1.62,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "marubozu",
+      "near_resistance",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 72.29,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

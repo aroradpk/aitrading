@@ -1,0 +1,35 @@
+{
+  "symbol": "ADANIENSOL",
+  "score": 1.0,
+  "themes": [
+    {
+      "id": "power_energy_transition",
+      "name": "Power & energy transition",
+      "macro": "Grid expansion, renewables, transmission, rising power demand",
+      "industry": "Power & utilities",
+      "tier": "primary",
+      "symbols": [
+        "ADANIENSOL",
+        "ADANIGREEN",
+        "ADANIPOWER",
+        "TATAPOWER"
+      ],
+      "horizontal_enabler": false
+    }
+  ],
+  "scenarios": {
+    "bull": "ADANIENSOL benefits from Power & energy transition; order book and capacity expand faster than consensus. Theme score 1.0/10 supports upside if technical setup confirms.",
+    "base": "ADANIENSOL tracks sector beta with steady execution on Power & energy transition. Returns depend on delivery vs guidance; no major thesis break.",
+    "bear": "ADANIENSOL faces valuation compression or order delays despite Power & energy transition exposure. Macro slowdown or commodity shock could invalidate near-term momentum."
+  },
+  "reasons": [
+    {
+      "layer": "theme",
+      "text": "Theme exposure: Power & energy transition \u2014 Grid expansion, renewables, transmission, rising power demand",
+      "weight": "high",
+      "source": "config/themes/graph.json",
+      "theme_id": "power_energy_transition"
+    }
+  ],
+  "generated_at": "2026-08-17T13:00:03.222799+00:00"
+}

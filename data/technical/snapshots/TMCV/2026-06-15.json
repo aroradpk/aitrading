@@ -1,0 +1,19 @@
+{
+  "date": "2026-06-15",
+  "close": 406.6,
+  "rsi_14": 64.46,
+  "sma_20": 374.08,
+  "sma_50": 397.48,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 2.57,
+  "tags": [
+    "above_sma20",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 47.41,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

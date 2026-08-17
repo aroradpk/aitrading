@@ -1,0 +1,21 @@
+{
+  "date": "2022-08-12",
+  "close": 3642.13,
+  "rsi_14": 47.17,
+  "sma_20": 3702.64,
+  "sma_50": 3576.52,
+  "sma_200": 4123.74,
+  "volume_ratio_vs_20d": 5.54,
+  "tags": [
+    "bearish_engulfing",
+    "marubozu",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 38.16,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2022-06-01",
+  "close": 35.34,
+  "rsi_14": 61.13,
+  "sma_20": 33.82,
+  "sma_50": 37.3,
+  "sma_200": 35.04,
+  "volume_ratio_vs_20d": 0.69,
+  "tags": [
+    "above_sma20",
+    "bullish_engulfing",
+    "long_term_uptrend",
+    "marubozu"
+  ],
+  "weekly": {
+    "rsi_14": 45.91,
+    "tags": []
+  }
+}

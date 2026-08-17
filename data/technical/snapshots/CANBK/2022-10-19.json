@@ -1,0 +1,20 @@
+{
+  "date": "2022-10-19",
+  "close": 43.59,
+  "rsi_14": 76.97,
+  "sma_20": 40.03,
+  "sma_50": 41.09,
+  "sma_200": 38.25,
+  "volume_ratio_vs_20d": 1.14,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "rsi_overbought"
+  ],
+  "weekly": {
+    "rsi_14": 72.44,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

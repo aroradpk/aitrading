@@ -1,0 +1,18 @@
+{
+  "date": "2023-06-23",
+  "close": 48.48,
+  "rsi_14": 36.77,
+  "sma_20": 52.45,
+  "sma_50": 48.19,
+  "sma_200": 54.53,
+  "volume_ratio_vs_20d": 1.43,
+  "tags": [
+    "marubozu",
+    "near_support",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 64.42,
+    "tags": []
+  }
+}

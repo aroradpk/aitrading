@@ -1,0 +1,33 @@
+{
+  "symbol": "NIFTY_BANK",
+  "date": "2024-10-29",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": 2.07,
+  "move_1w_pct": 2.07,
+  "direction": "up",
+  "close": 52320.7,
+  "volume_ratio_vs_20d": 1.79,
+  "technical_snapshot": {
+    "date": "2024-10-29",
+    "close": 52320.7,
+    "rsi_14": 60.16,
+    "sma_20": 51535.22,
+    "sma_50": 51823.26,
+    "sma_200": 49455.88,
+    "volume_ratio_vs_20d": 1.79,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "marubozu",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 54.19,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "date": "2022-12-23",
+  "close": 52.44,
+  "rsi_14": 16.18,
+  "sma_20": 62.7,
+  "sma_50": 66.01,
+  "sma_200": 60.24,
+  "volume_ratio_vs_20d": 1.09,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "near_support",
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 16.28,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

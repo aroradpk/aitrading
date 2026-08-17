@@ -1,0 +1,21 @@
+{
+  "date": "2021-09-30",
+  "close": 2103.69,
+  "rsi_14": 82.53,
+  "sma_20": 1900.47,
+  "sma_50": 1770.71,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 3.65,
+  "tags": [
+    "above_sma20",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": null,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

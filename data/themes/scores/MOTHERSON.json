@@ -1,0 +1,35 @@
+{
+  "symbol": "MOTHERSON",
+  "score": 1.0,
+  "themes": [
+    {
+      "id": "auto_ev_components",
+      "name": "Auto & EV components",
+      "macro": "Vehicle demand, localization, component exports",
+      "industry": "Automobile",
+      "tier": "primary",
+      "symbols": [
+        "MOTHERSON",
+        "TVSMOTOR",
+        "TMCV",
+        "BOSCHLTD"
+      ],
+      "horizontal_enabler": false
+    }
+  ],
+  "scenarios": {
+    "bull": "MOTHERSON benefits from Auto & EV components; order book and capacity expand faster than consensus. Theme score 1.0/10 supports upside if technical setup confirms.",
+    "base": "MOTHERSON tracks sector beta with steady execution on Auto & EV components. Returns depend on delivery vs guidance; no major thesis break.",
+    "bear": "MOTHERSON faces valuation compression or order delays despite Auto & EV components exposure. Macro slowdown or commodity shock could invalidate near-term momentum."
+  },
+  "reasons": [
+    {
+      "layer": "theme",
+      "text": "Theme exposure: Auto & EV components \u2014 Vehicle demand, localization, component exports",
+      "weight": "high",
+      "source": "config/themes/graph.json",
+      "theme_id": "auto_ev_components"
+    }
+  ],
+  "generated_at": "2026-08-17T13:00:09.726503+00:00"
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2024-11-29",
+  "close": 840.5,
+  "rsi_14": 40.6,
+  "sma_20": 852.26,
+  "sma_50": 938.1,
+  "sma_200": 1021.97,
+  "volume_ratio_vs_20d": 4.07,
+  "tags": [
+    "marubozu",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 38.05,
+    "tags": []
+  }
+}

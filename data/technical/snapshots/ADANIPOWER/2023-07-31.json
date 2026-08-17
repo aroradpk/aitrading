@@ -1,0 +1,22 @@
+{
+  "date": "2023-07-31",
+  "close": 54.66,
+  "rsi_14": 69.53,
+  "sma_20": 49.51,
+  "sma_50": 50.94,
+  "sma_200": 51.15,
+  "volume_ratio_vs_20d": 3.36,
+  "tags": [
+    "above_sma20",
+    "marubozu",
+    "near_resistance",
+    "rsi_overbought",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 66.53,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

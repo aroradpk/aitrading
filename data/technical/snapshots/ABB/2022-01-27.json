@@ -1,0 +1,20 @@
+{
+  "date": "2022-01-27",
+  "close": 2149.9,
+  "rsi_14": 49.93,
+  "sma_20": 2221.45,
+  "sma_50": 2141.07,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 2.89,
+  "tags": [
+    "marubozu",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 63.08,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

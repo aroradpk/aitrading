@@ -1,0 +1,32 @@
+{
+  "symbol": "NIFTY_50",
+  "date": "2022-08-30",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": 2.58,
+  "move_1w_pct": 1.03,
+  "direction": "up",
+  "close": 17759.3,
+  "volume_ratio_vs_20d": 1.16,
+  "technical_snapshot": {
+    "date": "2022-08-30",
+    "close": 17759.3,
+    "rsi_14": 56.42,
+    "sma_20": 17579.06,
+    "sma_50": 16695.61,
+    "sma_200": 16974.15,
+    "volume_ratio_vs_20d": 1.16,
+    "tags": [
+      "above_sma20",
+      "marubozu",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 64.87,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

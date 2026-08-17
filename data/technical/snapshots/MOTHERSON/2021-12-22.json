@@ -1,0 +1,16 @@
+{
+  "date": "2021-12-22",
+  "close": 57.3,
+  "rsi_14": 49.31,
+  "sma_20": 57.88,
+  "sma_50": 60.62,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 1.31,
+  "tags": [
+    "marubozu"
+  ],
+  "weekly": {
+    "rsi_14": 47.2,
+    "tags": []
+  }
+}

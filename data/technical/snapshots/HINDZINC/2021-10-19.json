@@ -1,0 +1,22 @@
+{
+  "date": "2021-10-19",
+  "close": 241.3,
+  "rsi_14": 70.15,
+  "sma_20": 212.37,
+  "sma_50": 211.54,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 1.42,
+  "tags": [
+    "above_sma20",
+    "bearish_engulfing",
+    "marubozu",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": null,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

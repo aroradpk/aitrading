@@ -1,0 +1,32 @@
+{
+  "symbol": "ADANIENSOL",
+  "date": "2024-11-28",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 10.0,
+  "move_1w_pct": 4.25,
+  "direction": "up",
+  "close": 726.85,
+  "volume_ratio_vs_20d": 1.51,
+  "technical_snapshot": {
+    "date": "2024-11-28",
+    "close": 726.85,
+    "rsi_14": 23.36,
+    "sma_20": 857.54,
+    "sma_50": 941.07,
+    "sma_200": 1022.91,
+    "volume_ratio_vs_20d": 1.51,
+    "tags": [
+      "marubozu",
+      "rsi_oversold",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 29.55,
+      "tags": [
+        "weekly_rsi_oversold"
+      ]
+    }
+  }
+}

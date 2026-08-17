@@ -1,0 +1,19 @@
+{
+  "date": "2022-05-16",
+  "close": 2249.9,
+  "rsi_14": 34.09,
+  "sma_20": 2620.72,
+  "sma_50": 2482.91,
+  "sma_200": 1902.41,
+  "volume_ratio_vs_20d": 0.66,
+  "tags": [
+    "bullish_engulfing",
+    "long_term_uptrend",
+    "rsi_oversold",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 56.67,
+    "tags": []
+  }
+}

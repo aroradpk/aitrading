@@ -1,0 +1,18 @@
+{
+  "date": "2025-03-19",
+  "close": 911.2,
+  "rsi_14": 60.92,
+  "sma_20": 846.27,
+  "sma_50": 930.1,
+  "sma_200": 1464.06,
+  "volume_ratio_vs_20d": 0.38,
+  "tags": [
+    "above_sma20"
+  ],
+  "weekly": {
+    "rsi_14": 33.5,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

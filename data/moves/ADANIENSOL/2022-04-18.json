@@ -1,0 +1,32 @@
+{
+  "symbol": "ADANIENSOL",
+  "date": "2022-04-18",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 1.4,
+  "move_1w_pct": 11.38,
+  "direction": "up",
+  "close": 2728.3,
+  "volume_ratio_vs_20d": 1.0,
+  "technical_snapshot": {
+    "date": "2022-04-18",
+    "close": 2728.3,
+    "rsi_14": 69.26,
+    "sma_20": 2479.08,
+    "sma_50": 2246.45,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.0,
+    "tags": [
+      "above_sma20",
+      "rsi_overbought",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 82.05,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

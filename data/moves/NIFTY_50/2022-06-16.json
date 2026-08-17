@@ -1,0 +1,30 @@
+{
+  "symbol": "NIFTY_50",
+  "date": "2022-06-16",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": -2.11,
+  "move_1w_pct": -6.78,
+  "direction": "down",
+  "close": 15360.6,
+  "volume_ratio_vs_20d": 1.01,
+  "technical_snapshot": {
+    "date": "2022-06-16",
+    "close": 15360.6,
+    "rsi_14": 25.97,
+    "sma_20": 16235.84,
+    "sma_50": 16625.04,
+    "sma_200": 17246.52,
+    "volume_ratio_vs_20d": 1.01,
+    "tags": [
+      "marubozu",
+      "near_support",
+      "rsi_oversold"
+    ],
+    "weekly": {
+      "rsi_14": 38.35,
+      "tags": []
+    }
+  }
+}

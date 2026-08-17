@@ -1,0 +1,21 @@
+{
+  "date": "2022-12-23",
+  "close": 1809.05,
+  "rsi_14": 22.89,
+  "sma_20": 2027.69,
+  "sma_50": 2077.39,
+  "sma_200": 2162.4,
+  "volume_ratio_vs_20d": 2.13,
+  "tags": [
+    "marubozu",
+    "near_support",
+    "rsi_oversold",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 22.98,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

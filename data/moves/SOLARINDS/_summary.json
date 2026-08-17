@@ -1,0 +1,3939 @@
+{
+  "symbol": "SOLARINDS",
+  "count": 118,
+  "moves": [
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-09-14",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 10.07,
+      "move_1w_pct": 13.03,
+      "direction": "up",
+      "close": 1973.84,
+      "volume_ratio_vs_20d": 5.55,
+      "technical_snapshot": {
+        "date": "2021-09-14",
+        "close": 1973.84,
+        "rsi_14": 88.22,
+        "sma_20": 1732.9,
+        "sma_50": null,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 5.55,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-09-15",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.03,
+      "move_1w_pct": 14.79,
+      "direction": "up",
+      "close": 1973.29,
+      "volume_ratio_vs_20d": 1.75,
+      "technical_snapshot": {
+        "date": "2021-09-15",
+        "close": 1973.29,
+        "rsi_14": 88.42,
+        "sma_20": 1745.76,
+        "sma_50": null,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.75,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-09-16",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.2,
+      "move_1w_pct": 12.61,
+      "direction": "up",
+      "close": 1949.71,
+      "volume_ratio_vs_20d": 0.8,
+      "technical_snapshot": {
+        "date": "2021-09-16",
+        "close": 1949.71,
+        "rsi_14": 84.01,
+        "sma_20": 1759.04,
+        "sma_50": null,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.8,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-09-17",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.81,
+      "move_1w_pct": 10.64,
+      "direction": "up",
+      "close": 1965.45,
+      "volume_ratio_vs_20d": 4.74,
+      "technical_snapshot": {
+        "date": "2021-09-17",
+        "close": 1965.45,
+        "rsi_14": 83.69,
+        "sma_20": 1773.06,
+        "sma_50": null,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 4.74,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-09-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.13,
+      "move_1w_pct": 5.92,
+      "direction": "up",
+      "close": 2103.69,
+      "volume_ratio_vs_20d": 3.65,
+      "technical_snapshot": {
+        "date": "2021-09-30",
+        "close": 2103.69,
+        "rsi_14": 82.53,
+        "sma_20": 1900.47,
+        "sma_50": 1770.71,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 3.65,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-10-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 11.62,
+      "move_1w_pct": 20.52,
+      "direction": "up",
+      "close": 2402.07,
+      "volume_ratio_vs_20d": 3.29,
+      "technical_snapshot": {
+        "date": "2021-10-04",
+        "close": 2402.07,
+        "rsi_14": 85.45,
+        "sma_20": 1953.18,
+        "sma_50": 1798.33,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 3.29,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-10-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.61,
+      "move_1w_pct": 20.42,
+      "direction": "up",
+      "close": 2387.42,
+      "volume_ratio_vs_20d": 1.28,
+      "technical_snapshot": {
+        "date": "2021-10-05",
+        "close": 2387.42,
+        "rsi_14": 83.5,
+        "sma_20": 1985.24,
+        "sma_50": 1814.11,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.28,
+        "tags": [
+          "above_sma20",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-10-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -2.94,
+      "move_1w_pct": 15.8,
+      "direction": "up",
+      "close": 2317.21,
+      "volume_ratio_vs_20d": 0.47,
+      "technical_snapshot": {
+        "date": "2021-10-06",
+        "close": 2317.21,
+        "rsi_14": 77.64,
+        "sma_20": 2015.14,
+        "sma_50": 1829.0,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.47,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-10-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.97,
+      "move_1w_pct": 11.38,
+      "direction": "up",
+      "close": 2396.8,
+      "volume_ratio_vs_20d": 0.56,
+      "technical_snapshot": {
+        "date": "2021-10-08",
+        "close": 2396.8,
+        "rsi_14": 84.35,
+        "sma_20": 2074.86,
+        "sma_50": 1858.31,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.56,
+        "tags": [
+          "above_sma20",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-10-18",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.51,
+      "move_1w_pct": 11.76,
+      "direction": "up",
+      "close": 2678.75,
+      "volume_ratio_vs_20d": 0.99,
+      "technical_snapshot": {
+        "date": "2021-10-18",
+        "close": 2678.75,
+        "rsi_14": 87.6,
+        "sma_20": 2227.42,
+        "sma_50": 1943.23,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.99,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-10-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -11.77,
+      "move_1w_pct": -12.79,
+      "direction": "down",
+      "close": 2193.22,
+      "volume_ratio_vs_20d": 2.64,
+      "technical_snapshot": {
+        "date": "2021-10-22",
+        "close": 2193.22,
+        "rsi_14": 51.65,
+        "sma_20": 2334.31,
+        "sma_50": 2003.02,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 2.64,
+        "tags": [
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-10-25",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.86,
+      "move_1w_pct": -13.33,
+      "direction": "up",
+      "close": 2321.72,
+      "volume_ratio_vs_20d": 1.0,
+      "technical_snapshot": {
+        "date": "2021-10-25",
+        "close": 2321.72,
+        "rsi_14": 46.45,
+        "sma_20": 2350.62,
+        "sma_50": 2016.17,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.0,
+        "tags": [
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 73.28,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-10-29",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.46,
+      "move_1w_pct": 12.62,
+      "direction": "up",
+      "close": 2469.9,
+      "volume_ratio_vs_20d": 0.53,
+      "technical_snapshot": {
+        "date": "2021-10-29",
+        "close": 2469.9,
+        "rsi_14": 53.06,
+        "sma_20": 2441.83,
+        "sma_50": 2077.27,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.53,
+        "tags": [
+          "above_sma20",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 75.61,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-11-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.14,
+      "move_1w_pct": -10.57,
+      "direction": "down",
+      "close": 2254.64,
+      "volume_ratio_vs_20d": 0.57,
+      "technical_snapshot": {
+        "date": "2021-11-03",
+        "close": 2254.64,
+        "rsi_14": 39.65,
+        "sma_20": 2446.39,
+        "sma_50": 2117.58,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.57,
+        "tags": [
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 65.52,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-11-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.83,
+      "move_1w_pct": -0.15,
+      "direction": "up",
+      "close": 2466.12,
+      "volume_ratio_vs_20d": 1.07,
+      "technical_snapshot": {
+        "date": "2021-11-08",
+        "close": 2466.12,
+        "rsi_14": 41.99,
+        "sma_20": 2453.99,
+        "sma_50": 2145.3,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.07,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 69.09,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-11-11",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.12,
+      "move_1w_pct": 11.52,
+      "direction": "up",
+      "close": 2514.29,
+      "volume_ratio_vs_20d": 3.22,
+      "technical_snapshot": {
+        "date": "2021-11-11",
+        "close": 2514.29,
+        "rsi_14": 51.24,
+        "sma_20": 2459.15,
+        "sma_50": 2192.42,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 3.22,
+        "tags": [
+          "above_sma20",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 69.87,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-11-12",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.75,
+      "move_1w_pct": 10.82,
+      "direction": "up",
+      "close": 2558.18,
+      "volume_ratio_vs_20d": 1.25,
+      "technical_snapshot": {
+        "date": "2021-11-12",
+        "close": 2558.18,
+        "rsi_14": 70.09,
+        "sma_20": 2461.02,
+        "sma_50": 2208.83,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.25,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 70.55,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-11-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.54,
+      "move_1w_pct": -3.28,
+      "direction": "up",
+      "close": 2748.36,
+      "volume_ratio_vs_20d": 4.86,
+      "technical_snapshot": {
+        "date": "2021-11-30",
+        "close": 2748.36,
+        "rsi_14": 65.34,
+        "sma_20": 2599.28,
+        "sma_50": 2413.37,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 4.86,
+        "tags": [
+          "above_sma20",
+          "bullish_engulfing",
+          "marubozu",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 74.7,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2021-12-20",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.85,
+      "move_1w_pct": -10.08,
+      "direction": "down",
+      "close": 2359.61,
+      "volume_ratio_vs_20d": 0.5,
+      "technical_snapshot": {
+        "date": "2021-12-20",
+        "close": 2359.61,
+        "rsi_14": 22.21,
+        "sma_20": 2680.63,
+        "sma_50": 2572.73,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.5,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 58.74,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-01-25",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.1,
+      "move_1w_pct": 12.0,
+      "direction": "up",
+      "close": 2463.14,
+      "volume_ratio_vs_20d": 1.63,
+      "technical_snapshot": {
+        "date": "2022-01-25",
+        "close": 2463.14,
+        "rsi_14": 61.38,
+        "sma_20": 2304.42,
+        "sma_50": 2495.28,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.63,
+        "tags": [
+          "above_sma20",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 57.26,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-03-17",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.53,
+      "move_1w_pct": 6.94,
+      "direction": "up",
+      "close": 2569.01,
+      "volume_ratio_vs_20d": 5.19,
+      "technical_snapshot": {
+        "date": "2022-03-17",
+        "close": 2569.01,
+        "rsi_14": 77.01,
+        "sma_20": 2331.05,
+        "sma_50": 2308.41,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 5.19,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 45.29,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-03-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.39,
+      "move_1w_pct": 10.77,
+      "direction": "up",
+      "close": 2656.0,
+      "volume_ratio_vs_20d": 2.1,
+      "technical_snapshot": {
+        "date": "2022-03-21",
+        "close": 2656.0,
+        "rsi_14": 77.76,
+        "sma_20": 2349.09,
+        "sma_50": 2314.49,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 2.1,
+        "tags": [
+          "above_sma20",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 54.76,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-03-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.88,
+      "move_1w_pct": 10.32,
+      "direction": "up",
+      "close": 2632.61,
+      "volume_ratio_vs_20d": 0.61,
+      "technical_snapshot": {
+        "date": "2022-03-22",
+        "close": 2632.61,
+        "rsi_14": 78.34,
+        "sma_20": 2367.01,
+        "sma_50": 2320.49,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.61,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 53.93,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-03-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.49,
+      "move_1w_pct": 10.52,
+      "direction": "up",
+      "close": 2640.41,
+      "volume_ratio_vs_20d": 0.43,
+      "technical_snapshot": {
+        "date": "2022-03-24",
+        "close": 2640.41,
+        "rsi_14": 77.73,
+        "sma_20": 2399.84,
+        "sma_50": 2332.17,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.43,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 54.21,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-05-02",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.72,
+      "move_1w_pct": 2.41,
+      "direction": "up",
+      "close": 2898.82,
+      "volume_ratio_vs_20d": 1.7,
+      "technical_snapshot": {
+        "date": "2022-05-02",
+        "close": 2898.82,
+        "rsi_14": 43.59,
+        "sma_20": 2903.94,
+        "sma_50": 2621.99,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.7,
+        "tags": [
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 67.33,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-05-25",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.29,
+      "move_1w_pct": -10.66,
+      "direction": "down",
+      "close": 2561.41,
+      "volume_ratio_vs_20d": 0.73,
+      "technical_snapshot": {
+        "date": "2022-05-25",
+        "close": 2561.41,
+        "rsi_14": 20.48,
+        "sma_20": 2814.45,
+        "sma_50": 2789.51,
+        "sma_200": 2394.42,
+        "volume_ratio_vs_20d": 0.73,
+        "tags": [
+          "bearish_engulfing",
+          "long_term_uptrend",
+          "marubozu",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 58.37,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-05-26",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.68,
+      "move_1w_pct": -11.19,
+      "direction": "down",
+      "close": 2543.98,
+      "volume_ratio_vs_20d": 0.87,
+      "technical_snapshot": {
+        "date": "2022-05-26",
+        "close": 2543.98,
+        "rsi_14": 20.41,
+        "sma_20": 2804.34,
+        "sma_50": 2792.43,
+        "sma_200": 2398.39,
+        "volume_ratio_vs_20d": 0.87,
+        "tags": [
+          "long_term_uptrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 57.78,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-05-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.27,
+      "move_1w_pct": 1.17,
+      "direction": "up",
+      "close": 2696.12,
+      "volume_ratio_vs_20d": 0.96,
+      "technical_snapshot": {
+        "date": "2022-05-30",
+        "close": 2696.12,
+        "rsi_14": 38.06,
+        "sma_20": 2791.65,
+        "sma_50": 2802.04,
+        "sma_200": 2407.11,
+        "volume_ratio_vs_20d": 0.96,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 60.31,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-06-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.14,
+      "move_1w_pct": 9.0,
+      "direction": "up",
+      "close": 2791.74,
+      "volume_ratio_vs_20d": 3.6,
+      "technical_snapshot": {
+        "date": "2022-06-03",
+        "close": 2791.74,
+        "rsi_14": 50.86,
+        "sma_20": 2731.67,
+        "sma_50": 2809.45,
+        "sma_200": 2426.14,
+        "volume_ratio_vs_20d": 3.6,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 62.32,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-08-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.87,
+      "move_1w_pct": 7.07,
+      "direction": "up",
+      "close": 2975.26,
+      "volume_ratio_vs_20d": 4.63,
+      "technical_snapshot": {
+        "date": "2022-08-04",
+        "close": 2975.26,
+        "rsi_14": 75.83,
+        "sma_20": 2735.14,
+        "sma_50": 2726.71,
+        "sma_200": 2594.26,
+        "volume_ratio_vs_20d": 4.63,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 57.15,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-08-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.21,
+      "move_1w_pct": 14.61,
+      "direction": "up",
+      "close": 3130.29,
+      "volume_ratio_vs_20d": 5.45,
+      "technical_snapshot": {
+        "date": "2022-08-05",
+        "close": 3130.29,
+        "rsi_14": 79.08,
+        "sma_20": 2757.7,
+        "sma_50": 2738.09,
+        "sma_200": 2596.43,
+        "volume_ratio_vs_20d": 5.45,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 60.87,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-08-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.24,
+      "move_1w_pct": 16.41,
+      "direction": "up",
+      "close": 3122.67,
+      "volume_ratio_vs_20d": 1.89,
+      "technical_snapshot": {
+        "date": "2022-08-08",
+        "close": 3122.67,
+        "rsi_14": 79.88,
+        "sma_20": 2778.89,
+        "sma_50": 2746.62,
+        "sma_200": 2599.21,
+        "volume_ratio_vs_20d": 1.89,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 55.07,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-08-10",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.88,
+      "move_1w_pct": 17.88,
+      "direction": "up",
+      "close": 3181.28,
+      "volume_ratio_vs_20d": 1.38,
+      "technical_snapshot": {
+        "date": "2022-08-10",
+        "close": 3181.28,
+        "rsi_14": 80.56,
+        "sma_20": 2802.78,
+        "sma_50": 2758.05,
+        "sma_200": 2602.68,
+        "volume_ratio_vs_20d": 1.38,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 56.75,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-08-11",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.83,
+      "move_1w_pct": 15.22,
+      "direction": "up",
+      "close": 3207.68,
+      "volume_ratio_vs_20d": 0.65,
+      "technical_snapshot": {
+        "date": "2022-08-11",
+        "close": 3207.68,
+        "rsi_14": 80.97,
+        "sma_20": 2828.84,
+        "sma_50": 2770.0,
+        "sma_200": 2607.76,
+        "volume_ratio_vs_20d": 0.65,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 57.45,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-09-20",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.69,
+      "move_1w_pct": 8.01,
+      "direction": "up",
+      "close": 3836.12,
+      "volume_ratio_vs_20d": 3.78,
+      "technical_snapshot": {
+        "date": "2022-09-20",
+        "close": 3836.12,
+        "rsi_14": 88.4,
+        "sma_20": 3468.03,
+        "sma_50": 3132.32,
+        "sma_200": 2718.99,
+        "volume_ratio_vs_20d": 3.78,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 83.3,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-09-26",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.89,
+      "move_1w_pct": -5.55,
+      "direction": "down",
+      "close": 3428.15,
+      "volume_ratio_vs_20d": 1.95,
+      "technical_snapshot": {
+        "date": "2022-09-26",
+        "close": 3428.15,
+        "rsi_14": 48.58,
+        "sma_20": 3526.72,
+        "sma_50": 3211.87,
+        "sma_200": 2737.72,
+        "volume_ratio_vs_20d": 1.95,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 69.77,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-10-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.42,
+      "move_1w_pct": 15.42,
+      "direction": "up",
+      "close": 3956.73,
+      "volume_ratio_vs_20d": 1.69,
+      "technical_snapshot": {
+        "date": "2022-10-03",
+        "close": 3956.73,
+        "rsi_14": 66.14,
+        "sma_20": 3630.81,
+        "sma_50": 3321.32,
+        "sma_200": 2765.55,
+        "volume_ratio_vs_20d": 1.69,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 86.32,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-10-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.62,
+      "move_1w_pct": 11.18,
+      "direction": "up",
+      "close": 3981.29,
+      "volume_ratio_vs_20d": 0.59,
+      "technical_snapshot": {
+        "date": "2022-10-04",
+        "close": 3981.29,
+        "rsi_14": 67.66,
+        "sma_20": 3657.21,
+        "sma_50": 3346.66,
+        "sma_200": 2772.48,
+        "volume_ratio_vs_20d": 0.59,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 86.51,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-10-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.65,
+      "move_1w_pct": 11.4,
+      "direction": "up",
+      "close": 4047.12,
+      "volume_ratio_vs_20d": 0.89,
+      "technical_snapshot": {
+        "date": "2022-10-06",
+        "close": 4047.12,
+        "rsi_14": 69.08,
+        "sma_20": 3687.65,
+        "sma_50": 3371.51,
+        "sma_200": 2780.04,
+        "volume_ratio_vs_20d": 0.89,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 87.01,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-10-07",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.87,
+      "move_1w_pct": 10.52,
+      "direction": "up",
+      "close": 4122.82,
+      "volume_ratio_vs_20d": 1.48,
+      "technical_snapshot": {
+        "date": "2022-10-07",
+        "close": 4122.82,
+        "rsi_14": 70.3,
+        "sma_20": 3720.76,
+        "sma_50": 3397.44,
+        "sma_200": 2787.98,
+        "volume_ratio_vs_20d": 1.48,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 87.53,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-12-01",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.18,
+      "move_1w_pct": 4.95,
+      "direction": "up",
+      "close": 4062.31,
+      "volume_ratio_vs_20d": 2.04,
+      "technical_snapshot": {
+        "date": "2022-12-01",
+        "close": 4062.31,
+        "rsi_14": 46.08,
+        "sma_20": 3952.42,
+        "sma_50": 3894.54,
+        "sma_200": 3084.43,
+        "volume_ratio_vs_20d": 2.04,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 67.34,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2022-12-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.13,
+      "move_1w_pct": 8.62,
+      "direction": "up",
+      "close": 4367.09,
+      "volume_ratio_vs_20d": 4.31,
+      "technical_snapshot": {
+        "date": "2022-12-30",
+        "close": 4367.09,
+        "rsi_14": 66.64,
+        "sma_20": 4079.34,
+        "sma_50": 3997.03,
+        "sma_200": 3272.09,
+        "volume_ratio_vs_20d": 4.31,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 64.83,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-02-16",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.56,
+      "move_1w_pct": 2.12,
+      "direction": "up",
+      "close": 3926.01,
+      "volume_ratio_vs_20d": 3.95,
+      "technical_snapshot": {
+        "date": "2023-02-16",
+        "close": 3926.01,
+        "rsi_14": 39.51,
+        "sma_20": 3938.97,
+        "sma_50": 4096.62,
+        "sma_200": 3488.55,
+        "volume_ratio_vs_20d": 3.95,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 44.99,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-08-28",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.36,
+      "move_1w_pct": 12.05,
+      "direction": "up",
+      "close": 4880.47,
+      "volume_ratio_vs_20d": 2.19,
+      "technical_snapshot": {
+        "date": "2023-08-28",
+        "close": 4880.47,
+        "rsi_14": 96.46,
+        "sma_20": 4156.63,
+        "sma_50": 3901.34,
+        "sma_200": 3914.97,
+        "volume_ratio_vs_20d": 2.19,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 85.16,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-08-29",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.08,
+      "move_1w_pct": 12.26,
+      "direction": "up",
+      "close": 4884.41,
+      "volume_ratio_vs_20d": 0.95,
+      "technical_snapshot": {
+        "date": "2023-08-29",
+        "close": 4884.41,
+        "rsi_14": 96.43,
+        "sma_20": 4211.19,
+        "sma_50": 3923.19,
+        "sma_200": 3918.64,
+        "volume_ratio_vs_20d": 0.95,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 85.19,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-08-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.14,
+      "move_1w_pct": 12.12,
+      "direction": "up",
+      "close": 4891.05,
+      "volume_ratio_vs_20d": 0.57,
+      "technical_snapshot": {
+        "date": "2023-08-30",
+        "close": 4891.05,
+        "rsi_14": 96.23,
+        "sma_20": 4263.69,
+        "sma_50": 3944.48,
+        "sma_200": 3922.29,
+        "volume_ratio_vs_20d": 0.57,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 85.26,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-11-07",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.37,
+      "move_1w_pct": 8.02,
+      "direction": "up",
+      "close": 5929.99,
+      "volume_ratio_vs_20d": 3.33,
+      "technical_snapshot": {
+        "date": "2023-11-07",
+        "close": 5929.99,
+        "rsi_14": 73.49,
+        "sma_20": 5330.58,
+        "sma_50": 4966.8,
+        "sma_200": 4127.5,
+        "volume_ratio_vs_20d": 3.33,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 90.42,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-11-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.93,
+      "move_1w_pct": 16.0,
+      "direction": "up",
+      "close": 6157.4,
+      "volume_ratio_vs_20d": 1.86,
+      "technical_snapshot": {
+        "date": "2023-11-09",
+        "close": 6157.4,
+        "rsi_14": 76.9,
+        "sma_20": 5411.8,
+        "sma_50": 5020.22,
+        "sma_200": 4145.51,
+        "volume_ratio_vs_20d": 1.86,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 91.19,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-11-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.55,
+      "move_1w_pct": 10.98,
+      "direction": "up",
+      "close": 6187.35,
+      "volume_ratio_vs_20d": 0.69,
+      "technical_snapshot": {
+        "date": "2023-11-13",
+        "close": 6187.35,
+        "rsi_14": 78.7,
+        "sma_20": 5493.92,
+        "sma_50": 5070.31,
+        "sma_200": 4164.17,
+        "volume_ratio_vs_20d": 0.69,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 90.55,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-11-15",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.81,
+      "move_1w_pct": 10.4,
+      "direction": "up",
+      "close": 6546.6,
+      "volume_ratio_vs_20d": 2.34,
+      "technical_snapshot": {
+        "date": "2023-11-15",
+        "close": 6546.6,
+        "rsi_14": 85.2,
+        "sma_20": 5559.24,
+        "sma_50": 5104.66,
+        "sma_200": 4175.74,
+        "volume_ratio_vs_20d": 2.34,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 91.69,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-11-16",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 4.39,
+      "move_1w_pct": 14.24,
+      "direction": "up",
+      "close": 6833.8,
+      "volume_ratio_vs_20d": 3.94,
+      "technical_snapshot": {
+        "date": "2023-11-16",
+        "close": 6833.8,
+        "rsi_14": 85.93,
+        "sma_20": 5642.12,
+        "sma_50": 5146.45,
+        "sma_200": 4189.57,
+        "volume_ratio_vs_20d": 3.94,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 92.42,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-11-17",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.94,
+      "move_1w_pct": 19.79,
+      "direction": "up",
+      "close": 7376.25,
+      "volume_ratio_vs_20d": 4.55,
+      "technical_snapshot": {
+        "date": "2023-11-17",
+        "close": 7376.25,
+        "rsi_14": 90.04,
+        "sma_20": 5752.73,
+        "sma_50": 5200.38,
+        "sma_200": 4206.03,
+        "volume_ratio_vs_20d": 4.55,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 93.5,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-11-20",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.87,
+      "move_1w_pct": 13.96,
+      "direction": "down",
+      "close": 6943.09,
+      "volume_ratio_vs_20d": 3.68,
+      "technical_snapshot": {
+        "date": "2023-11-20",
+        "close": 6943.09,
+        "rsi_14": 77.0,
+        "sma_20": 5840.12,
+        "sma_50": 5246.08,
+        "sma_200": 4220.49,
+        "volume_ratio_vs_20d": 3.68,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 82.83,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-11-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.18,
+      "move_1w_pct": 12.01,
+      "direction": "up",
+      "close": 6930.71,
+      "volume_ratio_vs_20d": 1.03,
+      "technical_snapshot": {
+        "date": "2023-11-21",
+        "close": 6930.71,
+        "rsi_14": 75.14,
+        "sma_20": 5923.7,
+        "sma_50": 5292.93,
+        "sma_200": 4234.7,
+        "volume_ratio_vs_20d": 1.03,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 82.58,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-12-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -2.52,
+      "move_1w_pct": -11.1,
+      "direction": "down",
+      "close": 6021.47,
+      "volume_ratio_vs_20d": 0.79,
+      "technical_snapshot": {
+        "date": "2023-12-04",
+        "close": 6021.47,
+        "rsi_14": 48.78,
+        "sma_20": 6395.89,
+        "sma_50": 5595.14,
+        "sma_200": 4336.81,
+        "volume_ratio_vs_20d": 0.79,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 64.25,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-12-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.58,
+      "move_1w_pct": -10.94,
+      "direction": "down",
+      "close": 5926.2,
+      "volume_ratio_vs_20d": 0.66,
+      "technical_snapshot": {
+        "date": "2023-12-05",
+        "close": 5926.2,
+        "rsi_14": 45.52,
+        "sma_20": 6413.87,
+        "sma_50": 5621.89,
+        "sma_200": 4347.22,
+        "volume_ratio_vs_20d": 0.66,
+        "tags": [
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 62.91,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2023-12-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.66,
+      "move_1w_pct": -4.02,
+      "direction": "up",
+      "close": 6261.8,
+      "volume_ratio_vs_20d": 0.87,
+      "technical_snapshot": {
+        "date": "2023-12-06",
+        "close": 6261.8,
+        "rsi_14": 45.07,
+        "sma_20": 6448.21,
+        "sma_50": 5655.46,
+        "sma_200": 4359.67,
+        "volume_ratio_vs_20d": 0.87,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 67.2,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-01-11",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.85,
+      "move_1w_pct": 9.11,
+      "direction": "up",
+      "close": 7332.88,
+      "volume_ratio_vs_20d": 2.8,
+      "technical_snapshot": {
+        "date": "2024-01-11",
+        "close": 7332.88,
+        "rsi_14": 77.62,
+        "sma_20": 6752.63,
+        "sma_50": 6472.46,
+        "sma_200": 4718.59,
+        "volume_ratio_vs_20d": 2.8,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 70.17,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-03-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.97,
+      "move_1w_pct": 7.0,
+      "direction": "up",
+      "close": 7274.35,
+      "volume_ratio_vs_20d": 4.48,
+      "technical_snapshot": {
+        "date": "2024-03-04",
+        "close": 7274.35,
+        "rsi_14": 61.49,
+        "sma_20": 6816.02,
+        "sma_50": 6762.64,
+        "sma_200": 5242.41,
+        "volume_ratio_vs_20d": 4.48,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 64.3,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-03-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.47,
+      "move_1w_pct": 13.28,
+      "direction": "up",
+      "close": 7745.19,
+      "volume_ratio_vs_20d": 4.58,
+      "technical_snapshot": {
+        "date": "2024-03-05",
+        "close": 7745.19,
+        "rsi_14": 68.93,
+        "sma_20": 6867.37,
+        "sma_50": 6786.62,
+        "sma_200": 5262.39,
+        "volume_ratio_vs_20d": 4.58,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 68.2,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-03-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.98,
+      "move_1w_pct": 6.57,
+      "direction": "down",
+      "close": 7204.38,
+      "volume_ratio_vs_20d": 3.76,
+      "technical_snapshot": {
+        "date": "2024-03-06",
+        "close": 7204.38,
+        "rsi_14": 60.09,
+        "sma_20": 6882.83,
+        "sma_50": 6799.06,
+        "sma_200": 5279.77,
+        "volume_ratio_vs_20d": 3.76,
+        "tags": [
+          "above_sma20",
+          "bearish_engulfing",
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 63.63,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-03-07",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 4.08,
+      "move_1w_pct": 11.63,
+      "direction": "up",
+      "close": 7498.61,
+      "volume_ratio_vs_20d": 1.6,
+      "technical_snapshot": {
+        "date": "2024-03-07",
+        "close": 7498.61,
+        "rsi_14": 66.7,
+        "sma_20": 6912.9,
+        "sma_50": 6813.43,
+        "sma_200": 5298.52,
+        "volume_ratio_vs_20d": 1.6,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 66.27,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-03-11",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.91,
+      "move_1w_pct": 12.41,
+      "direction": "up",
+      "close": 7716.49,
+      "volume_ratio_vs_20d": 3.17,
+      "technical_snapshot": {
+        "date": "2024-03-11",
+        "close": 7716.49,
+        "rsi_14": 71.12,
+        "sma_20": 6954.85,
+        "sma_50": 6832.92,
+        "sma_200": 5318.18,
+        "volume_ratio_vs_20d": 3.17,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 67.14,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-03-14",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 10.87,
+      "move_1w_pct": 12.84,
+      "direction": "up",
+      "close": 8129.15,
+      "volume_ratio_vs_20d": 1.96,
+      "technical_snapshot": {
+        "date": "2024-03-14",
+        "close": 8129.15,
+        "rsi_14": 68.61,
+        "sma_20": 7075.19,
+        "sma_50": 6889.85,
+        "sma_200": 5376.81,
+        "volume_ratio_vs_20d": 1.96,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 70.1,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-03-15",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 8.73,
+      "move_1w_pct": 17.87,
+      "direction": "up",
+      "close": 8838.43,
+      "volume_ratio_vs_20d": 3.21,
+      "technical_snapshot": {
+        "date": "2024-03-15",
+        "close": 8838.43,
+        "rsi_14": 73.61,
+        "sma_20": 7179.47,
+        "sma_50": 6933.3,
+        "sma_200": 5402.15,
+        "volume_ratio_vs_20d": 3.21,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 74.11,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-03-18",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -3.52,
+      "move_1w_pct": 10.51,
+      "direction": "up",
+      "close": 8527.68,
+      "volume_ratio_vs_20d": 2.15,
+      "technical_snapshot": {
+        "date": "2024-03-18",
+        "close": 8527.68,
+        "rsi_14": 69.47,
+        "sma_20": 7271.97,
+        "sma_50": 6969.95,
+        "sma_200": 5425.87,
+        "volume_ratio_vs_20d": 2.15,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 66.5,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-03-19",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.74,
+      "move_1w_pct": 12.3,
+      "direction": "up",
+      "close": 8590.5,
+      "volume_ratio_vs_20d": 1.88,
+      "technical_snapshot": {
+        "date": "2024-03-19",
+        "close": 8590.5,
+        "rsi_14": 69.64,
+        "sma_20": 7370.82,
+        "sma_50": 7007.35,
+        "sma_200": 5449.91,
+        "volume_ratio_vs_20d": 1.88,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 67.34,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-03-20",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.19,
+      "move_1w_pct": 15.76,
+      "direction": "up",
+      "close": 8487.95,
+      "volume_ratio_vs_20d": 0.83,
+      "technical_snapshot": {
+        "date": "2024-03-20",
+        "close": 8487.95,
+        "rsi_14": 69.24,
+        "sma_20": 7466.17,
+        "sma_50": 7043.3,
+        "sma_200": 5473.48,
+        "volume_ratio_vs_20d": 0.83,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 65.98,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-05-17",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 8.24,
+      "move_1w_pct": 1.37,
+      "direction": "up",
+      "close": 8966.13,
+      "volume_ratio_vs_20d": 3.36,
+      "technical_snapshot": {
+        "date": "2024-05-17",
+        "close": 8966.13,
+        "rsi_14": 54.4,
+        "sma_20": 8713.36,
+        "sma_50": 8496.94,
+        "sma_200": 6393.91,
+        "volume_ratio_vs_20d": 3.36,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 74.01,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-05-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.16,
+      "move_1w_pct": 8.9,
+      "direction": "up",
+      "close": 9429.08,
+      "volume_ratio_vs_20d": 2.09,
+      "technical_snapshot": {
+        "date": "2024-05-21",
+        "close": 9429.08,
+        "rsi_14": 61.36,
+        "sma_20": 8759.29,
+        "sma_50": 8548.24,
+        "sma_200": 6422.27,
+        "volume_ratio_vs_20d": 2.09,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 79.82,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-05-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.28,
+      "move_1w_pct": 15.68,
+      "direction": "up",
+      "close": 9926.72,
+      "volume_ratio_vs_20d": 2.62,
+      "technical_snapshot": {
+        "date": "2024-05-22",
+        "close": 9926.72,
+        "rsi_14": 66.11,
+        "sma_20": 8830.58,
+        "sma_50": 8601.28,
+        "sma_200": 6453.04,
+        "volume_ratio_vs_20d": 2.62,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 81.79,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-05-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.69,
+      "move_1w_pct": 21.05,
+      "direction": "up",
+      "close": 10094.95,
+      "volume_ratio_vs_20d": 1.61,
+      "technical_snapshot": {
+        "date": "2024-05-23",
+        "close": 10094.95,
+        "rsi_14": 69.86,
+        "sma_20": 8904.03,
+        "sma_50": 8648.28,
+        "sma_200": 6484.39,
+        "volume_ratio_vs_20d": 1.61,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 82.37,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-05-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.06,
+      "move_1w_pct": 20.57,
+      "direction": "up",
+      "close": 9988.0,
+      "volume_ratio_vs_20d": 1.77,
+      "technical_snapshot": {
+        "date": "2024-05-24",
+        "close": 9988.0,
+        "rsi_14": 66.26,
+        "sma_20": 8964.56,
+        "sma_50": 8703.95,
+        "sma_200": 6515.17,
+        "volume_ratio_vs_20d": 1.77,
+        "tags": [
+          "above_sma20",
+          "bearish_engulfing",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 82.0,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-06-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.23,
+      "move_1w_pct": 1.79,
+      "direction": "up",
+      "close": 9841.29,
+      "volume_ratio_vs_20d": 0.82,
+      "technical_snapshot": {
+        "date": "2024-06-03",
+        "close": 9841.29,
+        "rsi_14": 65.52,
+        "sma_20": 9136.75,
+        "sma_50": 8892.98,
+        "sma_200": 6683.5,
+        "volume_ratio_vs_20d": 0.82,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 74.36,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-06-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -11.71,
+      "move_1w_pct": -7.33,
+      "direction": "down",
+      "close": 8688.81,
+      "volume_ratio_vs_20d": 0.88,
+      "technical_snapshot": {
+        "date": "2024-06-04",
+        "close": 8688.81,
+        "rsi_14": 51.1,
+        "sma_20": 9120.75,
+        "sma_50": 8896.2,
+        "sma_200": 6707.58,
+        "volume_ratio_vs_20d": 0.88,
+        "tags": [
+          "bearish_engulfing",
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 64.52,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-07-02",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 9.12,
+      "move_1w_pct": 10.27,
+      "direction": "up",
+      "close": 10997.85,
+      "volume_ratio_vs_20d": 4.56,
+      "technical_snapshot": {
+        "date": "2024-07-02",
+        "close": 10997.85,
+        "rsi_14": 77.85,
+        "sma_20": 9712.32,
+        "sma_50": 9291.36,
+        "sma_200": 7214.63,
+        "volume_ratio_vs_20d": 4.56,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 74.98,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-07-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 4.15,
+      "move_1w_pct": 15.82,
+      "direction": "up",
+      "close": 11453.97,
+      "volume_ratio_vs_20d": 2.66,
+      "technical_snapshot": {
+        "date": "2024-07-03",
+        "close": 11453.97,
+        "rsi_14": 84.61,
+        "sma_20": 9850.58,
+        "sma_50": 9350.23,
+        "sma_200": 7248.61,
+        "volume_ratio_vs_20d": 2.66,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 77.29,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-07-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.13,
+      "move_1w_pct": 23.87,
+      "direction": "up",
+      "close": 12155.79,
+      "volume_ratio_vs_20d": 1.53,
+      "technical_snapshot": {
+        "date": "2024-07-04",
+        "close": 12155.79,
+        "rsi_14": 86.27,
+        "sma_20": 10011.09,
+        "sma_50": 9423.33,
+        "sma_200": 7286.45,
+        "volume_ratio_vs_20d": 1.53,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 80.12,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-07-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.08,
+      "move_1w_pct": 21.44,
+      "direction": "up",
+      "close": 12146.2,
+      "volume_ratio_vs_20d": 0.92,
+      "technical_snapshot": {
+        "date": "2024-07-05",
+        "close": 12146.2,
+        "rsi_14": 85.34,
+        "sma_20": 10162.7,
+        "sma_50": 9493.73,
+        "sma_200": 7324.51,
+        "volume_ratio_vs_20d": 0.92,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 80.09,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-07-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.47,
+      "move_1w_pct": 21.07,
+      "direction": "up",
+      "close": 12203.13,
+      "volume_ratio_vs_20d": 0.57,
+      "technical_snapshot": {
+        "date": "2024-07-08",
+        "close": 12203.13,
+        "rsi_14": 84.88,
+        "sma_20": 10309.0,
+        "sma_50": 9562.25,
+        "sma_200": 7362.37,
+        "volume_ratio_vs_20d": 0.57,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 82.07,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-07-19",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -3.86,
+      "move_1w_pct": -11.29,
+      "direction": "down",
+      "close": 10856.33,
+      "volume_ratio_vs_20d": 0.57,
+      "technical_snapshot": {
+        "date": "2024-07-19",
+        "close": 10856.33,
+        "rsi_14": 60.15,
+        "sma_20": 11161.9,
+        "sma_50": 10036.42,
+        "sma_200": 7651.53,
+        "volume_ratio_vs_20d": 0.57,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 67.61,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-07-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.74,
+      "move_1w_pct": -10.75,
+      "direction": "down",
+      "close": 10709.21,
+      "volume_ratio_vs_20d": 0.45,
+      "technical_snapshot": {
+        "date": "2024-07-23",
+        "close": 10709.21,
+        "rsi_14": 45.81,
+        "sma_20": 11242.3,
+        "sma_50": 10121.31,
+        "sma_200": 7713.49,
+        "volume_ratio_vs_20d": 0.45,
+        "tags": [
+          "bearish_engulfing",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 66.16,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-07-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.47,
+      "move_1w_pct": -10.33,
+      "direction": "down",
+      "close": 10551.3,
+      "volume_ratio_vs_20d": 0.44,
+      "technical_snapshot": {
+        "date": "2024-07-24",
+        "close": 10551.3,
+        "rsi_14": 35.67,
+        "sma_20": 11271.17,
+        "sma_50": 10155.43,
+        "sma_200": 7743.28,
+        "volume_ratio_vs_20d": 0.44,
+        "tags": [
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 64.66,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-07-26",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.57,
+      "move_1w_pct": 0.9,
+      "direction": "up",
+      "close": 10953.77,
+      "volume_ratio_vs_20d": 1.22,
+      "technical_snapshot": {
+        "date": "2024-07-26",
+        "close": 10953.77,
+        "rsi_14": 33.34,
+        "sma_20": 11342.81,
+        "sma_50": 10233.36,
+        "sma_200": 7802.02,
+        "volume_ratio_vs_20d": 1.22,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 68.09,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-11-28",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.85,
+      "move_1w_pct": 9.22,
+      "direction": "up",
+      "close": 10880.4,
+      "volume_ratio_vs_20d": 2.78,
+      "technical_snapshot": {
+        "date": "2024-11-28",
+        "close": 10880.4,
+        "rsi_14": 63.22,
+        "sma_20": 10121.84,
+        "sma_50": 10713.04,
+        "sma_200": 9698.42,
+        "volume_ratio_vs_20d": 2.78,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 52.88,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-12-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.09,
+      "move_1w_pct": -3.59,
+      "direction": "up",
+      "close": 10166.85,
+      "volume_ratio_vs_20d": 1.39,
+      "technical_snapshot": {
+        "date": "2024-12-24",
+        "close": 10166.85,
+        "rsi_14": 40.34,
+        "sma_20": 10496.49,
+        "sma_50": 10446.18,
+        "sma_200": 10031.36,
+        "volume_ratio_vs_20d": 1.39,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 41.75,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2024-12-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.44,
+      "move_1w_pct": -2.66,
+      "direction": "down",
+      "close": 9516.03,
+      "volume_ratio_vs_20d": 1.37,
+      "technical_snapshot": {
+        "date": "2024-12-30",
+        "close": 9516.03,
+        "rsi_14": 25.74,
+        "sma_20": 10399.58,
+        "sma_50": 10360.66,
+        "sma_200": 10071.39,
+        "volume_ratio_vs_20d": 1.37,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 30.08,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-01-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.38,
+      "move_1w_pct": -5.88,
+      "direction": "down",
+      "close": 8911.8,
+      "volume_ratio_vs_20d": 1.79,
+      "technical_snapshot": {
+        "date": "2025-01-13",
+        "close": 8911.8,
+        "rsi_14": 37.43,
+        "sma_20": 9848.02,
+        "sma_50": 10128.38,
+        "sma_200": 10150.79,
+        "volume_ratio_vs_20d": 1.79,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 26.01,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-01-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.17,
+      "move_1w_pct": 5.28,
+      "direction": "up",
+      "close": 10051.74,
+      "volume_ratio_vs_20d": 4.18,
+      "technical_snapshot": {
+        "date": "2025-01-30",
+        "close": 10051.74,
+        "rsi_14": 58.19,
+        "sma_20": 9517.13,
+        "sma_50": 9992.64,
+        "sma_200": 10196.37,
+        "volume_ratio_vs_20d": 4.18,
+        "tags": [
+          "above_sma20",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 45.37,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-02-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.62,
+      "move_1w_pct": 2.79,
+      "direction": "down",
+      "close": 9499.0,
+      "volume_ratio_vs_20d": 0.81,
+      "technical_snapshot": {
+        "date": "2025-02-03",
+        "close": 9499.0,
+        "rsi_14": 49.6,
+        "sma_20": 9560.48,
+        "sma_50": 9988.84,
+        "sma_200": 10217.38,
+        "volume_ratio_vs_20d": 0.81,
+        "tags": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 40.83,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-02-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.58,
+      "move_1w_pct": -10.59,
+      "direction": "down",
+      "close": 9104.17,
+      "volume_ratio_vs_20d": 3.86,
+      "technical_snapshot": {
+        "date": "2025-02-06",
+        "close": 9104.17,
+        "rsi_14": 40.99,
+        "sma_20": 9547.09,
+        "sma_50": 9930.91,
+        "sma_200": 10232.28,
+        "volume_ratio_vs_20d": 3.86,
+        "tags": [
+          "marubozu",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 37.75,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-04-15",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.55,
+      "move_1w_pct": 8.72,
+      "direction": "up",
+      "close": 11930.8,
+      "volume_ratio_vs_20d": 1.08,
+      "technical_snapshot": {
+        "date": "2025-04-15",
+        "close": 11930.8,
+        "rsi_14": 70.11,
+        "sma_20": 10826.25,
+        "sma_50": 9854.88,
+        "sma_200": 10370.71,
+        "volume_ratio_vs_20d": 1.08,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 69.69,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-04-16",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.53,
+      "move_1w_pct": 13.93,
+      "direction": "up",
+      "close": 12113.59,
+      "volume_ratio_vs_20d": 1.03,
+      "technical_snapshot": {
+        "date": "2025-04-16",
+        "close": 12113.59,
+        "rsi_14": 69.77,
+        "sma_20": 10927.68,
+        "sma_50": 9896.11,
+        "sma_200": 10381.83,
+        "volume_ratio_vs_20d": 1.03,
+        "tags": [
+          "above_sma20",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 70.57,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-04-17",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.87,
+      "move_1w_pct": 11.91,
+      "direction": "up",
+      "close": 12218.46,
+      "volume_ratio_vs_20d": 1.0,
+      "technical_snapshot": {
+        "date": "2025-04-17",
+        "close": 12218.46,
+        "rsi_14": 72.9,
+        "sma_20": 11034.77,
+        "sma_50": 9936.83,
+        "sma_200": 10393.86,
+        "volume_ratio_vs_20d": 1.0,
+        "tags": [
+          "above_sma20",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 71.05,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-04-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.98,
+      "move_1w_pct": 14.73,
+      "direction": "up",
+      "close": 12460.18,
+      "volume_ratio_vs_20d": 0.65,
+      "technical_snapshot": {
+        "date": "2025-04-21",
+        "close": 12460.18,
+        "rsi_14": 73.18,
+        "sma_20": 11153.94,
+        "sma_50": 9984.74,
+        "sma_200": 10406.15,
+        "volume_ratio_vs_20d": 0.65,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 71.31,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-04-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.88,
+      "move_1w_pct": 13.4,
+      "direction": "up",
+      "close": 12818.75,
+      "volume_ratio_vs_20d": 0.96,
+      "technical_snapshot": {
+        "date": "2025-04-22",
+        "close": 12818.75,
+        "rsi_14": 76.86,
+        "sma_20": 11279.95,
+        "sma_50": 10051.13,
+        "sma_200": 10419.85,
+        "volume_ratio_vs_20d": 0.96,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 72.82,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-05-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.21,
+      "move_1w_pct": 3.41,
+      "direction": "up",
+      "close": 14175.13,
+      "volume_ratio_vs_20d": 4.55,
+      "technical_snapshot": {
+        "date": "2025-05-21",
+        "close": 14175.13,
+        "rsi_14": 66.7,
+        "sma_20": 13387.97,
+        "sma_50": 11826.45,
+        "sma_200": 10616.14,
+        "volume_ratio_vs_20d": 4.55,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 93.35,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-05-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.75,
+      "move_1w_pct": 8.13,
+      "direction": "up",
+      "close": 14990.17,
+      "volume_ratio_vs_20d": 3.16,
+      "technical_snapshot": {
+        "date": "2025-05-22",
+        "close": 14990.17,
+        "rsi_14": 75.74,
+        "sma_20": 13484.06,
+        "sma_50": 11941.7,
+        "sma_200": 10637.24,
+        "volume_ratio_vs_20d": 3.16,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 94.13,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-05-26",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.59,
+      "move_1w_pct": 15.92,
+      "direction": "up",
+      "close": 15866.12,
+      "volume_ratio_vs_20d": 1.75,
+      "technical_snapshot": {
+        "date": "2025-05-26",
+        "close": 15866.12,
+        "rsi_14": 79.84,
+        "sma_20": 13744.5,
+        "sma_50": 12188.32,
+        "sma_200": 10686.49,
+        "volume_ratio_vs_20d": 1.75,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 94.93,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-05-27",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.03,
+      "move_1w_pct": 17.8,
+      "direction": "up",
+      "close": 15871.12,
+      "volume_ratio_vs_20d": 1.3,
+      "technical_snapshot": {
+        "date": "2025-05-27",
+        "close": 15871.12,
+        "rsi_14": 79.38,
+        "sma_20": 13882.68,
+        "sma_50": 12309.24,
+        "sma_200": 10714.29,
+        "volume_ratio_vs_20d": 1.3,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 94.93,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-05-28",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.4,
+      "move_1w_pct": 13.54,
+      "direction": "up",
+      "close": 16093.85,
+      "volume_ratio_vs_20d": 1.42,
+      "technical_snapshot": {
+        "date": "2025-05-28",
+        "close": 16093.85,
+        "rsi_14": 83.55,
+        "sma_20": 14015.57,
+        "sma_50": 12436.04,
+        "sma_200": 10743.89,
+        "volume_ratio_vs_20d": 1.42,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 95.07,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2025-12-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.95,
+      "move_1w_pct": 3.48,
+      "direction": "up",
+      "close": 12612.55,
+      "volume_ratio_vs_20d": 2.13,
+      "technical_snapshot": {
+        "date": "2025-12-22",
+        "close": 12612.55,
+        "rsi_14": 38.17,
+        "sma_20": 12641.33,
+        "sma_50": 13377.4,
+        "sma_200": 13858.39,
+        "volume_ratio_vs_20d": 2.13,
+        "tags": [
+          "marubozu",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 28.5,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-01-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.93,
+      "move_1w_pct": 10.57,
+      "direction": "up",
+      "close": 13444.06,
+      "volume_ratio_vs_20d": 1.85,
+      "technical_snapshot": {
+        "date": "2026-01-08",
+        "close": 13444.06,
+        "rsi_14": 77.67,
+        "sma_20": 12389.73,
+        "sma_50": 13029.88,
+        "sma_200": 14032.88,
+        "volume_ratio_vs_20d": 1.85,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 45.83,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-01-28",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 9.01,
+      "move_1w_pct": 10.48,
+      "direction": "up",
+      "close": 13907.78,
+      "volume_ratio_vs_20d": 1.56,
+      "technical_snapshot": {
+        "date": "2026-01-28",
+        "close": 13907.78,
+        "rsi_14": 63.55,
+        "sma_20": 12796.89,
+        "sma_50": 12820.98,
+        "sma_200": 14152.25,
+        "volume_ratio_vs_20d": 1.56,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 49.16,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-03-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.28,
+      "move_1w_pct": 10.16,
+      "direction": "up",
+      "close": 15143.05,
+      "volume_ratio_vs_20d": 2.42,
+      "technical_snapshot": {
+        "date": "2026-03-06",
+        "close": 15143.05,
+        "rsi_14": 85.61,
+        "sma_20": 13582.72,
+        "sma_50": 13161.36,
+        "sma_200": 14240.38,
+        "volume_ratio_vs_20d": 2.42,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 63.76,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-03-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.15,
+      "move_1w_pct": 10.91,
+      "direction": "up",
+      "close": 14968.16,
+      "volume_ratio_vs_20d": 1.75,
+      "technical_snapshot": {
+        "date": "2026-03-09",
+        "close": 14968.16,
+        "rsi_14": 80.41,
+        "sma_20": 13681.57,
+        "sma_50": 13209.97,
+        "sma_200": 14247.86,
+        "volume_ratio_vs_20d": 1.75,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 66.46,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-03-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -3.9,
+      "move_1w_pct": -11.73,
+      "direction": "down",
+      "close": 12422.66,
+      "volume_ratio_vs_20d": 0.74,
+      "technical_snapshot": {
+        "date": "2026-03-23",
+        "close": 12422.66,
+        "rsi_14": 30.04,
+        "sma_20": 13943.16,
+        "sma_50": 13477.8,
+        "sma_200": 14151.69,
+        "volume_ratio_vs_20d": 0.74,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 53.17,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-03-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.0,
+      "move_1w_pct": -10.55,
+      "direction": "down",
+      "close": 12546.59,
+      "volume_ratio_vs_20d": 0.61,
+      "technical_snapshot": {
+        "date": "2026-03-24",
+        "close": 12546.59,
+        "rsi_14": 21.83,
+        "sma_20": 13902.39,
+        "sma_50": 13459.85,
+        "sma_200": 14130.48,
+        "volume_ratio_vs_20d": 0.61,
+        "tags": [
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 53.98,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-04-01",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.05,
+      "move_1w_pct": 3.03,
+      "direction": "up",
+      "close": 12799.44,
+      "volume_ratio_vs_20d": 0.81,
+      "technical_snapshot": {
+        "date": "2026-04-01",
+        "close": 12799.44,
+        "rsi_14": 27.83,
+        "sma_20": 13712.2,
+        "sma_50": 13427.61,
+        "sma_200": 14045.28,
+        "volume_ratio_vs_20d": 0.81,
+        "tags": [
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 52.29,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-04-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.91,
+      "move_1w_pct": 13.13,
+      "direction": "up",
+      "close": 13653.93,
+      "volume_ratio_vs_20d": 0.98,
+      "technical_snapshot": {
+        "date": "2026-04-08",
+        "close": 13653.93,
+        "rsi_14": 45.35,
+        "sma_20": 13469.59,
+        "sma_50": 13479.28,
+        "sma_200": 13977.44,
+        "volume_ratio_vs_20d": 0.98,
+        "tags": [
+          "above_sma20",
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 57.52,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-04-15",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.49,
+      "move_1w_pct": 11.04,
+      "direction": "up",
+      "close": 14877.21,
+      "volume_ratio_vs_20d": 1.26,
+      "technical_snapshot": {
+        "date": "2026-04-15",
+        "close": 14877.21,
+        "rsi_14": 71.27,
+        "sma_20": 13403.38,
+        "sma_50": 13582.63,
+        "sma_200": 13924.08,
+        "volume_ratio_vs_20d": 1.26,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought"
+        ],
+        "weekly": {
+          "rsi_14": 59.22,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-05-14",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.56,
+      "move_1w_pct": 4.9,
+      "direction": "up",
+      "close": 16655.16,
+      "volume_ratio_vs_20d": 2.39,
+      "technical_snapshot": {
+        "date": "2026-05-14",
+        "close": 16655.16,
+        "rsi_14": 75.34,
+        "sma_20": 15549.51,
+        "sma_50": 14490.76,
+        "sma_200": 13839.93,
+        "volume_ratio_vs_20d": 2.39,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 69.92,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-05-18",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 4.07,
+      "move_1w_pct": 10.8,
+      "direction": "up",
+      "close": 18008.36,
+      "volume_ratio_vs_20d": 3.85,
+      "technical_snapshot": {
+        "date": "2026-05-18",
+        "close": 18008.36,
+        "rsi_14": 81.71,
+        "sma_20": 15816.2,
+        "sma_50": 14647.47,
+        "sma_200": 13867.76,
+        "volume_ratio_vs_20d": 3.85,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 73.67,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-05-19",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.54,
+      "move_1w_pct": 16.24,
+      "direction": "up",
+      "close": 18105.3,
+      "volume_ratio_vs_20d": 1.61,
+      "technical_snapshot": {
+        "date": "2026-05-19",
+        "close": 18105.3,
+        "rsi_14": 81.81,
+        "sma_20": 15974.46,
+        "sma_50": 14719.28,
+        "sma_200": 13884.57,
+        "volume_ratio_vs_20d": 1.61,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 73.91,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-05-20",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.52,
+      "move_1w_pct": 15.35,
+      "direction": "up",
+      "close": 18199.25,
+      "volume_ratio_vs_20d": 1.14,
+      "technical_snapshot": {
+        "date": "2026-05-20",
+        "close": 18199.25,
+        "rsi_14": 81.95,
+        "sma_20": 16121.27,
+        "sma_50": 14790.02,
+        "sma_200": 13903.08,
+        "volume_ratio_vs_20d": 1.14,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 74.14,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-05-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.0,
+      "move_1w_pct": 10.36,
+      "direction": "up",
+      "close": 18381.14,
+      "volume_ratio_vs_20d": 1.02,
+      "technical_snapshot": {
+        "date": "2026-05-21",
+        "close": 18381.14,
+        "rsi_14": 82.67,
+        "sma_20": 16253.45,
+        "sma_50": 14854.78,
+        "sma_200": 13922.69,
+        "volume_ratio_vs_20d": 1.02,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 74.58,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-06-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.05,
+      "move_1w_pct": 2.57,
+      "direction": "up",
+      "close": 18684.96,
+      "volume_ratio_vs_20d": 2.03,
+      "technical_snapshot": {
+        "date": "2026-06-30",
+        "close": 18684.96,
+        "rsi_14": 60.21,
+        "sma_20": 17839.66,
+        "sma_50": 17198.12,
+        "sma_200": 14420.3,
+        "volume_ratio_vs_20d": 2.03,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 80.81,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "SOLARINDS",
+      "date": "2026-08-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 8.51,
+      "move_1w_pct": 9.88,
+      "direction": "up",
+      "close": 20324.0,
+      "volume_ratio_vs_20d": 6.17,
+      "technical_snapshot": {
+        "date": "2026-08-13",
+        "close": 20324.0,
+        "rsi_14": 74.55,
+        "sma_20": 18668.93,
+        "sma_50": 18249.98,
+        "sma_200": 15128.45,
+        "volume_ratio_vs_20d": 6.17,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 74.0,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    }
+  ]
+}

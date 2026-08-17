@@ -1,0 +1,24 @@
+{
+  "date": "2026-01-27",
+  "close": 714.15,
+  "rsi_14": 65.0,
+  "sma_20": 634.14,
+  "sma_50": 563.56,
+  "sma_200": 472.95,
+  "volume_ratio_vs_20d": 1.57,
+  "tags": [
+    "above_sma20",
+    "hammer",
+    "long_term_uptrend",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 81.38,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

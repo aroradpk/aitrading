@@ -1,0 +1,30 @@
+{
+  "symbol": "CGPOWER",
+  "date": "2026-08-04",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 6.53,
+  "move_1w_pct": 4.26,
+  "direction": "up",
+  "close": 880.05,
+  "volume_ratio_vs_20d": 1.85,
+  "technical_snapshot": {
+    "date": "2026-08-04",
+    "close": 880.05,
+    "rsi_14": 43.94,
+    "sma_20": 887.67,
+    "sma_50": 913.58,
+    "sma_200": 759.15,
+    "volume_ratio_vs_20d": 1.85,
+    "tags": [
+      "long_term_uptrend",
+      "marubozu",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 57.7,
+      "tags": []
+    }
+  }
+}

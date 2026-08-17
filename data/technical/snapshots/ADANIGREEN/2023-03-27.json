@@ -1,0 +1,23 @@
+{
+  "date": "2023-03-27",
+  "close": 984.9,
+  "rsi_14": 89.09,
+  "sma_20": 726.23,
+  "sma_50": 987.85,
+  "sma_200": 1816.79,
+  "volume_ratio_vs_20d": 2.21,
+  "tags": [
+    "above_sma20",
+    "bearish_engulfing",
+    "marubozu",
+    "rsi_overbought",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 33.04,
+    "tags": [
+      "weekly_rsi_oversold",
+      "weekly_uptrend"
+    ]
+  }
+}

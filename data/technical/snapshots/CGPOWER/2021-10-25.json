@@ -1,0 +1,21 @@
+{
+  "date": "2021-10-25",
+  "close": 141.9,
+  "rsi_14": 65.95,
+  "sma_20": 121.7,
+  "sma_50": 101.3,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 1.28,
+  "tags": [
+    "above_sma20",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 83.82,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

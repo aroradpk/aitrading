@@ -1,0 +1,30 @@
+{
+  "symbol": "SIEMENS",
+  "date": "2025-04-09",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": -1.72,
+  "move_1w_pct": -12.42,
+  "direction": "down",
+  "close": 2702.57,
+  "volume_ratio_vs_20d": 0.75,
+  "technical_snapshot": {
+    "date": "2025-04-09",
+    "close": 2702.57,
+    "rsi_14": 28.02,
+    "sma_20": 2962.5,
+    "sma_50": 3008.75,
+    "sma_200": 3829.46,
+    "volume_ratio_vs_20d": 0.75,
+    "tags": [
+      "rsi_oversold"
+    ],
+    "weekly": {
+      "rsi_14": 24.05,
+      "tags": [
+        "weekly_rsi_oversold"
+      ]
+    }
+  }
+}

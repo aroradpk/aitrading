@@ -1,0 +1,16 @@
+{
+  "date": "2021-10-27",
+  "close": 211.6,
+  "rsi_14": 53.23,
+  "sma_20": 214.64,
+  "sma_50": 212.74,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 0.47,
+  "tags": [
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 48.4,
+    "tags": []
+  }
+}

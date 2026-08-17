@@ -1,0 +1,35 @@
+{
+  "symbol": "TVSMOTOR",
+  "date": "2021-11-02",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 3.98,
+  "move_1w_pct": 11.52,
+  "direction": "up",
+  "close": 682.35,
+  "volume_ratio_vs_20d": 1.85,
+  "technical_snapshot": {
+    "date": "2021-11-02",
+    "close": 682.35,
+    "rsi_14": 84.0,
+    "sma_20": 586.44,
+    "sma_50": 550.39,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.85,
+    "tags": [
+      "above_sma20",
+      "marubozu",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 70.86,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

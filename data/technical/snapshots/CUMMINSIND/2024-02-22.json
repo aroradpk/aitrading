@@ -1,0 +1,24 @@
+{
+  "date": "2024-02-22",
+  "close": 2668.79,
+  "rsi_14": 84.11,
+  "sma_20": 2375.07,
+  "sma_50": 2102.29,
+  "sma_200": 1805.17,
+  "volume_ratio_vs_20d": 1.34,
+  "tags": [
+    "above_sma20",
+    "bullish_engulfing",
+    "long_term_uptrend",
+    "marubozu",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 93.42,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

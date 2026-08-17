@@ -1,0 +1,21 @@
+{
+  "date": "2022-03-04",
+  "close": 542.31,
+  "rsi_14": 23.65,
+  "sma_20": 626.64,
+  "sma_50": 621.34,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 0.78,
+  "tags": [
+    "marubozu",
+    "near_support",
+    "rsi_oversold",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 33.12,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

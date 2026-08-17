@@ -1,0 +1,33 @@
+{
+  "symbol": "MOTHERSON",
+  "date": "2025-02-11",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": -5.08,
+  "move_1w_pct": -6.74,
+  "direction": "down",
+  "close": 84.81,
+  "volume_ratio_vs_20d": 1.63,
+  "technical_snapshot": {
+    "date": "2025-02-11",
+    "close": 84.81,
+    "rsi_14": 33.41,
+    "sma_20": 92.68,
+    "sma_50": 99.53,
+    "sma_200": 113.63,
+    "volume_ratio_vs_20d": 1.63,
+    "tags": [
+      "marubozu",
+      "near_support",
+      "rsi_oversold",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 21.7,
+      "tags": [
+        "weekly_rsi_oversold"
+      ]
+    }
+  }
+}

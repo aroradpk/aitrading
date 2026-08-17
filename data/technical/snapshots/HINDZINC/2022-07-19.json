@@ -1,0 +1,21 @@
+{
+  "date": "2022-07-19",
+  "close": 205.17,
+  "rsi_14": 83.47,
+  "sma_20": 179.55,
+  "sma_50": 191.41,
+  "sma_200": 212.43,
+  "volume_ratio_vs_20d": 2.39,
+  "tags": [
+    "above_sma20",
+    "near_resistance",
+    "rsi_overbought",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 35.71,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

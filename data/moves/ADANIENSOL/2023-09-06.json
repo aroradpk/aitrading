@@ -1,0 +1,33 @@
+{
+  "symbol": "ADANIENSOL",
+  "date": "2023-09-06",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 5.22,
+  "move_1w_pct": 1.69,
+  "direction": "up",
+  "close": 855.95,
+  "volume_ratio_vs_20d": 1.86,
+  "technical_snapshot": {
+    "date": "2023-09-06",
+    "close": 855.95,
+    "rsi_14": 54.65,
+    "sma_20": 850.82,
+    "sma_50": 811.15,
+    "sma_200": 1346.35,
+    "volume_ratio_vs_20d": 1.86,
+    "tags": [
+      "above_sma20",
+      "marubozu",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 57.8,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

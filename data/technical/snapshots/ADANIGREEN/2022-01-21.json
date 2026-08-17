@@ -1,0 +1,22 @@
+{
+  "date": "2022-01-21",
+  "close": 1934.55,
+  "rsi_14": 95.07,
+  "sma_20": 1567.18,
+  "sma_50": 1450.35,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 1.11,
+  "tags": [
+    "above_sma20",
+    "bearish_engulfing",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 86.29,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "date": "2023-01-18",
+  "close": 2096.9,
+  "rsi_14": 66.76,
+  "sma_20": 1923.89,
+  "sma_50": 2007.62,
+  "sma_200": 2167.6,
+  "volume_ratio_vs_20d": 1.43,
+  "tags": [
+    "above_sma20",
+    "marubozu",
+    "rsi_overbought"
+  ],
+  "weekly": {
+    "rsi_14": 52.86,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

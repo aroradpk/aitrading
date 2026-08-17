@@ -1,0 +1,17 @@
+{
+  "date": "2022-06-13",
+  "close": 33.4,
+  "rsi_14": 56.33,
+  "sma_20": 34.13,
+  "sma_50": 36.81,
+  "sma_200": 35.4,
+  "volume_ratio_vs_20d": 0.79,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu"
+  ],
+  "weekly": {
+    "rsi_14": 41.29,
+    "tags": []
+  }
+}

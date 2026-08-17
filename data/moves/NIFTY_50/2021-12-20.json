@@ -1,0 +1,28 @@
+{
+  "symbol": "NIFTY_50",
+  "date": "2021-12-20",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": -2.18,
+  "move_1w_pct": -4.34,
+  "direction": "down",
+  "close": 16614.2,
+  "volume_ratio_vs_20d": 1.15,
+  "technical_snapshot": {
+    "date": "2021-12-20",
+    "close": 16614.2,
+    "rsi_14": 42.53,
+    "sma_20": 17231.63,
+    "sma_50": 17704.1,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.15,
+    "tags": [
+      "near_support"
+    ],
+    "weekly": {
+      "rsi_14": 40.2,
+      "tags": []
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "symbol": "CANBK",
+  "date": "2023-10-27",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 5.97,
+  "move_1w_pct": 1.83,
+  "direction": "up",
+  "close": 69.3,
+  "volume_ratio_vs_20d": 3.16,
+  "technical_snapshot": {
+    "date": "2023-10-27",
+    "close": 69.3,
+    "rsi_14": 53.09,
+    "sma_20": 67.44,
+    "sma_50": 64.68,
+    "sma_200": 56.89,
+    "volume_ratio_vs_20d": 3.16,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "marubozu",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 68.16,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

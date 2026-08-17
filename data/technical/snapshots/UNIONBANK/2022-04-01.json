@@ -1,0 +1,17 @@
+{
+  "date": "2022-04-01",
+  "close": 34.48,
+  "rsi_14": 58.0,
+  "sma_20": 32.89,
+  "sma_50": 35.52,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 1.35,
+  "tags": [
+    "above_sma20",
+    "marubozu"
+  ],
+  "weekly": {
+    "rsi_14": 45.31,
+    "tags": []
+  }
+}

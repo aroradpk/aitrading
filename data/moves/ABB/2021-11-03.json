@@ -1,0 +1,32 @@
+{
+  "symbol": "ABB",
+  "date": "2021-11-03",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 0.32,
+  "move_1w_pct": 10.07,
+  "direction": "up",
+  "close": 1999.61,
+  "volume_ratio_vs_20d": 1.36,
+  "technical_snapshot": {
+    "date": "2021-11-03",
+    "close": 1999.61,
+    "rsi_14": 74.43,
+    "sma_20": 1838.7,
+    "sma_50": 1812.24,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.36,
+    "tags": [
+      "above_sma20",
+      "rsi_overbought",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 73.6,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

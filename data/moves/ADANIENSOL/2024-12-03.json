@@ -1,0 +1,26 @@
+{
+  "symbol": "ADANIENSOL",
+  "date": "2024-12-03",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": -0.64,
+  "move_1w_pct": 33.47,
+  "direction": "up",
+  "close": 801.85,
+  "volume_ratio_vs_20d": 0.52,
+  "technical_snapshot": {
+    "date": "2024-12-03",
+    "close": 801.85,
+    "rsi_14": 42.1,
+    "sma_20": 834.96,
+    "sma_50": 931.1,
+    "sma_200": 1019.43,
+    "volume_ratio_vs_20d": 0.52,
+    "tags": [],
+    "weekly": {
+      "rsi_14": 38.86,
+      "tags": []
+    }
+  }
+}

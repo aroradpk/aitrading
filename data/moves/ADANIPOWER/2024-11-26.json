@@ -1,0 +1,32 @@
+{
+  "symbol": "ADANIPOWER",
+  "date": "2024-11-26",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": -2.02,
+  "move_1w_pct": -16.93,
+  "direction": "down",
+  "close": 87.53,
+  "volume_ratio_vs_20d": 1.7,
+  "technical_snapshot": {
+    "date": "2024-11-26",
+    "close": 87.53,
+    "rsi_14": 15.6,
+    "sma_20": 110.71,
+    "sma_50": 120.85,
+    "sma_200": 126.83,
+    "volume_ratio_vs_20d": 1.7,
+    "tags": [
+      "near_support",
+      "rsi_oversold",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 12.48,
+      "tags": [
+        "weekly_rsi_oversold"
+      ]
+    }
+  }
+}

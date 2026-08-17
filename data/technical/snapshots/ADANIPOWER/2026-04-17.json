@@ -1,0 +1,23 @@
+{
+  "date": "2026-04-17",
+  "close": 198.5,
+  "rsi_14": 93.7,
+  "sma_20": 164.29,
+  "sma_50": 152.26,
+  "sma_200": 140.99,
+  "volume_ratio_vs_20d": 1.91,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 76.0,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

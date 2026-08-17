@@ -1,0 +1,31 @@
+{
+  "symbol": "UNIONBANK",
+  "date": "2026-04-23",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": -7.39,
+  "move_1w_pct": -4.66,
+  "direction": "down",
+  "close": 174.56,
+  "volume_ratio_vs_20d": 3.04,
+  "technical_snapshot": {
+    "date": "2026-04-23",
+    "close": 174.56,
+    "rsi_14": 57.71,
+    "sma_20": 175.65,
+    "sma_50": 178.63,
+    "sma_200": 151.65,
+    "volume_ratio_vs_20d": 3.04,
+    "tags": [
+      "bearish_engulfing",
+      "long_term_uptrend",
+      "marubozu",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 51.74,
+      "tags": []
+    }
+  }
+}

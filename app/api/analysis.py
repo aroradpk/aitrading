@@ -4,6 +4,8 @@ from pathlib import Path
 
 from fastapi import APIRouter, File, HTTPException, Query, UploadFile
 
+from app.core.config import get_settings
+
 from app.core.paths import (
     backtest_reports_dir,
     data_dir,
@@ -38,6 +40,17 @@ from app.schemas.analysis import (
 router = APIRouter(prefix="/api/analysis", tags=["analysis"])
 
 
+def _reject_if_offline(action: str) -> None:
+    if get_settings().offline_mode:
+        raise HTTPException(
+            status_code=409,
+            detail=(
+                f"{action} is disabled while offline_mode=true. "
+                "The app uses saved data/ only. Set offline_mode: false to refresh from the web."
+            ),
+        )
+
+
 @router.get("/status", response_model=DataStatus)
 def analysis_status() -> DataStatus:
     ohlcv_count = len(list(ohlcv_daily_dir().glob("*.parquet")))
@@ -54,6 +67,7 @@ def analysis_status() -> DataStatus:
         move_symbols=move_symbols,
         latest_report=reports[0].name if reports else None,
         latest_backtest=latest_backtest,
+        offline_mode=get_settings().offline_mode,
     )
 
 
@@ -65,6 +79,7 @@ def get_universe() -> UniverseResponse:
 
 @router.post("/universe/refresh", response_model=UniverseResponse)
 def refresh_universe() -> UniverseResponse:
+    _reject_if_offline("Universe refresh")
     payload = build_active_universe()
     return UniverseResponse.model_validate(payload)
 
@@ -97,6 +112,7 @@ def build_watchlist() -> WatchlistReport:
 
 @router.post("/events/refresh")
 def refresh_events() -> dict:
+    _reject_if_offline("Events refresh")
     return refresh_events_for_universe()
 
 

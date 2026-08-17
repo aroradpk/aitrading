@@ -1,0 +1,22 @@
+{
+  "date": "2023-08-18",
+  "close": 60.92,
+  "rsi_14": 75.51,
+  "sma_20": 54.32,
+  "sma_50": 52.16,
+  "sma_200": 50.38,
+  "volume_ratio_vs_20d": 4.27,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 69.69,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

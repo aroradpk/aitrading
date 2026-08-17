@@ -1,0 +1,20 @@
+{
+  "date": "2024-11-12",
+  "close": 109.49,
+  "rsi_14": 17.55,
+  "sma_20": 124.39,
+  "sma_50": 129.4,
+  "sma_200": 106.0,
+  "volume_ratio_vs_20d": 2.25,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "near_support",
+    "rsi_oversold",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 41.54,
+    "tags": []
+  }
+}

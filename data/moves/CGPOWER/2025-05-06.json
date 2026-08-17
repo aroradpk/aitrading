@@ -1,0 +1,30 @@
+{
+  "symbol": "CGPOWER",
+  "date": "2025-05-06",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": -5.77,
+  "move_1w_pct": -5.55,
+  "direction": "down",
+  "close": 597.13,
+  "volume_ratio_vs_20d": 2.32,
+  "technical_snapshot": {
+    "date": "2025-05-06",
+    "close": 597.13,
+    "rsi_14": 56.52,
+    "sma_20": 608.68,
+    "sma_50": 609.1,
+    "sma_200": 685.31,
+    "volume_ratio_vs_20d": 2.32,
+    "tags": [
+      "bearish_engulfing",
+      "marubozu",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 48.54,
+      "tags": []
+    }
+  }
+}

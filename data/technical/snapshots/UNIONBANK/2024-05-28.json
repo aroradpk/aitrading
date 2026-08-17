@@ -1,0 +1,20 @@
+{
+  "date": "2024-05-28",
+  "close": 144.53,
+  "rsi_14": 68.17,
+  "sma_20": 134.67,
+  "sma_50": 136.14,
+  "sma_200": 112.55,
+  "volume_ratio_vs_20d": 1.18,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "rsi_overbought"
+  ],
+  "weekly": {
+    "rsi_14": 56.22,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

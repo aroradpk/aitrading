@@ -1,0 +1,26 @@
+{
+  "symbol": "NIFTY_BANK",
+  "date": "2022-06-13",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": -3.13,
+  "move_1w_pct": -5.39,
+  "direction": "down",
+  "close": 33405.46,
+  "volume_ratio_vs_20d": 1.0,
+  "technical_snapshot": {
+    "date": "2022-06-13",
+    "close": 33405.46,
+    "rsi_14": 40.33,
+    "sma_20": 34784.32,
+    "sma_50": 35597.86,
+    "sma_200": 36813.48,
+    "volume_ratio_vs_20d": 1.0,
+    "tags": [],
+    "weekly": {
+      "rsi_14": 46.11,
+      "tags": []
+    }
+  }
+}

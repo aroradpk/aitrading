@@ -1,0 +1,34 @@
+{
+  "symbol": "TORNTPHARM",
+  "date": "2022-05-26",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 10.1,
+  "move_1w_pct": 11.91,
+  "direction": "up",
+  "close": 1378.99,
+  "volume_ratio_vs_20d": 8.9,
+  "technical_snapshot": {
+    "date": "2022-05-26",
+    "close": 1378.99,
+    "rsi_14": 65.91,
+    "sma_20": 1261.35,
+    "sma_50": 1302.67,
+    "sma_200": 1377.84,
+    "volume_ratio_vs_20d": 8.9,
+    "tags": [
+      "above_sma20",
+      "marubozu",
+      "near_resistance",
+      "rsi_overbought",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 59.98,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "date": "2026-05-28",
+  "close": 248.91,
+  "rsi_14": 67.44,
+  "sma_20": 226.41,
+  "sma_50": 197.94,
+  "sma_200": 156.15,
+  "volume_ratio_vs_20d": 0.0,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 92.26,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

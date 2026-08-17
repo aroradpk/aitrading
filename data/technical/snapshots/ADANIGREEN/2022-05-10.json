@@ -1,0 +1,21 @@
+{
+  "date": "2022-05-10",
+  "close": 2486.7,
+  "rsi_14": 34.53,
+  "sma_20": 2792.99,
+  "sma_50": 2268.97,
+  "sma_200": 1561.18,
+  "volume_ratio_vs_20d": 0.39,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "rsi_oversold",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 65.09,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

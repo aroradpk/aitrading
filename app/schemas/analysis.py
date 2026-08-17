@@ -55,6 +55,7 @@ class DataStatus(BaseModel):
     move_symbols: int
     latest_report: str | None
     latest_backtest: str | None = None
+    offline_mode: bool = False
 
 
 class BacktestSignal(BaseModel):

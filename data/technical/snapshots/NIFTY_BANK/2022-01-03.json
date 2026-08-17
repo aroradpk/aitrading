@@ -1,0 +1,17 @@
+{
+  "date": "2022-01-03",
+  "close": 36421.48,
+  "rsi_14": 45.61,
+  "sma_20": 35861.93,
+  "sma_50": 37360.39,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 1.29,
+  "tags": [
+    "above_sma20",
+    "marubozu"
+  ],
+  "weekly": {
+    "rsi_14": 46.96,
+    "tags": []
+  }
+}

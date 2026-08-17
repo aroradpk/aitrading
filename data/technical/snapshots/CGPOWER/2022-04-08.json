@@ -1,0 +1,22 @@
+{
+  "date": "2022-04-08",
+  "close": 209.72,
+  "rsi_14": 84.02,
+  "sma_20": 181.48,
+  "sma_50": 174.74,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 2.17,
+  "tags": [
+    "above_sma20",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 57.84,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

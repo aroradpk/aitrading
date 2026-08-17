@@ -1,0 +1,19 @@
+{
+  "date": "2026-03-24",
+  "close": 52605.65,
+  "rsi_14": 28.17,
+  "sma_20": 56617.17,
+  "sma_50": 58666.82,
+  "sma_200": 57417.06,
+  "volume_ratio_vs_20d": 0.94,
+  "tags": [
+    "long_term_uptrend",
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 29.58,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

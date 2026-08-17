@@ -7,6 +7,7 @@ import pandas as pd
 import yfinance as yf
 
 from app.core.config import get_settings
+from app.core.paths import ohlcv_daily_dir
 
 
 def yahoo_ticker(symbol: str, instrument_type: str = "stock") -> str:
@@ -23,6 +24,14 @@ def fetch_ohlcv(
     years: int | None = None,
 ) -> pd.DataFrame:
     settings = get_settings()
+    cached = ohlcv_daily_dir() / f"{symbol}.parquet"
+    if settings.offline_mode:
+        if cached.exists():
+            return load_ohlcv(cached)
+        raise FileNotFoundError(
+            f"No cached OHLCV for {symbol} at {cached} (offline_mode=true)"
+        )
+
     years = years or int(settings.ohlcv.get("history_years", 5))
     ticker = yahoo or yahoo_ticker(symbol, instrument_type)
     end = datetime.now(timezone.utc)

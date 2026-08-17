@@ -1,0 +1,24 @@
+{
+  "date": "2022-07-06",
+  "close": 2438.72,
+  "rsi_14": 76.04,
+  "sma_20": 2227.81,
+  "sma_50": 2205.61,
+  "sma_200": 2083.06,
+  "volume_ratio_vs_20d": 4.34,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "marubozu",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 69.53,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

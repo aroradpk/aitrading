@@ -1,0 +1,30 @@
+{
+  "symbol": "NIFTY_50",
+  "date": "2022-02-24",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": -4.78,
+  "move_1w_pct": -6.11,
+  "direction": "down",
+  "close": 16247.95,
+  "volume_ratio_vs_20d": 1.65,
+  "technical_snapshot": {
+    "date": "2022-02-24",
+    "close": 16247.95,
+    "rsi_14": 29.36,
+    "sma_20": 17275.41,
+    "sma_50": 17424.41,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.65,
+    "tags": [
+      "near_support",
+      "rsi_oversold",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 37.05,
+      "tags": []
+    }
+  }
+}

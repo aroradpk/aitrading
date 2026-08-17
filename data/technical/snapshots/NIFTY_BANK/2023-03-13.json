@@ -1,0 +1,20 @@
+{
+  "date": "2023-03-13",
+  "close": 39564.7,
+  "rsi_14": 39.02,
+  "sma_20": 40792.84,
+  "sma_50": 41499.93,
+  "sma_200": 39555.86,
+  "volume_ratio_vs_20d": 1.07,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "near_support"
+  ],
+  "weekly": {
+    "rsi_14": 33.67,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "date": "2026-01-30",
+  "close": 617.22,
+  "rsi_14": 53.39,
+  "sma_20": 644.07,
+  "sma_50": 575.65,
+  "sma_200": 477.13,
+  "volume_ratio_vs_20d": 2.23,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 66.69,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

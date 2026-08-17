@@ -1,0 +1,31 @@
+{
+  "symbol": "DIVISLAB",
+  "date": "2022-11-10",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": -0.36,
+  "move_1w_pct": -13.08,
+  "direction": "down",
+  "close": 3212.6,
+  "volume_ratio_vs_20d": 1.63,
+  "technical_snapshot": {
+    "date": "2022-11-10",
+    "close": 3212.6,
+    "rsi_14": 35.62,
+    "sma_20": 3506.04,
+    "sma_50": 3537.24,
+    "sma_200": 3816.09,
+    "volume_ratio_vs_20d": 1.63,
+    "tags": [
+      "near_support",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 27.91,
+      "tags": [
+        "weekly_rsi_oversold"
+      ]
+    }
+  }
+}

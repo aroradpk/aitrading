@@ -1,0 +1,32 @@
+{
+  "symbol": "UNITDSPR",
+  "score": 1.0,
+  "themes": [
+    {
+      "id": "consumer_staples",
+      "name": "Consumer staples",
+      "macro": "Premiumization, distribution reach",
+      "industry": "FMCG",
+      "tier": "primary",
+      "symbols": [
+        "UNITDSPR"
+      ],
+      "horizontal_enabler": false
+    }
+  ],
+  "scenarios": {
+    "bull": "UNITDSPR benefits from Consumer staples; order book and capacity expand faster than consensus. Theme score 1.0/10 supports upside if technical setup confirms.",
+    "base": "UNITDSPR tracks sector beta with steady execution on Consumer staples. Returns depend on delivery vs guidance; no major thesis break.",
+    "bear": "UNITDSPR faces valuation compression or order delays despite Consumer staples exposure. Macro slowdown or commodity shock could invalidate near-term momentum."
+  },
+  "reasons": [
+    {
+      "layer": "theme",
+      "text": "Theme exposure: Consumer staples \u2014 Premiumization, distribution reach",
+      "weight": "high",
+      "source": "config/themes/graph.json",
+      "theme_id": "consumer_staples"
+    }
+  ],
+  "generated_at": "2026-08-17T13:01:51.878281+00:00"
+}

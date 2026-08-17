@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-13",
+  "close": 46750.0,
+  "rsi_14": 74.99,
+  "sma_20": 42202.77,
+  "sma_50": 40664.6,
+  "sma_200": 36928.29,
+  "volume_ratio_vs_20d": 1.22,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 78.63,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

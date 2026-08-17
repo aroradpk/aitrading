@@ -1,0 +1,19 @@
+{
+  "date": "2021-09-02",
+  "close": 21.71,
+  "rsi_14": 75.24,
+  "sma_20": 17.39,
+  "sma_50": null,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 1.47,
+  "tags": [
+    "above_sma20",
+    "hammer",
+    "near_resistance",
+    "rsi_overbought"
+  ],
+  "weekly": {
+    "rsi_14": null,
+    "tags": []
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2023-05-17",
+  "close": 790.0,
+  "rsi_14": 24.13,
+  "sma_20": 950.64,
+  "sma_50": 952.47,
+  "sma_200": 2389.46,
+  "volume_ratio_vs_20d": 2.04,
+  "tags": [
+    "marubozu",
+    "near_support",
+    "rsi_oversold",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 36.28,
+    "tags": []
+  }
+}

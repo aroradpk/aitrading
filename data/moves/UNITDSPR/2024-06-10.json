@@ -1,0 +1,34 @@
+{
+  "symbol": "UNITDSPR",
+  "date": "2024-06-10",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 0.74,
+  "move_1w_pct": 11.35,
+  "direction": "up",
+  "close": 1282.81,
+  "volume_ratio_vs_20d": 0.51,
+  "technical_snapshot": {
+    "date": "2024-06-10",
+    "close": 1282.81,
+    "rsi_14": 76.38,
+    "sma_20": 1174.35,
+    "sma_50": 1153.53,
+    "sma_200": 1070.55,
+    "volume_ratio_vs_20d": 0.51,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 68.46,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

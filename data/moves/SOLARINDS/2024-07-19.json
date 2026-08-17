@@ -1,0 +1,32 @@
+{
+  "symbol": "SOLARINDS",
+  "date": "2024-07-19",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": -3.86,
+  "move_1w_pct": -11.29,
+  "direction": "down",
+  "close": 10856.33,
+  "volume_ratio_vs_20d": 0.57,
+  "technical_snapshot": {
+    "date": "2024-07-19",
+    "close": 10856.33,
+    "rsi_14": 60.15,
+    "sma_20": 11161.9,
+    "sma_50": 10036.42,
+    "sma_200": 7651.53,
+    "volume_ratio_vs_20d": 0.57,
+    "tags": [
+      "long_term_uptrend",
+      "marubozu",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 67.61,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2024-10-23",
+  "close": 7522.76,
+  "rsi_14": 42.22,
+  "sma_20": 8095.38,
+  "sma_50": 7784.94,
+  "sma_200": 6812.27,
+  "volume_ratio_vs_20d": 1.72,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 51.07,
+    "tags": []
+  }
+}

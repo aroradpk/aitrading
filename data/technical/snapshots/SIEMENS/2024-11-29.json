@@ -1,0 +1,20 @@
+{
+  "date": "2024-11-29",
+  "close": 4401.01,
+  "rsi_14": 63.0,
+  "sma_20": 4080.6,
+  "sma_50": 4165.79,
+  "sma_200": 3788.08,
+  "volume_ratio_vs_20d": 1.49,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "near_resistance"
+  ],
+  "weekly": {
+    "rsi_14": 56.15,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

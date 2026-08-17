@@ -1,0 +1,19 @@
+{
+  "date": "2022-11-10",
+  "close": 3212.6,
+  "rsi_14": 35.62,
+  "sma_20": 3506.04,
+  "sma_50": 3537.24,
+  "sma_200": 3816.09,
+  "volume_ratio_vs_20d": 1.63,
+  "tags": [
+    "near_support",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 27.91,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

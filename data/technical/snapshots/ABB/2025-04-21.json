@@ -1,0 +1,21 @@
+{
+  "date": "2025-04-21",
+  "close": 5496.72,
+  "rsi_14": 53.88,
+  "sma_20": 5230.13,
+  "sma_50": 5202.01,
+  "sma_200": 6796.43,
+  "volume_ratio_vs_20d": 1.35,
+  "tags": [
+    "above_sma20",
+    "hammer",
+    "near_resistance",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 38.85,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2025-01-14",
+  "close": 87.12,
+  "rsi_14": 33.92,
+  "sma_20": 92.48,
+  "sma_50": 95.0,
+  "sma_200": 102.09,
+  "volume_ratio_vs_20d": 1.33,
+  "tags": [
+    "marubozu",
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 41.05,
+    "tags": []
+  }
+}

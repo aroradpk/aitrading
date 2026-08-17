@@ -1,0 +1,22 @@
+{
+  "date": "2022-02-02",
+  "close": 41.78,
+  "rsi_14": 64.45,
+  "sma_20": 38.22,
+  "sma_50": 37.89,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 2.58,
+  "tags": [
+    "above_sma20",
+    "marubozu",
+    "near_resistance",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 55.8,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

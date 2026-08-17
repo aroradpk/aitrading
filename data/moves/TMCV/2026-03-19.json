@@ -1,0 +1,31 @@
+{
+  "symbol": "TMCV",
+  "date": "2026-03-19",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": -6.79,
+  "move_1w_pct": -5.93,
+  "direction": "down",
+  "close": 412.59,
+  "volume_ratio_vs_20d": 1.09,
+  "technical_snapshot": {
+    "date": "2026-03-19",
+    "close": 412.59,
+    "rsi_14": 30.19,
+    "sma_20": 458.28,
+    "sma_50": 453.09,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.09,
+    "tags": [
+      "marubozu",
+      "near_support",
+      "rsi_oversold",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 58.31,
+      "tags": []
+    }
+  }
+}

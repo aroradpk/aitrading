@@ -1,0 +1,20 @@
+{
+  "date": "2023-01-30",
+  "close": 1708.2,
+  "rsi_14": 17.8,
+  "sma_20": 2563.93,
+  "sma_50": 2639.84,
+  "sma_200": 2897.1,
+  "volume_ratio_vs_20d": 6.19,
+  "tags": [
+    "near_support",
+    "rsi_oversold",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 21.27,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

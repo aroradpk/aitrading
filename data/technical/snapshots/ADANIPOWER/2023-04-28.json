@@ -1,0 +1,22 @@
+{
+  "date": "2023-04-28",
+  "close": 44.97,
+  "rsi_14": 84.99,
+  "sma_20": 39.08,
+  "sma_50": 36.72,
+  "sma_200": 57.87,
+  "volume_ratio_vs_20d": 1.0,
+  "tags": [
+    "above_sma20",
+    "marubozu",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 39.51,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

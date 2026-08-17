@@ -1,0 +1,33 @@
+{
+  "symbol": "CGPOWER",
+  "date": "2025-05-12",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 5.94,
+  "move_1w_pct": 1.68,
+  "direction": "up",
+  "close": 644.38,
+  "volume_ratio_vs_20d": 1.0,
+  "technical_snapshot": {
+    "date": "2025-05-12",
+    "close": 644.38,
+    "rsi_14": 48.59,
+    "sma_20": 618.36,
+    "sma_50": 611.86,
+    "sma_200": 683.6,
+    "volume_ratio_vs_20d": 1.0,
+    "tags": [
+      "above_sma20",
+      "marubozu",
+      "near_resistance",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 53.36,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

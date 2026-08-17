@@ -1,0 +1,18 @@
+{
+  "date": "2022-02-24",
+  "close": 32.3,
+  "rsi_14": 20.13,
+  "sma_20": 37.97,
+  "sma_50": 37.53,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 1.2,
+  "tags": [
+    "near_support",
+    "rsi_oversold",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 36.96,
+    "tags": []
+  }
+}

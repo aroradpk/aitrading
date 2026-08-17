@@ -1,0 +1,22 @@
+{
+  "date": "2022-04-06",
+  "close": 48.95,
+  "rsi_14": 97.36,
+  "sma_20": 30.88,
+  "sma_50": 26.28,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 0.77,
+  "tags": [
+    "above_sma20",
+    "marubozu",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 87.86,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

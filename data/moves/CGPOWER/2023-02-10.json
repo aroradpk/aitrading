@@ -1,0 +1,34 @@
+{
+  "symbol": "CGPOWER",
+  "date": "2023-02-10",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 5.27,
+  "move_1w_pct": 6.01,
+  "direction": "up",
+  "close": 323.86,
+  "volume_ratio_vs_20d": 2.21,
+  "technical_snapshot": {
+    "date": "2023-02-10",
+    "close": 323.86,
+    "rsi_14": 62.65,
+    "sma_20": 303.92,
+    "sma_50": 284.61,
+    "sma_200": 233.86,
+    "volume_ratio_vs_20d": 2.21,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "near_resistance",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 71.85,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

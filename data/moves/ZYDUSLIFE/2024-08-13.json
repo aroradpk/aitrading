@@ -1,0 +1,33 @@
+{
+  "symbol": "ZYDUSLIFE",
+  "date": "2024-08-13",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": -5.99,
+  "move_1w_pct": -4.26,
+  "direction": "down",
+  "close": 1161.09,
+  "volume_ratio_vs_20d": 3.16,
+  "technical_snapshot": {
+    "date": "2024-08-13",
+    "close": 1161.09,
+    "rsi_14": 49.84,
+    "sma_20": 1201.01,
+    "sma_50": 1128.65,
+    "sma_200": 885.31,
+    "volume_ratio_vs_20d": 3.16,
+    "tags": [
+      "long_term_uptrend",
+      "marubozu",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 63.4,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

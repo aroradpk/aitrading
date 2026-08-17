@@ -1,0 +1,31 @@
+{
+  "symbol": "CHOLAFIN",
+  "date": "2026-06-17",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": -0.07,
+  "move_1w_pct": 14.03,
+  "direction": "up",
+  "close": 1678.54,
+  "volume_ratio_vs_20d": 0.61,
+  "technical_snapshot": {
+    "date": "2026-06-17",
+    "close": 1678.54,
+    "rsi_14": 60.1,
+    "sma_20": 1539.09,
+    "sma_50": 1561.08,
+    "sma_200": 1619.25,
+    "volume_ratio_vs_20d": 0.61,
+    "tags": [
+      "above_sma20",
+      "near_resistance"
+    ],
+    "weekly": {
+      "rsi_14": 59.62,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2024-12-10",
+  "close": 1176.65,
+  "rsi_14": 39.34,
+  "sma_20": 1255.49,
+  "sma_50": 1538.73,
+  "sma_200": 1770.65,
+  "volume_ratio_vs_20d": 0.38,
+  "tags": [
+    "bearish_engulfing",
+    "marubozu"
+  ],
+  "weekly": {
+    "rsi_14": 29.35,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

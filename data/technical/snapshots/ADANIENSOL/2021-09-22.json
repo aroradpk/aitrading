@@ -1,0 +1,16 @@
+{
+  "date": "2021-09-22",
+  "close": 1560.8,
+  "rsi_14": 43.67,
+  "sma_20": 1682.73,
+  "sma_50": null,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 0.76,
+  "tags": [],
+  "weekly": {
+    "rsi_14": null,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "symbol": "ADANIGREEN",
+  "date": "2021-12-30",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": -5.86,
+  "move_1w_pct": -7.81,
+  "direction": "down",
+  "close": 1311.05,
+  "volume_ratio_vs_20d": 1.25,
+  "technical_snapshot": {
+    "date": "2021-12-30",
+    "close": 1311.05,
+    "rsi_14": 39.13,
+    "sma_20": 1392.29,
+    "sma_50": 1315.77,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.25,
+    "tags": [
+      "marubozu",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 66.8,
+      "tags": []
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "date": "2026-03-09",
+  "close": 135.44,
+  "rsi_14": 42.64,
+  "sma_20": 145.25,
+  "sma_50": 146.42,
+  "sma_200": 125.38,
+  "volume_ratio_vs_20d": 1.13,
+  "tags": [
+    "long_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 43.73,
+    "tags": []
+  }
+}

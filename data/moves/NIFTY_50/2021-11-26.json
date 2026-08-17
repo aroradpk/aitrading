@@ -1,0 +1,30 @@
+{
+  "symbol": "NIFTY_50",
+  "date": "2021-11-26",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": -2.91,
+  "move_1w_pct": -4.16,
+  "direction": "down",
+  "close": 17026.45,
+  "volume_ratio_vs_20d": 1.25,
+  "technical_snapshot": {
+    "date": "2021-11-26",
+    "close": 17026.45,
+    "rsi_14": 28.61,
+    "sma_20": 17793.48,
+    "sma_50": 17851.88,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.25,
+    "tags": [
+      "marubozu",
+      "near_support",
+      "rsi_oversold"
+    ],
+    "weekly": {
+      "rsi_14": 56.12,
+      "tags": []
+    }
+  }
+}

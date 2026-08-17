@@ -1,0 +1,35 @@
+{
+  "symbol": "ADANIGREEN",
+  "date": "2025-09-24",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": -3.2,
+  "move_1w_pct": 11.82,
+  "direction": "up",
+  "close": 1095.25,
+  "volume_ratio_vs_20d": 1.58,
+  "technical_snapshot": {
+    "date": "2025-09-24",
+    "close": 1095.25,
+    "rsi_14": 77.89,
+    "sma_20": 981.95,
+    "sma_50": 980.8,
+    "sma_200": 975.75,
+    "volume_ratio_vs_20d": 1.58,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "marubozu",
+      "rsi_overbought",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 64.52,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

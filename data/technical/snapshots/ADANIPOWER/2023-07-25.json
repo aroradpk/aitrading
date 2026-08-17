@@ -1,0 +1,20 @@
+{
+  "date": "2023-07-25",
+  "close": 52.03,
+  "rsi_14": 63.33,
+  "sma_20": 49.17,
+  "sma_50": 50.5,
+  "sma_200": 51.57,
+  "volume_ratio_vs_20d": 4.86,
+  "tags": [
+    "above_sma20",
+    "marubozu",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 69.15,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

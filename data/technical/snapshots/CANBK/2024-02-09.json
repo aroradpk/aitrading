@@ -1,0 +1,22 @@
+{
+  "date": "2024-02-09",
+  "close": 103.91,
+  "rsi_14": 91.01,
+  "sma_20": 89.06,
+  "sma_50": 83.51,
+  "sma_200": 66.81,
+  "volume_ratio_vs_20d": 1.45,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 86.91,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

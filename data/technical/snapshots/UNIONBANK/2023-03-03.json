@@ -1,0 +1,19 @@
+{
+  "date": "2023-03-03",
+  "close": 64.11,
+  "rsi_14": 53.17,
+  "sma_20": 62.31,
+  "sma_50": 66.86,
+  "sma_200": 49.15,
+  "volume_ratio_vs_20d": 4.2,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "marubozu",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 46.75,
+    "tags": []
+  }
+}

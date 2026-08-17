@@ -1,0 +1,19 @@
+{
+  "date": "2022-05-27",
+  "close": 3409.31,
+  "rsi_14": 27.37,
+  "sma_20": 4009.12,
+  "sma_50": 4207.42,
+  "sma_200": 4484.1,
+  "volume_ratio_vs_20d": 1.03,
+  "tags": [
+    "near_support",
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 31.06,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

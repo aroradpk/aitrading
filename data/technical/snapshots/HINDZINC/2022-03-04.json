@@ -1,0 +1,16 @@
+{
+  "date": "2022-03-04",
+  "close": 220.73,
+  "rsi_14": 47.76,
+  "sma_20": 220.89,
+  "sma_50": 221.15,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 2.88,
+  "tags": [
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 52.4,
+    "tags": []
+  }
+}

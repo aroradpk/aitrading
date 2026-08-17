@@ -1,0 +1,3085 @@
+{
+  "symbol": "ABB",
+  "count": 93,
+  "moves": [
+    {
+      "symbol": "ABB",
+      "date": "2021-10-28",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.53,
+      "move_1w_pct": 5.79,
+      "direction": "up",
+      "close": 1917.17,
+      "volume_ratio_vs_20d": 6.47,
+      "technical_snapshot": {
+        "date": "2021-10-28",
+        "close": 1917.17,
+        "rsi_14": 63.99,
+        "sma_20": 1797.61,
+        "sma_50": 1784.51,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 6.47,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 74.0,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2021-10-29",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.87,
+      "move_1w_pct": 11.03,
+      "direction": "up",
+      "close": 2048.86,
+      "volume_ratio_vs_20d": 3.78,
+      "technical_snapshot": {
+        "date": "2021-10-29",
+        "close": 2048.86,
+        "rsi_14": 77.72,
+        "sma_20": 1809.66,
+        "sma_50": 1791.75,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 3.78,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 78.82,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2021-11-01",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.9,
+      "move_1w_pct": 12.4,
+      "direction": "up",
+      "close": 2010.0,
+      "volume_ratio_vs_20d": 1.77,
+      "technical_snapshot": {
+        "date": "2021-11-01",
+        "close": 2010.0,
+        "rsi_14": 73.22,
+        "sma_20": 1820.33,
+        "sma_50": 1797.9,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.77,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 74.62,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2021-11-02",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.83,
+      "move_1w_pct": 11.75,
+      "direction": "up",
+      "close": 1993.33,
+      "volume_ratio_vs_20d": 0.44,
+      "technical_snapshot": {
+        "date": "2021-11-02",
+        "close": 1993.33,
+        "rsi_14": 71.32,
+        "sma_20": 1829.47,
+        "sma_50": 1804.63,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.44,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 72.99,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2021-11-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.32,
+      "move_1w_pct": 10.07,
+      "direction": "up",
+      "close": 1999.61,
+      "volume_ratio_vs_20d": 1.36,
+      "technical_snapshot": {
+        "date": "2021-11-03",
+        "close": 1999.61,
+        "rsi_14": 74.43,
+        "sma_20": 1838.7,
+        "sma_50": 1812.24,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.36,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 73.6,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2021-12-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 9.92,
+      "move_1w_pct": 8.88,
+      "direction": "up",
+      "close": 2223.31,
+      "volume_ratio_vs_20d": 4.76,
+      "technical_snapshot": {
+        "date": "2021-12-09",
+        "close": 2223.31,
+        "rsi_14": 60.56,
+        "sma_20": 2041.63,
+        "sma_50": 1931.96,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 4.76,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 70.82,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2021-12-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.91,
+      "move_1w_pct": 12.32,
+      "direction": "up",
+      "close": 2230.27,
+      "volume_ratio_vs_20d": 1.12,
+      "technical_snapshot": {
+        "date": "2021-12-13",
+        "close": 2230.27,
+        "rsi_14": 63.81,
+        "sma_20": 2050.73,
+        "sma_50": 1950.34,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.12,
+        "tags": [
+          "above_sma20",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 70.45,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2021-12-14",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.52,
+      "move_1w_pct": 10.01,
+      "direction": "up",
+      "close": 2196.39,
+      "volume_ratio_vs_20d": 0.31,
+      "technical_snapshot": {
+        "date": "2021-12-14",
+        "close": 2196.39,
+        "rsi_14": 62.32,
+        "sma_20": 2056.75,
+        "sma_50": 1958.11,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.31,
+        "tags": [
+          "above_sma20",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 69.45,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-01-27",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -7.32,
+      "move_1w_pct": -5.1,
+      "direction": "down",
+      "close": 2149.9,
+      "volume_ratio_vs_20d": 2.89,
+      "technical_snapshot": {
+        "date": "2022-01-27",
+        "close": 2149.9,
+        "rsi_14": 49.93,
+        "sma_20": 2221.45,
+        "sma_50": 2141.07,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 2.89,
+        "tags": [
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 63.08,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-05-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 10.26,
+      "move_1w_pct": 6.55,
+      "direction": "up",
+      "close": 2152.02,
+      "volume_ratio_vs_20d": 10.39,
+      "technical_snapshot": {
+        "date": "2022-05-05",
+        "close": 2152.02,
+        "rsi_14": 51.97,
+        "sma_20": 2080.8,
+        "sma_50": 2051.34,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 10.39,
+        "tags": [
+          "above_sma20",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 48.01,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-05-11",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.77,
+      "move_1w_pct": 12.69,
+      "direction": "up",
+      "close": 2199.4,
+      "volume_ratio_vs_20d": 1.08,
+      "technical_snapshot": {
+        "date": "2022-05-11",
+        "close": 2199.4,
+        "rsi_14": 61.47,
+        "sma_20": 2092.16,
+        "sma_50": 2065.88,
+        "sma_200": 1977.18,
+        "volume_ratio_vs_20d": 1.08,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 47.25,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-06-01",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.2,
+      "move_1w_pct": 10.92,
+      "direction": "up",
+      "close": 2379.96,
+      "volume_ratio_vs_20d": 0.75,
+      "technical_snapshot": {
+        "date": "2022-06-01",
+        "close": 2379.96,
+        "rsi_14": 70.23,
+        "sma_20": 2215.6,
+        "sma_50": 2115.76,
+        "sma_200": 2022.27,
+        "volume_ratio_vs_20d": 0.75,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 67.4,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-06-02",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.54,
+      "move_1w_pct": 10.37,
+      "direction": "up",
+      "close": 2343.19,
+      "volume_ratio_vs_20d": 0.48,
+      "technical_snapshot": {
+        "date": "2022-06-02",
+        "close": 2343.19,
+        "rsi_14": 62.02,
+        "sma_20": 2225.16,
+        "sma_50": 2122.2,
+        "sma_200": 2025.89,
+        "volume_ratio_vs_20d": 0.48,
+        "tags": [
+          "above_sma20",
+          "bearish_engulfing",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 66.04,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-07-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.44,
+      "move_1w_pct": 8.95,
+      "direction": "up",
+      "close": 2438.72,
+      "volume_ratio_vs_20d": 4.34,
+      "technical_snapshot": {
+        "date": "2022-07-06",
+        "close": 2438.72,
+        "rsi_14": 76.04,
+        "sma_20": 2227.81,
+        "sma_50": 2205.61,
+        "sma_200": 2083.06,
+        "volume_ratio_vs_20d": 4.34,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 69.53,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-07-07",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.81,
+      "move_1w_pct": 11.37,
+      "direction": "up",
+      "close": 2482.76,
+      "volume_ratio_vs_20d": 2.5,
+      "technical_snapshot": {
+        "date": "2022-07-07",
+        "close": 2482.76,
+        "rsi_14": 89.02,
+        "sma_20": 2237.99,
+        "sma_50": 2214.86,
+        "sma_200": 2086.57,
+        "volume_ratio_vs_20d": 2.5,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 70.8,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-07-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.04,
+      "move_1w_pct": 13.78,
+      "direction": "up",
+      "close": 2508.58,
+      "volume_ratio_vs_20d": 1.87,
+      "technical_snapshot": {
+        "date": "2022-07-08",
+        "close": 2508.58,
+        "rsi_14": 89.27,
+        "sma_20": 2250.38,
+        "sma_50": 2224.38,
+        "sma_200": 2090.05,
+        "volume_ratio_vs_20d": 1.87,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 71.49,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-07-11",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.84,
+      "move_1w_pct": 10.56,
+      "direction": "up",
+      "close": 2529.65,
+      "volume_ratio_vs_20d": 0.66,
+      "technical_snapshot": {
+        "date": "2022-07-11",
+        "close": 2529.65,
+        "rsi_14": 88.88,
+        "sma_20": 2263.62,
+        "sma_50": 2234.35,
+        "sma_200": 2093.64,
+        "volume_ratio_vs_20d": 0.66,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 68.61,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-07-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.7,
+      "move_1w_pct": 8.81,
+      "direction": "up",
+      "close": 2686.52,
+      "volume_ratio_vs_20d": 3.34,
+      "technical_snapshot": {
+        "date": "2022-07-21",
+        "close": 2686.52,
+        "rsi_14": 89.01,
+        "sma_20": 2398.12,
+        "sma_50": 2295.61,
+        "sma_200": 2122.35,
+        "volume_ratio_vs_20d": 3.34,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 72.55,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-08-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.71,
+      "move_1w_pct": 5.83,
+      "direction": "up",
+      "close": 2965.27,
+      "volume_ratio_vs_20d": 1.86,
+      "technical_snapshot": {
+        "date": "2022-08-24",
+        "close": 2965.27,
+        "rsi_14": 77.6,
+        "sma_20": 2707.45,
+        "sma_50": 2494.22,
+        "sma_200": 2217.06,
+        "volume_ratio_vs_20d": 1.86,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 79.97,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-08-29",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.81,
+      "move_1w_pct": 11.39,
+      "direction": "up",
+      "close": 3097.04,
+      "volume_ratio_vs_20d": 1.03,
+      "technical_snapshot": {
+        "date": "2022-08-29",
+        "close": 3097.04,
+        "rsi_14": 94.57,
+        "sma_20": 2772.74,
+        "sma_50": 2545.41,
+        "sma_200": 2232.32,
+        "volume_ratio_vs_20d": 1.03,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 82.18,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-08-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.07,
+      "move_1w_pct": 13.76,
+      "direction": "up",
+      "close": 3161.28,
+      "volume_ratio_vs_20d": 1.14,
+      "technical_snapshot": {
+        "date": "2022-08-30",
+        "close": 3161.28,
+        "rsi_14": 94.87,
+        "sma_20": 2798.25,
+        "sma_50": 2566.52,
+        "sma_200": 2237.64,
+        "volume_ratio_vs_20d": 1.14,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 82.97,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-09-01",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 4.32,
+      "move_1w_pct": 11.22,
+      "direction": "up",
+      "close": 3297.85,
+      "volume_ratio_vs_20d": 1.93,
+      "technical_snapshot": {
+        "date": "2022-09-01",
+        "close": 3297.85,
+        "rsi_14": 95.55,
+        "sma_20": 2830.13,
+        "sma_50": 2590.08,
+        "sma_200": 2243.63,
+        "volume_ratio_vs_20d": 1.93,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 84.45,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2022-10-07",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.36,
+      "move_1w_pct": 10.01,
+      "direction": "up",
+      "close": 3193.59,
+      "volume_ratio_vs_20d": 1.81,
+      "technical_snapshot": {
+        "date": "2022-10-07",
+        "close": 3193.59,
+        "rsi_14": 57.62,
+        "sma_20": 3060.05,
+        "sma_50": 2943.11,
+        "sma_200": 2371.33,
+        "volume_ratio_vs_20d": 1.81,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 79.38,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2023-02-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.85,
+      "move_1w_pct": 10.41,
+      "direction": "up",
+      "close": 2983.68,
+      "volume_ratio_vs_20d": 1.74,
+      "technical_snapshot": {
+        "date": "2023-02-08",
+        "close": 2983.68,
+        "rsi_14": 63.17,
+        "sma_20": 2805.91,
+        "sma_50": 2783.44,
+        "sma_200": 2697.57,
+        "volume_ratio_vs_20d": 1.74,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 44.14,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2023-02-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.58,
+      "move_1w_pct": 10.47,
+      "direction": "up",
+      "close": 3030.77,
+      "volume_ratio_vs_20d": 1.17,
+      "technical_snapshot": {
+        "date": "2023-02-09",
+        "close": 3030.77,
+        "rsi_14": 66.09,
+        "sma_20": 2816.95,
+        "sma_50": 2785.91,
+        "sma_200": 2702.58,
+        "volume_ratio_vs_20d": 1.17,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 46.32,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2023-02-10",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.22,
+      "move_1w_pct": 12.85,
+      "direction": "up",
+      "close": 3067.83,
+      "volume_ratio_vs_20d": 1.31,
+      "technical_snapshot": {
+        "date": "2023-02-10",
+        "close": 3067.83,
+        "rsi_14": 67.26,
+        "sma_20": 2829.17,
+        "sma_50": 2789.25,
+        "sma_200": 2707.83,
+        "volume_ratio_vs_20d": 1.31,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 47.92,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2023-05-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.55,
+      "move_1w_pct": 7.39,
+      "direction": "up",
+      "close": 3537.7,
+      "volume_ratio_vs_20d": 3.14,
+      "technical_snapshot": {
+        "date": "2023-05-04",
+        "close": 3537.7,
+        "rsi_14": 87.24,
+        "sma_20": 3225.54,
+        "sma_50": 3199.93,
+        "sma_200": 2963.89,
+        "volume_ratio_vs_20d": 3.14,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 77.79,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2023-05-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.25,
+      "move_1w_pct": 11.25,
+      "direction": "up",
+      "close": 3690.31,
+      "volume_ratio_vs_20d": 0.72,
+      "technical_snapshot": {
+        "date": "2023-05-08",
+        "close": 3690.31,
+        "rsi_14": 89.65,
+        "sma_20": 3263.6,
+        "sma_50": 3223.36,
+        "sma_200": 2975.75,
+        "volume_ratio_vs_20d": 0.72,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 79.84,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2023-05-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.12,
+      "move_1w_pct": 10.6,
+      "direction": "up",
+      "close": 3694.63,
+      "volume_ratio_vs_20d": 0.92,
+      "technical_snapshot": {
+        "date": "2023-05-09",
+        "close": 3694.63,
+        "rsi_14": 92.38,
+        "sma_20": 3283.76,
+        "sma_50": 3235.74,
+        "sma_200": 2981.88,
+        "volume_ratio_vs_20d": 0.92,
+        "tags": [
+          "above_sma20",
+          "hammer",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 79.89,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2023-05-10",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.22,
+      "move_1w_pct": 10.48,
+      "direction": "up",
+      "close": 3702.78,
+      "volume_ratio_vs_20d": 0.59,
+      "technical_snapshot": {
+        "date": "2023-05-10",
+        "close": 3702.78,
+        "rsi_14": 93.33,
+        "sma_20": 3304.3,
+        "sma_50": 3248.38,
+        "sma_200": 2987.99,
+        "volume_ratio_vs_20d": 0.59,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 79.99,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2023-07-20",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.44,
+      "move_1w_pct": -4.61,
+      "direction": "down",
+      "close": 4079.86,
+      "volume_ratio_vs_20d": 5.52,
+      "technical_snapshot": {
+        "date": "2023-07-20",
+        "close": 4079.86,
+        "rsi_14": 36.88,
+        "sma_20": 4254.66,
+        "sma_50": 4072.22,
+        "sma_200": 3283.53,
+        "volume_ratio_vs_20d": 5.52,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 76.32,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2023-12-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.55,
+      "move_1w_pct": 8.64,
+      "direction": "up",
+      "close": 4499.71,
+      "volume_ratio_vs_20d": 3.1,
+      "technical_snapshot": {
+        "date": "2023-12-04",
+        "close": 4499.71,
+        "rsi_14": 75.15,
+        "sma_20": 4170.13,
+        "sma_50": 4072.92,
+        "sma_200": 3859.23,
+        "volume_ratio_vs_20d": 3.1,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 60.97,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2023-12-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 4.66,
+      "move_1w_pct": 13.9,
+      "direction": "up",
+      "close": 4709.45,
+      "volume_ratio_vs_20d": 2.95,
+      "technical_snapshot": {
+        "date": "2023-12-05",
+        "close": 4709.45,
+        "rsi_14": 80.08,
+        "sma_20": 4203.12,
+        "sma_50": 4082.98,
+        "sma_200": 3867.62,
+        "volume_ratio_vs_20d": 2.95,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 65.75,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2023-12-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -2.23,
+      "move_1w_pct": 11.65,
+      "direction": "up",
+      "close": 4604.31,
+      "volume_ratio_vs_20d": 0.85,
+      "technical_snapshot": {
+        "date": "2023-12-06",
+        "close": 4604.31,
+        "rsi_14": 72.31,
+        "sma_20": 4229.1,
+        "sma_50": 4091.96,
+        "sma_200": 3875.3,
+        "volume_ratio_vs_20d": 0.85,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 63.51,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-02-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 10.17,
+      "move_1w_pct": 9.35,
+      "direction": "up",
+      "close": 4843.65,
+      "volume_ratio_vs_20d": 9.59,
+      "technical_snapshot": {
+        "date": "2024-02-21",
+        "close": 4843.65,
+        "rsi_14": 65.49,
+        "sma_20": 4441.58,
+        "sma_50": 4560.15,
+        "sma_200": 4234.08,
+        "volume_ratio_vs_20d": 9.59,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 68.99,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-02-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 8.83,
+      "move_1w_pct": 21.4,
+      "direction": "up",
+      "close": 5271.49,
+      "volume_ratio_vs_20d": 6.44,
+      "technical_snapshot": {
+        "date": "2024-02-22",
+        "close": 5271.49,
+        "rsi_14": 76.37,
+        "sma_20": 4475.29,
+        "sma_50": 4572.55,
+        "sma_200": 4242.74,
+        "volume_ratio_vs_20d": 6.44,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 74.97,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-02-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.61,
+      "move_1w_pct": 19.18,
+      "direction": "up",
+      "close": 5239.47,
+      "volume_ratio_vs_20d": 2.17,
+      "technical_snapshot": {
+        "date": "2024-02-23",
+        "close": 5239.47,
+        "rsi_14": 79.91,
+        "sma_20": 4507.0,
+        "sma_50": 4585.59,
+        "sma_200": 4250.9,
+        "volume_ratio_vs_20d": 2.17,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 74.6,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-02-26",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.78,
+      "move_1w_pct": 17.99,
+      "direction": "up",
+      "close": 5146.33,
+      "volume_ratio_vs_20d": 1.49,
+      "technical_snapshot": {
+        "date": "2024-02-26",
+        "close": 5146.33,
+        "rsi_14": 75.2,
+        "sma_20": 4531.52,
+        "sma_50": 4595.86,
+        "sma_200": 4258.18,
+        "volume_ratio_vs_20d": 1.49,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "rsi_overbought"
+        ],
+        "weekly": {
+          "rsi_14": 72.25,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-02-27",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.91,
+      "move_1w_pct": 20.47,
+      "direction": "up",
+      "close": 5296.26,
+      "volume_ratio_vs_20d": 0.81,
+      "technical_snapshot": {
+        "date": "2024-02-27",
+        "close": 5296.26,
+        "rsi_14": 74.94,
+        "sma_20": 4566.54,
+        "sma_50": 4608.65,
+        "sma_200": 4266.19,
+        "volume_ratio_vs_20d": 0.81,
+        "tags": [
+          "above_sma20",
+          "bullish_engulfing",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought"
+        ],
+        "weekly": {
+          "rsi_14": 75.99,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-03-27",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.89,
+      "move_1w_pct": 11.56,
+      "direction": "up",
+      "close": 6101.66,
+      "volume_ratio_vs_20d": 2.52,
+      "technical_snapshot": {
+        "date": "2024-03-27",
+        "close": 6101.66,
+        "rsi_14": 70.55,
+        "sma_20": 5546.81,
+        "sma_50": 4958.0,
+        "sma_200": 4430.82,
+        "volume_ratio_vs_20d": 2.52,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 77.41,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-03-28",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.3,
+      "move_1w_pct": 10.94,
+      "direction": "up",
+      "close": 6180.85,
+      "volume_ratio_vs_20d": 1.47,
+      "technical_snapshot": {
+        "date": "2024-03-28",
+        "close": 6180.85,
+        "rsi_14": 71.75,
+        "sma_20": 5591.04,
+        "sma_50": 4988.64,
+        "sma_200": 4442.03,
+        "volume_ratio_vs_20d": 1.47,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 78.05,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-04-01",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.26,
+      "move_1w_pct": 10.91,
+      "direction": "up",
+      "close": 6320.58,
+      "volume_ratio_vs_20d": 0.84,
+      "technical_snapshot": {
+        "date": "2024-04-01",
+        "close": 6320.58,
+        "rsi_14": 73.06,
+        "sma_20": 5643.32,
+        "sma_50": 5022.69,
+        "sma_200": 4453.49,
+        "volume_ratio_vs_20d": 0.84,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 81.39,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-05-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 4.33,
+      "move_1w_pct": 10.27,
+      "direction": "up",
+      "close": 7008.34,
+      "volume_ratio_vs_20d": 1.45,
+      "technical_snapshot": {
+        "date": "2024-05-08",
+        "close": 7008.34,
+        "rsi_14": 65.3,
+        "sma_20": 6413.19,
+        "sma_50": 5951.38,
+        "sma_200": 4716.57,
+        "volume_ratio_vs_20d": 1.45,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 84.49,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-05-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 11.23,
+      "move_1w_pct": 15.04,
+      "direction": "up",
+      "close": 7786.05,
+      "volume_ratio_vs_20d": 5.99,
+      "technical_snapshot": {
+        "date": "2024-05-13",
+        "close": 7786.05,
+        "rsi_14": 80.06,
+        "sma_20": 6527.65,
+        "sma_50": 6076.25,
+        "sma_200": 4760.46,
+        "volume_ratio_vs_20d": 5.99,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 87.07,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-05-14",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.21,
+      "move_1w_pct": 17.31,
+      "direction": "up",
+      "close": 7880.25,
+      "volume_ratio_vs_20d": 1.5,
+      "technical_snapshot": {
+        "date": "2024-05-14",
+        "close": 7880.25,
+        "rsi_14": 88.29,
+        "sma_20": 6593.57,
+        "sma_50": 6130.93,
+        "sma_200": 4778.07,
+        "volume_ratio_vs_20d": 1.5,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 87.33,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-05-15",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.04,
+      "move_1w_pct": 12.49,
+      "direction": "up",
+      "close": 7883.61,
+      "volume_ratio_vs_20d": 0.8,
+      "technical_snapshot": {
+        "date": "2024-05-15",
+        "close": 7883.61,
+        "rsi_14": 88.12,
+        "sma_20": 6668.98,
+        "sma_50": 6182.68,
+        "sma_200": 4795.68,
+        "volume_ratio_vs_20d": 0.8,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 87.34,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-05-16",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.73,
+      "move_1w_pct": 18.9,
+      "direction": "up",
+      "close": 8098.98,
+      "volume_ratio_vs_20d": 1.72,
+      "technical_snapshot": {
+        "date": "2024-05-16",
+        "close": 8098.98,
+        "rsi_14": 88.77,
+        "sma_20": 6751.09,
+        "sma_50": 6239.16,
+        "sma_200": 4815.78,
+        "volume_ratio_vs_20d": 1.72,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 87.89,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-05-17",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.8,
+      "move_1w_pct": 16.62,
+      "direction": "up",
+      "close": 8163.54,
+      "volume_ratio_vs_20d": 0.55,
+      "technical_snapshot": {
+        "date": "2024-05-17",
+        "close": 8163.54,
+        "rsi_14": 89.82,
+        "sma_20": 6849.8,
+        "sma_50": 6296.61,
+        "sma_200": 4836.09,
+        "volume_ratio_vs_20d": 0.55,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 88.05,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-06-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -12.16,
+      "move_1w_pct": -6.89,
+      "direction": "down",
+      "close": 7476.43,
+      "volume_ratio_vs_20d": 2.17,
+      "technical_snapshot": {
+        "date": "2024-06-04",
+        "close": 7476.43,
+        "rsi_14": 41.48,
+        "sma_20": 7834.59,
+        "sma_50": 6870.0,
+        "sma_200": 5046.07,
+        "volume_ratio_vs_20d": 2.17,
+        "tags": [
+          "bearish_engulfing",
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 72.27,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-06-14",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.79,
+      "move_1w_pct": 11.73,
+      "direction": "up",
+      "close": 8796.09,
+      "volume_ratio_vs_20d": 2.6,
+      "technical_snapshot": {
+        "date": "2024-06-14",
+        "close": 8796.09,
+        "rsi_14": 59.82,
+        "sma_20": 8082.53,
+        "sma_50": 7214.84,
+        "sma_200": 5195.62,
+        "volume_ratio_vs_20d": 2.6,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 81.49,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-08-07",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.42,
+      "move_1w_pct": -0.33,
+      "direction": "up",
+      "close": 7675.02,
+      "volume_ratio_vs_20d": 1.49,
+      "technical_snapshot": {
+        "date": "2024-08-07",
+        "close": 7675.02,
+        "rsi_14": 49.45,
+        "sma_20": 7669.26,
+        "sma_50": 7986.34,
+        "sma_200": 5882.03,
+        "volume_ratio_vs_20d": 1.49,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 60.15,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-10-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.11,
+      "move_1w_pct": 1.24,
+      "direction": "up",
+      "close": 7963.02,
+      "volume_ratio_vs_20d": 0.68,
+      "technical_snapshot": {
+        "date": "2024-10-08",
+        "close": 7963.02,
+        "rsi_14": 55.82,
+        "sma_20": 7705.01,
+        "sma_50": 7632.48,
+        "sma_200": 6611.28,
+        "volume_ratio_vs_20d": 0.68,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 43.11,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-10-14",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.2,
+      "move_1w_pct": 10.47,
+      "direction": "up",
+      "close": 8369.09,
+      "volume_ratio_vs_20d": 0.6,
+      "technical_snapshot": {
+        "date": "2024-10-14",
+        "close": 8369.09,
+        "rsi_14": 65.59,
+        "sma_20": 7879.96,
+        "sma_50": 7684.25,
+        "sma_200": 6683.7,
+        "volume_ratio_vs_20d": 0.6,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 55.07,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-10-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.73,
+      "move_1w_pct": -3.39,
+      "direction": "down",
+      "close": 8085.13,
+      "volume_ratio_vs_20d": 1.09,
+      "technical_snapshot": {
+        "date": "2024-10-21",
+        "close": 8085.13,
+        "rsi_14": 54.67,
+        "sma_20": 8102.04,
+        "sma_50": 7779.95,
+        "sma_200": 6780.0,
+        "volume_ratio_vs_20d": 1.09,
+        "tags": [
+          "bearish_engulfing",
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 58.82,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-10-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.79,
+      "move_1w_pct": -12.15,
+      "direction": "down",
+      "close": 7522.76,
+      "volume_ratio_vs_20d": 1.72,
+      "technical_snapshot": {
+        "date": "2024-10-23",
+        "close": 7522.76,
+        "rsi_14": 42.22,
+        "sma_20": 8095.38,
+        "sma_50": 7784.94,
+        "sma_200": 6812.27,
+        "volume_ratio_vs_20d": 1.72,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 51.07,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-10-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.72,
+      "move_1w_pct": -12.0,
+      "direction": "down",
+      "close": 7468.37,
+      "volume_ratio_vs_20d": 1.46,
+      "technical_snapshot": {
+        "date": "2024-10-24",
+        "close": 7468.37,
+        "rsi_14": 44.33,
+        "sma_20": 8069.49,
+        "sma_50": 7787.16,
+        "sma_200": 6826.87,
+        "volume_ratio_vs_20d": 1.46,
+        "tags": [
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 50.43,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-10-25",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.65,
+      "move_1w_pct": -14.36,
+      "direction": "down",
+      "close": 7344.89,
+      "volume_ratio_vs_20d": 0.86,
+      "technical_snapshot": {
+        "date": "2024-10-25",
+        "close": 7344.89,
+        "rsi_14": 45.16,
+        "sma_20": 8042.69,
+        "sma_50": 7782.77,
+        "sma_200": 6840.75,
+        "volume_ratio_vs_20d": 0.86,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "near_support",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 49.03,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-10-28",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -2.43,
+      "move_1w_pct": -11.36,
+      "direction": "down",
+      "close": 7166.49,
+      "volume_ratio_vs_20d": 1.46,
+      "technical_snapshot": {
+        "date": "2024-10-28",
+        "close": 7166.49,
+        "rsi_14": 31.71,
+        "sma_20": 8003.9,
+        "sma_50": 7771.8,
+        "sma_200": 6853.38,
+        "volume_ratio_vs_20d": 1.46,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 44.43,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-11-25",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.14,
+      "move_1w_pct": 8.68,
+      "direction": "up",
+      "close": 7089.25,
+      "volume_ratio_vs_20d": 1.45,
+      "technical_snapshot": {
+        "date": "2024-11-25",
+        "close": 7089.25,
+        "rsi_14": 45.69,
+        "sma_20": 6946.81,
+        "sma_50": 7534.22,
+        "sma_200": 7056.59,
+        "volume_ratio_vs_20d": 1.45,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 44.55,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-11-26",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.96,
+      "move_1w_pct": 10.62,
+      "direction": "up",
+      "close": 7157.45,
+      "volume_ratio_vs_20d": 0.88,
+      "technical_snapshot": {
+        "date": "2024-11-26",
+        "close": 7157.45,
+        "rsi_14": 49.21,
+        "sma_20": 6937.44,
+        "sma_50": 7526.6,
+        "sma_200": 7070.29,
+        "volume_ratio_vs_20d": 0.88,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 45.33,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-11-27",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.27,
+      "move_1w_pct": 11.86,
+      "direction": "up",
+      "close": 7320.04,
+      "volume_ratio_vs_20d": 0.91,
+      "technical_snapshot": {
+        "date": "2024-11-27",
+        "close": 7320.04,
+        "rsi_14": 59.48,
+        "sma_20": 6945.12,
+        "sma_50": 7522.92,
+        "sma_200": 7085.13,
+        "volume_ratio_vs_20d": 0.91,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 47.09,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-12-20",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.86,
+      "move_1w_pct": -10.15,
+      "direction": "down",
+      "close": 6758.6,
+      "volume_ratio_vs_20d": 1.74,
+      "technical_snapshot": {
+        "date": "2024-12-20",
+        "close": 6758.6,
+        "rsi_14": 34.72,
+        "sma_20": 7354.28,
+        "sma_50": 7381.96,
+        "sma_200": 7322.62,
+        "volume_ratio_vs_20d": 1.74,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "rsi_oversold",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 42.95,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-12-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.55,
+      "move_1w_pct": -11.8,
+      "direction": "down",
+      "close": 6795.66,
+      "volume_ratio_vs_20d": 0.58,
+      "technical_snapshot": {
+        "date": "2024-12-23",
+        "close": 6795.66,
+        "rsi_14": 34.41,
+        "sma_20": 7339.6,
+        "sma_50": 7351.66,
+        "sma_200": 7330.22,
+        "volume_ratio_vs_20d": 0.58,
+        "tags": [
+          "long_term_uptrend",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 43.23,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2024-12-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.16,
+      "move_1w_pct": -12.01,
+      "direction": "down",
+      "close": 6716.56,
+      "volume_ratio_vs_20d": 0.58,
+      "technical_snapshot": {
+        "date": "2024-12-24",
+        "close": 6716.56,
+        "rsi_14": 28.28,
+        "sma_20": 7317.56,
+        "sma_50": 7318.94,
+        "sma_200": 7337.35,
+        "volume_ratio_vs_20d": 0.58,
+        "tags": [
+          "marubozu",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 42.49,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2025-01-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.41,
+      "move_1w_pct": -9.65,
+      "direction": "down",
+      "close": 5584.95,
+      "volume_ratio_vs_20d": 3.24,
+      "technical_snapshot": {
+        "date": "2025-01-30",
+        "close": 5584.95,
+        "rsi_14": 31.26,
+        "sma_20": 6175.13,
+        "sma_50": 6754.05,
+        "sma_200": 7394.9,
+        "volume_ratio_vs_20d": 3.24,
+        "tags": [
+          "bearish_engulfing",
+          "marubozu",
+          "near_support",
+          "rsi_oversold",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 27.87,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2025-02-01",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.39,
+      "move_1w_pct": -9.6,
+      "direction": "down",
+      "close": 5370.26,
+      "volume_ratio_vs_20d": 1.72,
+      "technical_snapshot": {
+        "date": "2025-02-01",
+        "close": 5370.26,
+        "rsi_14": 34.17,
+        "sma_20": 6075.22,
+        "sma_50": 6709.3,
+        "sma_200": 7385.75,
+        "volume_ratio_vs_20d": 1.72,
+        "tags": [
+          "bearish_engulfing",
+          "marubozu",
+          "near_support",
+          "rsi_oversold",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 26.44,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2025-02-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.49,
+      "move_1w_pct": -13.36,
+      "direction": "down",
+      "close": 5075.21,
+      "volume_ratio_vs_20d": 4.02,
+      "technical_snapshot": {
+        "date": "2025-02-03",
+        "close": 5075.21,
+        "rsi_14": 28.33,
+        "sma_20": 6001.55,
+        "sma_50": 6669.02,
+        "sma_200": 7378.84,
+        "volume_ratio_vs_20d": 4.02,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "rsi_oversold",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 25.2,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2025-02-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 8.32,
+      "move_1w_pct": -7.88,
+      "direction": "up",
+      "close": 5497.26,
+      "volume_ratio_vs_20d": 3.2,
+      "technical_snapshot": {
+        "date": "2025-02-04",
+        "close": 5497.26,
+        "rsi_14": 37.03,
+        "sma_20": 5951.39,
+        "sma_50": 6635.82,
+        "sma_200": 7375.38,
+        "volume_ratio_vs_20d": 3.2,
+        "tags": [
+          "marubozu",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 29.21,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2025-03-19",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.55,
+      "move_1w_pct": 6.75,
+      "direction": "up",
+      "close": 5346.92,
+      "volume_ratio_vs_20d": 0.87,
+      "technical_snapshot": {
+        "date": "2025-03-19",
+        "close": 5346.92,
+        "rsi_14": 56.08,
+        "sma_20": 5095.43,
+        "sma_50": 5516.01,
+        "sma_200": 7074.99,
+        "volume_ratio_vs_20d": 0.87,
+        "tags": [
+          "above_sma20"
+        ],
+        "weekly": {
+          "rsi_14": 24.54,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2025-04-07",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -2.6,
+      "move_1w_pct": -10.51,
+      "direction": "down",
+      "close": 4846.91,
+      "volume_ratio_vs_20d": 1.78,
+      "technical_snapshot": {
+        "date": "2025-04-07",
+        "close": 4846.91,
+        "rsi_14": 40.98,
+        "sma_20": 5190.06,
+        "sma_50": 5287.84,
+        "sma_200": 6904.71,
+        "volume_ratio_vs_20d": 1.78,
+        "tags": [
+          "marubozu",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 27.74,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2025-04-17",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.57,
+      "move_1w_pct": 10.01,
+      "direction": "up",
+      "close": 5440.57,
+      "volume_ratio_vs_20d": 2.42,
+      "technical_snapshot": {
+        "date": "2025-04-17",
+        "close": 5440.57,
+        "rsi_14": 55.59,
+        "sma_20": 5208.58,
+        "sma_50": 5199.48,
+        "sma_200": 6810.35,
+        "volume_ratio_vs_20d": 2.42,
+        "tags": [
+          "above_sma20",
+          "near_resistance",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 39.67,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2025-04-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.03,
+      "move_1w_pct": 11.77,
+      "direction": "up",
+      "close": 5496.72,
+      "volume_ratio_vs_20d": 1.35,
+      "technical_snapshot": {
+        "date": "2025-04-21",
+        "close": 5496.72,
+        "rsi_14": 53.88,
+        "sma_20": 5230.13,
+        "sma_50": 5202.01,
+        "sma_200": 6796.43,
+        "volume_ratio_vs_20d": 1.35,
+        "tags": [
+          "above_sma20",
+          "hammer",
+          "near_resistance",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 38.85,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2025-04-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.95,
+      "move_1w_pct": 10.48,
+      "direction": "up",
+      "close": 5548.96,
+      "volume_ratio_vs_20d": 0.66,
+      "technical_snapshot": {
+        "date": "2025-04-22",
+        "close": 5548.96,
+        "rsi_14": 55.11,
+        "sma_20": 5240.23,
+        "sma_50": 5211.48,
+        "sma_200": 6782.3,
+        "volume_ratio_vs_20d": 0.66,
+        "tags": [
+          "above_sma20",
+          "near_resistance",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 39.65,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2025-08-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.48,
+      "move_1w_pct": -8.17,
+      "direction": "down",
+      "close": 5003.18,
+      "volume_ratio_vs_20d": 4.48,
+      "technical_snapshot": {
+        "date": "2025-08-04",
+        "close": 5003.18,
+        "rsi_14": 27.64,
+        "sma_20": 5540.63,
+        "sma_50": 5753.83,
+        "sma_200": 6022.77,
+        "volume_ratio_vs_20d": 4.48,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "rsi_oversold",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 40.17,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-01-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.25,
+      "move_1w_pct": -3.0,
+      "direction": "down",
+      "close": 4942.36,
+      "volume_ratio_vs_20d": 4.33,
+      "technical_snapshot": {
+        "date": "2026-01-08",
+        "close": 4942.36,
+        "rsi_14": 44.59,
+        "sma_20": 5110.91,
+        "sma_50": 5068.82,
+        "sma_200": 5316.12,
+        "volume_ratio_vs_20d": 4.33,
+        "tags": [
+          "bearish_engulfing",
+          "marubozu",
+          "near_support",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 41.78,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-01-28",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.14,
+      "move_1w_pct": 7.5,
+      "direction": "up",
+      "close": 4964.51,
+      "volume_ratio_vs_20d": 2.09,
+      "technical_snapshot": {
+        "date": "2026-01-28",
+        "close": 4964.51,
+        "rsi_14": 39.58,
+        "sma_20": 4901.02,
+        "sma_50": 5009.39,
+        "sma_200": 5287.73,
+        "volume_ratio_vs_20d": 2.09,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 45.77,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-01-29",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 8.54,
+      "move_1w_pct": 16.28,
+      "direction": "up",
+      "close": 5388.27,
+      "volume_ratio_vs_20d": 7.8,
+      "technical_snapshot": {
+        "date": "2026-01-29",
+        "close": 5388.27,
+        "rsi_14": 66.44,
+        "sma_20": 4915.98,
+        "sma_50": 5017.14,
+        "sma_200": 5290.08,
+        "volume_ratio_vs_20d": 7.8,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 57.13,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-01-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.91,
+      "move_1w_pct": 17.31,
+      "direction": "up",
+      "close": 5491.13,
+      "volume_ratio_vs_20d": 1.82,
+      "technical_snapshot": {
+        "date": "2026-01-30",
+        "close": 5491.13,
+        "rsi_14": 67.21,
+        "sma_20": 4935.77,
+        "sma_50": 5026.89,
+        "sma_200": 5292.42,
+        "volume_ratio_vs_20d": 1.82,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 59.2,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-02-02",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.98,
+      "move_1w_pct": 16.48,
+      "direction": "up",
+      "close": 5382.36,
+      "volume_ratio_vs_20d": 0.44,
+      "technical_snapshot": {
+        "date": "2026-02-02",
+        "close": 5382.36,
+        "rsi_14": 64.23,
+        "sma_20": 4948.69,
+        "sma_50": 5033.21,
+        "sma_200": 5293.72,
+        "volume_ratio_vs_20d": 0.44,
+        "tags": [
+          "above_sma20"
+        ],
+        "weekly": {
+          "rsi_14": 55.56,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-02-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.67,
+      "move_1w_pct": 20.41,
+      "direction": "up",
+      "close": 5579.72,
+      "volume_ratio_vs_20d": 1.7,
+      "technical_snapshot": {
+        "date": "2026-02-03",
+        "close": 5579.72,
+        "rsi_14": 72.03,
+        "sma_20": 4973.3,
+        "sma_50": 5044.56,
+        "sma_200": 5295.35,
+        "volume_ratio_vs_20d": 1.7,
+        "tags": [
+          "above_sma20",
+          "near_resistance",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 60.14,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-02-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.53,
+      "move_1w_pct": 14.11,
+      "direction": "up",
+      "close": 5664.87,
+      "volume_ratio_vs_20d": 1.27,
+      "technical_snapshot": {
+        "date": "2026-02-04",
+        "close": 5664.87,
+        "rsi_14": 74.85,
+        "sma_20": 4999.41,
+        "sma_50": 5058.3,
+        "sma_200": 5296.47,
+        "volume_ratio_vs_20d": 1.27,
+        "tags": [
+          "above_sma20",
+          "near_resistance",
+          "rsi_overbought"
+        ],
+        "weekly": {
+          "rsi_14": 61.65,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-04-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 4.72,
+      "move_1w_pct": 10.49,
+      "direction": "up",
+      "close": 6462.18,
+      "volume_ratio_vs_20d": 1.62,
+      "technical_snapshot": {
+        "date": "2026-04-08",
+        "close": 6462.18,
+        "rsi_14": 60.53,
+        "sma_20": 6120.64,
+        "sma_50": 5820.1,
+        "sma_200": 5353.31,
+        "volume_ratio_vs_20d": 1.62,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 72.29,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-04-10",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.71,
+      "move_1w_pct": 11.68,
+      "direction": "up",
+      "close": 6752.07,
+      "volume_ratio_vs_20d": 1.9,
+      "technical_snapshot": {
+        "date": "2026-04-10",
+        "close": 6752.07,
+        "rsi_14": 64.32,
+        "sma_20": 6182.98,
+        "sma_50": 5899.31,
+        "sma_200": 5361.11,
+        "volume_ratio_vs_20d": 1.9,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 74.73,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-04-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.45,
+      "move_1w_pct": 10.25,
+      "direction": "up",
+      "close": 6721.56,
+      "volume_ratio_vs_20d": 0.79,
+      "technical_snapshot": {
+        "date": "2026-04-13",
+        "close": 6721.56,
+        "rsi_14": 67.77,
+        "sma_20": 6209.97,
+        "sma_50": 5941.06,
+        "sma_200": 5365.39,
+        "volume_ratio_vs_20d": 0.79,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 76.6,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-04-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 4.58,
+      "move_1w_pct": 10.39,
+      "direction": "up",
+      "close": 7468.18,
+      "volume_ratio_vs_20d": 3.66,
+      "technical_snapshot": {
+        "date": "2026-04-22",
+        "close": 7468.18,
+        "rsi_14": 98.18,
+        "sma_20": 6451.36,
+        "sma_50": 6133.97,
+        "sma_200": 5398.86,
+        "volume_ratio_vs_20d": 3.66,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 86.3,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-04-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.15,
+      "move_1w_pct": 10.05,
+      "direction": "up",
+      "close": 7456.86,
+      "volume_ratio_vs_20d": 0.79,
+      "technical_snapshot": {
+        "date": "2026-04-23",
+        "close": 7456.86,
+        "rsi_14": 97.34,
+        "sma_20": 6514.28,
+        "sma_50": 6169.51,
+        "sma_200": 5406.91,
+        "volume_ratio_vs_20d": 0.79,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 86.26,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-05-11",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -8.91,
+      "move_1w_pct": -11.73,
+      "direction": "down",
+      "close": 6313.18,
+      "volume_ratio_vs_20d": 4.54,
+      "technical_snapshot": {
+        "date": "2026-05-11",
+        "close": 6313.18,
+        "rsi_14": 28.06,
+        "sma_20": 7064.05,
+        "sma_50": 6488.7,
+        "sma_200": 5491.35,
+        "volume_ratio_vs_20d": 4.54,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "rsi_oversold",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 59.65,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-05-12",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.92,
+      "move_1w_pct": -13.64,
+      "direction": "down",
+      "close": 6254.87,
+      "volume_ratio_vs_20d": 1.73,
+      "technical_snapshot": {
+        "date": "2026-05-12",
+        "close": 6254.87,
+        "rsi_14": 12.52,
+        "sma_20": 7040.71,
+        "sma_50": 6494.57,
+        "sma_200": 5494.89,
+        "volume_ratio_vs_20d": 1.73,
+        "tags": [
+          "long_term_uptrend",
+          "rsi_oversold",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 58.53,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-05-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.37,
+      "move_1w_pct": -12.22,
+      "direction": "down",
+      "close": 6231.64,
+      "volume_ratio_vs_20d": 0.66,
+      "technical_snapshot": {
+        "date": "2026-05-13",
+        "close": 6231.64,
+        "rsi_14": 12.43,
+        "sma_20": 7014.03,
+        "sma_50": 6497.79,
+        "sma_200": 5497.38,
+        "volume_ratio_vs_20d": 0.66,
+        "tags": [
+          "long_term_uptrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 58.1,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-05-14",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.97,
+      "move_1w_pct": -10.56,
+      "direction": "down",
+      "close": 6354.2,
+      "volume_ratio_vs_20d": 0.6,
+      "technical_snapshot": {
+        "date": "2026-05-14",
+        "close": 6354.2,
+        "rsi_14": 21.54,
+        "sma_20": 6992.95,
+        "sma_50": 6504.13,
+        "sma_200": 5500.88,
+        "volume_ratio_vs_20d": 0.6,
+        "tags": [
+          "long_term_uptrend",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 60.47,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-05-27",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.1,
+      "move_1w_pct": 9.3,
+      "direction": "up",
+      "close": 7135.0,
+      "volume_ratio_vs_20d": 1.31,
+      "technical_snapshot": {
+        "date": "2026-05-27",
+        "close": 7135.0,
+        "rsi_14": 50.75,
+        "sma_20": 6703.66,
+        "sma_50": 6607.78,
+        "sma_200": 5552.12,
+        "volume_ratio_vs_20d": 1.31,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 67.04,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-07-16",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.43,
+      "move_1w_pct": 12.43,
+      "direction": "up",
+      "close": 7578.29,
+      "volume_ratio_vs_20d": 6.46,
+      "technical_snapshot": {
+        "date": "2026-07-16",
+        "close": 7578.29,
+        "rsi_14": 68.04,
+        "sma_20": 6946.97,
+        "sma_50": 6829.85,
+        "sma_200": 5889.51,
+        "volume_ratio_vs_20d": 6.46,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 59.37,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "ABB",
+      "date": "2026-07-20",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.15,
+      "move_1w_pct": 10.43,
+      "direction": "up",
+      "close": 7429.54,
+      "volume_ratio_vs_20d": 0.66,
+      "technical_snapshot": {
+        "date": "2026-07-20",
+        "close": 7429.54,
+        "rsi_14": 63.43,
+        "sma_20": 6972.52,
+        "sma_50": 6861.93,
+        "sma_200": 5912.66,
+        "volume_ratio_vs_20d": 0.66,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 56.23,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    }
+  ]
+}

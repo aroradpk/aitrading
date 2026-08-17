@@ -1,0 +1,21 @@
+{
+  "date": "2026-04-21",
+  "close": 1352.58,
+  "rsi_14": 67.68,
+  "sma_20": 1260.29,
+  "sma_50": 1324.89,
+  "sma_200": 1342.14,
+  "volume_ratio_vs_20d": 1.48,
+  "tags": [
+    "above_sma20",
+    "marubozu",
+    "near_resistance",
+    "rsi_overbought"
+  ],
+  "weekly": {
+    "rsi_14": 52.34,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

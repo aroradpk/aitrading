@@ -1,0 +1,33 @@
+{
+  "symbol": "SIEMENS",
+  "date": "2021-12-15",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": -1.28,
+  "move_1w_pct": 11.47,
+  "direction": "up",
+  "close": 1423.41,
+  "volume_ratio_vs_20d": 1.08,
+  "technical_snapshot": {
+    "date": "2021-12-15",
+    "close": 1423.41,
+    "rsi_14": 79.11,
+    "sma_20": 1301.55,
+    "sma_50": 1298.95,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.08,
+    "tags": [
+      "above_sma20",
+      "bearish_engulfing",
+      "rsi_overbought",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 60.18,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

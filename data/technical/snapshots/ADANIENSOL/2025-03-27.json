@@ -1,0 +1,23 @@
+{
+  "date": "2025-03-27",
+  "close": 872.85,
+  "rsi_14": 85.43,
+  "sma_20": 762.61,
+  "sma_50": 751.73,
+  "sma_200": 903.83,
+  "volume_ratio_vs_20d": 2.96,
+  "tags": [
+    "above_sma20",
+    "marubozu",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 58.07,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

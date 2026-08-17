@@ -1,0 +1,33 @@
+{
+  "symbol": "CUMMINSIND",
+  "date": "2024-05-30",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": -6.2,
+  "move_1w_pct": -4.31,
+  "direction": "down",
+  "close": 3476.86,
+  "volume_ratio_vs_20d": 3.91,
+  "technical_snapshot": {
+    "date": "2024-05-30",
+    "close": 3476.86,
+    "rsi_14": 61.32,
+    "sma_20": 3482.83,
+    "sma_50": 3142.39,
+    "sma_200": 2220.11,
+    "volume_ratio_vs_20d": 3.91,
+    "tags": [
+      "long_term_uptrend",
+      "marubozu",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 75.41,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

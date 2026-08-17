@@ -1,0 +1,17 @@
+{
+  "date": "2022-06-13",
+  "close": 53.24,
+  "rsi_14": 36.02,
+  "sma_20": 60.24,
+  "sma_50": 54.23,
+  "sma_200": 29.87,
+  "volume_ratio_vs_20d": 0.46,
+  "tags": [
+    "long_term_uptrend",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 71.05,
+    "tags": []
+  }
+}

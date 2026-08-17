@@ -1,0 +1,33 @@
+{
+  "symbol": "NIFTY_BANK",
+  "date": "2022-02-02",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": 2.14,
+  "move_1w_pct": 4.31,
+  "direction": "up",
+  "close": 39330.04,
+  "volume_ratio_vs_20d": 1.24,
+  "technical_snapshot": {
+    "date": "2022-02-02",
+    "close": 39330.04,
+    "rsi_14": 56.35,
+    "sma_20": 38065.25,
+    "sma_50": 36853.79,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.24,
+    "tags": [
+      "above_sma20",
+      "marubozu",
+      "near_resistance",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 50.8,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

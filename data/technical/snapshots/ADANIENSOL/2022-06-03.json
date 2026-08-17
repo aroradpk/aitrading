@@ -1,0 +1,19 @@
+{
+  "date": "2022-06-03",
+  "close": 1956.05,
+  "rsi_14": 33.4,
+  "sma_20": 2215.48,
+  "sma_50": 2449.02,
+  "sma_200": 1987.99,
+  "volume_ratio_vs_20d": 0.81,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "near_support",
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 48.11,
+    "tags": []
+  }
+}

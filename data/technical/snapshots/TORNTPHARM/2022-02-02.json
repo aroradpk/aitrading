@@ -1,0 +1,17 @@
+{
+  "date": "2022-02-02",
+  "close": 1301.79,
+  "rsi_14": 25.27,
+  "sma_20": 1436.22,
+  "sma_50": 1445.92,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 0.68,
+  "tags": [
+    "marubozu",
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 46.96,
+    "tags": []
+  }
+}

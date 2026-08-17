@@ -1,0 +1,24 @@
+{
+  "date": "2023-12-05",
+  "close": 4709.45,
+  "rsi_14": 80.08,
+  "sma_20": 4203.12,
+  "sma_50": 4082.98,
+  "sma_200": 3867.62,
+  "volume_ratio_vs_20d": 2.95,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "marubozu",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 65.75,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

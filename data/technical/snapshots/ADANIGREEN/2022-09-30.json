@@ -1,0 +1,20 @@
+{
+  "date": "2022-09-30",
+  "close": 2260.8,
+  "rsi_14": 44.58,
+  "sma_20": 2292.02,
+  "sma_50": 2266.25,
+  "sma_200": 2057.54,
+  "volume_ratio_vs_20d": 3.29,
+  "tags": [
+    "bullish_engulfing",
+    "long_term_uptrend",
+    "marubozu",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 71.39,
+    "tags": []
+  }
+}

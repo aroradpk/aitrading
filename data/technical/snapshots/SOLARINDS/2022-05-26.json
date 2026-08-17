@@ -1,0 +1,19 @@
+{
+  "date": "2022-05-26",
+  "close": 2543.98,
+  "rsi_14": 20.41,
+  "sma_20": 2804.34,
+  "sma_50": 2792.43,
+  "sma_200": 2398.39,
+  "volume_ratio_vs_20d": 0.87,
+  "tags": [
+    "long_term_uptrend",
+    "near_support",
+    "rsi_oversold",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 57.78,
+    "tags": []
+  }
+}

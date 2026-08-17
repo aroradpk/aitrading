@@ -1,0 +1,21 @@
+{
+  "date": "2025-01-28",
+  "close": 572.54,
+  "rsi_14": 31.14,
+  "sma_20": 658.28,
+  "sma_50": 712.04,
+  "sma_200": 692.45,
+  "volume_ratio_vs_20d": 4.99,
+  "tags": [
+    "hammer",
+    "long_term_uptrend",
+    "rsi_oversold",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 27.81,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

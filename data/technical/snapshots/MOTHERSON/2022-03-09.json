@@ -1,0 +1,16 @@
+{
+  "date": "2022-03-09",
+  "close": 55.35,
+  "rsi_14": 12.93,
+  "sma_20": 66.79,
+  "sma_50": 69.28,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 1.47,
+  "tags": [
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 48.56,
+    "tags": []
+  }
+}

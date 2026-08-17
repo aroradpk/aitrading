@@ -1,0 +1,22 @@
+{
+  "date": "2024-02-12",
+  "close": 75.1,
+  "rsi_14": 56.69,
+  "sma_20": 74.51,
+  "sma_50": 68.63,
+  "sma_200": 61.27,
+  "volume_ratio_vs_20d": 1.19,
+  "tags": [
+    "above_sma20",
+    "bearish_engulfing",
+    "long_term_uptrend",
+    "marubozu",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 75.15,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

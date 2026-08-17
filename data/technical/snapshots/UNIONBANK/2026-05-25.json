@@ -1,0 +1,18 @@
+{
+  "date": "2026-05-25",
+  "close": 164.03,
+  "rsi_14": 58.47,
+  "sma_20": 159.36,
+  "sma_50": 168.37,
+  "sma_200": 154.33,
+  "volume_ratio_vs_20d": 1.45,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "marubozu"
+  ],
+  "weekly": {
+    "rsi_14": 37.47,
+    "tags": []
+  }
+}

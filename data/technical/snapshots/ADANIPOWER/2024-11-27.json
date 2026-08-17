@@ -1,0 +1,20 @@
+{
+  "date": "2024-11-27",
+  "close": 104.61,
+  "rsi_14": 35.7,
+  "sma_20": 109.96,
+  "sma_50": 120.41,
+  "sma_200": 126.79,
+  "volume_ratio_vs_20d": 5.16,
+  "tags": [
+    "bullish_engulfing",
+    "marubozu",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 28.62,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

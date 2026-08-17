@@ -1,0 +1,31 @@
+{
+  "symbol": "UNIONBANK",
+  "date": "2022-06-01",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 2.38,
+  "move_1w_pct": 11.03,
+  "direction": "up",
+  "close": 32.51,
+  "volume_ratio_vs_20d": 1.07,
+  "technical_snapshot": {
+    "date": "2022-06-01",
+    "close": 32.51,
+    "rsi_14": 72.32,
+    "sma_20": 30.41,
+    "sma_50": 32.47,
+    "sma_200": 34.77,
+    "volume_ratio_vs_20d": 1.07,
+    "tags": [
+      "above_sma20",
+      "bullish_engulfing",
+      "marubozu",
+      "rsi_overbought"
+    ],
+    "weekly": {
+      "rsi_14": 46.53,
+      "tags": []
+    }
+  }
+}

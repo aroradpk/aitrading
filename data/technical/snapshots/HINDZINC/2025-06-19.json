@@ -1,0 +1,18 @@
+{
+  "date": "2025-06-19",
+  "close": 429.6,
+  "rsi_14": 46.56,
+  "sma_20": 463.97,
+  "sma_50": 435.85,
+  "sma_200": 450.91,
+  "volume_ratio_vs_20d": 1.21,
+  "tags": [
+    "marubozu",
+    "near_support",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 52.47,
+    "tags": []
+  }
+}

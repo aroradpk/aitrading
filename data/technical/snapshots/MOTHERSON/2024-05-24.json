@@ -1,0 +1,22 @@
+{
+  "date": "2024-05-24",
+  "close": 92.01,
+  "rsi_14": 62.95,
+  "sma_20": 85.17,
+  "sma_50": 80.85,
+  "sma_200": 69.69,
+  "volume_ratio_vs_20d": 2.03,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "near_resistance",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 76.42,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

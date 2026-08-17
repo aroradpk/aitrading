@@ -1,0 +1,24 @@
+{
+  "date": "2026-07-20",
+  "close": 5005.4,
+  "rsi_14": 71.53,
+  "sma_20": 4772.15,
+  "sma_50": 4571.98,
+  "sma_200": 4096.01,
+  "volume_ratio_vs_20d": 1.11,
+  "tags": [
+    "above_sma20",
+    "bullish_engulfing",
+    "long_term_uptrend",
+    "marubozu",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 75.26,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

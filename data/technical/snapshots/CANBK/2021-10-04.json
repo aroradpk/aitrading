@@ -1,0 +1,22 @@
+{
+  "date": "2021-10-04",
+  "close": 30.82,
+  "rsi_14": 73.7,
+  "sma_20": 27.45,
+  "sma_50": 26.63,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 1.24,
+  "tags": [
+    "above_sma20",
+    "marubozu",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": null,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

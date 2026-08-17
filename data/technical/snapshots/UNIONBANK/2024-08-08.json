@@ -1,0 +1,20 @@
+{
+  "date": "2024-08-08",
+  "close": 113.12,
+  "rsi_14": 21.62,
+  "sma_20": 124.29,
+  "sma_50": 128.73,
+  "sma_200": 123.12,
+  "volume_ratio_vs_20d": 1.01,
+  "tags": [
+    "long_term_uptrend",
+    "near_support",
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 32.14,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "date": "2026-08-11",
+  "close": 1191.0,
+  "rsi_14": 67.41,
+  "sma_20": 1128.23,
+  "sma_50": 1115.35,
+  "sma_200": 975.52,
+  "volume_ratio_vs_20d": 6.05,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "marubozu",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 79.49,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

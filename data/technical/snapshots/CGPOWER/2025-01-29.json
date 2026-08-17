@@ -1,0 +1,20 @@
+{
+  "date": "2025-01-29",
+  "close": 623.13,
+  "rsi_14": 42.55,
+  "sma_20": 652.54,
+  "sma_50": 710.5,
+  "sma_200": 693.07,
+  "volume_ratio_vs_20d": 2.23,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 32.65,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

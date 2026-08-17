@@ -1,0 +1,32 @@
+{
+  "symbol": "HINDZINC",
+  "date": "2024-08-13",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": -5.57,
+  "move_1w_pct": -4.71,
+  "direction": "down",
+  "close": 538.56,
+  "volume_ratio_vs_20d": 1.91,
+  "technical_snapshot": {
+    "date": "2024-08-13",
+    "close": 538.56,
+    "rsi_14": 36.45,
+    "sma_20": 579.7,
+    "sma_50": 604.43,
+    "sma_200": 397.06,
+    "volume_ratio_vs_20d": 1.91,
+    "tags": [
+      "bearish_engulfing",
+      "long_term_uptrend",
+      "marubozu",
+      "near_support",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 55.81,
+      "tags": []
+    }
+  }
+}

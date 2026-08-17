@@ -1,0 +1,22 @@
+{
+  "date": "2025-12-16",
+  "close": 557.51,
+  "rsi_14": 85.53,
+  "sma_20": 489.21,
+  "sma_50": 483.15,
+  "sma_200": 443.81,
+  "volume_ratio_vs_20d": 1.04,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 71.69,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

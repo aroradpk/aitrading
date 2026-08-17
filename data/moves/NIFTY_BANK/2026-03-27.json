@@ -1,0 +1,34 @@
+{
+  "symbol": "NIFTY_BANK",
+  "date": "2026-03-27",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": -2.67,
+  "move_1w_pct": -2.2,
+  "direction": "down",
+  "close": 52274.6,
+  "volume_ratio_vs_20d": 1.79,
+  "technical_snapshot": {
+    "date": "2026-03-27",
+    "close": 52274.6,
+    "rsi_14": 31.7,
+    "sma_20": 55811.77,
+    "sma_50": 58412.43,
+    "sma_200": 57385.27,
+    "volume_ratio_vs_20d": 1.79,
+    "tags": [
+      "long_term_uptrend",
+      "marubozu",
+      "near_support",
+      "rsi_oversold",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 28.98,
+      "tags": [
+        "weekly_rsi_oversold"
+      ]
+    }
+  }
+}

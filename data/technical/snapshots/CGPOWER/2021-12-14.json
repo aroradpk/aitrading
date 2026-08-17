@@ -1,0 +1,23 @@
+{
+  "date": "2021-12-14",
+  "close": 179.79,
+  "rsi_14": 76.42,
+  "sma_20": 154.92,
+  "sma_50": 144.72,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 2.53,
+  "tags": [
+    "above_sma20",
+    "marubozu",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 82.88,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

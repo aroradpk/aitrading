@@ -1,0 +1,21 @@
+{
+  "date": "2021-12-29",
+  "close": 192.09,
+  "rsi_14": 74.65,
+  "sma_20": 169.7,
+  "sma_50": 157.99,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 1.2,
+  "tags": [
+    "above_sma20",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 81.79,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

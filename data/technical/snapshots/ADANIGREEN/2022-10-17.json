@@ -1,0 +1,17 @@
+{
+  "date": "2022-10-17",
+  "close": 2154.45,
+  "rsi_14": 47.39,
+  "sma_20": 2186.9,
+  "sma_50": 2260.76,
+  "sma_200": 2093.74,
+  "volume_ratio_vs_20d": 1.39,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu"
+  ],
+  "weekly": {
+    "rsi_14": 54.13,
+    "tags": []
+  }
+}

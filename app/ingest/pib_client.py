@@ -9,6 +9,7 @@ from pathlib import Path
 import httpx
 
 from app.core.config import get_settings
+from app.core.offline import require_network
 from app.core.paths import CONFIG_DIR, events_pib_dir, sources_cache_dir
 
 _SECTOR_KEYWORDS: dict[str, list[str]] | None = None
@@ -25,6 +26,11 @@ def _load_sector_keywords() -> dict[str, list[str]]:
 
 def fetch_pib_feed() -> list[dict]:
     settings = get_settings()
+    if settings.offline_mode:
+        cached = load_pib_feed()
+        if cached:
+            return cached
+        require_network("PIB feed fetch")
     response = httpx.get(settings.events.pib_feed_url, timeout=45, follow_redirects=True)
     response.raise_for_status()
     root = ET.fromstring(response.text)

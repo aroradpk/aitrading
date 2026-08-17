@@ -1,0 +1,21 @@
+{
+  "date": "2025-04-21",
+  "close": 113.81,
+  "rsi_14": 72.68,
+  "sma_20": 104.58,
+  "sma_50": 101.42,
+  "sma_200": 116.43,
+  "volume_ratio_vs_20d": 1.91,
+  "tags": [
+    "above_sma20",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 54.09,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

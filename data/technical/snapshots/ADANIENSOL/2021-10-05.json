@@ -1,0 +1,21 @@
+{
+  "date": "2021-10-05",
+  "close": 1717.8,
+  "rsi_14": 33.19,
+  "sma_20": 1695.05,
+  "sma_50": 1371.38,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 0.11,
+  "tags": [
+    "above_sma20",
+    "marubozu",
+    "rsi_oversold",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": null,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

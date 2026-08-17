@@ -1,0 +1,23 @@
+{
+  "date": "2022-05-24",
+  "close": 62.3,
+  "rsi_14": 62.77,
+  "sma_20": 56.6,
+  "sma_50": 44.98,
+  "sma_200": 26.86,
+  "volume_ratio_vs_20d": 1.51,
+  "tags": [
+    "above_sma20",
+    "bearish_engulfing",
+    "long_term_uptrend",
+    "marubozu",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 82.14,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

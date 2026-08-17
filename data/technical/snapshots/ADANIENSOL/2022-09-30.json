@@ -1,0 +1,20 @@
+{
+  "date": "2022-09-30",
+  "close": 3289.8,
+  "rsi_14": 22.39,
+  "sma_20": 3861.09,
+  "sma_50": 3610.44,
+  "sma_200": 2566.95,
+  "volume_ratio_vs_20d": 2.15,
+  "tags": [
+    "long_term_uptrend",
+    "near_support",
+    "rsi_oversold",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 70.7,
+    "tags": []
+  }
+}

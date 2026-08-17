@@ -1,0 +1,33 @@
+{
+  "symbol": "HINDZINC",
+  "score": 1.0,
+  "themes": [
+    {
+      "id": "metals_commodity",
+      "name": "Metals & commodity cycle",
+      "macro": "Infrastructure demand, global metal prices",
+      "industry": "Metals & mining",
+      "tier": "primary",
+      "symbols": [
+        "HINDZINC",
+        "VEDL"
+      ],
+      "horizontal_enabler": false
+    }
+  ],
+  "scenarios": {
+    "bull": "HINDZINC benefits from Metals & commodity cycle; order book and capacity expand faster than consensus. Theme score 1.0/10 supports upside if technical setup confirms.",
+    "base": "HINDZINC tracks sector beta with steady execution on Metals & commodity cycle. Returns depend on delivery vs guidance; no major thesis break.",
+    "bear": "HINDZINC faces valuation compression or order delays despite Metals & commodity cycle exposure. Macro slowdown or commodity shock could invalidate near-term momentum."
+  },
+  "reasons": [
+    {
+      "layer": "theme",
+      "text": "Theme exposure: Metals & commodity cycle \u2014 Infrastructure demand, global metal prices",
+      "weight": "high",
+      "source": "config/themes/graph.json",
+      "theme_id": "metals_commodity"
+    }
+  ],
+  "generated_at": "2026-08-17T13:01:01.674968+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "date": "2024-06-05",
+  "close": 22620.35,
+  "rsi_14": 55.07,
+  "sma_20": 22503.63,
+  "sma_50": 22424.28,
+  "sma_200": 21071.3,
+  "volume_ratio_vs_20d": 1.72,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 53.85,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "date": "2025-04-07",
+  "close": 22161.6,
+  "rsi_14": 44.59,
+  "sma_20": 22995.47,
+  "sma_50": 22980.24,
+  "sma_200": 24070.03,
+  "volume_ratio_vs_20d": 1.83,
+  "tags": [
+    "marubozu",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 34.32,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

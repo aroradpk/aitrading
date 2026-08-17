@@ -1,0 +1,16 @@
+{
+  "date": "2024-12-03",
+  "close": 1312.8,
+  "rsi_14": 39.34,
+  "sma_20": 1361.68,
+  "sma_50": 1621.44,
+  "sma_200": 1786.64,
+  "volume_ratio_vs_20d": 1.06,
+  "tags": [],
+  "weekly": {
+    "rsi_14": 33.07,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

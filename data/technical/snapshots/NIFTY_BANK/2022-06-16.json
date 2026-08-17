@@ -1,0 +1,19 @@
+{
+  "date": "2022-06-16",
+  "close": 32616.72,
+  "rsi_14": 13.41,
+  "sma_20": 34658.63,
+  "sma_50": 35340.07,
+  "sma_200": 36775.24,
+  "volume_ratio_vs_20d": 1.03,
+  "tags": [
+    "bearish_engulfing",
+    "marubozu",
+    "near_support",
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 43.76,
+    "tags": []
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "date": "2024-08-05",
+  "close": 573.05,
+  "rsi_14": 37.32,
+  "sma_20": 599.31,
+  "sma_50": 616.3,
+  "sma_200": 388.94,
+  "volume_ratio_vs_20d": 1.28,
+  "tags": [
+    "long_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 63.7,
+    "tags": []
+  }
+}

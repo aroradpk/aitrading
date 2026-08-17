@@ -1,0 +1,16 @@
+{
+  "date": "2021-12-20",
+  "close": 34439.45,
+  "rsi_14": 39.58,
+  "sma_20": 36494.08,
+  "sma_50": 38103.46,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 1.27,
+  "tags": [
+    "near_support"
+  ],
+  "weekly": {
+    "rsi_14": 36.7,
+    "tags": []
+  }
+}

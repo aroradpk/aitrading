@@ -1,0 +1,31 @@
+{
+  "symbol": "CGPOWER",
+  "date": "2026-01-19",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 5.04,
+  "move_1w_pct": 0.72,
+  "direction": "up",
+  "close": 588.7,
+  "volume_ratio_vs_20d": 4.37,
+  "technical_snapshot": {
+    "date": "2026-01-19",
+    "close": 588.7,
+    "rsi_14": 32.24,
+    "sma_20": 622.6,
+    "sma_50": 662.56,
+    "sma_200": 681.74,
+    "volume_ratio_vs_20d": 4.37,
+    "tags": [
+      "rsi_oversold",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 21.18,
+      "tags": [
+        "weekly_rsi_oversold"
+      ]
+    }
+  }
+}

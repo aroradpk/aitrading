@@ -1,0 +1,29 @@
+{
+  "symbol": "HINDZINC",
+  "date": "2026-04-08",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 3.82,
+  "move_1w_pct": 11.39,
+  "direction": "up",
+  "close": 549.31,
+  "volume_ratio_vs_20d": 1.04,
+  "technical_snapshot": {
+    "date": "2026-04-08",
+    "close": 549.31,
+    "rsi_14": 56.11,
+    "sma_20": 525.64,
+    "sma_50": 577.18,
+    "sma_200": 504.33,
+    "volume_ratio_vs_20d": 1.04,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 40.91,
+      "tags": []
+    }
+  }
+}

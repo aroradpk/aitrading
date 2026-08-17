@@ -1,0 +1,34 @@
+{
+  "symbol": "ADANIPOWER",
+  "date": "2023-12-07",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 0.35,
+  "move_1w_pct": 30.34,
+  "direction": "up",
+  "close": 112.48,
+  "volume_ratio_vs_20d": 0.73,
+  "technical_snapshot": {
+    "date": "2023-12-07",
+    "close": 112.48,
+    "rsi_14": 87.85,
+    "sma_20": 85.78,
+    "sma_50": 77.11,
+    "sma_200": 56.47,
+    "volume_ratio_vs_20d": 0.73,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 83.4,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

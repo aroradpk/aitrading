@@ -1,0 +1,30 @@
+{
+  "symbol": "NIFTY_BANK",
+  "date": "2023-01-25",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": -2.54,
+  "move_1w_pct": -1.91,
+  "direction": "down",
+  "close": 41647.65,
+  "volume_ratio_vs_20d": 0.0,
+  "technical_snapshot": {
+    "date": "2023-01-25",
+    "close": 41647.65,
+    "rsi_14": 38.9,
+    "sma_20": 42540.24,
+    "sma_50": 42839.09,
+    "sma_200": 38707.27,
+    "volume_ratio_vs_20d": 0.0,
+    "tags": [
+      "long_term_uptrend",
+      "marubozu",
+      "near_support"
+    ],
+    "weekly": {
+      "rsi_14": 55.33,
+      "tags": []
+    }
+  }
+}

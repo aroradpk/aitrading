@@ -1,0 +1,35 @@
+{
+  "symbol": "CUMMINSIND",
+  "date": "2022-11-01",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 0.02,
+  "move_1w_pct": 12.0,
+  "direction": "up",
+  "close": 1276.01,
+  "volume_ratio_vs_20d": 1.77,
+  "technical_snapshot": {
+    "date": "2022-11-01",
+    "close": 1276.01,
+    "rsi_14": 83.8,
+    "sma_20": 1162.98,
+    "sma_50": 1153.66,
+    "sma_200": 1020.28,
+    "volume_ratio_vs_20d": 1.77,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 62.55,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

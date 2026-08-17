@@ -1,0 +1,19 @@
+{
+  "date": "2024-11-12",
+  "close": 482.13,
+  "rsi_14": 44.17,
+  "sma_20": 505.51,
+  "sma_50": 492.19,
+  "sma_200": 463.69,
+  "volume_ratio_vs_20d": 0.6,
+  "tags": [
+    "bearish_engulfing",
+    "long_term_uptrend",
+    "near_support",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 36.31,
+    "tags": []
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "date": "2022-09-21",
+  "close": 258.52,
+  "rsi_14": 77.18,
+  "sma_20": 227.55,
+  "sma_50": 222.64,
+  "sma_200": 189.04,
+  "volume_ratio_vs_20d": 1.11,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "marubozu",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 84.7,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

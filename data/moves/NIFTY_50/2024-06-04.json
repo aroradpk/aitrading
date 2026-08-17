@@ -1,0 +1,31 @@
+{
+  "symbol": "NIFTY_50",
+  "date": "2024-06-04",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": -5.93,
+  "move_1w_pct": -4.39,
+  "direction": "down",
+  "close": 21884.5,
+  "volume_ratio_vs_20d": 2.85,
+  "technical_snapshot": {
+    "date": "2024-06-04",
+    "close": 21884.5,
+    "rsi_14": 45.12,
+    "sma_20": 22487.74,
+    "sma_50": 22408.22,
+    "sma_200": 21056.06,
+    "volume_ratio_vs_20d": 2.85,
+    "tags": [
+      "long_term_uptrend",
+      "marubozu",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 44.61,
+      "tags": []
+    }
+  }
+}

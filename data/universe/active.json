@@ -1,0 +1,214 @@
+{
+  "generated_at": "2026-08-17T10:08:57.295828+00:00",
+  "selection_rule": "Top 20 Nifty Next 50 stocks with positive 1-year return (min 0.0%)",
+  "stocks": [
+    {
+      "symbol": "ADANIENSOL",
+      "name": "Adani Energy Solutions",
+      "type": "stock",
+      "yahoo": "ADANIENSOL.NS",
+      "yearly_return_pct": 104.04,
+      "last_close": 1616.0,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "MOTHERSON",
+      "name": "Samvardhana Motherson",
+      "type": "stock",
+      "yahoo": "MOTHERSON.NS",
+      "yearly_return_pct": 86.31,
+      "last_close": 168.3000030517578,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "ADANIPOWER",
+      "name": "Adani Power",
+      "type": "stock",
+      "yahoo": "ADANIPOWER.NS",
+      "yearly_return_pct": 72.8,
+      "last_close": 205.25,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "ABB",
+      "name": "ABB India",
+      "type": "stock",
+      "yahoo": "ABB.NS",
+      "yearly_return_pct": 53.97,
+      "last_close": 7649.0,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "UNIONBANK",
+      "name": "Union Bank of India",
+      "type": "stock",
+      "yahoo": "UNIONBANK.NS",
+      "yearly_return_pct": 46.55,
+      "last_close": 186.5,
+      "as_of": "2026-08-13"
+    },
+    {
+      "symbol": "TVSMOTOR",
+      "name": "TVS Motor",
+      "type": "stock",
+      "yahoo": "TVSMOTOR.NS",
+      "yearly_return_pct": 46.38,
+      "last_close": 4307.0,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "TMCV",
+      "name": "Tata Motors",
+      "type": "stock",
+      "yahoo": "TMCV.NS",
+      "yearly_return_pct": 45.59,
+      "last_close": 474.29998779296875,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "ADANIGREEN",
+      "name": "Adani Green Energy",
+      "type": "stock",
+      "yahoo": "ADANIGREEN.NS",
+      "yearly_return_pct": 45.09,
+      "last_close": 1348.0,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "CUMMINSIND",
+      "name": "Cummins India",
+      "type": "stock",
+      "yahoo": "CUMMINSIND.NS",
+      "yearly_return_pct": 44.23,
+      "last_close": 5400.0,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "DIVISLAB",
+      "name": "Divi's Laboratories",
+      "type": "stock",
+      "yahoo": "DIVISLAB.NS",
+      "yearly_return_pct": 43.92,
+      "last_close": 8477.0,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "HINDZINC",
+      "name": "Hindustan Zinc",
+      "type": "stock",
+      "yahoo": "HINDZINC.NS",
+      "yearly_return_pct": 37.08,
+      "last_close": 561.9000244140625,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "TORNTPHARM",
+      "name": "Torrent Pharmaceuticals",
+      "type": "stock",
+      "yahoo": "TORNTPHARM.NS",
+      "yearly_return_pct": 36.45,
+      "last_close": 4833.0,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "CGPOWER",
+      "name": "CG Power and Industrial Solutions",
+      "type": "stock",
+      "yahoo": "CGPOWER.NS",
+      "yearly_return_pct": 34.17,
+      "last_close": 890.1500244140625,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "SOLARINDS",
+      "name": "Solar Industries",
+      "type": "stock",
+      "yahoo": "SOLARINDS.NS",
+      "yearly_return_pct": 33.92,
+      "last_close": 19969.0,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "SIEMENS",
+      "name": "Siemens",
+      "type": "stock",
+      "yahoo": "SIEMENS.NS",
+      "yearly_return_pct": 30.59,
+      "last_close": 3940.0,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "CHOLAFIN",
+      "name": "Cholamandalam Investment",
+      "type": "stock",
+      "yahoo": "CHOLAFIN.NS",
+      "yearly_return_pct": 27.89,
+      "last_close": 1894.4000244140625,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "BOSCHLTD",
+      "name": "Bosch",
+      "type": "stock",
+      "yahoo": "BOSCHLTD.NS",
+      "yearly_return_pct": 23.93,
+      "last_close": 47100.0,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "CANBK",
+      "name": "Canara Bank",
+      "type": "stock",
+      "yahoo": "CANBK.NS",
+      "yearly_return_pct": 23.84,
+      "last_close": 131.25,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "UNITDSPR",
+      "name": "United Spirits",
+      "type": "stock",
+      "yahoo": "UNITDSPR.NS",
+      "yearly_return_pct": 19.4,
+      "last_close": 1536.0,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "ZYDUSLIFE",
+      "name": "Zydus Lifesciences",
+      "type": "stock",
+      "yahoo": "ZYDUSLIFE.NS",
+      "yearly_return_pct": 18.91,
+      "last_close": 1135.199951171875,
+      "as_of": "2026-08-14"
+    }
+  ],
+  "indices": [
+    {
+      "symbol": "NIFTY_50",
+      "name": "NIFTY 50",
+      "type": "index",
+      "yahoo": "^NSEI"
+    },
+    {
+      "symbol": "NIFTY_NEXT_50",
+      "name": "NIFTY NEXT 50",
+      "type": "index",
+      "yahoo": "^CNXSC"
+    },
+    {
+      "symbol": "NIFTY_BANK",
+      "name": "NIFTY BANK",
+      "type": "index",
+      "yahoo": "^NSEBANK"
+    }
+  ],
+  "skipped": [
+    {
+      "symbol": "LTIM",
+      "name": "LTIMindtree",
+      "type": "stock",
+      "error": "No OHLCV data for LTIM (LTIM.NS)"
+    }
+  ]
+}

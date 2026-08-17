@@ -1,0 +1,18 @@
+{
+  "date": "2024-03-18",
+  "close": 2008.08,
+  "rsi_14": 38.08,
+  "sma_20": 2140.39,
+  "sma_50": 2058.81,
+  "sma_200": 1651.97,
+  "volume_ratio_vs_20d": 1.42,
+  "tags": [
+    "long_term_uptrend",
+    "near_support",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 50.64,
+    "tags": []
+  }
+}

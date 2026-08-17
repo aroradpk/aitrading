@@ -1,0 +1,21 @@
+{
+  "date": "2025-05-16",
+  "close": 113.1,
+  "rsi_14": 54.66,
+  "sma_20": 109.47,
+  "sma_50": 105.23,
+  "sma_200": 113.51,
+  "volume_ratio_vs_20d": 1.51,
+  "tags": [
+    "above_sma20",
+    "marubozu",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 65.39,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

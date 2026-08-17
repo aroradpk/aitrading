@@ -1,0 +1,30 @@
+{
+  "symbol": "TMCV",
+  "date": "2026-06-12",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 10.15,
+  "move_1w_pct": 6.92,
+  "direction": "up",
+  "close": 390.3,
+  "volume_ratio_vs_20d": 2.35,
+  "technical_snapshot": {
+    "date": "2026-06-12",
+    "close": 390.3,
+    "rsi_14": 49.44,
+    "sma_20": 372.53,
+    "sma_50": 397.03,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 2.35,
+    "tags": [
+      "above_sma20",
+      "marubozu",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 37.24,
+      "tags": []
+    }
+  }
+}

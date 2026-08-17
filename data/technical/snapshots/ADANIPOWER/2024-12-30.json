@@ -1,0 +1,19 @@
+{
+  "date": "2024-12-30",
+  "close": 107.89,
+  "rsi_14": 51.29,
+  "sma_20": 104.98,
+  "sma_50": 109.62,
+  "sma_200": 126.09,
+  "volume_ratio_vs_20d": 2.2,
+  "tags": [
+    "above_sma20",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 35.58,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

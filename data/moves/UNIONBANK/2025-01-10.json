@@ -1,0 +1,30 @@
+{
+  "symbol": "UNIONBANK",
+  "date": "2025-01-10",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": -4.11,
+  "move_1w_pct": -16.48,
+  "direction": "down",
+  "close": 97.35,
+  "volume_ratio_vs_20d": 1.4,
+  "technical_snapshot": {
+    "date": "2025-01-10",
+    "close": 97.35,
+    "rsi_14": 31.5,
+    "sma_20": 111.54,
+    "sma_50": 112.78,
+    "sma_200": 121.8,
+    "volume_ratio_vs_20d": 1.4,
+    "tags": [
+      "marubozu",
+      "near_support",
+      "rsi_oversold"
+    ],
+    "weekly": {
+      "rsi_14": 40.36,
+      "tags": []
+    }
+  }
+}

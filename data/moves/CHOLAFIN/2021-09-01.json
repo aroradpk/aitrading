@@ -1,0 +1,31 @@
+{
+  "symbol": "CHOLAFIN",
+  "date": "2021-09-01",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 2.67,
+  "move_1w_pct": 11.33,
+  "direction": "up",
+  "close": 563.57,
+  "volume_ratio_vs_20d": 1.27,
+  "technical_snapshot": {
+    "date": "2021-09-01",
+    "close": 563.57,
+    "rsi_14": 72.27,
+    "sma_20": 513.56,
+    "sma_50": null,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.27,
+    "tags": [
+      "above_sma20",
+      "marubozu",
+      "near_resistance",
+      "rsi_overbought"
+    ],
+    "weekly": {
+      "rsi_14": null,
+      "tags": []
+    }
+  }
+}

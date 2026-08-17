@@ -1,0 +1,30 @@
+{
+  "symbol": "SOLARINDS",
+  "date": "2021-09-15",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": -0.03,
+  "move_1w_pct": 14.79,
+  "direction": "up",
+  "close": 1973.29,
+  "volume_ratio_vs_20d": 1.75,
+  "technical_snapshot": {
+    "date": "2021-09-15",
+    "close": 1973.29,
+    "rsi_14": 88.42,
+    "sma_20": 1745.76,
+    "sma_50": null,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.75,
+    "tags": [
+      "above_sma20",
+      "rsi_overbought",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": null,
+      "tags": []
+    }
+  }
+}

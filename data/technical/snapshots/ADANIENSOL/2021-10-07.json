@@ -1,0 +1,19 @@
+{
+  "date": "2021-10-07",
+  "close": 1764.3,
+  "rsi_14": 45.3,
+  "sma_20": 1700.1,
+  "sma_50": 1405.14,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 0.11,
+  "tags": [
+    "above_sma20",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": null,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

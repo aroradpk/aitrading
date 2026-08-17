@@ -1,0 +1,18 @@
+{
+  "date": "2025-04-16",
+  "close": 597.43,
+  "rsi_14": 41.06,
+  "sma_20": 607.49,
+  "sma_50": 600.41,
+  "sma_200": 691.17,
+  "volume_ratio_vs_20d": 0.49,
+  "tags": [
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 43.57,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

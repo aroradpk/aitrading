@@ -1,0 +1,20 @@
+{
+  "date": "2023-05-05",
+  "close": 42661.2,
+  "rsi_14": 58.31,
+  "sma_20": 42319.57,
+  "sma_50": 41034.95,
+  "sma_200": 40743.49,
+  "volume_ratio_vs_20d": 1.27,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 61.03,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

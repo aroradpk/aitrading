@@ -1,0 +1,17 @@
+{
+  "date": "2024-10-28",
+  "close": 2443.64,
+  "rsi_14": 27.06,
+  "sma_20": 2681.04,
+  "sma_50": 2728.1,
+  "sma_200": 2324.99,
+  "volume_ratio_vs_20d": 0.81,
+  "tags": [
+    "long_term_uptrend",
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 48.27,
+    "tags": []
+  }
+}

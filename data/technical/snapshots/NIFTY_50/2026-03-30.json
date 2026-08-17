@@ -1,0 +1,19 @@
+{
+  "date": "2026-03-30",
+  "close": 22331.4,
+  "rsi_14": 33.78,
+  "sma_20": 23672.74,
+  "sma_50": 24794.39,
+  "sma_200": 25231.53,
+  "volume_ratio_vs_20d": 1.34,
+  "tags": [
+    "near_support",
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 17.99,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

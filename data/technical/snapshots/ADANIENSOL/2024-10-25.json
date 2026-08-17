@@ -1,0 +1,17 @@
+{
+  "date": "2024-10-25",
+  "close": 919.35,
+  "rsi_14": 47.74,
+  "sma_20": 995.97,
+  "sma_50": 1015.12,
+  "sma_200": 1049.47,
+  "volume_ratio_vs_20d": 0.69,
+  "tags": [
+    "marubozu",
+    "near_support"
+  ],
+  "weekly": {
+    "rsi_14": 44.35,
+    "tags": []
+  }
+}

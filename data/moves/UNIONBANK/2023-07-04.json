@@ -1,0 +1,33 @@
+{
+  "symbol": "UNIONBANK",
+  "date": "2023-07-04",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 1.74,
+  "move_1w_pct": 11.0,
+  "direction": "up",
+  "close": 67.47,
+  "volume_ratio_vs_20d": 3.42,
+  "technical_snapshot": {
+    "date": "2023-07-04",
+    "close": 67.47,
+    "rsi_14": 64.47,
+    "sma_20": 63.34,
+    "sma_50": 63.71,
+    "sma_200": 60.8,
+    "volume_ratio_vs_20d": 3.42,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "near_resistance",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 65.39,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

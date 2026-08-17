@@ -1,0 +1,32 @@
+{
+  "symbol": "CANBK",
+  "date": "2023-02-01",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": -6.42,
+  "move_1w_pct": -11.15,
+  "direction": "down",
+  "close": 49.79,
+  "volume_ratio_vs_20d": 1.83,
+  "technical_snapshot": {
+    "date": "2023-02-01",
+    "close": 49.79,
+    "rsi_14": 30.95,
+    "sma_20": 55.13,
+    "sma_50": 55.65,
+    "sma_200": 43.86,
+    "volume_ratio_vs_20d": 1.83,
+    "tags": [
+      "bearish_engulfing",
+      "long_term_uptrend",
+      "marubozu",
+      "rsi_oversold",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 49.02,
+      "tags": []
+    }
+  }
+}

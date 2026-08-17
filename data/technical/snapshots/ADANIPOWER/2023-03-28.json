@@ -1,0 +1,16 @@
+{
+  "date": "2023-03-28",
+  "close": 34.77,
+  "rsi_14": 43.62,
+  "sma_20": 37.6,
+  "sma_50": 39.31,
+  "sma_200": 59.13,
+  "volume_ratio_vs_20d": 0.34,
+  "tags": [],
+  "weekly": {
+    "rsi_14": 34.2,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

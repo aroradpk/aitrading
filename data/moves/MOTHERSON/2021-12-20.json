@@ -1,0 +1,29 @@
+{
+  "symbol": "MOTHERSON",
+  "date": "2021-12-20",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": -4.94,
+  "move_1w_pct": -10.62,
+  "direction": "down",
+  "close": 53.67,
+  "volume_ratio_vs_20d": 1.85,
+  "technical_snapshot": {
+    "date": "2021-12-20",
+    "close": 53.67,
+    "rsi_14": 43.18,
+    "sma_20": 58.38,
+    "sma_50": 60.9,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.85,
+    "tags": [
+      "near_support",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 42.5,
+      "tags": []
+    }
+  }
+}

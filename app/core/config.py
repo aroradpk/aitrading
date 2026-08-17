@@ -64,6 +64,7 @@ class BacktestConfig(BaseModel):
 
 class Settings(BaseModel):
     data_dir: str = "data"
+    offline_mode: bool = False
     thresholds: Thresholds = Field(default_factory=Thresholds)
     universe: UniverseConfig = Field(default_factory=UniverseConfig)
     indices: list[IndexConfig] = Field(default_factory=list)

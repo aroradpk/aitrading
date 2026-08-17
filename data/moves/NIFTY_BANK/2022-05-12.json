@@ -1,0 +1,33 @@
+{
+  "symbol": "NIFTY_BANK",
+  "date": "2022-05-12",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": -3.35,
+  "move_1w_pct": -4.83,
+  "direction": "down",
+  "close": 33531.76,
+  "volume_ratio_vs_20d": 2.16,
+  "technical_snapshot": {
+    "date": "2022-05-12",
+    "close": 33531.76,
+    "rsi_14": 21.58,
+    "sma_20": 35835.54,
+    "sma_50": 35871.25,
+    "sma_200": 36893.95,
+    "volume_ratio_vs_20d": 2.16,
+    "tags": [
+      "marubozu",
+      "near_support",
+      "rsi_oversold",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 31.32,
+      "tags": [
+        "weekly_rsi_oversold"
+      ]
+    }
+  }
+}

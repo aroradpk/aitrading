@@ -1,0 +1,35 @@
+{
+  "symbol": "CANBK",
+  "date": "2022-02-02",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 4.21,
+  "move_1w_pct": 21.79,
+  "direction": "up",
+  "close": 45.64,
+  "volume_ratio_vs_20d": 1.81,
+  "technical_snapshot": {
+    "date": "2022-02-02",
+    "close": 45.64,
+    "rsi_14": 73.59,
+    "sma_20": 38.65,
+    "sma_50": 36.26,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.81,
+    "tags": [
+      "above_sma20",
+      "marubozu",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 64.37,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

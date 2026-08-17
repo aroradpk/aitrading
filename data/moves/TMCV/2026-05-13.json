@@ -1,0 +1,30 @@
+{
+  "symbol": "TMCV",
+  "date": "2026-05-13",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": -0.72,
+  "move_1w_pct": -10.59,
+  "direction": "down",
+  "close": 379.96,
+  "volume_ratio_vs_20d": 1.84,
+  "technical_snapshot": {
+    "date": "2026-05-13",
+    "close": 379.96,
+    "rsi_14": 28.08,
+    "sma_20": 417.22,
+    "sma_50": 426.19,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.84,
+    "tags": [
+      "near_support",
+      "rsi_oversold",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 39.75,
+      "tags": []
+    }
+  }
+}

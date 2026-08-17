@@ -10,7 +10,9 @@ Personal stock analysis workstation focused on **technical pattern memory** with
 - Saves **technical snapshots** before each move (RSI, SMA, candlestick tags, S/R, weekly context)
 - Builds a **daily conviction watchlist** by matching today's chart to past big-move setups
 
-## Quick start
+## Quick start (offline — default)
+
+The repo includes a **committed `data/`** snapshot. With `offline_mode: true` in `config/settings.yaml`, nothing is fetched from the web.
 
 ### Windows (PowerShell)
 
@@ -19,25 +21,28 @@ cd D:\aitrading
 git pull origin main
 powershell -ExecutionPolicy Bypass -File .\scripts\windows-install.ps1
 .\.venv\Scripts\Activate.ps1
-python scripts\run_pipeline.py
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
-
-Use **Python 3.12** (recommended). If you only have 3.14, install 3.12 from [python.org](https://www.python.org/downloads/) — `pandas` may not install on 3.14 yet.
-
-If `Activate.ps1` is blocked: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
 
 ### Linux / macOS / Cloud Agent
 
 ```bash
 ./scripts/cloud-agent-install.sh
 source .venv/bin/activate
-pip install -r requirements.txt   # if not already installed
-python scripts/run_pipeline.py      # builds data/ folder (~2-5 min first run)
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-Open **http://localhost:8000** for the dashboard.
+Open **http://localhost:8000** — watchlist, moves, themes, and backtest load from `data/` on disk.
+
+Optional local rebuild (still no network): `python scripts/run_pipeline.py`
+
+### Refresh data from the web
+
+Set `offline_mode: false` in `config/settings.yaml`, then:
+
+```bash
+python scripts/run_pipeline.py   # ~2-5 min; hits Yahoo, NSE, PIB
+```
 
 ## Connect to the local `data/` folder in VS Code
 
@@ -47,7 +52,7 @@ Open **http://localhost:8000** for the dashboard.
 
 ```
 aitrading/
-  data/                  ← all analysis output (gitignored)
+  data/                  ← committed analysis snapshot (browse in VS Code)
     universe/active.json
     ohlcv/daily/*.parquet
     moves/{SYMBOL}/

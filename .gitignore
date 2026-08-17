@@ -3,4 +3,5 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .env
-data/
+# Optional: fresh Screener CSV uploads (committed sample data lives under data/fundamentals/)
+data/fundamentals/import/*.csv

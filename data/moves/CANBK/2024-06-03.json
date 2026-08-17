@@ -1,0 +1,33 @@
+{
+  "symbol": "CANBK",
+  "date": "2024-06-03",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 8.69,
+  "move_1w_pct": 9.62,
+  "direction": "up",
+  "close": 116.69,
+  "volume_ratio_vs_20d": 1.49,
+  "technical_snapshot": {
+    "date": "2024-06-03",
+    "close": 116.69,
+    "rsi_14": 75.61,
+    "sma_20": 105.16,
+    "sma_50": 106.95,
+    "sma_200": 85.22,
+    "volume_ratio_vs_20d": 1.49,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "near_resistance",
+      "rsi_overbought"
+    ],
+    "weekly": {
+      "rsi_14": 58.07,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

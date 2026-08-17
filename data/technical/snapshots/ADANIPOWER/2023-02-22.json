@@ -1,0 +1,21 @@
+{
+  "date": "2023-02-22",
+  "close": 32.49,
+  "rsi_14": 33.12,
+  "sma_20": 36.94,
+  "sma_50": 49.32,
+  "sma_200": 61.7,
+  "volume_ratio_vs_20d": 1.88,
+  "tags": [
+    "bearish_engulfing",
+    "marubozu",
+    "rsi_oversold",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 17.29,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "date": "2022-08-17",
+  "close": 390.34,
+  "rsi_14": 84.4,
+  "sma_20": 351.56,
+  "sma_50": 348.13,
+  "sma_200": 381.68,
+  "volume_ratio_vs_20d": 0.98,
+  "tags": [
+    "above_sma20",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 67.03,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

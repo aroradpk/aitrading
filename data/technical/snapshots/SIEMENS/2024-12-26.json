@@ -1,0 +1,19 @@
+{
+  "date": "2024-12-26",
+  "close": 3903.16,
+  "rsi_14": 17.11,
+  "sma_20": 4398.12,
+  "sma_50": 4232.03,
+  "sma_200": 3951.76,
+  "volume_ratio_vs_20d": 0.65,
+  "tags": [
+    "long_term_uptrend",
+    "near_support",
+    "rsi_oversold",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 48.79,
+    "tags": []
+  }
+}

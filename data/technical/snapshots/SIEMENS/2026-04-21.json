@@ -1,0 +1,22 @@
+{
+  "date": "2026-04-21",
+  "close": 3703.5,
+  "rsi_14": 82.9,
+  "sma_20": 3229.63,
+  "sma_50": 3220.79,
+  "sma_200": 3147.32,
+  "volume_ratio_vs_20d": 0.67,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 73.01,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "symbol": "SOLARINDS",
+  "score": 1.0,
+  "themes": [
+    {
+      "id": "defense_indigenization",
+      "name": "Defense indigenization",
+      "macro": "Rising defense capex, import substitution, aerospace orders",
+      "industry": "Defense & aerospace",
+      "tier": "primary",
+      "symbols": [
+        "HAL",
+        "SOLARINDS"
+      ],
+      "horizontal_enabler": false
+    }
+  ],
+  "scenarios": {
+    "bull": "SOLARINDS benefits from Defense indigenization; order book and capacity expand faster than consensus. Theme score 1.0/10 supports upside if technical setup confirms.",
+    "base": "SOLARINDS tracks sector beta with steady execution on Defense indigenization. Returns depend on delivery vs guidance; no major thesis break.",
+    "bear": "SOLARINDS faces valuation compression or order delays despite Defense indigenization exposure. Macro slowdown or commodity shock could invalidate near-term momentum."
+  },
+  "reasons": [
+    {
+      "layer": "theme",
+      "text": "Theme exposure: Defense indigenization \u2014 Rising defense capex, import substitution, aerospace orders",
+      "weight": "high",
+      "source": "config/themes/graph.json",
+      "theme_id": "defense_indigenization"
+    }
+  ],
+  "generated_at": "2026-08-17T13:01:20.586495+00:00"
+}

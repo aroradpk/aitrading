@@ -1,0 +1,19 @@
+{
+  "date": "2022-11-14",
+  "close": 47.53,
+  "rsi_14": 90.3,
+  "sma_20": 42.95,
+  "sma_50": 48.03,
+  "sma_200": 55.97,
+  "volume_ratio_vs_20d": 1.16,
+  "tags": [
+    "above_sma20",
+    "rsi_overbought"
+  ],
+  "weekly": {
+    "rsi_14": 40.62,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

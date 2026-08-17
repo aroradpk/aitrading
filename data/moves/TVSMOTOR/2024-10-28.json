@@ -1,0 +1,29 @@
+{
+  "symbol": "TVSMOTOR",
+  "date": "2024-10-28",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 0.51,
+  "move_1w_pct": -10.06,
+  "direction": "down",
+  "close": 2443.64,
+  "volume_ratio_vs_20d": 0.81,
+  "technical_snapshot": {
+    "date": "2024-10-28",
+    "close": 2443.64,
+    "rsi_14": 27.06,
+    "sma_20": 2681.04,
+    "sma_50": 2728.1,
+    "sma_200": 2324.99,
+    "volume_ratio_vs_20d": 0.81,
+    "tags": [
+      "long_term_uptrend",
+      "rsi_oversold"
+    ],
+    "weekly": {
+      "rsi_14": 48.27,
+      "tags": []
+    }
+  }
+}

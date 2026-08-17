@@ -1,0 +1,20 @@
+{
+  "date": "2021-11-11",
+  "close": 2514.29,
+  "rsi_14": 51.24,
+  "sma_20": 2459.15,
+  "sma_50": 2192.42,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 3.22,
+  "tags": [
+    "above_sma20",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 69.87,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

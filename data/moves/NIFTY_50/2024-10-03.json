@@ -1,0 +1,31 @@
+{
+  "symbol": "NIFTY_50",
+  "date": "2024-10-03",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": -2.12,
+  "move_1w_pct": -2.9,
+  "direction": "down",
+  "close": 25250.1,
+  "volume_ratio_vs_20d": 1.38,
+  "technical_snapshot": {
+    "date": "2024-10-03",
+    "close": 25250.1,
+    "rsi_14": 46.42,
+    "sma_20": 25508.08,
+    "sma_50": 25021.85,
+    "sma_200": 23098.75,
+    "volume_ratio_vs_20d": 1.38,
+    "tags": [
+      "long_term_uptrend",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 62.91,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

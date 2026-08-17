@@ -1,0 +1,30 @@
+{
+  "symbol": "NIFTY_BANK",
+  "date": "2026-04-08",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": 5.67,
+  "move_1w_pct": 10.8,
+  "direction": "up",
+  "close": 55703.9,
+  "volume_ratio_vs_20d": 1.2,
+  "technical_snapshot": {
+    "date": "2026-04-08",
+    "close": 55703.9,
+    "rsi_14": 54.05,
+    "sma_20": 53669.34,
+    "sma_50": 57551.47,
+    "sma_200": 57269.37,
+    "volume_ratio_vs_20d": 1.2,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "marubozu"
+    ],
+    "weekly": {
+      "rsi_14": 38.79,
+      "tags": []
+    }
+  }
+}

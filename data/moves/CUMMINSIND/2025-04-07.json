@@ -1,0 +1,30 @@
+{
+  "symbol": "CUMMINSIND",
+  "date": "2025-04-07",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": -4.7,
+  "move_1w_pct": -11.16,
+  "direction": "down",
+  "close": 2651.76,
+  "volume_ratio_vs_20d": 1.67,
+  "technical_snapshot": {
+    "date": "2025-04-07",
+    "close": 2651.76,
+    "rsi_14": 41.9,
+    "sma_20": 2869.53,
+    "sma_50": 2797.27,
+    "sma_200": 3320.92,
+    "volume_ratio_vs_20d": 1.67,
+    "tags": [
+      "marubozu",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 35.13,
+      "tags": []
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "date": "2025-09-19",
+  "close": 1030.7,
+  "rsi_14": 88.09,
+  "sma_20": 955.63,
+  "sma_50": 973.56,
+  "sma_200": 977.88,
+  "volume_ratio_vs_20d": 8.65,
+  "tags": [
+    "above_sma20",
+    "rsi_overbought",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 54.24,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

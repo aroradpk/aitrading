@@ -1,0 +1,20 @@
+{
+  "date": "2024-11-26",
+  "close": 600.75,
+  "rsi_14": 21.61,
+  "sma_20": 881.68,
+  "sma_50": 952.6,
+  "sma_200": 1026.35,
+  "volume_ratio_vs_20d": 1.43,
+  "tags": [
+    "marubozu",
+    "near_support",
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 20.89,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

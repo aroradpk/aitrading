@@ -1,0 +1,35 @@
+{
+  "symbol": "SOLARINDS",
+  "date": "2026-05-19",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 0.54,
+  "move_1w_pct": 16.24,
+  "direction": "up",
+  "close": 18105.3,
+  "volume_ratio_vs_20d": 1.61,
+  "technical_snapshot": {
+    "date": "2026-05-19",
+    "close": 18105.3,
+    "rsi_14": 81.81,
+    "sma_20": 15974.46,
+    "sma_50": 14719.28,
+    "sma_200": 13884.57,
+    "volume_ratio_vs_20d": 1.61,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 73.91,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2022-09-27",
+  "close": 3606.5,
+  "rsi_14": 36.89,
+  "sma_20": 3931.56,
+  "sma_50": 3582.47,
+  "sma_200": 2543.3,
+  "volume_ratio_vs_20d": 0.75,
+  "tags": [
+    "long_term_uptrend",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 79.91,
+    "tags": []
+  }
+}

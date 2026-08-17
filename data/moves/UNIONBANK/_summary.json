@@ -1,0 +1,4015 @@
+{
+  "symbol": "UNIONBANK",
+  "count": 123,
+  "moves": [
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-09-16",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.31,
+      "move_1w_pct": 5.31,
+      "direction": "up",
+      "close": 30.79,
+      "volume_ratio_vs_20d": 5.48,
+      "technical_snapshot": {
+        "date": "2021-09-16",
+        "close": 30.79,
+        "rsi_14": 77.88,
+        "sma_20": 29.04,
+        "sma_50": null,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 5.48,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-10-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 11.98,
+      "move_1w_pct": 21.81,
+      "direction": "up",
+      "close": 37.25,
+      "volume_ratio_vs_20d": 4.65,
+      "technical_snapshot": {
+        "date": "2021-10-13",
+        "close": 37.25,
+        "rsi_14": 87.75,
+        "sma_20": 30.77,
+        "sma_50": 29.86,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 4.65,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-10-14",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.9,
+      "move_1w_pct": 20.11,
+      "direction": "up",
+      "close": 37.58,
+      "volume_ratio_vs_20d": 2.31,
+      "technical_snapshot": {
+        "date": "2021-10-14",
+        "close": 37.58,
+        "rsi_14": 89.84,
+        "sma_20": 31.11,
+        "sma_50": 29.98,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 2.31,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-10-18",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 9.15,
+      "move_1w_pct": 30.23,
+      "direction": "up",
+      "close": 41.02,
+      "volume_ratio_vs_20d": 2.87,
+      "technical_snapshot": {
+        "date": "2021-10-18",
+        "close": 41.02,
+        "rsi_14": 92.31,
+        "sma_20": 31.65,
+        "sma_50": 30.18,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 2.87,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-10-19",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -7.16,
+      "move_1w_pct": 19.0,
+      "direction": "down",
+      "close": 38.09,
+      "volume_ratio_vs_20d": 1.53,
+      "technical_snapshot": {
+        "date": "2021-10-19",
+        "close": 38.09,
+        "rsi_14": 76.0,
+        "sma_20": 32.11,
+        "sma_50": 30.34,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.53,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-10-20",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.07,
+      "move_1w_pct": 20.3,
+      "direction": "up",
+      "close": 40.01,
+      "volume_ratio_vs_20d": 2.14,
+      "technical_snapshot": {
+        "date": "2021-10-20",
+        "close": 40.01,
+        "rsi_14": 77.03,
+        "sma_20": 32.64,
+        "sma_50": 30.54,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 2.14,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-10-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.18,
+      "move_1w_pct": 14.08,
+      "direction": "up",
+      "close": 42.49,
+      "volume_ratio_vs_20d": 2.15,
+      "technical_snapshot": {
+        "date": "2021-10-21",
+        "close": 42.49,
+        "rsi_14": 80.38,
+        "sma_20": 33.3,
+        "sma_50": 30.79,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 2.15,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": null,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-10-28",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -7.52,
+      "move_1w_pct": -7.7,
+      "direction": "down",
+      "close": 39.22,
+      "volume_ratio_vs_20d": 0.68,
+      "technical_snapshot": {
+        "date": "2021-10-28",
+        "close": 39.22,
+        "rsi_14": 66.38,
+        "sma_20": 36.13,
+        "sma_50": 31.94,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.68,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 70.32,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-11-02",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.68,
+      "move_1w_pct": 2.18,
+      "direction": "up",
+      "close": 41.36,
+      "volume_ratio_vs_20d": 0.88,
+      "technical_snapshot": {
+        "date": "2021-11-02",
+        "close": 41.36,
+        "rsi_14": 65.95,
+        "sma_20": 37.46,
+        "sma_50": 32.61,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.88,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 71.8,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-11-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 9.46,
+      "move_1w_pct": 16.58,
+      "direction": "up",
+      "close": 45.13,
+      "volume_ratio_vs_20d": 1.52,
+      "technical_snapshot": {
+        "date": "2021-11-08",
+        "close": 45.13,
+        "rsi_14": 58.45,
+        "sma_20": 39.12,
+        "sma_50": 33.46,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.52,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 77.76,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-11-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.46,
+      "move_1w_pct": 15.86,
+      "direction": "up",
+      "close": 45.34,
+      "volume_ratio_vs_20d": 0.96,
+      "technical_snapshot": {
+        "date": "2021-11-09",
+        "close": 45.34,
+        "rsi_14": 66.8,
+        "sma_20": 39.82,
+        "sma_50": 33.8,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.96,
+        "tags": [
+          "above_sma20",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 77.93,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-11-16",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -3.9,
+      "move_1w_pct": -13.32,
+      "direction": "down",
+      "close": 39.3,
+      "volume_ratio_vs_20d": 0.55,
+      "technical_snapshot": {
+        "date": "2021-11-16",
+        "close": 39.3,
+        "rsi_14": 47.32,
+        "sma_20": 41.13,
+        "sma_50": 35.01,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.55,
+        "tags": [
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 69.39,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-11-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.5,
+      "move_1w_pct": -12.3,
+      "direction": "down",
+      "close": 36.79,
+      "volume_ratio_vs_20d": 0.73,
+      "technical_snapshot": {
+        "date": "2021-11-22",
+        "close": 36.79,
+        "rsi_14": 45.09,
+        "sma_20": 40.9,
+        "sma_50": 35.56,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.73,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 66.15,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-11-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.96,
+      "move_1w_pct": -3.79,
+      "direction": "up",
+      "close": 39.34,
+      "volume_ratio_vs_20d": 1.0,
+      "technical_snapshot": {
+        "date": "2021-11-23",
+        "close": 39.34,
+        "rsi_14": 50.48,
+        "sma_20": 40.81,
+        "sma_50": 35.77,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.0,
+        "tags": [
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 73.1,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-12-01",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.7,
+      "move_1w_pct": -1.84,
+      "direction": "up",
+      "close": 38.13,
+      "volume_ratio_vs_20d": 0.94,
+      "technical_snapshot": {
+        "date": "2021-12-01",
+        "close": 38.13,
+        "rsi_14": 32.82,
+        "sma_20": 40.0,
+        "sma_50": 36.71,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.94,
+        "tags": [
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 66.97,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-12-20",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -4.54,
+      "move_1w_pct": -11.74,
+      "direction": "down",
+      "close": 35.32,
+      "volume_ratio_vs_20d": 1.13,
+      "technical_snapshot": {
+        "date": "2021-12-20",
+        "close": 35.32,
+        "rsi_14": 47.08,
+        "sma_20": 38.39,
+        "sma_50": 39.0,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.13,
+        "tags": [
+          "marubozu",
+          "near_support"
+        ],
+        "weekly": {
+          "rsi_14": 57.65,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2021-12-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.71,
+      "move_1w_pct": -10.92,
+      "direction": "down",
+      "close": 35.57,
+      "volume_ratio_vs_20d": 0.88,
+      "technical_snapshot": {
+        "date": "2021-12-21",
+        "close": 35.57,
+        "rsi_14": 38.49,
+        "sma_20": 38.2,
+        "sma_50": 39.09,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.88,
+        "tags": [],
+        "weekly": {
+          "rsi_14": 58.08,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-01-27",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 8.91,
+      "move_1w_pct": 3.22,
+      "direction": "up",
+      "close": 38.97,
+      "volume_ratio_vs_20d": 2.96,
+      "technical_snapshot": {
+        "date": "2022-01-27",
+        "close": 38.97,
+        "rsi_14": 50.97,
+        "sma_20": 37.54,
+        "sma_50": 37.79,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 2.96,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 45.73,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-02-01",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.79,
+      "move_1w_pct": 10.44,
+      "direction": "up",
+      "close": 39.05,
+      "volume_ratio_vs_20d": 2.06,
+      "technical_snapshot": {
+        "date": "2022-02-01",
+        "close": 39.05,
+        "rsi_14": 55.6,
+        "sma_20": 37.99,
+        "sma_50": 37.84,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 2.06,
+        "tags": [
+          "above_sma20",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 50.68,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-02-02",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.98,
+      "move_1w_pct": 16.76,
+      "direction": "up",
+      "close": 41.78,
+      "volume_ratio_vs_20d": 2.58,
+      "technical_snapshot": {
+        "date": "2022-02-02",
+        "close": 41.78,
+        "rsi_14": 64.45,
+        "sma_20": 38.22,
+        "sma_50": 37.89,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 2.58,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 55.8,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-02-14",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -7.45,
+      "move_1w_pct": -9.98,
+      "direction": "down",
+      "close": 35.95,
+      "volume_ratio_vs_20d": 0.98,
+      "technical_snapshot": {
+        "date": "2022-02-14",
+        "close": 35.95,
+        "rsi_14": 52.11,
+        "sma_20": 38.61,
+        "sma_50": 38.14,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.98,
+        "tags": [
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 38.45,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-02-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -9.52,
+      "move_1w_pct": -12.0,
+      "direction": "down",
+      "close": 32.3,
+      "volume_ratio_vs_20d": 1.2,
+      "technical_snapshot": {
+        "date": "2022-02-24",
+        "close": 32.3,
+        "rsi_14": 20.13,
+        "sma_20": 37.97,
+        "sma_50": 37.53,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.2,
+        "tags": [
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 36.96,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-03-07",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.24,
+      "move_1w_pct": -5.24,
+      "direction": "down",
+      "close": 31.88,
+      "volume_ratio_vs_20d": 0.8,
+      "technical_snapshot": {
+        "date": "2022-03-07",
+        "close": 31.88,
+        "rsi_14": 35.26,
+        "sma_20": 36.04,
+        "sma_50": 37.16,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.8,
+        "tags": [
+          "marubozu",
+          "near_support"
+        ],
+        "weekly": {
+          "rsi_14": 35.41,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-04-01",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.2,
+      "move_1w_pct": 7.03,
+      "direction": "up",
+      "close": 34.48,
+      "volume_ratio_vs_20d": 1.35,
+      "technical_snapshot": {
+        "date": "2022-04-01",
+        "close": 34.48,
+        "rsi_14": 58.0,
+        "sma_20": 32.89,
+        "sma_50": 35.52,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.35,
+        "tags": [
+          "above_sma20",
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 45.31,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-04-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.95,
+      "move_1w_pct": 15.89,
+      "direction": "up",
+      "close": 36.41,
+      "volume_ratio_vs_20d": 1.57,
+      "technical_snapshot": {
+        "date": "2022-04-05",
+        "close": 36.41,
+        "rsi_14": 70.81,
+        "sma_20": 33.19,
+        "sma_50": 35.44,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.57,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 50.0,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-04-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.58,
+      "move_1w_pct": 12.36,
+      "direction": "up",
+      "close": 36.62,
+      "volume_ratio_vs_20d": 1.69,
+      "technical_snapshot": {
+        "date": "2022-04-06",
+        "close": 36.62,
+        "rsi_14": 70.17,
+        "sma_20": 33.41,
+        "sma_50": 35.44,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.69,
+        "tags": [
+          "above_sma20",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 50.53,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-04-07",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.72,
+      "move_1w_pct": 10.85,
+      "direction": "up",
+      "close": 35.99,
+      "volume_ratio_vs_20d": 1.81,
+      "technical_snapshot": {
+        "date": "2022-04-07",
+        "close": 35.99,
+        "rsi_14": 65.13,
+        "sma_20": 33.55,
+        "sma_50": 35.45,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.81,
+        "tags": [
+          "above_sma20",
+          "bearish_engulfing",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 48.9,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-05-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.11,
+      "move_1w_pct": 1.26,
+      "direction": "up",
+      "close": 30.33,
+      "volume_ratio_vs_20d": 3.13,
+      "technical_snapshot": {
+        "date": "2022-05-13",
+        "close": 30.33,
+        "rsi_14": 31.03,
+        "sma_20": 32.28,
+        "sma_50": 33.18,
+        "sma_200": 34.75,
+        "volume_ratio_vs_20d": 3.13,
+        "tags": [
+          "rsi_oversold",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 25.47,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-05-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.72,
+      "move_1w_pct": 3.84,
+      "direction": "up",
+      "close": 31.79,
+      "volume_ratio_vs_20d": 1.54,
+      "technical_snapshot": {
+        "date": "2022-05-30",
+        "close": 31.79,
+        "rsi_14": 57.37,
+        "sma_20": 30.38,
+        "sma_50": 32.53,
+        "sma_200": 34.74,
+        "volume_ratio_vs_20d": 1.54,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 44.09,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-06-01",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.38,
+      "move_1w_pct": 11.03,
+      "direction": "up",
+      "close": 32.51,
+      "volume_ratio_vs_20d": 1.07,
+      "technical_snapshot": {
+        "date": "2022-06-01",
+        "close": 32.51,
+        "rsi_14": 72.32,
+        "sma_20": 30.41,
+        "sma_50": 32.47,
+        "sma_200": 34.77,
+        "volume_ratio_vs_20d": 1.07,
+        "tags": [
+          "above_sma20",
+          "bullish_engulfing",
+          "marubozu",
+          "rsi_overbought"
+        ],
+        "weekly": {
+          "rsi_14": 46.53,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-06-02",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.68,
+      "move_1w_pct": 10.67,
+      "direction": "up",
+      "close": 33.05,
+      "volume_ratio_vs_20d": 1.25,
+      "technical_snapshot": {
+        "date": "2022-06-02",
+        "close": 33.05,
+        "rsi_14": 67.2,
+        "sma_20": 30.52,
+        "sma_50": 32.47,
+        "sma_200": 34.79,
+        "volume_ratio_vs_20d": 1.25,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought"
+        ],
+        "weekly": {
+          "rsi_14": 48.26,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-10-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 4.02,
+      "move_1w_pct": 14.04,
+      "direction": "up",
+      "close": 43.52,
+      "volume_ratio_vs_20d": 4.22,
+      "technical_snapshot": {
+        "date": "2022-10-21",
+        "close": 43.52,
+        "rsi_14": 68.0,
+        "sma_20": 39.24,
+        "sma_50": 38.48,
+        "sma_200": 34.98,
+        "volume_ratio_vs_20d": 4.22,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 81.55,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-10-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.61,
+      "move_1w_pct": 11.15,
+      "direction": "up",
+      "close": 43.26,
+      "volume_ratio_vs_20d": 0.61,
+      "technical_snapshot": {
+        "date": "2022-10-24",
+        "close": 43.26,
+        "rsi_14": 75.22,
+        "sma_20": 39.45,
+        "sma_50": 38.66,
+        "sma_200": 35.01,
+        "volume_ratio_vs_20d": 0.61,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 78.55,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-10-25",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.73,
+      "move_1w_pct": 12.4,
+      "direction": "up",
+      "close": 45.74,
+      "volume_ratio_vs_20d": 3.58,
+      "technical_snapshot": {
+        "date": "2022-10-25",
+        "close": 45.74,
+        "rsi_14": 77.95,
+        "sma_20": 39.86,
+        "sma_50": 38.86,
+        "sma_200": 35.05,
+        "volume_ratio_vs_20d": 3.58,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 82.25,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-10-27",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.42,
+      "move_1w_pct": 14.5,
+      "direction": "up",
+      "close": 46.84,
+      "volume_ratio_vs_20d": 2.28,
+      "technical_snapshot": {
+        "date": "2022-10-27",
+        "close": 46.84,
+        "rsi_14": 79.64,
+        "sma_20": 40.3,
+        "sma_50": 39.09,
+        "sma_200": 35.09,
+        "volume_ratio_vs_20d": 2.28,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 83.26,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-10-28",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.42,
+      "move_1w_pct": 13.54,
+      "direction": "up",
+      "close": 47.51,
+      "volume_ratio_vs_20d": 2.04,
+      "technical_snapshot": {
+        "date": "2022-10-28",
+        "close": 47.51,
+        "rsi_14": 81.53,
+        "sma_20": 40.81,
+        "sma_50": 39.33,
+        "sma_200": 35.14,
+        "volume_ratio_vs_20d": 2.04,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 83.81,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-11-07",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.97,
+      "move_1w_pct": 8.63,
+      "direction": "up",
+      "close": 51.85,
+      "volume_ratio_vs_20d": 2.31,
+      "technical_snapshot": {
+        "date": "2022-11-07",
+        "close": 51.85,
+        "rsi_14": 88.02,
+        "sma_20": 43.5,
+        "sma_50": 40.82,
+        "sma_200": 35.43,
+        "volume_ratio_vs_20d": 2.31,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 86.32,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-11-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 9.39,
+      "move_1w_pct": 21.77,
+      "direction": "up",
+      "close": 56.72,
+      "volume_ratio_vs_20d": 4.26,
+      "technical_snapshot": {
+        "date": "2022-11-09",
+        "close": 56.72,
+        "rsi_14": 89.87,
+        "sma_20": 44.39,
+        "sma_50": 41.21,
+        "sma_200": 35.52,
+        "volume_ratio_vs_20d": 4.26,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 88.63,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-11-10",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 4.37,
+      "move_1w_pct": 28.81,
+      "direction": "up",
+      "close": 59.19,
+      "volume_ratio_vs_20d": 3.38,
+      "technical_snapshot": {
+        "date": "2022-11-10",
+        "close": 59.19,
+        "rsi_14": 90.89,
+        "sma_20": 45.45,
+        "sma_50": 41.64,
+        "sma_200": 35.63,
+        "volume_ratio_vs_20d": 3.38,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 89.53,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-11-11",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.0,
+      "move_1w_pct": 24.03,
+      "direction": "up",
+      "close": 59.19,
+      "volume_ratio_vs_20d": 1.67,
+      "technical_snapshot": {
+        "date": "2022-11-11",
+        "close": 59.19,
+        "rsi_14": 90.5,
+        "sma_20": 46.47,
+        "sma_50": 42.09,
+        "sma_200": 35.74,
+        "volume_ratio_vs_20d": 1.67,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 89.53,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-11-14",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -3.14,
+      "move_1w_pct": 17.19,
+      "direction": "up",
+      "close": 57.34,
+      "volume_ratio_vs_20d": 0.76,
+      "technical_snapshot": {
+        "date": "2022-11-14",
+        "close": 57.34,
+        "rsi_14": 81.97,
+        "sma_20": 47.43,
+        "sma_50": 42.48,
+        "sma_200": 35.84,
+        "volume_ratio_vs_20d": 0.76,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 84.07,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-11-17",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.36,
+      "move_1w_pct": 5.09,
+      "direction": "up",
+      "close": 62.21,
+      "volume_ratio_vs_20d": 1.55,
+      "technical_snapshot": {
+        "date": "2022-11-17",
+        "close": 62.21,
+        "rsi_14": 80.07,
+        "sma_20": 50.37,
+        "sma_50": 43.75,
+        "sma_200": 36.18,
+        "volume_ratio_vs_20d": 1.55,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 90.19,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-11-18",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.2,
+      "move_1w_pct": 10.55,
+      "direction": "up",
+      "close": 65.44,
+      "volume_ratio_vs_20d": 1.92,
+      "technical_snapshot": {
+        "date": "2022-11-18",
+        "close": 65.44,
+        "rsi_14": 81.89,
+        "sma_20": 51.6,
+        "sma_50": 44.3,
+        "sma_200": 36.32,
+        "volume_ratio_vs_20d": 1.92,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 91.05,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-11-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.04,
+      "move_1w_pct": 17.61,
+      "direction": "up",
+      "close": 67.43,
+      "volume_ratio_vs_20d": 1.35,
+      "technical_snapshot": {
+        "date": "2022-11-21",
+        "close": 67.43,
+        "rsi_14": 82.96,
+        "sma_20": 52.87,
+        "sma_50": 44.9,
+        "sma_200": 36.45,
+        "volume_ratio_vs_20d": 1.35,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 91.46,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-11-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.79,
+      "move_1w_pct": 21.63,
+      "direction": "up",
+      "close": 67.96,
+      "volume_ratio_vs_20d": 1.11,
+      "technical_snapshot": {
+        "date": "2022-11-22",
+        "close": 67.96,
+        "rsi_14": 86.54,
+        "sma_20": 54.1,
+        "sma_50": 45.48,
+        "sma_200": 36.6,
+        "volume_ratio_vs_20d": 1.11,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 91.58,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-11-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.24,
+      "move_1w_pct": 14.76,
+      "direction": "up",
+      "close": 67.12,
+      "volume_ratio_vs_20d": 0.58,
+      "technical_snapshot": {
+        "date": "2022-11-23",
+        "close": 67.12,
+        "rsi_14": 85.89,
+        "sma_20": 55.29,
+        "sma_50": 46.06,
+        "sma_200": 36.74,
+        "volume_ratio_vs_20d": 0.58,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 91.4,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-11-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.69,
+      "move_1w_pct": 11.89,
+      "direction": "up",
+      "close": 69.6,
+      "volume_ratio_vs_20d": 0.86,
+      "technical_snapshot": {
+        "date": "2022-11-24",
+        "close": 69.6,
+        "rsi_14": 86.22,
+        "sma_20": 56.48,
+        "sma_50": 46.65,
+        "sma_200": 36.88,
+        "volume_ratio_vs_20d": 0.86,
+        "tags": [
+          "above_sma20",
+          "bullish_engulfing",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 91.92,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-12-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.33,
+      "move_1w_pct": 7.24,
+      "direction": "up",
+      "close": 78.06,
+      "volume_ratio_vs_20d": 1.59,
+      "technical_snapshot": {
+        "date": "2022-12-06",
+        "close": 78.06,
+        "rsi_14": 87.33,
+        "sma_20": 66.3,
+        "sma_50": 51.66,
+        "sma_200": 38.2,
+        "volume_ratio_vs_20d": 1.59,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 93.11,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-12-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.42,
+      "move_1w_pct": 2.01,
+      "direction": "down",
+      "close": 74.12,
+      "volume_ratio_vs_20d": 1.39,
+      "technical_snapshot": {
+        "date": "2022-12-09",
+        "close": 74.12,
+        "rsi_14": 63.75,
+        "sma_20": 69.01,
+        "sma_50": 53.95,
+        "sma_200": 38.79,
+        "volume_ratio_vs_20d": 1.39,
+        "tags": [
+          "above_sma20",
+          "bearish_engulfing",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 92.47,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-12-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.02,
+      "move_1w_pct": 6.35,
+      "direction": "up",
+      "close": 83.01,
+      "volume_ratio_vs_20d": 1.64,
+      "technical_snapshot": {
+        "date": "2022-12-13",
+        "close": 83.01,
+        "rsi_14": 74.97,
+        "sma_20": 71.38,
+        "sma_50": 55.64,
+        "sma_200": 39.24,
+        "volume_ratio_vs_20d": 1.64,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 93.65,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-12-16",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.94,
+      "move_1w_pct": 1.19,
+      "direction": "down",
+      "close": 75.0,
+      "volume_ratio_vs_20d": 1.06,
+      "technical_snapshot": {
+        "date": "2022-12-16",
+        "close": 75.0,
+        "rsi_14": 56.86,
+        "sma_20": 73.98,
+        "sma_50": 58.07,
+        "sma_200": 39.92,
+        "volume_ratio_vs_20d": 1.06,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 92.46,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-12-20",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.47,
+      "move_1w_pct": -10.56,
+      "direction": "down",
+      "close": 74.25,
+      "volume_ratio_vs_20d": 0.61,
+      "technical_snapshot": {
+        "date": "2022-12-20",
+        "close": 74.25,
+        "rsi_14": 53.01,
+        "sma_20": 74.7,
+        "sma_50": 59.47,
+        "sma_200": 40.33,
+        "volume_ratio_vs_20d": 0.61,
+        "tags": [
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 90.34,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-12-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -3.16,
+      "move_1w_pct": -13.89,
+      "direction": "down",
+      "close": 71.9,
+      "volume_ratio_vs_20d": 0.97,
+      "technical_snapshot": {
+        "date": "2022-12-21",
+        "close": 71.9,
+        "rsi_14": 49.62,
+        "sma_20": 74.93,
+        "sma_50": 60.14,
+        "sma_200": 40.51,
+        "volume_ratio_vs_20d": 0.97,
+        "tags": [
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 85.48,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-12-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.22,
+      "move_1w_pct": -15.44,
+      "direction": "down",
+      "close": 67.43,
+      "volume_ratio_vs_20d": 1.17,
+      "technical_snapshot": {
+        "date": "2022-12-22",
+        "close": 67.43,
+        "rsi_14": 43.23,
+        "sma_20": 74.83,
+        "sma_50": 60.72,
+        "sma_200": 40.68,
+        "volume_ratio_vs_20d": 1.17,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 77.53,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-12-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -11.29,
+      "move_1w_pct": -20.25,
+      "direction": "down",
+      "close": 59.81,
+      "volume_ratio_vs_20d": 1.48,
+      "technical_snapshot": {
+        "date": "2022-12-23",
+        "close": 59.81,
+        "rsi_14": 35.05,
+        "sma_20": 74.43,
+        "sma_50": 61.14,
+        "sma_200": 40.81,
+        "volume_ratio_vs_20d": 1.48,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "near_support",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 66.93,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-12-26",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 18.8,
+      "move_1w_pct": -5.7,
+      "direction": "up",
+      "close": 71.06,
+      "volume_ratio_vs_20d": 2.01,
+      "technical_snapshot": {
+        "date": "2022-12-26",
+        "close": 71.06,
+        "rsi_14": 43.28,
+        "sma_20": 74.47,
+        "sma_50": 61.8,
+        "sma_200": 41.01,
+        "volume_ratio_vs_20d": 2.01,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 74.56,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2022-12-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.08,
+      "move_1w_pct": 19.02,
+      "direction": "up",
+      "close": 71.19,
+      "volume_ratio_vs_20d": 0.8,
+      "technical_snapshot": {
+        "date": "2022-12-30",
+        "close": 71.19,
+        "rsi_14": 43.64,
+        "sma_20": 74.16,
+        "sma_50": 64.31,
+        "sma_200": 41.76,
+        "volume_ratio_vs_20d": 0.8,
+        "tags": [
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 74.61,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-01-16",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.33,
+      "move_1w_pct": 2.41,
+      "direction": "up",
+      "close": 73.45,
+      "volume_ratio_vs_20d": 1.06,
+      "technical_snapshot": {
+        "date": "2023-01-16",
+        "close": 73.45,
+        "rsi_14": 50.53,
+        "sma_20": 70.55,
+        "sma_50": 69.85,
+        "sma_200": 43.87,
+        "volume_ratio_vs_20d": 1.06,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 75.46,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-02-01",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.8,
+      "move_1w_pct": -8.31,
+      "direction": "down",
+      "close": 65.48,
+      "volume_ratio_vs_20d": 1.13,
+      "technical_snapshot": {
+        "date": "2023-02-01",
+        "close": 65.48,
+        "rsi_14": 40.09,
+        "sma_20": 70.34,
+        "sma_50": 71.99,
+        "sma_200": 45.78,
+        "volume_ratio_vs_20d": 1.13,
+        "tags": [
+          "bearish_engulfing",
+          "long_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 63.85,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-03-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 8.3,
+      "move_1w_pct": 8.3,
+      "direction": "up",
+      "close": 64.11,
+      "volume_ratio_vs_20d": 4.2,
+      "technical_snapshot": {
+        "date": "2023-03-03",
+        "close": 64.11,
+        "rsi_14": 53.17,
+        "sma_20": 62.31,
+        "sma_50": 66.86,
+        "sma_200": 49.15,
+        "volume_ratio_vs_20d": 4.2,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 46.75,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-03-15",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.91,
+      "move_1w_pct": -10.63,
+      "direction": "down",
+      "close": 58.09,
+      "volume_ratio_vs_20d": 0.93,
+      "technical_snapshot": {
+        "date": "2023-03-15",
+        "close": 58.09,
+        "rsi_14": 44.44,
+        "sma_20": 61.43,
+        "sma_50": 65.79,
+        "sma_200": 50.26,
+        "volume_ratio_vs_20d": 0.93,
+        "tags": [
+          "long_term_uptrend",
+          "near_support"
+        ],
+        "weekly": {
+          "rsi_14": 35.57,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-03-16",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.68,
+      "move_1w_pct": -10.73,
+      "direction": "down",
+      "close": 57.11,
+      "volume_ratio_vs_20d": 1.37,
+      "technical_snapshot": {
+        "date": "2023-03-16",
+        "close": 57.11,
+        "rsi_14": 40.64,
+        "sma_20": 61.09,
+        "sma_50": 65.48,
+        "sma_200": 50.39,
+        "volume_ratio_vs_20d": 1.37,
+        "tags": [
+          "long_term_uptrend",
+          "near_support"
+        ],
+        "weekly": {
+          "rsi_14": 34.95,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-03-29",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.79,
+      "move_1w_pct": 0.91,
+      "direction": "up",
+      "close": 58.8,
+      "volume_ratio_vs_20d": 1.12,
+      "technical_snapshot": {
+        "date": "2023-03-29",
+        "close": 58.8,
+        "rsi_14": 35.84,
+        "sma_20": 59.22,
+        "sma_50": 62.94,
+        "sma_200": 51.5,
+        "volume_ratio_vs_20d": 1.12,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 48.84,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-04-18",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.68,
+      "move_1w_pct": 10.36,
+      "direction": "up",
+      "close": 65.08,
+      "volume_ratio_vs_20d": 1.27,
+      "technical_snapshot": {
+        "date": "2023-04-18",
+        "close": 65.08,
+        "rsi_14": 74.11,
+        "sma_20": 58.83,
+        "sma_50": 61.04,
+        "sma_200": 53.03,
+        "volume_ratio_vs_20d": 1.27,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought"
+        ],
+        "weekly": {
+          "rsi_14": 43.68,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-07-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.74,
+      "move_1w_pct": 11.0,
+      "direction": "up",
+      "close": 67.47,
+      "volume_ratio_vs_20d": 3.42,
+      "technical_snapshot": {
+        "date": "2023-07-04",
+        "close": 67.47,
+        "rsi_14": 64.47,
+        "sma_20": 63.34,
+        "sma_50": 63.71,
+        "sma_200": 60.8,
+        "volume_ratio_vs_20d": 3.42,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 65.39,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-07-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.9,
+      "move_1w_pct": 10.22,
+      "direction": "up",
+      "close": 68.76,
+      "volume_ratio_vs_20d": 2.33,
+      "technical_snapshot": {
+        "date": "2023-07-05",
+        "close": 68.76,
+        "rsi_14": 69.02,
+        "sma_20": 63.59,
+        "sma_50": 63.79,
+        "sma_200": 60.94,
+        "volume_ratio_vs_20d": 2.33,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 66.92,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-07-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.64,
+      "move_1w_pct": 12.73,
+      "direction": "up",
+      "close": 70.57,
+      "volume_ratio_vs_20d": 2.42,
+      "technical_snapshot": {
+        "date": "2023-07-06",
+        "close": 70.57,
+        "rsi_14": 81.19,
+        "sma_20": 63.91,
+        "sma_50": 63.89,
+        "sma_200": 61.08,
+        "volume_ratio_vs_20d": 2.42,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 68.87,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-07-07",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.38,
+      "move_1w_pct": 10.73,
+      "direction": "up",
+      "close": 70.84,
+      "volume_ratio_vs_20d": 1.96,
+      "technical_snapshot": {
+        "date": "2023-07-07",
+        "close": 70.84,
+        "rsi_14": 80.48,
+        "sma_20": 64.28,
+        "sma_50": 63.98,
+        "sma_200": 61.23,
+        "volume_ratio_vs_20d": 1.96,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 69.13,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-07-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.97,
+      "move_1w_pct": 11.47,
+      "direction": "up",
+      "close": 80.0,
+      "volume_ratio_vs_20d": 2.79,
+      "technical_snapshot": {
+        "date": "2023-07-21",
+        "close": 80.0,
+        "rsi_14": 92.1,
+        "sma_20": 69.69,
+        "sma_50": 65.6,
+        "sma_200": 62.94,
+        "volume_ratio_vs_20d": 2.79,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 74.38,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-08-29",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.3,
+      "move_1w_pct": -4.17,
+      "direction": "down",
+      "close": 78.94,
+      "volume_ratio_vs_20d": 4.3,
+      "technical_snapshot": {
+        "date": "2023-08-29",
+        "close": 78.94,
+        "rsi_14": 42.32,
+        "sma_20": 82.84,
+        "sma_50": 75.68,
+        "sma_200": 68.03,
+        "volume_ratio_vs_20d": 4.3,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 70.06,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-09-18",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.91,
+      "move_1w_pct": 10.19,
+      "direction": "up",
+      "close": 90.52,
+      "volume_ratio_vs_20d": 3.88,
+      "technical_snapshot": {
+        "date": "2023-09-18",
+        "close": 90.52,
+        "rsi_14": 76.3,
+        "sma_20": 82.4,
+        "sma_50": 80.62,
+        "sma_200": 69.28,
+        "volume_ratio_vs_20d": 3.88,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 77.44,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-09-20",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.71,
+      "move_1w_pct": 13.7,
+      "direction": "up",
+      "close": 91.16,
+      "volume_ratio_vs_20d": 1.97,
+      "technical_snapshot": {
+        "date": "2023-09-20",
+        "close": 91.16,
+        "rsi_14": 76.3,
+        "sma_20": 82.84,
+        "sma_50": 81.0,
+        "sma_200": 69.38,
+        "volume_ratio_vs_20d": 1.97,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 77.72,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-09-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.65,
+      "move_1w_pct": 7.78,
+      "direction": "up",
+      "close": 93.22,
+      "volume_ratio_vs_20d": 2.17,
+      "technical_snapshot": {
+        "date": "2023-09-22",
+        "close": 93.22,
+        "rsi_14": 75.04,
+        "sma_20": 83.51,
+        "sma_50": 81.74,
+        "sma_200": 69.56,
+        "volume_ratio_vs_20d": 2.17,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 78.59,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-10-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.46,
+      "move_1w_pct": 9.85,
+      "direction": "up",
+      "close": 102.61,
+      "volume_ratio_vs_20d": 1.13,
+      "technical_snapshot": {
+        "date": "2023-10-03",
+        "close": 102.61,
+        "rsi_14": 79.6,
+        "sma_20": 88.01,
+        "sma_50": 84.33,
+        "sma_200": 70.13,
+        "volume_ratio_vs_20d": 1.13,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 83.6,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-10-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.65,
+      "move_1w_pct": -6.54,
+      "direction": "down",
+      "close": 90.94,
+      "volume_ratio_vs_20d": 0.64,
+      "technical_snapshot": {
+        "date": "2023-10-09",
+        "close": 90.94,
+        "rsi_14": 54.08,
+        "sma_20": 90.93,
+        "sma_50": 85.65,
+        "sma_200": 70.44,
+        "volume_ratio_vs_20d": 0.64,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 69.45,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-10-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.08,
+      "move_1w_pct": -9.57,
+      "direction": "down",
+      "close": 86.95,
+      "volume_ratio_vs_20d": 1.0,
+      "technical_snapshot": {
+        "date": "2023-10-23",
+        "close": 86.95,
+        "rsi_14": 23.53,
+        "sma_20": 94.72,
+        "sma_50": 88.17,
+        "sma_200": 71.62,
+        "volume_ratio_vs_20d": 1.0,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 57.47,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-10-27",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.44,
+      "move_1w_pct": -2.54,
+      "direction": "up",
+      "close": 91.44,
+      "volume_ratio_vs_20d": 1.15,
+      "technical_snapshot": {
+        "date": "2023-10-27",
+        "close": 91.44,
+        "rsi_14": 41.32,
+        "sma_20": 94.07,
+        "sma_50": 88.47,
+        "sma_200": 71.86,
+        "volume_ratio_vs_20d": 1.15,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 63.61,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-11-02",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.52,
+      "move_1w_pct": 11.72,
+      "direction": "up",
+      "close": 96.88,
+      "volume_ratio_vs_20d": 1.2,
+      "technical_snapshot": {
+        "date": "2023-11-02",
+        "close": 96.88,
+        "rsi_14": 53.89,
+        "sma_20": 93.2,
+        "sma_50": 89.12,
+        "sma_200": 72.32,
+        "volume_ratio_vs_20d": 1.2,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 66.06,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2023-11-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.69,
+      "move_1w_pct": 7.85,
+      "direction": "up",
+      "close": 102.51,
+      "volume_ratio_vs_20d": 2.64,
+      "technical_snapshot": {
+        "date": "2023-11-13",
+        "close": 102.51,
+        "rsi_14": 85.56,
+        "sma_20": 93.75,
+        "sma_50": 91.11,
+        "sma_200": 73.2,
+        "volume_ratio_vs_20d": 2.64,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 70.12,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-01-12",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.42,
+      "move_1w_pct": 5.68,
+      "direction": "up",
+      "close": 120.09,
+      "volume_ratio_vs_20d": 2.53,
+      "technical_snapshot": {
+        "date": "2024-01-12",
+        "close": 120.09,
+        "rsi_14": 81.06,
+        "sma_20": 111.55,
+        "sma_50": 105.37,
+        "sma_200": 82.26,
+        "volume_ratio_vs_20d": 2.53,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 71.16,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-01-16",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.38,
+      "move_1w_pct": 10.66,
+      "direction": "up",
+      "close": 124.44,
+      "volume_ratio_vs_20d": 1.93,
+      "technical_snapshot": {
+        "date": "2024-01-16",
+        "close": 124.44,
+        "rsi_14": 87.39,
+        "sma_20": 112.4,
+        "sma_50": 106.48,
+        "sma_200": 82.92,
+        "volume_ratio_vs_20d": 1.93,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 76.0,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-02-12",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.11,
+      "move_1w_pct": -4.77,
+      "direction": "down",
+      "close": 127.91,
+      "volume_ratio_vs_20d": 0.8,
+      "technical_snapshot": {
+        "date": "2024-02-12",
+        "close": 127.91,
+        "rsi_14": 54.76,
+        "sma_20": 128.96,
+        "sma_50": 117.32,
+        "sma_200": 88.85,
+        "volume_ratio_vs_20d": 0.8,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 73.08,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-03-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.08,
+      "move_1w_pct": 8.08,
+      "direction": "up",
+      "close": 144.53,
+      "volume_ratio_vs_20d": 1.63,
+      "technical_snapshot": {
+        "date": "2024-03-05",
+        "close": 144.53,
+        "rsi_14": 71.64,
+        "sma_20": 132.94,
+        "sma_50": 125.13,
+        "sma_200": 94.25,
+        "volume_ratio_vs_20d": 1.63,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 81.68,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-03-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.84,
+      "move_1w_pct": 10.05,
+      "direction": "up",
+      "close": 141.87,
+      "volume_ratio_vs_20d": 0.69,
+      "technical_snapshot": {
+        "date": "2024-03-06",
+        "close": 141.87,
+        "rsi_14": 61.64,
+        "sma_20": 133.32,
+        "sma_50": 125.8,
+        "sma_200": 94.65,
+        "volume_ratio_vs_20d": 0.69,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 80.97,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-03-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.88,
+      "move_1w_pct": -10.35,
+      "direction": "down",
+      "close": 129.56,
+      "volume_ratio_vs_20d": 0.71,
+      "technical_snapshot": {
+        "date": "2024-03-13",
+        "close": 129.56,
+        "rsi_14": 46.4,
+        "sma_20": 134.64,
+        "sma_50": 128.18,
+        "sma_200": 96.17,
+        "volume_ratio_vs_20d": 0.71,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 64.45,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-04-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.04,
+      "move_1w_pct": 0.94,
+      "direction": "up",
+      "close": 137.84,
+      "volume_ratio_vs_20d": 1.9,
+      "technical_snapshot": {
+        "date": "2024-04-22",
+        "close": 137.84,
+        "rsi_14": 45.98,
+        "sma_20": 137.92,
+        "sma_50": 135.75,
+        "sma_200": 105.14,
+        "volume_ratio_vs_20d": 1.9,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 59.11,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-05-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.82,
+      "move_1w_pct": 10.89,
+      "direction": "up",
+      "close": 135.65,
+      "volume_ratio_vs_20d": 1.68,
+      "technical_snapshot": {
+        "date": "2024-05-22",
+        "close": 135.65,
+        "rsi_14": 43.14,
+        "sma_20": 133.2,
+        "sma_50": 136.09,
+        "sma_200": 111.31,
+        "volume_ratio_vs_20d": 1.68,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 51.99,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-05-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.56,
+      "move_1w_pct": 11.23,
+      "direction": "up",
+      "close": 143.24,
+      "volume_ratio_vs_20d": 1.71,
+      "technical_snapshot": {
+        "date": "2024-05-24",
+        "close": 143.24,
+        "rsi_14": 54.05,
+        "sma_20": 133.89,
+        "sma_50": 136.02,
+        "sma_200": 111.92,
+        "volume_ratio_vs_20d": 1.71,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 56.13,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-05-27",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.24,
+      "move_1w_pct": 14.98,
+      "direction": "up",
+      "close": 146.45,
+      "volume_ratio_vs_20d": 1.41,
+      "technical_snapshot": {
+        "date": "2024-05-27",
+        "close": 146.45,
+        "rsi_14": 62.79,
+        "sma_20": 134.35,
+        "sma_50": 136.07,
+        "sma_200": 112.24,
+        "volume_ratio_vs_20d": 1.41,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance"
+        ],
+        "weekly": {
+          "rsi_14": 57.16,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-05-28",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.31,
+      "move_1w_pct": 10.61,
+      "direction": "up",
+      "close": 144.53,
+      "volume_ratio_vs_20d": 1.18,
+      "technical_snapshot": {
+        "date": "2024-05-28",
+        "close": 144.53,
+        "rsi_14": 68.17,
+        "sma_20": 134.67,
+        "sma_50": 136.14,
+        "sma_200": 112.55,
+        "volume_ratio_vs_20d": 1.18,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "rsi_overbought"
+        ],
+        "weekly": {
+          "rsi_14": 56.22,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-06-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.15,
+      "move_1w_pct": 6.25,
+      "direction": "up",
+      "close": 155.6,
+      "volume_ratio_vs_20d": 1.59,
+      "technical_snapshot": {
+        "date": "2024-06-03",
+        "close": 155.6,
+        "rsi_14": 79.47,
+        "sma_20": 135.57,
+        "sma_50": 137.13,
+        "sma_200": 113.86,
+        "volume_ratio_vs_20d": 1.59,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 60.82,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-06-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -18.24,
+      "move_1w_pct": -11.97,
+      "direction": "down",
+      "close": 127.23,
+      "volume_ratio_vs_20d": 2.3,
+      "technical_snapshot": {
+        "date": "2024-06-04",
+        "close": 127.23,
+        "rsi_14": 53.14,
+        "sma_20": 135.17,
+        "sma_50": 136.87,
+        "sma_200": 114.1,
+        "volume_ratio_vs_20d": 2.3,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 46.76,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-06-10",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.53,
+      "move_1w_pct": -13.4,
+      "direction": "down",
+      "close": 134.75,
+      "volume_ratio_vs_20d": 0.63,
+      "technical_snapshot": {
+        "date": "2024-06-10",
+        "close": 134.75,
+        "rsi_14": 52.75,
+        "sma_20": 135.59,
+        "sma_50": 136.7,
+        "sma_200": 115.09,
+        "volume_ratio_vs_20d": 0.63,
+        "tags": [
+          "long_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 45.02,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-08-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.66,
+      "move_1w_pct": -8.13,
+      "direction": "down",
+      "close": 118.12,
+      "volume_ratio_vs_20d": 1.82,
+      "technical_snapshot": {
+        "date": "2024-08-05",
+        "close": 118.12,
+        "rsi_14": 28.26,
+        "sma_20": 125.95,
+        "sma_50": 130.55,
+        "sma_200": 122.83,
+        "volume_ratio_vs_20d": 1.82,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "near_support",
+          "rsi_oversold",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 34.47,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-08-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.45,
+      "move_1w_pct": -10.99,
+      "direction": "down",
+      "close": 113.12,
+      "volume_ratio_vs_20d": 1.01,
+      "technical_snapshot": {
+        "date": "2024-08-08",
+        "close": 113.12,
+        "rsi_14": 21.62,
+        "sma_20": 124.29,
+        "sma_50": 128.73,
+        "sma_200": 123.12,
+        "volume_ratio_vs_20d": 1.01,
+        "tags": [
+          "long_term_uptrend",
+          "near_support",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 32.14,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2024-12-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.29,
+      "move_1w_pct": 3.84,
+      "direction": "up",
+      "close": 118.43,
+      "volume_ratio_vs_20d": 2.74,
+      "technical_snapshot": {
+        "date": "2024-12-03",
+        "close": 118.43,
+        "rsi_14": 63.46,
+        "sma_20": 111.52,
+        "sma_50": 110.41,
+        "sma_200": 124.53,
+        "volume_ratio_vs_20d": 2.74,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 54.95,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-01-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -7.53,
+      "move_1w_pct": -3.54,
+      "direction": "down",
+      "close": 107.78,
+      "volume_ratio_vs_20d": 4.13,
+      "technical_snapshot": {
+        "date": "2025-01-06",
+        "close": 107.78,
+        "rsi_14": 30.62,
+        "sma_20": 115.35,
+        "sma_50": 113.0,
+        "sma_200": 122.47,
+        "volume_ratio_vs_20d": 4.13,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 46.95,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-01-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -2.75,
+      "move_1w_pct": -11.0,
+      "direction": "down",
+      "close": 101.52,
+      "volume_ratio_vs_20d": 0.82,
+      "technical_snapshot": {
+        "date": "2025-01-09",
+        "close": 101.52,
+        "rsi_14": 31.69,
+        "sma_20": 112.72,
+        "sma_50": 113.01,
+        "sma_200": 121.99,
+        "volume_ratio_vs_20d": 0.82,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 42.76,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-01-10",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -4.11,
+      "move_1w_pct": -16.48,
+      "direction": "down",
+      "close": 97.35,
+      "volume_ratio_vs_20d": 1.4,
+      "technical_snapshot": {
+        "date": "2025-01-10",
+        "close": 97.35,
+        "rsi_14": 31.5,
+        "sma_20": 111.54,
+        "sma_50": 112.78,
+        "sma_200": 121.8,
+        "volume_ratio_vs_20d": 1.4,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 40.36,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-01-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -2.29,
+      "move_1w_pct": -11.74,
+      "direction": "down",
+      "close": 95.12,
+      "volume_ratio_vs_20d": 1.33,
+      "technical_snapshot": {
+        "date": "2025-01-13",
+        "close": 95.12,
+        "rsi_14": 24.62,
+        "sma_20": 110.31,
+        "sma_50": 112.49,
+        "sma_200": 121.61,
+        "volume_ratio_vs_20d": 1.33,
+        "tags": [
+          "near_support",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 41.61,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-01-20",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.7,
+      "move_1w_pct": 10.25,
+      "direction": "up",
+      "close": 104.88,
+      "volume_ratio_vs_20d": 0.85,
+      "technical_snapshot": {
+        "date": "2025-01-20",
+        "close": 104.88,
+        "rsi_14": 39.75,
+        "sma_20": 106.83,
+        "sma_50": 111.57,
+        "sma_200": 120.72,
+        "volume_ratio_vs_20d": 0.85,
+        "tags": [],
+        "weekly": {
+          "rsi_14": 49.63,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-03-19",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.34,
+      "move_1w_pct": 4.21,
+      "direction": "up",
+      "close": 112.44,
+      "volume_ratio_vs_20d": 1.01,
+      "technical_snapshot": {
+        "date": "2025-03-19",
+        "close": 112.44,
+        "rsi_14": 55.68,
+        "sma_20": 107.65,
+        "sma_50": 105.44,
+        "sma_200": 114.52,
+        "volume_ratio_vs_20d": 1.01,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 45.76,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-03-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 4.03,
+      "move_1w_pct": 13.26,
+      "direction": "up",
+      "close": 119.75,
+      "volume_ratio_vs_20d": 1.61,
+      "technical_snapshot": {
+        "date": "2025-03-24",
+        "close": 119.75,
+        "rsi_14": 79.29,
+        "sma_20": 108.94,
+        "sma_50": 106.32,
+        "sma_200": 114.19,
+        "volume_ratio_vs_20d": 1.61,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 56.17,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-04-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.99,
+      "move_1w_pct": -1.69,
+      "direction": "down",
+      "close": 114.72,
+      "volume_ratio_vs_20d": 2.31,
+      "technical_snapshot": {
+        "date": "2025-04-04",
+        "close": 114.72,
+        "rsi_14": 58.88,
+        "sma_20": 112.95,
+        "sma_50": 108.91,
+        "sma_200": 113.52,
+        "volume_ratio_vs_20d": 2.31,
+        "tags": [
+          "above_sma20",
+          "bearish_engulfing",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 52.4,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-04-11",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.93,
+      "move_1w_pct": -10.25,
+      "direction": "down",
+      "close": 110.7,
+      "volume_ratio_vs_20d": 0.72,
+      "technical_snapshot": {
+        "date": "2025-04-11",
+        "close": 110.7,
+        "rsi_14": 48.66,
+        "sma_20": 113.4,
+        "sma_50": 109.67,
+        "sma_200": 113.08,
+        "volume_ratio_vs_20d": 0.72,
+        "tags": [
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 46.39,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-04-21",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.62,
+      "move_1w_pct": 10.18,
+      "direction": "up",
+      "close": 120.86,
+      "volume_ratio_vs_20d": 0.78,
+      "technical_snapshot": {
+        "date": "2025-04-21",
+        "close": 120.86,
+        "rsi_14": 58.88,
+        "sma_20": 115.87,
+        "sma_50": 110.67,
+        "sma_200": 112.91,
+        "volume_ratio_vs_20d": 0.78,
+        "tags": [
+          "above_sma20",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 63.93,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-05-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.33,
+      "move_1w_pct": -8.04,
+      "direction": "down",
+      "close": 111.07,
+      "volume_ratio_vs_20d": 0.93,
+      "technical_snapshot": {
+        "date": "2025-05-06",
+        "close": 111.07,
+        "rsi_14": 50.58,
+        "sma_20": 117.22,
+        "sma_50": 112.95,
+        "sma_200": 112.62,
+        "volume_ratio_vs_20d": 0.93,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 53.93,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-05-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.33,
+      "move_1w_pct": -2.46,
+      "direction": "up",
+      "close": 115.46,
+      "volume_ratio_vs_20d": 4.4,
+      "technical_snapshot": {
+        "date": "2025-05-09",
+        "close": 115.46,
+        "rsi_14": 44.53,
+        "sma_20": 116.55,
+        "sma_50": 113.39,
+        "sma_200": 112.38,
+        "volume_ratio_vs_20d": 4.4,
+        "tags": [
+          "bullish_engulfing",
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 57.6,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-05-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.08,
+      "move_1w_pct": 10.62,
+      "direction": "up",
+      "close": 122.86,
+      "volume_ratio_vs_20d": 1.66,
+      "technical_snapshot": {
+        "date": "2025-05-13",
+        "close": 122.86,
+        "rsi_14": 53.65,
+        "sma_20": 117.55,
+        "sma_50": 113.88,
+        "sma_200": 112.32,
+        "volume_ratio_vs_20d": 1.66,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 59.07,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-05-14",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 3.18,
+      "move_1w_pct": 13.89,
+      "direction": "up",
+      "close": 126.77,
+      "volume_ratio_vs_20d": 1.47,
+      "technical_snapshot": {
+        "date": "2025-05-14",
+        "close": 126.77,
+        "rsi_14": 56.76,
+        "sma_20": 118.35,
+        "sma_50": 114.21,
+        "sma_200": 112.32,
+        "volume_ratio_vs_20d": 1.47,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 61.32,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2025-05-15",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -2.05,
+      "move_1w_pct": 14.35,
+      "direction": "up",
+      "close": 124.17,
+      "volume_ratio_vs_20d": 0.86,
+      "technical_snapshot": {
+        "date": "2025-05-15",
+        "close": 124.17,
+        "rsi_14": 54.18,
+        "sma_20": 118.81,
+        "sma_50": 114.51,
+        "sma_200": 112.31,
+        "volume_ratio_vs_20d": 0.86,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 59.85,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2026-01-14",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.87,
+      "move_1w_pct": 7.78,
+      "direction": "up",
+      "close": 174.13,
+      "volume_ratio_vs_20d": 5.43,
+      "technical_snapshot": {
+        "date": "2026-01-14",
+        "close": 174.13,
+        "rsi_14": 84.08,
+        "sma_20": 153.46,
+        "sma_50": 150.34,
+        "sma_200": 135.59,
+        "volume_ratio_vs_20d": 5.43,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 84.06,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2026-01-15",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.0,
+      "move_1w_pct": 11.03,
+      "direction": "up",
+      "close": 174.13,
+      "volume_ratio_vs_20d": 0.0,
+      "technical_snapshot": {
+        "date": "2026-01-15",
+        "close": 174.13,
+        "rsi_14": 85.18,
+        "sma_20": 154.73,
+        "sma_50": 150.88,
+        "sma_200": 135.9,
+        "volume_ratio_vs_20d": 0.0,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 84.06,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2026-02-02",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.33,
+      "move_1w_pct": -0.95,
+      "direction": "down",
+      "close": 166.22,
+      "volume_ratio_vs_20d": 0.62,
+      "technical_snapshot": {
+        "date": "2026-02-02",
+        "close": 166.22,
+        "rsi_14": 56.93,
+        "sma_20": 167.29,
+        "sma_50": 155.77,
+        "sma_200": 138.96,
+        "volume_ratio_vs_20d": 0.62,
+        "tags": [
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 68.1,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2026-03-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.08,
+      "move_1w_pct": -11.47,
+      "direction": "down",
+      "close": 173.92,
+      "volume_ratio_vs_20d": 1.2,
+      "technical_snapshot": {
+        "date": "2026-03-09",
+        "close": 173.92,
+        "rsi_14": 46.15,
+        "sma_20": 184.44,
+        "sma_50": 172.2,
+        "sma_200": 146.38,
+        "volume_ratio_vs_20d": 1.2,
+        "tags": [
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 63.86,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2026-03-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.09,
+      "move_1w_pct": -4.0,
+      "direction": "down",
+      "close": 163.75,
+      "volume_ratio_vs_20d": 0.65,
+      "technical_snapshot": {
+        "date": "2026-03-23",
+        "close": 163.75,
+        "rsi_14": 27.45,
+        "sma_20": 180.71,
+        "sma_50": 176.09,
+        "sma_200": 148.17,
+        "volume_ratio_vs_20d": 0.65,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 56.67,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2026-03-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.43,
+      "move_1w_pct": -7.56,
+      "direction": "down",
+      "close": 159.49,
+      "volume_ratio_vs_20d": 1.36,
+      "technical_snapshot": {
+        "date": "2026-03-30",
+        "close": 159.49,
+        "rsi_14": 39.98,
+        "sma_20": 175.59,
+        "sma_50": 176.51,
+        "sma_200": 148.65,
+        "volume_ratio_vs_20d": 1.36,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "near_support"
+        ],
+        "weekly": {
+          "rsi_14": 56.38,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2026-04-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 8.02,
+      "move_1w_pct": 13.07,
+      "direction": "up",
+      "close": 180.34,
+      "volume_ratio_vs_20d": 1.09,
+      "technical_snapshot": {
+        "date": "2026-04-08",
+        "close": 180.34,
+        "rsi_14": 56.59,
+        "sma_20": 170.92,
+        "sma_50": 176.4,
+        "sma_200": 149.41,
+        "volume_ratio_vs_20d": 1.09,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 63.28,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2026-04-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -7.39,
+      "move_1w_pct": -4.66,
+      "direction": "down",
+      "close": 174.56,
+      "volume_ratio_vs_20d": 3.04,
+      "technical_snapshot": {
+        "date": "2026-04-23",
+        "close": 174.56,
+        "rsi_14": 57.71,
+        "sma_20": 175.65,
+        "sma_50": 178.63,
+        "sma_200": 151.65,
+        "volume_ratio_vs_20d": 3.04,
+        "tags": [
+          "bearish_engulfing",
+          "long_term_uptrend",
+          "marubozu",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 51.74,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2026-04-28",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -3.19,
+      "move_1w_pct": -10.92,
+      "direction": "down",
+      "close": 165.59,
+      "volume_ratio_vs_20d": 1.59,
+      "technical_snapshot": {
+        "date": "2026-04-28",
+        "close": 165.59,
+        "rsi_14": 48.77,
+        "sma_20": 175.69,
+        "sma_50": 178.36,
+        "sma_200": 152.04,
+        "volume_ratio_vs_20d": 1.59,
+        "tags": [
+          "long_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 48.94,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2026-04-29",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.86,
+      "move_1w_pct": -13.78,
+      "direction": "down",
+      "close": 162.51,
+      "volume_ratio_vs_20d": 1.16,
+      "technical_snapshot": {
+        "date": "2026-04-29",
+        "close": 162.51,
+        "rsi_14": 30.14,
+        "sma_20": 175.29,
+        "sma_50": 178.11,
+        "sma_200": 152.14,
+        "volume_ratio_vs_20d": 1.16,
+        "tags": [
+          "long_term_uptrend",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 47.55,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2026-05-25",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.07,
+      "move_1w_pct": 6.28,
+      "direction": "up",
+      "close": 164.03,
+      "volume_ratio_vs_20d": 1.45,
+      "technical_snapshot": {
+        "date": "2026-05-25",
+        "close": 164.03,
+        "rsi_14": 58.47,
+        "sma_20": 159.36,
+        "sma_50": 168.37,
+        "sma_200": 154.33,
+        "volume_ratio_vs_20d": 1.45,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 37.47,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "UNIONBANK",
+      "date": "2026-07-15",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.0,
+      "move_1w_pct": 11.65,
+      "direction": "up",
+      "close": 172.38,
+      "volume_ratio_vs_20d": 3.38,
+      "technical_snapshot": {
+        "date": "2026-07-15",
+        "close": 172.38,
+        "rsi_14": 53.52,
+        "sma_20": 167.19,
+        "sma_50": 163.35,
+        "sma_200": 161.04,
+        "volume_ratio_vs_20d": 3.38,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 40.84,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    }
+  ]
+}

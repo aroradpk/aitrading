@@ -1,0 +1,31 @@
+{
+  "symbol": "NIFTY_50",
+  "date": "2026-03-30",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": -2.14,
+  "move_1w_pct": -3.39,
+  "direction": "down",
+  "close": 22331.4,
+  "volume_ratio_vs_20d": 1.34,
+  "technical_snapshot": {
+    "date": "2026-03-30",
+    "close": 22331.4,
+    "rsi_14": 33.78,
+    "sma_20": 23672.74,
+    "sma_50": 24794.39,
+    "sma_200": 25231.53,
+    "volume_ratio_vs_20d": 1.34,
+    "tags": [
+      "near_support",
+      "rsi_oversold"
+    ],
+    "weekly": {
+      "rsi_14": 17.99,
+      "tags": [
+        "weekly_rsi_oversold"
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-05-06",
+  "close": 55981.05,
+  "rsi_14": 47.39,
+  "sma_20": 55726.25,
+  "sma_50": 56069.19,
+  "sma_200": 57194.21,
+  "volume_ratio_vs_20d": 1.94,
+  "tags": [
+    "above_sma20",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 40.46,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

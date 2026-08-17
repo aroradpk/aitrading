@@ -1,0 +1,23 @@
+{
+  "date": "2024-06-03",
+  "close": 50979.95,
+  "rsi_14": 77.82,
+  "sma_20": 48432.32,
+  "sma_50": 48076.0,
+  "sma_200": 46122.34,
+  "volume_ratio_vs_20d": 2.04,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 66.54,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

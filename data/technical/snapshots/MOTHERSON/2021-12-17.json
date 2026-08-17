@@ -1,0 +1,19 @@
+{
+  "date": "2021-12-17",
+  "close": 56.46,
+  "rsi_14": 48.41,
+  "sma_20": 58.73,
+  "sma_50": 61.02,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 2.0,
+  "tags": [
+    "bearish_engulfing",
+    "marubozu",
+    "near_support",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 49.91,
+    "tags": []
+  }
+}

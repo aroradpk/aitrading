@@ -1,0 +1,21 @@
+{
+  "date": "2025-06-10",
+  "close": 119.21,
+  "rsi_14": 72.65,
+  "sma_20": 110.89,
+  "sma_50": 108.53,
+  "sma_200": 110.99,
+  "volume_ratio_vs_20d": 6.08,
+  "tags": [
+    "above_sma20",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 67.1,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

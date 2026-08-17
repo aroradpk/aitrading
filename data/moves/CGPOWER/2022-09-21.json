@@ -1,0 +1,35 @@
+{
+  "symbol": "CGPOWER",
+  "date": "2022-09-21",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 3.05,
+  "move_1w_pct": 11.55,
+  "direction": "up",
+  "close": 258.52,
+  "volume_ratio_vs_20d": 1.11,
+  "technical_snapshot": {
+    "date": "2022-09-21",
+    "close": 258.52,
+    "rsi_14": 77.18,
+    "sma_20": 227.55,
+    "sma_50": 222.64,
+    "sma_200": 189.04,
+    "volume_ratio_vs_20d": 1.11,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "marubozu",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 84.7,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

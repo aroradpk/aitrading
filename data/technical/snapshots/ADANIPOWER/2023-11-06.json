@@ -1,0 +1,22 @@
+{
+  "date": "2023-11-06",
+  "close": 78.8,
+  "rsi_14": 74.57,
+  "sma_20": 69.61,
+  "sma_50": 71.17,
+  "sma_200": 52.33,
+  "volume_ratio_vs_20d": 2.3,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "near_resistance",
+    "rsi_overbought",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 77.94,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

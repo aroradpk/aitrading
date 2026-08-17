@@ -1,0 +1,19 @@
+{
+  "date": "2022-10-14",
+  "close": 66.25,
+  "rsi_14": 27.1,
+  "sma_20": 74.07,
+  "sma_50": 75.45,
+  "sma_200": 49.8,
+  "volume_ratio_vs_20d": 1.14,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "near_support",
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 60.95,
+    "tags": []
+  }
+}

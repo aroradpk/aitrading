@@ -1,0 +1,19 @@
+{
+  "date": "2024-11-13",
+  "close": 1468.45,
+  "rsi_14": 29.82,
+  "sma_20": 1639.27,
+  "sma_50": 1784.41,
+  "sma_200": 1816.69,
+  "volume_ratio_vs_20d": 1.03,
+  "tags": [
+    "near_support",
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 34.9,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

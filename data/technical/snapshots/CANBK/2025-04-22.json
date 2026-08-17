@@ -1,0 +1,22 @@
+{
+  "date": "2025-04-22",
+  "close": 94.07,
+  "rsi_14": 69.06,
+  "sma_20": 85.21,
+  "sma_50": 82.55,
+  "sma_200": 94.21,
+  "volume_ratio_vs_20d": 1.69,
+  "tags": [
+    "above_sma20",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 52.94,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

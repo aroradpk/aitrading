@@ -1,0 +1,17 @@
+{
+  "date": "2022-03-07",
+  "close": 32870.87,
+  "rsi_14": 28.33,
+  "sma_20": 36911.33,
+  "sma_50": 37225.57,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 1.24,
+  "tags": [
+    "near_support",
+    "rsi_oversold"
+  ],
+  "weekly": {
+    "rsi_14": 38.61,
+    "tags": []
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "symbol": "BOSCHLTD",
+  "date": "2025-07-29",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 5.81,
+  "move_1w_pct": 7.16,
+  "direction": "up",
+  "close": 39654.05,
+  "volume_ratio_vs_20d": 1.56,
+  "technical_snapshot": {
+    "date": "2025-07-29",
+    "close": 39654.05,
+    "rsi_14": 83.86,
+    "sma_20": 36405.89,
+    "sma_50": 33301.63,
+    "sma_200": 31397.24,
+    "volume_ratio_vs_20d": 1.56,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "marubozu",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 92.07,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

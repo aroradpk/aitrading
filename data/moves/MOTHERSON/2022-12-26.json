@@ -1,0 +1,32 @@
+{
+  "symbol": "MOTHERSON",
+  "date": "2022-12-26",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 7.17,
+  "move_1w_pct": 1.63,
+  "direction": "up",
+  "close": 46.75,
+  "volume_ratio_vs_20d": 1.07,
+  "technical_snapshot": {
+    "date": "2022-12-26",
+    "close": 46.75,
+    "rsi_14": 43.69,
+    "sma_20": 47.0,
+    "sma_50": 45.43,
+    "sma_200": 52.24,
+    "volume_ratio_vs_20d": 1.07,
+    "tags": [
+      "bullish_engulfing",
+      "marubozu",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 42.75,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

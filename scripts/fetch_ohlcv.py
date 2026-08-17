@@ -6,12 +6,18 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from app.core.config import get_settings
 from app.core.paths import ohlcv_daily_dir
 from app.engines.universe import all_instruments, load_active_universe
 from app.ingest.yfinance_client import fetch_ohlcv, save_ohlcv
 
 
 def main() -> None:
+    settings = get_settings()
+    if settings.offline_mode:
+        print("offline_mode=true — skipping OHLCV download (use saved parquet files)")
+        return
+
     universe = load_active_universe()
     instruments = all_instruments()
     print(f"Fetching OHLCV for {len(instruments)} instruments...")

@@ -1,0 +1,36 @@
+{
+  "symbol": "HINDZINC",
+  "date": "2025-12-12",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 7.46,
+  "move_1w_pct": 12.76,
+  "direction": "up",
+  "close": 551.57,
+  "volume_ratio_vs_20d": 5.15,
+  "technical_snapshot": {
+    "date": "2025-12-12",
+    "close": 551.57,
+    "rsi_14": 86.7,
+    "sma_20": 480.57,
+    "sma_50": 479.95,
+    "sma_200": 442.32,
+    "volume_ratio_vs_20d": 5.15,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "marubozu",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 73.53,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

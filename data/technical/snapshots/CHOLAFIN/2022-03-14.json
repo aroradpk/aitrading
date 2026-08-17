@@ -1,0 +1,19 @@
+{
+  "date": "2022-03-14",
+  "close": 674.22,
+  "rsi_14": 50.98,
+  "sma_20": 661.11,
+  "sma_50": 631.83,
+  "sma_200": null,
+  "volume_ratio_vs_20d": 0.64,
+  "tags": [
+    "above_sma20",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 65.12,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

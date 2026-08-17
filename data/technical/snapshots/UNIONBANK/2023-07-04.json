@@ -1,0 +1,21 @@
+{
+  "date": "2023-07-04",
+  "close": 67.47,
+  "rsi_14": 64.47,
+  "sma_20": 63.34,
+  "sma_50": 63.71,
+  "sma_200": 60.8,
+  "volume_ratio_vs_20d": 3.42,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "near_resistance",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 65.39,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "symbol": "MOTHERSON",
+  "date": "2026-04-15",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 3.73,
+  "move_1w_pct": 13.93,
+  "direction": "up",
+  "close": 123.34,
+  "volume_ratio_vs_20d": 0.97,
+  "technical_snapshot": {
+    "date": "2026-04-15",
+    "close": 123.34,
+    "rsi_14": 62.87,
+    "sma_20": 112.67,
+    "sma_50": 120.26,
+    "sma_200": 109.7,
+    "volume_ratio_vs_20d": 0.97,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "near_resistance"
+    ],
+    "weekly": {
+      "rsi_14": 55.26,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

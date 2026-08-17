@@ -1,0 +1,36 @@
+{
+  "symbol": "CUMMINSIND",
+  "date": "2024-01-29",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 4.31,
+  "move_1w_pct": 11.05,
+  "direction": "up",
+  "close": 2165.03,
+  "volume_ratio_vs_20d": 2.32,
+  "technical_snapshot": {
+    "date": "2024-01-29",
+    "close": 2165.03,
+    "rsi_14": 82.1,
+    "sma_20": 1963.74,
+    "sma_50": 1893.16,
+    "sma_200": 1722.57,
+    "volume_ratio_vs_20d": 2.32,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "marubozu",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 89.85,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

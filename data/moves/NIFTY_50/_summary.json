@@ -1,0 +1,1212 @@
+{
+  "symbol": "NIFTY_50",
+  "count": 39,
+  "moves": [
+    {
+      "symbol": "NIFTY_50",
+      "date": "2021-11-26",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.91,
+      "move_1w_pct": -4.16,
+      "direction": "down",
+      "close": 17026.45,
+      "volume_ratio_vs_20d": 1.25,
+      "technical_snapshot": {
+        "date": "2021-11-26",
+        "close": 17026.45,
+        "rsi_14": 28.61,
+        "sma_20": 17793.48,
+        "sma_50": 17851.88,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.25,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 56.12,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2021-12-20",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.18,
+      "move_1w_pct": -4.34,
+      "direction": "down",
+      "close": 16614.2,
+      "volume_ratio_vs_20d": 1.15,
+      "technical_snapshot": {
+        "date": "2021-12-20",
+        "close": 16614.2,
+        "rsi_14": 42.53,
+        "sma_20": 17231.63,
+        "sma_50": 17704.1,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.15,
+        "tags": [
+          "near_support"
+        ],
+        "weekly": {
+          "rsi_14": 40.2,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-01-24",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.66,
+      "move_1w_pct": -6.33,
+      "direction": "down",
+      "close": 17149.1,
+      "volume_ratio_vs_20d": 1.33,
+      "technical_snapshot": {
+        "date": "2022-01-24",
+        "close": 17149.1,
+        "rsi_14": 33.8,
+        "sma_20": 17779.37,
+        "sma_50": 17485.95,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.33,
+        "tags": [
+          "marubozu",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 40.95,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-02-14",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -3.06,
+      "move_1w_pct": -2.15,
+      "direction": "down",
+      "close": 16842.8,
+      "volume_ratio_vs_20d": 1.06,
+      "technical_snapshot": {
+        "date": "2022-02-14",
+        "close": 16842.8,
+        "rsi_14": 44.34,
+        "sma_20": 17495.68,
+        "sma_50": 17457.13,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.06,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 38.75,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-02-15",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 3.03,
+      "move_1w_pct": 0.5,
+      "direction": "up",
+      "close": 17352.45,
+      "volume_ratio_vs_20d": 1.03,
+      "technical_snapshot": {
+        "date": "2022-02-15",
+        "close": 17352.45,
+        "rsi_14": 51.21,
+        "sma_20": 17447.9,
+        "sma_50": 17465.93,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.03,
+        "tags": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 42.63,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-02-24",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -4.78,
+      "move_1w_pct": -6.11,
+      "direction": "down",
+      "close": 16247.95,
+      "volume_ratio_vs_20d": 1.65,
+      "technical_snapshot": {
+        "date": "2022-02-24",
+        "close": 16247.95,
+        "rsi_14": 29.36,
+        "sma_20": 17275.41,
+        "sma_50": 17424.41,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.65,
+        "tags": [
+          "near_support",
+          "rsi_oversold",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 37.05,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-02-25",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 2.53,
+      "move_1w_pct": -3.58,
+      "direction": "up",
+      "close": 16658.4,
+      "volume_ratio_vs_20d": 1.19,
+      "technical_snapshot": {
+        "date": "2022-02-25",
+        "close": 16658.4,
+        "rsi_14": 41.27,
+        "sma_20": 17253.24,
+        "sma_50": 17412.61,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.19,
+        "tags": [],
+        "weekly": {
+          "rsi_14": 39.84,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-03-07",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.35,
+      "move_1w_pct": -4.77,
+      "direction": "down",
+      "close": 15863.15,
+      "volume_ratio_vs_20d": 1.81,
+      "technical_snapshot": {
+        "date": "2022-03-07",
+        "close": 15863.15,
+        "rsi_14": 34.15,
+        "sma_20": 16964.9,
+        "sma_50": 17364.77,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.81,
+        "tags": [
+          "near_support",
+          "rsi_oversold",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 37.5,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-03-09",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 2.07,
+      "move_1w_pct": -1.57,
+      "direction": "up",
+      "close": 16345.35,
+      "volume_ratio_vs_20d": 1.33,
+      "technical_snapshot": {
+        "date": "2022-03-09",
+        "close": 16345.35,
+        "rsi_14": 33.9,
+        "sma_20": 16858.82,
+        "sma_50": 17330.15,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.33,
+        "tags": [
+          "marubozu",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 41.57,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-04-04",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 2.17,
+      "move_1w_pct": 4.83,
+      "direction": "up",
+      "close": 18053.4,
+      "volume_ratio_vs_20d": 0.96,
+      "technical_snapshot": {
+        "date": "2022-04-04",
+        "close": 18053.4,
+        "rsi_14": 75.37,
+        "sma_20": 17026.63,
+        "sma_50": 17115.08,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 0.96,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought"
+        ],
+        "weekly": {
+          "rsi_14": 56.01,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-05-04",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.29,
+      "move_1w_pct": -3.04,
+      "direction": "down",
+      "close": 16677.6,
+      "volume_ratio_vs_20d": 1.04,
+      "technical_snapshot": {
+        "date": "2022-05-04",
+        "close": 16677.6,
+        "rsi_14": 32.01,
+        "sma_20": 17352.21,
+        "sma_50": 17090.32,
+        "sma_200": null,
+        "volume_ratio_vs_20d": 1.04,
+        "tags": [
+          "bearish_engulfing",
+          "marubozu",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 45.39,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-05-12",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.22,
+      "move_1w_pct": -5.24,
+      "direction": "down",
+      "close": 15808.0,
+      "volume_ratio_vs_20d": 1.07,
+      "technical_snapshot": {
+        "date": "2022-05-12",
+        "close": 15808.0,
+        "rsi_14": 18.33,
+        "sma_20": 16886.89,
+        "sma_50": 16998.72,
+        "sma_200": 17251.34,
+        "volume_ratio_vs_20d": 1.07,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 33.1,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-05-17",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 2.63,
+      "move_1w_pct": 0.12,
+      "direction": "up",
+      "close": 16259.3,
+      "volume_ratio_vs_20d": 1.0,
+      "technical_snapshot": {
+        "date": "2022-05-17",
+        "close": 16259.3,
+        "rsi_14": 29.7,
+        "sma_20": 16672.09,
+        "sma_50": 16955.23,
+        "sma_200": 17253.23,
+        "volume_ratio_vs_20d": 1.0,
+        "tags": [
+          "marubozu",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 39.7,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-05-19",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.65,
+      "move_1w_pct": 0.01,
+      "direction": "down",
+      "close": 15809.4,
+      "volume_ratio_vs_20d": 1.08,
+      "technical_snapshot": {
+        "date": "2022-05-19",
+        "close": 15809.4,
+        "rsi_14": 20.09,
+        "sma_20": 16569.82,
+        "sma_50": 16941.35,
+        "sma_200": 17256.2,
+        "volume_ratio_vs_20d": 1.08,
+        "tags": [
+          "near_support",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 34.24,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-05-20",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 2.89,
+      "move_1w_pct": 3.07,
+      "direction": "up",
+      "close": 16266.15,
+      "volume_ratio_vs_20d": 0.87,
+      "technical_snapshot": {
+        "date": "2022-05-20",
+        "close": 16266.15,
+        "rsi_14": 34.59,
+        "sma_20": 16513.5,
+        "sma_50": 16949.41,
+        "sma_200": 17258.64,
+        "volume_ratio_vs_20d": 0.87,
+        "tags": [
+          "marubozu",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 39.78,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-06-13",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.64,
+      "move_1w_pct": -4.8,
+      "direction": "down",
+      "close": 15774.4,
+      "volume_ratio_vs_20d": 0.82,
+      "technical_snapshot": {
+        "date": "2022-06-13",
+        "close": 15774.4,
+        "rsi_14": 41.55,
+        "sma_20": 16312.04,
+        "sma_50": 16753.11,
+        "sma_200": 17262.08,
+        "volume_ratio_vs_20d": 0.82,
+        "tags": [
+          "near_support"
+        ],
+        "weekly": {
+          "rsi_14": 41.5,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-06-16",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.11,
+      "move_1w_pct": -6.78,
+      "direction": "down",
+      "close": 15360.6,
+      "volume_ratio_vs_20d": 1.01,
+      "technical_snapshot": {
+        "date": "2022-06-16",
+        "close": 15360.6,
+        "rsi_14": 25.97,
+        "sma_20": 16235.84,
+        "sma_50": 16625.04,
+        "sma_200": 17246.52,
+        "volume_ratio_vs_20d": 1.01,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 38.35,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-08-30",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 2.58,
+      "move_1w_pct": 1.03,
+      "direction": "up",
+      "close": 17759.3,
+      "volume_ratio_vs_20d": 1.16,
+      "technical_snapshot": {
+        "date": "2022-08-30",
+        "close": 17759.3,
+        "rsi_14": 56.42,
+        "sma_20": 17579.06,
+        "sma_50": 16695.61,
+        "sma_200": 16974.15,
+        "volume_ratio_vs_20d": 1.16,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 64.87,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2022-10-04",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 2.29,
+      "move_1w_pct": 1.57,
+      "direction": "up",
+      "close": 17274.3,
+      "volume_ratio_vs_20d": 0.71,
+      "technical_snapshot": {
+        "date": "2022-10-04",
+        "close": 17274.3,
+        "rsi_14": 36.11,
+        "sma_20": 17487.27,
+        "sma_50": 17445.88,
+        "sma_200": 16980.15,
+        "volume_ratio_vs_20d": 0.71,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 70.13,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2023-12-04",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 2.07,
+      "move_1w_pct": 4.51,
+      "direction": "up",
+      "close": 20686.8,
+      "volume_ratio_vs_20d": 1.66,
+      "technical_snapshot": {
+        "date": "2023-12-04",
+        "close": 20686.8,
+        "rsi_14": 93.86,
+        "sma_20": 19744.46,
+        "sma_50": 19603.61,
+        "sma_200": 18822.49,
+        "volume_ratio_vs_20d": 1.66,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 66.61,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2024-01-17",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.09,
+      "move_1w_pct": -0.22,
+      "direction": "down",
+      "close": 21571.95,
+      "volume_ratio_vs_20d": 1.59,
+      "technical_snapshot": {
+        "date": "2024-01-17",
+        "close": 21571.95,
+        "rsi_14": 44.2,
+        "sma_20": 21628.76,
+        "sma_50": 20804.76,
+        "sma_200": 19436.85,
+        "volume_ratio_vs_20d": 1.59,
+        "tags": [
+          "long_term_uptrend",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 72.05,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2024-06-03",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 3.25,
+      "move_1w_pct": 1.45,
+      "direction": "up",
+      "close": 23263.9,
+      "volume_ratio_vs_20d": 1.79,
+      "technical_snapshot": {
+        "date": "2024-06-03",
+        "close": 23263.9,
+        "rsi_14": 76.94,
+        "sma_20": 22515.65,
+        "sma_50": 22411.65,
+        "sma_200": 21044.62,
+        "volume_ratio_vs_20d": 1.79,
+        "tags": [
+          "above_sma20",
+          "hammer",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 60.75,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2024-06-04",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -5.93,
+      "move_1w_pct": -4.39,
+      "direction": "down",
+      "close": 21884.5,
+      "volume_ratio_vs_20d": 2.85,
+      "technical_snapshot": {
+        "date": "2024-06-04",
+        "close": 21884.5,
+        "rsi_14": 45.12,
+        "sma_20": 22487.74,
+        "sma_50": 22408.22,
+        "sma_200": 21056.06,
+        "volume_ratio_vs_20d": 2.85,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 44.61,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2024-06-05",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 3.36,
+      "move_1w_pct": -0.37,
+      "direction": "up",
+      "close": 22620.35,
+      "volume_ratio_vs_20d": 1.72,
+      "technical_snapshot": {
+        "date": "2024-06-05",
+        "close": 22620.35,
+        "rsi_14": 55.07,
+        "sma_20": 22503.63,
+        "sma_50": 22424.28,
+        "sma_200": 21071.3,
+        "volume_ratio_vs_20d": 1.72,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 53.85,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2024-06-07",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 2.05,
+      "move_1w_pct": 3.37,
+      "direction": "up",
+      "close": 23290.15,
+      "volume_ratio_vs_20d": 1.22,
+      "technical_snapshot": {
+        "date": "2024-06-07",
+        "close": 23290.15,
+        "rsi_14": 59.07,
+        "sma_20": 22596.21,
+        "sma_50": 22469.49,
+        "sma_200": 21105.98,
+        "volume_ratio_vs_20d": 1.22,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu",
+          "near_resistance",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 60.98,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2024-08-05",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.68,
+      "move_1w_pct": -3.14,
+      "direction": "down",
+      "close": 24055.6,
+      "volume_ratio_vs_20d": 1.4,
+      "technical_snapshot": {
+        "date": "2024-08-05",
+        "close": 24055.6,
+        "rsi_14": 37.76,
+        "sma_20": 24574.96,
+        "sma_50": 23861.92,
+        "sma_200": 21996.87,
+        "volume_ratio_vs_20d": 1.4,
+        "tags": [
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 66.35,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2024-10-03",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.12,
+      "move_1w_pct": -2.9,
+      "direction": "down",
+      "close": 25250.1,
+      "volume_ratio_vs_20d": 1.38,
+      "technical_snapshot": {
+        "date": "2024-10-03",
+        "close": 25250.1,
+        "rsi_14": 46.42,
+        "sma_20": 25508.08,
+        "sma_50": 25021.85,
+        "sma_200": 23098.75,
+        "volume_ratio_vs_20d": 1.38,
+        "tags": [
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 62.91,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2024-11-22",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 2.39,
+      "move_1w_pct": 1.48,
+      "direction": "up",
+      "close": 23907.25,
+      "volume_ratio_vs_20d": 1.27,
+      "technical_snapshot": {
+        "date": "2024-11-22",
+        "close": 23907.25,
+        "rsi_14": 44.52,
+        "sma_20": 24031.15,
+        "sma_50": 24780.54,
+        "sma_200": 23586.43,
+        "volume_ratio_vs_20d": 1.27,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 44.41,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2025-04-07",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -3.24,
+      "move_1w_pct": -5.77,
+      "direction": "down",
+      "close": 22161.6,
+      "volume_ratio_vs_20d": 1.83,
+      "technical_snapshot": {
+        "date": "2025-04-07",
+        "close": 22161.6,
+        "rsi_14": 44.59,
+        "sma_20": 22995.47,
+        "sma_50": 22980.24,
+        "sma_200": 24070.03,
+        "volume_ratio_vs_20d": 1.83,
+        "tags": [
+          "marubozu",
+          "short_term_uptrend",
+          "volume_spike"
+        ],
+        "weekly": {
+          "rsi_14": 34.32,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2025-04-15",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 2.19,
+      "move_1w_pct": 1.85,
+      "direction": "up",
+      "close": 23328.55,
+      "volume_ratio_vs_20d": 1.05,
+      "technical_snapshot": {
+        "date": "2025-04-15",
+        "close": 23328.55,
+        "rsi_14": 49.71,
+        "sma_20": 23051.02,
+        "sma_50": 22961.24,
+        "sma_200": 24053.85,
+        "volume_ratio_vs_20d": 1.05,
+        "tags": [
+          "above_sma20",
+          "hammer",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 49.0,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2025-05-12",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 3.82,
+      "move_1w_pct": 1.9,
+      "direction": "up",
+      "close": 24924.7,
+      "volume_ratio_vs_20d": 0.97,
+      "technical_snapshot": {
+        "date": "2025-05-12",
+        "close": 24924.7,
+        "rsi_14": 66.95,
+        "sma_20": 24027.99,
+        "sma_50": 23293.11,
+        "sma_200": 24046.22,
+        "volume_ratio_vs_20d": 0.97,
+        "tags": [
+          "above_sma20",
+          "marubozu",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 60.33,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2026-02-03",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 2.55,
+      "move_1w_pct": 2.19,
+      "direction": "up",
+      "close": 25727.55,
+      "volume_ratio_vs_20d": 1.47,
+      "technical_snapshot": {
+        "date": "2026-02-03",
+        "close": 25727.55,
+        "rsi_14": 48.7,
+        "sma_20": 25570.01,
+        "sma_50": 25847.23,
+        "sma_200": 25222.35,
+        "volume_ratio_vs_20d": 1.47,
+        "tags": [
+          "above_sma20",
+          "long_term_uptrend",
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 50.08,
+          "tags": []
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2026-03-13",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.06,
+      "move_1w_pct": -5.31,
+      "direction": "down",
+      "close": 23151.1,
+      "volume_ratio_vs_20d": 1.23,
+      "technical_snapshot": {
+        "date": "2026-03-13",
+        "close": 23151.1,
+        "rsi_14": 18.86,
+        "sma_20": 24926.44,
+        "sma_50": 25384.19,
+        "sma_200": 25317.19,
+        "volume_ratio_vs_20d": 1.23,
+        "tags": [
+          "long_term_uptrend",
+          "marubozu",
+          "near_support",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 21.21,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2026-03-19",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -3.26,
+      "move_1w_pct": -2.69,
+      "direction": "down",
+      "close": 23002.15,
+      "volume_ratio_vs_20d": 1.22,
+      "technical_snapshot": {
+        "date": "2026-03-19",
+        "close": 23002.15,
+        "rsi_14": 23.94,
+        "sma_20": 24480.01,
+        "sma_50": 25162.49,
+        "sma_200": 25290.22,
+        "volume_ratio_vs_20d": 1.22,
+        "tags": [
+          "near_support",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 21.18,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2026-03-23",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.6,
+      "move_1w_pct": -3.83,
+      "direction": "down",
+      "close": 22512.65,
+      "volume_ratio_vs_20d": 1.15,
+      "technical_snapshot": {
+        "date": "2026-03-23",
+        "close": 22512.65,
+        "rsi_14": 25.84,
+        "sma_20": 24210.09,
+        "sma_50": 25028.65,
+        "sma_200": 25272.06,
+        "volume_ratio_vs_20d": 1.15,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 19.65,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2026-03-27",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.09,
+      "move_1w_pct": -0.79,
+      "direction": "down",
+      "close": 22819.6,
+      "volume_ratio_vs_20d": 1.21,
+      "technical_snapshot": {
+        "date": "2026-03-27",
+        "close": 22819.6,
+        "rsi_14": 34.21,
+        "sma_20": 23831.0,
+        "sma_50": 24862.41,
+        "sma_200": 25245.38,
+        "volume_ratio_vs_20d": 1.21,
+        "tags": [
+          "marubozu",
+          "near_support",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 20.77,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2026-03-30",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.14,
+      "move_1w_pct": -3.39,
+      "direction": "down",
+      "close": 22331.4,
+      "volume_ratio_vs_20d": 1.34,
+      "technical_snapshot": {
+        "date": "2026-03-30",
+        "close": 22331.4,
+        "rsi_14": 33.78,
+        "sma_20": 23672.74,
+        "sma_50": 24794.39,
+        "sma_200": 25231.53,
+        "volume_ratio_vs_20d": 1.34,
+        "tags": [
+          "near_support",
+          "rsi_oversold"
+        ],
+        "weekly": {
+          "rsi_14": 17.99,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2026-04-08",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": 3.78,
+      "move_1w_pct": 7.46,
+      "direction": "up",
+      "close": 23997.35,
+      "volume_ratio_vs_20d": 1.22,
+      "technical_snapshot": {
+        "date": "2026-04-08",
+        "close": 23997.35,
+        "rsi_14": 55.56,
+        "sma_20": 23259.77,
+        "sma_50": 24557.31,
+        "sma_200": 25184.94,
+        "volume_ratio_vs_20d": 1.22,
+        "tags": [
+          "above_sma20",
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 31.82,
+          "tags": [
+            "weekly_rsi_oversold"
+          ]
+        }
+      }
+    },
+    {
+      "symbol": "NIFTY_50",
+      "date": "2026-07-08",
+      "instrument_type": "index",
+      "trigger_type": "index_1d",
+      "threshold_pct": 2.0,
+      "move_1d_pct": -2.12,
+      "move_1w_pct": -0.52,
+      "direction": "down",
+      "close": 23882.05,
+      "volume_ratio_vs_20d": 1.1,
+      "technical_snapshot": {
+        "date": "2026-07-08",
+        "close": 23882.05,
+        "rsi_14": 45.24,
+        "sma_20": 23954.47,
+        "sma_50": 23828.03,
+        "sma_200": 24858.11,
+        "volume_ratio_vs_20d": 1.1,
+        "tags": [
+          "marubozu",
+          "short_term_uptrend"
+        ],
+        "weekly": {
+          "rsi_14": 62.63,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        }
+      }
+    }
+  ]
+}

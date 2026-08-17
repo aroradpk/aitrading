@@ -1,0 +1,20 @@
+{
+  "date": "2022-05-19",
+  "close": 667.99,
+  "rsi_14": 49.36,
+  "sma_20": 637.98,
+  "sma_50": 616.77,
+  "sma_200": 604.96,
+  "volume_ratio_vs_20d": 1.21,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 53.6,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "symbol": "NIFTY_BANK",
+  "date": "2025-04-07",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": -3.19,
+  "move_1w_pct": -3.31,
+  "direction": "down",
+  "close": 49860.1,
+  "volume_ratio_vs_20d": 1.26,
+  "technical_snapshot": {
+    "date": "2025-04-07",
+    "close": 49860.1,
+    "rsi_14": 60.08,
+    "sma_20": 50075.56,
+    "sma_50": 49501.97,
+    "sma_200": 51038.19,
+    "volume_ratio_vs_20d": 1.26,
+    "tags": [
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 45.31,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "symbol": "TMCV",
+  "date": "2026-06-16",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 0.02,
+  "move_1w_pct": 13.21,
+  "direction": "up",
+  "close": 406.7,
+  "volume_ratio_vs_20d": 0.95,
+  "technical_snapshot": {
+    "date": "2026-06-16",
+    "close": 406.7,
+    "rsi_14": 65.41,
+    "sma_20": 375.7,
+    "sma_50": 397.88,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 0.95,
+    "tags": [
+      "above_sma20",
+      "hammer",
+      "rsi_overbought"
+    ],
+    "weekly": {
+      "rsi_14": 47.43,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

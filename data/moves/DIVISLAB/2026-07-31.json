@@ -1,0 +1,36 @@
+{
+  "symbol": "DIVISLAB",
+  "date": "2026-07-31",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 2.82,
+  "move_1w_pct": 11.14,
+  "direction": "up",
+  "close": 8056.0,
+  "volume_ratio_vs_20d": 1.57,
+  "technical_snapshot": {
+    "date": "2026-07-31",
+    "close": 8056.0,
+    "rsi_14": 88.26,
+    "sma_20": 7234.55,
+    "sma_50": 6881.2,
+    "sma_200": 6483.25,
+    "volume_ratio_vs_20d": 1.57,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "marubozu",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 87.32,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "source": "nseindia.com",
+    "type": "announcement",
+    "date": "2026-08-13",
+    "title": "Copy of Newspaper Publication",
+    "attachment_url": "https://nsearchives.nseindia.com/corporate/SIEMENS_13082026100140_SE_Intimation_-_NP.pdf",
+    "fetched_at": "2026-08-17T11:09:54.890045+00:00",
+    "raw_date": "13-Aug-2026 10:01:49"
+  },
+  {
+    "source": "nseindia.com",
+    "type": "announcement",
+    "date": "2026-08-12",
+    "title": "Resignation of Director/KMP/SMP",
+    "attachment_url": "https://nsearchives.nseindia.com/corporate/SIEMENS_ROID_96096_KMP_Doc.zip",
+    "fetched_at": "2026-08-17T11:09:54.890068+00:00",
+    "raw_date": "12-Aug-2026 16:22:39"
+  },
+  {
+    "source": "nseindia.com",
+    "type": "announcement",
+    "date": "2026-08-11",
+    "title": "Change in Management",
+    "attachment_url": "https://nsearchives.nseindia.com/corporate/SIEMENS57_11082026203237_SE_Announcement.pdf",
+    "fetched_at": "2026-08-17T11:09:54.890078+00:00",
+    "raw_date": "11-Aug-2026 20:32:42"
+  },
+  {
+    "source": "nseindia.com",
+    "type": "announcement",
+    "date": "2026-08-11",
+    "title": "Shareholders meeting",
+    "attachment_url": "https://nsearchives.nseindia.com/corporate/SIEMENS57_11082026201350_Outcome.pdf",
+    "fetched_at": "2026-08-17T11:09:54.890088+00:00",
+    "raw_date": "11-Aug-2026 20:14:01"
+  },
+  {
+    "source": "nseindia.com",
+    "type": "announcement",
+    "date": "2026-08-11",
+    "title": "Shareholders meeting",
+    "attachment_url": "https://nsearchives.nseindia.com/corporate/SIEMENS57_11082026200730_SE_Intimation.pdf",
+    "fetched_at": "2026-08-17T11:09:54.890097+00:00",
+    "raw_date": "11-Aug-2026 20:08:49"
+  },
+  {
+    "source": "nseindia.com",
+    "type": "board_meeting",
+    "date": "2026-08-11",
+    "title": "Outcome of Board Meeting",
+    "attachment_url": "https://nsearchives.nseindia.com/corporate/SIEMENS_11082026142118_Letter.pdf",
+    "fetched_at": "2026-08-17T11:09:54.890105+00:00",
+    "raw_date": "11-Aug-2026 14:22:38"
+  }
+]

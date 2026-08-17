@@ -1,0 +1,56 @@
+[
+  {
+    "source": "nseindia.com",
+    "type": "announcement",
+    "date": "2026-08-13",
+    "title": "Copy of Newspaper Publication",
+    "attachment_url": "https://nsearchives.nseindia.com/corporate/TMLCOMMERCIAL_13082026115239_NSEBSEFINAL.pdf",
+    "fetched_at": "2026-08-17T11:09:46.811566+00:00",
+    "raw_date": "13-Aug-2026 11:53:05"
+  },
+  {
+    "source": "nseindia.com",
+    "type": "announcement",
+    "date": "2026-08-12",
+    "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+    "attachment_url": "https://nsearchives.nseindia.com/corporate/TMLCOMMERCIAL_12082026212308_AudioandtranscriptletterCV.pdf",
+    "fetched_at": "2026-08-17T11:09:46.811588+00:00",
+    "raw_date": "12-Aug-2026 21:24:29"
+  },
+  {
+    "source": "nseindia.com",
+    "type": "announcement",
+    "date": "2026-08-12",
+    "title": "Investor Presentation",
+    "attachment_url": "https://nsearchives.nseindia.com/corporate/TMLCOMMERCIAL_12082026155104_final.pdf",
+    "fetched_at": "2026-08-17T11:09:46.811599+00:00",
+    "raw_date": "12-Aug-2026 15:52:01"
+  },
+  {
+    "source": "nseindia.com",
+    "type": "board_meeting",
+    "date": "2026-08-12",
+    "title": "Outcome of Board Meeting",
+    "attachment_url": "https://nsearchives.nseindia.com/corporate/TMLCOMMERCIAL_12082026154213_Final.pdf",
+    "fetched_at": "2026-08-17T11:09:46.811607+00:00",
+    "raw_date": "12-Aug-2026 15:43:24"
+  },
+  {
+    "source": "nseindia.com",
+    "type": "announcement",
+    "date": "2026-08-01",
+    "title": "Press Release",
+    "attachment_url": "https://nsearchives.nseindia.com/corporate/TMLCOMMERCIAL_01082026142609_nsebsesalesigned.pdf",
+    "fetched_at": "2026-08-17T11:09:46.811616+00:00",
+    "raw_date": "01-Aug-2026 14:26:22"
+  },
+  {
+    "source": "nseindia.com",
+    "type": "announcement",
+    "date": "2026-07-27",
+    "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
+    "attachment_url": "https://nsearchives.nseindia.com/corporate/TMLCOMMERCIAL_27072026124732_NSEBSEFINAL.pdf",
+    "fetched_at": "2026-08-17T11:09:46.811624+00:00",
+    "raw_date": "27-Jul-2026 12:48:58"
+  }
+]

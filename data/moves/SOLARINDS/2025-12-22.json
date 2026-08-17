@@ -1,0 +1,31 @@
+{
+  "symbol": "SOLARINDS",
+  "date": "2025-12-22",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 5.95,
+  "move_1w_pct": 3.48,
+  "direction": "up",
+  "close": 12612.55,
+  "volume_ratio_vs_20d": 2.13,
+  "technical_snapshot": {
+    "date": "2025-12-22",
+    "close": 12612.55,
+    "rsi_14": 38.17,
+    "sma_20": 12641.33,
+    "sma_50": 13377.4,
+    "sma_200": 13858.39,
+    "volume_ratio_vs_20d": 2.13,
+    "tags": [
+      "marubozu",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 28.5,
+      "tags": [
+        "weekly_rsi_oversold"
+      ]
+    }
+  }
+}

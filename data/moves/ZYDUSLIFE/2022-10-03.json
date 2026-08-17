@@ -1,0 +1,35 @@
+{
+  "symbol": "ZYDUSLIFE",
+  "date": "2022-10-03",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 5.8,
+  "move_1w_pct": 14.87,
+  "direction": "up",
+  "close": 399.62,
+  "volume_ratio_vs_20d": 5.21,
+  "technical_snapshot": {
+    "date": "2022-10-03",
+    "close": 399.62,
+    "rsi_14": 67.78,
+    "sma_20": 362.95,
+    "sma_50": 361.27,
+    "sma_200": 366.66,
+    "volume_ratio_vs_20d": 5.21,
+    "tags": [
+      "above_sma20",
+      "marubozu",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend",
+      "volume_spike"
+    ],
+    "weekly": {
+      "rsi_14": 65.11,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

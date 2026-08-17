@@ -1,0 +1,23 @@
+{
+  "date": "2024-05-02",
+  "close": 1297.68,
+  "rsi_14": 65.12,
+  "sma_20": 1175.06,
+  "sma_50": 1122.3,
+  "sma_200": 1151.97,
+  "volume_ratio_vs_20d": 5.31,
+  "tags": [
+    "above_sma20",
+    "marubozu",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 54.62,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

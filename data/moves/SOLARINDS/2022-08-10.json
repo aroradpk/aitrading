@@ -1,0 +1,34 @@
+{
+  "symbol": "SOLARINDS",
+  "date": "2022-08-10",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 1.88,
+  "move_1w_pct": 17.88,
+  "direction": "up",
+  "close": 3181.28,
+  "volume_ratio_vs_20d": 1.38,
+  "technical_snapshot": {
+    "date": "2022-08-10",
+    "close": 3181.28,
+    "rsi_14": 80.56,
+    "sma_20": 2802.78,
+    "sma_50": 2758.05,
+    "sma_200": 2602.68,
+    "volume_ratio_vs_20d": 1.38,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 56.75,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

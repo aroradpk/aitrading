@@ -7,6 +7,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from app.core.config import get_settings
 
 
 def run(script: str) -> None:
@@ -17,6 +20,14 @@ def run(script: str) -> None:
 
 
 def main() -> None:
+    settings = get_settings()
+    if settings.offline_mode:
+        print("offline_mode=true — using saved data/ only (no Yahoo/NSE/PIB fetches)")
+        run("build_theme_scores.py")
+        run("build_watchlist.py")
+        print("\nOffline pipeline complete. Visit http://localhost:8000")
+        return
+
     run("build_universe.py")
     run("fetch_ohlcv.py")
     run("fetch_events.py")

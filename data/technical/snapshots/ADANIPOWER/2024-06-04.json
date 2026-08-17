@@ -1,0 +1,22 @@
+{
+  "date": "2024-06-04",
+  "close": 144.59,
+  "rsi_14": 60.06,
+  "sma_20": 134.21,
+  "sma_50": 123.73,
+  "sma_200": 97.95,
+  "volume_ratio_vs_20d": 5.4,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "marubozu",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 72.16,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

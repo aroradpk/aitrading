@@ -1,0 +1,20 @@
+{
+  "date": "2025-02-01",
+  "close": 2535.69,
+  "rsi_14": 80.06,
+  "sma_20": 2308.65,
+  "sma_50": 2389.72,
+  "sma_200": 2437.87,
+  "volume_ratio_vs_20d": 2.32,
+  "tags": [
+    "above_sma20",
+    "rsi_overbought",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 55.0,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

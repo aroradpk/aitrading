@@ -1,0 +1,20 @@
+{
+  "date": "2023-10-23",
+  "close": 86.95,
+  "rsi_14": 23.53,
+  "sma_20": 94.72,
+  "sma_50": 88.17,
+  "sma_200": 71.62,
+  "volume_ratio_vs_20d": 1.0,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "near_support",
+    "rsi_oversold",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 57.47,
+    "tags": []
+  }
+}

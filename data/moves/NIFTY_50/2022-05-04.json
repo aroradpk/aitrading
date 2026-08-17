@@ -1,0 +1,32 @@
+{
+  "symbol": "NIFTY_50",
+  "date": "2022-05-04",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": -2.29,
+  "move_1w_pct": -3.04,
+  "direction": "down",
+  "close": 16677.6,
+  "volume_ratio_vs_20d": 1.04,
+  "technical_snapshot": {
+    "date": "2022-05-04",
+    "close": 16677.6,
+    "rsi_14": 32.01,
+    "sma_20": 17352.21,
+    "sma_50": 17090.32,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 1.04,
+    "tags": [
+      "bearish_engulfing",
+      "marubozu",
+      "near_support",
+      "rsi_oversold",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 45.39,
+      "tags": []
+    }
+  }
+}

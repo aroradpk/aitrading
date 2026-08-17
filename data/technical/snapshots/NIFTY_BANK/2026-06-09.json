@@ -1,0 +1,19 @@
+{
+  "date": "2026-06-09",
+  "close": 55194.5,
+  "rsi_14": 64.4,
+  "sma_20": 54096.97,
+  "sma_50": 54534.65,
+  "sma_200": 56968.74,
+  "volume_ratio_vs_20d": 1.18,
+  "tags": [
+    "above_sma20",
+    "marubozu"
+  ],
+  "weekly": {
+    "rsi_14": 42.15,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

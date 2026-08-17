@@ -1,0 +1,21 @@
+{
+  "date": "2023-04-18",
+  "close": 65.08,
+  "rsi_14": 74.11,
+  "sma_20": 58.83,
+  "sma_50": 61.04,
+  "sma_200": 53.03,
+  "volume_ratio_vs_20d": 1.27,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "near_resistance",
+    "rsi_overbought"
+  ],
+  "weekly": {
+    "rsi_14": 43.68,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

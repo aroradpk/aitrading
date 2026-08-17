@@ -6,10 +6,14 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from app.core.config import get_settings
 from app.engines.events import refresh_events_for_universe
 
 
 def main() -> None:
+    if get_settings().offline_mode:
+        print("offline_mode=true — skipping event fetch (use saved data/events/)")
+        return
     counts = refresh_events_for_universe()
     print(f"PIB items cached: {counts.get('pib', 0)}")
     stock_counts = {k: v for k, v in counts.items() if k != "pib"}

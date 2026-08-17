@@ -1,0 +1,20 @@
+{
+  "date": "2023-11-02",
+  "close": 96.88,
+  "rsi_14": 53.89,
+  "sma_20": 93.2,
+  "sma_50": 89.12,
+  "sma_200": 72.32,
+  "volume_ratio_vs_20d": 1.2,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 66.06,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

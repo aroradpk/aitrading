@@ -1,0 +1,19 @@
+{
+  "date": "2026-07-28",
+  "close": 1377.8,
+  "rsi_14": 36.16,
+  "sma_20": 1505.15,
+  "sma_50": 1486.1,
+  "sma_200": 1141.6,
+  "volume_ratio_vs_20d": 0.63,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "near_support",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 61.28,
+    "tags": []
+  }
+}

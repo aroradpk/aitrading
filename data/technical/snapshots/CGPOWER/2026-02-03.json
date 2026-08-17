@@ -1,0 +1,21 @@
+{
+  "date": "2026-02-03",
+  "close": 661.55,
+  "rsi_14": 66.09,
+  "sma_20": 588.2,
+  "sma_50": 632.52,
+  "sma_200": 681.75,
+  "volume_ratio_vs_20d": 2.3,
+  "tags": [
+    "above_sma20",
+    "near_resistance",
+    "rsi_overbought",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 39.25,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

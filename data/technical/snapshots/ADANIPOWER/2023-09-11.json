@@ -1,0 +1,24 @@
+{
+  "date": "2023-09-11",
+  "close": 79.68,
+  "rsi_14": 68.63,
+  "sma_20": 65.99,
+  "sma_50": 57.17,
+  "sma_200": 50.27,
+  "volume_ratio_vs_20d": 1.74,
+  "tags": [
+    "above_sma20",
+    "long_term_uptrend",
+    "marubozu",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 79.66,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}

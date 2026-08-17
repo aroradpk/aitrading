@@ -1,0 +1,33 @@
+{
+  "symbol": "NIFTY_50",
+  "date": "2022-04-04",
+  "instrument_type": "index",
+  "trigger_type": "index_1d",
+  "threshold_pct": 2.0,
+  "move_1d_pct": 2.17,
+  "move_1w_pct": 4.83,
+  "direction": "up",
+  "close": 18053.4,
+  "volume_ratio_vs_20d": 0.96,
+  "technical_snapshot": {
+    "date": "2022-04-04",
+    "close": 18053.4,
+    "rsi_14": 75.37,
+    "sma_20": 17026.63,
+    "sma_50": 17115.08,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 0.96,
+    "tags": [
+      "above_sma20",
+      "marubozu",
+      "near_resistance",
+      "rsi_overbought"
+    ],
+    "weekly": {
+      "rsi_14": 56.01,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "symbol": "CHOLAFIN",
+  "date": "2022-08-03",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 1.44,
+  "move_1w_pct": 11.92,
+  "direction": "up",
+  "close": 752.68,
+  "volume_ratio_vs_20d": 0.68,
+  "technical_snapshot": {
+    "date": "2022-08-03",
+    "close": 752.68,
+    "rsi_14": 88.66,
+    "sma_20": 669.15,
+    "sma_50": 652.08,
+    "sma_200": 636.53,
+    "volume_ratio_vs_20d": 0.68,
+    "tags": [
+      "above_sma20",
+      "long_term_uptrend",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 53.25,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

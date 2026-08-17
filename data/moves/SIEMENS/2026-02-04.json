@@ -1,0 +1,32 @@
+{
+  "symbol": "SIEMENS",
+  "date": "2026-02-04",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 2.45,
+  "move_1w_pct": 10.39,
+  "direction": "up",
+  "close": 3274.41,
+  "volume_ratio_vs_20d": 1.37,
+  "technical_snapshot": {
+    "date": "2026-02-04",
+    "close": 3274.41,
+    "rsi_14": 73.0,
+    "sma_20": 3000.87,
+    "sma_50": 3098.44,
+    "sma_200": 3119.56,
+    "volume_ratio_vs_20d": 1.37,
+    "tags": [
+      "above_sma20",
+      "near_resistance",
+      "rsi_overbought"
+    ],
+    "weekly": {
+      "rsi_14": 58.29,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

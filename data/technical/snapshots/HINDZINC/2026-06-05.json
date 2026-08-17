@@ -1,0 +1,21 @@
+{
+  "date": "2026-06-05",
+  "close": 566.8,
+  "rsi_14": 18.69,
+  "sma_20": 632.5,
+  "sma_50": 593.91,
+  "sma_200": 542.06,
+  "volume_ratio_vs_20d": 1.95,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "near_support",
+    "rsi_oversold",
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 45.77,
+    "tags": []
+  }
+}

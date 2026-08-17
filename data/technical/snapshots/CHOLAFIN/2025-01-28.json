@@ -1,0 +1,17 @@
+{
+  "date": "2025-01-28",
+  "close": 1238.56,
+  "rsi_14": 45.56,
+  "sma_20": 1250.93,
+  "sma_50": 1247.93,
+  "sma_200": 1341.51,
+  "volume_ratio_vs_20d": 2.2,
+  "tags": [
+    "short_term_uptrend",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 39.68,
+    "tags": []
+  }
+}

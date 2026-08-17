@@ -7,8 +7,8 @@ from pathlib import Path
 import pandas as pd
 
 from app.core.config import get_settings, nifty_next_50_path
-from app.core.paths import universe_dir
-from app.ingest.yfinance_client import fetch_ohlcv, yearly_return_pct
+from app.core.paths import ohlcv_daily_dir, universe_dir
+from app.ingest.yfinance_client import fetch_ohlcv, load_ohlcv, yearly_return_pct
 
 
 def load_nifty_next_50_symbols() -> list[dict[str, str]]:
@@ -24,7 +24,11 @@ def build_active_universe() -> dict:
     for entry in load_nifty_next_50_symbols():
         symbol = entry["symbol"]
         try:
-            frame = fetch_ohlcv(symbol, instrument_type="stock")
+            cached = ohlcv_daily_dir() / f"{symbol}.parquet"
+            if settings.offline_mode and cached.exists():
+                frame = load_ohlcv(cached)
+            else:
+                frame = fetch_ohlcv(symbol, instrument_type="stock")
             yearly_return = yearly_return_pct(frame)
             if yearly_return is None:
                 continue
@@ -83,9 +87,14 @@ def build_active_universe() -> dict:
 
 def load_active_universe() -> dict:
     path = universe_dir() / "active.json"
-    if not path.exists():
-        return build_active_universe()
-    return json.loads(path.read_text(encoding="utf-8"))
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
+    if get_settings().offline_mode:
+        raise FileNotFoundError(
+            f"Missing {path}. Commit or copy data/universe/active.json, "
+            "or run with offline_mode: false to build from the network."
+        )
+    return build_active_universe()
 
 
 def all_instruments() -> list[dict]:

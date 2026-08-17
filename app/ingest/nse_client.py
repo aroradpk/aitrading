@@ -8,6 +8,7 @@ from urllib.parse import quote
 import httpx
 
 from app.core.config import get_settings
+from app.core.offline import require_network
 from app.core.paths import events_nse_dir, sources_cache_dir
 
 NSE_HOME = "https://www.nseindia.com"
@@ -40,6 +41,11 @@ def _parse_nse_date(value: str) -> str | None:
 
 def fetch_nse_announcements(symbol: str, lookback_days: int | None = None) -> list[dict]:
     settings = get_settings()
+    if settings.offline_mode:
+        cached = load_nse_announcements(symbol)
+        if cached:
+            return cached
+        require_network(f"NSE announcements fetch for {symbol}")
     lookback_days = lookback_days or settings.events.lookback_days
     end = datetime.now(timezone.utc).date()
     start = end - timedelta(days=lookback_days)

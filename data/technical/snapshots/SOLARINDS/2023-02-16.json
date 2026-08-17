@@ -1,0 +1,18 @@
+{
+  "date": "2023-02-16",
+  "close": 3926.01,
+  "rsi_14": 39.51,
+  "sma_20": 3938.97,
+  "sma_50": 4096.62,
+  "sma_200": 3488.55,
+  "volume_ratio_vs_20d": 3.95,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 44.99,
+    "tags": []
+  }
+}

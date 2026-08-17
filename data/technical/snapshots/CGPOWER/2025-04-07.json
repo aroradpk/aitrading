@@ -1,0 +1,19 @@
+{
+  "date": "2025-04-07",
+  "close": 539.31,
+  "rsi_14": 34.09,
+  "sma_20": 616.25,
+  "sma_50": 603.81,
+  "sma_200": 694.02,
+  "volume_ratio_vs_20d": 1.32,
+  "tags": [
+    "rsi_oversold",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 29.8,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

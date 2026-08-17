@@ -1,0 +1,19 @@
+{
+  "date": "2024-12-20",
+  "close": 6758.6,
+  "rsi_14": 34.72,
+  "sma_20": 7354.28,
+  "sma_50": 7381.96,
+  "sma_200": 7322.62,
+  "volume_ratio_vs_20d": 1.74,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "rsi_oversold",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 42.95,
+    "tags": []
+  }
+}

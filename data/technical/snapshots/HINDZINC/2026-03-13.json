@@ -1,0 +1,18 @@
+{
+  "date": "2026-03-13",
+  "close": 542.05,
+  "rsi_14": 38.54,
+  "sma_20": 580.71,
+  "sma_50": 611.85,
+  "sma_200": 501.47,
+  "volume_ratio_vs_20d": 1.15,
+  "tags": [
+    "long_term_uptrend",
+    "marubozu",
+    "near_support"
+  ],
+  "weekly": {
+    "rsi_14": 56.16,
+    "tags": []
+  }
+}

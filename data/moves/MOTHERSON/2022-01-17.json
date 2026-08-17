@@ -1,0 +1,32 @@
+{
+  "symbol": "MOTHERSON",
+  "date": "2022-01-17",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 2.16,
+  "move_1w_pct": 28.48,
+  "direction": "up",
+  "close": 81.96,
+  "volume_ratio_vs_20d": 0.92,
+  "technical_snapshot": {
+    "date": "2022-01-17",
+    "close": 81.96,
+    "rsi_14": 84.3,
+    "sma_20": 62.01,
+    "sma_50": 60.89,
+    "sma_200": null,
+    "volume_ratio_vs_20d": 0.92,
+    "tags": [
+      "above_sma20",
+      "rsi_overbought",
+      "short_term_uptrend"
+    ],
+    "weekly": {
+      "rsi_14": 65.26,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    }
+  }
+}

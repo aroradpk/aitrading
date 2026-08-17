@@ -1,0 +1,20 @@
+{
+  "date": "2023-03-08",
+  "close": 820.4,
+  "rsi_14": 32.15,
+  "sma_20": 893.05,
+  "sma_50": 1768.36,
+  "sma_200": 2696.12,
+  "volume_ratio_vs_20d": 1.66,
+  "tags": [
+    "hammer",
+    "rsi_oversold",
+    "volume_spike"
+  ],
+  "weekly": {
+    "rsi_14": 20.0,
+    "tags": [
+      "weekly_rsi_oversold"
+    ]
+  }
+}

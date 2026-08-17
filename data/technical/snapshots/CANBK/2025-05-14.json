@@ -1,0 +1,20 @@
+{
+  "date": "2025-05-14",
+  "close": 98.76,
+  "rsi_14": 61.54,
+  "sma_20": 91.49,
+  "sma_50": 85.01,
+  "sma_200": 93.02,
+  "volume_ratio_vs_20d": 1.28,
+  "tags": [
+    "above_sma20",
+    "near_resistance",
+    "short_term_uptrend"
+  ],
+  "weekly": {
+    "rsi_14": 62.73,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  }
+}
