@@ -13,22 +13,74 @@
     "date": "2024-03-01",
     "close": 47286.9,
     "rsi_14": 75.64,
-    "sma_20": 46189.73,
-    "sma_50": 46686.6,
-    "sma_200": 45112.22,
-    "volume_ratio_vs_20d": 0.71,
+    "ema_20": 46399.36,
+    "ema_50": 46279.52,
+    "ema_200": 44904.26,
     "tags": [
-      "above_sma20",
+      "candle_marubozu",
+      "candle_morning_star",
+      "ema20_support_touch",
+      "ema_bull_stack",
+      "formation_double_bottom",
+      "formation_falling_wedge",
       "long_term_uptrend",
-      "marubozu",
       "near_resistance",
-      "rsi_overbought"
+      "rsi_overbought",
+      "short_term_uptrend"
+    ],
+    "formations": [
+      {
+        "id": "falling_wedge",
+        "name": "Falling wedge",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_bottom",
+        "name": "Double bottom",
+        "bias": "bullish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu",
+      "morning_star"
     ],
     "weekly": {
       "rsi_14": 64.25,
+      "ema_20": 45998.44,
       "tags": [
         "weekly_uptrend"
       ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": true,
+      "tight_range": true,
+      "higher_lows": false,
+      "close_above_ema20": true,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": true,
+      "rsi_60_reclaim": true,
+      "rsi_trend_long": true,
+      "uptrend": true,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": true,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": false,
+      "setup_rattle": false,
+      "late_bar": false,
+      "strong_close": true,
+      "dead_volume": true,
+      "live_rvol": false
     }
-  }
+  },
+  "chart_file": "technical/charts/NIFTY_BANK/2024-03-01.png"
 }

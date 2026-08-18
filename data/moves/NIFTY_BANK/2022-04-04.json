@@ -13,21 +13,64 @@
     "date": "2022-04-04",
     "close": 38634.75,
     "rsi_14": 75.18,
-    "sma_20": 35543.55,
-    "sma_50": 36711.67,
-    "sma_200": null,
-    "volume_ratio_vs_20d": 1.43,
+    "ema_20": 36217.8,
+    "ema_50": 36418.79,
+    "ema_200": null,
     "tags": [
-      "above_sma20",
-      "marubozu",
+      "candle_marubozu",
+      "ema20_extended_long",
+      "formation_falling_wedge",
       "near_resistance",
-      "rsi_overbought"
+      "rsi_overbought",
+      "short_term_downtrend"
+    ],
+    "formations": [
+      {
+        "id": "falling_wedge",
+        "name": "Falling wedge",
+        "bias": "bullish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu"
     ],
     "weekly": {
       "rsi_14": 60.14,
+      "ema_20": 36866.18,
       "tags": [
         "weekly_uptrend"
       ]
+    },
+    "position_bias": "neutral",
+    "position_bias_long": "neutral",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": false,
+      "tight_range": false,
+      "higher_lows": true,
+      "close_above_ema20": true,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": true,
+      "uptrend": false,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": true,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": false,
+      "setup_rattle": true,
+      "late_bar": false,
+      "strong_close": true,
+      "dead_volume": false,
+      "live_rvol": false
     }
-  }
+  },
+  "chart_file": "technical/charts/NIFTY_BANK/2022-04-04.png"
 }

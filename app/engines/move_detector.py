@@ -262,6 +262,7 @@ def scan_today_setup(
         "target_move_pct": target,
         "expected_move_pct": expected,
         "expected_horizon_days": horizon_days,
+        "session_seven": bool(scored.get("session_seven")),
         "mtf_precision": bool(scored.get("mtf_precision")),
         "intraday": intraday,
         "formation_alignment": formation_state,
@@ -283,10 +284,11 @@ def scan_setups_for_symbol(frame: pd.DataFrame, historical_moves: list[dict]) ->
         setups.append(scan_today_setup(frame, historical_moves, side=side, intraday=False, symbol=symbol))
 
     if settings.technical.intraday.enabled:
-        intraday_side = settings.technical.intraday.position_side
-        if intraday_side in {"long", "short"} and (focus == "both" or focus == intraday_side):
+        already = {setup["position_side"] for setup in setups}
+        extra_side = settings.technical.intraday.position_side
+        if extra_side in {"long", "short"} and extra_side not in already:
             setups.append(
-                scan_today_setup(frame, historical_moves, side=intraday_side, intraday=True, symbol=symbol)
+                scan_today_setup(frame, historical_moves, side=extra_side, intraday=True, symbol=symbol)
             )
 
     return setups

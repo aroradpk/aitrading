@@ -1,4 +1,5 @@
 import pandas as pd
+import pytest
 
 from app.engines.event_content import analyze_event_content, score_analyzed_event
 from app.engines.move_detector import load_moves, scan_today_setup
@@ -121,7 +122,7 @@ def test_long_reasons_flag_headwinds() -> None:
 def test_motherson_aug5_coil_still_scans() -> None:
     path = ohlcv_daily_dir() / "MOTHERSON.parquet"
     if not path.exists():
-        return
+        pytest.skip("MOTHERSON not in the 5-scrip intraday book")
     frame = load_ohlcv(path)
     signal_idx = frame.index.get_indexer([pd.Timestamp("2026-08-05")], method="nearest")[0]
     setup_base = scan_today_setup(

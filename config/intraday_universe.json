@@ -1,0 +1,42 @@
+{
+  "selection_rule": "Intraday book: 3 Nifty 50 names with high rupee-volume and 20-day |momentum|, plus Nifty 50 and Bank Nifty. Swing on a wider universe is later — this file is what we trade now.",
+  "picked_on": "2026-08-18",
+  "pick_method": "Among largest Nifty 50 names: rank by 20-day average rupee volume times |20-day return|. HDFCBANK = liquidity. BAJFINANCE and M&M = volume with actual momentum.",
+  "instruments": [
+    {
+      "symbol": "HDFCBANK",
+      "name": "HDFC Bank",
+      "type": "stock",
+      "yahoo": "HDFCBANK.NS",
+      "role": "highest liquidity"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "name": "Bajaj Finance",
+      "type": "stock",
+      "yahoo": "BAJFINANCE.NS",
+      "role": "volume + momentum"
+    },
+    {
+      "symbol": "M&M",
+      "name": "Mahindra & Mahindra",
+      "type": "stock",
+      "yahoo": "M&M.NS",
+      "role": "volume + momentum"
+    },
+    {
+      "symbol": "NIFTY_50",
+      "name": "Nifty 50",
+      "type": "index",
+      "yahoo": "^NSEI",
+      "role": "index"
+    },
+    {
+      "symbol": "NIFTY_BANK",
+      "name": "Bank Nifty",
+      "type": "index",
+      "yahoo": "^NSEBANK",
+      "role": "index"
+    }
+  ]
+}

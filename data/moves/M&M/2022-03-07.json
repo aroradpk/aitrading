@@ -1,0 +1,85 @@
+{
+  "symbol": "M&M",
+  "date": "2022-03-07",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": -5.7,
+  "move_1w_pct": -14.49,
+  "direction": "down",
+  "close": 659.27,
+  "volume_ratio_vs_20d": 1.85,
+  "technical_snapshot": {
+    "date": "2022-03-07",
+    "close": 659.27,
+    "rsi_14": 24.21,
+    "ema_20": 768.57,
+    "ema_50": 793.74,
+    "ema_200": null,
+    "tags": [
+      "candle_marubozu",
+      "ema20_extended_short",
+      "formation_double_top",
+      "formation_falling_wedge",
+      "near_support",
+      "rsi_oversold",
+      "short_term_downtrend"
+    ],
+    "formations": [
+      {
+        "id": "falling_wedge",
+        "name": "Falling wedge",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_top",
+        "name": "Double top",
+        "bias": "bearish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu"
+    ],
+    "weekly": {
+      "rsi_14": 30.17,
+      "ema_20": 782.37,
+      "tags": [
+        "weekly_rsi_oversold",
+        "weekly_downtrend"
+      ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": false,
+      "consolidation_anchor": false,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": false,
+      "uptrend": false,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": false,
+      "setup_rattle": false,
+      "late_bar": true,
+      "strong_close": false,
+      "dead_volume": false,
+      "live_rvol": true
+    }
+  },
+  "aligned_events": [],
+  "event_reasons": [],
+  "chart_file": "technical/charts/M&M/2022-03-07.png"
+}

@@ -2,19 +2,67 @@
   "date": "2025-04-15",
   "close": 52379.5,
   "rsi_14": 60.77,
-  "sma_20": 50650.97,
-  "sma_50": 49706.86,
-  "sma_200": 51026.13,
-  "volume_ratio_vs_20d": 1.1,
+  "ema_20": 50633.64,
+  "ema_50": 50132.82,
+  "ema_200": 50066.76,
   "tags": [
-    "above_sma20",
+    "ema_bull_stack",
+    "ema_momentum_expanding",
+    "formation_double_top",
+    "formation_rising_wedge",
+    "long_term_uptrend",
     "near_resistance",
     "short_term_uptrend"
   ],
+  "formations": [
+    {
+      "id": "rising_wedge",
+      "name": "Rising wedge",
+      "bias": "bearish_reversal"
+    },
+    {
+      "id": "double_top",
+      "name": "Double top",
+      "bias": "bearish_reversal"
+    }
+  ],
+  "raw_candle_patterns": [],
   "weekly": {
     "rsi_14": 68.22,
+    "ema_20": 50441.11,
     "tags": [
+      "weekly_rsi_overbought",
       "weekly_uptrend"
     ]
+  },
+  "position_bias": "long",
+  "position_bias_long": "long",
+  "position_bias_short": "short",
+  "pattern_confirmations": {
+    "ema20_support": true,
+    "consolidation_anchor": false,
+    "tight_range": false,
+    "higher_lows": true,
+    "close_above_ema20": true,
+    "ema_momentum_expanding": true,
+    "ema_bull_stack": true,
+    "rsi_60_reclaim": true,
+    "rsi_trend_long": true,
+    "uptrend": true,
+    "bullish_formation": false,
+    "compressing_wedge": false,
+    "rounding_bottom": true,
+    "sr_level": true,
+    "fib_level": false,
+    "sr_fib_confluence": true,
+    "elliott_aligned": false,
+    "elliott_conflict": false,
+    "vol_expansion": false,
+    "range_expansion": false,
+    "setup_rattle": false,
+    "late_bar": false,
+    "strong_close": true,
+    "dead_volume": false,
+    "live_rvol": false
   }
 }

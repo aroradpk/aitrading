@@ -61,18 +61,32 @@ def test_save_and_load_transcript_cache(tmp_path: Path, monkeypatch: pytest.Monk
     assert record["text_file"].endswith(".txt")
 
 
-def test_score_events_uses_cached_adani_transcript() -> None:
+def test_score_events_uses_cached_transcript(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    import app.engines.event_transcripts as transcripts_module
+    import app.ingest.nse_client as nse_client
+
+    nse_dir = tmp_path / "nse"
+    nse_dir.mkdir()
+    monkeypatch.setattr(transcripts_module, "events_transcripts_dir", lambda: tmp_path / "transcripts")
+    monkeypatch.setattr(nse_client, "events_nse_dir", lambda: nse_dir)
+
     item = {
         "type": "announcement",
         "title": "Analysts/Institutional Investor Meet/Con. Call Updates",
-        "attachment_url": "https://nsearchives.nseindia.com/corporate/ADANIPOWER_29072026214437_APLearningscalltranscript29072026.pdf",
+        "attachment_url": "https://example.com/CO_learnings_call_transcript.pdf",
         "date": "2026-07-29",
     }
-    text = body_text_for_event("ADANIPOWER", item)
+    (nse_dir / "CO.json").write_text(json.dumps([item]), encoding="utf-8")
+    save_transcript("CO", item, "Management reported record revenue and margin expansion.")
+
+    text = body_text_for_event("CO", item)
     assert text is not None
     analysis = analyze_event_content(item, body_text=text)
     assert analysis["alignment"] == "positive"
 
-    score, reasons = score_events("ADANIPOWER")
+    score, reasons = score_events("CO")
     assert score > 0
-    assert any("record revenue" in reason.get("text", "").lower() or "margin" in reason.get("text", "").lower() for reason in reasons)
+    assert any(
+        "record revenue" in reason.get("text", "").lower() or "margin" in reason.get("text", "").lower()
+        for reason in reasons
+    )

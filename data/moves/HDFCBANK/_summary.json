@@ -1,0 +1,1278 @@
+{
+  "symbol": "HDFCBANK",
+  "count": 15,
+  "moves": [
+    {
+      "symbol": "HDFCBANK",
+      "date": "2022-02-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.43,
+      "move_1w_pct": -5.78,
+      "direction": "down",
+      "close": 664.14,
+      "volume_ratio_vs_20d": 1.86,
+      "technical_snapshot": {
+        "date": "2022-02-24",
+        "close": 664.14,
+        "rsi_14": 35.08,
+        "ema_20": 701.03,
+        "ema_50": 705.19,
+        "ema_200": null,
+        "tags": [
+          "ema20_extended_short",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
+          "near_support",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 38.68,
+          "ema_20": 706.81,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2022-02-24.png"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "date": "2022-04-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 10.01,
+      "move_1w_pct": 15.63,
+      "direction": "up",
+      "close": 775.21,
+      "volume_ratio_vs_20d": 4.2,
+      "technical_snapshot": {
+        "date": "2022-04-04",
+        "close": 775.21,
+        "rsi_14": 77.39,
+        "ema_20": 689.57,
+        "ema_50": 688.61,
+        "ema_200": null,
+        "tags": [
+          "ema20_extended_long",
+          "formation_ascending_triangle",
+          "formation_double_top",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "ascending_triangle",
+            "name": "Ascending triangle",
+            "bias": "bullish_continuation"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 61.59,
+          "ema_20": 702.83,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": true,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": true,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2022-04-04.png"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "date": "2022-04-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -2.93,
+      "move_1w_pct": 10.78,
+      "direction": "up",
+      "close": 752.5,
+      "volume_ratio_vs_20d": 1.32,
+      "technical_snapshot": {
+        "date": "2022-04-05",
+        "close": 752.5,
+        "rsi_14": 71.88,
+        "ema_20": 695.56,
+        "ema_50": 691.12,
+        "ema_200": null,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_long",
+          "fib_0.236_retrace",
+          "formation_ascending_triangle",
+          "formation_double_top",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "ascending_triangle",
+            "name": "Ascending triangle",
+            "bias": "bullish_continuation"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 58.99,
+          "ema_20": 700.66,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": true,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": true,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2022-04-05.png"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "date": "2022-04-19",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -3.82,
+      "move_1w_pct": -11.39,
+      "direction": "down",
+      "close": 628.01,
+      "volume_ratio_vs_20d": 2.46,
+      "technical_snapshot": {
+        "date": "2022-04-19",
+        "close": 628.01,
+        "rsi_14": 41.79,
+        "ema_20": 688.1,
+        "ema_50": 689.72,
+        "ema_200": null,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "formation_rising_wedge",
+          "near_support",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 35.89,
+          "ema_20": 689.02,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": false,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2022-04-19.png"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "date": "2022-11-11",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.67,
+      "move_1w_pct": 6.87,
+      "direction": "up",
+      "close": 762.62,
+      "volume_ratio_vs_20d": 3.99,
+      "technical_snapshot": {
+        "date": "2022-11-11",
+        "close": 762.62,
+        "rsi_14": 84.1,
+        "ema_20": 706.77,
+        "ema_50": 694.95,
+        "ema_200": 682.42,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_long",
+          "ema_bull_stack",
+          "ema_momentum_expanding",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 73.29,
+          "ema_20": 690.69,
+          "tags": [
+            "weekly_rsi_overbought",
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": true,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2022-11-11.png"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "date": "2023-05-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.91,
+      "move_1w_pct": -3.29,
+      "direction": "down",
+      "close": 769.48,
+      "volume_ratio_vs_20d": 1.71,
+      "technical_snapshot": {
+        "date": "2023-05-05",
+        "close": 769.48,
+        "rsi_14": 36.74,
+        "ema_20": 788.13,
+        "ema_50": 776.95,
+        "ema_200": 743.98,
+        "tags": [
+          "ema_bull_stack",
+          "ema_momentum_expanding",
+          "formation_double_top",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 51.17,
+          "ema_20": 766.87,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": true,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2023-05-05.png"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "date": "2024-01-17",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -8.44,
+      "move_1w_pct": -7.15,
+      "direction": "down",
+      "close": 736.1,
+      "volume_ratio_vs_20d": 4.97,
+      "technical_snapshot": {
+        "date": "2024-01-17",
+        "close": 736.1,
+        "rsi_14": 22.08,
+        "ema_20": 790.16,
+        "ema_50": 777.34,
+        "ema_200": 762.41,
+        "tags": [
+          "candle_evening_star",
+          "ema20_extended_short",
+          "ema_bull_stack",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_head_shoulders",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "head_shoulders",
+            "name": "Head and shoulders",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "evening_star"
+        ],
+        "weekly": {
+          "rsi_14": 50.18,
+          "ema_20": 765.34,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2024-01-17.png"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "date": "2024-01-19",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.04,
+      "move_1w_pct": -10.39,
+      "direction": "down",
+      "close": 704.1,
+      "volume_ratio_vs_20d": 2.48,
+      "technical_snapshot": {
+        "date": "2024-01-19",
+        "close": 704.1,
+        "rsi_14": 17.71,
+        "ema_20": 775.18,
+        "ema_50": 771.99,
+        "ema_200": 761.33,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "ema_bull_stack",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 44.03,
+          "ema_20": 762.29,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": false,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2024-01-19.png"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "date": "2024-01-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -2.94,
+      "move_1w_pct": -14.67,
+      "direction": "down",
+      "close": 683.37,
+      "volume_ratio_vs_20d": 2.43,
+      "technical_snapshot": {
+        "date": "2024-01-23",
+        "close": 683.37,
+        "rsi_14": 15.55,
+        "ema_20": 766.44,
+        "ema_50": 768.52,
+        "ema_200": 760.55,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 41.71,
+          "ema_20": 754.77,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2024-01-23.png"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "date": "2024-01-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.0,
+      "move_1w_pct": -13.3,
+      "direction": "down",
+      "close": 697.04,
+      "volume_ratio_vs_20d": 1.69,
+      "technical_snapshot": {
+        "date": "2024-01-24",
+        "close": 697.04,
+        "rsi_14": 22.66,
+        "ema_20": 759.83,
+        "ema_50": 765.71,
+        "ema_200": 759.92,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "fib_0.786_retrace",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 43.89,
+          "ema_20": 756.07,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": false,
+          "fib_level": true,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2024-01-24.png"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "date": "2024-06-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.66,
+      "move_1w_pct": -3.09,
+      "direction": "down",
+      "close": 719.78,
+      "volume_ratio_vs_20d": 2.21,
+      "technical_snapshot": {
+        "date": "2024-06-04",
+        "close": 719.78,
+        "rsi_14": 53.7,
+        "ema_20": 727.5,
+        "ema_50": 720.38,
+        "ema_200": 730.46,
+        "tags": [
+          "candle_marubozu",
+          "ema20_support_touch",
+          "fib_0.618_retrace",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
+          "long_term_downtrend",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 58.68,
+          "ema_20": 721.79,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2024-06-04.png"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "date": "2026-03-19",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.32,
+      "move_1w_pct": -4.15,
+      "direction": "down",
+      "close": 785.21,
+      "volume_ratio_vs_20d": 4.03,
+      "technical_snapshot": {
+        "date": "2026-03-19",
+        "close": 785.21,
+        "rsi_14": 23.96,
+        "ema_20": 846.52,
+        "ema_50": 884.83,
+        "ema_200": 921.58,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_symmetrical_triangle",
+          "long_term_downtrend",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 16.27,
+          "ema_20": 900.45,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": false,
+          "fib_level": false,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2026-03-19.png"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "date": "2026-03-23",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -4.65,
+      "move_1w_pct": -11.47,
+      "direction": "down",
+      "close": 732.04,
+      "volume_ratio_vs_20d": 1.47,
+      "technical_snapshot": {
+        "date": "2026-03-23",
+        "close": 732.04,
+        "rsi_14": 20.29,
+        "ema_20": 828.83,
+        "ema_50": 874.43,
+        "ema_200": 918.18,
+        "tags": [
+          "candle_evening_star",
+          "candle_marubozu",
+          "ema20_extended_short",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu",
+          "evening_star"
+        ],
+        "weekly": {
+          "rsi_14": 14.45,
+          "ema_20": 882.91,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2026-03-23.png"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "date": "2026-04-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.71,
+      "move_1w_pct": 11.56,
+      "direction": "up",
+      "close": 802.82,
+      "volume_ratio_vs_20d": 1.11,
+      "technical_snapshot": {
+        "date": "2026-04-08",
+        "close": 802.82,
+        "rsi_14": 45.62,
+        "ema_20": 785.42,
+        "ema_50": 837.97,
+        "ema_200": 903.96,
+        "tags": [
+          "candle_marubozu",
+          "elliott_impulse_down",
+          "ema_bear_stack",
+          "formation_double_bottom",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 25.71,
+          "ema_20": 863.78,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": true,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2026-04-08.png"
+    },
+    {
+      "symbol": "HDFCBANK",
+      "date": "2026-07-20",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.12,
+      "move_1w_pct": -4.93,
+      "direction": "down",
+      "close": 777.6,
+      "volume_ratio_vs_20d": 1.67,
+      "technical_snapshot": {
+        "date": "2026-07-20",
+        "close": 777.6,
+        "rsi_14": 43.32,
+        "ema_20": 801.37,
+        "ema_50": 789.36,
+        "ema_200": 838.56,
+        "tags": [
+          "candle_marubozu",
+          "formation_rising_wedge",
+          "long_term_downtrend",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 47.81,
+          "ema_20": 799.65,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/HDFCBANK/2026-07-20.png"
+    }
+  ]
+}

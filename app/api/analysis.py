@@ -48,6 +48,7 @@ from app.engines.themes import (
     score_themes,
     update_theme_symbols,
 )
+from app.engines.intraday_ledger import load_ledger, recompute_rule_stats
 from app.engines.universe import build_active_universe, load_active_universe
 from app.schemas.analysis import (
     BacktestReport,
@@ -126,6 +127,15 @@ def get_moves(
     if direction:
         moves = [move for move in moves if move.get("direction") == direction]
     return [MoveEvent.model_validate(move) for move in moves[:limit]]
+
+
+@router.get("/intraday/stats")
+def get_intraday_stats() -> dict:
+    stats = recompute_rule_stats()
+    ledger = load_ledger()
+    stats["ledger_rows"] = len(ledger)
+    stats["open_rows"] = sum(1 for row in ledger if row.get("mfe_pct") is None)
+    return stats
 
 
 @router.get("/watchlist/latest", response_model=WatchlistReport)

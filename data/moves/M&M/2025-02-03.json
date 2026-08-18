@@ -1,0 +1,79 @@
+{
+  "symbol": "M&M",
+  "date": "2025-02-03",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 3.14,
+  "move_1w_pct": 10.54,
+  "direction": "up",
+  "close": 3115.29,
+  "volume_ratio_vs_20d": 1.4,
+  "technical_snapshot": {
+    "date": "2025-02-03",
+    "close": 3115.29,
+    "rsi_14": 65.18,
+    "ema_20": 2923.46,
+    "ema_50": 2925.3,
+    "ema_200": 2680.58,
+    "tags": [
+      "candle_marubozu",
+      "elliott_impulse_down",
+      "ema20_extended_long",
+      "formation_symmetrical_triangle",
+      "long_term_uptrend",
+      "rsi_overbought",
+      "short_term_downtrend"
+    ],
+    "formations": [
+      {
+        "id": "symmetrical_triangle",
+        "name": "Symmetrical triangle",
+        "bias": "neutral_breakout"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu"
+    ],
+    "weekly": {
+      "rsi_14": 59.29,
+      "ema_20": 2909.5,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": false,
+      "tight_range": false,
+      "higher_lows": true,
+      "close_above_ema20": true,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": true,
+      "uptrend": true,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": true,
+      "vol_expansion": false,
+      "range_expansion": true,
+      "setup_rattle": true,
+      "late_bar": false,
+      "strong_close": true,
+      "dead_volume": false,
+      "live_rvol": false
+    }
+  },
+  "aligned_events": [],
+  "event_reasons": [],
+  "chart_file": "technical/charts/M&M/2025-02-03.png"
+}

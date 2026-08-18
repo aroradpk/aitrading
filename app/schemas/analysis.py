@@ -14,6 +14,7 @@ class WatchlistEntry(BaseModel):
     target_move_pct: float
     expected_move_pct: float = 0.0
     expected_horizon_days: int = 1
+    session_seven: bool = False
     position_bias: str = "neutral"
     position_side: str = "long"
     intraday: bool = False

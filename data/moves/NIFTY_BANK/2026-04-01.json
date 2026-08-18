@@ -13,20 +13,65 @@
     "date": "2026-04-01",
     "close": 51448.65,
     "rsi_14": 32.28,
-    "sma_20": 54812.14,
-    "sma_50": 58063.73,
-    "sma_200": 57326.55,
-    "volume_ratio_vs_20d": 1.02,
+    "ema_20": 54491.42,
+    "ema_50": 56840.96,
+    "ema_200": 56873.0,
     "tags": [
-      "long_term_uptrend",
+      "ema20_extended_short",
+      "ema_bear_stack",
+      "ema_momentum_expanding_down",
+      "formation_falling_wedge",
+      "long_term_downtrend",
       "near_support",
-      "rsi_oversold"
+      "rsi_oversold",
+      "short_term_downtrend"
     ],
+    "formations": [
+      {
+        "id": "falling_wedge",
+        "name": "Falling wedge",
+        "bias": "bullish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [],
     "weekly": {
       "rsi_14": 27.66,
+      "ema_20": 56854.06,
       "tags": [
-        "weekly_rsi_oversold"
+        "weekly_rsi_oversold",
+        "weekly_downtrend"
       ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": false,
+      "consolidation_anchor": false,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": false,
+      "uptrend": false,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": false,
+      "setup_rattle": false,
+      "late_bar": false,
+      "strong_close": false,
+      "dead_volume": false,
+      "live_rvol": false
     }
-  }
+  },
+  "chart_file": "technical/charts/NIFTY_BANK/2026-04-01.png"
 }

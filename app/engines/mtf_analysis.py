@@ -14,7 +14,7 @@ from app.engines.chart_patterns import (
 )
 from app.engines.pattern_confirmations import detect_ema20_support, detect_higher_lows, detect_lower_highs
 from app.engines.technical import _ema
-from app.ingest.yfinance_client import load_ohlcv, save_ohlcv, yahoo_ticker
+from app.ingest.yfinance_client import load_ohlcv, save_ohlcv
 
 
 def load_intraday(symbol: str, interval: str) -> pd.DataFrame | None:
@@ -24,15 +24,24 @@ def load_intraday(symbol: str, interval: str) -> pd.DataFrame | None:
     return load_ohlcv(path)
 
 
-def fetch_intraday(symbol: str, interval: str, *, days: int = 60) -> pd.DataFrame:
+def fetch_intraday(
+    symbol: str,
+    interval: str,
+    *,
+    days: int = 60,
+    yahoo: str | None = None,
+    instrument_type: str = "stock",
+) -> pd.DataFrame:
     import yfinance as yf
+
+    from app.engines.universe import instrument_yahoo
 
     settings = get_settings()
     cached = ohlcv_intraday_dir(interval) / f"{symbol}.parquet"
     if settings.offline_mode and cached.exists():
         return load_ohlcv(cached)
 
-    ticker = yahoo_ticker(symbol)
+    ticker = yahoo or instrument_yahoo(symbol, instrument_type)
     end = datetime.now(timezone.utc)
     start = end - timedelta(days=days)
     frame = yf.download(

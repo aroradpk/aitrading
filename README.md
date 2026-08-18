@@ -4,11 +4,11 @@ Personal stock analysis workstation focused on **technical pattern memory** with
 
 ## What it does (Phase 0–1)
 
-- Selects **top 20 rising Nifty Next 50 stocks** (positive 1-year trend) plus indices
-- Downloads **daily OHLCV** into `data/ohlcv/daily/` (free via Yahoo Finance / NSE `.NS` symbols)
-- Detects historical moves: **≥5% (1D)** / **≥10% (1W)** for stocks, **≥2% (1D)** for indices
-- Saves **technical snapshots** before each move (RSI, SMA, candlestick tags, S/R, weekly context)
-- Builds a **daily conviction watchlist** by matching today's chart to past big-move setups
+- Trades a **5-scrip intraday book**: HDFCBANK, BAJFINANCE, M&M, Nifty 50, Bank Nifty
+- Wider names (Nifty Next 50 list in `config/nifty_next_50.json`) are for a **later swing** feature — not the live book
+- Downloads **daily + 15m/1h OHLCV** for those 5 into `data/ohlcv/`
+- Scores next-session setups (tech 5/6/7). A **7** is judged on **next session MFE**, not a 2–3 day hold
+- **Learns from outcomes** by logging every setup and refreshing hit rates (`data/intraday/`) — not a trained ML model
 
 ## Run & start scripts
 
@@ -122,12 +122,14 @@ The FastAPI app reads from the same `data/` folder — VS Code and the UI always
 
 | Script | Purpose |
 | --- | --- |
-| `scripts/build_universe.py` | Top 20 rising Nifty Next 50 + indices → `data/universe/active.json` |
-| `scripts/fetch_ohlcv.py` | Download price history → `data/ohlcv/daily/` |
+| `scripts/build_universe.py` | 5-scrip book from `config/intraday_universe.json` → `data/universe/active.json` |
+| `scripts/fetch_ohlcv.py` | Daily price history → `data/ohlcv/daily/` |
+| `scripts/fetch_intraday.py` | 15m/1h bars (not committed) → `data/ohlcv/{15m,1h}/` |
 | `scripts/scan_historical_moves.py` | Find big moves + snapshots → `data/moves/` |
-| `scripts/build_watchlist.py` | Today's conviction list → `data/reports/daily/` |
+| `scripts/build_watchlist.py` | Today's conviction list + ledger rows → `data/reports/daily/` |
+| `scripts/learn_intraday.py` | Fill next-session MFE, refresh `data/intraday/rule_stats.json` |
 | `scripts/build_theme_scores.py` | Theme exposure scores → `data/themes/scores/` |
-| `scripts/run_pipeline.py` | **Offline** (`offline_mode: true`): rebuild watchlist + themes only. **Online**: full fetch pipeline |
+| `scripts/run_pipeline.py` | **Offline** (`offline_mode: true`): rebuild watchlist + themes + learn. **Online**: full fetch pipeline |
 | `scripts/run_backtest.py` | Walk-forward backtest → `data/reports/backtest/` (uses local OHLCV only) |
 
 ## API endpoints
@@ -138,7 +140,7 @@ The FastAPI app reads from the same `data/` folder — VS Code and the UI always
 | `GET /api/analysis/universe` | Active stock/index universe |
 | `GET /api/analysis/moves` | Historical big moves |
 | `GET /api/analysis/watchlist/latest` | Latest conviction report |
-| `POST /api/analysis/watchlist/build` | Rebuild watchlist |
+| `GET /api/analysis/intraday/stats` | Next-session hit rates (trusted only at n≥20) |
 | `GET /api/analysis/themes/graph` | Macro theme graph |
 | `GET /api/analysis/themes/{symbol}` | Per-symbol theme score |
 | `POST /api/analysis/themes/build` | Rebuild theme scores |
@@ -174,7 +176,7 @@ The FastAPI app reads from the same `data/` folder — VS Code and the UI always
 
 Edit `config/settings.yaml` for thresholds, universe size, conviction weights, and **`offline_mode`** (default `true` = no Yahoo/NSE/PIB calls).
 
-Nifty Next 50 full list: `config/nifty_next_50.json` (update quarterly after index reconstitution).
+Intraday book: `config/intraday_universe.json` (3 Nifty 50 names + Nifty 50 + Bank Nifty). Nifty Next 50 full list stays in `config/nifty_next_50.json` for a later swing universe.
 
 ## Phase 2 — Events & fundamentals
 

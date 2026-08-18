@@ -2,17 +2,81 @@
   "date": "2023-01-25",
   "close": 41647.65,
   "rsi_14": 38.9,
-  "sma_20": 42540.24,
-  "sma_50": 42839.09,
-  "sma_200": 38707.27,
-  "volume_ratio_vs_20d": 0.0,
+  "ema_20": 42483.32,
+  "ema_50": 42359.17,
+  "ema_200": 39837.06,
   "tags": [
+    "candle_marubozu",
+    "ema20_support_touch",
+    "ema_bull_stack",
+    "formation_descending_triangle",
+    "formation_double_bottom",
+    "formation_double_top",
+    "formation_head_shoulders",
     "long_term_uptrend",
-    "marubozu",
-    "near_support"
+    "near_support",
+    "short_term_uptrend"
+  ],
+  "formations": [
+    {
+      "id": "descending_triangle",
+      "name": "Descending triangle",
+      "bias": "bearish_continuation"
+    },
+    {
+      "id": "double_bottom",
+      "name": "Double bottom",
+      "bias": "bullish_reversal"
+    },
+    {
+      "id": "double_top",
+      "name": "Double top",
+      "bias": "bearish_reversal"
+    },
+    {
+      "id": "head_shoulders",
+      "name": "Head and shoulders",
+      "bias": "bearish_reversal"
+    }
+  ],
+  "raw_candle_patterns": [
+    "marubozu"
   ],
   "weekly": {
     "rsi_14": 55.33,
-    "tags": []
+    "ema_20": 41386.97,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  },
+  "position_bias": "long",
+  "position_bias_long": "long",
+  "position_bias_short": "neutral",
+  "pattern_confirmations": {
+    "ema20_support": true,
+    "consolidation_anchor": true,
+    "tight_range": true,
+    "higher_lows": false,
+    "close_above_ema20": false,
+    "ema_momentum_expanding": false,
+    "ema_bull_stack": true,
+    "rsi_60_reclaim": false,
+    "rsi_trend_long": false,
+    "uptrend": true,
+    "bullish_formation": true,
+    "compressing_wedge": false,
+    "rounding_bottom": false,
+    "sr_level": true,
+    "fib_level": false,
+    "sr_fib_confluence": true,
+    "elliott_aligned": false,
+    "elliott_conflict": false,
+    "vol_expansion": false,
+    "range_expansion": true,
+    "setup_rattle": true,
+    "late_bar": false,
+    "strong_close": false,
+    "dead_volume": true,
+    "live_rvol": false
   }
 }

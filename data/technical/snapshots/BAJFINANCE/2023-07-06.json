@@ -1,0 +1,69 @@
+{
+  "date": "2023-07-06",
+  "close": 763.31,
+  "rsi_14": 70.32,
+  "ema_20": 713.23,
+  "ema_50": 680.23,
+  "ema_200": 645.55,
+  "tags": [
+    "ema20_extended_long",
+    "ema_bull_stack",
+    "ema_momentum_expanding",
+    "formation_double_bottom",
+    "formation_symmetrical_triangle",
+    "long_term_uptrend",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "formations": [
+    {
+      "id": "symmetrical_triangle",
+      "name": "Symmetrical triangle",
+      "bias": "neutral_breakout"
+    },
+    {
+      "id": "double_bottom",
+      "name": "Double bottom",
+      "bias": "bullish_reversal"
+    }
+  ],
+  "raw_candle_patterns": [],
+  "weekly": {
+    "rsi_14": 90.95,
+    "ema_20": 659.26,
+    "tags": [
+      "weekly_rsi_overbought",
+      "weekly_uptrend"
+    ]
+  },
+  "position_bias": "long",
+  "position_bias_long": "long",
+  "position_bias_short": "neutral",
+  "pattern_confirmations": {
+    "ema20_support": true,
+    "consolidation_anchor": true,
+    "tight_range": false,
+    "higher_lows": false,
+    "close_above_ema20": true,
+    "ema_momentum_expanding": true,
+    "ema_bull_stack": true,
+    "rsi_60_reclaim": false,
+    "rsi_trend_long": true,
+    "uptrend": true,
+    "bullish_formation": true,
+    "compressing_wedge": false,
+    "rounding_bottom": false,
+    "sr_level": true,
+    "fib_level": false,
+    "sr_fib_confluence": true,
+    "elliott_aligned": false,
+    "elliott_conflict": false,
+    "vol_expansion": false,
+    "range_expansion": false,
+    "setup_rattle": false,
+    "late_bar": false,
+    "strong_close": false,
+    "dead_volume": false,
+    "live_rvol": false
+  }
+}

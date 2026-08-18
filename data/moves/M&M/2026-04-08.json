@@ -1,0 +1,85 @@
+{
+  "symbol": "M&M",
+  "date": "2026-04-08",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 6.77,
+  "move_1w_pct": 8.64,
+  "direction": "up",
+  "close": 3176.74,
+  "volume_ratio_vs_20d": 1.04,
+  "technical_snapshot": {
+    "date": "2026-04-08",
+    "close": 3176.74,
+    "rsi_14": 57.57,
+    "ema_20": 3081.17,
+    "ema_50": 3236.78,
+    "ema_200": 3312.59,
+    "tags": [
+      "candle_marubozu",
+      "ema_bear_stack",
+      "fib_0.618_retrace",
+      "formation_descending_triangle",
+      "formation_double_bottom",
+      "long_term_downtrend",
+      "short_term_downtrend"
+    ],
+    "formations": [
+      {
+        "id": "descending_triangle",
+        "name": "Descending triangle",
+        "bias": "bearish_continuation"
+      },
+      {
+        "id": "double_bottom",
+        "name": "Double bottom",
+        "bias": "bullish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu"
+    ],
+    "weekly": {
+      "rsi_14": 30.91,
+      "ema_20": 3301.79,
+      "tags": [
+        "weekly_rsi_oversold",
+        "weekly_downtrend"
+      ]
+    },
+    "position_bias": "neutral",
+    "position_bias_long": "neutral",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": false,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": true,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": true,
+      "uptrend": false,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": true,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": false,
+      "setup_rattle": false,
+      "late_bar": true,
+      "strong_close": true,
+      "dead_volume": false,
+      "live_rvol": false
+    }
+  },
+  "aligned_events": [],
+  "event_reasons": [],
+  "chart_file": "technical/charts/M&M/2026-04-08.png"
+}

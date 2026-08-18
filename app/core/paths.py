@@ -112,3 +112,17 @@ def backtest_reports_dir() -> Path:
     path = data_dir() / "reports" / "backtest"
     path.mkdir(parents=True, exist_ok=True)
     return path
+
+
+def intraday_dir() -> Path:
+    path = data_dir() / "intraday"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def intraday_ledger_path() -> Path:
+    return intraday_dir() / "ledger.jsonl"
+
+
+def intraday_rule_stats_path() -> Path:
+    return intraday_dir() / "rule_stats.json"

@@ -1,0 +1,61 @@
+{
+  "date": "2026-07-20",
+  "close": 777.6,
+  "rsi_14": 43.32,
+  "ema_20": 801.37,
+  "ema_50": 789.36,
+  "ema_200": 838.56,
+  "tags": [
+    "candle_marubozu",
+    "formation_rising_wedge",
+    "long_term_downtrend",
+    "short_term_uptrend"
+  ],
+  "formations": [
+    {
+      "id": "rising_wedge",
+      "name": "Rising wedge",
+      "bias": "bearish_reversal"
+    }
+  ],
+  "raw_candle_patterns": [
+    "marubozu"
+  ],
+  "weekly": {
+    "rsi_14": 47.81,
+    "ema_20": 799.65,
+    "tags": [
+      "weekly_downtrend"
+    ]
+  },
+  "position_bias": "long",
+  "position_bias_long": "long",
+  "position_bias_short": "short",
+  "pattern_confirmations": {
+    "ema20_support": true,
+    "consolidation_anchor": false,
+    "tight_range": false,
+    "higher_lows": false,
+    "close_above_ema20": false,
+    "ema_momentum_expanding": false,
+    "ema_bull_stack": false,
+    "rsi_60_reclaim": false,
+    "rsi_trend_long": false,
+    "uptrend": true,
+    "bullish_formation": false,
+    "compressing_wedge": false,
+    "rounding_bottom": false,
+    "sr_level": true,
+    "fib_level": false,
+    "sr_fib_confluence": true,
+    "elliott_aligned": false,
+    "elliott_conflict": false,
+    "vol_expansion": false,
+    "range_expansion": false,
+    "setup_rattle": false,
+    "late_bar": true,
+    "strong_close": false,
+    "dead_volume": false,
+    "live_rvol": true
+  }
+}

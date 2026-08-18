@@ -1,0 +1,73 @@
+{
+  "date": "2026-07-31",
+  "close": 1141.2,
+  "rsi_14": 74.19,
+  "ema_20": 1037.08,
+  "ema_50": 993.26,
+  "ema_200": 949.53,
+  "tags": [
+    "candle_marubozu",
+    "ema20_extended_long",
+    "ema_bull_stack",
+    "ema_momentum_expanding",
+    "formation_double_bottom",
+    "formation_rising_wedge",
+    "long_term_uptrend",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "formations": [
+    {
+      "id": "rising_wedge",
+      "name": "Rising wedge",
+      "bias": "bearish_reversal"
+    },
+    {
+      "id": "double_bottom",
+      "name": "Double bottom",
+      "bias": "bullish_reversal"
+    }
+  ],
+  "raw_candle_patterns": [
+    "marubozu"
+  ],
+  "weekly": {
+    "rsi_14": 73.6,
+    "ema_20": 978.18,
+    "tags": [
+      "weekly_rsi_overbought",
+      "weekly_uptrend"
+    ]
+  },
+  "position_bias": "neutral",
+  "position_bias_long": "neutral",
+  "position_bias_short": "short",
+  "pattern_confirmations": {
+    "ema20_support": true,
+    "consolidation_anchor": false,
+    "tight_range": false,
+    "higher_lows": false,
+    "close_above_ema20": true,
+    "ema_momentum_expanding": true,
+    "ema_bull_stack": true,
+    "rsi_60_reclaim": true,
+    "rsi_trend_long": true,
+    "uptrend": true,
+    "bullish_formation": true,
+    "compressing_wedge": false,
+    "rounding_bottom": false,
+    "sr_level": true,
+    "fib_level": false,
+    "sr_fib_confluence": true,
+    "elliott_aligned": false,
+    "elliott_conflict": false,
+    "vol_expansion": true,
+    "range_expansion": true,
+    "setup_rattle": false,
+    "late_bar": true,
+    "strong_close": true,
+    "dead_volume": false,
+    "live_rvol": true
+  }
+}

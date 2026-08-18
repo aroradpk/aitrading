@@ -1,0 +1,12 @@
+{
+  "symbol": "M&M",
+  "score": 0.0,
+  "themes": [],
+  "scenarios": {
+    "bull": "M&M benefits from General market; order book and capacity expand faster than consensus. Theme score 0.0/10 supports upside if technical setup confirms.",
+    "base": "M&M tracks sector beta with steady execution on General market. Returns depend on delivery vs guidance; no major thesis break.",
+    "bear": "M&M faces valuation compression or order delays despite General market exposure. Macro slowdown or commodity shock could invalidate near-term momentum."
+  },
+  "reasons": [],
+  "generated_at": "2026-08-18T13:51:52.432005+00:00"
+}

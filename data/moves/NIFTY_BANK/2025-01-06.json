@@ -13,20 +13,64 @@
     "date": "2025-01-06",
     "close": 49922.0,
     "rsi_14": 22.06,
-    "sma_20": 51924.51,
-    "sma_50": 51804.24,
-    "sma_200": 50681.06,
-    "volume_ratio_vs_20d": 1.38,
+    "ema_20": 51503.68,
+    "ema_50": 51759.9,
+    "ema_200": 50483.32,
     "tags": [
+      "candle_marubozu",
+      "formation_descending_triangle",
       "long_term_uptrend",
-      "marubozu",
       "near_support",
       "rsi_oversold",
-      "short_term_uptrend"
+      "short_term_downtrend"
+    ],
+    "formations": [
+      {
+        "id": "descending_triangle",
+        "name": "Descending triangle",
+        "bias": "bearish_continuation"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu"
     ],
     "weekly": {
       "rsi_14": 44.11,
-      "tags": []
+      "ema_20": 51339.14,
+      "tags": [
+        "weekly_downtrend"
+      ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": true,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": false,
+      "uptrend": true,
+      "bullish_formation": false,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": true,
+      "setup_rattle": true,
+      "late_bar": false,
+      "strong_close": false,
+      "dead_volume": false,
+      "live_rvol": false
     }
-  }
+  },
+  "chart_file": "technical/charts/NIFTY_BANK/2025-01-06.png"
 }

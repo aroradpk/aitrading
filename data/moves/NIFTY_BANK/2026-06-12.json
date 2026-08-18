@@ -13,21 +13,83 @@
     "date": "2026-06-12",
     "close": 56814.8,
     "rsi_14": 69.39,
-    "sma_20": 54394.55,
-    "sma_50": 54704.72,
-    "sma_200": 56972.91,
-    "volume_ratio_vs_20d": 0.97,
+    "ema_20": 54760.65,
+    "ema_50": 55060.97,
+    "ema_200": 56095.61,
     "tags": [
-      "above_sma20",
-      "marubozu",
+      "candle_marubozu",
+      "ema_bear_stack",
+      "formation_double_bottom",
+      "formation_double_top",
+      "formation_falling_wedge",
+      "formation_inverse_head_shoulders",
+      "long_term_downtrend",
       "near_resistance",
-      "rsi_overbought"
+      "rsi_overbought",
+      "short_term_downtrend"
+    ],
+    "formations": [
+      {
+        "id": "falling_wedge",
+        "name": "Falling wedge",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_bottom",
+        "name": "Double bottom",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_top",
+        "name": "Double top",
+        "bias": "bearish_reversal"
+      },
+      {
+        "id": "inverse_head_shoulders",
+        "name": "Inverse H&S",
+        "bias": "bullish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu"
     ],
     "weekly": {
       "rsi_14": 47.33,
+      "ema_20": 55770.76,
       "tags": [
         "weekly_uptrend"
       ]
+    },
+    "position_bias": "neutral",
+    "position_bias_long": "neutral",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": true,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": true,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": true,
+      "rsi_trend_long": true,
+      "uptrend": false,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": false,
+      "setup_rattle": false,
+      "late_bar": false,
+      "strong_close": true,
+      "dead_volume": false,
+      "live_rvol": false
     }
-  }
+  },
+  "chart_file": "technical/charts/NIFTY_BANK/2026-06-12.png"
 }

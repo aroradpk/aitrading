@@ -11,16 +11,16 @@
 - **Offline default:** `config/settings.yaml` has `offline_mode: true`. The committed `data/` snapshot is the source of truth; no Yahoo/NSE/PIB calls on normal startup.
 - **Install / update:** `./scripts/cloud-agent-install.sh` (or `pip install -r requirements.txt` in `.venv`).
 - **Start API:** `./scripts/cloud-agent-start.sh` or `uvicorn app.main:app --host 0.0.0.0 --port 8000`.
-- **Tests:** `pytest` (30+ tests).
-- **Backtest:** `python scripts/run_backtest.py` (~1–2 min). Tuning reuses one signal pass: `python scripts/tune_backtest.py`.
-- **Position focus:** `technical.position_focus` in settings (`long` | `short` | `both`); intraday block for tighter short proxy on daily bars.
+- **Tests:** `pytest`.
+- **Trading book:** 5 scrips in `config/intraday_universe.json` (HDFCBANK, BAJFINANCE, M&M, NIFTY_50, NIFTY_BANK). Do not scan 20–40 names for **intraday**. `config/nifty_next_50.json` is kept for a later **swing** universe only.
+- **Learn loop:** Watchlist writes `data/intraday/ledger.jsonl`. `python scripts/learn_intraday.py` (also in `run_pipeline.py`) fills next-session MFE and writes `data/intraday/rule_stats.json`. This is **not** a neural net. Change the 7-gate only when a trait has **n≥20** and still beats chance. Commons (Fib, EMA support, 15m/1h any-base, uptrend) stay off the 7-gate.
 - **Conviction model:** Technical **0–7** + research (fundamentals + events/meetings) **0–3** = conviction **0–10**. Theme is a separate **1–5 bonus** column (`theme_bonus`), not in conviction.
-- **Pattern scoring:** **5** = coil watch (~3%). **6** = daily rumble (~4% claim, noisy). **7** = next-session list only: rumble + day range ≥1.6× ATR + volume ≥1.5× + **not** a tight coil + **not** extended into resistance. Do **not** use Fib / EMA support / uptrend / 15m-1h “any base” as a 7-gate — those are common to hits and fakes. Judge 7 on **next session** traded range (not a 3-day hold).
-- **Validate big moves:** `python scripts/validate_prior_day_moves.py --symbols ABB,MOTHERSON,ADANIPOWER`
-- **Charts:** `python scripts/build_charts.py` (~7 min, not committed).
+- **Pattern scoring:** **5** = coil watch (~3%). **6** = daily rumble (~4% claim, noisy). **7** = next-session list: rumble + day range ≥1.6× ATR + volume ≥1.5× + **not** a tight coil + **not** extended into resistance. Judge 7 on **next session** traded range (honest majority-correct bar is ~2% MFE, not 5%).
+- **Validate big moves:** `python scripts/validate_prior_day_moves.py` (defaults to the 3 stocks).
+- **Charts:** `python scripts/build_charts.py` (not committed).
 - **Transcripts:** `python scripts/fetch_transcripts.py` (download only when `offline_mode: false`).
 
-If the API serves stale routes after code changes, restart the `aitrading-api` tmux session (port 8000).
+- **Yahoo 15m/1h:** Yahoo only serves ~60 calendar days of 15m. If the VM clock is ahead of Yahoo’s last bar, `scripts/fetch_intraday.py` will fail; daily parquet is enough for the next-session ledger. Do not commit `data/ohlcv/15m` or `1h`.
 
 ### Viewing the dashboard (Cloud Agent VM)
 

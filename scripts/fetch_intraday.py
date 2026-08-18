@@ -18,14 +18,19 @@ def main() -> None:
         return
 
     load_active_universe()
-    instruments = [i for i in all_instruments() if i.get("type", "stock") == "stock"]
-    print(f"Fetching 15m/1h for {len(instruments)} stocks...")
+    instruments = all_instruments()
+    print(f"Fetching 15m/1h for {len(instruments)} instruments...")
 
     for instrument in instruments:
         symbol = instrument["symbol"]
         for interval in ("15m", "1h"):
             try:
-                frame = fetch_intraday(symbol, interval)
+                frame = fetch_intraday(
+                    symbol,
+                    interval,
+                    yahoo=instrument.get("yahoo"),
+                    instrument_type=instrument.get("type", "stock"),
+                )
                 print(f"  OK {symbol} {interval}: {len(frame)} bars")
             except Exception as exc:  # noqa: BLE001
                 print(f"  FAIL {symbol} {interval}: {exc}")

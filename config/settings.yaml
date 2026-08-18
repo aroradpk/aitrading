@@ -1,5 +1,5 @@
 data_dir: data
-offline_mode: false
+offline_mode: true
 
 thresholds:
   stock_1d_pct: 5.0
@@ -10,15 +10,13 @@ thresholds:
 
 universe:
   nifty_next_50_config: config/nifty_next_50.json
-  active_count: 20
+  trading_universe_config: config/intraday_universe.json
+  active_count: 5
   yearly_trend_min_return_pct: 0.0
 
 indices:
   - symbol: NIFTY_50
     yahoo: ^NSEI
-    type: index
-  - symbol: NIFTY_NEXT_50
-    yahoo: SETFNN50.NS
     type: index
   - symbol: NIFTY_BANK
     yahoo: ^NSEBANK
@@ -43,8 +41,8 @@ technical:
   require_trend_for_setup: true
   intraday:
     enabled: true
-    stock_target_1d_pct: 2.5
-    position_side: short
+    stock_target_1d_pct: 2.0
+    position_side: long
 
 events:
   lookback_days: 30

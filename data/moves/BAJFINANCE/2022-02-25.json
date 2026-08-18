@@ -1,0 +1,88 @@
+{
+  "symbol": "BAJFINANCE",
+  "date": "2022-02-25",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 5.15,
+  "move_1w_pct": -0.86,
+  "direction": "up",
+  "close": 679.62,
+  "volume_ratio_vs_20d": 1.22,
+  "technical_snapshot": {
+    "date": "2022-02-25",
+    "close": 679.62,
+    "rsi_14": 51.04,
+    "ema_20": 685.96,
+    "ema_50": 696.02,
+    "ema_200": null,
+    "tags": [
+      "candle_marubozu",
+      "ema20_support_touch",
+      "formation_descending_triangle",
+      "formation_double_bottom",
+      "formation_double_top",
+      "short_term_downtrend"
+    ],
+    "formations": [
+      {
+        "id": "descending_triangle",
+        "name": "Descending triangle",
+        "bias": "bearish_continuation"
+      },
+      {
+        "id": "double_bottom",
+        "name": "Double bottom",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_top",
+        "name": "Double top",
+        "bias": "bearish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu"
+    ],
+    "weekly": {
+      "rsi_14": 44.12,
+      "ema_20": 697.11,
+      "tags": [
+        "weekly_downtrend"
+      ]
+    },
+    "position_bias": "neutral",
+    "position_bias_long": "neutral",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": false,
+      "tight_range": true,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": true,
+      "uptrend": false,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": false,
+      "setup_rattle": false,
+      "late_bar": true,
+      "strong_close": true,
+      "dead_volume": false,
+      "live_rvol": false
+    }
+  },
+  "aligned_events": [],
+  "event_reasons": [],
+  "chart_file": "technical/charts/BAJFINANCE/2022-02-25.png"
+}

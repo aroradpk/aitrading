@@ -1,0 +1,80 @@
+{
+  "symbol": "HDFCBANK",
+  "date": "2022-04-04",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 10.01,
+  "move_1w_pct": 15.63,
+  "direction": "up",
+  "close": 775.21,
+  "volume_ratio_vs_20d": 4.2,
+  "technical_snapshot": {
+    "date": "2022-04-04",
+    "close": 775.21,
+    "rsi_14": 77.39,
+    "ema_20": 689.57,
+    "ema_50": 688.61,
+    "ema_200": null,
+    "tags": [
+      "ema20_extended_long",
+      "formation_ascending_triangle",
+      "formation_double_top",
+      "rsi_overbought",
+      "short_term_uptrend"
+    ],
+    "formations": [
+      {
+        "id": "ascending_triangle",
+        "name": "Ascending triangle",
+        "bias": "bullish_continuation"
+      },
+      {
+        "id": "double_top",
+        "name": "Double top",
+        "bias": "bearish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [],
+    "weekly": {
+      "rsi_14": 61.59,
+      "ema_20": 702.83,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "neutral",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": false,
+      "tight_range": false,
+      "higher_lows": true,
+      "close_above_ema20": true,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": true,
+      "rsi_trend_long": true,
+      "uptrend": true,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": true,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": false,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": true,
+      "range_expansion": true,
+      "setup_rattle": false,
+      "late_bar": true,
+      "strong_close": false,
+      "dead_volume": false,
+      "live_rvol": true
+    }
+  },
+  "aligned_events": [],
+  "event_reasons": [],
+  "chart_file": "technical/charts/HDFCBANK/2022-04-04.png"
+}

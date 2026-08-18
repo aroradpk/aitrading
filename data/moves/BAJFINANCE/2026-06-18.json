@@ -1,0 +1,74 @@
+{
+  "symbol": "BAJFINANCE",
+  "date": "2026-06-18",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1w",
+  "threshold_pct": 10.0,
+  "move_1d_pct": 0.05,
+  "move_1w_pct": 10.14,
+  "direction": "up",
+  "close": 952.99,
+  "volume_ratio_vs_20d": 0.56,
+  "technical_snapshot": {
+    "date": "2026-06-18",
+    "close": 952.99,
+    "rsi_14": 63.31,
+    "ema_20": 912.54,
+    "ema_50": 911.87,
+    "ema_200": 925.0,
+    "tags": [
+      "formation_falling_wedge",
+      "long_term_downtrend",
+      "near_resistance",
+      "short_term_uptrend"
+    ],
+    "formations": [
+      {
+        "id": "falling_wedge",
+        "name": "Falling wedge",
+        "bias": "bullish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [],
+    "weekly": {
+      "rsi_14": 64.28,
+      "ema_20": 921.83,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": true,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": true,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": true,
+      "uptrend": true,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": false,
+      "setup_rattle": false,
+      "late_bar": false,
+      "strong_close": true,
+      "dead_volume": true,
+      "live_rvol": false
+    }
+  },
+  "aligned_events": [],
+  "event_reasons": [],
+  "chart_file": "technical/charts/BAJFINANCE/2026-06-18.png"
+}

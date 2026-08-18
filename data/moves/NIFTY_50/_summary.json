@@ -17,20 +17,75 @@
         "date": "2021-11-26",
         "close": 17026.45,
         "rsi_14": 28.61,
-        "sma_20": 17793.48,
-        "sma_50": 17851.88,
-        "sma_200": null,
-        "volume_ratio_vs_20d": 1.25,
+        "ema_20": 17726.21,
+        "ema_50": 17654.49,
+        "ema_200": null,
         "tags": [
-          "marubozu",
+          "candle_marubozu",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
           "near_support",
-          "rsi_oversold"
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 56.12,
+          "ema_20": null,
           "tags": []
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2021-11-26.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -47,18 +102,73 @@
         "date": "2021-12-20",
         "close": 16614.2,
         "rsi_14": 42.53,
-        "sma_20": 17231.63,
-        "sma_50": 17704.1,
-        "sma_200": null,
-        "volume_ratio_vs_20d": 1.15,
+        "ema_20": 17283.2,
+        "ema_50": 17435.15,
+        "ema_200": null,
         "tags": [
-          "near_support"
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "near_support",
+          "short_term_downtrend"
         ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
         "weekly": {
           "rsi_14": 40.2,
-          "tags": []
+          "ema_20": 17203.55,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2021-12-20.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -75,20 +185,65 @@
         "date": "2022-01-24",
         "close": 17149.1,
         "rsi_14": 33.8,
-        "sma_20": 17779.37,
-        "sma_50": 17485.95,
-        "sma_200": null,
-        "volume_ratio_vs_20d": 1.33,
+        "ema_20": 17735.03,
+        "ema_50": 17604.24,
+        "ema_200": null,
         "tags": [
-          "marubozu",
+          "candle_marubozu",
+          "fib_0.618_retrace",
+          "formation_symmetrical_triangle",
           "rsi_oversold",
           "short_term_uptrend"
         ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
         "weekly": {
           "rsi_14": 40.95,
-          "tags": []
+          "ema_20": 17391.1,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-01-24.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -105,20 +260,71 @@
         "date": "2022-02-14",
         "close": 16842.8,
         "rsi_14": 44.34,
-        "sma_20": 17495.68,
-        "sma_50": 17457.13,
-        "sma_200": null,
-        "volume_ratio_vs_20d": 1.06,
+        "ema_20": 17442.28,
+        "ema_50": 17498.09,
+        "ema_200": null,
         "tags": [
-          "marubozu",
+          "candle_marubozu",
+          "fib_0.786_retrace",
+          "formation_double_bottom",
+          "formation_symmetrical_triangle",
           "near_support",
-          "short_term_uptrend"
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 38.75,
-          "tags": []
+          "ema_20": 17343.9,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-02-14.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -135,18 +341,77 @@
         "date": "2022-02-15",
         "close": 17352.45,
         "rsi_14": 51.21,
-        "sma_20": 17447.9,
-        "sma_50": 17465.93,
-        "sma_200": null,
-        "volume_ratio_vs_20d": 1.03,
+        "ema_20": 17433.73,
+        "ema_50": 17492.38,
+        "ema_200": null,
         "tags": [
+          "candle_marubozu",
+          "ema20_support_touch",
+          "fib_0.500_retrace",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
           "marubozu"
         ],
         "weekly": {
           "rsi_14": 42.63,
-          "tags": []
+          "ema_20": 17392.44,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-02-15.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -163,20 +428,75 @@
         "date": "2022-02-24",
         "close": 16247.95,
         "rsi_14": 29.36,
-        "sma_20": 17275.41,
-        "sma_50": 17424.41,
-        "sma_200": null,
-        "volume_ratio_vs_20d": 1.65,
+        "ema_20": 17222.9,
+        "ema_50": 17384.49,
+        "ema_200": null,
         "tags": [
+          "ema20_extended_short",
+          "formation_descending_triangle",
+          "formation_double_bottom",
+          "formation_double_top",
           "near_support",
           "rsi_oversold",
-          "volume_spike"
+          "short_term_downtrend"
         ],
+        "formations": [
+          {
+            "id": "descending_triangle",
+            "name": "Descending triangle",
+            "bias": "bearish_continuation"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
         "weekly": {
           "rsi_14": 37.05,
-          "tags": []
+          "ema_20": 17276.88,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-02-24.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -193,16 +513,73 @@
         "date": "2022-02-25",
         "close": 16658.4,
         "rsi_14": 41.27,
-        "sma_20": 17253.24,
-        "sma_50": 17412.61,
-        "sma_200": null,
-        "volume_ratio_vs_20d": 1.19,
-        "tags": [],
+        "ema_20": 17169.14,
+        "ema_50": 17356.01,
+        "ema_200": null,
+        "tags": [
+          "fib_0.786_retrace",
+          "formation_descending_triangle",
+          "formation_double_bottom",
+          "formation_double_top",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "descending_triangle",
+            "name": "Descending triangle",
+            "bias": "bearish_continuation"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
         "weekly": {
           "rsi_14": 39.84,
-          "tags": []
+          "ema_20": 17315.97,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-02-25.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -219,20 +596,69 @@
         "date": "2022-03-07",
         "close": 15863.15,
         "rsi_14": 34.15,
-        "sma_20": 16964.9,
-        "sma_50": 17364.77,
-        "sma_200": null,
-        "volume_ratio_vs_20d": 1.81,
+        "ema_20": 16849.17,
+        "ema_50": 17179.69,
+        "ema_200": null,
         "tags": [
+          "ema20_extended_short",
+          "formation_double_top",
+          "formation_falling_wedge",
           "near_support",
           "rsi_oversold",
-          "volume_spike"
+          "short_term_downtrend"
         ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
         "weekly": {
           "rsi_14": 37.5,
-          "tags": []
+          "ema_20": 17085.36,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-03-07.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -249,19 +675,70 @@
         "date": "2022-03-09",
         "close": 16345.35,
         "rsi_14": 33.9,
-        "sma_20": 16858.82,
-        "sma_50": 17330.15,
-        "sma_200": null,
-        "volume_ratio_vs_20d": 1.33,
+        "ema_20": 16729.17,
+        "ema_50": 17103.03,
+        "ema_200": null,
         "tags": [
-          "marubozu",
-          "rsi_oversold"
+          "candle_marubozu",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 41.57,
-          "tags": []
+          "ema_20": 17131.28,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": false,
+          "fib_level": false,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-03-09.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -278,23 +755,71 @@
         "date": "2022-04-04",
         "close": 18053.4,
         "rsi_14": 75.37,
-        "sma_20": 17026.63,
-        "sma_50": 17115.08,
-        "sma_200": null,
-        "volume_ratio_vs_20d": 0.96,
+        "ema_20": 17240.0,
+        "ema_50": 17180.54,
+        "ema_200": null,
         "tags": [
-          "above_sma20",
-          "marubozu",
+          "candle_marubozu",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
           "near_resistance",
-          "rsi_overbought"
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 56.01,
+          "ema_20": 17296.43,
           "tags": [
             "weekly_uptrend"
           ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": true,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": true,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-04-04.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -311,22 +836,86 @@
         "date": "2022-05-04",
         "close": 16677.6,
         "rsi_14": 32.01,
-        "sma_20": 17352.21,
-        "sma_50": 17090.32,
-        "sma_200": null,
-        "volume_ratio_vs_20d": 1.04,
+        "ema_20": 17183.48,
+        "ema_50": 17219.68,
+        "ema_200": null,
         "tags": [
-          "bearish_engulfing",
-          "marubozu",
+          "candle_bearish_engulfing",
+          "candle_marubozu",
+          "fib_0.618_retrace",
+          "formation_double_bottom",
+          "formation_falling_wedge",
+          "formation_head_shoulders",
+          "formation_inverse_head_shoulders",
           "near_support",
           "rsi_oversold",
-          "short_term_uptrend"
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "head_shoulders",
+            "name": "Head and shoulders",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "inverse_head_shoulders",
+            "name": "Inverse H&S",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu",
+          "bearish_engulfing"
         ],
         "weekly": {
           "rsi_14": 45.39,
-          "tags": []
+          "ema_20": 17206.56,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-05-04.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -343,22 +932,86 @@
         "date": "2022-05-12",
         "close": 15808.0,
         "rsi_14": 18.33,
-        "sma_20": 16886.89,
-        "sma_50": 16998.72,
-        "sma_200": 17251.34,
-        "volume_ratio_vs_20d": 1.07,
+        "ema_20": 16750.97,
+        "ema_50": 17013.02,
+        "ema_200": 17010.43,
         "tags": [
-          "marubozu",
+          "candle_marubozu",
+          "ema20_extended_short",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "formation_inverse_head_shoulders",
+          "long_term_uptrend",
           "near_support",
-          "rsi_oversold"
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "inverse_head_shoulders",
+            "name": "Inverse H&S",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 33.1,
+          "ema_20": 17050.41,
           "tags": [
-            "weekly_rsi_oversold"
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-05-12.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -375,19 +1028,77 @@
         "date": "2022-05-17",
         "close": 16259.3,
         "rsi_14": 29.7,
-        "sma_20": 16672.09,
-        "sma_50": 16955.23,
-        "sma_200": 17253.23,
-        "volume_ratio_vs_20d": 1.0,
+        "ema_20": 16550.31,
+        "ema_50": 16894.79,
+        "ema_200": 16979.47,
         "tags": [
+          "candle_marubozu",
+          "candle_morning_star",
+          "ema20_support_touch",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "fib_0.786_retrace",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
           "marubozu",
-          "rsi_oversold"
+          "morning_star"
         ],
         "weekly": {
           "rsi_14": 39.7,
-          "tags": []
+          "ema_20": 16972.84,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "higher_lows": true,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-05-17.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -404,21 +1115,75 @@
         "date": "2022-05-19",
         "close": 15809.4,
         "rsi_14": 20.09,
-        "sma_20": 16569.82,
-        "sma_50": 16941.35,
-        "sma_200": 17256.2,
-        "volume_ratio_vs_20d": 1.08,
+        "ema_20": 16453.04,
+        "ema_50": 16827.57,
+        "ema_200": 16960.54,
         "tags": [
+          "candle_evening_star",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "long_term_downtrend",
           "near_support",
-          "rsi_oversold"
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "evening_star"
         ],
         "weekly": {
           "rsi_14": 34.24,
+          "ema_20": 16929.99,
           "tags": [
-            "weekly_rsi_oversold"
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-05-19.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -435,19 +1200,75 @@
         "date": "2022-05-20",
         "close": 16266.15,
         "rsi_14": 34.59,
-        "sma_20": 16513.5,
-        "sma_50": 16949.41,
-        "sma_200": 17258.64,
-        "volume_ratio_vs_20d": 0.87,
+        "ema_20": 16435.24,
+        "ema_50": 16805.55,
+        "ema_200": 16953.63,
         "tags": [
-          "marubozu",
-          "rsi_oversold"
+          "candle_marubozu",
+          "ema20_support_touch",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "fib_0.786_retrace",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 39.78,
-          "tags": []
+          "ema_20": 16973.49,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": true,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-05-20.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -464,18 +1285,79 @@
         "date": "2022-06-13",
         "close": 15774.4,
         "rsi_14": 41.55,
-        "sma_20": 16312.04,
-        "sma_50": 16753.11,
-        "sma_200": 17262.08,
-        "volume_ratio_vs_20d": 0.82,
+        "ema_20": 16358.05,
+        "ema_50": 16591.33,
+        "ema_200": 16865.01,
         "tags": [
-          "near_support"
+          "candle_evening_star",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "near_support",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "evening_star"
         ],
         "weekly": {
           "rsi_14": 41.5,
-          "tags": []
+          "ema_20": 16718.65,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": true,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-06-13.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -492,20 +1374,80 @@
         "date": "2022-06-16",
         "close": 15360.6,
         "rsi_14": 25.97,
-        "sma_20": 16235.84,
-        "sma_50": 16625.04,
-        "sma_200": 17246.52,
-        "volume_ratio_vs_20d": 1.01,
+        "ema_20": 16156.88,
+        "ema_50": 16478.09,
+        "ema_200": 16827.44,
         "tags": [
-          "marubozu",
+          "candle_marubozu",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
+          "long_term_downtrend",
           "near_support",
-          "rsi_oversold"
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 38.35,
-          "tags": []
+          "ema_20": 16679.24,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-06-16.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -522,22 +1464,66 @@
         "date": "2022-08-30",
         "close": 17759.3,
         "rsi_14": 56.42,
-        "sma_20": 17579.06,
-        "sma_50": 16695.61,
-        "sma_200": 16974.15,
-        "volume_ratio_vs_20d": 1.16,
+        "ema_20": 17441.52,
+        "ema_50": 17013.59,
+        "ema_200": 16809.79,
         "tags": [
-          "above_sma20",
-          "marubozu",
+          "candle_marubozu",
+          "ema20_support_touch",
+          "ema_bull_stack",
+          "formation_rising_wedge",
+          "long_term_uptrend",
           "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 64.87,
+          "ema_20": 16967.81,
           "tags": [
             "weekly_uptrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-08-30.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -554,20 +1540,87 @@
         "date": "2022-10-04",
         "close": 17274.3,
         "rsi_14": 36.11,
-        "sma_20": 17487.27,
-        "sma_50": 17445.88,
-        "sma_200": 16980.15,
-        "volume_ratio_vs_20d": 0.71,
+        "ema_20": 17326.81,
+        "ema_50": 17270.81,
+        "ema_200": 16954.5,
         "tags": [
+          "candle_marubozu",
+          "elliott_abc_corrective_down",
+          "ema20_support_touch",
+          "ema_bull_stack",
+          "fib_0.382_retrace",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_inverse_head_shoulders",
+          "formation_rising_wedge",
           "long_term_uptrend",
-          "marubozu",
           "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "inverse_head_shoulders",
+            "name": "Inverse H&S",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 70.13,
-          "tags": []
+          "ema_20": 17118.19,
+          "tags": [
+            "weekly_rsi_overbought",
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "higher_lows": true,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": true,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": true,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2022-10-04.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -584,25 +1637,66 @@
         "date": "2023-12-04",
         "close": 20686.8,
         "rsi_14": 93.86,
-        "sma_20": 19744.46,
-        "sma_50": 19603.61,
-        "sma_200": 18822.49,
-        "volume_ratio_vs_20d": 1.66,
+        "ema_20": 19850.13,
+        "ema_50": 19657.5,
+        "ema_200": 19012.9,
         "tags": [
-          "above_sma20",
+          "ema_bull_stack",
+          "ema_momentum_expanding",
+          "formation_double_top",
           "long_term_uptrend",
           "near_resistance",
           "rsi_overbought",
-          "short_term_uptrend",
-          "volume_spike"
+          "short_term_uptrend"
         ],
+        "formations": [
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
         "weekly": {
           "rsi_14": 66.61,
+          "ema_20": 19597.79,
           "tags": [
+            "weekly_rsi_overbought",
             "weekly_uptrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": true,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2023-12-04.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -619,22 +1713,81 @@
         "date": "2024-01-17",
         "close": 21571.95,
         "rsi_14": 44.2,
-        "sma_20": 21628.76,
-        "sma_50": 20804.76,
-        "sma_200": 19436.85,
-        "volume_ratio_vs_20d": 1.59,
+        "ema_20": 21572.4,
+        "ema_50": 20994.89,
+        "ema_200": 19666.43,
         "tags": [
+          "candle_inverted_hammer",
+          "candle_shooting_star",
+          "ema20_support_touch",
+          "ema_bull_stack",
+          "formation_double_top",
+          "formation_head_shoulders",
+          "formation_rising_wedge",
           "long_term_uptrend",
-          "short_term_uptrend",
-          "volume_spike"
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "head_shoulders",
+            "name": "Head and shoulders",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "inverted_hammer",
+          "shooting_star"
         ],
         "weekly": {
           "rsi_14": 72.05,
+          "ema_20": 20532.82,
           "tags": [
+            "weekly_rsi_overbought",
             "weekly_uptrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": true,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2024-01-17.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -651,26 +1804,79 @@
         "date": "2024-06-03",
         "close": 23263.9,
         "rsi_14": 76.94,
-        "sma_20": 22515.65,
-        "sma_50": 22411.65,
-        "sma_200": 21044.62,
-        "volume_ratio_vs_20d": 1.79,
+        "ema_20": 22623.52,
+        "ema_50": 22415.85,
+        "ema_200": 21208.52,
         "tags": [
-          "above_sma20",
-          "hammer",
+          "candle_hammer",
+          "ema_bull_stack",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_rising_wedge",
           "long_term_uptrend",
           "near_resistance",
           "rsi_overbought",
-          "short_term_uptrend",
-          "volume_spike"
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "hammer"
         ],
         "weekly": {
           "rsi_14": 60.75,
+          "ema_20": 22203.92,
           "tags": [
             "weekly_uptrend"
           ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": true,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": true,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2024-06-03.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -687,21 +1893,77 @@
         "date": "2024-06-04",
         "close": 21884.5,
         "rsi_14": 45.12,
-        "sma_20": 22487.74,
-        "sma_50": 22408.22,
-        "sma_200": 21056.06,
-        "volume_ratio_vs_20d": 2.85,
+        "ema_20": 22553.14,
+        "ema_50": 22395.01,
+        "ema_200": 21215.25,
         "tags": [
+          "candle_marubozu",
+          "ema_bull_stack",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_rising_wedge",
           "long_term_uptrend",
-          "marubozu",
-          "short_term_uptrend",
-          "volume_spike"
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 44.61,
-          "tags": []
+          "ema_20": 22072.55,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2024-06-04.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -718,23 +1980,75 @@
         "date": "2024-06-05",
         "close": 22620.35,
         "rsi_14": 55.07,
-        "sma_20": 22503.63,
-        "sma_50": 22424.28,
-        "sma_200": 21071.3,
-        "volume_ratio_vs_20d": 1.72,
+        "ema_20": 22559.54,
+        "ema_50": 22403.85,
+        "ema_200": 21229.23,
         "tags": [
-          "above_sma20",
+          "ema20_support_touch",
+          "ema_bull_stack",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_rising_wedge",
           "long_term_uptrend",
-          "short_term_uptrend",
-          "volume_spike"
+          "short_term_uptrend"
         ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
         "weekly": {
           "rsi_14": 53.85,
+          "ema_20": 22142.63,
           "tags": [
             "weekly_uptrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2024-06-05.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -751,24 +2065,72 @@
         "date": "2024-06-07",
         "close": 23290.15,
         "rsi_14": 59.07,
-        "sma_20": 22596.21,
-        "sma_50": 22469.49,
-        "sma_200": 21105.98,
-        "volume_ratio_vs_20d": 1.22,
+        "ema_20": 22651.69,
+        "ema_50": 22454.33,
+        "ema_200": 21265.42,
         "tags": [
-          "above_sma20",
+          "candle_marubozu",
+          "ema_bull_stack",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
           "long_term_uptrend",
-          "marubozu",
           "near_resistance",
           "short_term_uptrend"
         ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
         "weekly": {
           "rsi_14": 60.98,
+          "ema_20": 22206.42,
           "tags": [
             "weekly_uptrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2024-06-07.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -785,19 +2147,64 @@
         "date": "2024-08-05",
         "close": 24055.6,
         "rsi_14": 37.76,
-        "sma_20": 24574.96,
-        "sma_50": 23861.92,
-        "sma_200": 21996.87,
-        "volume_ratio_vs_20d": 1.4,
+        "ema_20": 24501.36,
+        "ema_50": 23962.13,
+        "ema_200": 22220.87,
         "tags": [
+          "ema20_support_touch",
+          "ema_bull_stack",
+          "formation_double_bottom",
           "long_term_uptrend",
           "short_term_uptrend"
         ],
+        "formations": [
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
         "weekly": {
           "rsi_14": 66.35,
-          "tags": []
+          "ema_20": 23445.87,
+          "tags": [
+            "weekly_rsi_overbought",
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2024-08-05.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -814,21 +2221,63 @@
         "date": "2024-10-03",
         "close": 25250.1,
         "rsi_14": 46.42,
-        "sma_20": 25508.08,
-        "sma_50": 25021.85,
-        "sma_200": 23098.75,
-        "volume_ratio_vs_20d": 1.38,
+        "ema_20": 25555.09,
+        "ema_50": 25066.74,
+        "ema_200": 23209.39,
         "tags": [
+          "ema20_support_touch",
+          "ema_bull_stack",
+          "formation_rising_wedge",
           "long_term_uptrend",
           "short_term_uptrend"
         ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
         "weekly": {
           "rsi_14": 62.91,
+          "ema_20": 24500.96,
           "tags": [
             "weekly_uptrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": true,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2024-10-03.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -845,19 +2294,78 @@
         "date": "2024-11-22",
         "close": 23907.25,
         "rsi_14": 44.52,
-        "sma_20": 24031.15,
-        "sma_50": 24780.54,
-        "sma_200": 23586.43,
-        "volume_ratio_vs_20d": 1.27,
+        "ema_20": 24019.66,
+        "ema_50": 24417.53,
+        "ema_200": 23532.63,
         "tags": [
+          "candle_marubozu",
+          "ema20_support_touch",
+          "fib_0.786_retrace",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_falling_wedge",
           "long_term_uptrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
           "marubozu"
         ],
         "weekly": {
           "rsi_14": 44.41,
-          "tags": []
+          "ema_20": 24332.64,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2024-11-22.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -874,22 +2382,68 @@
         "date": "2025-04-07",
         "close": 22161.6,
         "rsi_14": 44.59,
-        "sma_20": 22995.47,
-        "sma_50": 22980.24,
-        "sma_200": 24070.03,
-        "volume_ratio_vs_20d": 1.83,
+        "ema_20": 23016.51,
+        "ema_50": 23083.21,
+        "ema_200": 23380.5,
         "tags": [
-          "marubozu",
-          "short_term_uptrend",
-          "volume_spike"
+          "candle_marubozu",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "fib_0.786_retrace",
+          "formation_symmetrical_triangle",
+          "long_term_downtrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 34.32,
+          "ema_20": 23218.24,
           "tags": [
-            "weekly_rsi_oversold"
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
           ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2025-04-07.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -906,22 +2460,74 @@
         "date": "2025-04-15",
         "close": 23328.55,
         "rsi_14": 49.71,
-        "sma_20": 23051.02,
-        "sma_50": 22961.24,
-        "sma_200": 24053.85,
-        "volume_ratio_vs_20d": 1.05,
+        "ema_20": 22948.0,
+        "ema_50": 23039.44,
+        "ema_200": 23356.82,
         "tags": [
-          "above_sma20",
-          "hammer",
-          "short_term_uptrend"
+          "candle_hammer",
+          "ema20_support_touch",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "fib_0.236_retrace",
+          "formation_double_bottom",
+          "formation_symmetrical_triangle",
+          "long_term_downtrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "hammer"
         ],
         "weekly": {
           "rsi_14": 49.0,
+          "ema_20": 23286.22,
           "tags": [
             "weekly_uptrend"
           ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2025-04-15.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -938,24 +2544,70 @@
         "date": "2025-05-12",
         "close": 24924.7,
         "rsi_14": 66.95,
-        "sma_20": 24027.99,
-        "sma_50": 23293.11,
-        "sma_200": 24046.22,
-        "volume_ratio_vs_20d": 0.97,
+        "ema_20": 24071.2,
+        "ema_50": 23648.07,
+        "ema_200": 23495.7,
         "tags": [
-          "above_sma20",
-          "marubozu",
+          "candle_marubozu",
+          "candle_morning_star",
+          "ema_bull_stack",
+          "ema_momentum_expanding",
+          "formation_rising_wedge",
+          "long_term_uptrend",
           "near_resistance",
           "rsi_overbought",
           "short_term_uptrend"
         ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu",
+          "morning_star"
+        ],
         "weekly": {
           "rsi_14": 60.33,
+          "ema_20": 23673.64,
           "tags": [
             "weekly_uptrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": true,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2025-05-12.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -972,20 +2624,72 @@
         "date": "2026-02-03",
         "close": 25727.55,
         "rsi_14": 48.7,
-        "sma_20": 25570.01,
-        "sma_50": 25847.23,
-        "sma_200": 25222.35,
-        "volume_ratio_vs_20d": 1.47,
+        "ema_20": 25523.16,
+        "ema_50": 25675.26,
+        "ema_200": 25172.96,
         "tags": [
-          "above_sma20",
+          "candle_marubozu",
+          "ema20_support_touch",
+          "fib_0.382_retrace",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
           "long_term_uptrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
           "marubozu"
         ],
         "weekly": {
           "rsi_14": 50.08,
-          "tags": []
+          "ema_20": 25580.7,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2026-02-03.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -1002,23 +2706,80 @@
         "date": "2026-03-13",
         "close": 23151.1,
         "rsi_14": 18.86,
-        "sma_20": 24926.44,
-        "sma_50": 25384.19,
-        "sma_200": 25317.19,
-        "volume_ratio_vs_20d": 1.23,
+        "ema_20": 24660.14,
+        "ema_50": 25184.45,
+        "ema_200": 25156.06,
         "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
           "long_term_uptrend",
-          "marubozu",
           "near_support",
-          "rsi_oversold"
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 21.21,
+          "ema_20": 25210.96,
           "tags": [
-            "weekly_rsi_oversold"
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2026-03-13.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -1035,21 +2796,79 @@
         "date": "2026-03-19",
         "close": 23002.15,
         "rsi_14": 23.94,
-        "sma_20": 24480.01,
-        "sma_50": 25162.49,
-        "sma_200": 25290.22,
-        "volume_ratio_vs_20d": 1.22,
+        "ema_20": 24253.83,
+        "ema_50": 24926.08,
+        "ema_200": 25088.82,
         "tags": [
+          "ema20_extended_short",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
+          "long_term_downtrend",
           "near_support",
-          "rsi_oversold"
+          "rsi_oversold",
+          "short_term_downtrend"
         ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
         "weekly": {
           "rsi_14": 21.18,
+          "ema_20": 25000.6,
           "tags": [
-            "weekly_rsi_oversold"
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2026-03-19.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -1066,22 +2885,76 @@
         "date": "2026-03-23",
         "close": 22512.65,
         "rsi_14": 25.84,
-        "sma_20": 24210.09,
-        "sma_50": 25028.65,
-        "sma_200": 25272.06,
-        "volume_ratio_vs_20d": 1.15,
+        "ema_20": 23989.83,
+        "ema_50": 24763.18,
+        "ema_200": 25043.74,
         "tags": [
-          "marubozu",
+          "candle_marubozu",
+          "ema20_extended_short",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_double_bottom",
+          "formation_symmetrical_triangle",
+          "long_term_downtrend",
           "near_support",
-          "rsi_oversold"
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 19.65,
+          "ema_20": 24773.33,
           "tags": [
-            "weekly_rsi_oversold"
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2026-03-23.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -1098,22 +2971,69 @@
         "date": "2026-03-27",
         "close": 22819.6,
         "rsi_14": 34.21,
-        "sma_20": 23831.0,
-        "sma_50": 24862.41,
-        "sma_200": 25245.38,
-        "volume_ratio_vs_20d": 1.21,
+        "ema_20": 23735.49,
+        "ema_50": 24565.07,
+        "ema_200": 24983.7,
         "tags": [
-          "marubozu",
+          "candle_marubozu",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_falling_wedge",
+          "long_term_downtrend",
           "near_support",
-          "rsi_oversold"
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 20.77,
+          "ema_20": 24802.56,
           "tags": [
-            "weekly_rsi_oversold"
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2026-03-27.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -1130,21 +3050,67 @@
         "date": "2026-03-30",
         "close": 22331.4,
         "rsi_14": 33.78,
-        "sma_20": 23672.74,
-        "sma_50": 24794.39,
-        "sma_200": 25231.53,
-        "volume_ratio_vs_20d": 1.34,
+        "ema_20": 23601.77,
+        "ema_50": 24477.48,
+        "ema_200": 24957.31,
         "tags": [
+          "ema20_extended_short",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_falling_wedge",
+          "long_term_downtrend",
           "near_support",
-          "rsi_oversold"
+          "rsi_oversold",
+          "short_term_downtrend"
         ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
         "weekly": {
           "rsi_14": 17.99,
+          "ema_20": 24567.21,
           "tags": [
-            "weekly_rsi_oversold"
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2026-03-30.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -1161,21 +3127,79 @@
         "date": "2026-04-08",
         "close": 23997.35,
         "rsi_14": 55.56,
-        "sma_20": 23259.77,
-        "sma_50": 24557.31,
-        "sma_200": 25184.94,
-        "volume_ratio_vs_20d": 1.22,
+        "ema_20": 23427.31,
+        "ema_50": 24231.55,
+        "ema_200": 24866.85,
         "tags": [
-          "above_sma20",
+          "candle_marubozu",
+          "elliott_impulse_down",
+          "ema_bear_stack",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
           "marubozu"
         ],
         "weekly": {
           "rsi_14": 31.82,
+          "ema_20": 24545.83,
           "tags": [
-            "weekly_rsi_oversold"
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
           ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": true,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2026-04-08.png"
     },
     {
       "symbol": "NIFTY_50",
@@ -1192,21 +3216,71 @@
         "date": "2026-07-08",
         "close": 23882.05,
         "rsi_14": 45.24,
-        "sma_20": 23954.47,
-        "sma_50": 23828.03,
-        "sma_200": 24858.11,
-        "volume_ratio_vs_20d": 1.1,
+        "ema_20": 23992.25,
+        "ema_50": 23922.39,
+        "ema_200": 24416.79,
         "tags": [
-          "marubozu",
+          "candle_marubozu",
+          "ema20_support_touch",
+          "formation_double_top",
+          "formation_rising_wedge",
+          "long_term_downtrend",
           "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
         ],
         "weekly": {
           "rsi_14": 62.63,
+          "ema_20": 24068.23,
           "tags": [
-            "weekly_uptrend"
+            "weekly_downtrend"
           ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": true,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
         }
-      }
+      },
+      "chart_file": "technical/charts/NIFTY_50/2026-07-08.png"
     }
   ]
 }

@@ -1,0 +1,84 @@
+{
+  "symbol": "BAJFINANCE",
+  "date": "2022-03-09",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 5.04,
+  "move_1w_pct": -5.26,
+  "direction": "up",
+  "close": 631.17,
+  "volume_ratio_vs_20d": 1.56,
+  "technical_snapshot": {
+    "date": "2022-03-09",
+    "close": 631.17,
+    "rsi_14": 36.1,
+    "ema_20": 659.99,
+    "ema_50": 681.65,
+    "ema_200": null,
+    "tags": [
+      "candle_marubozu",
+      "candle_morning_star",
+      "elliott_impulse_down",
+      "formation_double_top",
+      "formation_falling_wedge",
+      "short_term_downtrend"
+    ],
+    "formations": [
+      {
+        "id": "falling_wedge",
+        "name": "Falling wedge",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_top",
+        "name": "Double top",
+        "bias": "bearish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu",
+      "morning_star"
+    ],
+    "weekly": {
+      "rsi_14": 42.43,
+      "ema_20": 685.7,
+      "tags": [
+        "weekly_downtrend"
+      ]
+    },
+    "position_bias": "neutral",
+    "position_bias_long": "neutral",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": false,
+      "consolidation_anchor": true,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": false,
+      "uptrend": false,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": false,
+      "fib_level": false,
+      "sr_fib_confluence": false,
+      "elliott_aligned": false,
+      "elliott_conflict": true,
+      "vol_expansion": false,
+      "range_expansion": true,
+      "setup_rattle": false,
+      "late_bar": true,
+      "strong_close": true,
+      "dead_volume": false,
+      "live_rvol": true
+    }
+  },
+  "aligned_events": [],
+  "event_reasons": [],
+  "chart_file": "technical/charts/BAJFINANCE/2022-03-09.png"
+}

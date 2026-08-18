@@ -13,21 +13,72 @@
     "date": "2021-10-25",
     "close": 41191.92,
     "rsi_14": 91.2,
-    "sma_20": 38597.68,
-    "sma_50": 37321.26,
-    "sma_200": null,
-    "volume_ratio_vs_20d": 1.98,
+    "ema_20": 38873.22,
+    "ema_50": 37617.19,
+    "ema_200": null,
     "tags": [
-      "above_sma20",
+      "ema20_extended_long",
+      "formation_double_bottom",
+      "formation_double_top",
+      "formation_rising_wedge",
       "rsi_overbought",
-      "short_term_uptrend",
-      "volume_spike"
+      "short_term_uptrend"
     ],
+    "formations": [
+      {
+        "id": "rising_wedge",
+        "name": "Rising wedge",
+        "bias": "bearish_reversal"
+      },
+      {
+        "id": "double_bottom",
+        "name": "Double bottom",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_top",
+        "name": "Double top",
+        "bias": "bearish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [],
     "weekly": {
       "rsi_14": 78.79,
+      "ema_20": null,
       "tags": [
-        "weekly_uptrend"
+        "weekly_rsi_overbought"
       ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "neutral",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": false,
+      "tight_range": false,
+      "higher_lows": true,
+      "close_above_ema20": true,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": true,
+      "rsi_trend_long": true,
+      "uptrend": true,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": true,
+      "setup_rattle": true,
+      "late_bar": false,
+      "strong_close": false,
+      "dead_volume": false,
+      "live_rvol": true
     }
-  }
+  },
+  "chart_file": "technical/charts/NIFTY_BANK/2021-10-25.png"
 }

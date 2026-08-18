@@ -2,16 +2,74 @@
   "date": "2022-02-25",
   "close": 36430.33,
   "rsi_14": 41.18,
-  "sma_20": 37901.78,
-  "sma_50": 37247.28,
-  "sma_200": null,
-  "volume_ratio_vs_20d": 1.86,
+  "ema_20": 37485.88,
+  "ema_50": 37525.11,
+  "ema_200": null,
   "tags": [
-    "short_term_uptrend",
-    "volume_spike"
+    "formation_double_bottom",
+    "formation_double_top",
+    "formation_head_shoulders",
+    "formation_rising_wedge",
+    "short_term_downtrend"
   ],
+  "formations": [
+    {
+      "id": "rising_wedge",
+      "name": "Rising wedge",
+      "bias": "bearish_reversal"
+    },
+    {
+      "id": "double_bottom",
+      "name": "Double bottom",
+      "bias": "bullish_reversal"
+    },
+    {
+      "id": "double_top",
+      "name": "Double top",
+      "bias": "bearish_reversal"
+    },
+    {
+      "id": "head_shoulders",
+      "name": "Head and shoulders",
+      "bias": "bearish_reversal"
+    }
+  ],
+  "raw_candle_patterns": [],
   "weekly": {
     "rsi_14": 44.13,
-    "tags": []
+    "ema_20": 37306.95,
+    "tags": [
+      "weekly_downtrend"
+    ]
+  },
+  "position_bias": "neutral",
+  "position_bias_long": "neutral",
+  "position_bias_short": "short",
+  "pattern_confirmations": {
+    "ema20_support": true,
+    "consolidation_anchor": false,
+    "tight_range": false,
+    "higher_lows": false,
+    "close_above_ema20": false,
+    "ema_momentum_expanding": false,
+    "ema_bull_stack": false,
+    "rsi_60_reclaim": false,
+    "rsi_trend_long": false,
+    "uptrend": false,
+    "bullish_formation": true,
+    "compressing_wedge": false,
+    "rounding_bottom": false,
+    "sr_level": true,
+    "fib_level": false,
+    "sr_fib_confluence": true,
+    "elliott_aligned": false,
+    "elliott_conflict": false,
+    "vol_expansion": false,
+    "range_expansion": false,
+    "setup_rattle": true,
+    "late_bar": false,
+    "strong_close": true,
+    "dead_volume": false,
+    "live_rvol": true
   }
 }

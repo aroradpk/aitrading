@@ -1,0 +1,66 @@
+{
+  "date": "2023-05-05",
+  "close": 769.48,
+  "rsi_14": 36.74,
+  "ema_20": 788.13,
+  "ema_50": 776.95,
+  "ema_200": 743.98,
+  "tags": [
+    "ema_bull_stack",
+    "ema_momentum_expanding",
+    "formation_double_top",
+    "formation_rising_wedge",
+    "long_term_uptrend",
+    "short_term_uptrend"
+  ],
+  "formations": [
+    {
+      "id": "rising_wedge",
+      "name": "Rising wedge",
+      "bias": "bearish_reversal"
+    },
+    {
+      "id": "double_top",
+      "name": "Double top",
+      "bias": "bearish_reversal"
+    }
+  ],
+  "raw_candle_patterns": [],
+  "weekly": {
+    "rsi_14": 51.17,
+    "ema_20": 766.87,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  },
+  "position_bias": "long",
+  "position_bias_long": "long",
+  "position_bias_short": "neutral",
+  "pattern_confirmations": {
+    "ema20_support": true,
+    "consolidation_anchor": false,
+    "tight_range": false,
+    "higher_lows": false,
+    "close_above_ema20": false,
+    "ema_momentum_expanding": true,
+    "ema_bull_stack": true,
+    "rsi_60_reclaim": false,
+    "rsi_trend_long": false,
+    "uptrend": true,
+    "bullish_formation": false,
+    "compressing_wedge": false,
+    "rounding_bottom": false,
+    "sr_level": true,
+    "fib_level": false,
+    "sr_fib_confluence": true,
+    "elliott_aligned": false,
+    "elliott_conflict": false,
+    "vol_expansion": false,
+    "range_expansion": true,
+    "setup_rattle": false,
+    "late_bar": true,
+    "strong_close": false,
+    "dead_volume": false,
+    "live_rvol": true
+  }
+}

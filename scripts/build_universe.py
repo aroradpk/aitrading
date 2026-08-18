@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build active universe: top 20 rising Nifty Next 50 stocks + indices."""
+"""Build active universe from the 5-scrip intraday book."""
 
 import sys
 from pathlib import Path
@@ -12,8 +12,13 @@ from app.engines.universe import build_active_universe
 def main() -> None:
     payload = build_active_universe()
     print(f"Selected {len(payload['stocks'])} stocks and {len(payload['indices'])} indices")
-    for stock in payload["stocks"]:
-        print(f"  {stock['symbol']}: {stock.get('yearly_return_pct')}% YoY")
+    for row in [*payload["stocks"], *payload["indices"]]:
+        yoy = row.get("yearly_return_pct")
+        yoy_txt = f"{yoy}% YoY" if yoy is not None else row.get("role", "")
+        print(f"  {row['symbol']}: {yoy_txt}")
+    skipped = payload.get("skipped") or []
+    for row in skipped:
+        print(f"  SKIP {row['symbol']}: {row.get('error')}")
 
 
 if __name__ == "__main__":

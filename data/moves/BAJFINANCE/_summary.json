@@ -1,0 +1,4299 @@
+{
+  "symbol": "BAJFINANCE",
+  "count": 52,
+  "moves": [
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2021-11-22",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.7,
+      "move_1w_pct": -6.87,
+      "direction": "down",
+      "close": 688.29,
+      "volume_ratio_vs_20d": 1.92,
+      "technical_snapshot": {
+        "date": "2021-11-22",
+        "close": 688.29,
+        "rsi_14": 36.81,
+        "ema_20": 733.51,
+        "ema_50": 726.23,
+        "ema_200": null,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "formation_falling_wedge",
+          "formation_inverse_head_shoulders",
+          "near_support",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "inverse_head_shoulders",
+            "name": "Inverse H&S",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 56.42,
+          "ema_20": null,
+          "tags": []
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2021-11-22.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-01-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 4.46,
+      "move_1w_pct": 10.98,
+      "direction": "up",
+      "close": 748.02,
+      "volume_ratio_vs_20d": 2.04,
+      "technical_snapshot": {
+        "date": "2022-01-05",
+        "close": 748.02,
+        "rsi_14": 68.27,
+        "ema_20": 691.08,
+        "ema_50": 697.8,
+        "ema_200": null,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_long",
+          "fib_0.236_retrace",
+          "formation_falling_wedge",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 51.94,
+          "ema_20": 698.51,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": true,
+          "rsi_trend_long": true,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": true,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": false,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-01-05.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-01-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.01,
+      "move_1w_pct": 12.77,
+      "direction": "up",
+      "close": 755.57,
+      "volume_ratio_vs_20d": 1.19,
+      "technical_snapshot": {
+        "date": "2022-01-06",
+        "close": 755.57,
+        "rsi_14": 74.82,
+        "ema_20": 697.22,
+        "ema_50": 700.06,
+        "ema_200": null,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_long",
+          "formation_falling_wedge",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 52.89,
+          "ema_20": 699.23,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": true,
+          "rsi_trend_long": true,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": true,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-01-06.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-01-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.99,
+      "move_1w_pct": -11.73,
+      "direction": "down",
+      "close": 675.95,
+      "volume_ratio_vs_20d": 1.77,
+      "technical_snapshot": {
+        "date": "2022-01-24",
+        "close": 675.95,
+        "rsi_14": 38.12,
+        "ema_20": 725.16,
+        "ema_50": 715.7,
+        "ema_200": null,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "formation_symmetrical_triangle",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 41.13,
+          "ema_20": 703.14,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-01-24.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-01-25",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.46,
+      "move_1w_pct": -10.08,
+      "direction": "down",
+      "close": 679.07,
+      "volume_ratio_vs_20d": 1.69,
+      "technical_snapshot": {
+        "date": "2022-01-25",
+        "close": 679.07,
+        "rsi_14": 25.37,
+        "ema_20": 720.77,
+        "ema_50": 714.26,
+        "ema_200": null,
+        "tags": [
+          "ema20_extended_short",
+          "formation_symmetrical_triangle",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 41.43,
+          "ema_20": 703.44,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-01-25.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-02-15",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.25,
+      "move_1w_pct": 1.23,
+      "direction": "up",
+      "close": 696.46,
+      "volume_ratio_vs_20d": 0.82,
+      "technical_snapshot": {
+        "date": "2022-02-15",
+        "close": 696.46,
+        "rsi_14": 54.79,
+        "ema_20": 694.64,
+        "ema_50": 702.07,
+        "ema_200": null,
+        "tags": [
+          "candle_marubozu",
+          "ema20_support_touch",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 45.18,
+          "ema_20": 699.99,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": true,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-02-15.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-02-24",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.92,
+      "move_1w_pct": -6.42,
+      "direction": "down",
+      "close": 646.31,
+      "volume_ratio_vs_20d": 1.67,
+      "technical_snapshot": {
+        "date": "2022-02-24",
+        "close": 646.31,
+        "rsi_14": 34.92,
+        "ema_20": 686.63,
+        "ema_50": 696.68,
+        "ema_200": null,
+        "tags": [
+          "candle_evening_star",
+          "ema20_extended_short",
+          "formation_descending_triangle",
+          "formation_double_bottom",
+          "formation_double_top",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "descending_triangle",
+            "name": "Descending triangle",
+            "bias": "bearish_continuation"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "evening_star"
+        ],
+        "weekly": {
+          "rsi_14": 40.93,
+          "ema_20": 693.94,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-02-24.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-02-25",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.15,
+      "move_1w_pct": -0.86,
+      "direction": "up",
+      "close": 679.62,
+      "volume_ratio_vs_20d": 1.22,
+      "technical_snapshot": {
+        "date": "2022-02-25",
+        "close": 679.62,
+        "rsi_14": 51.04,
+        "ema_20": 685.96,
+        "ema_50": 696.02,
+        "ema_200": null,
+        "tags": [
+          "candle_marubozu",
+          "ema20_support_touch",
+          "formation_descending_triangle",
+          "formation_double_bottom",
+          "formation_double_top",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "descending_triangle",
+            "name": "Descending triangle",
+            "bias": "bearish_continuation"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 44.12,
+          "ema_20": 697.11,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": true,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-02-25.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-03-07",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -6.32,
+      "move_1w_pct": -12.12,
+      "direction": "down",
+      "close": 597.28,
+      "volume_ratio_vs_20d": 2.12,
+      "technical_snapshot": {
+        "date": "2022-03-07",
+        "close": 597.28,
+        "rsi_14": 35.16,
+        "ema_20": 669.57,
+        "ema_50": 687.09,
+        "ema_200": null,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "near_support",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 39.0,
+          "ema_20": 682.47,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-03-07.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-03-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.6,
+      "move_1w_pct": -12.0,
+      "direction": "down",
+      "close": 600.87,
+      "volume_ratio_vs_20d": 2.02,
+      "technical_snapshot": {
+        "date": "2022-03-08",
+        "close": 600.87,
+        "rsi_14": 24.3,
+        "ema_20": 663.03,
+        "ema_50": 683.71,
+        "ema_200": null,
+        "tags": [
+          "ema20_extended_short",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 39.33,
+          "ema_20": 682.81,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": false,
+          "fib_level": false,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": false,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-03-08.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-03-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.04,
+      "move_1w_pct": -5.26,
+      "direction": "up",
+      "close": 631.17,
+      "volume_ratio_vs_20d": 1.56,
+      "technical_snapshot": {
+        "date": "2022-03-09",
+        "close": 631.17,
+        "rsi_14": 36.1,
+        "ema_20": 659.99,
+        "ema_50": 681.65,
+        "ema_200": null,
+        "tags": [
+          "candle_marubozu",
+          "candle_morning_star",
+          "elliott_impulse_down",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu",
+          "morning_star"
+        ],
+        "weekly": {
+          "rsi_14": 42.43,
+          "ema_20": 685.7,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": false,
+          "fib_level": false,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": true,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-03-09.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-04-27",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -7.27,
+      "move_1w_pct": -4.53,
+      "direction": "down",
+      "close": 654.73,
+      "volume_ratio_vs_20d": 3.63,
+      "technical_snapshot": {
+        "date": "2022-04-27",
+        "close": 654.73,
+        "rsi_14": 29.14,
+        "ema_20": 694.41,
+        "ema_50": 691.08,
+        "ema_200": null,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "fib_0.500_retrace",
+          "formation_double_top",
+          "formation_rising_wedge",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 39.23,
+          "ema_20": 690.51,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-04-27.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-05-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -4.32,
+      "move_1w_pct": -12.44,
+      "direction": "down",
+      "close": 618.22,
+      "volume_ratio_vs_20d": 1.37,
+      "technical_snapshot": {
+        "date": "2022-05-04",
+        "close": 618.22,
+        "rsi_14": 22.51,
+        "ema_20": 676.87,
+        "ema_50": 683.85,
+        "ema_200": null,
+        "tags": [
+          "candle_bearish_engulfing",
+          "candle_marubozu",
+          "ema20_extended_short",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [],
+        "raw_candle_patterns": [
+          "marubozu",
+          "bearish_engulfing"
+        ],
+        "weekly": {
+          "rsi_14": 41.0,
+          "ema_20": 683.27,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-05-04.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-05-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -4.9,
+      "move_1w_pct": -10.81,
+      "direction": "down",
+      "close": 585.12,
+      "volume_ratio_vs_20d": 2.31,
+      "technical_snapshot": {
+        "date": "2022-05-06",
+        "close": 585.12,
+        "rsi_14": 17.39,
+        "ema_20": 662.83,
+        "ema_50": 677.39,
+        "ema_200": null,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 36.74,
+          "ema_20": 680.12,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": false,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-05-06.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-05-10",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.8,
+      "move_1w_pct": -10.53,
+      "direction": "down",
+      "close": 578.11,
+      "volume_ratio_vs_20d": 0.83,
+      "technical_snapshot": {
+        "date": "2022-05-10",
+        "close": 578.11,
+        "rsi_14": 18.5,
+        "ema_20": 648.37,
+        "ema_50": 670.16,
+        "ema_200": null,
+        "tags": [
+          "ema20_extended_short",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 29.83,
+          "ema_20": 670.41,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": true,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-05-10.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-05-12",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -3.68,
+      "move_1w_pct": -11.35,
+      "direction": "down",
+      "close": 545.44,
+      "volume_ratio_vs_20d": 1.6,
+      "technical_snapshot": {
+        "date": "2022-05-12",
+        "close": 545.44,
+        "rsi_14": 13.49,
+        "ema_20": 631.49,
+        "ema_50": 661.35,
+        "ema_200": 671.3,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "long_term_downtrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 26.88,
+          "ema_20": 667.29,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-05-12.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-06-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.46,
+      "move_1w_pct": -11.01,
+      "direction": "down",
+      "close": 522.51,
+      "volume_ratio_vs_20d": 1.59,
+      "technical_snapshot": {
+        "date": "2022-06-13",
+        "close": 522.51,
+        "rsi_14": 33.45,
+        "ema_20": 576.6,
+        "ema_50": 608.2,
+        "ema_200": 651.34,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_symmetrical_triangle",
+          "long_term_downtrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 33.71,
+          "ema_20": 624.47,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-06-13.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-06-16",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -3.67,
+      "move_1w_pct": -10.42,
+      "direction": "down",
+      "close": 515.26,
+      "volume_ratio_vs_20d": 1.68,
+      "technical_snapshot": {
+        "date": "2022-06-16",
+        "close": 515.26,
+        "rsi_14": 25.45,
+        "ema_20": 563.08,
+        "ema_50": 598.75,
+        "ema_200": 647.59,
+        "tags": [
+          "candle_bearish_engulfing",
+          "candle_marubozu",
+          "ema20_extended_short",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_symmetrical_triangle",
+          "long_term_downtrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu",
+          "bearish_engulfing"
+        ],
+        "weekly": {
+          "rsi_14": 33.08,
+          "ema_20": 623.78,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-06-16.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-07-28",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 10.63,
+      "move_1w_pct": 12.92,
+      "direction": "up",
+      "close": 692.59,
+      "volume_ratio_vs_20d": 4.85,
+      "technical_snapshot": {
+        "date": "2022-07-28",
+        "close": 692.59,
+        "rsi_14": 92.9,
+        "ema_20": 598.38,
+        "ema_50": 588.49,
+        "ema_200": 628.86,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_long",
+          "formation_rising_wedge",
+          "long_term_downtrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 49.9,
+          "ema_20": 613.81,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": false,
+          "fib_level": false,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-07-28.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-07-29",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.87,
+      "move_1w_pct": 15.19,
+      "direction": "up",
+      "close": 705.56,
+      "volume_ratio_vs_20d": 1.85,
+      "technical_snapshot": {
+        "date": "2022-07-29",
+        "close": 705.56,
+        "rsi_14": 94.23,
+        "ema_20": 608.59,
+        "ema_50": 593.08,
+        "ema_200": 629.63,
+        "tags": [
+          "ema20_extended_long",
+          "formation_rising_wedge",
+          "long_term_downtrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 51.37,
+          "ema_20": 615.04,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": false,
+          "fib_level": false,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-07-29.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-08-01",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.72,
+      "move_1w_pct": 16.61,
+      "direction": "up",
+      "close": 710.64,
+      "volume_ratio_vs_20d": 0.86,
+      "technical_snapshot": {
+        "date": "2022-08-01",
+        "close": 710.64,
+        "rsi_14": 94.37,
+        "ema_20": 618.31,
+        "ema_50": 597.69,
+        "ema_200": 630.43,
+        "tags": [
+          "ema20_extended_long",
+          "formation_rising_wedge",
+          "long_term_downtrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 57.43,
+          "ema_20": 624.15,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": false,
+          "fib_level": false,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-08-01.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-08-02",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.11,
+      "move_1w_pct": 17.2,
+      "direction": "up",
+      "close": 718.55,
+      "volume_ratio_vs_20d": 0.87,
+      "technical_snapshot": {
+        "date": "2022-08-02",
+        "close": 718.55,
+        "rsi_14": 94.63,
+        "ema_20": 627.86,
+        "ema_50": 602.43,
+        "ema_200": 631.31,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_long",
+          "formation_rising_wedge",
+          "long_term_downtrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 58.24,
+          "ema_20": 624.9,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": false,
+          "fib_level": false,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-08-02.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2022-08-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.62,
+      "move_1w_pct": 14.07,
+      "direction": "up",
+      "close": 714.1,
+      "volume_ratio_vs_20d": 0.88,
+      "technical_snapshot": {
+        "date": "2022-08-03",
+        "close": 714.1,
+        "rsi_14": 94.78,
+        "ema_20": 636.07,
+        "ema_50": 606.81,
+        "ema_200": 632.13,
+        "tags": [
+          "ema20_extended_long",
+          "formation_rising_wedge",
+          "long_term_downtrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 57.79,
+          "ema_20": 624.47,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": false,
+          "fib_level": false,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2022-08-03.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2023-01-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -7.17,
+      "move_1w_pct": -6.31,
+      "direction": "down",
+      "close": 597.01,
+      "volume_ratio_vs_20d": 4.97,
+      "technical_snapshot": {
+        "date": "2023-01-05",
+        "close": 597.01,
+        "rsi_14": 29.97,
+        "ema_20": 639.57,
+        "ema_50": 656.12,
+        "ema_200": 662.97,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "ema_bear_stack",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 22.23,
+          "ema_20": 658.81,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2023-01-05.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2023-01-10",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.49,
+      "move_1w_pct": -10.63,
+      "direction": "down",
+      "close": 577.84,
+      "volume_ratio_vs_20d": 0.98,
+      "technical_snapshot": {
+        "date": "2023-01-10",
+        "close": 577.84,
+        "rsi_14": 24.31,
+        "ema_20": 624.89,
+        "ema_50": 647.87,
+        "ema_200": 660.61,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 20.12,
+          "ema_20": 650.09,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2023-01-10.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2023-01-11",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.14,
+      "move_1w_pct": -10.28,
+      "direction": "down",
+      "close": 577.02,
+      "volume_ratio_vs_20d": 0.95,
+      "technical_snapshot": {
+        "date": "2023-01-11",
+        "close": 577.02,
+        "rsi_14": 24.88,
+        "ema_20": 620.33,
+        "ema_50": 645.09,
+        "ema_200": 659.78,
+        "tags": [
+          "ema20_extended_short",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 20.05,
+          "ema_20": 650.01,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2023-01-11.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2023-02-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.19,
+      "move_1w_pct": 4.4,
+      "direction": "up",
+      "close": 588.62,
+      "volume_ratio_vs_20d": 1.08,
+      "technical_snapshot": {
+        "date": "2023-02-03",
+        "close": 588.62,
+        "rsi_14": 51.51,
+        "ema_20": 585.2,
+        "ema_50": 612.99,
+        "ema_200": 647.65,
+        "tags": [
+          "candle_marubozu",
+          "ema20_support_touch",
+          "ema_bear_stack",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 29.91,
+          "ema_20": 631.34,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2023-02-03.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2023-02-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 1.63,
+      "move_1w_pct": 12.9,
+      "direction": "up",
+      "close": 631.75,
+      "volume_ratio_vs_20d": 1.35,
+      "technical_snapshot": {
+        "date": "2023-02-09",
+        "close": 631.75,
+        "rsi_14": 64.19,
+        "ema_20": 595.02,
+        "ema_50": 613.15,
+        "ema_200": 646.31,
+        "tags": [
+          "ema20_extended_long",
+          "ema_bear_stack",
+          "fib_0.382_retrace",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "near_resistance",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 36.01,
+          "ema_20": 631.38,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": true,
+          "rsi_trend_long": true,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2023-02-09.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2023-07-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.19,
+      "move_1w_pct": 12.79,
+      "direction": "up",
+      "close": 772.57,
+      "volume_ratio_vs_20d": 4.58,
+      "technical_snapshot": {
+        "date": "2023-07-04",
+        "close": 772.57,
+        "rsi_14": 71.9,
+        "ema_20": 701.38,
+        "ema_50": 673.02,
+        "ema_200": 643.1,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_long",
+          "ema_bull_stack",
+          "ema_momentum_expanding",
+          "formation_double_bottom",
+          "formation_symmetrical_triangle",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 91.26,
+          "ema_20": 660.14,
+          "tags": [
+            "weekly_rsi_overbought",
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": true,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": true,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2023-07-04.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2023-07-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.28,
+      "move_1w_pct": 12.15,
+      "direction": "up",
+      "close": 770.44,
+      "volume_ratio_vs_20d": 2.03,
+      "technical_snapshot": {
+        "date": "2023-07-05",
+        "close": 770.44,
+        "rsi_14": 74.05,
+        "ema_20": 707.96,
+        "ema_50": 676.84,
+        "ema_200": 644.37,
+        "tags": [
+          "ema20_extended_long",
+          "ema_bull_stack",
+          "ema_momentum_expanding",
+          "formation_double_bottom",
+          "formation_symmetrical_triangle",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 91.19,
+          "ema_20": 659.94,
+          "tags": [
+            "weekly_rsi_overbought",
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": true,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": true,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2023-07-05.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2023-07-06",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.92,
+      "move_1w_pct": 10.0,
+      "direction": "up",
+      "close": 763.31,
+      "volume_ratio_vs_20d": 1.05,
+      "technical_snapshot": {
+        "date": "2023-07-06",
+        "close": 763.31,
+        "rsi_14": 70.32,
+        "ema_20": 713.23,
+        "ema_50": 680.23,
+        "ema_200": 645.55,
+        "tags": [
+          "ema20_extended_long",
+          "ema_bull_stack",
+          "ema_momentum_expanding",
+          "formation_double_bottom",
+          "formation_symmetrical_triangle",
+          "long_term_uptrend",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 90.95,
+          "ema_20": 659.26,
+          "tags": [
+            "weekly_rsi_overbought",
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": true,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2023-07-06.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2024-01-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.21,
+      "move_1w_pct": -6.86,
+      "direction": "down",
+      "close": 670.04,
+      "volume_ratio_vs_20d": 2.94,
+      "technical_snapshot": {
+        "date": "2024-01-30",
+        "close": 670.04,
+        "rsi_14": 14.62,
+        "ema_20": 716.89,
+        "ema_50": 724.52,
+        "ema_200": 708.7,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
+          "long_term_uptrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 36.61,
+          "ema_20": 719.26,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2024-01-30.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2024-04-26",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -7.73,
+      "move_1w_pct": -5.45,
+      "direction": "down",
+      "close": 661.58,
+      "volume_ratio_vs_20d": 4.19,
+      "technical_snapshot": {
+        "date": "2024-04-26",
+        "close": 661.58,
+        "rsi_14": 32.72,
+        "ema_20": 695.03,
+        "ema_50": 685.94,
+        "ema_200": 692.31,
+        "tags": [
+          "candle_marubozu",
+          "formation_double_top",
+          "formation_head_shoulders",
+          "formation_rising_wedge",
+          "long_term_downtrend",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "head_shoulders",
+            "name": "Head and shoulders",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 38.25,
+          "ema_20": 688.63,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2024-04-26.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2024-06-04",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.87,
+      "move_1w_pct": -5.29,
+      "direction": "down",
+      "close": 639.8,
+      "volume_ratio_vs_20d": 3.17,
+      "technical_snapshot": {
+        "date": "2024-06-04",
+        "close": 639.8,
+        "rsi_14": 43.32,
+        "ema_20": 666.42,
+        "ema_50": 672.73,
+        "ema_200": 686.43,
+        "tags": [
+          "candle_marubozu",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_double_bottom",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 48.77,
+          "ema_20": 675.69,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2024-06-04.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2024-06-05",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.02,
+      "move_1w_pct": 0.44,
+      "direction": "up",
+      "close": 671.95,
+      "volume_ratio_vs_20d": 1.17,
+      "technical_snapshot": {
+        "date": "2024-06-05",
+        "close": 671.95,
+        "rsi_14": 55.0,
+        "ema_20": 666.95,
+        "ema_50": 672.7,
+        "ema_200": 686.29,
+        "tags": [
+          "candle_marubozu",
+          "ema20_support_touch",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "fib_0.500_retrace",
+          "formation_double_bottom",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 55.36,
+          "ema_20": 678.75,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2024-06-05.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2025-01-02",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.54,
+      "move_1w_pct": 8.41,
+      "direction": "up",
+      "close": 729.9,
+      "volume_ratio_vs_20d": 2.97,
+      "technical_snapshot": {
+        "date": "2025-01-02",
+        "close": 729.9,
+        "rsi_14": 60.37,
+        "ema_20": 685.83,
+        "ema_50": 684.2,
+        "ema_200": 688.93,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_long",
+          "formation_rising_wedge",
+          "long_term_downtrend",
+          "near_resistance",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 44.2,
+          "ema_20": 690.41,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": true,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2025-01-02.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2025-02-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.32,
+      "move_1w_pct": 10.77,
+      "direction": "up",
+      "close": 832.3,
+      "volume_ratio_vs_20d": 3.01,
+      "technical_snapshot": {
+        "date": "2025-02-03",
+        "close": 832.3,
+        "rsi_14": 80.76,
+        "ema_20": 748.79,
+        "ema_50": 720.9,
+        "ema_200": 699.49,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_long",
+          "ema_bull_stack",
+          "ema_momentum_expanding",
+          "formation_head_shoulders",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "head_shoulders",
+            "name": "Head and shoulders",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 70.94,
+          "ema_20": 719.31,
+          "tags": [
+            "weekly_rsi_overbought",
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": true,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": true,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": false,
+          "fib_level": false,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2025-02-03.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2025-04-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.04,
+      "move_1w_pct": -7.38,
+      "direction": "down",
+      "close": 852.91,
+      "volume_ratio_vs_20d": 3.03,
+      "technical_snapshot": {
+        "date": "2025-04-30",
+        "close": 852.91,
+        "rsi_14": 51.84,
+        "ema_20": 886.31,
+        "ema_50": 856.81,
+        "ema_200": 769.03,
+        "tags": [
+          "candle_marubozu",
+          "ema_bull_stack",
+          "formation_double_bottom",
+          "formation_inverse_head_shoulders",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "inverse_head_shoulders",
+            "name": "Inverse H&S",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 69.16,
+          "ema_20": 822.79,
+          "tags": [
+            "weekly_rsi_overbought",
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": true,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2025-04-30.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2025-08-18",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.08,
+      "move_1w_pct": 3.2,
+      "direction": "up",
+      "close": 899.67,
+      "volume_ratio_vs_20d": 2.03,
+      "technical_snapshot": {
+        "date": "2025-08-18",
+        "close": 899.67,
+        "rsi_14": 59.46,
+        "ema_20": 884.76,
+        "ema_50": 897.37,
+        "ema_200": 841.82,
+        "tags": [
+          "candle_marubozu",
+          "ema20_support_touch",
+          "formation_falling_wedge",
+          "long_term_uptrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 48.67,
+          "ema_20": 885.39,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2025-08-18.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2025-11-11",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -7.35,
+      "move_1w_pct": -3.63,
+      "direction": "down",
+      "close": 999.06,
+      "volume_ratio_vs_20d": 3.11,
+      "technical_snapshot": {
+        "date": "2025-11-11",
+        "close": 999.06,
+        "rsi_14": 32.51,
+        "ema_20": 1042.75,
+        "ema_50": 1010.33,
+        "ema_200": 910.73,
+        "tags": [
+          "candle_marubozu",
+          "ema_bull_stack",
+          "fib_0.382_retrace",
+          "formation_double_bottom",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 64.36,
+          "ema_20": 975.11,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2025-11-11.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2026-02-03",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 6.72,
+      "move_1w_pct": 5.43,
+      "direction": "up",
+      "close": 958.51,
+      "volume_ratio_vs_20d": 1.99,
+      "technical_snapshot": {
+        "date": "2026-02-03",
+        "close": 958.51,
+        "rsi_14": 53.61,
+        "ema_20": 941.76,
+        "ema_50": 966.12,
+        "ema_200": 939.65,
+        "tags": [
+          "ema20_support_touch",
+          "fib_0.618_retrace",
+          "formation_falling_wedge",
+          "long_term_uptrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 36.34,
+          "ema_20": 971.46,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2026-02-03.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2026-03-12",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -3.42,
+      "move_1w_pct": -10.32,
+      "direction": "down",
+      "close": 857.83,
+      "volume_ratio_vs_20d": 1.85,
+      "technical_snapshot": {
+        "date": "2026-03-12",
+        "close": 857.83,
+        "rsi_14": 15.0,
+        "ema_20": 953.25,
+        "ema_50": 967.25,
+        "ema_200": 947.37,
+        "tags": [
+          "ema20_extended_short",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
+          "long_term_uptrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 26.27,
+          "ema_20": 967.43,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": true,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2026-03-12.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2026-03-13",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -0.93,
+      "move_1w_pct": -10.01,
+      "direction": "down",
+      "close": 849.83,
+      "volume_ratio_vs_20d": 0.82,
+      "technical_snapshot": {
+        "date": "2026-03-13",
+        "close": 849.83,
+        "rsi_14": 9.24,
+        "ema_20": 943.4,
+        "ema_50": 962.65,
+        "ema_200": 946.4,
+        "tags": [
+          "ema20_extended_short",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
+          "long_term_uptrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 25.74,
+          "ema_20": 966.67,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": true,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2026-03-13.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2026-03-19",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.44,
+      "move_1w_pct": -3.58,
+      "direction": "down",
+      "close": 827.12,
+      "volume_ratio_vs_20d": 1.36,
+      "technical_snapshot": {
+        "date": "2026-03-19",
+        "close": 827.12,
+        "rsi_14": 18.63,
+        "ema_20": 915.18,
+        "ema_50": 947.3,
+        "ema_200": 942.99,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
+          "long_term_uptrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 26.26,
+          "ema_20": 953.38,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2026-03-19.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2026-03-30",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.01,
+      "move_1w_pct": -3.49,
+      "direction": "down",
+      "close": 796.65,
+      "volume_ratio_vs_20d": 1.79,
+      "technical_snapshot": {
+        "date": "2026-03-30",
+        "close": 796.65,
+        "rsi_14": 30.47,
+        "ema_20": 877.27,
+        "ema_50": 922.59,
+        "ema_200": 936.5,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_short",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "near_support",
+          "rsi_oversold",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 26.91,
+          "ema_20": 928.44,
+          "tags": [
+            "weekly_rsi_oversold",
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2026-03-30.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2026-04-08",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 7.01,
+      "move_1w_pct": 14.16,
+      "direction": "up",
+      "close": 909.46,
+      "volume_ratio_vs_20d": 1.1,
+      "technical_snapshot": {
+        "date": "2026-04-08",
+        "close": 909.46,
+        "rsi_14": 55.22,
+        "ema_20": 867.45,
+        "ema_50": 909.36,
+        "ema_200": 932.2,
+        "tags": [
+          "ema_bear_stack",
+          "fib_0.500_retrace",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 42.19,
+          "ema_20": 928.8,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2026-04-08.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2026-04-09",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": -1.29,
+      "move_1w_pct": 10.52,
+      "direction": "up",
+      "close": 897.73,
+      "volume_ratio_vs_20d": 0.75,
+      "technical_snapshot": {
+        "date": "2026-04-09",
+        "close": 897.73,
+        "rsi_14": 54.87,
+        "ema_20": 870.34,
+        "ema_50": 908.9,
+        "ema_200": 931.86,
+        "tags": [
+          "ema_bear_stack",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 40.75,
+          "ema_20": 927.68,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": true,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2026-04-09.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2026-04-10",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 2.36,
+      "move_1w_pct": 11.82,
+      "direction": "up",
+      "close": 918.9,
+      "volume_ratio_vs_20d": 0.75,
+      "technical_snapshot": {
+        "date": "2026-04-10",
+        "close": 918.9,
+        "rsi_14": 56.08,
+        "ema_20": 874.96,
+        "ema_50": 909.29,
+        "ema_200": 931.73,
+        "tags": [
+          "ema20_extended_long",
+          "ema_bear_stack",
+          "fib_0.500_retrace",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 43.31,
+          "ema_20": 929.69,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": true,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2026-04-10.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2026-06-12",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 5.49,
+      "move_1w_pct": 3.25,
+      "direction": "up",
+      "close": 912.69,
+      "volume_ratio_vs_20d": 1.16,
+      "technical_snapshot": {
+        "date": "2026-06-12",
+        "close": 912.69,
+        "rsi_14": 43.54,
+        "ema_20": 894.32,
+        "ema_50": 905.39,
+        "ema_200": 924.02,
+        "tags": [
+          "candle_marubozu",
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "fib_0.382_retrace",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 46.18,
+          "ema_20": 918.55,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2026-06-12.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2026-06-18",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1w",
+      "threshold_pct": 10.0,
+      "move_1d_pct": 0.05,
+      "move_1w_pct": 10.14,
+      "direction": "up",
+      "close": 952.99,
+      "volume_ratio_vs_20d": 0.56,
+      "technical_snapshot": {
+        "date": "2026-06-18",
+        "close": 952.99,
+        "rsi_14": 63.31,
+        "ema_20": 912.54,
+        "ema_50": 911.87,
+        "ema_200": 925.0,
+        "tags": [
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "near_resistance",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 64.28,
+          "ema_20": 921.83,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": true,
+          "dead_volume": true,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2026-06-18.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2026-07-31",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": 8.32,
+      "move_1w_pct": 12.68,
+      "direction": "up",
+      "close": 1141.2,
+      "volume_ratio_vs_20d": 4.08,
+      "technical_snapshot": {
+        "date": "2026-07-31",
+        "close": 1141.2,
+        "rsi_14": 74.19,
+        "ema_20": 1037.08,
+        "ema_50": 993.26,
+        "ema_200": 949.53,
+        "tags": [
+          "candle_marubozu",
+          "ema20_extended_long",
+          "ema_bull_stack",
+          "ema_momentum_expanding",
+          "formation_double_bottom",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "near_resistance",
+          "rsi_overbought",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 73.6,
+          "ema_20": 978.18,
+          "tags": [
+            "weekly_rsi_overbought",
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": true,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": true,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": true,
+          "range_expansion": true,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": true,
+          "dead_volume": false,
+          "live_rvol": true
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2026-07-31.png"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "date": "2026-08-07",
+      "instrument_type": "stock",
+      "trigger_type": "stock_1d",
+      "threshold_pct": 5.0,
+      "move_1d_pct": -5.84,
+      "move_1w_pct": -5.54,
+      "direction": "down",
+      "close": 1078.0,
+      "volume_ratio_vs_20d": 1.48,
+      "technical_snapshot": {
+        "date": "2026-08-07",
+        "close": 1078.0,
+        "rsi_14": 56.22,
+        "ema_20": 1075.04,
+        "ema_50": 1019.04,
+        "ema_200": 958.65,
+        "tags": [
+          "candle_marubozu",
+          "ema20_support_touch",
+          "ema_bull_stack",
+          "ema_momentum_expanding",
+          "formation_double_bottom",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "marubozu"
+        ],
+        "weekly": {
+          "rsi_14": 63.97,
+          "ema_20": 987.69,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": false,
+          "tight_range": false,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": true,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": true,
+          "strong_close": false,
+          "dead_volume": false,
+          "live_rvol": false
+        }
+      },
+      "aligned_events": [],
+      "event_reasons": [],
+      "chart_file": "technical/charts/BAJFINANCE/2026-08-07.png"
+    }
+  ]
+}

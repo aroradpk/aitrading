@@ -1,0 +1,69 @@
+{
+  "date": "2022-03-03",
+  "close": 727.54,
+  "rsi_14": 29.18,
+  "ema_20": 788.59,
+  "ema_50": 803.32,
+  "ema_200": null,
+  "tags": [
+    "candle_marubozu",
+    "ema20_extended_short",
+    "formation_double_top",
+    "formation_falling_wedge",
+    "near_support",
+    "rsi_oversold",
+    "short_term_downtrend"
+  ],
+  "formations": [
+    {
+      "id": "falling_wedge",
+      "name": "Falling wedge",
+      "bias": "bullish_reversal"
+    },
+    {
+      "id": "double_top",
+      "name": "Double top",
+      "bias": "bearish_reversal"
+    }
+  ],
+  "raw_candle_patterns": [
+    "marubozu"
+  ],
+  "weekly": {
+    "rsi_14": 35.42,
+    "ema_20": 798.04,
+    "tags": [
+      "weekly_downtrend"
+    ]
+  },
+  "position_bias": "long",
+  "position_bias_long": "long",
+  "position_bias_short": "short",
+  "pattern_confirmations": {
+    "ema20_support": false,
+    "consolidation_anchor": true,
+    "tight_range": true,
+    "higher_lows": false,
+    "close_above_ema20": false,
+    "ema_momentum_expanding": false,
+    "ema_bull_stack": false,
+    "rsi_60_reclaim": false,
+    "rsi_trend_long": false,
+    "uptrend": false,
+    "bullish_formation": true,
+    "compressing_wedge": false,
+    "rounding_bottom": false,
+    "sr_level": true,
+    "fib_level": false,
+    "sr_fib_confluence": true,
+    "elliott_aligned": false,
+    "elliott_conflict": false,
+    "vol_expansion": false,
+    "range_expansion": false,
+    "setup_rattle": true,
+    "late_bar": false,
+    "strong_close": false,
+    "dead_volume": true,
+    "live_rvol": false
+  }
+}

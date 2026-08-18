@@ -59,7 +59,7 @@ def evaluate(symbol: str, move_threshold: float = 5.0, good_conv: float = 7.0) -
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--symbols", default="ABB,MOTHERSON,ADANIPOWER")
+    parser.add_argument("--symbols", default="HDFCBANK,BAJFINANCE,M&M")
     parser.add_argument("--good-conviction", type=float, default=7.0)
     args = parser.parse_args()
 

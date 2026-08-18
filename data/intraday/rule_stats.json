@@ -1,0 +1,66 @@
+{
+  "updated_at": "2026-08-18T13:51:53.183458+00:00",
+  "resolved_rows": 600,
+  "min_n_to_trust": 20,
+  "note": "Hit = next session traded at least the bar (MFE). A rule is trusted only at n>=20. Commons that hit both wins and fakes stay off the 7-gate.",
+  "rules": {
+    "all_logged": {
+      "n": 600,
+      "trusted": true,
+      "hit_mfe_2": 23.7,
+      "false_alarm_mfe_2": 76.3,
+      "hit_mfe_3": 9.3,
+      "false_alarm_mfe_3": 90.7,
+      "hit_mfe_5": 1.7,
+      "false_alarm_mfe_5": 98.3
+    },
+    "session_seven": {
+      "n": 0,
+      "trusted": false,
+      "hit_mfe_2": null,
+      "hit_mfe_3": null,
+      "hit_mfe_5": null
+    },
+    "rattle": {
+      "n": 90,
+      "trusted": true,
+      "hit_mfe_2": 42.2,
+      "false_alarm_mfe_2": 57.8,
+      "hit_mfe_3": 15.6,
+      "false_alarm_mfe_3": 84.4,
+      "hit_mfe_5": 4.4,
+      "false_alarm_mfe_5": 95.6
+    },
+    "range_expansion": {
+      "n": 32,
+      "trusted": true,
+      "hit_mfe_2": 50.0,
+      "false_alarm_mfe_2": 50.0,
+      "hit_mfe_3": 25.0,
+      "false_alarm_mfe_3": 75.0,
+      "hit_mfe_5": 6.2,
+      "false_alarm_mfe_5": 93.8
+    },
+    "live_rvol": {
+      "n": 44,
+      "trusted": true,
+      "hit_mfe_2": 45.5,
+      "false_alarm_mfe_2": 54.5,
+      "hit_mfe_3": 22.7,
+      "false_alarm_mfe_3": 77.3,
+      "hit_mfe_5": 4.5,
+      "false_alarm_mfe_5": 95.5
+    },
+    "tight_range": {
+      "n": 412,
+      "trusted": true,
+      "hit_mfe_2": 24.3,
+      "false_alarm_mfe_2": 75.7,
+      "hit_mfe_3": 9.7,
+      "false_alarm_mfe_3": 90.3,
+      "hit_mfe_5": 1.5,
+      "false_alarm_mfe_5": 98.5
+    }
+  },
+  "advice": "Need n>=20 resolved session_seven rows before changing the 7 rule (have 0)."
+}

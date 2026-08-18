@@ -13,19 +13,68 @@
     "date": "2024-08-05",
     "close": 50092.1,
     "rsi_14": 21.8,
-    "sma_20": 51824.9,
-    "sma_50": 51131.28,
-    "sma_200": 47586.85,
-    "volume_ratio_vs_20d": 1.26,
+    "ema_20": 51541.45,
+    "ema_50": 51008.15,
+    "ema_200": 48128.53,
     "tags": [
+      "ema_bull_stack",
+      "formation_double_top",
+      "formation_falling_wedge",
       "long_term_uptrend",
       "near_support",
       "rsi_oversold",
       "short_term_uptrend"
     ],
+    "formations": [
+      {
+        "id": "falling_wedge",
+        "name": "Falling wedge",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_top",
+        "name": "Double top",
+        "bias": "bearish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [],
     "weekly": {
       "rsi_14": 56.2,
-      "tags": []
+      "ema_20": 49986.6,
+      "tags": [
+        "weekly_uptrend"
+      ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "neutral",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": false,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": true,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": false,
+      "uptrend": true,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": true,
+      "setup_rattle": false,
+      "late_bar": false,
+      "strong_close": false,
+      "dead_volume": false,
+      "live_rvol": false
     }
-  }
+  },
+  "chart_file": "technical/charts/NIFTY_BANK/2024-08-05.png"
 }

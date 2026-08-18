@@ -2,19 +2,68 @@
   "date": "2026-05-25",
   "close": 55293.65,
   "rsi_14": 54.9,
-  "sma_20": 54564.17,
-  "sma_50": 54548.34,
-  "sma_200": 57025.79,
-  "volume_ratio_vs_20d": 0.78,
+  "ema_20": 54451.15,
+  "ema_50": 55270.56,
+  "ema_200": 56289.37,
   "tags": [
-    "above_sma20",
-    "marubozu",
-    "short_term_uptrend"
+    "candle_marubozu",
+    "ema20_support_touch",
+    "ema_bear_stack",
+    "formation_double_top",
+    "formation_symmetrical_triangle",
+    "long_term_downtrend",
+    "short_term_downtrend"
+  ],
+  "formations": [
+    {
+      "id": "symmetrical_triangle",
+      "name": "Symmetrical triangle",
+      "bias": "neutral_breakout"
+    },
+    {
+      "id": "double_top",
+      "name": "Double top",
+      "bias": "bearish_reversal"
+    }
+  ],
+  "raw_candle_patterns": [
+    "marubozu"
   ],
   "weekly": {
     "rsi_14": 35.28,
+    "ema_20": 55883.88,
     "tags": [
-      "weekly_uptrend"
+      "weekly_downtrend"
     ]
+  },
+  "position_bias": "neutral",
+  "position_bias_long": "neutral",
+  "position_bias_short": "short",
+  "pattern_confirmations": {
+    "ema20_support": true,
+    "consolidation_anchor": true,
+    "tight_range": false,
+    "higher_lows": true,
+    "close_above_ema20": true,
+    "ema_momentum_expanding": false,
+    "ema_bull_stack": false,
+    "rsi_60_reclaim": false,
+    "rsi_trend_long": true,
+    "uptrend": false,
+    "bullish_formation": true,
+    "compressing_wedge": false,
+    "rounding_bottom": false,
+    "sr_level": true,
+    "fib_level": false,
+    "sr_fib_confluence": true,
+    "elliott_aligned": false,
+    "elliott_conflict": false,
+    "vol_expansion": false,
+    "range_expansion": false,
+    "setup_rattle": false,
+    "late_bar": false,
+    "strong_close": true,
+    "dead_volume": true,
+    "live_rvol": false
   }
 }

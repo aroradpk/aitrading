@@ -1,0 +1,4538 @@
+{
+  "report_date": "2026-08-18",
+  "generated_at": "2026-08-18T13:51:53.188130+00:00",
+  "count": 10,
+  "config": {
+    "position_focus": "both",
+    "intraday_enabled": true,
+    "conviction_model": "technical_7_plus_research_3",
+    "trading_book": "intraday_5",
+    "learn": {
+      "logged_today": 10,
+      "resolved": 0,
+      "resolved_rows": 600,
+      "min_n_to_trust": 20
+    }
+  },
+  "entries": [
+    {
+      "symbol": "HDFCBANK",
+      "name": "HDFC Bank",
+      "type": "stock",
+      "as_of": "2026-08-17",
+      "horizon": "1d/1w",
+      "target_move_pct": 3.0,
+      "expected_move_pct": 3.0,
+      "expected_horizon_days": 1,
+      "session_seven": false,
+      "position_bias": "neutral",
+      "position_side": "long",
+      "intraday": false,
+      "conviction": 5.0,
+      "scores": {
+        "technical": 5.0,
+        "research": 0.0,
+        "fundamental": 0.0,
+        "events": 0.0,
+        "theme_bonus": 1.0,
+        "final": 5.0
+      },
+      "match_count": 0,
+      "top_matches": [
+        {
+          "date": "2026-04-08",
+          "move_1d_pct": 5.71,
+          "move_1w_pct": 11.56,
+          "similarity": 0.286,
+          "tags": [
+            "candle_marubozu",
+            "elliott_impulse_down",
+            "ema_bear_stack",
+            "formation_double_bottom",
+            "formation_falling_wedge",
+            "long_term_downtrend",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "higher_lows",
+            "close_above_ema20",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "elliott_conflict",
+            "late_bar",
+            "strong_close"
+          ]
+        },
+        {
+          "date": "2022-04-05",
+          "move_1d_pct": -2.93,
+          "move_1w_pct": 10.78,
+          "similarity": 0.176,
+          "tags": [
+            "candle_marubozu",
+            "ema20_extended_long",
+            "fib_0.236_retrace",
+            "formation_ascending_triangle",
+            "formation_double_top",
+            "rsi_overbought",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "higher_lows",
+            "close_above_ema20",
+            "rsi_60_reclaim",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "rounding_bottom",
+            "sr_level",
+            "fib_level",
+            "setup_rattle"
+          ]
+        },
+        {
+          "date": "2022-04-04",
+          "move_1d_pct": 10.01,
+          "move_1w_pct": 15.63,
+          "similarity": 0.158,
+          "tags": [
+            "ema20_extended_long",
+            "formation_ascending_triangle",
+            "formation_double_top",
+            "rsi_overbought",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "higher_lows",
+            "close_above_ema20",
+            "rsi_60_reclaim",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "rounding_bottom",
+            "sr_level",
+            "vol_expansion",
+            "range_expansion",
+            "late_bar",
+            "live_rvol"
+          ]
+        },
+        {
+          "date": "2022-11-11",
+          "move_1d_pct": 5.67,
+          "move_1w_pct": 6.87,
+          "similarity": 0.1,
+          "tags": [
+            "candle_marubozu",
+            "ema20_extended_long",
+            "ema_bull_stack",
+            "ema_momentum_expanding",
+            "formation_rising_wedge",
+            "long_term_uptrend",
+            "near_resistance",
+            "rsi_overbought",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "close_above_ema20",
+            "ema_momentum_expanding",
+            "ema_bull_stack",
+            "rsi_trend_long",
+            "uptrend",
+            "sr_level",
+            "sr_fib_confluence",
+            "vol_expansion",
+            "range_expansion",
+            "late_bar",
+            "strong_close",
+            "live_rvol"
+          ]
+        }
+      ],
+      "pattern_confirmations": {
+        "ema20_support": false,
+        "consolidation_anchor": true,
+        "tight_range": true,
+        "higher_lows": true,
+        "close_above_ema20": false,
+        "ema_momentum_expanding": false,
+        "ema_bull_stack": false,
+        "rsi_60_reclaim": false,
+        "rsi_trend_long": false,
+        "uptrend": false,
+        "bullish_formation": true,
+        "compressing_wedge": false,
+        "rounding_bottom": false,
+        "sr_level": true,
+        "fib_level": false,
+        "sr_fib_confluence": true,
+        "elliott_aligned": false,
+        "elliott_conflict": false,
+        "vol_expansion": false,
+        "range_expansion": false,
+        "setup_rattle": false,
+        "late_bar": false,
+        "strong_close": false,
+        "dead_volume": true,
+        "live_rvol": false,
+        "mtf_15m_wedge": false,
+        "mtf_15m_coil_ema": false,
+        "mtf_15m_base": false,
+        "mtf_1h_rounding_ema20": false,
+        "mtf_1h_coil_ema": false,
+        "mtf_1h_base": true,
+        "mtf_1h_fib_sr": true
+      },
+      "current_snapshot": {
+        "date": "2026-08-17",
+        "close": 729.0,
+        "rsi_14": 44.77,
+        "ema_20": 744.68,
+        "ema_50": 761.62,
+        "ema_200": 821.27,
+        "tags": [
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_double_bottom",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "near_support",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 44.24,
+          "ema_20": 775.45,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": false,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "higher_lows": true,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": false,
+          "uptrend": false,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": true,
+          "live_rvol": false,
+          "mtf_15m_wedge": false,
+          "mtf_15m_coil_ema": false,
+          "mtf_15m_base": false,
+          "mtf_1h_rounding_ema20": false,
+          "mtf_1h_coil_ema": false,
+          "mtf_1h_base": true,
+          "mtf_1h_fib_sr": true
+        }
+      },
+      "reasons": [
+        {
+          "layer": "technical",
+          "text": "Expect next move ~3%",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Hourly S/R with Fibonacci (0.382/0.5/0.618)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "1h base at EMA20 (coil / flag / range / rounding / rising \u2014 name does not matter)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Dead volume coil (<=0.85x 20d avg)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci confluence",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Support/resistance level",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Bullish chart formation",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rising lows",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Tight coil vs ATR",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Consolidation in anchor candle range",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: coil breakout",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: formation base",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: rising structure",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "15m / 1h base cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Chart formation cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rangebound coil cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA / trend structure +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "ema momentum expanding down",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "ema bear stack",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "near support",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "short term downtrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "long term downtrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation double bottom",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation falling wedge",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "weekly downtrend",
+          "weight": "low",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2026-04-08 long move (5.71% 1D) \u2014 28% overlap [ema20_support, higher_lows, close_above_ema20]",
+          "weight": "medium",
+          "date": "2026-04-08"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-04-05 long move (-2.93% 1D) \u2014 17% overlap [ema20_support, higher_lows, close_above_ema20]",
+          "weight": "medium",
+          "date": "2022-04-05"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-04-04 long move (10.01% 1D) \u2014 15% overlap [ema20_support, higher_lows, close_above_ema20]",
+          "weight": "medium",
+          "date": "2022-04-04"
+        }
+      ]
+    },
+    {
+      "symbol": "HDFCBANK",
+      "name": "HDFC Bank",
+      "type": "stock",
+      "as_of": "2026-08-17",
+      "horizon": "short_1d/1w",
+      "target_move_pct": 3.0,
+      "expected_move_pct": 3.0,
+      "expected_horizon_days": 1,
+      "session_seven": false,
+      "position_bias": "short",
+      "position_side": "short",
+      "intraday": false,
+      "conviction": 5.0,
+      "scores": {
+        "technical": 5.0,
+        "research": 0.0,
+        "fundamental": 0.0,
+        "events": 0.0,
+        "theme_bonus": 1.0,
+        "final": 5.0
+      },
+      "match_count": 0,
+      "top_matches": [
+        {
+          "date": "2026-03-23",
+          "move_1d_pct": -4.65,
+          "move_1w_pct": -11.47,
+          "similarity": 0.125,
+          "tags": [
+            "candle_evening_star",
+            "candle_marubozu",
+            "ema20_extended_short",
+            "ema_bear_stack",
+            "ema_momentum_expanding_down",
+            "formation_falling_wedge",
+            "long_term_downtrend",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "setup_rattle"
+          ]
+        },
+        {
+          "date": "2022-04-19",
+          "move_1d_pct": -3.82,
+          "move_1w_pct": -11.39,
+          "similarity": 0.111,
+          "tags": [
+            "candle_marubozu",
+            "ema20_extended_short",
+            "formation_rising_wedge",
+            "near_support",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "sr_level",
+            "sr_fib_confluence",
+            "vol_expansion",
+            "setup_rattle",
+            "live_rvol"
+          ]
+        },
+        {
+          "date": "2026-07-20",
+          "move_1d_pct": -5.12,
+          "move_1w_pct": -4.93,
+          "similarity": 0.111,
+          "tags": [
+            "candle_marubozu",
+            "formation_rising_wedge",
+            "long_term_downtrend",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "uptrend",
+            "sr_level",
+            "sr_fib_confluence",
+            "late_bar",
+            "live_rvol"
+          ]
+        },
+        {
+          "date": "2022-02-24",
+          "move_1d_pct": -5.43,
+          "move_1w_pct": -5.78,
+          "similarity": 0.105,
+          "tags": [
+            "ema20_extended_short",
+            "formation_double_bottom",
+            "formation_double_top",
+            "formation_symmetrical_triangle",
+            "near_support",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "range_expansion",
+            "late_bar",
+            "live_rvol"
+          ]
+        },
+        {
+          "date": "2023-05-05",
+          "move_1d_pct": -5.91,
+          "move_1w_pct": -3.29,
+          "similarity": 0.095,
+          "tags": [
+            "ema_bull_stack",
+            "ema_momentum_expanding",
+            "formation_double_top",
+            "formation_rising_wedge",
+            "long_term_uptrend",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "ema_momentum_expanding",
+            "ema_bull_stack",
+            "uptrend",
+            "sr_level",
+            "sr_fib_confluence",
+            "range_expansion",
+            "late_bar",
+            "live_rvol"
+          ]
+        }
+      ],
+      "pattern_confirmations": {
+        "ema20_resistance": true,
+        "close_below_ema20": true,
+        "consolidation_anchor": true,
+        "tight_range": true,
+        "lower_highs": false,
+        "ema_momentum_expanding_down": true,
+        "ema_bear_stack": true,
+        "rsi_60_reject": false,
+        "rsi_trend_short": true,
+        "downtrend": true,
+        "bearish_formation": false,
+        "compressing_wedge": true,
+        "sr_level": true,
+        "fib_level": false,
+        "sr_fib_confluence": true,
+        "elliott_aligned": false,
+        "elliott_conflict": false,
+        "vol_expansion": false,
+        "range_expansion": false,
+        "setup_rattle": false,
+        "late_bar": false,
+        "strong_close": false,
+        "dead_volume": true,
+        "live_rvol": false,
+        "mtf_15m_wedge": false,
+        "mtf_15m_coil_ema": false,
+        "mtf_15m_base": false,
+        "mtf_1h_rounding_ema20": false,
+        "mtf_1h_coil_ema": false,
+        "mtf_1h_base": true,
+        "mtf_1h_fib_sr": true
+      },
+      "current_snapshot": {
+        "date": "2026-08-17",
+        "close": 729.0,
+        "rsi_14": 44.77,
+        "ema_20": 744.68,
+        "ema_50": 761.62,
+        "ema_200": 821.27,
+        "tags": [
+          "ema_bear_stack",
+          "ema_momentum_expanding_down",
+          "formation_double_bottom",
+          "formation_falling_wedge",
+          "long_term_downtrend",
+          "near_support",
+          "short_term_downtrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 44.24,
+          "ema_20": 775.45,
+          "tags": [
+            "weekly_downtrend"
+          ]
+        },
+        "position_bias": "short",
+        "position_bias_long": "neutral",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_resistance": true,
+          "close_below_ema20": true,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "lower_highs": false,
+          "ema_momentum_expanding_down": true,
+          "ema_bear_stack": true,
+          "rsi_60_reject": false,
+          "rsi_trend_short": true,
+          "downtrend": true,
+          "bearish_formation": false,
+          "compressing_wedge": true,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": true,
+          "live_rvol": false,
+          "mtf_15m_wedge": false,
+          "mtf_15m_coil_ema": false,
+          "mtf_15m_base": false,
+          "mtf_1h_rounding_ema20": false,
+          "mtf_1h_coil_ema": false,
+          "mtf_1h_base": true,
+          "mtf_1h_fib_sr": true
+        }
+      },
+      "reasons": [
+        {
+          "layer": "technical",
+          "text": "Expect next move ~3%",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Hourly S/R with Fibonacci (0.382/0.5/0.618)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "1h base at EMA20 (coil / flag / range / rounding / rising \u2014 name does not matter)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Dead volume coil (<=0.85x 20d avg)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci confluence",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Support/resistance level",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Compressing wedge",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Trend alignment down",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "RSI holding below 50",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA bear stack",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA gaps expanding down",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Tight coil vs ATR",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Consolidation in anchor candle range",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Close below EMA20",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA20 resistance rejection",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: ema reject",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: coil breakdown",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: momentum down",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: formation top",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: rsi reject",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: falling structure",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "15m / 1h base cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rangebound coil cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA / trend structure +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "ema momentum expanding down",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "ema bear stack",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "near support (headwind for short)",
+          "weight": "high",
+          "headwind": true
+        },
+        {
+          "layer": "technical",
+          "text": "short term downtrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "long term downtrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation double bottom",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation falling wedge",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "weekly downtrend",
+          "weight": "low",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2026-03-23 short move (-4.65% 1D) \u2014 12% overlap [bullish_formation, sr_level, sr_fib_confluence]",
+          "weight": "medium",
+          "date": "2026-03-23"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-04-19 short move (-3.82% 1D) \u2014 11% overlap [ema20_support, sr_level, sr_fib_confluence]",
+          "weight": "medium",
+          "date": "2022-04-19"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2026-07-20 short move (-5.12% 1D) \u2014 11% overlap [ema20_support, uptrend, sr_level]",
+          "weight": "medium",
+          "date": "2026-07-20"
+        }
+      ]
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "name": "Bajaj Finance",
+      "type": "stock",
+      "as_of": "2026-08-17",
+      "horizon": "1d/1w",
+      "target_move_pct": 3.0,
+      "expected_move_pct": 3.0,
+      "expected_horizon_days": 1,
+      "session_seven": false,
+      "position_bias": "long",
+      "position_side": "long",
+      "intraday": false,
+      "conviction": 5.0,
+      "scores": {
+        "technical": 5.0,
+        "research": 0.0,
+        "fundamental": 0.0,
+        "events": 0.0,
+        "theme_bonus": 1.0,
+        "final": 5.0
+      },
+      "match_count": 5,
+      "top_matches": [
+        {
+          "date": "2023-07-06",
+          "move_1d_pct": -0.92,
+          "move_1w_pct": 10.0,
+          "similarity": 0.533,
+          "tags": [
+            "ema20_extended_long",
+            "ema_bull_stack",
+            "ema_momentum_expanding",
+            "formation_double_bottom",
+            "formation_symmetrical_triangle",
+            "long_term_uptrend",
+            "rsi_overbought",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "close_above_ema20",
+            "ema_momentum_expanding",
+            "ema_bull_stack",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence"
+          ]
+        },
+        {
+          "date": "2026-06-18",
+          "move_1d_pct": 0.05,
+          "move_1w_pct": 10.14,
+          "similarity": 0.533,
+          "tags": [
+            "formation_falling_wedge",
+            "long_term_downtrend",
+            "near_resistance",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "close_above_ema20",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "strong_close",
+            "dead_volume"
+          ]
+        },
+        {
+          "date": "2022-02-15",
+          "move_1d_pct": 5.25,
+          "move_1w_pct": 1.23,
+          "similarity": 0.471,
+          "tags": [
+            "candle_marubozu",
+            "ema20_support_touch",
+            "formation_double_top",
+            "formation_symmetrical_triangle",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "tight_range",
+            "close_above_ema20",
+            "rsi_trend_long",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "range_expansion",
+            "late_bar",
+            "strong_close",
+            "dead_volume"
+          ]
+        },
+        {
+          "date": "2026-04-10",
+          "move_1d_pct": 2.36,
+          "move_1w_pct": 11.82,
+          "similarity": 0.412,
+          "tags": [
+            "ema20_extended_long",
+            "ema_bear_stack",
+            "fib_0.500_retrace",
+            "formation_double_bottom",
+            "formation_double_top",
+            "formation_falling_wedge",
+            "long_term_downtrend",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "higher_lows",
+            "close_above_ema20",
+            "rsi_trend_long",
+            "bullish_formation",
+            "sr_level",
+            "fib_level",
+            "sr_fib_confluence",
+            "strong_close",
+            "dead_volume"
+          ]
+        },
+        {
+          "date": "2026-04-09",
+          "move_1d_pct": -1.29,
+          "move_1w_pct": 10.52,
+          "similarity": 0.4,
+          "tags": [
+            "ema_bear_stack",
+            "formation_double_bottom",
+            "formation_double_top",
+            "formation_falling_wedge",
+            "long_term_downtrend",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "higher_lows",
+            "close_above_ema20",
+            "rsi_trend_long",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "dead_volume"
+          ]
+        }
+      ],
+      "pattern_confirmations": {
+        "ema20_support": true,
+        "consolidation_anchor": true,
+        "tight_range": true,
+        "higher_lows": false,
+        "close_above_ema20": true,
+        "ema_momentum_expanding": false,
+        "ema_bull_stack": true,
+        "rsi_60_reclaim": false,
+        "rsi_trend_long": true,
+        "uptrend": true,
+        "bullish_formation": false,
+        "compressing_wedge": false,
+        "rounding_bottom": true,
+        "sr_level": true,
+        "fib_level": false,
+        "sr_fib_confluence": true,
+        "elliott_aligned": false,
+        "elliott_conflict": false,
+        "vol_expansion": false,
+        "range_expansion": false,
+        "setup_rattle": false,
+        "late_bar": false,
+        "strong_close": false,
+        "dead_volume": true,
+        "live_rvol": false,
+        "mtf_15m_wedge": false,
+        "mtf_15m_coil_ema": false,
+        "mtf_15m_base": false,
+        "mtf_1h_rounding_ema20": false,
+        "mtf_1h_coil_ema": false,
+        "mtf_1h_base": true,
+        "mtf_1h_fib_sr": true
+      },
+      "current_snapshot": {
+        "date": "2026-08-17",
+        "close": 1089.3,
+        "rsi_14": 58.54,
+        "ema_20": 1082.27,
+        "ema_50": 1032.58,
+        "ema_200": 965.24,
+        "tags": [
+          "ema20_support_touch",
+          "ema_bull_stack",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 69.35,
+          "ema_20": 1006.25,
+          "tags": [
+            "weekly_rsi_overbought",
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": false,
+          "compressing_wedge": false,
+          "rounding_bottom": true,
+          "sr_level": true,
+          "fib_level": false,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": true,
+          "live_rvol": false,
+          "mtf_15m_wedge": false,
+          "mtf_15m_coil_ema": false,
+          "mtf_15m_base": false,
+          "mtf_1h_rounding_ema20": false,
+          "mtf_1h_coil_ema": false,
+          "mtf_1h_base": true,
+          "mtf_1h_fib_sr": true
+        }
+      },
+      "reasons": [
+        {
+          "layer": "technical",
+          "text": "Expect next move ~3%",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Hourly S/R with Fibonacci (0.382/0.5/0.618)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "1h base at EMA20 (coil / flag / range / rounding / rising \u2014 name does not matter)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Dead volume coil (<=0.85x 20d avg)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci confluence",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Support/resistance level",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rounding bottom",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Trend alignment up",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "RSI holding above 50",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA bull stack (20>50>200)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Close above EMA20",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Tight coil vs ATR",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Consolidation in anchor candle range",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA20 support (low touch)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: ema pullback",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: coil breakout",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: momentum stack",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: formation base",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: rsi reclaim",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: rising structure",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "15m / 1h base cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rangebound coil cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA / trend structure +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "ema20 support touch",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "ema bull stack",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "weekly rsi overbought (headwind for long)",
+          "weight": "high",
+          "headwind": true
+        },
+        {
+          "layer": "technical",
+          "text": "short term uptrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "long term uptrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation rising wedge",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "weekly uptrend",
+          "weight": "low",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2023-07-06 long move (-0.92% 1D) \u2014 53% overlap [ema20_support, consolidation_anchor, close_above_ema20]",
+          "weight": "high",
+          "date": "2023-07-06"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2026-06-18 long move (0.05% 1D) \u2014 53% overlap [ema20_support, consolidation_anchor, close_above_ema20]",
+          "weight": "high",
+          "date": "2026-06-18"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-02-15 long move (5.25% 1D) \u2014 47% overlap [ema20_support, consolidation_anchor, tight_range]",
+          "weight": "medium",
+          "date": "2022-02-15"
+        }
+      ]
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "name": "Bajaj Finance",
+      "type": "stock",
+      "as_of": "2026-08-17",
+      "horizon": "short_1d/1w",
+      "target_move_pct": 3.0,
+      "expected_move_pct": 3.0,
+      "expected_horizon_days": 1,
+      "session_seven": false,
+      "position_bias": "neutral",
+      "position_side": "short",
+      "intraday": false,
+      "conviction": 5.0,
+      "scores": {
+        "technical": 5.0,
+        "research": 0.0,
+        "fundamental": 0.0,
+        "events": 0.0,
+        "theme_bonus": 1.0,
+        "final": 5.0
+      },
+      "match_count": 0,
+      "top_matches": [
+        {
+          "date": "2022-05-10",
+          "move_1d_pct": -1.8,
+          "move_1w_pct": -10.53,
+          "similarity": 0.222,
+          "tags": [
+            "ema20_extended_short",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "consolidation_anchor",
+            "sr_level",
+            "sr_fib_confluence",
+            "setup_rattle",
+            "dead_volume"
+          ]
+        },
+        {
+          "date": "2026-03-19",
+          "move_1d_pct": -5.44,
+          "move_1w_pct": -3.58,
+          "similarity": 0.182,
+          "tags": [
+            "candle_marubozu",
+            "ema20_extended_short",
+            "formation_double_top",
+            "formation_symmetrical_triangle",
+            "long_term_uptrend",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "consolidation_anchor",
+            "tight_range",
+            "uptrend",
+            "bullish_formation",
+            "sr_level",
+            "range_expansion",
+            "late_bar"
+          ]
+        },
+        {
+          "date": "2022-02-24",
+          "move_1d_pct": -5.92,
+          "move_1w_pct": -6.42,
+          "similarity": 0.167,
+          "tags": [
+            "candle_evening_star",
+            "ema20_extended_short",
+            "formation_descending_triangle",
+            "formation_double_bottom",
+            "formation_double_top",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "tight_range",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "late_bar",
+            "live_rvol"
+          ]
+        },
+        {
+          "date": "2023-01-11",
+          "move_1d_pct": -0.14,
+          "move_1w_pct": -10.28,
+          "similarity": 0.111,
+          "tags": [
+            "ema20_extended_short",
+            "ema_bear_stack",
+            "ema_momentum_expanding_down",
+            "formation_double_bottom",
+            "formation_double_top",
+            "formation_falling_wedge",
+            "long_term_downtrend",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "consolidation_anchor",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence"
+          ]
+        },
+        {
+          "date": "2023-01-10",
+          "move_1d_pct": -1.49,
+          "move_1w_pct": -10.63,
+          "similarity": 0.1,
+          "tags": [
+            "candle_marubozu",
+            "ema20_extended_short",
+            "ema_bear_stack",
+            "ema_momentum_expanding_down",
+            "formation_double_bottom",
+            "formation_double_top",
+            "formation_falling_wedge",
+            "long_term_downtrend",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence"
+          ]
+        }
+      ],
+      "pattern_confirmations": {
+        "ema20_resistance": false,
+        "close_below_ema20": false,
+        "consolidation_anchor": true,
+        "tight_range": true,
+        "lower_highs": false,
+        "ema_momentum_expanding_down": false,
+        "ema_bear_stack": false,
+        "rsi_60_reject": false,
+        "rsi_trend_short": false,
+        "downtrend": false,
+        "bearish_formation": true,
+        "compressing_wedge": false,
+        "sr_level": false,
+        "fib_level": false,
+        "sr_fib_confluence": false,
+        "elliott_aligned": false,
+        "elliott_conflict": false,
+        "vol_expansion": false,
+        "range_expansion": false,
+        "setup_rattle": false,
+        "late_bar": false,
+        "strong_close": false,
+        "dead_volume": true,
+        "live_rvol": false,
+        "mtf_15m_wedge": false,
+        "mtf_15m_coil_ema": false,
+        "mtf_15m_base": false,
+        "mtf_1h_rounding_ema20": false,
+        "mtf_1h_coil_ema": false,
+        "mtf_1h_base": true,
+        "mtf_1h_fib_sr": true
+      },
+      "current_snapshot": {
+        "date": "2026-08-17",
+        "close": 1089.3,
+        "rsi_14": 58.54,
+        "ema_20": 1082.27,
+        "ema_50": 1032.58,
+        "ema_200": 965.24,
+        "tags": [
+          "ema20_support_touch",
+          "ema_bull_stack",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 69.35,
+          "ema_20": 1006.25,
+          "tags": [
+            "weekly_rsi_overbought",
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_resistance": false,
+          "close_below_ema20": false,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "lower_highs": false,
+          "ema_momentum_expanding_down": false,
+          "ema_bear_stack": false,
+          "rsi_60_reject": false,
+          "rsi_trend_short": false,
+          "downtrend": false,
+          "bearish_formation": true,
+          "compressing_wedge": false,
+          "sr_level": false,
+          "fib_level": false,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": true,
+          "live_rvol": false,
+          "mtf_15m_wedge": false,
+          "mtf_15m_coil_ema": false,
+          "mtf_15m_base": false,
+          "mtf_1h_rounding_ema20": false,
+          "mtf_1h_coil_ema": false,
+          "mtf_1h_base": true,
+          "mtf_1h_fib_sr": true
+        }
+      },
+      "reasons": [
+        {
+          "layer": "technical",
+          "text": "Expect next move ~3%",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Hourly S/R with Fibonacci (0.382/0.5/0.618)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "1h base at EMA20 (coil / flag / range / rounding / rising \u2014 name does not matter)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Dead volume coil (<=0.85x 20d avg)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Bearish chart formation",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Tight coil vs ATR",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Consolidation in anchor candle range",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: coil breakdown",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: formation top",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "15m / 1h base cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Chart formation cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rangebound coil cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA / trend structure +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "ema20 support touch",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "ema bull stack",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "weekly rsi overbought",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "short term uptrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "long term uptrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation rising wedge",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "weekly uptrend",
+          "weight": "low",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-05-10 short move (-1.8% 1D) \u2014 22% overlap [consolidation_anchor, sr_level, sr_fib_confluence]",
+          "weight": "medium",
+          "date": "2022-05-10"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2026-03-19 short move (-5.44% 1D) \u2014 18% overlap [consolidation_anchor, tight_range, uptrend]",
+          "weight": "medium",
+          "date": "2026-03-19"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-02-24 short move (-5.92% 1D) \u2014 16% overlap [ema20_support, consolidation_anchor, tight_range]",
+          "weight": "medium",
+          "date": "2022-02-24"
+        }
+      ]
+    },
+    {
+      "symbol": "M&M",
+      "name": "Mahindra & Mahindra",
+      "type": "stock",
+      "as_of": "2026-08-17",
+      "horizon": "1d/1w",
+      "target_move_pct": 3.0,
+      "expected_move_pct": 3.0,
+      "expected_horizon_days": 1,
+      "session_seven": false,
+      "position_bias": "long",
+      "position_side": "long",
+      "intraday": false,
+      "conviction": 5.0,
+      "scores": {
+        "technical": 5.0,
+        "research": 0.0,
+        "fundamental": 0.0,
+        "events": 0.0,
+        "theme_bonus": 1.0,
+        "final": 5.0
+      },
+      "match_count": 5,
+      "top_matches": [
+        {
+          "date": "2024-02-21",
+          "move_1d_pct": 0.32,
+          "move_1w_pct": 12.23,
+          "similarity": 0.588,
+          "tags": [
+            "candle_inverted_hammer",
+            "candle_shooting_star",
+            "ema20_extended_long",
+            "ema_bull_stack",
+            "ema_momentum_expanding",
+            "formation_inverse_head_shoulders",
+            "formation_symmetrical_triangle",
+            "long_term_uptrend",
+            "near_resistance",
+            "rsi_overbought",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "higher_lows",
+            "close_above_ema20",
+            "ema_momentum_expanding",
+            "ema_bull_stack",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "rounding_bottom",
+            "sr_level",
+            "sr_fib_confluence"
+          ]
+        },
+        {
+          "date": "2024-02-20",
+          "move_1d_pct": 0.28,
+          "move_1w_pct": 12.56,
+          "similarity": 0.579,
+          "tags": [
+            "ema20_extended_long",
+            "ema_bull_stack",
+            "ema_momentum_expanding",
+            "formation_inverse_head_shoulders",
+            "formation_symmetrical_triangle",
+            "long_term_uptrend",
+            "near_resistance",
+            "rsi_overbought",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "higher_lows",
+            "close_above_ema20",
+            "ema_momentum_expanding",
+            "ema_bull_stack",
+            "rsi_60_reclaim",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "rounding_bottom",
+            "sr_level",
+            "sr_fib_confluence",
+            "strong_close",
+            "dead_volume"
+          ]
+        },
+        {
+          "date": "2024-09-25",
+          "move_1d_pct": 0.54,
+          "move_1w_pct": 10.07,
+          "similarity": 0.556,
+          "tags": [
+            "ema20_extended_long",
+            "ema_bull_stack",
+            "ema_momentum_expanding",
+            "formation_double_top",
+            "formation_symmetrical_triangle",
+            "long_term_uptrend",
+            "near_resistance",
+            "rsi_overbought",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "higher_lows",
+            "close_above_ema20",
+            "ema_momentum_expanding",
+            "ema_bull_stack",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "range_expansion",
+            "setup_rattle"
+          ]
+        },
+        {
+          "date": "2024-09-24",
+          "move_1d_pct": 0.8,
+          "move_1w_pct": 10.28,
+          "similarity": 0.529,
+          "tags": [
+            "candle_marubozu",
+            "ema20_extended_long",
+            "ema_bull_stack",
+            "ema_momentum_expanding",
+            "formation_double_top",
+            "formation_symmetrical_triangle",
+            "long_term_uptrend",
+            "near_resistance",
+            "rsi_overbought",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "higher_lows",
+            "close_above_ema20",
+            "ema_momentum_expanding",
+            "ema_bull_stack",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "setup_rattle"
+          ]
+        },
+        {
+          "date": "2024-02-19",
+          "move_1d_pct": 0.71,
+          "move_1w_pct": 11.33,
+          "similarity": 0.526,
+          "tags": [
+            "ema20_extended_long",
+            "ema_bull_stack",
+            "ema_momentum_expanding",
+            "formation_inverse_head_shoulders",
+            "formation_symmetrical_triangle",
+            "long_term_uptrend",
+            "near_resistance",
+            "rsi_overbought",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "higher_lows",
+            "close_above_ema20",
+            "ema_momentum_expanding",
+            "ema_bull_stack",
+            "rsi_60_reclaim",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "rounding_bottom",
+            "sr_level",
+            "sr_fib_confluence",
+            "strong_close",
+            "dead_volume"
+          ]
+        }
+      ],
+      "pattern_confirmations": {
+        "ema20_support": true,
+        "consolidation_anchor": true,
+        "tight_range": true,
+        "higher_lows": false,
+        "close_above_ema20": true,
+        "ema_momentum_expanding": true,
+        "ema_bull_stack": true,
+        "rsi_60_reclaim": false,
+        "rsi_trend_long": true,
+        "uptrend": true,
+        "bullish_formation": true,
+        "compressing_wedge": false,
+        "rounding_bottom": false,
+        "sr_level": true,
+        "fib_level": true,
+        "sr_fib_confluence": true,
+        "elliott_aligned": false,
+        "elliott_conflict": false,
+        "vol_expansion": false,
+        "range_expansion": false,
+        "setup_rattle": false,
+        "late_bar": false,
+        "strong_close": false,
+        "dead_volume": true,
+        "live_rvol": false,
+        "mtf_15m_wedge": false,
+        "mtf_15m_coil_ema": false,
+        "mtf_15m_base": false,
+        "mtf_1h_rounding_ema20": false,
+        "mtf_1h_coil_ema": false,
+        "mtf_1h_base": true,
+        "mtf_1h_fib_sr": true
+      },
+      "current_snapshot": {
+        "date": "2026-08-17",
+        "close": 3390.4,
+        "rsi_14": 59.62,
+        "ema_20": 3358.15,
+        "ema_50": 3251.85,
+        "ema_200": 3229.26,
+        "tags": [
+          "candle_evening_star",
+          "ema20_support_touch",
+          "ema_bull_stack",
+          "ema_momentum_expanding",
+          "fib_0.236_retrace",
+          "formation_double_bottom",
+          "formation_inverse_head_shoulders",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "inverse_head_shoulders",
+            "name": "Inverse H&S",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "evening_star"
+        ],
+        "weekly": {
+          "rsi_14": 69.68,
+          "ema_20": 3243.77,
+          "tags": [
+            "weekly_rsi_overbought",
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "higher_lows": false,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": true,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": true,
+          "live_rvol": false,
+          "mtf_15m_wedge": false,
+          "mtf_15m_coil_ema": false,
+          "mtf_15m_base": false,
+          "mtf_1h_rounding_ema20": false,
+          "mtf_1h_coil_ema": false,
+          "mtf_1h_base": true,
+          "mtf_1h_fib_sr": true
+        }
+      },
+      "reasons": [
+        {
+          "layer": "technical",
+          "text": "Expect next move ~3%",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Hourly S/R with Fibonacci (0.382/0.5/0.618)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "1h base at EMA20 (coil / flag / range / rounding / rising \u2014 name does not matter)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Dead volume coil (<=0.85x 20d avg)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci confluence",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Fibonacci retrace/extension",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Support/resistance level",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Bullish chart formation",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Trend alignment up",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "RSI holding above 50",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA bull stack (20>50>200)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA gaps expanding (momentum)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Close above EMA20",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Tight coil vs ATR",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Consolidation in anchor candle range",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA20 support (low touch)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: ema pullback",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: coil breakout",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: momentum stack",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: formation base",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: rsi reclaim",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: rising structure",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "15m / 1h base cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Candlestick cherry (hammer / star) +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rangebound coil cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA / trend structure +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "ema20 support touch",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "ema momentum expanding",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "ema bull stack",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "weekly rsi overbought (headwind for long)",
+          "weight": "high",
+          "headwind": true
+        },
+        {
+          "layer": "technical",
+          "text": "short term uptrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "long term uptrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "candle evening star",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "fib 0.236 retrace",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation double bottom",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation inverse head shoulders",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation rising wedge",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "weekly uptrend",
+          "weight": "low",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2024-02-21 long move (0.32% 1D) \u2014 58% overlap [ema20_support, consolidation_anchor, higher_lows]",
+          "weight": "high",
+          "date": "2024-02-21"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2024-02-20 long move (0.28% 1D) \u2014 57% overlap [ema20_support, consolidation_anchor, higher_lows]",
+          "weight": "high",
+          "date": "2024-02-20"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2024-09-25 long move (0.54% 1D) \u2014 55% overlap [ema20_support, consolidation_anchor, higher_lows]",
+          "weight": "high",
+          "date": "2024-09-25"
+        }
+      ]
+    },
+    {
+      "symbol": "M&M",
+      "name": "Mahindra & Mahindra",
+      "type": "stock",
+      "as_of": "2026-08-17",
+      "horizon": "short_1d/1w",
+      "target_move_pct": 3.0,
+      "expected_move_pct": 3.0,
+      "expected_horizon_days": 1,
+      "session_seven": false,
+      "position_bias": "neutral",
+      "position_side": "short",
+      "intraday": false,
+      "conviction": 5.0,
+      "scores": {
+        "technical": 5.0,
+        "research": 0.0,
+        "fundamental": 0.0,
+        "events": 0.0,
+        "theme_bonus": 1.0,
+        "final": 5.0
+      },
+      "match_count": 0,
+      "top_matches": [
+        {
+          "date": "2022-03-03",
+          "move_1d_pct": -2.09,
+          "move_1w_pct": -10.38,
+          "similarity": 0.273,
+          "tags": [
+            "candle_marubozu",
+            "ema20_extended_short",
+            "formation_double_top",
+            "formation_falling_wedge",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "consolidation_anchor",
+            "tight_range",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "setup_rattle",
+            "dead_volume"
+          ]
+        },
+        {
+          "date": "2025-02-21",
+          "move_1d_pct": -5.99,
+          "move_1w_pct": -9.29,
+          "similarity": 0.154,
+          "tags": [
+            "candle_marubozu",
+            "ema20_extended_short",
+            "formation_double_top",
+            "long_term_uptrend",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "consolidation_anchor",
+            "tight_range",
+            "uptrend",
+            "sr_level",
+            "sr_fib_confluence",
+            "vol_expansion",
+            "late_bar",
+            "live_rvol"
+          ]
+        },
+        {
+          "date": "2024-07-10",
+          "move_1d_pct": -6.61,
+          "move_1w_pct": -4.38,
+          "similarity": 0.125,
+          "tags": [
+            "candle_bearish_engulfing",
+            "candle_marubozu",
+            "ema_bull_stack",
+            "fib_0.236_retrace",
+            "formation_rising_wedge",
+            "long_term_uptrend",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "ema_bull_stack",
+            "uptrend",
+            "sr_level",
+            "fib_level",
+            "sr_fib_confluence",
+            "vol_expansion",
+            "range_expansion",
+            "late_bar",
+            "live_rvol"
+          ]
+        },
+        {
+          "date": "2023-03-15",
+          "move_1d_pct": -0.04,
+          "move_1w_pct": -10.05,
+          "similarity": 0.1,
+          "tags": [
+            "ema20_extended_short",
+            "formation_falling_wedge",
+            "long_term_uptrend",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "consolidation_anchor",
+            "uptrend",
+            "bullish_formation",
+            "sr_level"
+          ]
+        },
+        {
+          "date": "2026-03-19",
+          "move_1d_pct": -5.26,
+          "move_1w_pct": 0.47,
+          "similarity": 0.091,
+          "tags": [
+            "candle_marubozu",
+            "elliott_impulse_down",
+            "ema20_extended_short",
+            "formation_falling_wedge",
+            "long_term_uptrend",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "consolidation_anchor",
+            "uptrend",
+            "bullish_formation",
+            "elliott_conflict",
+            "late_bar"
+          ]
+        }
+      ],
+      "pattern_confirmations": {
+        "ema20_resistance": false,
+        "close_below_ema20": false,
+        "consolidation_anchor": true,
+        "tight_range": true,
+        "lower_highs": false,
+        "ema_momentum_expanding_down": false,
+        "ema_bear_stack": false,
+        "rsi_60_reject": false,
+        "rsi_trend_short": false,
+        "downtrend": false,
+        "bearish_formation": true,
+        "compressing_wedge": false,
+        "sr_level": false,
+        "fib_level": true,
+        "sr_fib_confluence": false,
+        "elliott_aligned": false,
+        "elliott_conflict": false,
+        "vol_expansion": false,
+        "range_expansion": false,
+        "setup_rattle": false,
+        "late_bar": false,
+        "strong_close": false,
+        "dead_volume": true,
+        "live_rvol": false,
+        "mtf_15m_wedge": false,
+        "mtf_15m_coil_ema": false,
+        "mtf_15m_base": false,
+        "mtf_1h_rounding_ema20": false,
+        "mtf_1h_coil_ema": false,
+        "mtf_1h_base": true,
+        "mtf_1h_fib_sr": true
+      },
+      "current_snapshot": {
+        "date": "2026-08-17",
+        "close": 3390.4,
+        "rsi_14": 59.62,
+        "ema_20": 3358.15,
+        "ema_50": 3251.85,
+        "ema_200": 3229.26,
+        "tags": [
+          "candle_evening_star",
+          "ema20_support_touch",
+          "ema_bull_stack",
+          "ema_momentum_expanding",
+          "fib_0.236_retrace",
+          "formation_double_bottom",
+          "formation_inverse_head_shoulders",
+          "formation_rising_wedge",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "rising_wedge",
+            "name": "Rising wedge",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "inverse_head_shoulders",
+            "name": "Inverse H&S",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "evening_star"
+        ],
+        "weekly": {
+          "rsi_14": 69.68,
+          "ema_20": 3243.77,
+          "tags": [
+            "weekly_rsi_overbought",
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_resistance": false,
+          "close_below_ema20": false,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "lower_highs": false,
+          "ema_momentum_expanding_down": false,
+          "ema_bear_stack": false,
+          "rsi_60_reject": false,
+          "rsi_trend_short": false,
+          "downtrend": false,
+          "bearish_formation": true,
+          "compressing_wedge": false,
+          "sr_level": false,
+          "fib_level": true,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": true,
+          "live_rvol": false,
+          "mtf_15m_wedge": false,
+          "mtf_15m_coil_ema": false,
+          "mtf_15m_base": false,
+          "mtf_1h_rounding_ema20": false,
+          "mtf_1h_coil_ema": false,
+          "mtf_1h_base": true,
+          "mtf_1h_fib_sr": true
+        }
+      },
+      "reasons": [
+        {
+          "layer": "technical",
+          "text": "Expect next move ~3%",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Hourly S/R with Fibonacci (0.382/0.5/0.618)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "1h base at EMA20 (coil / flag / range / rounding / rising \u2014 name does not matter)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Dead volume coil (<=0.85x 20d avg)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Fibonacci retrace/extension",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Bearish chart formation",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Tight coil vs ATR",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Consolidation in anchor candle range",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: coil breakdown",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: formation top",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "15m / 1h base cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Candlestick cherry (hammer / star) +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rangebound coil cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA / trend structure +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "ema20 support touch",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "ema momentum expanding",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "ema bull stack",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "weekly rsi overbought",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "short term uptrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "long term uptrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "candle evening star",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "fib 0.236 retrace",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation double bottom",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation inverse head shoulders",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation rising wedge",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "weekly uptrend",
+          "weight": "low",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-03-03 short move (-2.09% 1D) \u2014 27% overlap [consolidation_anchor, tight_range, bullish_formation]",
+          "weight": "medium",
+          "date": "2022-03-03"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2025-02-21 short move (-5.99% 1D) \u2014 15% overlap [consolidation_anchor, tight_range, uptrend]",
+          "weight": "medium",
+          "date": "2025-02-21"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2024-07-10 short move (-6.61% 1D) \u2014 12% overlap [ema20_support, consolidation_anchor, ema_bull_stack]",
+          "weight": "medium",
+          "date": "2024-07-10"
+        }
+      ]
+    },
+    {
+      "symbol": "NIFTY_50",
+      "name": "Nifty 50",
+      "type": "index",
+      "as_of": "2026-08-14",
+      "horizon": "1d",
+      "target_move_pct": 2.0,
+      "expected_move_pct": 3.0,
+      "expected_horizon_days": 1,
+      "session_seven": false,
+      "position_bias": "long",
+      "position_side": "long",
+      "intraday": false,
+      "conviction": 5.0,
+      "scores": {
+        "technical": 5.0,
+        "research": 0.0,
+        "fundamental": 0.0,
+        "events": 0.0,
+        "theme_bonus": 1.0,
+        "final": 5.0
+      },
+      "match_count": 5,
+      "top_matches": [
+        {
+          "date": "2022-10-04",
+          "move_1d_pct": 2.29,
+          "move_1w_pct": 1.57,
+          "similarity": 0.556,
+          "tags": [
+            "candle_marubozu",
+            "elliott_abc_corrective_down",
+            "ema20_support_touch",
+            "ema_bull_stack",
+            "fib_0.382_retrace",
+            "formation_double_bottom",
+            "formation_double_top",
+            "formation_inverse_head_shoulders",
+            "formation_rising_wedge",
+            "long_term_uptrend",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "tight_range",
+            "higher_lows",
+            "ema_bull_stack",
+            "uptrend",
+            "bullish_formation",
+            "sr_level",
+            "fib_level",
+            "sr_fib_confluence",
+            "elliott_aligned",
+            "strong_close",
+            "dead_volume"
+          ]
+        },
+        {
+          "date": "2022-04-04",
+          "move_1d_pct": 2.17,
+          "move_1w_pct": 4.83,
+          "similarity": 0.529,
+          "tags": [
+            "candle_marubozu",
+            "formation_double_top",
+            "formation_symmetrical_triangle",
+            "near_resistance",
+            "rsi_overbought",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "higher_lows",
+            "close_above_ema20",
+            "rsi_60_reclaim",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "rounding_bottom",
+            "sr_level",
+            "sr_fib_confluence",
+            "strong_close"
+          ]
+        },
+        {
+          "date": "2024-06-07",
+          "move_1d_pct": 2.05,
+          "move_1w_pct": 3.37,
+          "similarity": 0.529,
+          "tags": [
+            "candle_marubozu",
+            "ema_bull_stack",
+            "formation_double_top",
+            "formation_symmetrical_triangle",
+            "long_term_uptrend",
+            "near_resistance",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "higher_lows",
+            "close_above_ema20",
+            "ema_bull_stack",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "strong_close"
+          ]
+        },
+        {
+          "date": "2024-06-03",
+          "move_1d_pct": 3.25,
+          "move_1w_pct": 1.45,
+          "similarity": 0.474,
+          "tags": [
+            "candle_hammer",
+            "ema_bull_stack",
+            "formation_double_bottom",
+            "formation_double_top",
+            "formation_rising_wedge",
+            "long_term_uptrend",
+            "near_resistance",
+            "rsi_overbought",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "higher_lows",
+            "close_above_ema20",
+            "ema_bull_stack",
+            "rsi_60_reclaim",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "rounding_bottom",
+            "sr_level",
+            "sr_fib_confluence",
+            "strong_close",
+            "live_rvol"
+          ]
+        },
+        {
+          "date": "2024-11-22",
+          "move_1d_pct": 2.39,
+          "move_1w_pct": 1.48,
+          "similarity": 0.444,
+          "tags": [
+            "candle_marubozu",
+            "ema20_support_touch",
+            "fib_0.786_retrace",
+            "formation_double_bottom",
+            "formation_double_top",
+            "formation_falling_wedge",
+            "long_term_uptrend",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "tight_range",
+            "uptrend",
+            "bullish_formation",
+            "sr_level",
+            "fib_level",
+            "sr_fib_confluence",
+            "range_expansion",
+            "setup_rattle",
+            "strong_close"
+          ]
+        }
+      ],
+      "pattern_confirmations": {
+        "ema20_support": true,
+        "consolidation_anchor": true,
+        "tight_range": true,
+        "higher_lows": true,
+        "close_above_ema20": true,
+        "ema_momentum_expanding": false,
+        "ema_bull_stack": false,
+        "rsi_60_reclaim": false,
+        "rsi_trend_long": true,
+        "uptrend": true,
+        "bullish_formation": true,
+        "compressing_wedge": false,
+        "rounding_bottom": true,
+        "sr_level": true,
+        "fib_level": true,
+        "sr_fib_confluence": true,
+        "elliott_aligned": false,
+        "elliott_conflict": false,
+        "vol_expansion": false,
+        "range_expansion": false,
+        "setup_rattle": false,
+        "late_bar": false,
+        "strong_close": false,
+        "dead_volume": true,
+        "live_rvol": false,
+        "mtf_15m_wedge": false,
+        "mtf_15m_coil_ema": false,
+        "mtf_15m_base": false,
+        "mtf_1h_rounding_ema20": false,
+        "mtf_1h_coil_ema": false,
+        "mtf_1h_base": true,
+        "mtf_1h_fib_sr": true
+      },
+      "current_snapshot": {
+        "date": "2026-08-14",
+        "close": 24366.0,
+        "rsi_14": 64.5,
+        "ema_20": 24363.57,
+        "ema_50": 24188.52,
+        "ema_200": 24385.98,
+        "tags": [
+          "ema20_support_touch",
+          "fib_0.236_retrace",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
+          "long_term_downtrend",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 52.61,
+          "ema_20": 24178.99,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "higher_lows": true,
+          "close_above_ema20": true,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": false,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": false,
+          "rounding_bottom": true,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": true,
+          "live_rvol": false,
+          "mtf_15m_wedge": false,
+          "mtf_15m_coil_ema": false,
+          "mtf_15m_base": false,
+          "mtf_1h_rounding_ema20": false,
+          "mtf_1h_coil_ema": false,
+          "mtf_1h_base": true,
+          "mtf_1h_fib_sr": true
+        }
+      },
+      "reasons": [
+        {
+          "layer": "technical",
+          "text": "Expect next move ~3%",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Hourly S/R with Fibonacci (0.382/0.5/0.618)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "1h base at EMA20 (coil / flag / range / rounding / rising \u2014 name does not matter)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Dead volume coil (<=0.85x 20d avg)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci confluence",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Fibonacci retrace/extension",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Support/resistance level",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rounding bottom",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Bullish chart formation",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Trend alignment up",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "RSI holding above 50",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Close above EMA20",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rising lows",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Tight coil vs ATR",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Consolidation in anchor candle range",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA20 support (low touch)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: ema pullback",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: coil breakout",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: momentum stack",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: formation base",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: rsi reclaim",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: rising structure",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "15m / 1h base cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rangebound coil cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA / trend structure +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "ema20 support touch",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "short term uptrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "long term downtrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "fib 0.236 retrace",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation double bottom",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation double top",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation symmetrical triangle",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "weekly uptrend",
+          "weight": "low",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-10-04 long move (2.29% 1D) \u2014 55% overlap [ema20_support, consolidation_anchor, tight_range]",
+          "weight": "high",
+          "date": "2022-10-04"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-04-04 long move (2.17% 1D) \u2014 52% overlap [ema20_support, higher_lows, close_above_ema20]",
+          "weight": "high",
+          "date": "2022-04-04"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2024-06-07 long move (2.05% 1D) \u2014 52% overlap [ema20_support, consolidation_anchor, higher_lows]",
+          "weight": "high",
+          "date": "2024-06-07"
+        }
+      ]
+    },
+    {
+      "symbol": "NIFTY_50",
+      "name": "Nifty 50",
+      "type": "index",
+      "as_of": "2026-08-14",
+      "horizon": "1d",
+      "target_move_pct": 2.0,
+      "expected_move_pct": 3.0,
+      "expected_horizon_days": 1,
+      "session_seven": false,
+      "position_bias": "short",
+      "position_side": "short",
+      "intraday": false,
+      "conviction": 5.0,
+      "scores": {
+        "technical": 5.0,
+        "research": 0.0,
+        "fundamental": 0.0,
+        "events": 0.0,
+        "theme_bonus": 1.0,
+        "final": 5.0
+      },
+      "match_count": 0,
+      "top_matches": [
+        {
+          "date": "2022-05-19",
+          "move_1d_pct": -2.65,
+          "move_1w_pct": 0.01,
+          "similarity": 0.154,
+          "tags": [
+            "candle_evening_star",
+            "ema_bear_stack",
+            "ema_momentum_expanding_down",
+            "formation_double_top",
+            "formation_falling_wedge",
+            "long_term_downtrend",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "tight_range",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence"
+          ]
+        },
+        {
+          "date": "2022-05-04",
+          "move_1d_pct": -2.29,
+          "move_1w_pct": -3.04,
+          "similarity": 0.133,
+          "tags": [
+            "candle_bearish_engulfing",
+            "candle_marubozu",
+            "fib_0.618_retrace",
+            "formation_double_bottom",
+            "formation_falling_wedge",
+            "formation_head_shoulders",
+            "formation_inverse_head_shoulders",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "bullish_formation",
+            "sr_level",
+            "fib_level",
+            "sr_fib_confluence",
+            "range_expansion",
+            "setup_rattle"
+          ]
+        },
+        {
+          "date": "2026-03-19",
+          "move_1d_pct": -3.26,
+          "move_1w_pct": -2.69,
+          "similarity": 0.083,
+          "tags": [
+            "ema20_extended_short",
+            "ema_bear_stack",
+            "ema_momentum_expanding_down",
+            "formation_double_bottom",
+            "formation_double_top",
+            "formation_symmetrical_triangle",
+            "long_term_downtrend",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "consolidation_anchor",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence"
+          ]
+        },
+        {
+          "date": "2026-03-23",
+          "move_1d_pct": -2.6,
+          "move_1w_pct": -3.83,
+          "similarity": 0.083,
+          "tags": [
+            "candle_marubozu",
+            "ema20_extended_short",
+            "ema_bear_stack",
+            "ema_momentum_expanding_down",
+            "formation_double_bottom",
+            "formation_symmetrical_triangle",
+            "long_term_downtrend",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "consolidation_anchor",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence"
+          ]
+        },
+        {
+          "date": "2026-03-27",
+          "move_1d_pct": -2.09,
+          "move_1w_pct": -0.79,
+          "similarity": 0.083,
+          "tags": [
+            "candle_marubozu",
+            "ema_bear_stack",
+            "ema_momentum_expanding_down",
+            "formation_falling_wedge",
+            "long_term_downtrend",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "consolidation_anchor",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence"
+          ]
+        }
+      ],
+      "pattern_confirmations": {
+        "ema20_resistance": false,
+        "close_below_ema20": false,
+        "consolidation_anchor": true,
+        "tight_range": true,
+        "lower_highs": true,
+        "ema_momentum_expanding_down": false,
+        "ema_bear_stack": false,
+        "rsi_60_reject": false,
+        "rsi_trend_short": false,
+        "downtrend": true,
+        "bearish_formation": true,
+        "compressing_wedge": false,
+        "sr_level": false,
+        "fib_level": true,
+        "sr_fib_confluence": false,
+        "elliott_aligned": false,
+        "elliott_conflict": false,
+        "vol_expansion": false,
+        "range_expansion": false,
+        "setup_rattle": false,
+        "late_bar": false,
+        "strong_close": false,
+        "dead_volume": true,
+        "live_rvol": false,
+        "mtf_15m_wedge": false,
+        "mtf_15m_coil_ema": false,
+        "mtf_15m_base": false,
+        "mtf_1h_rounding_ema20": false,
+        "mtf_1h_coil_ema": false,
+        "mtf_1h_base": true,
+        "mtf_1h_fib_sr": true
+      },
+      "current_snapshot": {
+        "date": "2026-08-14",
+        "close": 24366.0,
+        "rsi_14": 64.5,
+        "ema_20": 24363.57,
+        "ema_50": 24188.52,
+        "ema_200": 24385.98,
+        "tags": [
+          "ema20_support_touch",
+          "fib_0.236_retrace",
+          "formation_double_bottom",
+          "formation_double_top",
+          "formation_symmetrical_triangle",
+          "long_term_downtrend",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "symmetrical_triangle",
+            "name": "Symmetrical triangle",
+            "bias": "neutral_breakout"
+          },
+          {
+            "id": "double_bottom",
+            "name": "Double bottom",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [],
+        "weekly": {
+          "rsi_14": 52.61,
+          "ema_20": 24178.99,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "short",
+        "position_bias_long": "long",
+        "position_bias_short": "short",
+        "pattern_confirmations": {
+          "ema20_resistance": false,
+          "close_below_ema20": false,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "lower_highs": true,
+          "ema_momentum_expanding_down": false,
+          "ema_bear_stack": false,
+          "rsi_60_reject": false,
+          "rsi_trend_short": false,
+          "downtrend": true,
+          "bearish_formation": true,
+          "compressing_wedge": false,
+          "sr_level": false,
+          "fib_level": true,
+          "sr_fib_confluence": false,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": true,
+          "live_rvol": false,
+          "mtf_15m_wedge": false,
+          "mtf_15m_coil_ema": false,
+          "mtf_15m_base": false,
+          "mtf_1h_rounding_ema20": false,
+          "mtf_1h_coil_ema": false,
+          "mtf_1h_base": true,
+          "mtf_1h_fib_sr": true
+        }
+      },
+      "reasons": [
+        {
+          "layer": "technical",
+          "text": "Expect next move ~3%",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Hourly S/R with Fibonacci (0.382/0.5/0.618)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "1h base at EMA20 (coil / flag / range / rounding / rising \u2014 name does not matter)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Dead volume coil (<=0.85x 20d avg)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Fibonacci retrace/extension",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Bearish chart formation",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Trend alignment down",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Falling highs",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Tight coil vs ATR",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Consolidation in anchor candle range",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: coil breakdown",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: formation top",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: falling structure",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "15m / 1h base cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rangebound coil cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA / trend structure +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "ema20 support touch",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "short term uptrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "long term downtrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "fib 0.236 retrace",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation double bottom",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation double top",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation symmetrical triangle",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "weekly uptrend",
+          "weight": "low",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-05-19 short move (-2.65% 1D) \u2014 15% overlap [ema20_support, consolidation_anchor, tight_range]",
+          "weight": "medium",
+          "date": "2022-05-19"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-05-04 short move (-2.29% 1D) \u2014 13% overlap [ema20_support, consolidation_anchor, bullish_formation]",
+          "weight": "medium",
+          "date": "2022-05-04"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2026-03-19 short move (-3.26% 1D) \u2014 8% overlap [consolidation_anchor, bullish_formation, sr_level]",
+          "weight": "medium",
+          "date": "2026-03-19"
+        }
+      ]
+    },
+    {
+      "symbol": "NIFTY_BANK",
+      "name": "Bank Nifty",
+      "type": "index",
+      "as_of": "2026-08-14",
+      "horizon": "1d",
+      "target_move_pct": 2.0,
+      "expected_move_pct": 3.0,
+      "expected_horizon_days": 1,
+      "session_seven": false,
+      "position_bias": "long",
+      "position_side": "long",
+      "intraday": false,
+      "conviction": 5.0,
+      "scores": {
+        "technical": 5.0,
+        "research": 0.0,
+        "fundamental": 0.0,
+        "events": 0.0,
+        "theme_bonus": 1.0,
+        "final": 5.0
+      },
+      "match_count": 5,
+      "top_matches": [
+        {
+          "date": "2024-03-01",
+          "move_1d_pct": 2.53,
+          "move_1w_pct": 1.02,
+          "similarity": 0.611,
+          "tags": [
+            "candle_marubozu",
+            "candle_morning_star",
+            "ema20_support_touch",
+            "ema_bull_stack",
+            "formation_double_bottom",
+            "formation_falling_wedge",
+            "long_term_uptrend",
+            "near_resistance",
+            "rsi_overbought",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "tight_range",
+            "close_above_ema20",
+            "ema_bull_stack",
+            "rsi_60_reclaim",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "rounding_bottom",
+            "sr_level",
+            "sr_fib_confluence",
+            "strong_close",
+            "dead_volume"
+          ]
+        },
+        {
+          "date": "2022-10-04",
+          "move_1d_pct": 2.84,
+          "move_1w_pct": 1.96,
+          "similarity": 0.529,
+          "tags": [
+            "candle_marubozu",
+            "ema20_support_touch",
+            "ema_bull_stack",
+            "fib_0.382_retrace",
+            "formation_double_bottom",
+            "formation_symmetrical_triangle",
+            "long_term_uptrend",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "tight_range",
+            "higher_lows",
+            "ema_bull_stack",
+            "uptrend",
+            "bullish_formation",
+            "sr_level",
+            "fib_level",
+            "sr_fib_confluence",
+            "strong_close"
+          ]
+        },
+        {
+          "date": "2024-05-23",
+          "move_1d_pct": 2.06,
+          "move_1w_pct": 2.27,
+          "similarity": 0.529,
+          "tags": [
+            "candle_marubozu",
+            "ema20_support_touch",
+            "ema_bull_stack",
+            "formation_double_bottom",
+            "formation_double_top",
+            "formation_rising_wedge",
+            "long_term_uptrend",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "tight_range",
+            "close_above_ema20",
+            "ema_bull_stack",
+            "uptrend",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "strong_close",
+            "dead_volume"
+          ]
+        },
+        {
+          "date": "2024-10-29",
+          "move_1d_pct": 2.07,
+          "move_1w_pct": 2.07,
+          "similarity": 0.474,
+          "tags": [
+            "candle_marubozu",
+            "candle_morning_star",
+            "ema20_support_touch",
+            "ema_bull_stack",
+            "formation_descending_triangle",
+            "formation_double_bottom",
+            "formation_inverse_head_shoulders",
+            "long_term_uptrend",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "tight_range",
+            "higher_lows",
+            "close_above_ema20",
+            "ema_bull_stack",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "strong_close",
+            "live_rvol"
+          ]
+        },
+        {
+          "date": "2024-04-29",
+          "move_1d_pct": 2.54,
+          "move_1w_pct": 3.13,
+          "similarity": 0.45,
+          "tags": [
+            "candle_marubozu",
+            "ema_bull_stack",
+            "ema_momentum_expanding",
+            "formation_double_bottom",
+            "formation_rising_wedge",
+            "long_term_uptrend",
+            "near_resistance",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "higher_lows",
+            "close_above_ema20",
+            "ema_momentum_expanding",
+            "ema_bull_stack",
+            "rsi_trend_long",
+            "uptrend",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "range_expansion",
+            "strong_close",
+            "dead_volume"
+          ]
+        }
+      ],
+      "pattern_confirmations": {
+        "ema20_support": true,
+        "consolidation_anchor": true,
+        "tight_range": true,
+        "higher_lows": false,
+        "close_above_ema20": false,
+        "ema_momentum_expanding": false,
+        "ema_bull_stack": true,
+        "rsi_60_reclaim": false,
+        "rsi_trend_long": true,
+        "uptrend": true,
+        "bullish_formation": true,
+        "compressing_wedge": true,
+        "rounding_bottom": true,
+        "sr_level": true,
+        "fib_level": true,
+        "sr_fib_confluence": true,
+        "elliott_aligned": false,
+        "elliott_conflict": false,
+        "vol_expansion": false,
+        "range_expansion": false,
+        "setup_rattle": false,
+        "late_bar": false,
+        "strong_close": false,
+        "dead_volume": true,
+        "live_rvol": false,
+        "mtf_15m_wedge": false,
+        "mtf_15m_coil_ema": false,
+        "mtf_15m_base": false,
+        "mtf_1h_rounding_ema20": false,
+        "mtf_1h_coil_ema": false,
+        "mtf_1h_base": true,
+        "mtf_1h_fib_sr": true
+      },
+      "current_snapshot": {
+        "date": "2026-08-14",
+        "close": 57491.1,
+        "rsi_14": 54.78,
+        "ema_20": 57570.12,
+        "ema_50": 57171.27,
+        "ema_200": 56640.95,
+        "tags": [
+          "candle_evening_star",
+          "ema20_support_touch",
+          "ema_bull_stack",
+          "fib_0.236_retrace",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "formation_head_shoulders",
+          "formation_inverse_head_shoulders",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "head_shoulders",
+            "name": "Head and shoulders",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "inverse_head_shoulders",
+            "name": "Inverse H&S",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "evening_star"
+        ],
+        "weekly": {
+          "rsi_14": 60.88,
+          "ema_20": 56902.2,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "long",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_support": true,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "higher_lows": false,
+          "close_above_ema20": false,
+          "ema_momentum_expanding": false,
+          "ema_bull_stack": true,
+          "rsi_60_reclaim": false,
+          "rsi_trend_long": true,
+          "uptrend": true,
+          "bullish_formation": true,
+          "compressing_wedge": true,
+          "rounding_bottom": true,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": true,
+          "live_rvol": false,
+          "mtf_15m_wedge": false,
+          "mtf_15m_coil_ema": false,
+          "mtf_15m_base": false,
+          "mtf_1h_rounding_ema20": false,
+          "mtf_1h_coil_ema": false,
+          "mtf_1h_base": true,
+          "mtf_1h_fib_sr": true
+        }
+      },
+      "reasons": [
+        {
+          "layer": "technical",
+          "text": "Expect next move ~3%",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Hourly S/R with Fibonacci (0.382/0.5/0.618)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "1h base at EMA20 (coil / flag / range / rounding / rising \u2014 name does not matter)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Dead volume coil (<=0.85x 20d avg)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci confluence",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Fibonacci retrace/extension",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Support/resistance level",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rounding bottom",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Compressing wedge",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Bullish chart formation",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Trend alignment up",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "RSI holding above 50",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA bull stack (20>50>200)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Tight coil vs ATR",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Consolidation in anchor candle range",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA20 support (low touch)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: ema pullback",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: coil breakout",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: momentum stack",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: formation base",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: rsi reclaim",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: rising structure",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "15m / 1h base cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Candlestick cherry (hammer / star) +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rangebound coil cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA / trend structure +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "ema20 support touch",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "ema bull stack",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "short term uptrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "long term uptrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "candle evening star",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "fib 0.236 retrace",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation double top",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation falling wedge",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation head shoulders",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation inverse head shoulders",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "weekly uptrend",
+          "weight": "low",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2024-03-01 long move (2.53% 1D) \u2014 61% overlap [ema20_support, consolidation_anchor, tight_range]",
+          "weight": "high",
+          "date": "2024-03-01"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-10-04 long move (2.84% 1D) \u2014 52% overlap [ema20_support, consolidation_anchor, tight_range]",
+          "weight": "high",
+          "date": "2022-10-04"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2024-05-23 long move (2.06% 1D) \u2014 52% overlap [ema20_support, consolidation_anchor, tight_range]",
+          "weight": "high",
+          "date": "2024-05-23"
+        }
+      ]
+    },
+    {
+      "symbol": "NIFTY_BANK",
+      "name": "Bank Nifty",
+      "type": "index",
+      "as_of": "2026-08-14",
+      "horizon": "1d",
+      "target_move_pct": 2.0,
+      "expected_move_pct": 3.0,
+      "expected_horizon_days": 1,
+      "session_seven": false,
+      "position_bias": "neutral",
+      "position_side": "short",
+      "intraday": false,
+      "conviction": 5.0,
+      "scores": {
+        "technical": 5.0,
+        "research": 0.0,
+        "fundamental": 0.0,
+        "events": 0.0,
+        "theme_bonus": 1.0,
+        "final": 5.0
+      },
+      "match_count": 2,
+      "top_matches": [
+        {
+          "date": "2022-05-19",
+          "move_1d_pct": -2.48,
+          "move_1w_pct": -0.65,
+          "similarity": 0.385,
+          "tags": [
+            "ema_bear_stack",
+            "ema_momentum_expanding_down",
+            "formation_falling_wedge",
+            "long_term_downtrend",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "consolidation_anchor",
+            "tight_range",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence",
+            "dead_volume"
+          ]
+        },
+        {
+          "date": "2022-04-22",
+          "move_1d_pct": -2.1,
+          "move_1w_pct": -3.79,
+          "similarity": 0.357,
+          "tags": [
+            "candle_marubozu",
+            "ema20_support_touch",
+            "formation_rising_wedge",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "tight_range",
+            "uptrend",
+            "sr_level",
+            "sr_fib_confluence",
+            "dead_volume"
+          ]
+        },
+        {
+          "date": "2022-02-07",
+          "move_1d_pct": -2.05,
+          "move_1w_pct": 0.05,
+          "similarity": 0.333,
+          "tags": [
+            "ema20_support_touch",
+            "fib_0.236_retrace",
+            "formation_double_top",
+            "formation_rising_wedge",
+            "short_term_uptrend"
+          ],
+          "confirmations": [
+            "ema20_support",
+            "consolidation_anchor",
+            "tight_range",
+            "uptrend",
+            "sr_level",
+            "fib_level",
+            "sr_fib_confluence",
+            "setup_rattle"
+          ]
+        },
+        {
+          "date": "2022-05-12",
+          "move_1d_pct": -3.35,
+          "move_1w_pct": -4.83,
+          "similarity": 0.312,
+          "tags": [
+            "candle_evening_star",
+            "candle_marubozu",
+            "ema20_extended_short",
+            "ema_bear_stack",
+            "ema_momentum_expanding_down",
+            "fib_0.786_retrace",
+            "formation_double_bottom",
+            "formation_symmetrical_triangle",
+            "long_term_downtrend",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "consolidation_anchor",
+            "tight_range",
+            "bullish_formation",
+            "sr_level",
+            "fib_level",
+            "sr_fib_confluence",
+            "vol_expansion",
+            "setup_rattle",
+            "live_rvol"
+          ]
+        },
+        {
+          "date": "2026-03-19",
+          "move_1d_pct": -3.39,
+          "move_1w_pct": -2.99,
+          "similarity": 0.286,
+          "tags": [
+            "ema20_extended_short",
+            "formation_double_bottom",
+            "formation_double_top",
+            "formation_rising_wedge",
+            "long_term_uptrend",
+            "near_support",
+            "rsi_oversold",
+            "short_term_downtrend"
+          ],
+          "confirmations": [
+            "consolidation_anchor",
+            "tight_range",
+            "uptrend",
+            "bullish_formation",
+            "sr_level",
+            "sr_fib_confluence"
+          ]
+        }
+      ],
+      "pattern_confirmations": {
+        "ema20_resistance": true,
+        "close_below_ema20": true,
+        "consolidation_anchor": true,
+        "tight_range": true,
+        "lower_highs": true,
+        "ema_momentum_expanding_down": false,
+        "ema_bear_stack": false,
+        "rsi_60_reject": false,
+        "rsi_trend_short": false,
+        "downtrend": false,
+        "bearish_formation": true,
+        "compressing_wedge": false,
+        "sr_level": true,
+        "fib_level": true,
+        "sr_fib_confluence": true,
+        "elliott_aligned": false,
+        "elliott_conflict": false,
+        "vol_expansion": false,
+        "range_expansion": false,
+        "setup_rattle": false,
+        "late_bar": false,
+        "strong_close": false,
+        "dead_volume": true,
+        "live_rvol": false,
+        "mtf_15m_wedge": false,
+        "mtf_15m_coil_ema": false,
+        "mtf_15m_base": false,
+        "mtf_1h_rounding_ema20": false,
+        "mtf_1h_coil_ema": false,
+        "mtf_1h_base": true,
+        "mtf_1h_fib_sr": true
+      },
+      "current_snapshot": {
+        "date": "2026-08-14",
+        "close": 57491.1,
+        "rsi_14": 54.78,
+        "ema_20": 57570.12,
+        "ema_50": 57171.27,
+        "ema_200": 56640.95,
+        "tags": [
+          "candle_evening_star",
+          "ema20_support_touch",
+          "ema_bull_stack",
+          "fib_0.236_retrace",
+          "formation_double_top",
+          "formation_falling_wedge",
+          "formation_head_shoulders",
+          "formation_inverse_head_shoulders",
+          "long_term_uptrend",
+          "short_term_uptrend"
+        ],
+        "formations": [
+          {
+            "id": "falling_wedge",
+            "name": "Falling wedge",
+            "bias": "bullish_reversal"
+          },
+          {
+            "id": "double_top",
+            "name": "Double top",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "head_shoulders",
+            "name": "Head and shoulders",
+            "bias": "bearish_reversal"
+          },
+          {
+            "id": "inverse_head_shoulders",
+            "name": "Inverse H&S",
+            "bias": "bullish_reversal"
+          }
+        ],
+        "raw_candle_patterns": [
+          "evening_star"
+        ],
+        "weekly": {
+          "rsi_14": 60.88,
+          "ema_20": 56902.2,
+          "tags": [
+            "weekly_uptrend"
+          ]
+        },
+        "position_bias": "neutral",
+        "position_bias_long": "long",
+        "position_bias_short": "neutral",
+        "pattern_confirmations": {
+          "ema20_resistance": true,
+          "close_below_ema20": true,
+          "consolidation_anchor": true,
+          "tight_range": true,
+          "lower_highs": true,
+          "ema_momentum_expanding_down": false,
+          "ema_bear_stack": false,
+          "rsi_60_reject": false,
+          "rsi_trend_short": false,
+          "downtrend": false,
+          "bearish_formation": true,
+          "compressing_wedge": false,
+          "sr_level": true,
+          "fib_level": true,
+          "sr_fib_confluence": true,
+          "elliott_aligned": false,
+          "elliott_conflict": false,
+          "vol_expansion": false,
+          "range_expansion": false,
+          "setup_rattle": false,
+          "late_bar": false,
+          "strong_close": false,
+          "dead_volume": true,
+          "live_rvol": false,
+          "mtf_15m_wedge": false,
+          "mtf_15m_coil_ema": false,
+          "mtf_15m_base": false,
+          "mtf_1h_rounding_ema20": false,
+          "mtf_1h_coil_ema": false,
+          "mtf_1h_base": true,
+          "mtf_1h_fib_sr": true
+        }
+      },
+      "reasons": [
+        {
+          "layer": "technical",
+          "text": "Expect next move ~3%",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Hourly S/R with Fibonacci (0.382/0.5/0.618)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "1h base at EMA20 (coil / flag / range / rounding / rising \u2014 name does not matter)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Dead volume coil (<=0.85x 20d avg)",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci confluence",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Fibonacci retrace/extension",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Support/resistance level",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Bearish chart formation",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Falling highs",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Tight coil vs ATR",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Consolidation in anchor candle range",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Close below EMA20",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA20 resistance rejection",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: ema reject",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: coil breakdown",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: formation top",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Pattern family: falling structure",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "15m / 1h base cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Candlestick cherry (hammer / star) +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "Rangebound coil cherry +0.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "S/R with Fibonacci +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "EMA / trend structure +2.5",
+          "weight": "high"
+        },
+        {
+          "layer": "technical",
+          "text": "ema20 support touch",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "ema bull stack",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "short term uptrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "long term uptrend",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "candle evening star",
+          "weight": "medium",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "fib 0.236 retrace",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation double top",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation falling wedge",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation head shoulders",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "formation inverse head shoulders",
+          "weight": "high",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "weekly uptrend",
+          "weight": "low",
+          "headwind": false
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-05-19 short move (-2.48% 1D) \u2014 38% overlap [consolidation_anchor, tight_range, bullish_formation]",
+          "weight": "medium",
+          "date": "2022-05-19"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-04-22 short move (-2.1% 1D) \u2014 35% overlap [ema20_support, consolidation_anchor, tight_range]",
+          "weight": "medium",
+          "date": "2022-04-22"
+        },
+        {
+          "layer": "technical",
+          "text": "Similar pattern to 2022-02-07 short move (-2.05% 1D) \u2014 33% overlap [ema20_support, consolidation_anchor, tight_range]",
+          "weight": "medium",
+          "date": "2022-02-07"
+        }
+      ]
+    }
+  ]
+}

@@ -13,22 +13,66 @@
     "date": "2026-03-30",
     "close": 50275.35,
     "rsi_14": 31.21,
-    "sma_20": 55266.16,
-    "sma_50": 58226.36,
-    "sma_200": 57352.45,
-    "volume_ratio_vs_20d": 1.56,
+    "ema_20": 54811.71,
+    "ema_50": 57061.06,
+    "ema_200": 56927.52,
     "tags": [
+      "candle_marubozu",
+      "ema20_extended_short",
+      "formation_falling_wedge",
       "long_term_uptrend",
-      "marubozu",
       "near_support",
       "rsi_oversold",
-      "volume_spike"
+      "short_term_downtrend"
+    ],
+    "formations": [
+      {
+        "id": "falling_wedge",
+        "name": "Falling wedge",
+        "bias": "bullish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu"
     ],
     "weekly": {
       "rsi_14": 25.87,
+      "ema_20": 56742.32,
       "tags": [
-        "weekly_rsi_oversold"
+        "weekly_rsi_oversold",
+        "weekly_downtrend"
       ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": false,
+      "consolidation_anchor": false,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": false,
+      "uptrend": true,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": false,
+      "setup_rattle": true,
+      "late_bar": false,
+      "strong_close": false,
+      "dead_volume": false,
+      "live_rvol": true
     }
-  }
+  },
+  "chart_file": "technical/charts/NIFTY_BANK/2026-03-30.png"
 }

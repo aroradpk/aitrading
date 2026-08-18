@@ -13,16 +13,65 @@
     "date": "2022-05-20",
     "close": 34276.0,
     "rsi_14": 37.21,
-    "sma_20": 34903.76,
-    "sma_50": 35722.14,
-    "sma_200": 36864.42,
-    "volume_ratio_vs_20d": 0.72,
+    "ema_20": 34740.12,
+    "ema_50": 35594.26,
+    "ema_200": 36249.69,
     "tags": [
+      "candle_marubozu",
+      "ema20_support_touch",
+      "ema_bear_stack",
+      "ema_momentum_expanding_down",
+      "formation_falling_wedge",
+      "long_term_downtrend",
+      "short_term_downtrend"
+    ],
+    "formations": [
+      {
+        "id": "falling_wedge",
+        "name": "Falling wedge",
+        "bias": "bullish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
       "marubozu"
     ],
     "weekly": {
       "rsi_14": 36.2,
-      "tags": []
+      "ema_20": 36000.35,
+      "tags": [
+        "weekly_downtrend"
+      ]
+    },
+    "position_bias": "neutral",
+    "position_bias_long": "neutral",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": false,
+      "tight_range": true,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": false,
+      "uptrend": false,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": false,
+      "setup_rattle": false,
+      "late_bar": false,
+      "strong_close": true,
+      "dead_volume": true,
+      "live_rvol": false
     }
-  }
+  },
+  "chart_file": "technical/charts/NIFTY_BANK/2022-05-20.png"
 }

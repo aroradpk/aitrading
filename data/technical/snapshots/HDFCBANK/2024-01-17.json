@@ -1,0 +1,83 @@
+{
+  "date": "2024-01-17",
+  "close": 736.1,
+  "rsi_14": 22.08,
+  "ema_20": 790.16,
+  "ema_50": 777.34,
+  "ema_200": 762.41,
+  "tags": [
+    "candle_evening_star",
+    "ema20_extended_short",
+    "ema_bull_stack",
+    "formation_double_bottom",
+    "formation_double_top",
+    "formation_head_shoulders",
+    "formation_rising_wedge",
+    "long_term_uptrend",
+    "near_support",
+    "rsi_oversold",
+    "short_term_uptrend"
+  ],
+  "formations": [
+    {
+      "id": "rising_wedge",
+      "name": "Rising wedge",
+      "bias": "bearish_reversal"
+    },
+    {
+      "id": "double_bottom",
+      "name": "Double bottom",
+      "bias": "bullish_reversal"
+    },
+    {
+      "id": "double_top",
+      "name": "Double top",
+      "bias": "bearish_reversal"
+    },
+    {
+      "id": "head_shoulders",
+      "name": "Head and shoulders",
+      "bias": "bearish_reversal"
+    }
+  ],
+  "raw_candle_patterns": [
+    "evening_star"
+  ],
+  "weekly": {
+    "rsi_14": 50.18,
+    "ema_20": 765.34,
+    "tags": [
+      "weekly_downtrend"
+    ]
+  },
+  "position_bias": "long",
+  "position_bias_long": "long",
+  "position_bias_short": "neutral",
+  "pattern_confirmations": {
+    "ema20_support": true,
+    "consolidation_anchor": false,
+    "tight_range": false,
+    "higher_lows": false,
+    "close_above_ema20": false,
+    "ema_momentum_expanding": false,
+    "ema_bull_stack": true,
+    "rsi_60_reclaim": false,
+    "rsi_trend_long": false,
+    "uptrend": true,
+    "bullish_formation": true,
+    "compressing_wedge": false,
+    "rounding_bottom": false,
+    "sr_level": true,
+    "fib_level": false,
+    "sr_fib_confluence": true,
+    "elliott_aligned": false,
+    "elliott_conflict": false,
+    "vol_expansion": true,
+    "range_expansion": true,
+    "setup_rattle": false,
+    "late_bar": true,
+    "strong_close": false,
+    "dead_volume": false,
+    "live_rvol": true
+  }
+}

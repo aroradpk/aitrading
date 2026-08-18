@@ -10,6 +10,7 @@ from app.engines.fundamental import score_fundamentals
 from app.engines.themes import score_themes
 from app.engines.move_detector import load_moves, scan_setups_for_symbol
 from app.engines.technical import technical_reasons_for_side
+from app.engines.intraday_ledger import log_today_setups, recompute_rule_stats, resolve_open_rows
 from app.engines.universe import all_instruments
 from app.ingest.yfinance_client import load_ohlcv
 
@@ -129,6 +130,7 @@ def build_daily_watchlist() -> dict:
                     "target_move_pct": target,
                     "expected_move_pct": setup.get("expected_move_pct", 0.0),
                     "expected_horizon_days": setup.get("expected_horizon_days", 1),
+                    "session_seven": setup.get("session_seven", False),
                     "position_bias": setup.get("position_bias", "neutral"),
                     "position_side": setup.get("position_side", "long"),
                     "intraday": setup.get("intraday", False),
@@ -145,6 +147,10 @@ def build_daily_watchlist() -> dict:
     entries.sort(key=lambda item: item["conviction"], reverse=True)
     from app.core.config import get_settings
 
+    logged = log_today_setups(entries)
+    resolved = resolve_open_rows()
+    rule_stats = recompute_rule_stats()
+
     tech = get_settings().technical
     payload = {
         "report_date": report_date,
@@ -154,6 +160,13 @@ def build_daily_watchlist() -> dict:
             "position_focus": tech.position_focus,
             "intraday_enabled": tech.intraday.enabled,
             "conviction_model": "technical_7_plus_research_3",
+            "trading_book": "intraday_5",
+            "learn": {
+                "logged_today": logged,
+                "resolved": resolved,
+                "resolved_rows": rule_stats.get("resolved_rows", 0),
+                "min_n_to_trust": rule_stats.get("min_n_to_trust", 20),
+            },
         },
         "entries": entries,
     }

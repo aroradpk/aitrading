@@ -2,19 +2,70 @@
   "date": "2022-09-23",
   "close": 39545.79,
   "rsi_14": 47.66,
-  "sma_20": 40182.89,
-  "sma_50": 38579.08,
-  "sma_200": 36570.01,
-  "volume_ratio_vs_20d": 1.18,
+  "ema_20": 40178.5,
+  "ema_50": 38791.5,
+  "ema_200": 36882.21,
   "tags": [
+    "candle_marubozu",
+    "ema20_support_touch",
+    "ema_bull_stack",
+    "fib_0.236_retrace",
+    "formation_double_bottom",
+    "formation_rising_wedge",
     "long_term_uptrend",
-    "marubozu",
     "short_term_uptrend"
+  ],
+  "formations": [
+    {
+      "id": "rising_wedge",
+      "name": "Rising wedge",
+      "bias": "bearish_reversal"
+    },
+    {
+      "id": "double_bottom",
+      "name": "Double bottom",
+      "bias": "bullish_reversal"
+    }
+  ],
+  "raw_candle_patterns": [
+    "marubozu"
   ],
   "weekly": {
     "rsi_14": 82.6,
+    "ema_20": 37704.62,
     "tags": [
+      "weekly_rsi_overbought",
       "weekly_uptrend"
     ]
+  },
+  "position_bias": "long",
+  "position_bias_long": "long",
+  "position_bias_short": "neutral",
+  "pattern_confirmations": {
+    "ema20_support": true,
+    "consolidation_anchor": false,
+    "tight_range": false,
+    "higher_lows": false,
+    "close_above_ema20": false,
+    "ema_momentum_expanding": false,
+    "ema_bull_stack": true,
+    "rsi_60_reclaim": false,
+    "rsi_trend_long": false,
+    "uptrend": true,
+    "bullish_formation": true,
+    "compressing_wedge": false,
+    "rounding_bottom": true,
+    "sr_level": true,
+    "fib_level": true,
+    "sr_fib_confluence": true,
+    "elliott_aligned": false,
+    "elliott_conflict": false,
+    "vol_expansion": false,
+    "range_expansion": true,
+    "setup_rattle": true,
+    "late_bar": false,
+    "strong_close": false,
+    "dead_volume": false,
+    "live_rvol": false
   }
 }

@@ -34,7 +34,8 @@ class TechnicalConfig(BaseModel):
 
 class UniverseConfig(BaseModel):
     nifty_next_50_config: str = "config/nifty_next_50.json"
-    active_count: int = 20
+    trading_universe_config: str = "config/intraday_universe.json"
+    active_count: int = 5
     yearly_trend_min_return_pct: float = 0.0
 
 
@@ -118,4 +119,12 @@ def nifty_next_50_path() -> Path:
     path = ROOT_DIR / settings.universe.nifty_next_50_config
     if not path.exists():
         raise FileNotFoundError(f"Missing universe config: {path}")
+    return path
+
+
+def trading_universe_path() -> Path:
+    settings = get_settings()
+    path = ROOT_DIR / settings.universe.trading_universe_config
+    if not path.exists():
+        raise FileNotFoundError(f"Missing trading universe: {path}")
     return path

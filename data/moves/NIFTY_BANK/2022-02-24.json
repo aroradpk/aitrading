@@ -13,19 +13,83 @@
     "date": "2022-02-24",
     "close": 35227.69,
     "rsi_14": 28.96,
-    "sma_20": 37964.71,
-    "sma_50": 37249.63,
-    "sma_200": null,
-    "volume_ratio_vs_20d": 2.18,
+    "ema_20": 37596.99,
+    "ema_50": 37569.79,
+    "ema_200": null,
     "tags": [
+      "candle_evening_star",
+      "ema20_extended_short",
+      "fib_0.786_retrace",
+      "formation_double_bottom",
+      "formation_double_top",
+      "formation_head_shoulders",
+      "formation_rising_wedge",
       "near_support",
       "rsi_oversold",
-      "short_term_uptrend",
-      "volume_spike"
+      "short_term_uptrend"
+    ],
+    "formations": [
+      {
+        "id": "rising_wedge",
+        "name": "Rising wedge",
+        "bias": "bearish_reversal"
+      },
+      {
+        "id": "double_bottom",
+        "name": "Double bottom",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_top",
+        "name": "Double top",
+        "bias": "bearish_reversal"
+      },
+      {
+        "id": "head_shoulders",
+        "name": "Head and shoulders",
+        "bias": "bearish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "evening_star"
     ],
     "weekly": {
       "rsi_14": 40.43,
-      "tags": []
+      "ema_20": 37192.41,
+      "tags": [
+        "weekly_downtrend"
+      ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "neutral",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": false,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": false,
+      "uptrend": true,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": true,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": true,
+      "range_expansion": true,
+      "setup_rattle": false,
+      "late_bar": true,
+      "strong_close": false,
+      "dead_volume": false,
+      "live_rvol": true
     }
-  }
+  },
+  "chart_file": "technical/charts/NIFTY_BANK/2022-02-24.png"
 }

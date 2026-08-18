@@ -2,16 +2,66 @@
   "date": "2021-12-17",
   "close": 35618.23,
   "rsi_14": 46.51,
-  "sma_20": 36628.52,
-  "sma_50": 38165.1,
-  "sma_200": null,
-  "volume_ratio_vs_20d": 0.96,
+  "ema_20": 36896.53,
+  "ema_50": 37394.43,
+  "ema_200": null,
   "tags": [
-    "marubozu",
-    "near_support"
+    "candle_marubozu",
+    "formation_double_bottom",
+    "formation_falling_wedge",
+    "near_support",
+    "short_term_downtrend"
+  ],
+  "formations": [
+    {
+      "id": "falling_wedge",
+      "name": "Falling wedge",
+      "bias": "bullish_reversal"
+    },
+    {
+      "id": "double_bottom",
+      "name": "Double bottom",
+      "bias": "bullish_reversal"
+    }
+  ],
+  "raw_candle_patterns": [
+    "marubozu"
   ],
   "weekly": {
     "rsi_14": 45.79,
-    "tags": []
+    "ema_20": 37080.11,
+    "tags": [
+      "weekly_downtrend"
+    ]
+  },
+  "position_bias": "neutral",
+  "position_bias_long": "neutral",
+  "position_bias_short": "short",
+  "pattern_confirmations": {
+    "ema20_support": true,
+    "consolidation_anchor": false,
+    "tight_range": false,
+    "higher_lows": false,
+    "close_above_ema20": false,
+    "ema_momentum_expanding": false,
+    "ema_bull_stack": false,
+    "rsi_60_reclaim": false,
+    "rsi_trend_long": false,
+    "uptrend": false,
+    "bullish_formation": true,
+    "compressing_wedge": false,
+    "rounding_bottom": false,
+    "sr_level": true,
+    "fib_level": false,
+    "sr_fib_confluence": true,
+    "elliott_aligned": false,
+    "elliott_conflict": false,
+    "vol_expansion": false,
+    "range_expansion": false,
+    "setup_rattle": true,
+    "late_bar": false,
+    "strong_close": false,
+    "dead_volume": false,
+    "live_rvol": false
   }
 }

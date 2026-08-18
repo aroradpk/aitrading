@@ -13,14 +13,67 @@
     "date": "2022-06-13",
     "close": 33405.46,
     "rsi_14": 40.33,
-    "sma_20": 34784.32,
-    "sma_50": 35597.86,
-    "sma_200": 36813.48,
-    "volume_ratio_vs_20d": 1.0,
-    "tags": [],
+    "ema_20": 34861.62,
+    "ema_50": 35291.93,
+    "ema_200": 36060.91,
+    "tags": [
+      "ema_bear_stack",
+      "ema_momentum_expanding_down",
+      "formation_double_top",
+      "formation_falling_wedge",
+      "long_term_downtrend",
+      "short_term_downtrend"
+    ],
+    "formations": [
+      {
+        "id": "falling_wedge",
+        "name": "Falling wedge",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_top",
+        "name": "Double top",
+        "bias": "bearish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [],
     "weekly": {
       "rsi_14": 46.11,
-      "tags": []
+      "ema_20": 35538.6,
+      "tags": [
+        "weekly_downtrend"
+      ]
+    },
+    "position_bias": "neutral",
+    "position_bias_long": "neutral",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": false,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": false,
+      "uptrend": false,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": false,
+      "setup_rattle": false,
+      "late_bar": false,
+      "strong_close": false,
+      "dead_volume": false,
+      "live_rvol": false
     }
-  }
+  },
+  "chart_file": "technical/charts/NIFTY_BANK/2022-06-13.png"
 }

@@ -13,20 +13,78 @@
     "date": "2022-12-26",
     "close": 42629.65,
     "rsi_14": 44.62,
-    "sma_20": 43197.98,
-    "sma_50": 42229.38,
-    "sma_200": 37981.1,
-    "volume_ratio_vs_20d": 1.12,
+    "ema_20": 42905.65,
+    "ema_50": 42153.62,
+    "ema_200": 39169.16,
     "tags": [
+      "candle_marubozu",
+      "ema20_support_touch",
+      "ema_bull_stack",
+      "fib_0.236_retrace",
+      "formation_double_top",
+      "formation_head_shoulders",
+      "formation_rising_wedge",
       "long_term_uptrend",
-      "marubozu",
       "short_term_uptrend"
+    ],
+    "formations": [
+      {
+        "id": "rising_wedge",
+        "name": "Rising wedge",
+        "bias": "bearish_reversal"
+      },
+      {
+        "id": "double_top",
+        "name": "Double top",
+        "bias": "bearish_reversal"
+      },
+      {
+        "id": "head_shoulders",
+        "name": "Head and shoulders",
+        "bias": "bearish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu"
     ],
     "weekly": {
       "rsi_14": 67.44,
+      "ema_20": 40973.07,
       "tags": [
+        "weekly_rsi_overbought",
         "weekly_uptrend"
       ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "neutral",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": true,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": true,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": false,
+      "uptrend": true,
+      "bullish_formation": false,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": true,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": true,
+      "setup_rattle": true,
+      "late_bar": false,
+      "strong_close": true,
+      "dead_volume": false,
+      "live_rvol": false
     }
-  }
+  },
+  "chart_file": "technical/charts/NIFTY_BANK/2022-12-26.png"
 }

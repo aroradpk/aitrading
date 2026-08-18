@@ -1,0 +1,66 @@
+{
+  "date": "2026-03-19",
+  "close": 785.21,
+  "rsi_14": 23.96,
+  "ema_20": 846.52,
+  "ema_50": 884.83,
+  "ema_200": 921.58,
+  "tags": [
+    "candle_marubozu",
+    "ema20_extended_short",
+    "ema_bear_stack",
+    "ema_momentum_expanding_down",
+    "formation_symmetrical_triangle",
+    "long_term_downtrend",
+    "rsi_oversold",
+    "short_term_downtrend"
+  ],
+  "formations": [
+    {
+      "id": "symmetrical_triangle",
+      "name": "Symmetrical triangle",
+      "bias": "neutral_breakout"
+    }
+  ],
+  "raw_candle_patterns": [
+    "marubozu"
+  ],
+  "weekly": {
+    "rsi_14": 16.27,
+    "ema_20": 900.45,
+    "tags": [
+      "weekly_rsi_oversold",
+      "weekly_downtrend"
+    ]
+  },
+  "position_bias": "neutral",
+  "position_bias_long": "neutral",
+  "position_bias_short": "short",
+  "pattern_confirmations": {
+    "ema20_support": false,
+    "consolidation_anchor": false,
+    "tight_range": false,
+    "higher_lows": false,
+    "close_above_ema20": false,
+    "ema_momentum_expanding": false,
+    "ema_bull_stack": false,
+    "rsi_60_reclaim": false,
+    "rsi_trend_long": false,
+    "uptrend": false,
+    "bullish_formation": true,
+    "compressing_wedge": false,
+    "rounding_bottom": false,
+    "sr_level": false,
+    "fib_level": false,
+    "sr_fib_confluence": false,
+    "elliott_aligned": false,
+    "elliott_conflict": false,
+    "vol_expansion": true,
+    "range_expansion": true,
+    "setup_rattle": false,
+    "late_bar": true,
+    "strong_close": false,
+    "dead_volume": false,
+    "live_rvol": true
+  }
+}

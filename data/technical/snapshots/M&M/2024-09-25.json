@@ -1,0 +1,69 @@
+{
+  "date": "2024-09-25",
+  "close": 3034.55,
+  "rsi_14": 83.32,
+  "ema_20": 2800.25,
+  "ema_50": 2733.58,
+  "ema_200": 2312.7,
+  "tags": [
+    "ema20_extended_long",
+    "ema_bull_stack",
+    "ema_momentum_expanding",
+    "formation_double_top",
+    "formation_symmetrical_triangle",
+    "long_term_uptrend",
+    "near_resistance",
+    "rsi_overbought",
+    "short_term_uptrend"
+  ],
+  "formations": [
+    {
+      "id": "symmetrical_triangle",
+      "name": "Symmetrical triangle",
+      "bias": "neutral_breakout"
+    },
+    {
+      "id": "double_top",
+      "name": "Double top",
+      "bias": "bearish_reversal"
+    }
+  ],
+  "raw_candle_patterns": [],
+  "weekly": {
+    "rsi_14": 60.62,
+    "ema_20": 2645.35,
+    "tags": [
+      "weekly_uptrend"
+    ]
+  },
+  "position_bias": "neutral",
+  "position_bias_long": "neutral",
+  "position_bias_short": "short",
+  "pattern_confirmations": {
+    "ema20_support": true,
+    "consolidation_anchor": true,
+    "tight_range": false,
+    "higher_lows": true,
+    "close_above_ema20": true,
+    "ema_momentum_expanding": true,
+    "ema_bull_stack": true,
+    "rsi_60_reclaim": false,
+    "rsi_trend_long": true,
+    "uptrend": true,
+    "bullish_formation": true,
+    "compressing_wedge": false,
+    "rounding_bottom": false,
+    "sr_level": true,
+    "fib_level": false,
+    "sr_fib_confluence": true,
+    "elliott_aligned": false,
+    "elliott_conflict": false,
+    "vol_expansion": false,
+    "range_expansion": true,
+    "setup_rattle": true,
+    "late_bar": false,
+    "strong_close": false,
+    "dead_volume": false,
+    "live_rvol": false
+  }
+}

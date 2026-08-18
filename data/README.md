@@ -6,7 +6,10 @@ Set `offline_mode: true` in `config/settings.yaml` (default) to guarantee the ap
 
 | Folder | Contents |
 | --- | --- |
-| `universe/active.json` | Top 20 rising Nifty Next 50 stocks + indices |
+| `universe/active.json` | 5-scrip intraday book (3 stocks + 2 indices) |
+| `ohlcv/daily/*.parquet` | Daily price history for those 5 |
+| `intraday/ledger.jsonl` | Setup log + next-session MFE (learning loop) |
+| `intraday/rule_stats.json` | Hit rates; trust a rule only at n≥20 |
 | `ohlcv/daily/*.parquet` | Daily price history per symbol |
 | `moves/{SYMBOL}/` | Historical big-move events + `_summary.json` |
 | `technical/snapshots/` | Chart state before each big move |

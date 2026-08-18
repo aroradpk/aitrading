@@ -74,6 +74,7 @@
         <button class="action watchlist-filter active" data-side="all">All</button>
         <button class="action watchlist-filter" data-side="long">Long</button>
         <button class="action watchlist-filter" data-side="short">Short</button>
+        <button class="action watchlist-filter" data-side="seven">7 (next session)</button>
         <button class="action watchlist-filter" data-side="intraday">Intraday</button>
         <span class="muted" id="watchlist-meta"></span>
       </div>
@@ -83,6 +84,7 @@
             <tr>
               <th>Symbol</th>
               <th>Side</th>
+              <th>7</th>
               <th>Horizon</th>
               <th>Conviction</th>
               <th>Tech (0-7)</th>
@@ -131,7 +133,7 @@
 
     <section id="universe">
       <div class="card">
-        <button class="action" id="refresh-universe">Refresh universe (top 20 rising)</button>
+        <button class="action" id="refresh-universe">Refresh 5-scrip book</button>
         <p class="muted" id="universe-meta"></p>
         <table>
           <thead><tr><th>Symbol</th><th>Name</th><th>YoY %</th><th>Last close</th></tr></thead>
@@ -270,6 +272,7 @@
         const filtered = entries.filter((e) => {
           if (watchlistFilter === "all") return true;
           if (watchlistFilter === "intraday") return e.intraday;
+          if (watchlistFilter === "seven") return e.session_seven;
           return e.position_side === watchlistFilter && !e.intraday;
         });
         const body = document.getElementById("watchlist-body");
@@ -277,6 +280,7 @@
           <tr data-idx="${i}" style="cursor:pointer">
             <td>${e.symbol}</td>
             <td class="side-${e.position_side}">${e.intraday ? e.position_side + " (ID)" : e.position_side}</td>
+            <td>${e.session_seven ? "7" : ""}</td>
             <td>${e.horizon}</td>
             <td class="conviction">${e.conviction}</td>
             <td>${e.scores.technical}</td>
@@ -567,12 +571,13 @@
         const res = await fetch("/api/analysis/universe");
         const data = await res.json();
         document.getElementById("universe-meta").textContent = data.selection_rule;
-        document.getElementById("universe-body").innerHTML = data.stocks.map((s) => `
+        const rows = [...(data.stocks || []), ...(data.indices || [])];
+        document.getElementById("universe-body").innerHTML = rows.map((s) => `
           <tr>
             <td>${s.symbol}</td>
-            <td>${s.name}</td>
-            <td>${s.yearly_return_pct}%</td>
-            <td>${s.last_close}</td>
+            <td>${s.name}${s.type === "index" ? " (index)" : ""}</td>
+            <td>${s.yearly_return_pct != null ? s.yearly_return_pct + "%" : "—"}</td>
+            <td>${s.last_close ?? "—"}</td>
           </tr>`).join("");
       }
 
@@ -582,8 +587,15 @@
       });
 
       document.getElementById("load-status").addEventListener("click", async () => {
-        const res = await fetch("/api/analysis/status");
-        document.getElementById("status-body").textContent = JSON.stringify(await res.json(), null, 2);
+        const [statusRes, learnRes] = await Promise.all([
+          fetch("/api/analysis/status"),
+          fetch("/api/analysis/intraday/stats"),
+        ]);
+        const payload = {
+          ...(await statusRes.json()),
+          learn: await learnRes.json(),
+        };
+        document.getElementById("status-body").textContent = JSON.stringify(payload, null, 2);
       });
 
       document.getElementById("refresh-events").addEventListener("click", async () => {

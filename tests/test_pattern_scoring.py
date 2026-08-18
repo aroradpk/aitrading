@@ -1,5 +1,7 @@
 import pandas as pd
 
+import pytest
+
 from app.core.paths import ohlcv_daily_dir
 from app.engines.conviction import conviction_from_scores
 from app.engines.move_detector import load_moves, scan_today_setup
@@ -10,7 +12,7 @@ from app.ingest.yfinance_client import load_ohlcv
 def test_motherson_aug5_coil_is_watch_not_seven() -> None:
     path = ohlcv_daily_dir() / "MOTHERSON.parquet"
     if not path.exists():
-        return
+        pytest.skip("MOTHERSON not in the 5-scrip intraday book")
     frame = load_ohlcv(path)
     signal_date = "2026-08-05"
     idx = frame.index.get_indexer([pd.Timestamp(signal_date)], method="nearest")[0]
@@ -290,7 +292,7 @@ def test_energy_prints_seven_even_if_extended() -> None:
 def test_adanipower_sep18_coil_is_not_seven() -> None:
     path = ohlcv_daily_dir() / "ADANIPOWER.parquet"
     if not path.exists():
-        return
+        pytest.skip("ADANIPOWER not in the 5-scrip intraday book")
     frame = load_ohlcv(path)
     signal_date = "2025-09-18"
     idx = frame.index.get_indexer([pd.Timestamp(signal_date)], method="nearest")[0]

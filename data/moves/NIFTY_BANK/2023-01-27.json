@@ -13,19 +13,82 @@
     "date": "2023-01-27",
     "close": 40345.3,
     "rsi_14": 32.31,
-    "sma_20": 42394.91,
-    "sma_50": 42796.85,
-    "sma_200": 38720.24,
-    "volume_ratio_vs_20d": 0.0,
+    "ema_20": 42279.7,
+    "ema_50": 42280.2,
+    "ema_200": 39842.12,
     "tags": [
+      "candle_marubozu",
+      "formation_descending_triangle",
+      "formation_double_bottom",
+      "formation_double_top",
+      "formation_head_shoulders",
       "long_term_uptrend",
-      "marubozu",
       "near_support",
-      "rsi_oversold"
+      "rsi_oversold",
+      "short_term_downtrend"
+    ],
+    "formations": [
+      {
+        "id": "descending_triangle",
+        "name": "Descending triangle",
+        "bias": "bearish_continuation"
+      },
+      {
+        "id": "double_bottom",
+        "name": "Double bottom",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_top",
+        "name": "Double top",
+        "bias": "bearish_reversal"
+      },
+      {
+        "id": "head_shoulders",
+        "name": "Head and shoulders",
+        "bias": "bearish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu"
     ],
     "weekly": {
       "rsi_14": 47.67,
-      "tags": []
+      "ema_20": 41262.94,
+      "tags": [
+        "weekly_downtrend"
+      ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": false,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": false,
+      "uptrend": true,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": true,
+      "setup_rattle": true,
+      "late_bar": false,
+      "strong_close": false,
+      "dead_volume": true,
+      "live_rvol": false
     }
-  }
+  },
+  "chart_file": "technical/charts/NIFTY_BANK/2023-01-27.png"
 }

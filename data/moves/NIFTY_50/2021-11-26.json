@@ -13,18 +13,73 @@
     "date": "2021-11-26",
     "close": 17026.45,
     "rsi_14": 28.61,
-    "sma_20": 17793.48,
-    "sma_50": 17851.88,
-    "sma_200": null,
-    "volume_ratio_vs_20d": 1.25,
+    "ema_20": 17726.21,
+    "ema_50": 17654.49,
+    "ema_200": null,
     "tags": [
-      "marubozu",
+      "candle_marubozu",
+      "formation_double_bottom",
+      "formation_double_top",
+      "formation_symmetrical_triangle",
       "near_support",
-      "rsi_oversold"
+      "rsi_oversold",
+      "short_term_uptrend"
+    ],
+    "formations": [
+      {
+        "id": "symmetrical_triangle",
+        "name": "Symmetrical triangle",
+        "bias": "neutral_breakout"
+      },
+      {
+        "id": "double_bottom",
+        "name": "Double bottom",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_top",
+        "name": "Double top",
+        "bias": "bearish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu"
     ],
     "weekly": {
       "rsi_14": 56.12,
+      "ema_20": null,
       "tags": []
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "neutral",
+    "pattern_confirmations": {
+      "ema20_support": false,
+      "consolidation_anchor": true,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": false,
+      "uptrend": true,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": false,
+      "setup_rattle": false,
+      "late_bar": false,
+      "strong_close": false,
+      "dead_volume": false,
+      "live_rvol": false
     }
-  }
+  },
+  "chart_file": "technical/charts/NIFTY_50/2021-11-26.png"
 }

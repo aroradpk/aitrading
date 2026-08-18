@@ -1,0 +1,93 @@
+{
+  "symbol": "BAJFINANCE",
+  "date": "2023-01-05",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": -7.17,
+  "move_1w_pct": -6.31,
+  "direction": "down",
+  "close": 597.01,
+  "volume_ratio_vs_20d": 4.97,
+  "technical_snapshot": {
+    "date": "2023-01-05",
+    "close": 597.01,
+    "rsi_14": 29.97,
+    "ema_20": 639.57,
+    "ema_50": 656.12,
+    "ema_200": 662.97,
+    "tags": [
+      "candle_marubozu",
+      "ema20_extended_short",
+      "ema_bear_stack",
+      "formation_double_bottom",
+      "formation_double_top",
+      "formation_falling_wedge",
+      "long_term_downtrend",
+      "near_support",
+      "rsi_oversold",
+      "short_term_downtrend"
+    ],
+    "formations": [
+      {
+        "id": "falling_wedge",
+        "name": "Falling wedge",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_bottom",
+        "name": "Double bottom",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_top",
+        "name": "Double top",
+        "bias": "bearish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu"
+    ],
+    "weekly": {
+      "rsi_14": 22.23,
+      "ema_20": 658.81,
+      "tags": [
+        "weekly_rsi_oversold",
+        "weekly_downtrend"
+      ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": false,
+      "tight_range": false,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": false,
+      "uptrend": false,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": true,
+      "range_expansion": true,
+      "setup_rattle": false,
+      "late_bar": true,
+      "strong_close": false,
+      "dead_volume": false,
+      "live_rvol": true
+    }
+  },
+  "aligned_events": [],
+  "event_reasons": [],
+  "chart_file": "technical/charts/BAJFINANCE/2023-01-05.png"
+}

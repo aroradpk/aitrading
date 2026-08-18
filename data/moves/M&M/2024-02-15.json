@@ -1,0 +1,87 @@
+{
+  "symbol": "M&M",
+  "date": "2024-02-15",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": 6.52,
+  "move_1w_pct": 4.69,
+  "direction": "up",
+  "close": 1720.19,
+  "volume_ratio_vs_20d": 3.28,
+  "technical_snapshot": {
+    "date": "2024-02-15",
+    "close": 1720.19,
+    "rsi_14": 68.02,
+    "ema_20": 1626.81,
+    "ema_50": 1605.66,
+    "ema_200": 1487.97,
+    "tags": [
+      "candle_marubozu",
+      "ema20_extended_long",
+      "ema_bull_stack",
+      "formation_double_bottom",
+      "formation_falling_wedge",
+      "long_term_uptrend",
+      "near_resistance",
+      "rsi_overbought",
+      "short_term_uptrend"
+    ],
+    "formations": [
+      {
+        "id": "falling_wedge",
+        "name": "Falling wedge",
+        "bias": "bullish_reversal"
+      },
+      {
+        "id": "double_bottom",
+        "name": "Double bottom",
+        "bias": "bullish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu"
+    ],
+    "weekly": {
+      "rsi_14": 65.77,
+      "ema_20": 1582.5,
+      "tags": [
+        "weekly_rsi_overbought",
+        "weekly_uptrend"
+      ]
+    },
+    "position_bias": "neutral",
+    "position_bias_long": "neutral",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": true,
+      "consolidation_anchor": false,
+      "tight_range": false,
+      "higher_lows": true,
+      "close_above_ema20": true,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": true,
+      "rsi_60_reclaim": true,
+      "rsi_trend_long": true,
+      "uptrend": true,
+      "bullish_formation": true,
+      "compressing_wedge": false,
+      "rounding_bottom": true,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": true,
+      "range_expansion": true,
+      "setup_rattle": false,
+      "late_bar": true,
+      "strong_close": true,
+      "dead_volume": false,
+      "live_rvol": true
+    }
+  },
+  "aligned_events": [],
+  "event_reasons": [],
+  "chart_file": "technical/charts/M&M/2024-02-15.png"
+}

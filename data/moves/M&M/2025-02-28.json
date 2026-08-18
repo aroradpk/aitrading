@@ -1,0 +1,79 @@
+{
+  "symbol": "M&M",
+  "date": "2025-02-28",
+  "instrument_type": "stock",
+  "trigger_type": "stock_1d",
+  "threshold_pct": 5.0,
+  "move_1d_pct": -5.19,
+  "move_1w_pct": -8.96,
+  "direction": "down",
+  "close": 2537.85,
+  "volume_ratio_vs_20d": 1.92,
+  "technical_snapshot": {
+    "date": "2025-02-28",
+    "close": 2537.85,
+    "rsi_14": 19.16,
+    "ema_20": 2800.12,
+    "ema_50": 2874.92,
+    "ema_200": 2709.34,
+    "tags": [
+      "candle_marubozu",
+      "ema20_extended_short",
+      "formation_double_top",
+      "long_term_uptrend",
+      "near_support",
+      "rsi_oversold",
+      "short_term_downtrend"
+    ],
+    "formations": [
+      {
+        "id": "double_top",
+        "name": "Double top",
+        "bias": "bearish_reversal"
+      }
+    ],
+    "raw_candle_patterns": [
+      "marubozu"
+    ],
+    "weekly": {
+      "rsi_14": 39.41,
+      "ema_20": 2849.34,
+      "tags": [
+        "weekly_downtrend"
+      ]
+    },
+    "position_bias": "long",
+    "position_bias_long": "long",
+    "position_bias_short": "short",
+    "pattern_confirmations": {
+      "ema20_support": false,
+      "consolidation_anchor": false,
+      "tight_range": true,
+      "higher_lows": false,
+      "close_above_ema20": false,
+      "ema_momentum_expanding": false,
+      "ema_bull_stack": false,
+      "rsi_60_reclaim": false,
+      "rsi_trend_long": false,
+      "uptrend": true,
+      "bullish_formation": false,
+      "compressing_wedge": false,
+      "rounding_bottom": false,
+      "sr_level": true,
+      "fib_level": false,
+      "sr_fib_confluence": true,
+      "elliott_aligned": false,
+      "elliott_conflict": false,
+      "vol_expansion": false,
+      "range_expansion": false,
+      "setup_rattle": false,
+      "late_bar": true,
+      "strong_close": false,
+      "dead_volume": false,
+      "live_rvol": true
+    }
+  },
+  "aligned_events": [],
+  "event_reasons": [],
+  "chart_file": "technical/charts/M&M/2025-02-28.png"
+}
