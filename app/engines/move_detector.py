@@ -219,6 +219,7 @@ def scan_today_setup(
     bias = position_bias(current, focus=side)
     energy = bool(scored.get("precision_energy"))
     expected = float(scored.get("expected_move_pct") or 0.0)
+    horizon_days = int(scored.get("expected_horizon_days") or 1)
     ladder = energy or expected > 0
     if (
         settings.technical.require_trend_for_setup
@@ -260,6 +261,7 @@ def scan_today_setup(
         "horizon": horizon,
         "target_move_pct": target,
         "expected_move_pct": expected,
+        "expected_horizon_days": horizon_days,
         "mtf_precision": bool(scored.get("mtf_precision")),
         "intraday": intraday,
         "formation_alignment": formation_state,

@@ -282,7 +282,7 @@
             <td>${e.scores.technical}</td>
             <td>${e.scores.research ?? ((e.scores.fundamental || 0) + (e.scores.events || 0)).toFixed?.(1) ?? "-"}</td>
             <td>${e.scores.theme_bonus ?? e.scores.theme ?? "-"}</td>
-            <td>${e.expected_move_pct ? e.expected_move_pct + "%" : (e.target_move_pct ? e.target_move_pct + "%" : "-")}</td>
+            <td>${e.expected_move_pct ? (e.expected_horizon_days > 1 ? e.expected_move_pct + "% / " + e.expected_horizon_days + "d" : e.expected_move_pct + "%") : (e.target_move_pct ? e.target_move_pct + "%" : "-")}</td>
             <td>${e.match_count}</td>
             <td>${(e.reasons[0] || {}).text || "-"}</td>
           </tr>`).join("");

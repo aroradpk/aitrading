@@ -134,7 +134,5 @@ def analyze_intraday_confirmations(
 
 
 def has_mtf_precision(confirmations: dict[str, bool]) -> bool:
-    """7 needs both 15m and 1h quality. Hourly Fib is not this gate."""
-    m15 = bool(confirmations.get("mtf_15m_wedge") or confirmations.get("mtf_15m_coil_ema"))
-    h1 = bool(confirmations.get("mtf_1h_coil_ema") or confirmations.get("mtf_1h_rounding_ema20"))
-    return m15 and h1
+    """7 needs the user's 15m wedge + 1h rounding pair. Coils and hourly Fib are not this gate."""
+    return bool(confirmations.get("mtf_15m_wedge") and confirmations.get("mtf_1h_rounding_ema20"))

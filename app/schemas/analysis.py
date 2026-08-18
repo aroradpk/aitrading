@@ -13,6 +13,7 @@ class WatchlistEntry(BaseModel):
     horizon: str
     target_move_pct: float
     expected_move_pct: float = 0.0
+    expected_horizon_days: int = 1
     position_bias: str = "neutral"
     position_side: str = "long"
     intraday: bool = False

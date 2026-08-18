@@ -7,7 +7,9 @@ from app.engines.technical import snapshot_similarity
 
 TECHNICAL_MAX = 7.0
 
-# 5 = expect ~3% (daily coil). 6 = expect ~4% (daily rumble). 7 = expect ~5% (rumble + 15m AND 1h).
+# 5 = expect ~3% next day (daily coil). 6 = expect ~4% next day (daily rumble).
+# 7 = rumble + 15m wedge + 1h rounding, volume not dead; expect ~5% within 3 sessions.
+# Next-day 5% is too noisy for a 7. Hourly Fib / 15m-1h coils are not a 7-gate.
 # A 5% close is late and is never a 7. Hourly Fib is not a 7-gate.
 CORE_WEIGHTS = {
     "ema_structure": 2.5,
@@ -233,17 +235,20 @@ def score_technical_confirmations(
     late = bool(confirmations.get("late_bar"))
     coil = is_coil_setup(confirmations)
     mtf = has_mtf_precision(confirmations)
+    dead = bool(confirmations.get("dead_volume"))
     expected_move_pct = 0.0
+    expected_horizon_days = 1
     if late:
         # The 5% day already printed. Cap so this bar is never a 7.
         score = min(score, 4.0)
         expected_move_pct = 0.0
-    elif energy and mtf:
-        # 7: rumble + 15m AND 1h precision. Expect ~5% next. Fewer 7s, less noise.
+    elif energy and mtf and not dead:
+        # 7: rumble + 15m wedge + 1h rounding, volume alive. Expect ~5% within 3 sessions.
         score = TECHNICAL_MAX
         expected_move_pct = 5.0
+        expected_horizon_days = 3
     elif energy:
-        # 6: daily rumble, no MTF. Expect a push (~4%), not a rocket.
+        # 6: daily rumble, no quality MTF pair. Expect a push (~4%), not a rocket.
         score = 6.0
         expected_move_pct = 4.0
     elif coil:
@@ -259,6 +264,7 @@ def score_technical_confirmations(
         if "ema20_extended_long" in tags and "near_resistance" in tags:
             score = min(score, 3.0)
             expected_move_pct = 0.0
+            expected_horizon_days = 1
 
     score = round(min(TECHNICAL_MAX, max(0.0, score)), 1)
     match_count = sum(1 for m in top_matches if m["similarity"] >= 0.35)
@@ -284,7 +290,10 @@ def score_technical_confirmations(
         labels.insert(0, text)
 
     if expected_move_pct:
-        labels.append(f"Expect next move ~{expected_move_pct:.0f}%")
+        if expected_horizon_days > 1:
+            labels.append(f"Expect ~{expected_move_pct:.0f}% within {expected_horizon_days} sessions")
+        else:
+            labels.append(f"Expect next move ~{expected_move_pct:.0f}%")
 
     tags = set((snapshot or {}).get("tags", []))
     return {
@@ -299,6 +308,7 @@ def score_technical_confirmations(
         "precision_energy": energy,
         "mtf_precision": mtf,
         "expected_move_pct": expected_move_pct,
+        "expected_horizon_days": expected_horizon_days,
         "formation_alignment": formation_alignment((snapshot or {}).get("formations") or [], side),
         "elliott_alignment": elliott_alignment(tags, side),
     }

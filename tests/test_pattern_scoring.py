@@ -81,13 +81,12 @@ def test_seven_requires_15m_and_1h() -> None:
     assert only_1h["technical_score"] == 6.0
     assert only_1h["mtf_precision"] is False
 
-    both = score_technical_confirmations(
+    both_coils = score_technical_confirmations(
         {"setup_rattle": True, "mtf_15m_coil_ema": True, "mtf_1h_coil_ema": True},
         side="long",
     )
-    assert both["technical_score"] == 7.0
-    assert both["expected_move_pct"] == 5.0
-    assert both["mtf_precision"] is True
+    assert both_coils["technical_score"] == 6.0
+    assert both_coils["mtf_precision"] is False
 
     wedge_round = score_technical_confirmations(
         {"setup_rattle": True, "mtf_15m_wedge": True, "mtf_1h_rounding_ema20": True},
@@ -95,7 +94,21 @@ def test_seven_requires_15m_and_1h() -> None:
     )
     assert wedge_round["technical_score"] == 7.0
     assert wedge_round["expected_move_pct"] == 5.0
-    assert wedge_round["confirmation_labels"][-1] == "Expect next move ~5%"
+    assert wedge_round["expected_horizon_days"] == 3
+    assert wedge_round["mtf_precision"] is True
+    assert wedge_round["confirmation_labels"][-1] == "Expect ~5% within 3 sessions"
+
+    dead = score_technical_confirmations(
+        {
+            "setup_rattle": True,
+            "mtf_15m_wedge": True,
+            "mtf_1h_rounding_ema20": True,
+            "dead_volume": True,
+        },
+        side="long",
+    )
+    assert dead["technical_score"] == 6.0
+    assert dead["expected_move_pct"] == 4.0
 
 
 def test_two_piece_family_with_energy_is_six_without_mtf() -> None:
