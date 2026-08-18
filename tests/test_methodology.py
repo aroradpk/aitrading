@@ -118,7 +118,7 @@ def test_long_reasons_flag_headwinds() -> None:
     assert any("near resistance" in r["text"] for r in headwinds)
 
 
-def test_motherson_aug5_coil_scores_seven() -> None:
+def test_motherson_aug5_coil_is_watch_not_seven() -> None:
     path = ohlcv_daily_dir() / "MOTHERSON.parquet"
     if not path.exists():
         return
@@ -130,4 +130,4 @@ def test_motherson_aug5_coil_scores_seven() -> None:
         side="long",
         symbol="MOTHERSON",
     )
-    assert setup_base["technical_score"] >= 7.0
+    assert setup_base["technical_score"] <= 5.0

@@ -6,14 +6,17 @@ from app.engines.technical import snapshot_similarity
 
 TECHNICAL_MAX = 7.0
 
-# Core stack can reach 7 on the coil (dead-volume consolidation), not the breakout bar.
-# Elliott / formations / candles remain cherries. Expansion is not required.
+# Hit-and-trial on 20 stocks (day-before |next|>=5% vs quiet sample): no rule hits
+# 80% recall at 5% FPR. Coil setups are *more* common on quiet days (anti-predictive).
+# Pareto-best interpretable 7: EMA + S/R-Fib + expansion energy (FPR ~4–5%, recall ~11–14%).
+# Coil is a watch cherry, not the alarm. Elliott / formations / candles stay cherries.
 CORE_WEIGHTS = {
     "ema_structure": 2.5,
     "sr_fib": 2.5,
-    "coil": 2.0,
+    "energy": 2.0,
 }
 CHERRY_WEIGHTS = {
+    "coil": 0.5,
     "elliott": 0.5,
     "formation": 0.5,
     "candle": 0.5,
@@ -138,7 +141,7 @@ def historical_pattern_bonus(
 
 
 def has_precision_energy(confirmations: dict[str, bool]) -> bool:
-    """High conviction requires expansion energy (keeps quiet-day FPR near 5%)."""
+    """Quiet-day FPR gate: vol >= 2x and range >= 1.6x ATR. Best ~14% recall at ~5% FPR."""
     return bool(confirmations.get("vol_expansion") and confirmations.get("range_expansion"))
 
 
@@ -176,6 +179,9 @@ def _layer_scores(
     if sr_fib:
         layers["sr_fib"] = CORE_WEIGHTS["sr_fib"]
 
+    if has_precision_energy(confirmations):
+        layers["energy"] = CORE_WEIGHTS["energy"]
+
     ell_state = elliott_alignment(tags, side)
     if confirmations.get("elliott_conflict") or ell_state == "conflict":
         layers["elliott"] = 0.0
@@ -190,7 +196,7 @@ def _layer_scores(
         layers["formation"] = CHERRY_WEIGHTS["formation"]
 
     if is_coil_setup(confirmations):
-        layers["coil"] = CORE_WEIGHTS["coil"]
+        layers["coil"] = CHERRY_WEIGHTS["coil"]
 
     if confirmations.get("mtf_15m_wedge") or confirmations.get("mtf_1h_rounding_ema20"):
         layers["mtf"] = CHERRY_WEIGHTS["mtf"]
@@ -223,15 +229,15 @@ def score_technical_confirmations(
     bonus, top_matches = historical_pattern_bonus(confirmations, historical_moves or [], side=side)
     score += bonus
 
-    # Coil at EMA + S/R-with-Fib is the 7. Volume expansion is the late breakout bar.
-    if not layers.get("sr_fib") or not layers.get("ema_structure") or not layers.get("coil"):
-        score = min(score, 4.0)
+    # 7 only when EMA + S/R-Fib + energy all fire. Coil-only is a watch (cap 5).
+    if not layers.get("sr_fib") or not layers.get("ema_structure") or not layers.get("energy"):
+        score = min(score, 5.0 if is_coil_setup(confirmations) else 4.0)
 
-    # Expansion bar after the coil (gap / extended / resistance) is late — do not require catching it.
+    # Blow-off: already extended into resistance — not a fresh 7 even if energy prints.
     if snapshot and energy:
         tags = set(snapshot.get("tags", []))
-        late_long = side == "long" and ("ema20_extended_long" in tags or "near_resistance" in tags)
-        late_short = side == "short" and ("ema20_extended_short" in tags or "near_support" in tags)
+        late_long = side == "long" and ("ema20_extended_long" in tags and "near_resistance" in tags)
+        late_short = side == "short" and ("ema20_extended_short" in tags and "near_support" in tags)
         if late_long or late_short:
             score = min(score, 4.0)
 
@@ -251,7 +257,8 @@ def score_technical_confirmations(
     pretty = {
         "ema_structure": "EMA / trend structure",
         "sr_fib": "S/R with Fibonacci",
-        "coil": "Rangebound coil (pre-breakout)",
+        "energy": "Volume + range expansion",
+        "coil": "Rangebound coil cherry",
         "elliott": "Elliott wave cherry",
         "formation": "Chart formation cherry",
         "mtf": "Intraday MTF cherry",

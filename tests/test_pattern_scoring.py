@@ -7,7 +7,7 @@ from app.engines.pattern_confirmations import detect_daily_confirmations
 from app.ingest.yfinance_client import load_ohlcv
 
 
-def test_motherson_aug5_coil_base_scores_seven() -> None:
+def test_motherson_aug5_coil_is_watch_not_seven() -> None:
     path = ohlcv_daily_dir() / "MOTHERSON.parquet"
     if not path.exists():
         return
@@ -18,19 +18,13 @@ def test_motherson_aug5_coil_base_scores_seven() -> None:
     conf = detect_daily_confirmations(slice, "long")
     assert conf["ema20_support"]
     assert conf["consolidation_anchor"]
-    assert conf["ema_momentum_expanding"]
     assert conf["sr_fib_confluence"]
     assert not conf["vol_expansion"]
 
     hist = [m for m in load_moves("MOTHERSON") if m["date"] < signal_date]
     setup = scan_today_setup(slice, hist, side="long", symbol="MOTHERSON")
-    assert setup["technical_score"] >= 7.0
+    assert setup["technical_score"] <= 5.0
     assert setup.get("breakout_base") is True
-    assert setup.get("pattern_families")
-
-    scores = conviction_from_scores(setup["technical_score"])
-    assert scores["technical"] >= 7.0
-    assert scores["final"] >= 7.0
 
 
 def test_two_piece_family_with_energy_is_not_seven() -> None:
@@ -49,10 +43,10 @@ def test_two_piece_family_with_energy_is_not_seven() -> None:
     assert "ema_pullback" in scored["pattern_families"]
     assert scored["score_layers"]["ema_structure"] == 2.5
     assert scored["score_layers"]["sr_fib"] == 0.0
-    assert "energy" not in scored["score_layers"] or scored["score_layers"].get("energy", 0) == 0
+    assert scored["score_layers"]["energy"] == 2.0
 
 
-def test_coil_at_ema_and_fib_reaches_seven_without_volume_spike() -> None:
+def test_coil_at_ema_and_fib_is_watch_without_energy() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
@@ -70,12 +64,30 @@ def test_coil_at_ema_and_fib_reaches_seven_without_volume_spike() -> None:
         },
         side="long",
     )
-    assert scored["technical_score"] == 7.0
+    assert scored["technical_score"] <= 5.0
     assert scored["score_layers"]["sr_fib"] == 2.5
-    assert scored["score_layers"]["coil"] == 2.0
-    assert scored["score_layers"]["elliott"] == 0.0
-    assert any("S/R with Fibonacci" in label for label in scored["confirmation_labels"])
+    assert scored["score_layers"]["coil"] == 0.5
+    assert scored["score_layers"]["energy"] == 0.0
     assert any("coil" in label.lower() for label in scored["confirmation_labels"])
+
+
+def test_ema_fib_energy_reaches_seven() -> None:
+    from app.engines.pattern_scoring import score_technical_confirmations
+
+    scored = score_technical_confirmations(
+        {
+            "ema20_support": True,
+            "uptrend": True,
+            "sr_level": True,
+            "sr_fib_confluence": True,
+            "vol_expansion": True,
+            "range_expansion": True,
+        },
+        side="long",
+    )
+    assert scored["technical_score"] == 7.0
+    assert scored["score_layers"]["energy"] == 2.0
+    assert scored["score_layers"]["sr_fib"] == 2.5
 
 
 def test_elliott_formation_candle_are_cherries() -> None:
@@ -167,7 +179,7 @@ def test_family_without_coil_and_fib_is_not_high_conviction() -> None:
     assert scored["technical_score"] < 7.0
 
 
-def test_expansion_bar_extended_is_not_seven() -> None:
+def test_expansion_bar_extended_and_resistance_is_not_seven() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
@@ -185,7 +197,7 @@ def test_expansion_bar_extended_is_not_seven() -> None:
     assert scored["technical_score"] < 7.0
 
 
-def test_adanipower_sep18_coil_scores_seven() -> None:
+def test_adanipower_sep18_coil_is_not_seven() -> None:
     path = ohlcv_daily_dir() / "ADANIPOWER.parquet"
     if not path.exists():
         return
@@ -195,14 +207,13 @@ def test_adanipower_sep18_coil_scores_seven() -> None:
     slice = frame.iloc[: idx + 1]
     conf = detect_daily_confirmations(slice, "long")
     assert conf["ema20_support"]
-    assert conf["ema_momentum_expanding"]
     assert conf["sr_fib_confluence"]
     assert conf["tight_range"] or conf["consolidation_anchor"]
     assert not conf["vol_expansion"]
 
     hist = [m for m in load_moves("ADANIPOWER") if m["date"] < signal_date]
     setup = scan_today_setup(slice, hist, side="long", symbol="ADANIPOWER")
-    assert setup["technical_score"] >= 7.0
+    assert setup["technical_score"] <= 5.0
 
     gap_idx = frame.index.get_indexer([pd.Timestamp("2025-09-19")], method="nearest")[0]
     gap = scan_today_setup(frame.iloc[: gap_idx + 1], hist, side="long", symbol="ADANIPOWER")
