@@ -31,6 +31,10 @@ def test_next_session_mfe_from_setup_close() -> None:
     assert result is not None
     assert result["next_date"] == "2026-08-11"
     assert result["mfe_pct"] == 4.0
+    assert result["close_abs_pct"] == 2.0
+    assert result["one_way"] is True
+    assert result["hit_move_05"] is True
+    assert result["hit_trend_05"] is True
     assert next_session_result(frame, "2026-08-11") is None
 
 
@@ -56,5 +60,5 @@ def test_rule_stats_trust_only_at_n20(tmp_path, monkeypatch) -> None:
     stats = recompute_rule_stats()
     assert stats["rules"]["session_seven"]["n"] == 1
     assert stats["rules"]["session_seven"]["trusted"] is False
-    assert "Rare EOD" in stats["advice"]
+    assert "Movement screener" in stats["advice"]
     assert load_ledger()[0]["mfe_pct"] == 2.4

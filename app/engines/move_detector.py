@@ -222,26 +222,32 @@ def scan_today_setup(
     families = scored.get("pattern_families") or []
 
     bias = position_bias(current, focus=side)
+    prev_close = float(frame["close"].iloc[-2]) if len(frame) > 1 else 0.0
+    last_range_pct = (
+        (float(frame["high"].iloc[-1]) - float(frame["low"].iloc[-1])) / prev_close * 100 if prev_close else 0.0
+    )
     trade = target_trade_payload(
         confirmations,
         rsi=current.get("rsi_14"),
         target_pct=float(adr.get("target_range_pct") or 0.0),
+        range_pct=last_range_pct,
     )
     expected = float(trade.get("expected_move_pct") or 0.0)
     horizon_days = int(trade.get("expected_horizon_days") or 1)
     for text in reversed(trade.get("reasons") or []):
         scored.setdefault("confirmation_labels", []).insert(0, text)
+    move_watch = bool(trade.get("move_watch"))
     if (
         settings.technical.require_trend_for_setup
         and technical_score < 6.0
         and not scored.get("breakout_base")
-        and not trade.get("rare_eod")
+        and not move_watch
     ):
         if side == "long" and bias != "long":
             technical_score = round(min(technical_score, 3.0), 1)
         elif side == "short" and bias != "short":
             technical_score = round(min(technical_score, 3.0), 1)
-    if not scored.get("breakout_base") and not trade.get("rare_eod"):
+    if not scored.get("breakout_base") and not move_watch:
         technical_score = _apply_side_context_caps(technical_score, current, side)
     horizon = "next_session"
     target = float(adr.get("target_range_pct") or adr.get("adr20_pct") or 0.0)
@@ -263,9 +269,11 @@ def scan_today_setup(
         "expected_move_pct": expected,
         "expected_horizon_days": horizon_days,
         "session_seven": False,
-        "target_watch": bool(trade.get("target_watch")),
-        "rare_eod": bool(trade.get("rare_eod")),
-        "rare_eod_score": float(trade.get("rare_eod_score") or 0.0),
+        "target_watch": move_watch,
+        "move_watch": move_watch,
+        "move_score": float(trade.get("move_score") or 0.0),
+        "rare_eod": move_watch,
+        "rare_eod_score": float(trade.get("move_score") or 0.0),
         "mtf_precision": bool(scored.get("mtf_precision")),
         "intraday": intraday,
         "adr": adr,
