@@ -108,6 +108,7 @@ def detect_energy_triggers(frame: pd.DataFrame) -> dict[str, bool]:
         "late_bar": False,
         "strong_close": False,
         "dead_volume": False,
+        "live_rvol": False,
     }
     if len(frame) < 25:
         return empty
@@ -130,6 +131,7 @@ def detect_energy_triggers(frame: pd.DataFrame) -> dict[str, bool]:
         "late_bar": day_pct >= 5.0,
         "strong_close": loc >= 0.7,
         "dead_volume": vr <= 0.85,
+        "live_rvol": vr >= 1.5,
     }
 
 
@@ -301,6 +303,7 @@ def confirmation_labels(confirmations: dict[str, bool]) -> list[str]:
         "late_bar": "Late 5% bar — already printed, not a 7",
         "strong_close": "Close in top 30% of day range",
         "dead_volume": "Dead volume coil (<=0.85x 20d avg)",
+        "live_rvol": "Volume >= 1.5x 20d avg",
         "mtf_15m_wedge": "15m compressing wedge",
         "mtf_15m_coil_ema": "15m coil at EMA20",
         "mtf_15m_base": "15m base at EMA20 (coil / flag / range / wedge / rising — name does not matter)",

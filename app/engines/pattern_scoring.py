@@ -7,10 +7,10 @@ from app.engines.technical import snapshot_similarity
 
 TECHNICAL_MAX = 7.0
 
-# 5 = expect ~3% next day (daily coil). 6 = expect ~4% next day (daily rumble).
-# 7 = rumble + a 15m base AND a 1h base at EMA (any shape: coil/flag/range/wedge/rising/rounding).
-# Volume not dead. Expect ~5% within 3 sessions. Hourly Fib is not a 7-gate.
-# A 5% close is late and is never a 7. Hourly Fib is not a 7-gate.
+# 5 = coil watch. 6 = daily rumble. 7 = rumble that is DISTINCT from fakes:
+# wide vs ATR, live volume, not a tight coil, not extended into resistance.
+# 15m/1h base, Fib, EMA support, uptrend appear on hits AND fakes — they are not a 7-gate.
+# Next session only (not a 3-day hold).
 CORE_WEIGHTS = {
     "ema_structure": 2.5,
     "sr_fib": 2.5,
@@ -141,8 +141,22 @@ def historical_pattern_bonus(
     return bonus, matches[:5]
 
 
+def is_session_seven(confirmations: dict[str, bool], snapshot: dict | None = None) -> bool:
+    """Next-session 7: traits that differ on hits vs fakes. Commons (Fib, EMA, 15m/1h 'base', uptrend) are not used."""
+    tags = set((snapshot or {}).get("tags") or [])
+    return bool(
+        confirmations.get("setup_rattle")
+        and confirmations.get("range_expansion")
+        and confirmations.get("live_rvol")
+        and not confirmations.get("tight_range")
+        and not confirmations.get("late_bar")
+        and "ema20_extended_long" not in tags
+        and "near_resistance" not in tags
+    )
+
+
 def has_precision_energy(confirmations: dict[str, bool]) -> bool:
-    """Daily rumble — maps to tech 6 (4% expect) unless 15m/1h also fire."""
+    """Daily rumble — maps to tech 6 unless is_session_seven also fires."""
     return bool(confirmations.get("setup_rattle"))
 
 
@@ -236,25 +250,19 @@ def score_technical_confirmations(
 
     late = bool(confirmations.get("late_bar"))
     coil = is_coil_setup(confirmations)
-    mtf = has_mtf_precision(confirmations)
-    dead = bool(confirmations.get("dead_volume"))
+    session_seven = is_session_seven(confirmations, snapshot)
     expected_move_pct = 0.0
     expected_horizon_days = 1
     if late:
-        # The 5% day already printed. Cap so this bar is never a 7.
         score = min(score, 4.0)
         expected_move_pct = 0.0
-    elif energy and mtf and not dead:
-        # 7: rumble + 15m base + 1h base (any shape). Expect ~5% within 3 sessions.
+    elif session_seven:
         score = TECHNICAL_MAX
-        expected_move_pct = 5.0
-        expected_horizon_days = 3
+        expected_move_pct = 2.0
     elif energy:
-        # 6: daily rumble, no quality MTF pair. Expect a push (~4%), not a rocket.
         score = 6.0
         expected_move_pct = 4.0
     elif coil:
-        # 5: daily coil. Expect ~3%.
         score = min(max(score, 5.0), 5.0)
         expected_move_pct = 3.0
     else:
@@ -295,7 +303,11 @@ def score_technical_confirmations(
         if expected_horizon_days > 1:
             labels.append(f"Expect ~{expected_move_pct:.0f}% within {expected_horizon_days} sessions")
         else:
-            labels.append(f"Expect next move ~{expected_move_pct:.0f}%")
+            labels.append(
+                f"Expect next session to trade ≥{expected_move_pct:.0f}%"
+                if score >= TECHNICAL_MAX
+                else f"Expect next move ~{expected_move_pct:.0f}%"
+            )
 
     tags = set((snapshot or {}).get("tags", []))
     return {
@@ -308,7 +320,8 @@ def score_technical_confirmations(
         "match_count": match_count,
         "breakout_base": is_breakout_base(confirmations),
         "precision_energy": energy,
-        "mtf_precision": mtf,
+        "session_seven": session_seven,
+        "mtf_precision": has_mtf_precision(confirmations),
         "expected_move_pct": expected_move_pct,
         "expected_horizon_days": expected_horizon_days,
         "formation_alignment": formation_alignment((snapshot or {}).get("formations") or [], side),

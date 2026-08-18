@@ -15,7 +15,7 @@
 - **Backtest:** `python scripts/run_backtest.py` (~1–2 min). Tuning reuses one signal pass: `python scripts/tune_backtest.py`.
 - **Position focus:** `technical.position_focus` in settings (`long` | `short` | `both`); intraday block for tighter short proxy on daily bars.
 - **Conviction model:** Technical **0–7** + research (fundamentals + events/meetings) **0–3** = conviction **0–10**. Theme is a separate **1–5 bonus** column (`theme_bonus`), not in conviction.
-- **Pattern scoring:** `app/engines/pattern_scoring.py` — **5** = daily coil, expect ~**3% next day**. **6** = daily rumble, expect ~**4% next day**. **7** = rumble + a **15m base and a 1h base at EMA20**. The base can be a coil, flag, parallel range, triangle, wedge, rounding, or rising structure — **do not require one named pattern**. Volume not dead. Expect ~**5% within 3 sessions**. Hourly Fib is not a 7-gate. Late ±5% close is never a 7. Report **CORRECT %** vs **FALSE ALARM %** for 7 and for 5–7 combined (`python scripts/eval_call_quality.py`).
+- **Pattern scoring:** **5** = coil watch (~3%). **6** = daily rumble (~4% claim, noisy). **7** = next-session list only: rumble + day range ≥1.6× ATR + volume ≥1.5× + **not** a tight coil + **not** extended into resistance. Do **not** use Fib / EMA support / uptrend / 15m-1h “any base” as a 7-gate — those are common to hits and fakes. Judge 7 on **next session** traded range (not a 3-day hold).
 - **Validate big moves:** `python scripts/validate_prior_day_moves.py --symbols ABB,MOTHERSON,ADANIPOWER`
 - **Charts:** `python scripts/build_charts.py` (~7 min, not committed).
 - **Transcripts:** `python scripts/fetch_transcripts.py` (download only when `offline_mode: false`).
