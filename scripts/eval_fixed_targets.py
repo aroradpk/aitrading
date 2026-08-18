@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Count 7-trades vs next-session hits on the fixed per-scrip targets.
+"""Legacy live-volume vs next-session range counts.
 
-HDFC 2%, BAJFINANCE 3%, M&M 3%, Nifty 1%, Bank Nifty 1.2%.
-One trade per name per setup day (live volume 7). Correct = next session
-(high-low)/prior close >= target. Also reports MFE from setup close.
+Prefer scripts/study_target_days.py — days that already printed the book % rise,
+with technical flags, newest first. This file is the old 7-gate scoreboard.
 """
 
 from __future__ import annotations

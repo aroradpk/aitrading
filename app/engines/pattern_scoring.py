@@ -7,10 +7,8 @@ from app.engines.technical import snapshot_similarity
 
 TECHNICAL_MAX = 7.0
 
-# 5 = coil watch. 6 = daily rumble. 7 = rumble that is DISTINCT from fakes:
-# wide vs ATR, live volume, not a tight coil, not extended into resistance.
-# 15m/1h base, Fib, EMA support, uptrend appear on hits AND fakes — they are not a 7-gate.
-# Next session only (not a 3-day hold).
+# Layer sum only (cap 7). Do not force 5/6/7 from coil / rumble / live volume.
+# Those flags stay as descriptive confirmations. Late ±5% close bar still caps at 4.
 CORE_WEIGHTS = {
     "ema_structure": 2.5,
     "sr_fib": 2.5,
@@ -142,14 +140,12 @@ def historical_pattern_bonus(
 
 
 def is_session_seven(confirmations: dict[str, bool], snapshot: dict | None = None) -> bool:
-    """7 = expect next session to print this name's fixed range target. Live volume is the portable factor."""
-    from app.engines.adr import is_adr_expansion_setup
-
-    return is_adr_expansion_setup(confirmations, snapshot)
+    """No named setup is a 7. Kept so callers do not invent a live-volume gate."""
+    return False
 
 
 def has_precision_energy(confirmations: dict[str, bool]) -> bool:
-    """Daily rumble — maps to tech 6 unless is_session_seven also fires."""
+    """Wide-range rumble flag (descriptive). Does not assign a 6."""
     return bool(confirmations.get("setup_rattle"))
 
 
@@ -243,34 +239,16 @@ def score_technical_confirmations(
     score += bonus
 
     late = bool(confirmations.get("late_bar"))
-    coil = is_coil_setup(confirmations)
-    session_seven = is_session_seven(confirmations, snapshot)
-    typical = float((adr or {}).get("adr20_pct") or 0.0)
-    expand = float((adr or {}).get("target_range_pct") or 0.0)
+    session_seven = False
     expected_move_pct = 0.0
     expected_horizon_days = 1
     if late:
         score = min(score, 4.0)
-        expected_move_pct = 0.0
-    elif session_seven:
-        score = TECHNICAL_MAX
-        expected_move_pct = expand or typical
-    elif energy:
-        score = 6.0
-        expected_move_pct = typical or 0.0
-    elif coil:
-        score = min(max(score, 5.0), 5.0)
-        expected_move_pct = typical or 0.0
-    else:
-        score = min(score, 4.0)
 
-    # Only fade a long chase when there is no rumble and no family.
     if not energy and not late and side == "long" and snapshot and not families:
         tags = set(snapshot.get("tags", []))
         if "ema20_extended_long" in tags and "near_resistance" in tags:
             score = min(score, 3.0)
-            expected_move_pct = 0.0
-            expected_horizon_days = 1
 
     score = round(min(TECHNICAL_MAX, max(0.0, score)), 1)
     match_count = sum(1 for m in top_matches if m["similarity"] >= 0.35)
@@ -282,7 +260,7 @@ def score_technical_confirmations(
     pretty = {
         "ema_structure": "EMA / trend structure",
         "sr_fib": "S/R with Fibonacci",
-        "energy": "Setup rumble (range >= 2.5%, close not ±5%)",
+        "energy": "Wide-range rumble flag (range >= 2.5%, close not ±5%)",
         "coil": "Rangebound coil cherry",
         "elliott": "Elliott wave cherry",
         "formation": "Chart formation cherry",
@@ -295,11 +273,10 @@ def score_technical_confirmations(
     for text in reversed(layer_labels):
         labels.insert(0, text)
 
-    if expected_move_pct:
-        if session_seven:
-            labels.append(f"Expect next session range ≥{expected_move_pct:.2f}% (fixed target for this name)")
-        else:
-            labels.append(f"Typical ADR ~{(adr or {}).get('adr20_pct', expected_move_pct):.2f}% — not an expansion call")
+    if (adr or {}).get("target_range_pct"):
+        labels.append(
+            f"Book target {float(adr['target_range_pct']):.2f}% is a study bar, not a trade signal"
+        )
 
     tags = set((snapshot or {}).get("tags", []))
     return {

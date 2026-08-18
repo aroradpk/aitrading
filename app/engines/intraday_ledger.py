@@ -1,8 +1,7 @@
 """Learn from outcomes: log every setup, fill next-session result, refresh hit rates.
 
 This is not a neural net. After each session we record what we saw and what price
-did next. When a rule has enough samples, we keep it only if next-session hit rate
-stays above chance. That is how the 7-list evolves.
+did next. Flags are descriptive — nothing here assigns a 5/6/7 trade setup.
 """
 
 from __future__ import annotations
@@ -116,8 +115,8 @@ def recompute_rule_stats() -> dict:
         "resolved_rows": len(rows),
         "min_n_to_trust": MIN_N_TO_TRUST,
         "note": (
-            "Hit = next session range >= that name's fixed target "
-            "(HDFC 2%, BAJ 3%, M&M 3%, Nifty 1%, Bank 1.2%). Trusted only at n>=20."
+            "Logged flags vs next-session range. Book targets: HDFC 2%, BAJ 3%, "
+            "M&M 3%, Nifty 1%, Bank 1.2%. Trusted only at n>=20. No 7-gate."
         ),
         "rules": {},
     }
@@ -151,22 +150,11 @@ def recompute_rule_stats() -> dict:
         if col in frame.columns:
             stats["rules"][col] = pack(frame[col].fillna(False).astype(bool), col)
 
-    base_hit = stats["rules"]["all_logged"].get("hit_adr")
-    seven = stats["rules"].get("session_seven") or {}
     live = stats["rules"].get("live_rvol") or {}
-    if live.get("trusted") and base_hit is not None and live.get("hit_adr") is not None:
-        if live["hit_adr"] > base_hit:
-            stats["advice"] = (
-                f"live_rvol beats chance at the fixed range targets "
-                f"({live['hit_adr']}% vs {base_hit}% all days). Keep it as the expansion 7."
-            )
-        else:
-            stats["advice"] = "live_rvol is not beating the fixed targets at n>=20 — drop it as a 7-gate."
-    else:
-        stats["advice"] = (
-            f"Need n>={MIN_N_TO_TRUST} resolved live_rvol rows before changing the ADR 7 "
-            f"(have {live.get('n', 0)}; session_seven n={seven.get('n', 0)})."
-        )
+    stats["advice"] = (
+        "No named setup is a 7. Use scripts/study_target_days.py for days that "
+        f"already printed the book target. live_rvol n={live.get('n', 0)}."
+    )
     stats_path = intraday_rule_stats_path()
     stats_path.write_text(json.dumps(stats, indent=2), encoding="utf-8")
     return stats
@@ -187,7 +175,7 @@ def log_today_setups(setups: list[dict]) -> int:
             "side": setup.get("position_side"),
             "technical_score": setup.get("technical_score"),
             "expected_move_pct": setup.get("expected_move_pct"),
-            "session_seven": bool(setup.get("session_seven") or (setup.get("technical_score") == 7)),
+            "session_seven": False,
             "adr20_pct": (setup.get("adr") or {}).get("adr20_pct") or setup.get("adr20_pct"),
             "target_range_pct": (setup.get("adr") or {}).get("target_range_pct") or setup.get("target_range_pct"),
             "rattle": bool(conf.get("setup_rattle")),
@@ -206,8 +194,6 @@ def log_today_setups(setups: list[dict]) -> int:
 def backfill_ledger(*, lookback_bars: int = 60) -> int:
     """Replay recent daily bars into the ledger so hit rates can start before live days pile up."""
     from app.engines.pattern_confirmations import detect_daily_confirmations
-    from app.engines.pattern_scoring import is_session_seven
-    from app.engines.technical import build_snapshot
 
     existing = {(r.get("symbol"), r.get("setup_date"), r.get("side")) for r in load_ledger()}
     n = 0
@@ -221,7 +207,6 @@ def backfill_ledger(*, lookback_bars: int = 60) -> int:
         for i in range(start, len(frame) - 1):
             slice_frame = frame.iloc[: i + 1]
             setup_date = slice_frame.index[-1].date().isoformat()
-            snapshot = build_snapshot(slice_frame)
             for side in ("long", "short"):
                 key = (symbol, setup_date, side)
                 if key in existing:
@@ -231,9 +216,9 @@ def backfill_ledger(*, lookback_bars: int = 60) -> int:
                     "symbol": symbol,
                     "setup_date": setup_date,
                     "side": side,
-                    "technical_score": 7 if is_session_seven(conf, snapshot) else None,
-                    "expected_move_pct": 2.0 if is_session_seven(conf, snapshot) else None,
-                    "session_seven": is_session_seven(conf, snapshot),
+                    "technical_score": None,
+                    "expected_move_pct": None,
+                    "session_seven": False,
                     "rattle": bool(conf.get("setup_rattle")),
                     "range_expansion": bool(conf.get("range_expansion")),
                     "live_rvol": bool(conf.get("live_rvol")),

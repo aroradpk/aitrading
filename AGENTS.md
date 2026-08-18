@@ -13,9 +13,9 @@
 - **Start API:** `./scripts/cloud-agent-start.sh` or `uvicorn app.main:app --host 0.0.0.0 --port 8000`.
 - **Tests:** `pytest`.
 - **Trading book:** 5 scrips in `config/intraday_universe.json` (HDFCBANK, BAJFINANCE, M&M, NIFTY_50, NIFTY_BANK). Do not scan 20–40 names for **intraday**. `config/nifty_next_50.json` is kept for a later **swing** universe only.
-- **Learn loop:** Watchlist writes `data/intraday/ledger.jsonl`. Hit = next session range ≥ that name's **fixed target** (HDFC 2%, BAJ 3%, M&M 3%, Nifty 1%, Bank 1.2%). `python scripts/eval_fixed_targets.py` prints trades / correct / false signals.
+- **Learn loop:** Watchlist can still write `data/intraday/ledger.jsonl`. There is **no 5/6/7 trade-setup gate**. To study days that already printed the book % (HDFC 2%, BAJ 3%, M&M 3%, Nifty 1%, Bank 1.2% as **high vs prior close**), run `python scripts/study_target_days.py`.
 - **ADR / targets:** ADR20 is context only. Targets live on each instrument in `config/intraday_universe.json`.
-- **Pattern scoring:** **5** = coil. **6** = rumble. **7** = live volume ≥1.5× on the setup day (one trade per name per day).
+- **Pattern scoring:** Layer sum only (cap 7). Coil / rumble / live volume are flags, not forced 5/6/7. Late ±5% close bar still caps at 4.
 - **Validate big moves:** `python scripts/validate_prior_day_moves.py` (defaults to the 3 stocks).
 - **Charts:** `python scripts/build_charts.py` (not committed).
 - **Transcripts:** `python scripts/fetch_transcripts.py` (download only when `offline_mode: false`).

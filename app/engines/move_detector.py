@@ -221,25 +221,22 @@ def scan_today_setup(
     families = scored.get("pattern_families") or []
 
     bias = position_bias(current, focus=side)
-    energy = bool(scored.get("precision_energy"))
     expected = float(scored.get("expected_move_pct") or 0.0)
     horizon_days = int(scored.get("expected_horizon_days") or 1)
-    ladder = energy or expected > 0
     if (
         settings.technical.require_trend_for_setup
         and technical_score < 6.0
         and not scored.get("breakout_base")
-        and not ladder
     ):
         if side == "long" and bias != "long":
             technical_score = round(min(technical_score, 3.0), 1)
         elif side == "short" and bias != "short":
             technical_score = round(min(technical_score, 3.0), 1)
 
-    if not ladder and not scored.get("breakout_base"):
+    if not scored.get("breakout_base"):
         technical_score = _apply_side_context_caps(technical_score, current, side)
     horizon = "next_session"
-    target = expected or float(adr.get("target_range_pct") or adr.get("adr20_pct") or 0.0)
+    target = float(adr.get("target_range_pct") or adr.get("adr20_pct") or 0.0)
 
     return {
         "as_of": frame.index[-1].date().isoformat(),

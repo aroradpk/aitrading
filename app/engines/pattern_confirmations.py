@@ -100,7 +100,7 @@ def detect_rsi_60_reclaim(frame: pd.DataFrame, lookback: int = 8) -> bool:
 
 
 def detect_energy_triggers(frame: pd.DataFrame) -> dict[str, bool]:
-    """Setup rumble vs late 5% bar. A 7 is the rumble (wide range, close not yet ±5%)."""
+    """Wide-range rumble vs late 5% close bar. Flags only — not a 6/7 score."""
     empty = {
         "vol_expansion": False,
         "range_expansion": False,
@@ -300,7 +300,7 @@ def confirmation_labels(confirmations: dict[str, bool]) -> list[str]:
         "vol_expansion": "Volume >= 2.0x 20d avg (breakout bar)",
         "range_expansion": "Day range >= 1.6x ATR (late expansion bar)",
         "setup_rattle": "Setup rumble: range >= 2.5% of price, close not yet ±5%",
-        "late_bar": "Late 5% bar — already printed, not a 7",
+        "late_bar": "Late 5% close bar — already printed, not a setup",
         "strong_close": "Close in top 30% of day range",
         "dead_volume": "Dead volume coil (<=0.85x 20d avg)",
         "live_rvol": "Volume >= 1.5x 20d avg",

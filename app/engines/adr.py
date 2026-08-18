@@ -1,11 +1,10 @@
 """Per-scrip range targets on the 5-scrip book.
 
-ADR20 is still reported for context. The *trade* target is a fixed next-session
-range for each name (HDFC 2%, BAJ/M&M 3%, Nifty 1%, Bank Nifty 1.2%) — not 5%
-and not 1.25× ADR.
+ADR20 is still reported for context. Each name has a fixed % bar used to
+find days that actually printed that move (HDFC 2%, BAJ/M&M 3%, Nifty 1%,
+Bank Nifty 1.2%) — not 5% and not 1.25× ADR.
 
-Hit = next session (high-low)/prior close >= that name's target.
-A 7 fires on setup-day live volume (>=1.5× 20d).
+There is no live-volume 7-gate. Study those days with scripts/study_target_days.py.
 """
 
 from __future__ import annotations
@@ -89,10 +88,8 @@ def snapshot_adr(frame: pd.DataFrame, *, symbol: str | None = None) -> dict[str,
 
 
 def is_adr_expansion_setup(confirmations: dict[str, bool], snapshot: dict | None = None) -> bool:
-    """Setup-day live volume is the portable lift vs next-session range hitting the name's target."""
-    if confirmations.get("late_bar"):
-        return False
-    return bool(confirmations.get("live_rvol"))
+    """Unused as a score gate. live_rvol remains a descriptive confirmation."""
+    return False
 
 
 def next_session_range_hit(frame: pd.DataFrame, setup_date: str, *, symbol: str | None = None) -> dict | None:
@@ -155,9 +152,9 @@ def build_adr_profiles() -> dict[str, Any]:
             "(HDFC 2%, BAJFINANCE 3%, M&M 3%, Nifty 1%, Bank Nifty 1.2%)."
         ),
         "expansion_factor": {
-            "name": "live_rvol",
-            "rule": "Volume >= 1.5x 20-day average on the setup day",
-            "note": "A 7 is one trade per name per setup day. Correct = next session range hits the fixed target.",
+            "name": "none",
+            "rule": "No named setup assigns a 7",
+            "note": "Find days where high vs prior close printed the name's target, then inspect technicals.",
         },
         "instruments": instruments,
     }
