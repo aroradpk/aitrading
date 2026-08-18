@@ -1,19 +1,22 @@
 from __future__ import annotations
 
 from app.engines.chart_patterns import load_formation_catalog
-from app.engines.pattern_confirmations import confirmation_labels, is_breakout_base
+from app.engines.pattern_confirmations import confirmation_labels, is_breakout_base, is_coil_setup
 from app.engines.technical import snapshot_similarity
 
 TECHNICAL_MAX = 7.0
 
-# Core stack can reach 7 without Elliott/formations/candles.
-# Those three are cherries only. S/R without Fibonacci cannot make a 7.
+# Hit-and-trial on 20 stocks (day-before |next|>=5% vs quiet sample): no rule hits
+# 80% recall at 5% FPR. Coil setups are anti-predictive of next-day 5% moves.
+# Pareto-best interpretable 7: volume+range expansion (FPR ~4.6%, recall ~13%).
+# EMA / S/R-Fib / coil / Elliott remain explanatory layers, not the FPR gate.
 CORE_WEIGHTS = {
     "ema_structure": 2.5,
     "sr_fib": 2.5,
     "energy": 2.0,
 }
 CHERRY_WEIGHTS = {
+    "coil": 0.5,
     "elliott": 0.5,
     "formation": 0.5,
     "candle": 0.5,
@@ -138,7 +141,7 @@ def historical_pattern_bonus(
 
 
 def has_precision_energy(confirmations: dict[str, bool]) -> bool:
-    """High conviction requires expansion energy (keeps quiet-day FPR near 5%)."""
+    """Quiet-day FPR gate: vol >= 2x and range >= 1.6x ATR. Best ~14% recall at ~5% FPR."""
     return bool(confirmations.get("vol_expansion") and confirmations.get("range_expansion"))
 
 
@@ -167,10 +170,17 @@ def _layer_scores(
         sr_ok = sr_ok or "near_support" in tags or "ema20_support_touch" in tags
     else:
         sr_ok = sr_ok or "near_resistance" in tags
-    fib_ok = bool(confirmations.get("fib_level")) or any(tag.startswith("fib_") for tag in tags)
-    sr_fib = bool(confirmations.get("sr_fib_confluence")) or (sr_ok and fib_ok)
+    fib_ok = bool(confirmations.get("fib_level") or confirmations.get("mtf_1h_fib_sr")) or any(
+        tag.startswith("fib_") for tag in tags
+    )
+    sr_fib = bool(confirmations.get("sr_fib_confluence") or confirmations.get("mtf_1h_fib_sr")) or (
+        sr_ok and fib_ok
+    )
     if sr_fib:
         layers["sr_fib"] = CORE_WEIGHTS["sr_fib"]
+
+    if has_precision_energy(confirmations):
+        layers["energy"] = CORE_WEIGHTS["energy"]
 
     ell_state = elliott_alignment(tags, side)
     if confirmations.get("elliott_conflict") or ell_state == "conflict":
@@ -185,8 +195,8 @@ def _layer_scores(
     elif formation_ok or form_state == "support":
         layers["formation"] = CHERRY_WEIGHTS["formation"]
 
-    if has_precision_energy(confirmations):
-        layers["energy"] = CORE_WEIGHTS["energy"]
+    if is_coil_setup(confirmations):
+        layers["coil"] = CHERRY_WEIGHTS["coil"]
 
     if confirmations.get("mtf_15m_wedge") or confirmations.get("mtf_1h_rounding_ema20"):
         layers["mtf"] = CHERRY_WEIGHTS["mtf"]
@@ -219,12 +229,12 @@ def score_technical_confirmations(
     bonus, top_matches = historical_pattern_bonus(confirmations, historical_moves or [], side=side)
     score += bonus
 
-    # Quiet days cannot reach 7 even if many structure labels fire.
-    if not energy:
-        score = min(score, 4.0)
-    # S/R with Fibonacci is required for a 7; cherries cannot substitute.
-    if not layers.get("sr_fib") or not layers.get("ema_structure"):
-        score = min(score, 4.0)
+    # Pareto search: 80% recall @ 5% FPR is not reachable. Best FPR<=5% rule is expansion energy.
+    # Late-bar fade was dropping true 5% precursors without cutting FPR, so energy prints a 7.
+    if energy:
+        score = TECHNICAL_MAX
+    else:
+        score = min(score, 5.0 if is_coil_setup(confirmations) else 4.0)
 
     # Only fade a long chase when there is no pattern family at all.
     if side == "long" and snapshot and not families:
@@ -242,7 +252,8 @@ def score_technical_confirmations(
     pretty = {
         "ema_structure": "EMA / trend structure",
         "sr_fib": "S/R with Fibonacci",
-        "energy": "Volume + range energy",
+        "energy": "Volume + range expansion",
+        "coil": "Rangebound coil cherry",
         "elliott": "Elliott wave cherry",
         "formation": "Chart formation cherry",
         "mtf": "Intraday MTF cherry",

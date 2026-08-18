@@ -13,8 +13,9 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from app.core.paths import ohlcv_daily_dir
-from app.engines.pattern_confirmations import detect_daily_confirmations, detect_energy_triggers
-from app.engines.pattern_scoring import matched_families, score_technical_confirmations
+from app.engines.pattern_confirmations import detect_daily_confirmations
+from app.engines.pattern_scoring import score_technical_confirmations
+from app.engines.technical import build_snapshot
 from app.ingest.yfinance_client import load_ohlcv
 
 SYMBOLS = [
@@ -42,11 +43,9 @@ SYMBOLS = [
 
 
 def high_conviction(frame: pd.DataFrame, side: str) -> bool:
-    energy = detect_energy_triggers(frame)
-    if not (energy["vol_expansion"] and energy["range_expansion"]):
-        return False
     conf = detect_daily_confirmations(frame, side)
-    scored = score_technical_confirmations(conf, side=side)
+    snap = build_snapshot(frame, focus=side)
+    scored = score_technical_confirmations(conf, side=side, snapshot=snap)
     return scored["technical_score"] >= 7.0
 
 
