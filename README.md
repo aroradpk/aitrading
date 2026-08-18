@@ -7,7 +7,7 @@ Personal stock analysis workstation focused on **technical pattern memory** with
 - Trades a **5-scrip intraday book**: HDFCBANK, BAJFINANCE, M&M, Nifty 50, Bank Nifty
 - Wider names (Nifty Next 50 list in `config/nifty_next_50.json`) are for a **later swing** feature — not the live book
 - Downloads **daily + 15m/1h OHLCV** for those 5 into `data/ohlcv/`
-- Book targets mark days that already printed that % rise. **Rare 1-day-ahead setup** = no uptrend, RSI < 30, rumble or strong close, max 1/day and 4/week (`python scripts/eval_rare_eod.py`). 10% false signals is not available from yesterday's close on this book.
+- **Movement screener** (intraday advisor): at yesterday's close, flag names likely to **move** tomorrow (close-to-close). Direction is **not** predicted — pick long/short the next morning and capture **0.5–1%** of a one-way day. Setup = rumble (range ≥ 2.5%, close not ±5%), max 1 name/day and 4/week (`python scripts/eval_move_screener.py`). Gaps are ignored. 90%/10% is not available from EOD.
 - **Learns from outcomes** by logging every setup and refreshing hit rates (`data/intraday/`) — not a trained ML model
 
 ## Run & start scripts
@@ -127,6 +127,7 @@ The FastAPI app reads from the same `data/` folder — VS Code and the UI always
 | `scripts/fetch_intraday.py` | 15m/1h bars (not committed) → `data/ohlcv/{15m,1h}/` |
 | `scripts/scan_historical_moves.py` | Find big moves + snapshots → `data/moves/` |
 | `scripts/build_watchlist.py` | Today's conviction list + ledger rows → `data/reports/daily/` |
+| `scripts/eval_move_screener.py` | Holdout hit rate for the 1-day-ahead movement screener (close-to-close) |
 | `scripts/learn_intraday.py` | Fill next-session MFE, refresh `data/intraday/rule_stats.json` |
 | `scripts/build_theme_scores.py` | Theme exposure scores → `data/themes/scores/` |
 | `scripts/run_pipeline.py` | **Offline** (`offline_mode: true`): rebuild watchlist + themes + learn. **Online**: full fetch pipeline |

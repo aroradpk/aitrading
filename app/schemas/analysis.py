@@ -16,6 +16,8 @@ class WatchlistEntry(BaseModel):
     expected_horizon_days: int = 1
     session_seven: bool = False
     target_watch: bool = False
+    move_watch: bool = False
+    move_score: float = 0.0
     rare_eod: bool = False
     rare_eod_score: float = 0.0
     adr20_pct: float | None = None

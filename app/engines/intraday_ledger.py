@@ -14,12 +14,14 @@ import pandas as pd
 
 from app.core.paths import intraday_ledger_path, intraday_rule_stats_path, ohlcv_daily_dir
 from app.engines.adr import next_session_range_hit
+from app.engines.target_trade import next_day_outcome
 from app.engines.universe import all_instruments
 from app.ingest.yfinance_client import load_ohlcv
 
 TRAIT_COLUMNS = (
-    "rare_eod",
+    "move_watch",
     "target_watch",
+    "rare_eod",
     "session_seven",
     "rattle",
     "range_expansion",
@@ -76,11 +78,16 @@ def next_session_result(frame: pd.DataFrame, setup_date: str) -> dict | None:
         abs(float(nxt["low"]) / setup_close - 1) * 100,
     )
     close_pct = abs(float(nxt["close"]) / setup_close - 1) * 100
+    move = next_day_outcome(setup_close, nxt)
     result = {
         "next_date": frame.index[idx + 1].date().isoformat(),
         "mfe_pct": round(mfe, 3),
         "close_abs_pct": round(close_pct, 3),
         "close_pct": round(float(nxt["close"] / setup_close - 1) * 100, 3),
+        "one_way": move["one_way"],
+        "hit_move_05": move["movement_05"],
+        "hit_trend_05": move["trend_05"],
+        "hit_trend_10": move["trend_10"],
     }
     extra = next_session_range_hit(frame, setup_date)
     if extra:
@@ -117,8 +124,8 @@ def recompute_rule_stats() -> dict:
         "resolved_rows": len(rows),
         "min_n_to_trust": MIN_N_TO_TRUST,
         "note": (
-            "Logged flags vs next-session range. Book targets: HDFC 2%, BAJ 3%, "
-            "M&M 3%, Nifty 1%, Bank 1.2%. Trusted only at n>=20. No 7-gate."
+            "Logged flags vs next close-to-close. Movement screener hit = |c2c|>=0.5%. "
+            "Direction is not predicted. Trusted only at n>=20. No 7-gate."
         ),
         "rules": {},
     }
@@ -141,6 +148,14 @@ def recompute_rule_stats() -> dict:
             hits = int(sub["hit_adr"].fillna(False).astype(bool).sum())
             out["hit_adr"] = round(100 * hits / n, 1)
             out["false_alarm_adr"] = round(100 * (n - hits) / n, 1)
+        if "hit_move_05" in sub.columns:
+            hits = int(sub["hit_move_05"].fillna(False).astype(bool).sum())
+            out["hit_move_05"] = round(100 * hits / n, 1)
+            out["false_move_05"] = round(100 * (n - hits) / n, 1)
+        if "hit_trend_05" in sub.columns:
+            hits = int(sub["hit_trend_05"].fillna(False).astype(bool).sum())
+            out["hit_trend_05"] = round(100 * hits / n, 1)
+            out["false_trend_05"] = round(100 * (n - hits) / n, 1)
         for bar in HIT_BARS:
             hits = int((sub["mfe_pct"] >= bar).sum())
             out[f"hit_mfe_{bar:.0f}"] = round(100 * hits / n, 1)
@@ -152,10 +167,12 @@ def recompute_rule_stats() -> dict:
         if col in frame.columns:
             stats["rules"][col] = pack(frame[col].fillna(False).astype(bool), col)
 
-    rare = stats["rules"].get("rare_eod") or {}
+    move = stats["rules"].get("move_watch") or stats["rules"].get("target_watch") or {}
     stats["advice"] = (
-        "Rare EOD = no uptrend, RSI<30, rumble or strong close; 1/day and 4/week. "
-        f"rare_eod n={rare.get('n', 0)} hit={rare.get('hit_adr')}. 10% false is not available 1 day ahead."
+        "Movement screener = today's rumble (range>=2.5%, close not ±5%); 1 name/day and 4/week. "
+        "Hit = |next close vs today close| >= 0.5%. Direction is the trader's next morning. "
+        f"move_watch n={move.get('n', 0)} hit_c2c_0.5={move.get('hit_move_05')}. "
+        "90% hit / 10% false is not available from yesterday's close."
     )
     stats_path = intraday_rule_stats_path()
     stats_path.write_text(json.dumps(stats, indent=2), encoding="utf-8")
@@ -178,8 +195,9 @@ def log_today_setups(setups: list[dict]) -> int:
             "technical_score": setup.get("technical_score"),
             "expected_move_pct": setup.get("expected_move_pct"),
             "session_seven": False,
-            "target_watch": bool(setup.get("target_watch")),
-            "rare_eod": bool(setup.get("rare_eod")),
+            "move_watch": bool(setup.get("move_watch") or setup.get("target_watch")),
+            "target_watch": bool(setup.get("target_watch") or setup.get("move_watch")),
+            "rare_eod": bool(setup.get("move_watch") or setup.get("rare_eod")),
             "adr20_pct": (setup.get("adr") or {}).get("adr20_pct") or setup.get("adr20_pct"),
             "target_range_pct": (setup.get("adr") or {}).get("target_range_pct") or setup.get("target_range_pct"),
             "rattle": bool(conf.get("setup_rattle")),
@@ -198,8 +216,7 @@ def log_today_setups(setups: list[dict]) -> int:
 def backfill_ledger(*, lookback_bars: int = 60) -> int:
     """Replay recent daily bars into the ledger so hit rates can start before live days pile up."""
     from app.engines.pattern_confirmations import detect_daily_confirmations
-    from app.engines.target_trade import is_eod_target_watch, is_rare_eod_setup
-    from app.engines.technical import _rsi
+    from app.engines.target_trade import is_move_setup
 
     existing = {(r.get("symbol"), r.get("setup_date"), r.get("side")) for r in load_ledger()}
     n = 0
@@ -218,18 +235,17 @@ def backfill_ledger(*, lookback_bars: int = 60) -> int:
                 if key in existing:
                     continue
                 conf = detect_daily_confirmations(slice_frame, side)
-                rsi = _rsi(slice_frame["close"])
-                watch = is_eod_target_watch(conf, rsi=rsi) if side == "long" else False
-                rare = is_rare_eod_setup(conf, rsi=rsi) if side == "long" else False
+                watch = is_move_setup(conf) if side == "long" else False
                 row = {
                     "symbol": symbol,
                     "setup_date": setup_date,
                     "side": side,
                     "technical_score": None,
-                    "expected_move_pct": None,
+                    "expected_move_pct": 0.5 if watch else None,
                     "session_seven": False,
+                    "move_watch": watch,
                     "target_watch": watch,
-                    "rare_eod": rare,
+                    "rare_eod": watch,
                     "rattle": bool(conf.get("setup_rattle")),
                     "range_expansion": bool(conf.get("range_expansion")),
                     "live_rvol": bool(conf.get("live_rvol")),

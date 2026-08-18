@@ -13,7 +13,7 @@
 - **Start API:** `./scripts/cloud-agent-start.sh` or `uvicorn app.main:app --host 0.0.0.0 --port 8000`.
 - **Tests:** `pytest`.
 - **Trading book:** 5 scrips in `config/intraday_universe.json` (HDFCBANK, BAJFINANCE, M&M, NIFTY_50, NIFTY_BANK). Do not scan 20–40 names for **intraday**. `config/nifty_next_50.json` is kept for a later **swing** universe only.
-- **Target trades:** 1-day-ahead **rare EOD** = no uptrend, RSI < 30, and rumble or strong close; **1 name/day and 4/week**. Hit = next session high vs today's close ≥ book target. `python scripts/eval_rare_eod.py`. **10% false is not available EOD** on this book (about half the target days are overnight gaps). The wide washout watch is research-only.
+- **Movement screener:** 1-day-ahead, direction-agnostic. Setup = today's range ≥ 2.5% of prior close and close not ±5% (`setup_rattle`), then **1 name/day and 4/week**. Hit = `|next close / today close - 1| >= 0.5%`. One-way = that close also in the top or bottom 30% of the next day's range. Gaps are ignored. The trader picks up/down the next morning and only needs to capture 0.5–1% of a larger day. `python scripts/eval_move_screener.py`. **90% hit / 10% false is not available EOD.**
 - **ADR / targets:** ADR20 is context only. Targets live on each instrument in `config/intraday_universe.json`.
 - **Pattern scoring:** Layer sum only (cap 7). Coil / rumble / live volume are flags, not forced 5/6/7. Late ±5% close bar still caps at 4.
 - **Validate big moves:** `python scripts/validate_prior_day_moves.py` (defaults to the 3 stocks).
