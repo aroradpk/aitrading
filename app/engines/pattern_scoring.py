@@ -8,8 +8,8 @@ from app.engines.technical import snapshot_similarity
 TECHNICAL_MAX = 7.0
 
 # 5 = expect ~3% next day (daily coil). 6 = expect ~4% next day (daily rumble).
-# 7 = rumble + 15m wedge + 1h rounding, volume not dead; expect ~5% within 3 sessions.
-# Next-day 5% is too noisy for a 7. Hourly Fib / 15m-1h coils are not a 7-gate.
+# 7 = rumble + a 15m base AND a 1h base at EMA (any shape: coil/flag/range/wedge/rising/rounding).
+# Volume not dead. Expect ~5% within 3 sessions. Hourly Fib is not a 7-gate.
 # A 5% close is late and is never a 7. Hourly Fib is not a 7-gate.
 CORE_WEIGHTS = {
     "ema_structure": 2.5,
@@ -199,9 +199,11 @@ def _layer_scores(
     if is_coil_setup(confirmations):
         layers["coil"] = CHERRY_WEIGHTS["coil"]
 
-    if confirmations.get("mtf_15m_wedge") or confirmations.get("mtf_1h_rounding_ema20") or confirmations.get(
-        "mtf_1h_coil_ema"
-    ) or confirmations.get("mtf_15m_coil_ema"):
+    if confirmations.get("mtf_15m_base") or confirmations.get("mtf_1h_base") or confirmations.get(
+        "mtf_15m_wedge"
+    ) or confirmations.get("mtf_1h_rounding_ema20") or confirmations.get("mtf_1h_coil_ema") or confirmations.get(
+        "mtf_15m_coil_ema"
+    ):
         layers["mtf"] = CHERRY_WEIGHTS["mtf"]
 
     candle_ok = any(tag.startswith("candle_") for tag in tags)
@@ -243,7 +245,7 @@ def score_technical_confirmations(
         score = min(score, 4.0)
         expected_move_pct = 0.0
     elif energy and mtf and not dead:
-        # 7: rumble + 15m wedge + 1h rounding, volume alive. Expect ~5% within 3 sessions.
+        # 7: rumble + 15m base + 1h base (any shape). Expect ~5% within 3 sessions.
         score = TECHNICAL_MAX
         expected_move_pct = 5.0
         expected_horizon_days = 3
@@ -280,7 +282,7 @@ def score_technical_confirmations(
         "coil": "Rangebound coil cherry",
         "elliott": "Elliott wave cherry",
         "formation": "Chart formation cherry",
-        "mtf": "15m / 1h precision cherry",
+        "mtf": "15m / 1h base cherry",
         "candle": "Candlestick cherry (hammer / star)",
     }
     for key, value in layers.items():

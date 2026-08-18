@@ -6,8 +6,13 @@ import pandas as pd
 
 from app.core.config import get_settings
 from app.core.paths import ohlcv_intraday_dir
-from app.engines.chart_patterns import detect_compressing_wedge, detect_rounding_bottom, detect_sr_fib_confluence
-from app.engines.pattern_confirmations import detect_ema20_support
+from app.engines.chart_patterns import (
+    detect_compressing_wedge,
+    detect_formations,
+    detect_rounding_bottom,
+    detect_sr_fib_confluence,
+)
+from app.engines.pattern_confirmations import detect_ema20_support, detect_higher_lows, detect_lower_highs
 from app.engines.technical import _ema
 from app.ingest.yfinance_client import load_ohlcv, save_ohlcv, yahoo_ticker
 
@@ -72,6 +77,26 @@ def _recent_coil(frame: pd.DataFrame, *, bars: int, max_atr: float) -> bool:
     return atr > 0 and span / atr <= max_atr
 
 
+def _intraday_base(frame: pd.DataFrame, *, side: str, lookback: int) -> bool:
+    """A base at EMA20 — name does not matter (coil, flag, range, wedge, triangle, rounding, rising)."""
+    if len(frame) < 12 or not _near_ema20(frame, tolerance_pct=0.01):
+        return False
+    bars = 12 if lookback >= 36 else 8
+    if _recent_coil(frame, bars=bars, max_atr=2.4):
+        return True
+    if detect_compressing_wedge(frame, side=side, lookback=min(lookback, len(frame))):
+        return True
+    if side == "long" and detect_rounding_bottom(frame, lookback=min(lookback, len(frame))):
+        return True
+    if detect_formations(frame, lookback=min(lookback, len(frame))):
+        return True
+    if side == "long" and detect_higher_lows(frame, bars=3) and _recent_coil(frame, bars=bars, max_atr=3.2):
+        return True
+    if side == "short" and detect_lower_highs(frame, bars=3) and _recent_coil(frame, bars=bars, max_atr=3.2):
+        return True
+    return False
+
+
 def _near_ema20(frame: pd.DataFrame, *, tolerance_pct: float = 0.012) -> bool:
     ema20 = _ema(frame["close"], 20)
     if ema20 is None:
@@ -92,12 +117,14 @@ def analyze_intraday_confirmations(
     *,
     side: str = "long",
 ) -> dict[str, bool]:
-    """15m wedge/coil and 1h coil/rounding at EMA20. Hourly Fib is a cherry, not a 7-gate."""
+    """15m and 1h bases at EMA20. Shape name does not matter. Hourly Fib is not a 7-gate."""
     out = {
         "mtf_15m_wedge": False,
         "mtf_15m_coil_ema": False,
+        "mtf_15m_base": False,
         "mtf_1h_rounding_ema20": False,
         "mtf_1h_coil_ema": False,
+        "mtf_1h_base": False,
         "mtf_1h_fib_sr": False,
     }
     as_of = pd.Timestamp(as_of_date)
@@ -119,11 +146,13 @@ def analyze_intraday_confirmations(
         if interval == "15m":
             out["mtf_15m_wedge"] = detect_compressing_wedge(window, side=side, lookback=min(lookback, len(window)))
             out["mtf_15m_coil_ema"] = _recent_coil(window, bars=12, max_atr=2.0) and _near_ema20(window, tolerance_pct=0.008)
+            out["mtf_15m_base"] = _intraday_base(window, side=side, lookback=lookback)
         else:
             rounding = detect_rounding_bottom(window, lookback=min(lookback, len(window)))
             at_ema = _near_ema20(window, tolerance_pct=0.008)
             out["mtf_1h_rounding_ema20"] = bool(rounding and at_ema)
             out["mtf_1h_coil_ema"] = _recent_coil(window, bars=8, max_atr=1.8) and at_ema
+            out["mtf_1h_base"] = _intraday_base(window, side=side, lookback=lookback)
             ema20 = _ema(window["close"], 20)
             sr_prices = [p for p in ([ema20] if ema20 else [])]
             out["mtf_1h_fib_sr"] = bool(ema20) and detect_sr_fib_confluence(
@@ -134,5 +163,15 @@ def analyze_intraday_confirmations(
 
 
 def has_mtf_precision(confirmations: dict[str, bool]) -> bool:
-    """7 needs the user's 15m wedge + 1h rounding pair. Coils and hourly Fib are not this gate."""
-    return bool(confirmations.get("mtf_15m_wedge") and confirmations.get("mtf_1h_rounding_ema20"))
+    """7 needs a 15m base AND a 1h base at EMA. Wedge is one shape, not the only one. Fib is not this gate."""
+    m15 = bool(
+        confirmations.get("mtf_15m_base")
+        or confirmations.get("mtf_15m_wedge")
+        or confirmations.get("mtf_15m_coil_ema")
+    )
+    h1 = bool(
+        confirmations.get("mtf_1h_base")
+        or confirmations.get("mtf_1h_coil_ema")
+        or confirmations.get("mtf_1h_rounding_ema20")
+    )
+    return m15 and h1
