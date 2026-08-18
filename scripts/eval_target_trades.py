@@ -13,7 +13,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.engines.target_trade import OPEN_DRIVE_FRAC, classify_open_gap, is_eod_target_watch
+from app.engines.target_trade import is_eod_target_watch
 
 
 def _setups_mod():
@@ -47,13 +47,6 @@ def main() -> None:
     for label, part in ("in-sample", ins), ("holdout year", oos):
         stats = helper.pack(part["watch"], part, label)
         print(label, json.dumps(stats))
-    print(f"\nOpen take among EOD watches, gap >= {OPEN_DRIVE_FRAC:.0%} of target (holdout):")
-    oos_w = oos[oos["watch"]].copy()
-    drives = [classify_open_gap(row["next_gap_pct"], row["target"])["open_drive"] for _, row in oos_w.iterrows()]
-    lates = [classify_open_gap(row["next_gap_pct"], row["target"])["already_printed"] for _, row in oos_w.iterrows()]
-    oos_w["open_drive"] = drives
-    print("  open_drive", helper.pack(oos_w["open_drive"], oos_w, "drive"))
-    print("  already_printed_gap", int(sum(lates)), "of", len(oos_w), "watches")
 
 
 if __name__ == "__main__":

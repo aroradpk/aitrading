@@ -18,7 +18,7 @@ from app.engines.universe import all_instruments
 from app.ingest.yfinance_client import load_ohlcv
 
 TRAIT_COLUMNS = (
-    "rare_take",
+    "rare_eod",
     "target_watch",
     "session_seven",
     "rattle",
@@ -152,12 +152,10 @@ def recompute_rule_stats() -> dict:
         if col in frame.columns:
             stats["rules"][col] = pack(frame[col].fillna(False).astype(bool), col)
 
-    take = stats["rules"].get("rare_take") or {}
-    watch = stats["rules"].get("target_watch") or {}
+    rare = stats["rules"].get("rare_eod") or {}
     stats["advice"] = (
-        "Rare take = open gap in [75%, 100%) of the book target, one name per day. "
-        f"rare_take n={take.get('n', 0)} hit={take.get('hit_adr')}. "
-        f"EOD watch n={watch.get('n', 0)} is not high conviction."
+        "Rare EOD = no uptrend, RSI<30, rumble or strong close; 1/day and 4/week. "
+        f"rare_eod n={rare.get('n', 0)} hit={rare.get('hit_adr')}. 10% false is not available 1 day ahead."
     )
     stats_path = intraday_rule_stats_path()
     stats_path.write_text(json.dumps(stats, indent=2), encoding="utf-8")
@@ -181,7 +179,7 @@ def log_today_setups(setups: list[dict]) -> int:
             "expected_move_pct": setup.get("expected_move_pct"),
             "session_seven": False,
             "target_watch": bool(setup.get("target_watch")),
-            "rare_take": bool(setup.get("rare_take")),
+            "rare_eod": bool(setup.get("rare_eod")),
             "adr20_pct": (setup.get("adr") or {}).get("adr20_pct") or setup.get("adr20_pct"),
             "target_range_pct": (setup.get("adr") or {}).get("target_range_pct") or setup.get("target_range_pct"),
             "rattle": bool(conf.get("setup_rattle")),
@@ -200,7 +198,7 @@ def log_today_setups(setups: list[dict]) -> int:
 def backfill_ledger(*, lookback_bars: int = 60) -> int:
     """Replay recent daily bars into the ledger so hit rates can start before live days pile up."""
     from app.engines.pattern_confirmations import detect_daily_confirmations
-    from app.engines.target_trade import is_eod_target_watch
+    from app.engines.target_trade import is_eod_target_watch, is_rare_eod_setup
     from app.engines.technical import _rsi
 
     existing = {(r.get("symbol"), r.get("setup_date"), r.get("side")) for r in load_ledger()}
@@ -220,7 +218,9 @@ def backfill_ledger(*, lookback_bars: int = 60) -> int:
                 if key in existing:
                     continue
                 conf = detect_daily_confirmations(slice_frame, side)
-                watch = is_eod_target_watch(conf, rsi=_rsi(slice_frame["close"])) if side == "long" else False
+                rsi = _rsi(slice_frame["close"])
+                watch = is_eod_target_watch(conf, rsi=rsi) if side == "long" else False
+                rare = is_rare_eod_setup(conf, rsi=rsi) if side == "long" else False
                 row = {
                     "symbol": symbol,
                     "setup_date": setup_date,
@@ -229,6 +229,7 @@ def backfill_ledger(*, lookback_bars: int = 60) -> int:
                     "expected_move_pct": None,
                     "session_seven": False,
                     "target_watch": watch,
+                    "rare_eod": rare,
                     "rattle": bool(conf.get("setup_rattle")),
                     "range_expansion": bool(conf.get("range_expansion")),
                     "live_rvol": bool(conf.get("live_rvol")),

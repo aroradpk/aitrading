@@ -9,7 +9,7 @@ from app.engines.events import score_events
 from app.engines.fundamental import score_fundamentals
 from app.engines.themes import score_themes
 from app.engines.move_detector import load_moves, scan_setups_for_symbol
-from app.engines.target_trade import pick_daily_takes
+from app.engines.target_trade import pick_rare_eod_trades
 from app.engines.technical import technical_reasons_for_side
 from app.engines.adr import build_adr_profiles
 from app.engines.intraday_ledger import log_today_setups, recompute_rule_stats, resolve_open_rows
@@ -80,7 +80,7 @@ def build_daily_watchlist() -> dict:
             theme_score, theme_reasons, _ = score_themes(symbol)
 
         for setup in setups:
-            if setup["technical_score"] <= 0 and not setup.get("target_watch"):
+            if setup["technical_score"] <= 0 and not setup.get("rare_eod") and not setup.get("target_watch"):
                 continue
 
             scores = conviction_from_scores(
@@ -131,9 +131,8 @@ def build_daily_watchlist() -> dict:
                     "expected_horizon_days": setup.get("expected_horizon_days", 1),
                     "session_seven": False,
                     "target_watch": setup.get("target_watch", False),
-                    "rare_take": setup.get("rare_take", False),
-                    "gap_frac": setup.get("gap_frac"),
-                    "take_conviction": setup.get("take_conviction") or 0.0,
+                    "rare_eod": setup.get("rare_eod", False),
+                    "rare_eod_score": setup.get("rare_eod_score") or 0.0,
                     "adr20_pct": adr.get("adr20_pct"),
                     "adr20_pts": adr.get("adr20_pts"),
                     "target_range_pct": adr.get("target_range_pct"),
@@ -151,8 +150,8 @@ def build_daily_watchlist() -> dict:
                 }
             )
 
-    entries = pick_daily_takes(entries)
-    entries.sort(key=lambda item: (not item.get("rare_take"), not item.get("target_watch"), -item["conviction"]))
+    entries = pick_rare_eod_trades(entries)
+    entries.sort(key=lambda item: (not item.get("rare_eod"), not item.get("target_watch"), -float(item.get("rare_eod_score") or 0), -item["conviction"]))
     from app.core.config import get_settings
 
     logged = log_today_setups(entries)
