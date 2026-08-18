@@ -15,7 +15,7 @@
 - **Backtest:** `python scripts/run_backtest.py` (~1–2 min). Tuning reuses one signal pass: `python scripts/tune_backtest.py`.
 - **Position focus:** `technical.position_focus` in settings (`long` | `short` | `both`); intraday block for tighter short proxy on daily bars.
 - **Conviction model:** Technical **0–7** + research (fundamentals + events/meetings) **0–3** = conviction **0–10**. Theme is a separate **1–5 bonus** column (`theme_bonus`), not in conviction.
-- **Pattern scoring:** `app/engines/pattern_scoring.py` — a **7** is the Pareto energy alarm (vol >= 2× 20d and range >= 1.6× ATR). EMA / S/R-Fib / coil still show as layers but do not gate the 7; coil-only is capped at 5. Day-before **80% recall at 5% FPR is not attainable** (best ~13–14% recall at ~5% FPR). Search: `python scripts/search_fpr_recall.py`. Compare: `python scripts/compare_weighted_vs_energy.py`.
+- **Pattern scoring:** `app/engines/pattern_scoring.py` — a **7** is a **day-before rumble**: day’s range ≥ 2.5% of prior close **and** |close| not already ≥5%. That is ~58% of next-day 5% moves at ~36% quiet FPR on Next 50 + Nifty 50 top 20. The 5% close itself must not be a 7. Coil-only is capped at 5. Eval: `python scripts/eval_same_day_conviction.py` (day-before mode).
 - **Validate big moves:** `python scripts/validate_prior_day_moves.py --symbols ABB,MOTHERSON,ADANIPOWER`
 - **Charts:** `python scripts/build_charts.py` (~7 min, not committed).
 - **Transcripts:** `python scripts/fetch_transcripts.py` (download only when `offline_mode: false`).

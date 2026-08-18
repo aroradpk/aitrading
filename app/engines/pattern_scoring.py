@@ -6,10 +6,8 @@ from app.engines.technical import snapshot_similarity
 
 TECHNICAL_MAX = 7.0
 
-# Hit-and-trial on 20 stocks (day-before |next|>=5% vs quiet sample): no rule hits
-# 80% recall at 5% FPR. Coil setups are anti-predictive of next-day 5% moves.
-# Pareto-best interpretable 7: volume+range expansion (FPR ~4.6%, recall ~13%).
-# EMA / S/R-Fib / coil / Elliott remain explanatory layers, not the FPR gate.
+# Day-before 5% catch: ~58% recall at ~36% FPR with range>=2.5% of price and close not ±5%.
+# The 5% close itself is late and must not print a 7.
 CORE_WEIGHTS = {
     "ema_structure": 2.5,
     "sr_fib": 2.5,
@@ -141,8 +139,8 @@ def historical_pattern_bonus(
 
 
 def has_precision_energy(confirmations: dict[str, bool]) -> bool:
-    """Quiet-day FPR gate: vol >= 2x and range >= 1.6x ATR. Best ~14% recall at ~5% FPR."""
-    return bool(confirmations.get("vol_expansion") and confirmations.get("range_expansion"))
+    """Day-before rumble: wide range, close has not already moved 5%."""
+    return bool(confirmations.get("setup_rattle"))
 
 
 def _layer_scores(
@@ -229,15 +227,14 @@ def score_technical_confirmations(
     bonus, top_matches = historical_pattern_bonus(confirmations, historical_moves or [], side=side)
     score += bonus
 
-    # Pareto search: 80% recall @ 5% FPR is not reachable. Best FPR<=5% rule is expansion energy.
-    # Late-bar fade was dropping true 5% precursors without cutting FPR, so energy prints a 7.
+    # Setup rumble is the 7. A 5% close is late — do not print 7 on that bar.
     if energy:
         score = TECHNICAL_MAX
     else:
         score = min(score, 5.0 if is_coil_setup(confirmations) else 4.0)
 
-    # Only fade a long chase when there is no pattern family at all.
-    if side == "long" and snapshot and not families:
+    # Only fade a long chase when there is no wide-bar 5% alarm and no family.
+    if not energy and side == "long" and snapshot and not families:
         tags = set(snapshot.get("tags", []))
         if "ema20_extended_long" in tags and "near_resistance" in tags:
             score = min(score, 3.0)
@@ -252,7 +249,7 @@ def score_technical_confirmations(
     pretty = {
         "ema_structure": "EMA / trend structure",
         "sr_fib": "S/R with Fibonacci",
-        "energy": "Volume + range expansion",
+        "energy": "Setup rumble (range >= 2.5%, close not ±5%)",
         "coil": "Rangebound coil cherry",
         "elliott": "Elliott wave cherry",
         "formation": "Chart formation cherry",

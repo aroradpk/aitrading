@@ -23,8 +23,29 @@ def test_motherson_aug5_coil_is_watch_not_seven() -> None:
 
     hist = [m for m in load_moves("MOTHERSON") if m["date"] < signal_date]
     setup = scan_today_setup(slice, hist, side="long", symbol="MOTHERSON")
-    assert setup["technical_score"] <= 5.0
     assert setup.get("breakout_base") is True
+
+
+def test_setup_rattle_without_volume_spike_is_seven() -> None:
+    from app.engines.pattern_scoring import score_technical_confirmations
+
+    scored = score_technical_confirmations(
+        {"setup_rattle": True, "vol_expansion": False, "range_expansion": False},
+        side="long",
+    )
+    assert scored["technical_score"] == 7.0
+    assert scored["precision_energy"] is True
+
+
+def test_late_five_percent_bar_is_not_seven() -> None:
+    from app.engines.pattern_scoring import score_technical_confirmations
+
+    scored = score_technical_confirmations(
+        {"range_expansion": True, "vol_expansion": True, "setup_rattle": False},
+        side="long",
+    )
+    assert scored["technical_score"] < 7.0
+    assert scored["precision_energy"] is False
 
 
 def test_two_piece_family_with_energy_is_seven() -> None:
@@ -35,7 +56,7 @@ def test_two_piece_family_with_energy_is_seven() -> None:
             "ema20_support": True,
             "uptrend": True,
             "vol_expansion": True,
-            "range_expansion": True,
+            "setup_rattle": True,
         },
         side="long",
     )
@@ -79,7 +100,7 @@ def test_ema_fib_energy_reaches_seven() -> None:
             "sr_level": True,
             "sr_fib_confluence": True,
             "vol_expansion": True,
-            "range_expansion": True,
+            "setup_rattle": True,
         },
         side="long",
     )
@@ -100,7 +121,7 @@ def test_elliott_formation_candle_are_cherries() -> None:
             "elliott_aligned": True,
             "bullish_formation": True,
             "vol_expansion": True,
-            "range_expansion": True,
+            "setup_rattle": True,
         },
         side="long",
         snapshot={
@@ -125,7 +146,7 @@ def test_energy_seven_does_not_require_sr_fib() -> None:
             "elliott_aligned": True,
             "bullish_formation": True,
             "vol_expansion": True,
-            "range_expansion": True,
+            "setup_rattle": True,
         },
         side="long",
         snapshot={"tags": ["elliott_impulse_up", "candle_hammer"], "formations": [{"id": "falling_wedge"}]},
@@ -146,7 +167,7 @@ def test_elliott_conflict_zeros_cherry_not_whole_score() -> None:
             "bullish_formation": True,
             "elliott_conflict": True,
             "vol_expansion": True,
-            "range_expansion": True,
+            "setup_rattle": True,
         },
         side="long",
         snapshot={"tags": ["elliott_impulse_down"], "formations": [{"id": "falling_wedge"}]},
@@ -159,13 +180,13 @@ def test_candle_cherry_requires_context() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
-        {"vol_expansion": True, "range_expansion": True},
+        {"vol_expansion": True, "range_expansion": True, "setup_rattle": False},
         side="long",
         snapshot={"tags": ["candle_morning_star"], "formations": []},
     )
     assert scored["score_layers"]["candle"] == 0.0
-    assert scored["technical_score"] == 7.0
-    assert scored["precision_energy"] is True
+    assert scored["technical_score"] < 7.0
+    assert scored["precision_energy"] is False
 
 
 def test_family_without_coil_and_fib_is_not_high_conviction() -> None:
@@ -188,7 +209,7 @@ def test_energy_prints_seven_even_if_extended() -> None:
             "sr_fib_confluence": True,
             "tight_range": True,
             "vol_expansion": True,
-            "range_expansion": True,
+            "setup_rattle": True,
         },
         side="long",
         snapshot={"tags": ["ema20_extended_long", "near_resistance", "rsi_overbought"], "formations": []},

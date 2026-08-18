@@ -223,7 +223,7 @@ def scan_today_setup(
         elif side == "short" and bias != "short":
             technical_score = round(min(technical_score, 3.0), 1)
 
-    if scored.get("precision_energy") and not scored.get("breakout_base"):
+    if not scored.get("precision_energy") and not scored.get("breakout_base"):
         technical_score = _apply_side_context_caps(technical_score, current, side)
 
     intraday_threshold = settings.technical.intraday.stock_target_1d_pct
