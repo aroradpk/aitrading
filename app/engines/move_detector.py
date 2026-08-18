@@ -217,14 +217,18 @@ def scan_today_setup(
     families = scored.get("pattern_families") or []
 
     bias = position_bias(current, focus=side)
-    if settings.technical.require_trend_for_setup and technical_score < 7.0 and not scored.get("breakout_base"):
+    if (
+        settings.technical.require_trend_for_setup
+        and technical_score < 7.0
+        and not scored.get("breakout_base")
+        and not scored.get("precision_energy")
+    ):
         if side == "long" and bias != "long":
             technical_score = round(min(technical_score, 3.0), 1)
         elif side == "short" and bias != "short":
             technical_score = round(min(technical_score, 3.0), 1)
 
-    if scored.get("precision_energy") and not scored.get("breakout_base"):
-        technical_score = _apply_side_context_caps(technical_score, current, side)
+    # Wide 5% bars must stay a 7; do not fade them for RSI / extension.
 
     intraday_threshold = settings.technical.intraday.stock_target_1d_pct
     thresholds = settings.thresholds

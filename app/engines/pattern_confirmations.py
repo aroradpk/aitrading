@@ -100,7 +100,7 @@ def detect_rsi_60_reclaim(frame: pd.DataFrame, lookback: int = 8) -> bool:
 
 
 def detect_energy_triggers(frame: pd.DataFrame) -> dict[str, bool]:
-    """Expansion vs coil volume. Breakouts usually fire after dead-volume consolidation."""
+    """Wide-bar detector for same-day 5% conviction (range >= 1.3x ATR)."""
     empty = {
         "vol_expansion": False,
         "range_expansion": False,
@@ -118,9 +118,11 @@ def detect_energy_triggers(frame: pd.DataFrame) -> dict[str, bool]:
     vol_mean = float(vol.tail(20).mean())
     vr = float(vol.iloc[-1] / vol_mean) if vol_mean else 1.0
     atr = float((frame["high"] - frame["low"]).tail(20).mean())
+    prev = float(frame["close"].iloc[-2])
+    day_pct = abs(close / prev - 1.0) * 100 if prev else 0.0
     return {
         "vol_expansion": vr >= 2.0,
-        "range_expansion": atr > 0 and span >= 1.6 * atr,
+        "range_expansion": (atr > 0 and span >= 1.30 * atr) or day_pct >= 5.0,
         "strong_close": loc >= 0.7,
         "dead_volume": vr <= 0.85,
     }
@@ -289,7 +291,7 @@ def confirmation_labels(confirmations: dict[str, bool]) -> list[str]:
         "rsi_trend_long": "RSI holding above 50",
         "rsi_trend_short": "RSI holding below 50",
         "vol_expansion": "Volume >= 2.0x 20d avg (breakout bar)",
-        "range_expansion": "Day range >= 1.6x ATR (breakout bar)",
+        "range_expansion": "Day range >= 1.3x ATR (wide 5% bar)",
         "strong_close": "Close in top 30% of day range",
         "dead_volume": "Dead volume coil (<=0.85x 20d avg)",
         "mtf_15m_wedge": "15m compressing wedge",
