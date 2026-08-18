@@ -7,9 +7,9 @@ from app.engines.technical import snapshot_similarity
 TECHNICAL_MAX = 7.0
 
 # Hit-and-trial on 20 stocks (day-before |next|>=5% vs quiet sample): no rule hits
-# 80% recall at 5% FPR. Coil setups are *more* common on quiet days (anti-predictive).
-# Pareto-best interpretable 7: EMA + S/R-Fib + expansion energy (FPR ~4–5%, recall ~11–14%).
-# Coil is a watch cherry, not the alarm. Elliott / formations / candles stay cherries.
+# 80% recall at 5% FPR. Coil setups are anti-predictive of next-day 5% moves.
+# Pareto-best interpretable 7: volume+range expansion (FPR ~4.6%, recall ~13%).
+# EMA / S/R-Fib / coil / Elliott remain explanatory layers, not the FPR gate.
 CORE_WEIGHTS = {
     "ema_structure": 2.5,
     "sr_fib": 2.5,
@@ -229,17 +229,12 @@ def score_technical_confirmations(
     bonus, top_matches = historical_pattern_bonus(confirmations, historical_moves or [], side=side)
     score += bonus
 
-    # 7 only when EMA + S/R-Fib + energy all fire. Coil-only is a watch (cap 5).
-    if not layers.get("sr_fib") or not layers.get("ema_structure") or not layers.get("energy"):
+    # Pareto search: 80% recall @ 5% FPR is not reachable. Best FPR<=5% rule is expansion energy.
+    # Late-bar fade was dropping true 5% precursors without cutting FPR, so energy prints a 7.
+    if energy:
+        score = TECHNICAL_MAX
+    else:
         score = min(score, 5.0 if is_coil_setup(confirmations) else 4.0)
-
-    # Blow-off: already extended into resistance — not a fresh 7 even if energy prints.
-    if snapshot and energy:
-        tags = set(snapshot.get("tags", []))
-        late_long = side == "long" and ("ema20_extended_long" in tags and "near_resistance" in tags)
-        late_short = side == "short" and ("ema20_extended_short" in tags and "near_support" in tags)
-        if late_long or late_short:
-            score = min(score, 4.0)
 
     # Only fade a long chase when there is no pattern family at all.
     if side == "long" and snapshot and not families:

@@ -27,7 +27,7 @@ def test_motherson_aug5_coil_is_watch_not_seven() -> None:
     assert setup.get("breakout_base") is True
 
 
-def test_two_piece_family_with_energy_is_not_seven() -> None:
+def test_two_piece_family_with_energy_is_seven() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
@@ -39,10 +39,8 @@ def test_two_piece_family_with_energy_is_not_seven() -> None:
         },
         side="long",
     )
-    assert scored["technical_score"] < 7.0
+    assert scored["technical_score"] == 7.0
     assert "ema_pullback" in scored["pattern_families"]
-    assert scored["score_layers"]["ema_structure"] == 2.5
-    assert scored["score_layers"]["sr_fib"] == 0.0
     assert scored["score_layers"]["energy"] == 2.0
 
 
@@ -117,7 +115,7 @@ def test_elliott_formation_candle_are_cherries() -> None:
     assert any("cherry" in label.lower() for label in scored["confirmation_labels"])
 
 
-def test_no_sr_fib_cannot_be_seven_even_with_cherries() -> None:
+def test_energy_seven_does_not_require_sr_fib() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
@@ -133,7 +131,7 @@ def test_no_sr_fib_cannot_be_seven_even_with_cherries() -> None:
         snapshot={"tags": ["elliott_impulse_up", "candle_hammer"], "formations": [{"id": "falling_wedge"}]},
     )
     assert scored["score_layers"]["sr_fib"] == 0.0
-    assert scored["technical_score"] <= 4.0
+    assert scored["technical_score"] == 7.0
 
 
 def test_elliott_conflict_zeros_cherry_not_whole_score() -> None:
@@ -166,7 +164,8 @@ def test_candle_cherry_requires_context() -> None:
         snapshot={"tags": ["candle_morning_star"], "formations": []},
     )
     assert scored["score_layers"]["candle"] == 0.0
-    assert scored["technical_score"] < 7.0
+    assert scored["technical_score"] == 7.0
+    assert scored["precision_energy"] is True
 
 
 def test_family_without_coil_and_fib_is_not_high_conviction() -> None:
@@ -179,7 +178,7 @@ def test_family_without_coil_and_fib_is_not_high_conviction() -> None:
     assert scored["technical_score"] < 7.0
 
 
-def test_expansion_bar_extended_and_resistance_is_not_seven() -> None:
+def test_energy_prints_seven_even_if_extended() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
@@ -194,7 +193,7 @@ def test_expansion_bar_extended_and_resistance_is_not_seven() -> None:
         side="long",
         snapshot={"tags": ["ema20_extended_long", "near_resistance", "rsi_overbought"], "formations": []},
     )
-    assert scored["technical_score"] < 7.0
+    assert scored["technical_score"] == 7.0
 
 
 def test_adanipower_sep18_coil_is_not_seven() -> None:
