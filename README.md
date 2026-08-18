@@ -7,7 +7,7 @@ Personal stock analysis workstation focused on **technical pattern memory** with
 - Trades a **5-scrip intraday book**: HDFCBANK, BAJFINANCE, M&M, Nifty 50, Bank Nifty
 - Wider names (Nifty Next 50 list in `config/nifty_next_50.json`) are for a **later swing** feature — not the live book
 - Downloads **daily + 15m/1h OHLCV** for those 5 into `data/ohlcv/`
-- Book targets (HDFC 2%, BAJ/M&M 3%, Nifty 1%, Bank Nifty 1.2%) mark **days that already printed that % rise** (high vs prior close). `python scripts/study_target_days.py` lists those days. EOD **target watch** (no uptrend + rumble or RSI<40) is in `python scripts/eval_target_trades.py` — not a 7.
+- Book targets mark days that already printed that % rise. **Rare 1-day-ahead setup** = no uptrend, RSI < 30, rumble or strong close, max 1/day and 4/week (`python scripts/eval_rare_eod.py`). 10% false signals is not available from yesterday's close on this book.
 - **Learns from outcomes** by logging every setup and refreshing hit rates (`data/intraday/`) — not a trained ML model
 
 ## Run & start scripts

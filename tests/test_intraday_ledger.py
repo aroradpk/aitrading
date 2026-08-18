@@ -56,5 +56,5 @@ def test_rule_stats_trust_only_at_n20(tmp_path, monkeypatch) -> None:
     stats = recompute_rule_stats()
     assert stats["rules"]["session_seven"]["n"] == 1
     assert stats["rules"]["session_seven"]["trusted"] is False
-    assert "target watch" in stats["advice"]
+    assert "Rare EOD" in stats["advice"]
     assert load_ledger()[0]["mfe_pct"] == 2.4

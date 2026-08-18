@@ -229,20 +229,19 @@ def scan_today_setup(
     )
     expected = float(trade.get("expected_move_pct") or 0.0)
     horizon_days = int(trade.get("expected_horizon_days") or 1)
-    if trade.get("target_watch"):
-        for text in reversed(trade.get("reasons") or []):
-            scored.setdefault("confirmation_labels", []).insert(0, text)
+    for text in reversed(trade.get("reasons") or []):
+        scored.setdefault("confirmation_labels", []).insert(0, text)
     if (
         settings.technical.require_trend_for_setup
         and technical_score < 6.0
         and not scored.get("breakout_base")
+        and not trade.get("rare_eod")
     ):
         if side == "long" and bias != "long":
             technical_score = round(min(technical_score, 3.0), 1)
         elif side == "short" and bias != "short":
             technical_score = round(min(technical_score, 3.0), 1)
-
-    if not scored.get("breakout_base"):
+    if not scored.get("breakout_base") and not trade.get("rare_eod"):
         technical_score = _apply_side_context_caps(technical_score, current, side)
     horizon = "next_session"
     target = float(adr.get("target_range_pct") or adr.get("adr20_pct") or 0.0)
@@ -265,6 +264,8 @@ def scan_today_setup(
         "expected_horizon_days": horizon_days,
         "session_seven": False,
         "target_watch": bool(trade.get("target_watch")),
+        "rare_eod": bool(trade.get("rare_eod")),
+        "rare_eod_score": float(trade.get("rare_eod_score") or 0.0),
         "mtf_precision": bool(scored.get("mtf_precision")),
         "intraday": intraday,
         "adr": adr,
