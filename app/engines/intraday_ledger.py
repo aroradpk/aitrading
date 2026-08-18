@@ -18,6 +18,7 @@ from app.engines.universe import all_instruments
 from app.ingest.yfinance_client import load_ohlcv
 
 TRAIT_COLUMNS = (
+    "rare_take",
     "target_watch",
     "session_seven",
     "rattle",
@@ -151,10 +152,12 @@ def recompute_rule_stats() -> dict:
         if col in frame.columns:
             stats["rules"][col] = pack(frame[col].fillna(False).astype(bool), col)
 
+    take = stats["rules"].get("rare_take") or {}
     watch = stats["rules"].get("target_watch") or {}
     stats["advice"] = (
-        "EOD target watch = no uptrend and (rumble or RSI<40). "
-        f"target_watch n={watch.get('n', 0)} hit={watch.get('hit_adr')}. Not a 7."
+        "Rare take = open gap in [75%, 100%) of the book target, one name per day. "
+        f"rare_take n={take.get('n', 0)} hit={take.get('hit_adr')}. "
+        f"EOD watch n={watch.get('n', 0)} is not high conviction."
     )
     stats_path = intraday_rule_stats_path()
     stats_path.write_text(json.dumps(stats, indent=2), encoding="utf-8")
@@ -178,6 +181,7 @@ def log_today_setups(setups: list[dict]) -> int:
             "expected_move_pct": setup.get("expected_move_pct"),
             "session_seven": False,
             "target_watch": bool(setup.get("target_watch")),
+            "rare_take": bool(setup.get("rare_take")),
             "adr20_pct": (setup.get("adr") or {}).get("adr20_pct") or setup.get("adr20_pct"),
             "target_range_pct": (setup.get("adr") or {}).get("target_range_pct") or setup.get("target_range_pct"),
             "rattle": bool(conf.get("setup_rattle")),
