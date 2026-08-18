@@ -18,6 +18,7 @@ from app.engines.universe import all_instruments
 from app.ingest.yfinance_client import load_ohlcv
 
 TRAIT_COLUMNS = (
+    "target_watch",
     "session_seven",
     "rattle",
     "range_expansion",
@@ -150,10 +151,10 @@ def recompute_rule_stats() -> dict:
         if col in frame.columns:
             stats["rules"][col] = pack(frame[col].fillna(False).astype(bool), col)
 
-    live = stats["rules"].get("live_rvol") or {}
+    watch = stats["rules"].get("target_watch") or {}
     stats["advice"] = (
-        "No named setup is a 7. Use scripts/study_target_days.py for days that "
-        f"already printed the book target. live_rvol n={live.get('n', 0)}."
+        "EOD target watch = no uptrend and (rumble or RSI<40). "
+        f"target_watch n={watch.get('n', 0)} hit={watch.get('hit_adr')}. Not a 7."
     )
     stats_path = intraday_rule_stats_path()
     stats_path.write_text(json.dumps(stats, indent=2), encoding="utf-8")
@@ -176,6 +177,7 @@ def log_today_setups(setups: list[dict]) -> int:
             "technical_score": setup.get("technical_score"),
             "expected_move_pct": setup.get("expected_move_pct"),
             "session_seven": False,
+            "target_watch": bool(setup.get("target_watch")),
             "adr20_pct": (setup.get("adr") or {}).get("adr20_pct") or setup.get("adr20_pct"),
             "target_range_pct": (setup.get("adr") or {}).get("target_range_pct") or setup.get("target_range_pct"),
             "rattle": bool(conf.get("setup_rattle")),
@@ -194,6 +196,8 @@ def log_today_setups(setups: list[dict]) -> int:
 def backfill_ledger(*, lookback_bars: int = 60) -> int:
     """Replay recent daily bars into the ledger so hit rates can start before live days pile up."""
     from app.engines.pattern_confirmations import detect_daily_confirmations
+    from app.engines.target_trade import is_eod_target_watch
+    from app.engines.technical import _rsi
 
     existing = {(r.get("symbol"), r.get("setup_date"), r.get("side")) for r in load_ledger()}
     n = 0
@@ -212,6 +216,7 @@ def backfill_ledger(*, lookback_bars: int = 60) -> int:
                 if key in existing:
                     continue
                 conf = detect_daily_confirmations(slice_frame, side)
+                watch = is_eod_target_watch(conf, rsi=_rsi(slice_frame["close"])) if side == "long" else False
                 row = {
                     "symbol": symbol,
                     "setup_date": setup_date,
@@ -219,6 +224,7 @@ def backfill_ledger(*, lookback_bars: int = 60) -> int:
                     "technical_score": None,
                     "expected_move_pct": None,
                     "session_seven": False,
+                    "target_watch": watch,
                     "rattle": bool(conf.get("setup_rattle")),
                     "range_expansion": bool(conf.get("range_expansion")),
                     "live_rvol": bool(conf.get("live_rvol")),
