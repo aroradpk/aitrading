@@ -127,6 +127,7 @@ def build_daily_watchlist() -> dict:
                     "as_of": setup["as_of"],
                     "horizon": horizon,
                     "target_move_pct": target,
+                    "expected_move_pct": setup.get("expected_move_pct", 0.0),
                     "position_bias": setup.get("position_bias", "neutral"),
                     "position_side": setup.get("position_side", "long"),
                     "intraday": setup.get("intraday", False),

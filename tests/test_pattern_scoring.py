@@ -26,29 +26,79 @@ def test_motherson_aug5_coil_is_watch_not_seven() -> None:
     assert setup.get("breakout_base") is True
 
 
-def test_setup_rattle_without_volume_spike_is_seven() -> None:
+def test_setup_rattle_without_mtf_is_six_not_seven() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
         {"setup_rattle": True, "vol_expansion": False, "range_expansion": False},
         side="long",
     )
-    assert scored["technical_score"] == 7.0
+    assert scored["technical_score"] == 6.0
+    assert scored["expected_move_pct"] == 4.0
     assert scored["precision_energy"] is True
+    assert scored["mtf_precision"] is False
 
 
 def test_late_five_percent_bar_is_not_seven() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
-        {"range_expansion": True, "vol_expansion": True, "setup_rattle": False},
+        {"range_expansion": True, "vol_expansion": True, "setup_rattle": False, "late_bar": True},
         side="long",
     )
     assert scored["technical_score"] < 7.0
+    assert scored["expected_move_pct"] == 0.0
     assert scored["precision_energy"] is False
 
 
-def test_two_piece_family_with_energy_is_seven() -> None:
+def test_hourly_fib_is_not_a_seven_gate() -> None:
+    from app.engines.pattern_scoring import score_technical_confirmations
+
+    scored = score_technical_confirmations(
+        {"setup_rattle": True, "mtf_1h_fib_sr": True},
+        side="long",
+    )
+    assert scored["technical_score"] == 6.0
+    assert scored["expected_move_pct"] == 4.0
+    assert scored["mtf_precision"] is False
+
+
+def test_seven_requires_15m_and_1h() -> None:
+    from app.engines.pattern_scoring import score_technical_confirmations
+
+    only_15m = score_technical_confirmations(
+        {"setup_rattle": True, "mtf_15m_coil_ema": True},
+        side="long",
+    )
+    assert only_15m["technical_score"] == 6.0
+    assert only_15m["expected_move_pct"] == 4.0
+    assert only_15m["mtf_precision"] is False
+
+    only_1h = score_technical_confirmations(
+        {"setup_rattle": True, "mtf_1h_coil_ema": True},
+        side="long",
+    )
+    assert only_1h["technical_score"] == 6.0
+    assert only_1h["mtf_precision"] is False
+
+    both = score_technical_confirmations(
+        {"setup_rattle": True, "mtf_15m_coil_ema": True, "mtf_1h_coil_ema": True},
+        side="long",
+    )
+    assert both["technical_score"] == 7.0
+    assert both["expected_move_pct"] == 5.0
+    assert both["mtf_precision"] is True
+
+    wedge_round = score_technical_confirmations(
+        {"setup_rattle": True, "mtf_15m_wedge": True, "mtf_1h_rounding_ema20": True},
+        side="long",
+    )
+    assert wedge_round["technical_score"] == 7.0
+    assert wedge_round["expected_move_pct"] == 5.0
+    assert wedge_round["confirmation_labels"][-1] == "Expect next move ~5%"
+
+
+def test_two_piece_family_with_energy_is_six_without_mtf() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
@@ -60,12 +110,13 @@ def test_two_piece_family_with_energy_is_seven() -> None:
         },
         side="long",
     )
-    assert scored["technical_score"] == 7.0
+    assert scored["technical_score"] == 6.0
+    assert scored["expected_move_pct"] == 4.0
     assert "ema_pullback" in scored["pattern_families"]
     assert scored["score_layers"]["energy"] == 2.0
 
 
-def test_coil_at_ema_and_fib_is_watch_without_energy() -> None:
+def test_coil_at_ema_and_fib_is_five_expect_three() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
@@ -83,14 +134,15 @@ def test_coil_at_ema_and_fib_is_watch_without_energy() -> None:
         },
         side="long",
     )
-    assert scored["technical_score"] <= 5.0
+    assert scored["technical_score"] == 5.0
+    assert scored["expected_move_pct"] == 3.0
     assert scored["score_layers"]["sr_fib"] == 2.5
     assert scored["score_layers"]["coil"] == 0.5
     assert scored["score_layers"]["energy"] == 0.0
     assert any("coil" in label.lower() for label in scored["confirmation_labels"])
 
 
-def test_ema_fib_energy_reaches_seven() -> None:
+def test_ema_fib_energy_without_mtf_is_six() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
@@ -104,7 +156,8 @@ def test_ema_fib_energy_reaches_seven() -> None:
         },
         side="long",
     )
-    assert scored["technical_score"] == 7.0
+    assert scored["technical_score"] == 6.0
+    assert scored["expected_move_pct"] == 4.0
     assert scored["score_layers"]["energy"] == 2.0
     assert scored["score_layers"]["sr_fib"] == 2.5
 
@@ -129,7 +182,7 @@ def test_elliott_formation_candle_are_cherries() -> None:
             "formations": [{"id": "falling_wedge"}],
         },
     )
-    assert scored["technical_score"] == 7.0
+    assert scored["technical_score"] == 6.0
     assert scored["score_layers"]["elliott"] == 0.5
     assert scored["score_layers"]["formation"] == 0.5
     assert scored["score_layers"]["candle"] == 0.5
@@ -152,7 +205,7 @@ def test_energy_seven_does_not_require_sr_fib() -> None:
         snapshot={"tags": ["elliott_impulse_up", "candle_hammer"], "formations": [{"id": "falling_wedge"}]},
     )
     assert scored["score_layers"]["sr_fib"] == 0.0
-    assert scored["technical_score"] == 7.0
+    assert scored["technical_score"] == 6.0
 
 
 def test_elliott_conflict_zeros_cherry_not_whole_score() -> None:
@@ -173,7 +226,7 @@ def test_elliott_conflict_zeros_cherry_not_whole_score() -> None:
         snapshot={"tags": ["elliott_impulse_down"], "formations": [{"id": "falling_wedge"}]},
     )
     assert scored["score_layers"]["elliott"] == 0.0
-    assert scored["technical_score"] == 7.0
+    assert scored["technical_score"] == 6.0
 
 
 def test_candle_cherry_requires_context() -> None:
@@ -214,7 +267,7 @@ def test_energy_prints_seven_even_if_extended() -> None:
         side="long",
         snapshot={"tags": ["ema20_extended_long", "near_resistance", "rsi_overbought"], "formations": []},
     )
-    assert scored["technical_score"] == 7.0
+    assert scored["technical_score"] == 6.0
 
 
 def test_adanipower_sep18_coil_is_not_seven() -> None:

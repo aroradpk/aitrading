@@ -217,26 +217,33 @@ def scan_today_setup(
     families = scored.get("pattern_families") or []
 
     bias = position_bias(current, focus=side)
-    if settings.technical.require_trend_for_setup and technical_score < 7.0 and not scored.get("breakout_base"):
+    energy = bool(scored.get("precision_energy"))
+    expected = float(scored.get("expected_move_pct") or 0.0)
+    ladder = energy or expected > 0
+    if (
+        settings.technical.require_trend_for_setup
+        and technical_score < 6.0
+        and not scored.get("breakout_base")
+        and not ladder
+    ):
         if side == "long" and bias != "long":
             technical_score = round(min(technical_score, 3.0), 1)
         elif side == "short" and bias != "short":
             technical_score = round(min(technical_score, 3.0), 1)
 
-    if not scored.get("precision_energy") and not scored.get("breakout_base"):
+    if not ladder and not scored.get("breakout_base"):
         technical_score = _apply_side_context_caps(technical_score, current, side)
-
     intraday_threshold = settings.technical.intraday.stock_target_1d_pct
     thresholds = settings.thresholds
     if intraday:
         horizon = "intraday"
-        target = intraday_threshold
+        target = expected or intraday_threshold
     elif side == "short":
         horizon = "short_1d/1w"
-        target = thresholds.stock_short_1d_pct
+        target = expected or thresholds.stock_short_1d_pct
     else:
         horizon = "1d/1w"
-        target = thresholds.stock_1d_pct
+        target = expected or thresholds.stock_1d_pct
 
     return {
         "as_of": frame.index[-1].date().isoformat(),
@@ -252,6 +259,8 @@ def scan_today_setup(
         "position_side": side,
         "horizon": horizon,
         "target_move_pct": target,
+        "expected_move_pct": expected,
+        "mtf_precision": bool(scored.get("mtf_precision")),
         "intraday": intraday,
         "formation_alignment": formation_state,
         "elliott_alignment": elliott_state,
