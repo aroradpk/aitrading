@@ -1,17 +1,17 @@
 from __future__ import annotations
 
 from app.engines.chart_patterns import load_formation_catalog
-from app.engines.pattern_confirmations import confirmation_labels, is_breakout_base
+from app.engines.pattern_confirmations import confirmation_labels, is_breakout_base, is_coil_setup
 from app.engines.technical import snapshot_similarity
 
 TECHNICAL_MAX = 7.0
 
-# Core stack can reach 7 without Elliott/formations/candles.
-# Those three are cherries only. S/R without Fibonacci cannot make a 7.
+# Core stack can reach 7 on the coil (dead-volume consolidation), not the breakout bar.
+# Elliott / formations / candles remain cherries. Expansion is not required.
 CORE_WEIGHTS = {
     "ema_structure": 2.5,
     "sr_fib": 2.5,
-    "energy": 2.0,
+    "coil": 2.0,
 }
 CHERRY_WEIGHTS = {
     "elliott": 0.5,
@@ -167,8 +167,12 @@ def _layer_scores(
         sr_ok = sr_ok or "near_support" in tags or "ema20_support_touch" in tags
     else:
         sr_ok = sr_ok or "near_resistance" in tags
-    fib_ok = bool(confirmations.get("fib_level")) or any(tag.startswith("fib_") for tag in tags)
-    sr_fib = bool(confirmations.get("sr_fib_confluence")) or (sr_ok and fib_ok)
+    fib_ok = bool(confirmations.get("fib_level") or confirmations.get("mtf_1h_fib_sr")) or any(
+        tag.startswith("fib_") for tag in tags
+    )
+    sr_fib = bool(confirmations.get("sr_fib_confluence") or confirmations.get("mtf_1h_fib_sr")) or (
+        sr_ok and fib_ok
+    )
     if sr_fib:
         layers["sr_fib"] = CORE_WEIGHTS["sr_fib"]
 
@@ -185,8 +189,8 @@ def _layer_scores(
     elif formation_ok or form_state == "support":
         layers["formation"] = CHERRY_WEIGHTS["formation"]
 
-    if has_precision_energy(confirmations):
-        layers["energy"] = CORE_WEIGHTS["energy"]
+    if is_coil_setup(confirmations):
+        layers["coil"] = CORE_WEIGHTS["coil"]
 
     if confirmations.get("mtf_15m_wedge") or confirmations.get("mtf_1h_rounding_ema20"):
         layers["mtf"] = CHERRY_WEIGHTS["mtf"]
@@ -219,12 +223,17 @@ def score_technical_confirmations(
     bonus, top_matches = historical_pattern_bonus(confirmations, historical_moves or [], side=side)
     score += bonus
 
-    # Quiet days cannot reach 7 even if many structure labels fire.
-    if not energy:
+    # Coil at EMA + S/R-with-Fib is the 7. Volume expansion is the late breakout bar.
+    if not layers.get("sr_fib") or not layers.get("ema_structure") or not layers.get("coil"):
         score = min(score, 4.0)
-    # S/R with Fibonacci is required for a 7; cherries cannot substitute.
-    if not layers.get("sr_fib") or not layers.get("ema_structure"):
-        score = min(score, 4.0)
+
+    # Expansion bar after the coil (gap / extended / resistance) is late — do not require catching it.
+    if snapshot and energy:
+        tags = set(snapshot.get("tags", []))
+        late_long = side == "long" and ("ema20_extended_long" in tags or "near_resistance" in tags)
+        late_short = side == "short" and ("ema20_extended_short" in tags or "near_support" in tags)
+        if late_long or late_short:
+            score = min(score, 4.0)
 
     # Only fade a long chase when there is no pattern family at all.
     if side == "long" and snapshot and not families:
@@ -242,7 +251,7 @@ def score_technical_confirmations(
     pretty = {
         "ema_structure": "EMA / trend structure",
         "sr_fib": "S/R with Fibonacci",
-        "energy": "Volume + range energy",
+        "coil": "Rangebound coil (pre-breakout)",
         "elliott": "Elliott wave cherry",
         "formation": "Chart formation cherry",
         "mtf": "Intraday MTF cherry",

@@ -100,8 +100,13 @@ def detect_rsi_60_reclaim(frame: pd.DataFrame, lookback: int = 8) -> bool:
 
 
 def detect_energy_triggers(frame: pd.DataFrame) -> dict[str, bool]:
-    """Volume/range expansion — the only features with lift vs quiet days."""
-    empty = {"vol_expansion": False, "range_expansion": False, "strong_close": False}
+    """Expansion vs coil volume. Breakouts usually fire after dead-volume consolidation."""
+    empty = {
+        "vol_expansion": False,
+        "range_expansion": False,
+        "strong_close": False,
+        "dead_volume": False,
+    }
     if len(frame) < 25:
         return empty
     close = float(frame["close"].iloc[-1])
@@ -117,6 +122,7 @@ def detect_energy_triggers(frame: pd.DataFrame) -> dict[str, bool]:
         "vol_expansion": vr >= 2.0,
         "range_expansion": atr > 0 and span >= 1.6 * atr,
         "strong_close": loc >= 0.7,
+        "dead_volume": vr <= 0.85,
     }
 
 
@@ -282,11 +288,13 @@ def confirmation_labels(confirmations: dict[str, bool]) -> list[str]:
         "close_below_ema20": "Close below EMA20",
         "rsi_trend_long": "RSI holding above 50",
         "rsi_trend_short": "RSI holding below 50",
-        "vol_expansion": "Volume >= 2.0x 20d avg",
-        "range_expansion": "Day range >= 1.6x ATR",
+        "vol_expansion": "Volume >= 2.0x 20d avg (breakout bar)",
+        "range_expansion": "Day range >= 1.6x ATR (breakout bar)",
         "strong_close": "Close in top 30% of day range",
+        "dead_volume": "Dead volume coil (<=0.85x 20d avg)",
         "mtf_15m_wedge": "15m compressing wedge",
         "mtf_1h_rounding_ema20": "1h rounding bottom at EMA20",
+        "mtf_1h_fib_sr": "Hourly S/R with Fibonacci (0.382/0.5/0.618)",
         "sr_level": "Support/resistance level",
         "fib_level": "Fibonacci retrace/extension",
         "sr_fib_confluence": "S/R with Fibonacci confluence",
@@ -303,3 +311,8 @@ def is_breakout_base(confirmations: dict[str, bool]) -> bool:
         and confirmations.get("consolidation_anchor")
         and confirmations.get("ema_momentum_expanding")
     )
+
+
+def is_coil_setup(confirmations: dict[str, bool]) -> bool:
+    """Rangebound base — the setup that precedes the breakout (dead volume is typical, not required)."""
+    return bool(confirmations.get("tight_range") or confirmations.get("consolidation_anchor"))

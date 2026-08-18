@@ -6,7 +6,7 @@ import pandas as pd
 
 from app.core.config import get_settings
 from app.core.paths import ohlcv_intraday_dir
-from app.engines.chart_patterns import detect_compressing_wedge, detect_rounding_bottom
+from app.engines.chart_patterns import detect_compressing_wedge, detect_rounding_bottom, detect_sr_fib_confluence
 from app.engines.pattern_confirmations import detect_ema20_support
 from app.engines.technical import _ema
 from app.ingest.yfinance_client import load_ohlcv, save_ohlcv, yahoo_ticker
@@ -60,7 +60,7 @@ def analyze_intraday_confirmations(
     side: str = "long",
 ) -> dict[str, bool]:
     """15m wedge + 1h rounding/EMA20 for the signal session."""
-    out = {"mtf_15m_wedge": False, "mtf_1h_rounding_ema20": False}
+    out = {"mtf_15m_wedge": False, "mtf_1h_rounding_ema20": False, "mtf_1h_fib_sr": False}
     as_of = pd.Timestamp(as_of_date)
     if (pd.Timestamp.now().normalize() - as_of).days > 55:
         return out
@@ -99,5 +99,9 @@ def analyze_intraday_confirmations(
                 close = float(window["close"].iloc[-1])
                 at_ema = abs(close - ema20) / ema20 <= 0.02 or detect_ema20_support(window, lookback=3)
             out["mtf_1h_rounding_ema20"] = rounding and at_ema
+            sr_prices = [p for p in ([ema20] if ema20 else [])]
+            out["mtf_1h_fib_sr"] = bool(ema20) and detect_sr_fib_confluence(
+                window, side=side, sr_prices=sr_prices
+            )
 
     return out

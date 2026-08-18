@@ -118,12 +118,12 @@ def test_long_reasons_flag_headwinds() -> None:
     assert any("near resistance" in r["text"] for r in headwinds)
 
 
-def test_motherson_aug6_still_seven_and_extended_can_score_if_families() -> None:
+def test_motherson_aug5_coil_scores_seven() -> None:
     path = ohlcv_daily_dir() / "MOTHERSON.parquet"
     if not path.exists():
         return
     frame = load_ohlcv(path)
-    signal_idx = frame.index.get_indexer([pd.Timestamp("2026-08-06")], method="nearest")[0]
+    signal_idx = frame.index.get_indexer([pd.Timestamp("2026-08-05")], method="nearest")[0]
     setup_base = scan_today_setup(
         frame.iloc[: signal_idx + 1],
         load_moves("MOTHERSON"),
