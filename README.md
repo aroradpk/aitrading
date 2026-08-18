@@ -7,7 +7,7 @@ Personal stock analysis workstation focused on **technical pattern memory** with
 - Trades a **5-scrip intraday book**: HDFCBANK, BAJFINANCE, M&M, Nifty 50, Bank Nifty
 - Wider names (Nifty Next 50 list in `config/nifty_next_50.json`) are for a **later swing** feature — not the live book
 - Downloads **daily + 15m/1h OHLCV** for those 5 into `data/ohlcv/`
-- Scores next-session setups (tech 5/6/7). A **7** is judged on **next session MFE**, not a 2–3 day hold
+- Scores next-session setups against **each name's ADR**, not a 5% close. A **7** is a higher-ADR day call (1.25× ADR20), gated by live volume on the setup day.
 - **Learns from outcomes** by logging every setup and refreshing hit rates (`data/intraday/`) — not a trained ML model
 
 ## Run & start scripts

@@ -43,6 +43,8 @@ technical:
     enabled: true
     stock_target_1d_pct: 2.0
     position_side: long
+    adr_window: 20
+    expansion_mult: 1.25
 
 events:
   lookback_days: 30

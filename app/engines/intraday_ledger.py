@@ -14,6 +14,7 @@ from typing import Any
 import pandas as pd
 
 from app.core.paths import intraday_ledger_path, intraday_rule_stats_path, ohlcv_daily_dir
+from app.engines.adr import next_session_range_hit
 from app.engines.universe import all_instruments
 from app.ingest.yfinance_client import load_ohlcv
 
@@ -74,12 +75,16 @@ def next_session_result(frame: pd.DataFrame, setup_date: str) -> dict | None:
         abs(float(nxt["low"]) / setup_close - 1) * 100,
     )
     close_pct = abs(float(nxt["close"]) / setup_close - 1) * 100
-    return {
+    result = {
         "next_date": frame.index[idx + 1].date().isoformat(),
         "mfe_pct": round(mfe, 3),
         "close_abs_pct": round(close_pct, 3),
         "close_pct": round(float(nxt["close"] / setup_close - 1) * 100, 3),
     }
+    extra = next_session_range_hit(frame, setup_date)
+    if extra:
+        result.update(extra)
+    return result
 
 
 def resolve_open_rows() -> int:
@@ -87,7 +92,7 @@ def resolve_open_rows() -> int:
     filled = 0
     by_symbol: dict[str, pd.DataFrame] = {}
     for row in rows:
-        if row.get("mfe_pct") is not None:
+        if row.get("mfe_pct") is not None and row.get("hit_adr") is not None:
             continue
         symbol = row["symbol"]
         if symbol not in by_symbol:
@@ -111,8 +116,8 @@ def recompute_rule_stats() -> dict:
         "resolved_rows": len(rows),
         "min_n_to_trust": MIN_N_TO_TRUST,
         "note": (
-            "Hit = next session traded at least the bar (MFE). "
-            "A rule is trusted only at n>=20. Commons that hit both wins and fakes stay off the 7-gate."
+            "Hit = next session range >= 1.25 × that name's ADR20 "
+            "(high-low vs prior close). Not a 5% close. Trusted only at n>=20."
         ),
         "rules": {},
     }
@@ -126,10 +131,16 @@ def recompute_rule_stats() -> dict:
         sub = frame[mask]
         n = int(len(sub))
         out = {"n": n, "trusted": n >= MIN_N_TO_TRUST}
-        for bar in HIT_BARS:
-            if n == 0:
+        if n == 0:
+            out["hit_adr"] = None
+            for bar in HIT_BARS:
                 out[f"hit_mfe_{bar:.0f}"] = None
-                continue
+            return out
+        if "hit_adr" in sub.columns:
+            hits = int(sub["hit_adr"].fillna(False).astype(bool).sum())
+            out["hit_adr"] = round(100 * hits / n, 1)
+            out["false_alarm_adr"] = round(100 * (n - hits) / n, 1)
+        for bar in HIT_BARS:
             hits = int((sub["mfe_pct"] >= bar).sum())
             out[f"hit_mfe_{bar:.0f}"] = round(100 * hits / n, 1)
             out[f"false_alarm_mfe_{bar:.0f}"] = round(100 * (n - hits) / n, 1)
@@ -140,23 +151,21 @@ def recompute_rule_stats() -> dict:
         if col in frame.columns:
             stats["rules"][col] = pack(frame[col].fillna(False).astype(bool), col)
 
-    base_hit = stats["rules"]["all_logged"].get("hit_mfe_2")
+    base_hit = stats["rules"]["all_logged"].get("hit_adr")
     seven = stats["rules"].get("session_seven") or {}
-    if seven.get("trusted") and base_hit is not None and seven.get("hit_mfe_2") is not None:
-        if seven["hit_mfe_2"] > base_hit:
+    live = stats["rules"].get("live_rvol") or {}
+    if live.get("trusted") and base_hit is not None and live.get("hit_adr") is not None:
+        if live["hit_adr"] > base_hit:
             stats["advice"] = (
-                f"session_seven beats chance at next-session 2% MFE "
-                f"({seven['hit_mfe_2']}% vs {base_hit}% all days). Keep the 7-gate."
+                f"live_rvol beats chance at 1.25×ADR "
+                f"({live['hit_adr']}% vs {base_hit}% all days). Keep it as the expansion 7."
             )
         else:
-            stats["advice"] = (
-                "session_seven is not beating chance at 2% MFE with n>=20 — "
-                "do not loosen the 7-gate; drop traits that lost lift."
-            )
+            stats["advice"] = "live_rvol is not beating 1.25×ADR chance at n>=20 — drop it as a 7-gate."
     else:
         stats["advice"] = (
-            f"Need n>={MIN_N_TO_TRUST} resolved session_seven rows before changing the 7 rule "
-            f"(have {seven.get('n', 0)})."
+            f"Need n>={MIN_N_TO_TRUST} resolved live_rvol rows before changing the ADR 7 "
+            f"(have {live.get('n', 0)}; session_seven n={seven.get('n', 0)})."
         )
     stats_path = intraday_rule_stats_path()
     stats_path.write_text(json.dumps(stats, indent=2), encoding="utf-8")
@@ -179,6 +188,8 @@ def log_today_setups(setups: list[dict]) -> int:
             "technical_score": setup.get("technical_score"),
             "expected_move_pct": setup.get("expected_move_pct"),
             "session_seven": bool(setup.get("session_seven") or (setup.get("technical_score") == 7)),
+            "adr20_pct": (setup.get("adr") or {}).get("adr20_pct") or setup.get("adr20_pct"),
+            "target_range_pct": (setup.get("adr") or {}).get("target_range_pct") or setup.get("target_range_pct"),
             "rattle": bool(conf.get("setup_rattle")),
             "range_expansion": bool(conf.get("range_expansion")),
             "live_rvol": bool(conf.get("live_rvol")),

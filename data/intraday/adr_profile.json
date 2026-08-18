@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-08-18T14:30:39.347499+00:00",
+  "window": 20,
+  "expansion_mult": 1.25,
+  "hit_definition": "Next session (high-low)/prior close >= 1.25 \u00d7 ADR20. Not a 5% close target.",
+  "expansion_factor": {
+    "name": "live_rvol",
+    "rule": "Volume >= 1.5x 20-day average on the setup day",
+    "note": "Backtest (~252 sessions): live_rvol lifts next-session 1.25x-ADR hit rate on all 5 names (HDFC +4.6pp, BAJ +12pp, M&M +17pp, Nifty +25pp n=10, Bank Nifty +12pp). Range expansion helps M&M/Nifty; EMA support and dead volume do not. A 7 is an ADR-expansion call, not a 5% prediction."
+  },
+  "instruments": [
+    {
+      "symbol": "HDFCBANK",
+      "name": "HDFC Bank",
+      "type": "stock",
+      "window": 20,
+      "expansion_mult": 1.25,
+      "adr20_pct": 1.23,
+      "adr14_pct": 1.15,
+      "adr20_pts": 9.21,
+      "target_range_pct": 1.54,
+      "as_of": "2026-08-17"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "name": "Bajaj Finance",
+      "type": "stock",
+      "window": 20,
+      "expansion_mult": 1.25,
+      "adr20_pct": 2.31,
+      "adr14_pct": 2.38,
+      "adr20_pts": 24.91,
+      "target_range_pct": 2.88,
+      "as_of": "2026-08-17"
+    },
+    {
+      "symbol": "M&M",
+      "name": "Mahindra & Mahindra",
+      "type": "stock",
+      "window": 20,
+      "expansion_mult": 1.25,
+      "adr20_pct": 2.32,
+      "adr14_pct": 2.35,
+      "adr20_pts": 76.79,
+      "target_range_pct": 2.9,
+      "as_of": "2026-08-17"
+    },
+    {
+      "symbol": "NIFTY_50",
+      "name": "Nifty 50",
+      "type": "index",
+      "window": 20,
+      "expansion_mult": 1.25,
+      "adr20_pct": 0.64,
+      "adr14_pct": 0.62,
+      "adr20_pts": 154.51,
+      "target_range_pct": 0.79,
+      "as_of": "2026-08-14"
+    },
+    {
+      "symbol": "NIFTY_BANK",
+      "name": "Bank Nifty",
+      "type": "index",
+      "window": 20,
+      "expansion_mult": 1.25,
+      "adr20_pct": 0.86,
+      "adr14_pct": 0.78,
+      "adr20_pts": 494.17,
+      "target_range_pct": 1.07,
+      "as_of": "2026-08-14"
+    }
+  ]
+}

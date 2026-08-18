@@ -8,7 +8,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.core.paths import intraday_rule_stats_path
+from app.engines.adr import build_adr_profiles
 from app.engines.intraday_ledger import (
     backfill_ledger,
     load_ledger,
@@ -31,9 +31,12 @@ def main() -> None:
 
     filled = resolve_open_rows()
     stats = recompute_rule_stats()
+    profiles = build_adr_profiles()
     print(f"Resolved {filled} open rows")
+    print("ADR profiles:")
+    for row in profiles.get("instruments", []):
+        print(f"  {row['symbol']}: ADR20 {row['adr20_pct']}% / {row['adr20_pts']} pts → 1.25x {row['target_range_pct']}%")
     print(json.dumps(stats, indent=2))
-    print(f"Wrote {intraday_rule_stats_path()}")
 
 
 if __name__ == "__main__":

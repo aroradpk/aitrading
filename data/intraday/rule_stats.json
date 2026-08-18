@@ -1,12 +1,14 @@
 {
-  "updated_at": "2026-08-18T13:51:53.183458+00:00",
+  "updated_at": "2026-08-18T14:30:39.319851+00:00",
   "resolved_rows": 600,
   "min_n_to_trust": 20,
-  "note": "Hit = next session traded at least the bar (MFE). A rule is trusted only at n>=20. Commons that hit both wins and fakes stay off the 7-gate.",
+  "note": "Hit = next session range >= 1.25 \u00d7 that name's ADR20 (high-low vs prior close). Not a 5% close. Trusted only at n>=20.",
   "rules": {
     "all_logged": {
       "n": 600,
       "trusted": true,
+      "hit_adr": 21.0,
+      "false_alarm_adr": 79.0,
       "hit_mfe_2": 23.7,
       "false_alarm_mfe_2": 76.3,
       "hit_mfe_3": 9.3,
@@ -15,15 +17,22 @@
       "false_alarm_mfe_5": 98.3
     },
     "session_seven": {
-      "n": 0,
-      "trusted": false,
-      "hit_mfe_2": null,
-      "hit_mfe_3": null,
-      "hit_mfe_5": null
+      "n": 44,
+      "trusted": true,
+      "hit_adr": 45.5,
+      "false_alarm_adr": 54.5,
+      "hit_mfe_2": 45.5,
+      "false_alarm_mfe_2": 54.5,
+      "hit_mfe_3": 22.7,
+      "false_alarm_mfe_3": 77.3,
+      "hit_mfe_5": 4.5,
+      "false_alarm_mfe_5": 95.5
     },
     "rattle": {
       "n": 90,
       "trusted": true,
+      "hit_adr": 22.2,
+      "false_alarm_adr": 77.8,
       "hit_mfe_2": 42.2,
       "false_alarm_mfe_2": 57.8,
       "hit_mfe_3": 15.6,
@@ -34,6 +43,8 @@
     "range_expansion": {
       "n": 32,
       "trusted": true,
+      "hit_adr": 37.5,
+      "false_alarm_adr": 62.5,
       "hit_mfe_2": 50.0,
       "false_alarm_mfe_2": 50.0,
       "hit_mfe_3": 25.0,
@@ -44,6 +55,8 @@
     "live_rvol": {
       "n": 44,
       "trusted": true,
+      "hit_adr": 45.5,
+      "false_alarm_adr": 54.5,
       "hit_mfe_2": 45.5,
       "false_alarm_mfe_2": 54.5,
       "hit_mfe_3": 22.7,
@@ -54,6 +67,8 @@
     "tight_range": {
       "n": 412,
       "trusted": true,
+      "hit_adr": 21.8,
+      "false_alarm_adr": 78.2,
       "hit_mfe_2": 24.3,
       "false_alarm_mfe_2": 75.7,
       "hit_mfe_3": 9.7,
@@ -62,5 +77,5 @@
       "false_alarm_mfe_5": 98.5
     }
   },
-  "advice": "Need n>=20 resolved session_seven rows before changing the 7 rule (have 0)."
+  "advice": "live_rvol beats chance at 1.25\u00d7ADR (45.5% vs 21.0% all days). Keep it as the expansion 7."
 }

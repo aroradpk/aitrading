@@ -142,17 +142,10 @@ def historical_pattern_bonus(
 
 
 def is_session_seven(confirmations: dict[str, bool], snapshot: dict | None = None) -> bool:
-    """Next-session 7: traits that differ on hits vs fakes. Commons (Fib, EMA, 15m/1h 'base', uptrend) are not used."""
-    tags = set((snapshot or {}).get("tags") or [])
-    return bool(
-        confirmations.get("setup_rattle")
-        and confirmations.get("range_expansion")
-        and confirmations.get("live_rvol")
-        and not confirmations.get("tight_range")
-        and not confirmations.get("late_bar")
-        and "ema20_extended_long" not in tags
-        and "near_resistance" not in tags
-    )
+    """7 = expect next session to print *above* this name's ADR (1.25x). Live volume is the portable factor."""
+    from app.engines.adr import is_adr_expansion_setup
+
+    return is_adr_expansion_setup(confirmations, snapshot)
 
 
 def has_precision_energy(confirmations: dict[str, bool]) -> bool:
@@ -233,6 +226,7 @@ def score_technical_confirmations(
     side: str,
     historical_moves: list[dict] | None = None,
     snapshot: dict | None = None,
+    adr: dict | None = None,
 ) -> dict:
     families = matched_families(confirmations, side=side)
     energy = has_precision_energy(confirmations)
@@ -251,6 +245,8 @@ def score_technical_confirmations(
     late = bool(confirmations.get("late_bar"))
     coil = is_coil_setup(confirmations)
     session_seven = is_session_seven(confirmations, snapshot)
+    typical = float((adr or {}).get("adr20_pct") or 0.0)
+    expand = float((adr or {}).get("target_range_pct") or 0.0)
     expected_move_pct = 0.0
     expected_horizon_days = 1
     if late:
@@ -258,13 +254,13 @@ def score_technical_confirmations(
         expected_move_pct = 0.0
     elif session_seven:
         score = TECHNICAL_MAX
-        expected_move_pct = 2.0
+        expected_move_pct = expand or typical
     elif energy:
         score = 6.0
-        expected_move_pct = 4.0
+        expected_move_pct = typical or 0.0
     elif coil:
         score = min(max(score, 5.0), 5.0)
-        expected_move_pct = 3.0
+        expected_move_pct = typical or 0.0
     else:
         score = min(score, 4.0)
 
@@ -300,14 +296,14 @@ def score_technical_confirmations(
         labels.insert(0, text)
 
     if expected_move_pct:
-        if expected_horizon_days > 1:
-            labels.append(f"Expect ~{expected_move_pct:.0f}% within {expected_horizon_days} sessions")
-        else:
+        if session_seven:
             labels.append(
-                f"Expect next session to trade ≥{expected_move_pct:.0f}%"
-                if score >= TECHNICAL_MAX
-                else f"Expect next move ~{expected_move_pct:.0f}%"
+                f"Expect next session range ≥{expected_move_pct:.2f}% "
+                f"({(adr or {}).get('expansion_mult', 1.25)}× ADR "
+                f"{(adr or {}).get('adr20_pct', expected_move_pct):.2f}%)"
             )
+        else:
+            labels.append(f"Typical ADR ~{expected_move_pct:.2f}% — not an expansion call")
 
     tags = set((snapshot or {}).get("tags", []))
     return {
@@ -324,6 +320,7 @@ def score_technical_confirmations(
         "mtf_precision": has_mtf_precision(confirmations),
         "expected_move_pct": expected_move_pct,
         "expected_horizon_days": expected_horizon_days,
+        "adr": adr or {},
         "formation_alignment": formation_alignment((snapshot or {}).get("formations") or [], side),
         "elliott_alignment": elliott_alignment(tags, side),
     }

@@ -28,15 +28,19 @@ def test_motherson_aug5_coil_is_watch_not_seven() -> None:
     assert setup.get("breakout_base") is True
 
 
+ADR = {"adr20_pct": 2.0, "target_range_pct": 2.5, "expansion_mult": 1.25}
+
+
 def test_setup_rattle_without_mtf_is_six_not_seven() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
         {"setup_rattle": True, "vol_expansion": False, "range_expansion": False},
         side="long",
+        adr=ADR,
     )
     assert scored["technical_score"] == 6.0
-    assert scored["expected_move_pct"] == 4.0
+    assert scored["expected_move_pct"] == 2.0
     assert scored["precision_energy"] is True
     assert scored["mtf_precision"] is False
 
@@ -59,9 +63,10 @@ def test_hourly_fib_is_not_a_seven_gate() -> None:
     scored = score_technical_confirmations(
         {"setup_rattle": True, "mtf_1h_fib_sr": True},
         side="long",
+        adr=ADR,
     )
     assert scored["technical_score"] == 6.0
-    assert scored["expected_move_pct"] == 4.0
+    assert scored["expected_move_pct"] == 2.0
 
 
 def test_mtf_base_alone_is_not_seven() -> None:
@@ -74,47 +79,27 @@ def test_mtf_base_alone_is_not_seven() -> None:
     assert scored["technical_score"] == 6.0
 
 
-def test_session_seven_is_wide_live_not_tight() -> None:
+def test_session_seven_is_live_volume_adr_expansion() -> None:
     from app.engines.pattern_scoring import score_technical_confirmations
 
     scored = score_technical_confirmations(
-        {
-            "setup_rattle": True,
-            "range_expansion": True,
-            "live_rvol": True,
-            "tight_range": False,
-        },
+        {"live_rvol": True, "setup_rattle": False},
         side="long",
         snapshot={"tags": [], "formations": []},
+        adr=ADR,
     )
     assert scored["technical_score"] == 7.0
-    assert scored["expected_move_pct"] == 2.0
-    assert scored["expected_horizon_days"] == 1
+    assert scored["expected_move_pct"] == 2.5
     assert scored["session_seven"] is True
 
-    tight = score_technical_confirmations(
-        {
-            "setup_rattle": True,
-            "range_expansion": True,
-            "live_rvol": True,
-            "tight_range": True,
-        },
+    no_vol = score_technical_confirmations(
+        {"setup_rattle": True, "range_expansion": True, "live_rvol": False},
         side="long",
         snapshot={"tags": [], "formations": []},
+        adr=ADR,
     )
-    assert tight["technical_score"] == 6.0
-
-    extended = score_technical_confirmations(
-        {
-            "setup_rattle": True,
-            "range_expansion": True,
-            "live_rvol": True,
-            "tight_range": False,
-        },
-        side="long",
-        snapshot={"tags": ["ema20_extended_long", "near_resistance"], "formations": []},
-    )
-    assert extended["technical_score"] == 6.0
+    assert no_vol["technical_score"] == 6.0
+    assert no_vol["session_seven"] is False
 
 
 def test_two_piece_family_with_energy_is_six_without_mtf() -> None:
@@ -128,9 +113,10 @@ def test_two_piece_family_with_energy_is_six_without_mtf() -> None:
             "setup_rattle": True,
         },
         side="long",
+        adr=ADR,
     )
     assert scored["technical_score"] == 6.0
-    assert scored["expected_move_pct"] == 4.0
+    assert scored["expected_move_pct"] == 2.0
     assert "ema_pullback" in scored["pattern_families"]
     assert scored["score_layers"]["energy"] == 2.0
 
@@ -152,9 +138,10 @@ def test_coil_at_ema_and_fib_is_five_expect_three() -> None:
             "range_expansion": False,
         },
         side="long",
+        adr=ADR,
     )
     assert scored["technical_score"] == 5.0
-    assert scored["expected_move_pct"] == 3.0
+    assert scored["expected_move_pct"] == 2.0
     assert scored["score_layers"]["sr_fib"] == 2.5
     assert scored["score_layers"]["coil"] == 0.5
     assert scored["score_layers"]["energy"] == 0.0
@@ -174,9 +161,10 @@ def test_ema_fib_energy_without_mtf_is_six() -> None:
             "setup_rattle": True,
         },
         side="long",
+        adr=ADR,
     )
     assert scored["technical_score"] == 6.0
-    assert scored["expected_move_pct"] == 4.0
+    assert scored["expected_move_pct"] == 2.0
     assert scored["score_layers"]["energy"] == 2.0
     assert scored["score_layers"]["sr_fib"] == 2.5
 

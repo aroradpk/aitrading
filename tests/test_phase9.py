@@ -97,5 +97,6 @@ def test_intraday_setup_tags_horizon(monkeypatch) -> None:
         }
     ]
     setup = scan_today_setup(frame, moves, side="short", intraday=True)
-    assert setup["horizon"] == "intraday"
+    assert setup["horizon"] == "next_session"
     assert setup["intraday"] is True
+    assert "adr20_pct" in setup["adr"]

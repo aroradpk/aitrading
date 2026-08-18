@@ -13,9 +13,9 @@
 - **Start API:** `./scripts/cloud-agent-start.sh` or `uvicorn app.main:app --host 0.0.0.0 --port 8000`.
 - **Tests:** `pytest`.
 - **Trading book:** 5 scrips in `config/intraday_universe.json` (HDFCBANK, BAJFINANCE, M&M, NIFTY_50, NIFTY_BANK). Do not scan 20–40 names for **intraday**. `config/nifty_next_50.json` is kept for a later **swing** universe only.
-- **Learn loop:** Watchlist writes `data/intraday/ledger.jsonl`. `python scripts/learn_intraday.py` (also in `run_pipeline.py`) fills next-session MFE and writes `data/intraday/rule_stats.json`. This is **not** a neural net. Change the 7-gate only when a trait has **n≥20** and still beats chance. Commons (Fib, EMA support, 15m/1h any-base, uptrend) stay off the 7-gate.
-- **Conviction model:** Technical **0–7** + research (fundamentals + events/meetings) **0–3** = conviction **0–10**. Theme is a separate **1–5 bonus** column (`theme_bonus`), not in conviction.
-- **Pattern scoring:** **5** = coil watch (~3%). **6** = daily rumble (~4% claim, noisy). **7** = next-session list: rumble + day range ≥1.6× ATR + volume ≥1.5× + **not** a tight coil + **not** extended into resistance. Judge 7 on **next session** traded range (honest majority-correct bar is ~2% MFE, not 5%).
+- **Learn loop:** Watchlist writes `data/intraday/ledger.jsonl`. `python scripts/learn_intraday.py` fills next-session **range vs ADR** (`hit_adr` = next (high-low)/prior close ≥ 1.25× ADR20) and `data/intraday/rule_stats.json`. Not a neural net. Change the 7-gate only at **n≥20** with lift vs chance.
+- **ADR targets:** Each of the 5 names has its own ADR20 (`python scripts/build_adr_profiles.py`, `GET /api/analysis/intraday/adr`). Do **not** use a 5% close target for this book. Trade days are **higher-ADR** sessions (1.25× that name's ADR).
+- **Pattern scoring:** **5** = coil (typical ADR, not expansion). **6** = rumble (typical ADR). **7** = **live volume ≥1.5×** on the setup day — the factor that lifted next-session 1.25×-ADR days on all 5 names. Fib / EMA support / dead volume stay off the expansion gate.
 - **Validate big moves:** `python scripts/validate_prior_day_moves.py` (defaults to the 3 stocks).
 - **Charts:** `python scripts/build_charts.py` (not committed).
 - **Transcripts:** `python scripts/fetch_transcripts.py` (download only when `offline_mode: false`).

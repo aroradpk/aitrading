@@ -85,6 +85,8 @@
               <th>Symbol</th>
               <th>Side</th>
               <th>7</th>
+              <th>ADR%</th>
+              <th>Target%</th>
               <th>Horizon</th>
               <th>Conviction</th>
               <th>Tech (0-7)</th>
@@ -136,7 +138,7 @@
         <button class="action" id="refresh-universe">Refresh 5-scrip book</button>
         <p class="muted" id="universe-meta"></p>
         <table>
-          <thead><tr><th>Symbol</th><th>Name</th><th>YoY %</th><th>Last close</th></tr></thead>
+          <thead><tr><th>Symbol</th><th>Name</th><th>ADR20 %</th><th>1.25× target %</th><th>Last close</th></tr></thead>
           <tbody id="universe-body"></tbody>
         </table>
       </div>
@@ -281,6 +283,8 @@
             <td>${e.symbol}</td>
             <td class="side-${e.position_side}">${e.intraday ? e.position_side + " (ID)" : e.position_side}</td>
             <td>${e.session_seven ? "7" : ""}</td>
+            <td>${e.adr20_pct != null ? e.adr20_pct : "—"}</td>
+            <td>${e.target_range_pct != null ? e.target_range_pct : (e.expected_move_pct || "—")}</td>
             <td>${e.horizon}</td>
             <td class="conviction">${e.conviction}</td>
             <td>${e.scores.technical}</td>
@@ -568,17 +572,27 @@
       });
 
       async function loadUniverse() {
-        const res = await fetch("/api/analysis/universe");
-        const data = await res.json();
-        document.getElementById("universe-meta").textContent = data.selection_rule;
+        const [uniRes, adrRes] = await Promise.all([
+          fetch("/api/analysis/universe"),
+          fetch("/api/analysis/intraday/adr"),
+        ]);
+        const data = await uniRes.json();
+        const adr = adrRes.ok ? await adrRes.json() : { instruments: [] };
+        const adrBy = Object.fromEntries((adr.instruments || []).map((r) => [r.symbol, r]));
+        document.getElementById("universe-meta").textContent =
+          (data.selection_rule || "") + (adr.hit_definition ? " — " + adr.hit_definition : "");
         const rows = [...(data.stocks || []), ...(data.indices || [])];
-        document.getElementById("universe-body").innerHTML = rows.map((s) => `
+        document.getElementById("universe-body").innerHTML = rows.map((s) => {
+          const a = adrBy[s.symbol] || {};
+          return `
           <tr>
             <td>${s.symbol}</td>
             <td>${s.name}${s.type === "index" ? " (index)" : ""}</td>
-            <td>${s.yearly_return_pct != null ? s.yearly_return_pct + "%" : "—"}</td>
+            <td>${a.adr20_pct != null ? a.adr20_pct : "—"}</td>
+            <td>${a.target_range_pct != null ? a.target_range_pct : "—"}</td>
             <td>${s.last_close ?? "—"}</td>
-          </tr>`).join("");
+          </tr>`;
+        }).join("");
       }
 
       document.getElementById("refresh-universe").addEventListener("click", async () => {

@@ -48,6 +48,7 @@ from app.engines.themes import (
     score_themes,
     update_theme_symbols,
 )
+from app.engines.adr import build_adr_profiles
 from app.engines.intraday_ledger import load_ledger, recompute_rule_stats
 from app.engines.universe import build_active_universe, load_active_universe
 from app.schemas.analysis import (
@@ -127,6 +128,17 @@ def get_moves(
     if direction:
         moves = [move for move in moves if move.get("direction") == direction]
     return [MoveEvent.model_validate(move) for move in moves[:limit]]
+
+
+@router.get("/intraday/adr")
+def get_adr_profiles() -> dict:
+    from app.core.paths import adr_profile_path
+    import json
+
+    path = adr_profile_path()
+    if path.exists():
+        return json.loads(path.read_text(encoding="utf-8"))
+    return build_adr_profiles()
 
 
 @router.get("/intraday/stats")

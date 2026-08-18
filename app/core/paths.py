@@ -126,3 +126,7 @@ def intraday_ledger_path() -> Path:
 
 def intraday_rule_stats_path() -> Path:
     return intraday_dir() / "rule_stats.json"
+
+
+def adr_profile_path() -> Path:
+    return intraday_dir() / "adr_profile.json"

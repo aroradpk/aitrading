@@ -10,6 +10,7 @@ from app.engines.fundamental import score_fundamentals
 from app.engines.themes import score_themes
 from app.engines.move_detector import load_moves, scan_setups_for_symbol
 from app.engines.technical import technical_reasons_for_side
+from app.engines.adr import build_adr_profiles
 from app.engines.intraday_ledger import log_today_setups, recompute_rule_stats, resolve_open_rows
 from app.engines.universe import all_instruments
 from app.ingest.yfinance_client import load_ohlcv
@@ -113,12 +114,9 @@ def build_daily_watchlist() -> dict:
             reasons.extend(event_reasons)
             reasons.extend(theme_reasons)
 
-            if instrument_type == "index":
-                horizon = "1d"
-                target = 2.0
-            else:
-                horizon = setup.get("horizon", "1d/1w")
-                target = setup.get("target_move_pct", 5.0)
+            horizon = setup.get("horizon", "next_session")
+            target = setup.get("target_move_pct") or (setup.get("adr") or {}).get("target_range_pct") or 0.0
+            adr = setup.get("adr") or {}
 
             entries.append(
                 {
@@ -131,6 +129,10 @@ def build_daily_watchlist() -> dict:
                     "expected_move_pct": setup.get("expected_move_pct", 0.0),
                     "expected_horizon_days": setup.get("expected_horizon_days", 1),
                     "session_seven": setup.get("session_seven", False),
+                    "adr20_pct": adr.get("adr20_pct"),
+                    "adr20_pts": adr.get("adr20_pts"),
+                    "target_range_pct": adr.get("target_range_pct"),
+                    "expansion_mult": adr.get("expansion_mult"),
                     "position_bias": setup.get("position_bias", "neutral"),
                     "position_side": setup.get("position_side", "long"),
                     "intraday": setup.get("intraday", False),
@@ -150,6 +152,7 @@ def build_daily_watchlist() -> dict:
     logged = log_today_setups(entries)
     resolved = resolve_open_rows()
     rule_stats = recompute_rule_stats()
+    adr_profiles = build_adr_profiles()
 
     tech = get_settings().technical
     payload = {
@@ -161,6 +164,12 @@ def build_daily_watchlist() -> dict:
             "intraday_enabled": tech.intraday.enabled,
             "conviction_model": "technical_7_plus_research_3",
             "trading_book": "intraday_5",
+            "adr": {
+                "window": adr_profiles.get("window"),
+                "expansion_mult": adr_profiles.get("expansion_mult"),
+                "hit_definition": adr_profiles.get("hit_definition"),
+                "expansion_factor": adr_profiles.get("expansion_factor"),
+            },
             "learn": {
                 "logged_today": logged,
                 "resolved": resolved,

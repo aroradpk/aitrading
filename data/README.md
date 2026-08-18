@@ -9,7 +9,7 @@ Set `offline_mode: true` in `config/settings.yaml` (default) to guarantee the ap
 | `universe/active.json` | 5-scrip intraday book (3 stocks + 2 indices) |
 | `ohlcv/daily/*.parquet` | Daily price history for those 5 |
 | `intraday/ledger.jsonl` | Setup log + next-session MFE (learning loop) |
-| `intraday/rule_stats.json` | Hit rates; trust a rule only at n≥20 |
+| `intraday/adr_profile.json` | Per-scrip ADR20 and 1.25× range targets |
 | `ohlcv/daily/*.parquet` | Daily price history per symbol |
 | `moves/{SYMBOL}/` | Historical big-move events + `_summary.json` |
 | `technical/snapshots/` | Chart state before each big move |

@@ -20,6 +20,8 @@ class IntradayConfig(BaseModel):
     enabled: bool = False
     stock_target_1d_pct: float = 2.5
     position_side: str = "short"
+    adr_window: int = 20
+    expansion_mult: float = 1.25
 
 
 class TechnicalConfig(BaseModel):

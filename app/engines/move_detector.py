@@ -7,6 +7,7 @@ import pandas as pd
 
 from app.core.config import get_settings
 from app.core.paths import moves_dir, technical_snapshots_dir
+from app.engines.adr import snapshot_adr
 from app.engines.pattern_confirmations import detect_daily_confirmations
 from app.engines.mtf_analysis import analyze_intraday_confirmations
 from app.engines.pattern_scoring import (
@@ -198,11 +199,14 @@ def scan_today_setup(
             pass
 
     current["pattern_confirmations"] = confirmations
+    adr = snapshot_adr(frame)
+    current["adr"] = adr
     scored = score_technical_confirmations(
         confirmations,
         side=side,
         historical_moves=historical_moves,
         snapshot=current,
+        adr=adr,
     )
     technical_score = scored["technical_score"]
     comparisons = scored["top_matches"]
@@ -234,17 +238,8 @@ def scan_today_setup(
 
     if not ladder and not scored.get("breakout_base"):
         technical_score = _apply_side_context_caps(technical_score, current, side)
-    intraday_threshold = settings.technical.intraday.stock_target_1d_pct
-    thresholds = settings.thresholds
-    if intraday:
-        horizon = "intraday"
-        target = expected or intraday_threshold
-    elif side == "short":
-        horizon = "short_1d/1w"
-        target = expected or thresholds.stock_short_1d_pct
-    else:
-        horizon = "1d/1w"
-        target = expected or thresholds.stock_1d_pct
+    horizon = "next_session"
+    target = expected or float(adr.get("target_range_pct") or adr.get("adr20_pct") or 0.0)
 
     return {
         "as_of": frame.index[-1].date().isoformat(),
@@ -265,6 +260,7 @@ def scan_today_setup(
         "session_seven": bool(scored.get("session_seven")),
         "mtf_precision": bool(scored.get("mtf_precision")),
         "intraday": intraday,
+        "adr": adr,
         "formation_alignment": formation_state,
         "elliott_alignment": elliott_state,
         "score_layers": scored.get("score_layers", {}),

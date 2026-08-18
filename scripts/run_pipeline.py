@@ -24,6 +24,7 @@ def main() -> None:
     if settings.offline_mode:
         print("offline_mode=true — using saved data/ only (no Yahoo/NSE/PIB fetches)")
         run("build_theme_scores.py")
+        run("build_adr_profiles.py")
         run("build_watchlist.py")
         run("learn_intraday.py")
         print("\nOffline pipeline complete. Visit http://localhost:8000")
@@ -36,6 +37,7 @@ def main() -> None:
     run("import_fundamentals.py")
     run("scan_historical_moves.py")
     run("build_theme_scores.py")
+    run("build_adr_profiles.py")
     run("build_watchlist.py")
     run("learn_intraday.py")
     print("\nPipeline complete. Open data/ in VS Code or visit http://localhost:8000")
