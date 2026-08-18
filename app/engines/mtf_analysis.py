@@ -53,55 +53,88 @@ def fetch_intraday(symbol: str, interval: str, *, days: int = 60) -> pd.DataFram
     return frame
 
 
+def _session_or_tail(frame: pd.DataFrame, as_of: pd.Timestamp, lookback: int) -> pd.DataFrame:
+    if as_of.date() in {d.date() for d in frame.index}:
+        day_slice = frame[frame.index.date == as_of.date()]
+    else:
+        day_slice = frame[frame.index <= as_of].tail(lookback)
+    if len(day_slice) < 12:
+        day_slice = frame[frame.index <= as_of].tail(lookback)
+    return day_slice.tail(lookback)
+
+
+def _recent_coil(frame: pd.DataFrame, *, bars: int, max_atr: float) -> bool:
+    if len(frame) < bars + 8:
+        return False
+    recent = frame.tail(bars)
+    span = float(recent["high"].max() - recent["low"].min())
+    atr = float((frame["high"] - frame["low"]).tail(20).mean())
+    return atr > 0 and span / atr <= max_atr
+
+
+def _near_ema20(frame: pd.DataFrame, *, tolerance_pct: float = 0.012) -> bool:
+    ema20 = _ema(frame["close"], 20)
+    if ema20 is None:
+        return False
+    close = float(frame["close"].iloc[-1])
+    low = float(frame["low"].iloc[-1])
+    high = float(frame["high"].iloc[-1])
+    if abs(close - ema20) / ema20 <= tolerance_pct:
+        return True
+    if low <= ema20 <= high:
+        return True
+    return detect_ema20_support(frame, lookback=4, tolerance_pct=tolerance_pct)
+
+
 def analyze_intraday_confirmations(
     symbol: str,
     as_of_date: str,
     *,
     side: str = "long",
 ) -> dict[str, bool]:
-    """15m wedge + 1h rounding/EMA20 for the signal session."""
-    out = {"mtf_15m_wedge": False, "mtf_1h_rounding_ema20": False, "mtf_1h_fib_sr": False}
+    """15m wedge/coil and 1h coil/rounding at EMA20. Hourly Fib is a cherry, not a 7-gate."""
+    out = {
+        "mtf_15m_wedge": False,
+        "mtf_15m_coil_ema": False,
+        "mtf_1h_rounding_ema20": False,
+        "mtf_1h_coil_ema": False,
+        "mtf_1h_fib_sr": False,
+    }
     as_of = pd.Timestamp(as_of_date)
-    if (pd.Timestamp.now().normalize() - as_of).days > 55:
-        return out
+    settings = get_settings()
+    age_days = (pd.Timestamp.now().normalize() - as_of.normalize()).days
 
-    for interval, key, lookback in (("15m", "mtf_15m_wedge", 40), ("1h", "mtf_1h_rounding_ema20", 30)):
-        try:
-            frame = load_intraday(symbol, interval)
-            if frame is None and not get_settings().offline_mode:
-                try:
-                    frame = fetch_intraday(symbol, interval)
-                except Exception:
-                    continue
-            if frame is None:
+    for interval, lookback in (("15m", 40), ("1h", 30)):
+        frame = load_intraday(symbol, interval)
+        if frame is None and not settings.offline_mode and age_days <= 55:
+            try:
+                frame = fetch_intraday(symbol, interval)
+            except Exception:
                 continue
-        except Exception:
+        if frame is None:
             continue
-
-        if as_of.date() in {d.date() for d in frame.index}:
-            day_slice = frame[frame.index.date == as_of.date()]
-        else:
-            day_slice = frame[frame.index <= as_of].tail(lookback)
-
-        if len(day_slice) < 12:
-            day_slice = frame[frame.index <= as_of].tail(lookback)
-        if len(day_slice) < 12:
+        window = _session_or_tail(frame[frame.index <= as_of + pd.Timedelta(hours=16)], as_of, lookback)
+        if len(window) < 12:
             continue
-
-        window = day_slice.tail(lookback)
         if interval == "15m":
-            out[key] = detect_compressing_wedge(window, side=side, lookback=min(lookback, len(window)))
+            out["mtf_15m_wedge"] = detect_compressing_wedge(window, side=side, lookback=min(lookback, len(window)))
+            out["mtf_15m_coil_ema"] = _recent_coil(window, bars=12, max_atr=2.0) and _near_ema20(window, tolerance_pct=0.008)
         else:
             rounding = detect_rounding_bottom(window, lookback=min(lookback, len(window)))
+            at_ema = _near_ema20(window, tolerance_pct=0.008)
+            out["mtf_1h_rounding_ema20"] = bool(rounding and at_ema)
+            out["mtf_1h_coil_ema"] = _recent_coil(window, bars=8, max_atr=1.8) and at_ema
             ema20 = _ema(window["close"], 20)
-            at_ema = False
-            if ema20 is not None:
-                close = float(window["close"].iloc[-1])
-                at_ema = abs(close - ema20) / ema20 <= 0.02 or detect_ema20_support(window, lookback=3)
-            out["mtf_1h_rounding_ema20"] = rounding and at_ema
             sr_prices = [p for p in ([ema20] if ema20 else [])]
             out["mtf_1h_fib_sr"] = bool(ema20) and detect_sr_fib_confluence(
                 window, side=side, sr_prices=sr_prices
             )
 
     return out
+
+
+def has_mtf_precision(confirmations: dict[str, bool]) -> bool:
+    """7 needs both 15m and 1h quality. Hourly Fib is not this gate."""
+    m15 = bool(confirmations.get("mtf_15m_wedge") or confirmations.get("mtf_15m_coil_ema"))
+    h1 = bool(confirmations.get("mtf_1h_coil_ema") or confirmations.get("mtf_1h_rounding_ema20"))
+    return m15 and h1

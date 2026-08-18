@@ -1,13 +1,14 @@
 from __future__ import annotations
 
 from app.engines.chart_patterns import load_formation_catalog
+from app.engines.mtf_analysis import has_mtf_precision
 from app.engines.pattern_confirmations import confirmation_labels, is_breakout_base, is_coil_setup
 from app.engines.technical import snapshot_similarity
 
 TECHNICAL_MAX = 7.0
 
-# Day-before 5% catch: ~58% recall at ~36% FPR with range>=2.5% of price and close not ±5%.
-# The 5% close itself is late and must not print a 7.
+# 5 = expect ~3% (daily coil). 6 = expect ~4% (daily rumble). 7 = expect ~5% (rumble + 15m AND 1h).
+# A 5% close is late and is never a 7. Hourly Fib is not a 7-gate.
 CORE_WEIGHTS = {
     "ema_structure": 2.5,
     "sr_fib": 2.5,
@@ -139,7 +140,7 @@ def historical_pattern_bonus(
 
 
 def has_precision_energy(confirmations: dict[str, bool]) -> bool:
-    """Day-before rumble: wide range, close has not already moved 5%."""
+    """Daily rumble — maps to tech 6 (4% expect) unless 15m/1h also fire."""
     return bool(confirmations.get("setup_rattle"))
 
 
@@ -196,7 +197,9 @@ def _layer_scores(
     if is_coil_setup(confirmations):
         layers["coil"] = CHERRY_WEIGHTS["coil"]
 
-    if confirmations.get("mtf_15m_wedge") or confirmations.get("mtf_1h_rounding_ema20"):
+    if confirmations.get("mtf_15m_wedge") or confirmations.get("mtf_1h_rounding_ema20") or confirmations.get(
+        "mtf_1h_coil_ema"
+    ) or confirmations.get("mtf_15m_coil_ema"):
         layers["mtf"] = CHERRY_WEIGHTS["mtf"]
 
     candle_ok = any(tag.startswith("candle_") for tag in tags)
@@ -227,17 +230,35 @@ def score_technical_confirmations(
     bonus, top_matches = historical_pattern_bonus(confirmations, historical_moves or [], side=side)
     score += bonus
 
-    # Setup rumble is the 7. A 5% close is late — do not print 7 on that bar.
-    if energy:
+    late = bool(confirmations.get("late_bar"))
+    coil = is_coil_setup(confirmations)
+    mtf = has_mtf_precision(confirmations)
+    expected_move_pct = 0.0
+    if late:
+        # The 5% day already printed. Cap so this bar is never a 7.
+        score = min(score, 4.0)
+        expected_move_pct = 0.0
+    elif energy and mtf:
+        # 7: rumble + 15m AND 1h precision. Expect ~5% next. Fewer 7s, less noise.
         score = TECHNICAL_MAX
+        expected_move_pct = 5.0
+    elif energy:
+        # 6: daily rumble, no MTF. Expect a push (~4%), not a rocket.
+        score = 6.0
+        expected_move_pct = 4.0
+    elif coil:
+        # 5: daily coil. Expect ~3%.
+        score = min(max(score, 5.0), 5.0)
+        expected_move_pct = 3.0
     else:
-        score = min(score, 5.0 if is_coil_setup(confirmations) else 4.0)
+        score = min(score, 4.0)
 
-    # Only fade a long chase when there is no wide-bar 5% alarm and no family.
-    if not energy and side == "long" and snapshot and not families:
+    # Only fade a long chase when there is no rumble and no family.
+    if not energy and not late and side == "long" and snapshot and not families:
         tags = set(snapshot.get("tags", []))
         if "ema20_extended_long" in tags and "near_resistance" in tags:
             score = min(score, 3.0)
+            expected_move_pct = 0.0
 
     score = round(min(TECHNICAL_MAX, max(0.0, score)), 1)
     match_count = sum(1 for m in top_matches if m["similarity"] >= 0.35)
@@ -253,7 +274,7 @@ def score_technical_confirmations(
         "coil": "Rangebound coil cherry",
         "elliott": "Elliott wave cherry",
         "formation": "Chart formation cherry",
-        "mtf": "Intraday MTF cherry",
+        "mtf": "15m / 1h precision cherry",
         "candle": "Candlestick cherry (hammer / star)",
     }
     for key, value in layers.items():
@@ -261,6 +282,9 @@ def score_technical_confirmations(
             layer_labels.append(f"{pretty[key]} +{value:.1f}")
     for text in reversed(layer_labels):
         labels.insert(0, text)
+
+    if expected_move_pct:
+        labels.append(f"Expect next move ~{expected_move_pct:.0f}%")
 
     tags = set((snapshot or {}).get("tags", []))
     return {
@@ -273,6 +297,8 @@ def score_technical_confirmations(
         "match_count": match_count,
         "breakout_base": is_breakout_base(confirmations),
         "precision_energy": energy,
+        "mtf_precision": mtf,
+        "expected_move_pct": expected_move_pct,
         "formation_alignment": formation_alignment((snapshot or {}).get("formations") or [], side),
         "elliott_alignment": elliott_alignment(tags, side),
     }
