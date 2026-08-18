@@ -79,7 +79,7 @@ def build_daily_watchlist() -> dict:
             theme_score, theme_reasons, _ = score_themes(symbol)
 
         for setup in setups:
-            if setup["technical_score"] <= 0:
+            if setup["technical_score"] <= 0 and not setup.get("target_watch"):
                 continue
 
             scores = conviction_from_scores(
@@ -128,7 +128,8 @@ def build_daily_watchlist() -> dict:
                     "target_move_pct": target,
                     "expected_move_pct": setup.get("expected_move_pct", 0.0),
                     "expected_horizon_days": setup.get("expected_horizon_days", 1),
-                    "session_seven": setup.get("session_seven", False),
+                    "session_seven": False,
+                    "target_watch": setup.get("target_watch", False),
                     "adr20_pct": adr.get("adr20_pct"),
                     "adr20_pts": adr.get("adr20_pts"),
                     "target_range_pct": adr.get("target_range_pct"),
@@ -146,7 +147,7 @@ def build_daily_watchlist() -> dict:
                 }
             )
 
-    entries.sort(key=lambda item: item["conviction"], reverse=True)
+    entries.sort(key=lambda item: (not item.get("target_watch"), -item["conviction"]))
     from app.core.config import get_settings
 
     logged = log_today_setups(entries)

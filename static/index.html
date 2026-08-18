@@ -75,6 +75,7 @@
         <button class="action watchlist-filter" data-side="long">Long</button>
         <button class="action watchlist-filter" data-side="short">Short</button>
         <button class="action watchlist-filter" data-side="intraday">Intraday</button>
+        <button class="action watchlist-filter" data-side="target">Target watch</button>
         <span class="muted" id="watchlist-meta"></span>
       </div>
       <div class="card">
@@ -83,6 +84,7 @@
             <tr>
               <th>Symbol</th>
               <th>Side</th>
+              <th>Watch</th>
               <th>ADR%</th>
               <th>Target%</th>
               <th>Horizon</th>
@@ -272,6 +274,7 @@
         const filtered = entries.filter((e) => {
           if (watchlistFilter === "all") return true;
           if (watchlistFilter === "intraday") return e.intraday;
+          if (watchlistFilter === "target") return e.target_watch;
           return e.position_side === watchlistFilter && !e.intraday;
         });
         const body = document.getElementById("watchlist-body");
@@ -279,6 +282,7 @@
           <tr data-idx="${i}" style="cursor:pointer">
             <td>${e.symbol}</td>
             <td class="side-${e.position_side}">${e.intraday ? e.position_side + " (ID)" : e.position_side}</td>
+            <td>${e.target_watch ? "target" : ""}</td>
             <td>${e.adr20_pct != null ? e.adr20_pct : "—"}</td>
             <td>${e.target_range_pct != null ? e.target_range_pct : (e.expected_move_pct || "—")}</td>
             <td>${e.horizon}</td>

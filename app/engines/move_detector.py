@@ -15,6 +15,7 @@ from app.engines.pattern_scoring import (
     formation_alignment,
     score_technical_confirmations,
 )
+from app.engines.target_trade import target_trade_payload
 from app.engines.technical import (
     LONG_HEADWIND_TAGS,
     LONG_TAILWIND_TAGS,
@@ -221,8 +222,16 @@ def scan_today_setup(
     families = scored.get("pattern_families") or []
 
     bias = position_bias(current, focus=side)
-    expected = float(scored.get("expected_move_pct") or 0.0)
-    horizon_days = int(scored.get("expected_horizon_days") or 1)
+    trade = target_trade_payload(
+        confirmations,
+        rsi=current.get("rsi_14"),
+        target_pct=float(adr.get("target_range_pct") or 0.0),
+    )
+    expected = float(trade.get("expected_move_pct") or 0.0)
+    horizon_days = int(trade.get("expected_horizon_days") or 1)
+    if trade.get("target_watch"):
+        for text in reversed(trade.get("reasons") or []):
+            scored.setdefault("confirmation_labels", []).insert(0, text)
     if (
         settings.technical.require_trend_for_setup
         and technical_score < 6.0
@@ -254,7 +263,8 @@ def scan_today_setup(
         "target_move_pct": target,
         "expected_move_pct": expected,
         "expected_horizon_days": horizon_days,
-        "session_seven": bool(scored.get("session_seven")),
+        "session_seven": False,
+        "target_watch": bool(trade.get("target_watch")),
         "mtf_precision": bool(scored.get("mtf_precision")),
         "intraday": intraday,
         "adr": adr,
