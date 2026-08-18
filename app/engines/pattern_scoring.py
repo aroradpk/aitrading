@@ -6,9 +6,8 @@ from app.engines.technical import snapshot_similarity
 
 TECHNICAL_MAX = 7.0
 
-# Same-day 5% conviction (40 stocks: Next 50 + Nifty 50 top 20):
-# 7 if day range >= 1.3x ATR (~83% of 5% bars, quiet FPR ~17% <= 20%).
-# Predicting tomorrow's 5% at 80% recall still needs ~40% FPR; that is not the 7.
+# Day-before 5% catch: ~58% recall at ~36% FPR with range>=2.5% of price and close not ±5%.
+# The 5% close itself is late and must not print a 7.
 CORE_WEIGHTS = {
     "ema_structure": 2.5,
     "sr_fib": 2.5,
@@ -140,8 +139,8 @@ def historical_pattern_bonus(
 
 
 def has_precision_energy(confirmations: dict[str, bool]) -> bool:
-    """Same-day 5% alarm: wide bar vs ATR. Does not require a volume spike."""
-    return bool(confirmations.get("range_expansion"))
+    """Day-before rumble: wide range, close has not already moved 5%."""
+    return bool(confirmations.get("setup_rattle"))
 
 
 def _layer_scores(
@@ -228,7 +227,7 @@ def score_technical_confirmations(
     bonus, top_matches = historical_pattern_bonus(confirmations, historical_moves or [], side=side)
     score += bonus
 
-    # Wide bar (range >= 1.3x ATR) is the 7 — catches ~80% of same-day 5% moves at <=20% FPR.
+    # Setup rumble is the 7. A 5% close is late — do not print 7 on that bar.
     if energy:
         score = TECHNICAL_MAX
     else:
@@ -250,7 +249,7 @@ def score_technical_confirmations(
     pretty = {
         "ema_structure": "EMA / trend structure",
         "sr_fib": "S/R with Fibonacci",
-        "energy": "Volume + range expansion",
+        "energy": "Setup rumble (range >= 2.5%, close not ±5%)",
         "coil": "Rangebound coil cherry",
         "elliott": "Elliott wave cherry",
         "formation": "Chart formation cherry",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Same-day 5% conviction vs quiet-day FPR (Next 50 + optional Nifty 50 top 20)."""
+"""Day-before 5% catch: rumble 7 vs quiet FPR. Never scores the 5% close itself."""
 
 from __future__ import annotations
 
@@ -18,6 +18,7 @@ from app.ingest.yfinance_client import load_ohlcv
 
 SEED = 42
 QUIET = 80
+OUT = Path("/opt/cursor/artifacts/day_before_60.json")
 
 
 def symbols() -> list[str]:
@@ -30,6 +31,10 @@ def symbols() -> list[str]:
     return list(dict.fromkeys(next50 + extra))
 
 
+def fires(frame: pd.DataFrame) -> bool:
+    return bool(detect_energy_triggers(frame).get("setup_rattle"))
+
+
 def main() -> None:
     rng = np.random.default_rng(SEED)
     tp = fp = n5 = nq = 0
@@ -38,20 +43,14 @@ def main() -> None:
         frame = load_ohlcv(ohlcv_daily_dir() / f"{sym}.parquet")
         ret = frame["close"].pct_change() * 100
         big_idx, quiet_idx = [], []
-        for i in range(40, len(frame)):
-            r = ret.iloc[i]
-            if pd.isna(r):
+        for i in range(40, len(frame) - 1):
+            nxt = ret.iloc[i + 1]
+            if pd.isna(nxt):
                 continue
-            (big_idx if abs(float(r)) >= 5 else quiet_idx).append(i)
+            (big_idx if abs(float(nxt)) >= 5 else quiet_idx).append(i)
         sample = list(rng.choice(quiet_idx, size=min(QUIET, len(quiet_idx)), replace=False)) if quiet_idx else []
-        hits = 0
-        for i in big_idx:
-            if detect_energy_triggers(frame.iloc[: i + 1]).get("range_expansion"):
-                hits += 1
-        false = 0
-        for i in sample:
-            if detect_energy_triggers(frame.iloc[: i + 1]).get("range_expansion"):
-                false += 1
+        hits = sum(1 for i in big_idx if fires(frame.iloc[: i + 1]))
+        false = sum(1 for i in sample if fires(frame.iloc[: i + 1]))
         n5 += len(big_idx)
         nq += len(sample)
         tp += hits
@@ -60,9 +59,22 @@ def main() -> None:
         fpr = 100 * false / len(sample) if sample else 0
         per.append({"symbol": sym, "n5": len(big_idx), "recall": round(rec, 1), "fpr": round(fpr, 1), "hits": hits})
         print(f"{sym:12} n5={len(big_idx):3d} rec={rec:5.1f}% fpr={fpr:5.1f}%")
-    print("OVERALL", round(100 * tp / n5, 1), "recall", round(100 * fp / nq, 1), "fpr", f"({tp}/{n5} vs {fp}/{nq})")
-    Path("/opt/cursor/artifacts/same_day_80_20.json").write_text(
-        json.dumps({"overall_recall": round(100 * tp / n5, 1), "overall_fpr": round(100 * fp / nq, 1), "tp": tp, "n5": n5, "fp": fp, "nq": nq, "per_symbol": per}, indent=2)
+    overall_rec = round(100 * tp / n5, 1) if n5 else 0
+    overall_fpr = round(100 * fp / nq, 1) if nq else 0
+    print("OVERALL", overall_rec, "recall", overall_fpr, "fpr", f"({tp}/{n5} vs {fp}/{nq})")
+    OUT.write_text(
+        json.dumps(
+            {
+                "overall_recall": overall_rec,
+                "overall_fpr": overall_fpr,
+                "tp": tp,
+                "n5": n5,
+                "fp": fp,
+                "nq": nq,
+                "per_symbol": per,
+            },
+            indent=2,
+        )
     )
 
 
