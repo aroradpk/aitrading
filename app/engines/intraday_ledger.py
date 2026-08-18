@@ -92,8 +92,6 @@ def resolve_open_rows() -> int:
     filled = 0
     by_symbol: dict[str, pd.DataFrame] = {}
     for row in rows:
-        if row.get("mfe_pct") is not None and row.get("hit_adr") is not None:
-            continue
         symbol = row["symbol"]
         if symbol not in by_symbol:
             path = ohlcv_daily_dir() / f"{symbol}.parquet"
@@ -103,8 +101,10 @@ def resolve_open_rows() -> int:
         outcome = next_session_result(by_symbol[symbol], row["setup_date"])
         if not outcome:
             continue
+        before = (row.get("hit_adr"), row.get("target_range_pct"), row.get("mfe_pct"))
         row.update(outcome)
-        filled += 1
+        if before != (row.get("hit_adr"), row.get("target_range_pct"), row.get("mfe_pct")):
+            filled += 1
     rewrite_ledger(rows)
     return filled
 
@@ -116,8 +116,8 @@ def recompute_rule_stats() -> dict:
         "resolved_rows": len(rows),
         "min_n_to_trust": MIN_N_TO_TRUST,
         "note": (
-            "Hit = next session range >= 1.25 × that name's ADR20 "
-            "(high-low vs prior close). Not a 5% close. Trusted only at n>=20."
+            "Hit = next session range >= that name's fixed target "
+            "(HDFC 2%, BAJ 3%, M&M 3%, Nifty 1%, Bank 1.2%). Trusted only at n>=20."
         ),
         "rules": {},
     }
@@ -157,11 +157,11 @@ def recompute_rule_stats() -> dict:
     if live.get("trusted") and base_hit is not None and live.get("hit_adr") is not None:
         if live["hit_adr"] > base_hit:
             stats["advice"] = (
-                f"live_rvol beats chance at 1.25×ADR "
+                f"live_rvol beats chance at the fixed range targets "
                 f"({live['hit_adr']}% vs {base_hit}% all days). Keep it as the expansion 7."
             )
         else:
-            stats["advice"] = "live_rvol is not beating 1.25×ADR chance at n>=20 — drop it as a 7-gate."
+            stats["advice"] = "live_rvol is not beating the fixed targets at n>=20 — drop it as a 7-gate."
     else:
         stats["advice"] = (
             f"Need n>={MIN_N_TO_TRUST} resolved live_rvol rows before changing the ADR 7 "

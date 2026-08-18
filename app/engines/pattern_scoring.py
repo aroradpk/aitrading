@@ -142,7 +142,7 @@ def historical_pattern_bonus(
 
 
 def is_session_seven(confirmations: dict[str, bool], snapshot: dict | None = None) -> bool:
-    """7 = expect next session to print *above* this name's ADR (1.25x). Live volume is the portable factor."""
+    """7 = expect next session to print this name's fixed range target. Live volume is the portable factor."""
     from app.engines.adr import is_adr_expansion_setup
 
     return is_adr_expansion_setup(confirmations, snapshot)
@@ -297,13 +297,9 @@ def score_technical_confirmations(
 
     if expected_move_pct:
         if session_seven:
-            labels.append(
-                f"Expect next session range ≥{expected_move_pct:.2f}% "
-                f"({(adr or {}).get('expansion_mult', 1.25)}× ADR "
-                f"{(adr or {}).get('adr20_pct', expected_move_pct):.2f}%)"
-            )
+            labels.append(f"Expect next session range ≥{expected_move_pct:.2f}% (fixed target for this name)")
         else:
-            labels.append(f"Typical ADR ~{expected_move_pct:.2f}% — not an expansion call")
+            labels.append(f"Typical ADR ~{(adr or {}).get('adr20_pct', expected_move_pct):.2f}% — not an expansion call")
 
     tags = set((snapshot or {}).get("tags", []))
     return {

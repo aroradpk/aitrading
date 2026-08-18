@@ -199,7 +199,7 @@ def scan_today_setup(
             pass
 
     current["pattern_confirmations"] = confirmations
-    adr = snapshot_adr(frame)
+    adr = snapshot_adr(frame, symbol=symbol)
     current["adr"] = adr
     scored = score_technical_confirmations(
         confirmations,

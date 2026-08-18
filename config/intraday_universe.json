@@ -8,35 +8,40 @@
       "name": "HDFC Bank",
       "type": "stock",
       "yahoo": "HDFCBANK.NS",
-      "role": "highest liquidity"
+      "role": "highest liquidity",
+      "target_range_pct": 2.0
     },
     {
       "symbol": "BAJFINANCE",
       "name": "Bajaj Finance",
       "type": "stock",
       "yahoo": "BAJFINANCE.NS",
-      "role": "volume + momentum"
+      "role": "volume + momentum",
+      "target_range_pct": 3.0
     },
     {
       "symbol": "M&M",
       "name": "Mahindra & Mahindra",
       "type": "stock",
       "yahoo": "M&M.NS",
-      "role": "volume + momentum"
+      "role": "volume + momentum",
+      "target_range_pct": 3.0
     },
     {
       "symbol": "NIFTY_50",
       "name": "Nifty 50",
       "type": "index",
       "yahoo": "^NSEI",
-      "role": "index"
+      "role": "index",
+      "target_range_pct": 1.0
     },
     {
       "symbol": "NIFTY_BANK",
       "name": "Bank Nifty",
       "type": "index",
       "yahoo": "^NSEBANK",
-      "role": "index"
+      "role": "index",
+      "target_range_pct": 1.2
     }
   ]
 }

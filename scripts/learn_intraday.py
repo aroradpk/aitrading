@@ -35,7 +35,7 @@ def main() -> None:
     print(f"Resolved {filled} open rows")
     print("ADR profiles:")
     for row in profiles.get("instruments", []):
-        print(f"  {row['symbol']}: ADR20 {row['adr20_pct']}% / {row['adr20_pts']} pts → 1.25x {row['target_range_pct']}%")
+        print(f"  {row['symbol']}: ADR20 {row['adr20_pct']}% / {row['adr20_pts']} pts → target {row['target_range_pct']}%")
     print(json.dumps(stats, indent=2))
 
 

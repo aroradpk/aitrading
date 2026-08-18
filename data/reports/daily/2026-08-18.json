@@ -1,6 +1,6 @@
 {
   "report_date": "2026-08-18",
-  "generated_at": "2026-08-18T14:30:39.347797+00:00",
+  "generated_at": "2026-08-18T14:58:01.325014+00:00",
   "count": 10,
   "config": {
     "position_focus": "both",
@@ -9,12 +9,12 @@
     "trading_book": "intraday_5",
     "adr": {
       "window": 20,
-      "expansion_mult": 1.25,
-      "hit_definition": "Next session (high-low)/prior close >= 1.25 \u00d7 ADR20. Not a 5% close target.",
+      "expansion_mult": null,
+      "hit_definition": "Next session (high-low)/prior close >= that name's fixed target (HDFC 2%, BAJFINANCE 3%, M&M 3%, Nifty 1%, Bank Nifty 1.2%).",
       "expansion_factor": {
         "name": "live_rvol",
         "rule": "Volume >= 1.5x 20-day average on the setup day",
-        "note": "Backtest (~252 sessions): live_rvol lifts next-session 1.25x-ADR hit rate on all 5 names (HDFC +4.6pp, BAJ +12pp, M&M +17pp, Nifty +25pp n=10, Bank Nifty +12pp). Range expansion helps M&M/Nifty; EMA support and dead volume do not. A 7 is an ADR-expansion call, not a 5% prediction."
+        "note": "A 7 is one trade per name per setup day. Correct = next session range hits the fixed target."
       }
     },
     "learn": {
@@ -37,8 +37,8 @@
       "session_seven": false,
       "adr20_pct": 1.23,
       "adr20_pts": 9.21,
-      "target_range_pct": 1.54,
-      "expansion_mult": 1.25,
+      "target_range_pct": 2.0,
+      "expansion_mult": null,
       "position_bias": "neutral",
       "position_side": "long",
       "intraday": false,
@@ -277,11 +277,11 @@
         },
         "adr": {
           "window": 20,
-          "expansion_mult": 1.25,
+          "symbol": "HDFCBANK",
           "adr20_pct": 1.23,
           "adr14_pct": 1.15,
           "adr20_pts": 9.21,
-          "target_range_pct": 1.54,
+          "target_range_pct": 2.0,
           "as_of": "2026-08-17"
         }
       },
@@ -456,8 +456,8 @@
       "session_seven": false,
       "adr20_pct": 1.23,
       "adr20_pts": 9.21,
-      "target_range_pct": 1.54,
-      "expansion_mult": 1.25,
+      "target_range_pct": 2.0,
+      "expansion_mult": null,
       "position_bias": "short",
       "position_side": "short",
       "intraday": false,
@@ -693,11 +693,11 @@
         },
         "adr": {
           "window": 20,
-          "expansion_mult": 1.25,
+          "symbol": "HDFCBANK",
           "adr20_pct": 1.23,
           "adr14_pct": 1.15,
           "adr20_pts": 9.21,
-          "target_range_pct": 1.54,
+          "target_range_pct": 2.0,
           "as_of": "2026-08-17"
         }
       },
@@ -907,8 +907,8 @@
       "session_seven": false,
       "adr20_pct": 2.31,
       "adr20_pts": 24.91,
-      "target_range_pct": 2.88,
-      "expansion_mult": 1.25,
+      "target_range_pct": 3.0,
+      "expansion_mult": null,
       "position_bias": "long",
       "position_side": "long",
       "intraday": false,
@@ -1159,11 +1159,11 @@
         },
         "adr": {
           "window": 20,
-          "expansion_mult": 1.25,
+          "symbol": "BAJFINANCE",
           "adr20_pct": 2.31,
           "adr14_pct": 2.38,
           "adr20_pts": 24.91,
-          "target_range_pct": 2.88,
+          "target_range_pct": 3.0,
           "as_of": "2026-08-17"
         }
       },
@@ -1362,8 +1362,8 @@
       "session_seven": false,
       "adr20_pct": 2.31,
       "adr20_pts": 24.91,
-      "target_range_pct": 2.88,
-      "expansion_mult": 1.25,
+      "target_range_pct": 3.0,
+      "expansion_mult": null,
       "position_bias": "neutral",
       "position_side": "short",
       "intraday": false,
@@ -1600,11 +1600,11 @@
         },
         "adr": {
           "window": 20,
-          "expansion_mult": 1.25,
+          "symbol": "BAJFINANCE",
           "adr20_pct": 2.31,
           "adr14_pct": 2.38,
           "adr20_pts": 24.91,
-          "target_range_pct": 2.88,
+          "target_range_pct": 3.0,
           "as_of": "2026-08-17"
         }
       },
@@ -1753,8 +1753,8 @@
       "session_seven": false,
       "adr20_pct": 2.32,
       "adr20_pts": 76.79,
-      "target_range_pct": 2.9,
-      "expansion_mult": 1.25,
+      "target_range_pct": 3.0,
+      "expansion_mult": null,
       "position_bias": "long",
       "position_side": "long",
       "intraday": false,
@@ -2053,11 +2053,11 @@
         },
         "adr": {
           "window": 20,
-          "expansion_mult": 1.25,
+          "symbol": "M&M",
           "adr20_pct": 2.32,
           "adr14_pct": 2.35,
           "adr20_pts": 76.79,
-          "target_range_pct": 2.9,
+          "target_range_pct": 3.0,
           "as_of": "2026-08-17"
         }
       },
@@ -2301,8 +2301,8 @@
       "session_seven": false,
       "adr20_pct": 2.32,
       "adr20_pts": 76.79,
-      "target_range_pct": 2.9,
-      "expansion_mult": 1.25,
+      "target_range_pct": 3.0,
+      "expansion_mult": null,
       "position_bias": "neutral",
       "position_side": "short",
       "intraday": false,
@@ -2555,11 +2555,11 @@
         },
         "adr": {
           "window": 20,
-          "expansion_mult": 1.25,
+          "symbol": "M&M",
           "adr20_pct": 2.32,
           "adr14_pct": 2.35,
           "adr20_pts": 76.79,
-          "target_range_pct": 2.9,
+          "target_range_pct": 3.0,
           "as_of": "2026-08-17"
         }
       },
@@ -2743,8 +2743,8 @@
       "session_seven": false,
       "adr20_pct": 0.64,
       "adr20_pts": 154.51,
-      "target_range_pct": 0.79,
-      "expansion_mult": 1.25,
+      "target_range_pct": 1.0,
+      "expansion_mult": null,
       "position_bias": "long",
       "position_side": "long",
       "intraday": false,
@@ -3024,11 +3024,11 @@
         },
         "adr": {
           "window": 20,
-          "expansion_mult": 1.25,
+          "symbol": "NIFTY_50",
           "adr20_pct": 0.64,
           "adr14_pct": 0.62,
           "adr20_pts": 154.51,
-          "target_range_pct": 0.79,
+          "target_range_pct": 1.0,
           "as_of": "2026-08-14"
         }
       },
@@ -3243,8 +3243,8 @@
       "session_seven": false,
       "adr20_pct": 0.64,
       "adr20_pts": 154.51,
-      "target_range_pct": 0.79,
-      "expansion_mult": 1.25,
+      "target_range_pct": 1.0,
+      "expansion_mult": null,
       "position_bias": "short",
       "position_side": "short",
       "intraday": false,
@@ -3495,11 +3495,11 @@
         },
         "adr": {
           "window": 20,
-          "expansion_mult": 1.25,
+          "symbol": "NIFTY_50",
           "adr20_pct": 0.64,
           "adr14_pct": 0.62,
           "adr20_pts": 154.51,
-          "target_range_pct": 0.79,
+          "target_range_pct": 1.0,
           "as_of": "2026-08-14"
         }
       },
@@ -3669,8 +3669,8 @@
       "session_seven": false,
       "adr20_pct": 0.86,
       "adr20_pts": 494.17,
-      "target_range_pct": 1.07,
-      "expansion_mult": 1.25,
+      "target_range_pct": 1.2,
+      "expansion_mult": null,
       "position_bias": "long",
       "position_side": "long",
       "intraday": false,
@@ -3966,11 +3966,11 @@
         },
         "adr": {
           "window": 20,
-          "expansion_mult": 1.25,
+          "symbol": "NIFTY_BANK",
           "adr20_pct": 0.86,
           "adr14_pct": 0.78,
           "adr20_pts": 494.17,
-          "target_range_pct": 1.07,
+          "target_range_pct": 1.2,
           "as_of": "2026-08-14"
         }
       },
@@ -4208,8 +4208,8 @@
       "session_seven": false,
       "adr20_pct": 0.86,
       "adr20_pts": 494.17,
-      "target_range_pct": 1.07,
-      "expansion_mult": 1.25,
+      "target_range_pct": 1.2,
+      "expansion_mult": null,
       "position_bias": "neutral",
       "position_side": "short",
       "intraday": false,
@@ -4469,11 +4469,11 @@
         },
         "adr": {
           "window": 20,
-          "expansion_mult": 1.25,
+          "symbol": "NIFTY_BANK",
           "adr20_pct": 0.86,
           "adr14_pct": 0.78,
           "adr20_pts": 494.17,
-          "target_range_pct": 1.07,
+          "target_range_pct": 1.2,
           "as_of": "2026-08-14"
         }
       },

@@ -1,0 +1,12 @@
+{
+  "symbol": "HAL",
+  "source": "screener.in",
+  "imported_at": "2026-08-18T14:57:46.548848+00:00",
+  "source_file": "hal.csv",
+  "metrics": {
+    "book_value": 850.0,
+    "roce_pct": 28.0,
+    "sales_growth_pct": 15.0,
+    "profit_growth_pct": 18.0
+  }
+}
