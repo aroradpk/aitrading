@@ -35,7 +35,13 @@ def run_s1_backtest() -> dict:
                 h1[item.symbol] = store.load_tf_bars(item.symbol, "1h")
             except Exception:
                 h1[item.symbol] = pd.DataFrame()
-        report = evaluate_universe(daily, m15, h1, EmaRsiConfig(), capital=settings.initial_capital)
+        report = evaluate_universe(
+            daily,
+            m15,
+            h1,
+            EmaRsiConfig(tp_mode="pct", tp_pct=0.008),
+            capital=settings.initial_capital,
+        )
         payload = _jsonable(report)
         path = settings.artifact_dir / "s1_backtest_report.json"
         path.parent.mkdir(parents=True, exist_ok=True)

@@ -9,7 +9,7 @@ from app.backtest.metrics import by_regime, by_year, summarize_trades
 from app.features.technical import regime_label
 from app.strategies.ema_rsi_config import EmaRsiConfig
 from app.strategies.ema_rsi_entry import find_next_day_entry, simulate_same_day
-from app.strategies.ema_rsi_expansion import DailySetup, detect_daily_setups
+from app.strategies.ema_rsi_expansion import DailySetup, detect_daily_setups, planned_stop_target
 from app.strategies.ema_rsi_indicators import add_s1_columns, last_bar_by_session
 from app.universe import NIFTY, UNIVERSE
 
@@ -19,22 +19,64 @@ def _next_date(dates: list[date], current: date) -> date | None:
     return later[0] if later else None
 
 
+def daily_hit_target_before_stop(side: str, fill: float, stop: float, target: float, bar: pd.Series) -> dict:
+    high = float(bar["high"])
+    low = float(bar["low"])
+    close = float(bar["close"])
+    if side == "long":
+        mfe_pct = (high - fill) / fill
+        mae_pct = (low - fill) / fill
+        hit_stop = low <= stop
+        hit_tgt = high >= target
+        pnl_close = (close - fill) / fill
+    else:
+        mfe_pct = (fill - low) / fill
+        mae_pct = (fill - high) / fill
+        hit_stop = high >= stop
+        hit_tgt = low <= target
+        pnl_close = (fill - close) / fill
+    if hit_stop and hit_tgt:
+        reason = "stop"
+        hit = 0
+    elif hit_stop:
+        reason = "stop"
+        hit = 0
+    elif hit_tgt:
+        reason = "target"
+        hit = 1
+    else:
+        reason = "close"
+        hit = 0
+    return {"hit_target": hit, "reason": reason, "mfe_pct": mfe_pct, "mae_pct": mae_pct, "close_pnl_pct": pnl_close}
+
+
 def setup_quality_row(setup: DailySetup, next_bar: pd.Series, cfg: EmaRsiConfig) -> dict:
     atr = setup.atr
+    fill = float(next_bar["open"])
     if setup.side == "long":
         mfe_atr = (float(next_bar["high"]) - setup.close) / atr
         mae_atr = (float(next_bar["low"]) - setup.close) / atr
-        close_move = (float(next_bar["close"]) - setup.close) / atr
+        mfe_pct_from_close = (float(next_bar["high"]) - setup.close) / setup.close
     else:
         mfe_atr = (setup.close - float(next_bar["low"])) / atr
         mae_atr = (setup.close - float(next_bar["high"])) / atr
-        close_move = (setup.close - float(next_bar["close"])) / atr
-    success = mfe_atr >= cfg.setup_success_mfe_atr
+        mfe_pct_from_close = (setup.close - float(next_bar["low"])) / setup.close
+    stop, target_08, _ = planned_stop_target(
+        setup.side, fill, setup.atr, setup.day_low, setup.day_high, cfg
+    )
+    # Force 0.8% target for this scorecard even if cfg uses a different tp_mode.
+    target_08 = fill * (1 + cfg.setup_success_pct) if setup.side == "long" else fill * (1 - cfg.setup_success_pct)
+    outcome_08 = daily_hit_target_before_stop(setup.side, fill, stop, target_08, next_bar)
     return {
-        "setup_success": int(success),
+        "setup_success": int(mfe_atr >= cfg.setup_success_mfe_atr),
         "setup_mfe_atr": float(mfe_atr),
         "setup_mae_atr": float(mae_atr),
-        "setup_close_move_atr": float(close_move),
+        "setup_mfe_pct": float(mfe_pct_from_close),
+        "hit_0_8_mfe_from_close": int(mfe_pct_from_close >= cfg.setup_success_pct),
+        "next_open": fill,
+        "hit_0_8_from_next_open_before_sl": outcome_08["hit_target"],
+        "next_open_0_8_reason": outcome_08["reason"],
+        "next_open_mfe_pct": outcome_08["mfe_pct"],
     }
 
 
@@ -174,6 +216,14 @@ def evaluate_universe(
         "confirmation_rate": n_confirm / n_setup if n_setup else 0.0,
         "entry_rate": n_entry / n_setup if n_setup else 0.0,
         "setup_success_rate": float(setup_df["setup_success"].mean()) if n_setup else 0.0,
+        "hit_0_8_mfe_from_close_rate": float(setup_df["hit_0_8_mfe_from_close"].mean()) if n_setup else 0.0,
+        "hit_0_8_from_next_open_before_sl_rate": float(setup_df["hit_0_8_from_next_open_before_sl"].mean())
+        if n_setup
+        else 0.0,
+        "signals_with_15m_next_day": int((~setup_df["entry_reason"].isin(["no_15m_data", "no_15m_session"])).sum())
+        if n_setup
+        else 0,
+        "entry_reason_counts": setup_df["entry_reason"].value_counts().to_dict() if n_setup else {},
         "setup_success_long": float(setup_df.loc[setup_df["side"] == "long", "setup_success"].mean())
         if n_setup and (setup_df["side"] == "long").any()
         else None,

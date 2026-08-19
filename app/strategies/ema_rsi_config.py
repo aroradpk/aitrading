@@ -31,10 +31,12 @@ class EmaRsiConfig:
     stop_mode: str = "atr"  # atr | structure | tighter | wider
     sl_atr: float = 1.0
     structure_buffer_atr: float = 0.1
-    tp_mode: str = "rr"  # rr | atr
+    tp_mode: str = "rr"  # rr | atr | pct
     rr: float = 1.5
     tp_atr: float = 1.5
+    tp_pct: float = 0.008
     setup_success_mfe_atr: float = 0.5
+    setup_success_pct: float = 0.008
     use_1h_confirm: bool = True
     use_15m_confirm: bool = True
 

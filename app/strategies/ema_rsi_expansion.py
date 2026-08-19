@@ -55,6 +55,8 @@ def planned_stop_target(
     risk = abs(entry - stop)
     if cfg.tp_mode == "atr":
         target = entry + cfg.tp_atr * atr if side == "long" else entry - cfg.tp_atr * atr
+    elif cfg.tp_mode == "pct":
+        target = entry * (1 + cfg.tp_pct) if side == "long" else entry * (1 - cfg.tp_pct)
     else:
         target = entry + cfg.rr * risk if side == "long" else entry - cfg.rr * risk
     rr = abs(target - entry) / risk if risk else 0.0

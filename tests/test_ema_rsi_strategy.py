@@ -46,6 +46,13 @@ def test_planned_stop_target_atr_long() -> None:
     assert abs(rr - 1.5) < 1e-9
 
 
+def test_pct_target_is_80bps() -> None:
+    cfg = EmaRsiConfig(stop_mode="atr", sl_atr=1.0, tp_mode="pct", tp_pct=0.008)
+    stop, target, rr = planned_stop_target("long", 100.0, 2.0, 95.0, 105.0, cfg)
+    assert stop == 98.0
+    assert abs(target - 100.8) < 1e-9
+
+
 def test_lower_tf_cannot_fail_a_1d_pass() -> None:
     row = pd.Series(
         {
