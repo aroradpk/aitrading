@@ -107,6 +107,18 @@ CREATE TABLE IF NOT EXISTS news_items (
     source TEXT NOT NULL,
     PRIMARY KEY (symbol, asof_date, headline)
 );
+
+CREATE TABLE IF NOT EXISTS tf_bars (
+    symbol TEXT NOT NULL,
+    timeframe TEXT NOT NULL,
+    ts TEXT NOT NULL,
+    open REAL NOT NULL,
+    high REAL NOT NULL,
+    low REAL NOT NULL,
+    close REAL NOT NULL,
+    volume REAL NOT NULL,
+    PRIMARY KEY (symbol, timeframe, ts)
+);
 """
 
 
@@ -293,6 +305,34 @@ class Store:
             return frame
         frame["asof_date"] = pd.to_datetime(frame["asof_date"]).dt.date
         frame["fill_date"] = pd.to_datetime(frame["fill_date"]).dt.date
+        return frame
+
+    def replace_tf_bars(self, symbol: str, timeframe: str, frame: pd.DataFrame) -> None:
+        if frame.empty:
+            return
+        payload = frame.copy()
+        payload["symbol"] = symbol
+        payload["timeframe"] = timeframe
+        payload["ts"] = pd.to_datetime(payload["ts"], utc=True).dt.strftime("%Y-%m-%dT%H:%M:%S%z")
+        self.conn.execute(
+            "DELETE FROM tf_bars WHERE symbol = ? AND timeframe = ?",
+            (symbol, timeframe),
+        )
+        payload[["symbol", "timeframe", "ts", "open", "high", "low", "close", "volume"]].to_sql(
+            "tf_bars", self.conn, if_exists="append", index=False
+        )
+        self.conn.commit()
+
+    def load_tf_bars(self, symbol: str, timeframe: str) -> pd.DataFrame:
+        frame = pd.read_sql_query(
+            "SELECT * FROM tf_bars WHERE symbol = ? AND timeframe = ? ORDER BY ts",
+            self.conn,
+            params=(symbol, timeframe),
+        )
+        if frame.empty:
+            return frame
+        frame["ts"] = pd.to_datetime(frame["ts"], utc=True)
+        frame["session_date"] = frame["ts"].dt.tz_convert("Asia/Kolkata").dt.date
         return frame
 
     def insert_bars(self, bars: list[Bar]) -> None:

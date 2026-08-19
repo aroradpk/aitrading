@@ -5,7 +5,7 @@ from datetime import date
 import pandas as pd
 
 from app.config import Settings, get_settings
-from app.data.ingest import ingest_synthetic, ingest_yahoo
+from app.data.ingest import ingest_synthetic, ingest_yahoo, ingest_yahoo_intraday
 from app.data.store import Store
 from app.features.technical import attach_context, features_for_symbol, long_feature_table, wide_features
 from app.ml.dataset import build_model_frame, encode_categoricals, label_candidates
@@ -75,6 +75,7 @@ def run_ingest(settings: Settings | None = None, source: str = "synthetic") -> N
     try:
         if source == "yahoo":
             ingest_yahoo(store, settings.lookback_calendar_days)
+            ingest_yahoo_intraday(store)
         else:
             ingest_synthetic(store)
     finally:
