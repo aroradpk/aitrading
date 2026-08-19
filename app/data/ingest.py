@@ -8,15 +8,19 @@ from app.data.store import Store
 from app.universe import UNIVERSE
 
 
-def ingest_yahoo(store: Store, lookback_days: int = 1500) -> None:
+def ingest_yahoo(store: Store, lookback_days: int = 1500, end: date | None = None) -> None:
     import yfinance as yf
 
-    start = date.today() - timedelta(days=lookback_days)
+    # yfinance `end` is exclusive. Default through yesterday so we never use a partial today bar.
+    last = end or (date.today() - timedelta(days=1))
+    start = last - timedelta(days=lookback_days)
+    fetch_end = last + timedelta(days=1)
     for item in UNIVERSE:
         store.upsert_instrument(item.symbol, item.name, item.kind.value, item.yahoo_ticker)
         raw = yf.download(
             item.yahoo_ticker,
             start=start.isoformat(),
+            end=fetch_end.isoformat(),
             auto_adjust=True,
             progress=False,
             threads=False,
@@ -37,6 +41,9 @@ def ingest_yahoo(store: Store, lookback_days: int = 1500) -> None:
                 "volume": raw.get("volume", pd.Series(0, index=raw.index)).fillna(0).astype(float),
             }
         )
+        frame = frame[frame["date"] <= last].reset_index(drop=True)
+        if frame.empty:
+            raise RuntimeError(f"No Yahoo bars on or before {last.isoformat()} for {item.yahoo_ticker}")
         store.replace_daily_bars(item.symbol, frame)
 
 
