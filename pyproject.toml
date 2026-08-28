@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scrl"
+version = "0.1.0"
+description = "Situation-Conditioned Research Loop: high-conviction 2026 trading research core"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "scikit-learn>=1.5",
+  "scipy>=1.13",
+  "yfinance>=0.2.40",
+  "pyyaml>=6.0",
+  "matplotlib>=3.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+scrl = "scrl.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["scrl*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
