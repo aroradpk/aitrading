@@ -14,6 +14,7 @@ from scrl.data import MarketBundle, load_bundle
 from scrl.degradation import Degradation, check_fade_distance
 from scrl.factors import FactorSnapshot, rolling_factor_residual, snapshot as factor_snapshot
 from scrl.features import build_features
+from scrl.mandates import Mandate, get_mandate
 from scrl.permission import Permission, decide
 from scrl.regime import RegimeModel, RegimeSnapshot
 from scrl.retrieval import AnalogSet, retrieve
@@ -37,6 +38,7 @@ class AnalysisResult:
     last_earnings: date | None
     days_to_expiry: int
     features_row: pd.Series
+    mandate: Mandate
 
 
 def analyze(
@@ -46,11 +48,14 @@ def analyze(
     last_earnings: str | date | None = None,
     bundle: MarketBundle | None = None,
     k_analogs: int = 25,
+    mandate: str | Mandate = "swing",
 ) -> AnalysisResult:
     if bundle is None:
         bundle = load_bundle(equity=ticker)
     as_of_ts = pd.Timestamp(as_of) if as_of is not None else pd.Timestamp(bundle.equity.index.max())
     earnings = pd.Timestamp(last_earnings).date() if last_earnings is not None else None
+    m = mandate if isinstance(mandate, Mandate) else get_mandate(mandate)
+    horizon_days = m.horizon_days
 
     feat = build_features(bundle, as_of=as_of_ts)
     usable = feat.dropna(subset=["bm_ret_20", "bm_vol_20", "brent_ret_20", "trend_strength"])
@@ -62,7 +67,7 @@ def analyze(
     regime_frame = regime_model.predict_frame(usable)
     regime = regime_model.snapshot(usable, as_of=as_of_ts)
 
-    analogs = retrieve(feat, as_of=as_of_ts, k=k_analogs)
+    analogs = retrieve(feat, as_of=as_of_ts, k=k_analogs, horizon_days=m.analog_fwd_days)
     factors = rolling_factor_residual(bundle)
     factor = factor_snapshot(factors, as_of=as_of_ts)
     board = eval_specialists(feat, regime_frame, as_of=as_of_ts)
@@ -79,6 +84,7 @@ def analyze(
         days_to_expiry=dte,
         residual_20=factor.residual_20,
         dist_52w_high=float(last_row["dist_52w_high"]) if pd.notna(last_row["dist_52w_high"]) else None,
+        mandate=m,
     )
     permission = decide(
         regime=regime,
@@ -87,6 +93,7 @@ def analyze(
         adversary=adversary,
         as_of=as_of_d,
         horizon_days=horizon_days,
+        mandate=m,
     )
     deg = check_fade_distance(feat.loc[:as_of_ts])
     return AnalysisResult(
@@ -105,4 +112,28 @@ def analyze(
         last_earnings=earnings,
         days_to_expiry=dte,
         features_row=last_row,
+        mandate=m,
     )
+
+
+def analyze_desk(
+    ticker: str = "RELIANCE.NS",
+    as_of: str | pd.Timestamp | None = None,
+    last_earnings: str | date | None = None,
+    bundle: MarketBundle | None = None,
+    k_analogs: int = 25,
+) -> dict[str, AnalysisResult]:
+    if bundle is None:
+        bundle = load_bundle(equity=ticker)
+    out: dict[str, AnalysisResult] = {}
+    for name in ("swing", "position", "longterm"):
+        out[name] = analyze(
+            ticker=ticker,
+            as_of=as_of,
+            last_earnings=last_earnings,
+            bundle=bundle,
+            k_analogs=k_analogs,
+            mandate=name,
+        )
+    return out
+

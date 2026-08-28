@@ -21,6 +21,7 @@ class AnalogSet:
     straddles_zero: bool
     same_sign: bool
     median_10: float
+    horizon_days: int = 10
 
 
 def _quantiles(s: pd.Series) -> dict[str, float]:
@@ -39,16 +40,18 @@ def retrieve(
     as_of: pd.Timestamp | None = None,
     k: int = 25,
     min_history: int = 252,
+    horizon_days: int = 10,
 ) -> AnalogSet:
-    work = feat[RETRIEVAL_COLS + ["fwd_10", "fwd_excess_10", "fwd_5", "fwd_20"]].replace(
-        [np.inf, -np.inf], np.nan
-    )
+    fwd_col = f"fwd_{horizon_days}"
+    excess_col = f"fwd_excess_{horizon_days}"
+    needed = RETRIEVAL_COLS + [c for c in (fwd_col, excess_col) if c in feat.columns]
+    work = feat[needed].replace([np.inf, -np.inf], np.nan)
     if as_of is not None:
         work = work.loc[: pd.Timestamp(as_of)]
     current = work.iloc[[-1]]
-    # Past episodes that already realized a 10-day forward return by as_of.
-    # Using fwd_* at time t requires t+10 <= as_of, i.e. drop last 10 rows from the library.
-    library = work.iloc[:-11].dropna(subset=RETRIEVAL_COLS + ["fwd_10"])
+    # Using fwd at t requires t+horizon <= as_of, so drop the last horizon rows.
+    cut = horizon_days + 1
+    library = work.iloc[:-cut].dropna(subset=RETRIEVAL_COLS + [fwd_col])
     query = current[RETRIEVAL_COLS].dropna(axis=1)
     cols = [c for c in RETRIEVAL_COLS if c in query.columns and query[c].notna().all()]
     library = library.dropna(subset=cols)
@@ -62,6 +65,7 @@ def retrieve(
             straddles_zero=True,
             same_sign=False,
             median_10=float("nan"),
+            horizon_days=horizon_days,
         )
 
     scaler = StandardScaler()
@@ -73,10 +77,8 @@ def retrieve(
     dist, idx = nn.kneighbors(q_x)
     neigh = library.iloc[idx[0]].copy()
     neigh["distance"] = dist[0]
-    q10 = _quantiles(neigh["fwd_10"])
-    qex = _quantiles(neigh["fwd_excess_10"])
-    straddles = (q10["p25"] < 0 <= q10["p75"]) or (q10["p75"] > 0 >= q10["p25"] and q10["p25"] * q10["p75"] < 0)
-    # clearer: p25 and p75 have opposite signs
+    q10 = _quantiles(neigh[fwd_col])
+    qex = _quantiles(neigh[excess_col]) if excess_col in neigh.columns else _quantiles(pd.Series(dtype=float))
     straddles = bool(q10["p25"] * q10["p75"] < 0)
     same = bool(q10["p25"] * q10["p75"] > 0)
     return AnalogSet(
@@ -87,4 +89,5 @@ def retrieve(
         straddles_zero=straddles,
         same_sign=same,
         median_10=q10["median"],
+        horizon_days=horizon_days,
     )

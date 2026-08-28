@@ -54,7 +54,10 @@ def build_features(bundle: MarketBundle, as_of: pd.Timestamp | None = None) -> p
     feat["fwd_5"] = px["equity"].pct_change(5).shift(-5)
     feat["fwd_10"] = px["equity"].pct_change(10).shift(-10)
     feat["fwd_20"] = px["equity"].pct_change(20).shift(-20)
+    feat["fwd_60"] = px["equity"].pct_change(60).shift(-60)
     feat["fwd_excess_10"] = (px["equity"].pct_change(10) - px["benchmark"].pct_change(10)).shift(-10)
+    feat["fwd_excess_20"] = (px["equity"].pct_change(20) - px["benchmark"].pct_change(20)).shift(-20)
+    feat["fwd_excess_60"] = (px["equity"].pct_change(60) - px["benchmark"].pct_change(60)).shift(-60)
     feat["fwd_bm_5"] = px["benchmark"].pct_change(5).shift(-5)
     return feat
 

@@ -31,12 +31,16 @@ def render_text(result: AnalysisResult) -> str:
     f = r.board.fade
     c = r.board.cash
     le = r.last_earnings.isoformat() if r.last_earnings else "not supplied"
+    h = r.analogs.horizon_days
+    paper = "none" if r.permission.decision in {"DENY", "WAIT"} else "journal this decision; defined-risk / scheduled lot only"
 
-    return f"""SCRL TICKET  {r.ticker} | horizon {r.horizon_days} sessions | as-of {r.as_of.date()}
+    return f"""SCRL TICKET  {r.ticker} | mandate={r.mandate.name} ({r.mandate.label}) | as-of {r.as_of.date()}
 close {r.close:.2f}
 
+TODAY: {r.permission.today}
+
 PERMISSION: {r.permission.decision}
-CASH WEIGHT: {r.permission.cash_weight:.2f}
+CASH WEIGHT (new risk): {r.permission.cash_weight:.2f}
 REASONS:
 {reasons}
 
@@ -55,11 +59,11 @@ REASONS:
    beta_nifty={_f(r.factor.beta_benchmark, 2)}  beta_brent={_f(r.factor.beta_brent, 3)}  beta_fx={_f(r.factor.beta_fx, 3)}
    interpretation: residual is what oil/index/FX do not explain. Small residual = no unused idiosyncratic gap.
 
-4. SITUATION RETRIEVAL  k={analog.n} past episodes (point-in-time; 10d already realized)
-   fwd_10  p25={_pct(analog.fwd_10['p25'])}  median={_pct(analog.fwd_10['median'])}  p75={_pct(analog.fwd_10['p75'])}
-   excess_10 vs nifty  p25={_pct(analog.fwd_excess_10['p25'])}  median={_pct(analog.fwd_excess_10['median'])}  p75={_pct(analog.fwd_excess_10['p75'])}
+4. SITUATION RETRIEVAL  k={analog.n} past episodes (point-in-time; {h}d already realized)
+   fwd_{h}  p25={_pct(analog.fwd_10['p25'])}  median={_pct(analog.fwd_10['median'])}  p75={_pct(analog.fwd_10['p75'])}
+   excess_{h} vs nifty  p25={_pct(analog.fwd_excess_10['p25'])}  median={_pct(analog.fwd_excess_10['median'])}  p75={_pct(analog.fwd_excess_10['p75'])}
    straddles_zero={analog.straddles_zero}  same_sign={analog.same_sign}
-   this is a prior, not a forecast. opposite-sign quartiles => no directional trade.
+   this is a prior, not a forecast. opposite-sign quartiles block swing/position entries, not a long-term HOLD.
 
 5. SPECIALISTS (walk-forward health only; in-sample Sharpe is ignored)
    trend_follow  fire={t.fire}  healthy={t.healthy}  oos_hit={_f(t.oos_hit_rate, 2)}  oos_mean={_pct(t.oos_mean)}
@@ -86,11 +90,45 @@ REASONS:
 9. WHAT THIS SYSTEM WILL NOT SAY
    - no target price
    - no "AI confidence %"
-   - no 12-month Jio/new-energy story inside a {r.horizon_days}-session ticket
-   - no promotion to live capital; this is a research permission flag
+   - no mixing of swing, position, and long-term into one buy
+   - no promotion to live capital; journal first
 
-PAPER ACTION: {"none" if r.permission.decision == "DENY" else "defined-risk only, size clipped by cash_weight"}
+PAPER ACTION: {paper}
 """
+
+
+def render_desk(swing: AnalysisResult, position: AnalysisResult, longterm: AnalysisResult) -> str:
+    """One page: what you do today across mandates. This is the personal-use surface."""
+    rows = [("SWING", swing), ("POSITION", position), ("LONG-TERM", longterm)]
+    lines = [
+        f"SCRL DESK  {swing.ticker}  as-of {swing.as_of.date()}  close {swing.close:.2f}",
+        "",
+        "This is how the research loop becomes a trading/investing habit.",
+        "You do not get one signal. You get three separate jobs. Mixing them is how you lose.",
+        "",
+    ]
+    for name, r in rows:
+        lines.append(f"[{name}]  {r.permission.decision}")
+        lines.append(f"  TODAY: {r.permission.today}")
+        if r.permission.reasons:
+            lines.append("  why: " + " | ".join(r.permission.reasons[:3]))
+        lines.append("")
+    lines += [
+        "INTRADAY: not available on this data. Needs 1-minute bars, costs, and a session clock.",
+        "",
+        "HOW THIS HELPS P&L",
+        "  Swing DENY  = you skip coin-flip 1–4 week trades (usually the expensive hobby).",
+        "  Position    = same idea at 20–60 days; still no entry if analogs straddle zero.",
+        "  Long-term   = you may HOLD a compounder without needing a 10-day edge;",
+        "                you only ADD when 60-day analogs agree, else WAIT to start.",
+        "  Journal     = every override is scored later. That file is what you monetize,",
+        "                not a Telegram tip feed.",
+        "",
+        "MONETIZE ONLY AFTER the journal beats buy-and-hold and beats 'always trade'",
+        "on the same names, costs included, for many months. Sell the process/software,",
+        "not stock tips (that is a regulated activity in India).",
+    ]
+    return "\n".join(lines) + "\n"
 
 
 def render_markdown(result: AnalysisResult) -> str:
