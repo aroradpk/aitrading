@@ -1,0 +1,9 @@
+node_modules/
+private-data/
+*.local.csv
+*.real.csv
+*.zip
+.env
+.env.*
+!.env.example
+*.log

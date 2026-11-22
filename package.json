@@ -1,0 +1,22 @@
+{
+  "name": "nse-udiff-offline-audit",
+  "version": "0.1.0",
+  "description": "Offline integrity checks for NSE CM UDiFF EOD bhavcopy ZIPs",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "nse-udiff-audit": "scripts/verify-nse-original.mjs"
+  },
+  "scripts": {
+    "test": "node tests/nse-original-contract.test.mjs"
+  },
+  "files": [
+    "lib/",
+    "scripts/",
+    "README.md",
+    "LICENSE"
+  ]
+}
